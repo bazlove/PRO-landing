@@ -104,10 +104,15 @@ body {
   font-size: clamp(14px, 1.1vw, 16px);
   line-height: 1.45;
   color: var(--text-secondary);
-  opacity: 0.88;
+  opacity: 0;
   z-index: 8;
   pointer-events: none;
   transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.is-tooltip-visible .scene-tooltip {
+  opacity: 0.95;
+  transform: translateX(-50%) translateY(0);
 }
 
 .has-hover-device .scene-tooltip {
@@ -313,7 +318,7 @@ html.is-decor-visible .decor-icon {
 }
 
 .debris--meteor {
-  left: 27%;
+  left: 32%;
   top: 86%;
   width: 16px;
   height: 16px;
@@ -740,9 +745,7 @@ html.is-links-visible .orbit-link--research {
   }
 
   .scene-tooltip {
-    top: -2px;
-    opacity: 0.95;
-    transform: translateX(-50%) translateY(0);
+    top: -30px;
   }
 
   .debris {
@@ -757,7 +760,7 @@ html.is-links-visible .orbit-link--research {
 
 @media (min-width: 700px) and (max-width: 1023.98px) {
   .scene-tooltip {
-    top: -22px;
+    top: -42px;
     width: min(460px, 86vw);
   }
 
@@ -831,6 +834,7 @@ html.is-links-visible .orbit-link--research {
   .scene-tooltip {
     width: min(320px, 84vw);
     font-size: 14px;
+    top: -52px;
   }
 }
 
@@ -852,6 +856,11 @@ html.is-links-visible .orbit-link--research {
 
   .footer-line--secondary {
     font-size: 11px;
+  }
+
+  .scene-tooltip {
+    top: -46px;
+    font-size: 13px;
   }
 }
 
