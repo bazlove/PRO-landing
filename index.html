@@ -29,8 +29,7 @@
       a.parentNode.insertBefore(k, a);
     })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-    // TODO: Replace with real Yandex Metrika counter ID.
-    window.YM_COUNTER_ID = 12345678;
+    window.YM_COUNTER_ID = 109083928;
 
     ym(window.YM_COUNTER_ID, "init", {
       clickmap: true,
@@ -39,12 +38,24 @@
       webvisor: true
     });
   </script>
+  <script>
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () {
+        (c[a].q = c[a].q || []).push(arguments);
+      };
+      t = l.createElement(r);
+      t.async = 1;
+      t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
+  </script>
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <noscript>
     <div>
-      <img src="https://mc.yandex.ru/watch/12345678" alt="" style="position:absolute;left:-9999px;">
+      <img src="https://mc.yandex.ru/watch/109083928" alt="" style="position:absolute;left:-9999px;">
     </div>
   </noscript>
 
@@ -57,19 +68,19 @@
       <div class="hero-main">
         <div class="orbit-scene-shell">
           <p class="scene-tooltip" id="scene-tooltip">
-            The site is under development. For now, you can reach me through the links.
+            The site is under development. For now you can reach me through the links.
           </p>
           <section class="orbit-scene">
             <div class="orbit orbit--tertiary" aria-hidden="true">
               <span class="orbit-tertiary-marker">
-                <img class="decor-icon decor-icon--marker" src="./assets/icons/RocketLaunch.svg" alt="" aria-hidden="true">
+                <img class="decor-icon decor-icon--marker" src="./assets/icons/rocket.svg" alt="" aria-hidden="true">
               </span>
             </div>
 
             <div class="orbit orbit--outer" aria-hidden="true">
               <div class="orbit-rotator orbit-rotator--ccw">
                 <span class="orbit-object orbit-object--globe">
-                  <img class="decor-icon decor-icon--globe" src="./assets/icons/Globe.svg" alt="" aria-hidden="true">
+                  <img class="decor-icon decor-icon--globe" src="./assets/icons/globe.svg" alt="" aria-hidden="true">
                 </span>
               </div>
             </div>
@@ -77,26 +88,26 @@
             <div class="orbit orbit--inner" aria-hidden="true">
               <div class="orbit-rotator orbit-rotator--cw orbit-rotator--sun">
                 <span class="orbit-object orbit-object--rocket">
-                  <img class="decor-icon decor-icon--sun" src="./assets/icons/Sun.svg" alt="" aria-hidden="true">
+                  <img class="decor-icon decor-icon--sun" src="./assets/icons/sun.svg" alt="" aria-hidden="true">
                 </span>
               </div>
             </div>
 
             <span class="avatar-hint" aria-hidden="true">
-              <img class="decor-icon decor-icon--hint" src="./assets/icons/NavigationArrow.svg" alt="" aria-hidden="true">
+              <img class="decor-icon decor-icon--hint" src="./assets/icons/navigation.svg" alt="" aria-hidden="true">
             </span>
 
             <span class="debris debris--sparkle" aria-hidden="true">
-              <img class="decor-icon decor-icon--sparkle" src="./assets/icons/Sparkle.svg" alt="" aria-hidden="true">
+              <img class="decor-icon decor-icon--sparkle" src="./assets/icons/sparkle.svg" alt="" aria-hidden="true">
             </span>
             <span class="debris debris--coffee" aria-hidden="true">
-              <img class="decor-icon decor-icon--coffee" src="./assets/icons/Coffee.svg" alt="" aria-hidden="true">
+              <img class="decor-icon decor-icon--coffee" src="./assets/icons/coffee.svg" alt="" aria-hidden="true">
             </span>
             <span class="debris debris--meteor" aria-hidden="true">
-              <img class="decor-icon decor-icon--meteor" src="./assets/icons/Meteor.svg" alt="" aria-hidden="true">
+              <img class="decor-icon decor-icon--meteor" src="./assets/icons/meteor.svg" alt="" aria-hidden="true">
             </span>
             <span class="debris debris--alien" aria-hidden="true">
-              <img class="decor-icon decor-icon--alien" src="./assets/icons/Alien.svg" alt="" aria-hidden="true">
+              <img class="decor-icon decor-icon--alien" src="./assets/icons/alien.svg" alt="" aria-hidden="true">
             </span>
 
             <div class="avatar-wrap"
@@ -111,6 +122,7 @@
 
             <a class="orbit-link orbit-link--research"
                href="#"
+			   target="_blank"
                aria-label="Open Research"
                data-goal="click_research"
                data-tooltip="Check out digital company research">
@@ -121,6 +133,7 @@
 
             <a class="orbit-link orbit-link--linkedin"
                href="#"
+			   target="_blank"
                aria-label="Open LinkedIn"
                data-goal="click_linkedin"
                data-tooltip="Follow me on LinkedIn">
@@ -131,6 +144,7 @@
 
             <a class="orbit-link orbit-link--cv"
                href="#"
+			   target="_blank"
                aria-label="Open CV"
                data-goal="click_cv"
                data-tooltip="Check out my profile and experience">
@@ -141,6 +155,7 @@
 
             <a class="orbit-link orbit-link--telegram"
                href="#"
+			   target="_blank"
                aria-label="Open Telegram"
                data-goal="click_telegram"
                data-tooltip="Get in touch on Telegram">
@@ -304,11 +319,20 @@
       goalLinks.forEach(function (link) {
         link.addEventListener("click", function () {
           var goalName = link.getAttribute("data-goal");
-          if (!goalName || typeof window.ym !== "function") {
+          if (!goalName) {
             return;
           }
           try {
-            window.ym(window.YM_COUNTER_ID, "reachGoal", goalName);
+            if (typeof window.ym === "function") {
+              window.ym(window.YM_COUNTER_ID, "reachGoal", goalName);
+            }
+          } catch (e) {
+            // Keep click behavior intact even if analytics fails.
+          }
+          try {
+            if (typeof window.clarity === "function") {
+              window.clarity("event", goalName);
+            }
           } catch (e) {
             // Keep click behavior intact even if analytics fails.
           }
