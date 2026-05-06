@@ -284,7 +284,9 @@
           }
           activeTooltipTarget = target;
           sceneTooltipEl.textContent = target.getAttribute("data-tooltip") || defaultTooltipText;
-          sceneTooltipEl.classList.add("scene-tooltip--active");
+          if (supportsHover) {
+            sceneTooltipEl.classList.add("scene-tooltip--active");
+          }
         });
 
         target.addEventListener("blur", function () {
@@ -297,7 +299,6 @@
               sceneTooltipEl.classList.remove("scene-tooltip--active");
             } else {
               sceneTooltipEl.textContent = defaultTooltipText;
-              sceneTooltipEl.classList.add("scene-tooltip--active");
             }
           }
         });
