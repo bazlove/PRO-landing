@@ -68,7 +68,7 @@
       <div class="hero-main">
         <div class="orbit-scene-shell">
           <p class="scene-tooltip" id="scene-tooltip">
-            The site is under development. For now you can reach me through the links.
+            Site in progress. Reach me through the links.
           </p>
           <section class="orbit-scene">
             <div class="orbit orbit--tertiary" aria-hidden="true">
@@ -113,7 +113,7 @@
             <div class="avatar-wrap"
                  tabindex="0"
                  aria-label="Contact hint"
-                 data-tooltip="The site is under development. For now, you can reach me through the links.">
+                 data-tooltip="Site in progress. Reach me through the links.">
               <div class="avatar-core avatar-core--fallback" data-avatar-core>
                 <span class="avatar-fallback" aria-hidden="true"></span>
                 <img class="avatar" src="./assets/avatar.jpg" alt="Portrait avatar" data-avatar-img>
@@ -132,7 +132,7 @@
             </a>
 
             <a class="orbit-link orbit-link--linkedin"
-               href="https://www.linkedin.com/in//"
+               href="https://www.linkedin.com/in/bazlov/"
 			   target="_blank"
                aria-label="Open LinkedIn"
                data-goal="click_linkedin"
@@ -143,7 +143,7 @@
             </a>
 
             <a class="orbit-link orbit-link--cv"
-               href="https://cv.com/en/"
+               href="https://cv.bazlove.com/en/"
 			   target="_blank"
                aria-label="Open CV"
                data-goal="click_cv"
@@ -154,7 +154,7 @@
             </a>
 
             <a class="orbit-link orbit-link--telegram"
-               href="https://t.me/"
+               href="https://t.me/bazlov"
 			   target="_blank"
                aria-label="Open Telegram"
                data-goal="click_telegram"
@@ -195,7 +195,7 @@
       var avatarImg = document.querySelector("[data-avatar-img]");
       var avatarCore = document.querySelector("[data-avatar-core]");
       var supportsHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-      var defaultTooltipText = "The site is under development. For now, you can reach me through the links.";
+      var defaultTooltipText = "Site in progress. Reach me through the links.";
       var activeTooltipTarget = null;
       var lastX = 50;
       var lastY = 50;
@@ -256,9 +256,6 @@
         if (sceneTooltipEl) {
           sceneTooltipEl.classList.remove("scene-tooltip--active");
         }
-      } else if (sceneTooltipEl) {
-        sceneTooltipEl.textContent = defaultTooltipText;
-        sceneTooltipEl.classList.add("scene-tooltip--active");
       }
 
       tooltipTargets.forEach(function (target) {
@@ -358,6 +355,9 @@
         root.classList.add("reduced-motion");
         window.setTimeout(function () {
           root.classList.add("is-ready", "is-links-visible", "is-decor-visible", "is-footer-visible");
+          if (!supportsHover) {
+            root.classList.add("is-tooltip-visible");
+          }
         }, 80);
         return;
       }
@@ -380,6 +380,9 @@
 
       window.setTimeout(function () {
         root.classList.add("is-footer-visible");
+        if (!supportsHover) {
+          root.classList.add("is-tooltip-visible");
+        }
       }, 2860);
     })();
   </script>
