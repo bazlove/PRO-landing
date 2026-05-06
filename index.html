@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Site in progress</title>
+  <meta name="description" content="Personal landing page is under development.">
+  <meta name="theme-color" content="#F7F8FA">
+  <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, noimageindex">
+  <meta name="yandex" content="noindex, nofollow, noarchive, noimageindex">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+
+  <script>
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () {
+        (m[i].a = m[i].a || []).push(arguments);
+      };
+      m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) {
+        if (document.scripts[j].src === r) {
+          return;
+        }
+      }
+      k = e.createElement(t);
+      a = e.getElementsByTagName(t)[0];
+      k.async = 1;
+      k.src = r;
+      a.parentNode.insertBefore(k, a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    // TODO: Replace with real Yandex Metrika counter ID.
+    window.YM_COUNTER_ID = 12345678;
+
+    ym(window.YM_COUNTER_ID, "init", {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true
+    });
+  </script>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <noscript>
+    <div>
+      <img src="https://mc.yandex.ru/watch/12345678" alt="" style="position:absolute;left:-9999px;">
+    </div>
+  </noscript>
+
+  <div class="page">
+    <div class="loader-layer" aria-hidden="true">
+      <div class="spinner"></div>
+    </div>
+
+    <main class="hero" aria-label="Coming soon placeholder">
+      <div class="hero-main">
+        <div class="orbit-scene-shell">
+          <p class="scene-tooltip" id="scene-tooltip">
+            The site is under development. For now, you can reach me through the links.
+          </p>
+          <section class="orbit-scene">
+            <div class="orbit orbit--tertiary" aria-hidden="true">
+              <span class="orbit-tertiary-marker">
+                <img class="decor-icon decor-icon--marker" src="./assets/icons/RocketLaunch.svg" alt="" aria-hidden="true">
+              </span>
+            </div>
+
+            <div class="orbit orbit--outer" aria-hidden="true">
+              <div class="orbit-rotator orbit-rotator--ccw">
+                <span class="orbit-object orbit-object--globe">
+                  <img class="decor-icon decor-icon--globe" src="./assets/icons/Globe.svg" alt="" aria-hidden="true">
+                </span>
+              </div>
+            </div>
+
+            <div class="orbit orbit--inner" aria-hidden="true">
+              <div class="orbit-rotator orbit-rotator--cw orbit-rotator--sun">
+                <span class="orbit-object orbit-object--rocket">
+                  <img class="decor-icon decor-icon--sun" src="./assets/icons/Sun.svg" alt="" aria-hidden="true">
+                </span>
+              </div>
+            </div>
+
+            <span class="avatar-hint" aria-hidden="true">
+              <img class="decor-icon decor-icon--hint" src="./assets/icons/NavigationArrow.svg" alt="" aria-hidden="true">
+            </span>
+
+            <span class="debris debris--sparkle" aria-hidden="true">
+              <img class="decor-icon decor-icon--sparkle" src="./assets/icons/Sparkle.svg" alt="" aria-hidden="true">
+            </span>
+            <span class="debris debris--coffee" aria-hidden="true">
+              <img class="decor-icon decor-icon--coffee" src="./assets/icons/Coffee.svg" alt="" aria-hidden="true">
+            </span>
+            <span class="debris debris--meteor" aria-hidden="true">
+              <img class="decor-icon decor-icon--meteor" src="./assets/icons/Meteor.svg" alt="" aria-hidden="true">
+            </span>
+            <span class="debris debris--alien" aria-hidden="true">
+              <img class="decor-icon decor-icon--alien" src="./assets/icons/Alien.svg" alt="" aria-hidden="true">
+            </span>
+
+            <div class="avatar-wrap"
+                 tabindex="0"
+                 aria-label="Contact hint"
+                 data-tooltip="The site is under development. For now, you can reach me through the links.">
+              <div class="avatar-core avatar-core--fallback" data-avatar-core>
+                <span class="avatar-fallback" aria-hidden="true"></span>
+                <img class="avatar" src="./assets/avatar.png" alt="Portrait avatar" data-avatar-img>
+              </div>
+            </div>
+
+            <a class="orbit-link orbit-link--research"
+               href="#"
+               aria-label="Open Research"
+               data-goal="click_research"
+               data-tooltip="Check out digital company research">
+              <span class="orbit-link__inner">
+                <img class="orbit-link__icon" src="./assets/icons/search.svg" alt="" aria-hidden="true">
+              </span>
+            </a>
+
+            <a class="orbit-link orbit-link--linkedin"
+               href="#"
+               aria-label="Open LinkedIn"
+               data-goal="click_linkedin"
+               data-tooltip="Follow me on LinkedIn">
+              <span class="orbit-link__inner">
+                <img class="orbit-link__icon" src="./assets/icons/linkedin.svg" alt="" aria-hidden="true">
+              </span>
+            </a>
+
+            <a class="orbit-link orbit-link--cv"
+               href="#"
+               aria-label="Open CV"
+               data-goal="click_cv"
+               data-tooltip="Check out my profile and experience">
+              <span class="orbit-link__inner">
+                <img class="orbit-link__icon" src="./assets/icons/profile.svg" alt="" aria-hidden="true">
+              </span>
+            </a>
+
+            <a class="orbit-link orbit-link--telegram"
+               href="#"
+               aria-label="Open Telegram"
+               data-goal="click_telegram"
+               data-tooltip="Get in touch on Telegram">
+              <span class="orbit-link__inner">
+                <img class="orbit-link__icon" src="./assets/icons/telegram.svg" alt="" aria-hidden="true">
+              </span>
+            </a>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p class="footer-line footer-line--primary" id="footer-telemetry">
+        Orbit telemetry · London --:-- · Belgrade --:-- · Moscow --:--
+      </p>
+      <p class="footer-line footer-line--secondary">
+        <span class="footer-coords">
+          X <span id="cursor-x">50.0</span> · Y <span id="cursor-y">50.0</span>
+        </span>
+        <span class="footer-year">&copy; <span id="current-year"></span></span>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var root = document.documentElement;
+      var yearEl = document.getElementById("current-year");
+      var cursorXEl = document.getElementById("cursor-x");
+      var cursorYEl = document.getElementById("cursor-y");
+      var telemetryEl = document.getElementById("footer-telemetry");
+      var sceneTooltipEl = document.getElementById("scene-tooltip");
+      var goalLinks = document.querySelectorAll("[data-goal]");
+      var tooltipTargets = document.querySelectorAll("[data-tooltip]");
+      var avatarImg = document.querySelector("[data-avatar-img]");
+      var avatarCore = document.querySelector("[data-avatar-core]");
+      var supportsHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+      var defaultTooltipText = "The site is under development. For now, you can reach me through the links.";
+      var activeTooltipTarget = null;
+      var lastX = 50;
+      var lastY = 50;
+
+      if (yearEl) {
+        yearEl.textContent = String(new Date().getFullYear());
+      }
+
+      function pad(num) {
+        return String(num).padStart(2, "0");
+      }
+
+      function formatTimeForZone(timeZone) {
+        var parts = new Intl.DateTimeFormat("en-GB", {
+          timeZone: timeZone,
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: false
+        }).formatToParts(new Date());
+        var hour = parts.find(function (p) { return p.type === "hour"; });
+        var minute = parts.find(function (p) { return p.type === "minute"; });
+        return pad(hour ? Number(hour.value) : 0) + ":" + pad(minute ? Number(minute.value) : 0);
+      }
+
+      function updateTelemetryLine() {
+        if (!telemetryEl) {
+          return;
+        }
+        var isCompact = window.matchMedia("(max-width: 520px)").matches;
+        var london = formatTimeForZone("Europe/London");
+        var belgrade = formatTimeForZone("Europe/Belgrade");
+        var moscow = formatTimeForZone("Europe/Moscow");
+
+        telemetryEl.textContent = isCompact
+          ? "Orbit telemetry · LON " + london + " · BEG " + belgrade + " · MSK " + moscow
+          : "Orbit telemetry · London " + london + " · Belgrade " + belgrade + " · Moscow " + moscow;
+      }
+
+      function updateCoords(x, y) {
+        if (!cursorXEl || !cursorYEl) {
+          return;
+        }
+        cursorXEl.textContent = x.toFixed(1);
+        cursorYEl.textContent = y.toFixed(1);
+      }
+
+      updateTelemetryLine();
+      updateCoords(lastX, lastY);
+      window.setInterval(updateTelemetryLine, 1000);
+      window.addEventListener("resize", updateTelemetryLine, { passive: true });
+
+      if (sceneTooltipEl) {
+        sceneTooltipEl.textContent = defaultTooltipText;
+      }
+
+      if (supportsHover) {
+        root.classList.add("has-hover-device");
+        if (sceneTooltipEl) {
+          sceneTooltipEl.classList.remove("scene-tooltip--active");
+        }
+      } else if (sceneTooltipEl) {
+        sceneTooltipEl.textContent = defaultTooltipText;
+        sceneTooltipEl.classList.add("scene-tooltip--active");
+      }
+
+      tooltipTargets.forEach(function (target) {
+        target.addEventListener("mouseenter", function () {
+          if (!sceneTooltipEl || !supportsHover) {
+            return;
+          }
+          activeTooltipTarget = target;
+          sceneTooltipEl.textContent = target.getAttribute("data-tooltip") || defaultTooltipText;
+          sceneTooltipEl.classList.add("scene-tooltip--active");
+        });
+
+        target.addEventListener("mouseleave", function () {
+          if (!sceneTooltipEl || !supportsHover) {
+            return;
+          }
+          if (activeTooltipTarget === target) {
+            activeTooltipTarget = null;
+            sceneTooltipEl.classList.remove("scene-tooltip--active");
+          }
+        });
+
+        target.addEventListener("focus", function () {
+          if (!sceneTooltipEl) {
+            return;
+          }
+          activeTooltipTarget = target;
+          sceneTooltipEl.textContent = target.getAttribute("data-tooltip") || defaultTooltipText;
+          sceneTooltipEl.classList.add("scene-tooltip--active");
+        });
+
+        target.addEventListener("blur", function () {
+          if (!sceneTooltipEl) {
+            return;
+          }
+          if (activeTooltipTarget === target) {
+            activeTooltipTarget = null;
+            if (supportsHover) {
+              sceneTooltipEl.classList.remove("scene-tooltip--active");
+            } else {
+              sceneTooltipEl.textContent = defaultTooltipText;
+              sceneTooltipEl.classList.add("scene-tooltip--active");
+            }
+          }
+        });
+      });
+
+      if (supportsHover) {
+        window.addEventListener("mousemove", function (event) {
+          var width = window.innerWidth || 1;
+          var height = window.innerHeight || 1;
+          lastX = Math.max(0, Math.min(100, (event.clientX / width) * 100));
+          lastY = Math.max(0, Math.min(100, (event.clientY / height) * 100));
+          updateCoords(lastX, lastY);
+        }, { passive: true });
+      }
+
+      goalLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+          var goalName = link.getAttribute("data-goal");
+          if (!goalName || typeof window.ym !== "function") {
+            return;
+          }
+          try {
+            window.ym(window.YM_COUNTER_ID, "reachGoal", goalName);
+          } catch (e) {
+            // Keep click behavior intact even if analytics fails.
+          }
+        });
+      });
+
+      if (avatarImg && avatarCore) {
+        var handleAvatarState = function () {
+          if (avatarImg.complete && avatarImg.naturalWidth > 0) {
+            avatarCore.classList.remove("avatar-core--fallback");
+            avatarCore.classList.add("avatar-core--loaded");
+          } else {
+            avatarCore.classList.add("avatar-core--fallback");
+            avatarCore.classList.remove("avatar-core--loaded");
+          }
+        };
+        avatarImg.addEventListener("load", handleAvatarState);
+        avatarImg.addEventListener("error", handleAvatarState);
+        handleAvatarState();
+      }
+
+      if (reduceMotion) {
+        root.classList.add("reduced-motion");
+        window.setTimeout(function () {
+          root.classList.add("is-ready", "is-links-visible", "is-decor-visible", "is-footer-visible");
+        }, 80);
+        return;
+      }
+
+      window.setTimeout(function () {
+        root.classList.add("is-loader-done");
+      }, 1200);
+
+      window.setTimeout(function () {
+        root.classList.add("is-ready");
+      }, 1450);
+
+      window.setTimeout(function () {
+        root.classList.add("is-links-visible");
+      }, 1750);
+
+      window.setTimeout(function () {
+        root.classList.add("is-decor-visible");
+      }, 2380);
+
+      window.setTimeout(function () {
+        root.classList.add("is-footer-visible");
+      }, 2860);
+    })();
+  </script>
+</body>
+</html>
