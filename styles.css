@@ -755,6 +755,47 @@ html.is-links-visible .orbit-link--research {
   }
 }
 
+@media (min-width: 700px) and (max-width: 1023.98px) {
+  .scene-tooltip {
+    top: -22px;
+    width: min(460px, 86vw);
+  }
+
+  .footer {
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
+  }
+
+  .debris {
+    opacity: 0.26;
+  }
+
+  .debris--coffee,
+  .debris--alien {
+    display: block;
+  }
+
+  .debris--coffee {
+    left: 86%;
+    top: 22%;
+    width: 12px;
+    height: 12px;
+  }
+
+  .debris--alien {
+    left: 87%;
+    top: 70%;
+    width: 13px;
+    height: 13px;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1023.98px) and (max-height: 760px) {
+  .debris--coffee,
+  .debris--alien {
+    display: none;
+  }
+}
+
 @media (max-width: 700px) {
   :root {
     --scene-scale: 0.56;
