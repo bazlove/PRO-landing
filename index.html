@@ -190,6 +190,7 @@
       var cursorYEl = document.getElementById("cursor-y");
       var telemetryEl = document.getElementById("footer-telemetry");
       var sceneTooltipEl = document.getElementById("scene-tooltip");
+      var orbitSceneEl = document.querySelector(".orbit-scene");
       var goalLinks = document.querySelectorAll("[data-goal]");
       var tooltipTargets = document.querySelectorAll("[data-tooltip]");
       var avatarImg = document.querySelector("[data-avatar-img]");
@@ -197,8 +198,38 @@
       var supportsHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
       var defaultTooltipText = "Site in progress. Reach me through the links.";
       var activeTooltipTarget = null;
+      var activeSceneHoverLink = null;
       var lastX = 50;
       var lastY = 50;
+      var linkedHoverClasses = ["is-research-hovered", "is-linkedin-hovered", "is-telegram-hovered", "is-cv-hovered"];
+
+      function clearSceneHoverClasses() {
+        if (!orbitSceneEl) {
+          return;
+        }
+        linkedHoverClasses.forEach(function (cls) {
+          orbitSceneEl.classList.remove(cls);
+        });
+      }
+
+      function getSceneHoverClass(link) {
+        if (!link) {
+          return "";
+        }
+        if (link.classList.contains("orbit-link--research")) {
+          return "is-research-hovered";
+        }
+        if (link.classList.contains("orbit-link--linkedin")) {
+          return "is-linkedin-hovered";
+        }
+        if (link.classList.contains("orbit-link--telegram")) {
+          return "is-telegram-hovered";
+        }
+        if (link.classList.contains("orbit-link--cv")) {
+          return "is-cv-hovered";
+        }
+        return "";
+      }
 
       if (yearEl) {
         yearEl.textContent = String(new Date().getFullYear());
@@ -315,6 +346,44 @@
       }
 
       goalLinks.forEach(function (link) {
+        link.addEventListener("mouseenter", function () {
+          if (!supportsHover) {
+            return;
+          }
+          var hoverClass = getSceneHoverClass(link);
+          clearSceneHoverClasses();
+          if (hoverClass && orbitSceneEl) {
+            orbitSceneEl.classList.add(hoverClass);
+          }
+          activeSceneHoverLink = link;
+        });
+
+        link.addEventListener("mouseleave", function () {
+          if (!supportsHover) {
+            return;
+          }
+          if (activeSceneHoverLink === link) {
+            activeSceneHoverLink = null;
+            clearSceneHoverClasses();
+          }
+        });
+
+        link.addEventListener("focus", function () {
+          var hoverClass = getSceneHoverClass(link);
+          clearSceneHoverClasses();
+          if (hoverClass && orbitSceneEl) {
+            orbitSceneEl.classList.add(hoverClass);
+          }
+          activeSceneHoverLink = link;
+        });
+
+        link.addEventListener("blur", function () {
+          if (activeSceneHoverLink === link) {
+            activeSceneHoverLink = null;
+            clearSceneHoverClasses();
+          }
+        });
+
         link.addEventListener("click", function () {
           var goalName = link.getAttribute("data-goal");
           if (!goalName) {
