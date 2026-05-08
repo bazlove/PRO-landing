@@ -271,6 +271,7 @@ body {
   display: block;
   object-fit: contain;
   filter: saturate(0.72) contrast(0.92);
+  transition: filter 200ms ease, opacity 200ms ease, transform 200ms ease;
 }
 
 .decor-icon {
@@ -307,13 +308,13 @@ html.is-decor-visible .decor-icon {
 
 .debris--coffee {
   left: 88%;
-  top: 15%;
+  top: 18%;
   width: 14px;
   height: 14px;
 }
 
 .debris--meteor {
-  left: 25%;
+  left: 27%;
   top: 86%;
   width: 16px;
   height: 16px;
@@ -321,7 +322,7 @@ html.is-decor-visible .decor-icon {
 
 .debris--alien {
   left: 89%;
-  top: 77%;
+  top: 74%;
   width: 15px;
   height: 15px;
 }
@@ -340,6 +341,38 @@ html.is-decor-visible .decor-icon {
 
 .debris--alien:hover {
   transform: translate(-50%, -50%) translateY(-2px) rotate(-5deg);
+}
+
+.orbit-scene.is-research-hovered .debris--sparkle {
+  opacity: 0.72;
+}
+
+.orbit-scene.is-research-hovered .decor-icon--sparkle {
+  filter: invert(48%) sepia(58%) saturate(1801%) hue-rotate(230deg) brightness(101%) contrast(93%);
+}
+
+.orbit-scene.is-linkedin-hovered .debris--coffee {
+  opacity: 0.72;
+}
+
+.orbit-scene.is-linkedin-hovered .decor-icon--coffee {
+  filter: invert(34%) sepia(77%) saturate(2910%) hue-rotate(219deg) brightness(95%) contrast(93%);
+}
+
+.orbit-scene.is-telegram-hovered .debris--meteor {
+  opacity: 0.74;
+}
+
+.orbit-scene.is-telegram-hovered .decor-icon--meteor {
+  filter: invert(55%) sepia(96%) saturate(1998%) hue-rotate(165deg) brightness(96%) contrast(91%);
+}
+
+.orbit-scene.is-cv-hovered .debris--alien {
+  opacity: 0.72;
+}
+
+.orbit-scene.is-cv-hovered .decor-icon--alien {
+  filter: invert(34%) sepia(14%) saturate(807%) hue-rotate(172deg) brightness(94%) contrast(88%);
 }
 
 .loader-layer {
