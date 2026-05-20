@@ -1,7 +1,6 @@
 ---
 import type { CompanyPublic } from "../../types/digital";
 import {
-  BADGE_REMOTE,
   DIGITAL_BADGE_MAX_VISIBLE_MOBILE,
   formatCompanySize,
   formatRatingValueForUi,
@@ -51,10 +50,24 @@ function formatHiringFreshnessShort(company: CompanyPublic): {
   };
 }
 
-function isWorkFormatShownOnPhone(workFormat: CompanyPublic["workFormat"], badges: string[]): boolean {
-  if (workFormat === "Не указано") return false;
-  if (workFormat === "Удалёнка" && badges.includes(BADGE_REMOTE)) return false;
-  return true;
+function isMeaningfulDisplayValue(value: string | null | undefined): value is string {
+  if (!value) return false;
+  const normalized = value.trim();
+  return normalized !== "" && normalized !== "-" && normalized !== "—" && normalized !== "Не указано";
+}
+
+function formatMobileWorkMetaLine(company: CompanyPublic): string {
+  const parts: string[] = [];
+
+  if (isMeaningfulDisplayValue(company.hiringGeo)) {
+    parts.push(`География: ${company.hiringGeo}`);
+  }
+
+  if (isMeaningfulDisplayValue(company.workFormat)) {
+    parts.push(`Формат: ${company.workFormat}`);
+  }
+
+  return parts.join(" · ");
 }
 
 function formatProfileLine(company: CompanyPublic): string {
@@ -75,7 +88,7 @@ function formatProfileLine(company: CompanyPublic): string {
       const hiring = getHiringFreshnessDisplay(company.hhVacanciesCheckedAt);
       const freshnessShort = formatHiringFreshnessShort(company);
       const tags = getCompanyBadges(company);
-      const showWorkFormatOnPhone = isWorkFormatShownOnPhone(company.workFormat, tags);
+      const mobileWorkMeta = formatMobileWorkMetaLine(company);
       const initiallyHidden = isCatalogItemInitiallyHidden(index, mobileInitialVisible);
 
       return (
@@ -111,14 +124,7 @@ function formatProfileLine(company: CompanyPublic): string {
                 )}
               </p>
               <p class="digital-mobile-card__fact">{formatRatingsShort(company)}</p>
-              <p class="digital-mobile-card__fact">
-                География найма: {company.hiringGeo}
-              </p>
-              {showWorkFormatOnPhone && (
-                <p class="digital-mobile-card__fact digital-mobile-card__fact--secondary">
-                  Формат: {company.workFormat}
-                </p>
-              )}
+              {mobileWorkMeta && <p class="digital-mobile-card__fact">{mobileWorkMeta}</p>}
             </div>
           </div>
 
