@@ -513,9 +513,52 @@ html {
   color: var(--text-muted);
 }
 
+.digital-catalog-filters__presets-row {
+  min-width: 0;
+}
+
 .digital-catalog-filters__presets .digital-presets {
   max-width: 100%;
   gap: 8px 10px;
+}
+
+.digital-catalog-filters__page-size-label--mobile {
+  display: none;
+}
+
+.digital-catalog-filters__presets-more-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.digital-catalog-filters__presets-more-toggle:hover,
+.digital-catalog-filters__presets-more-toggle:focus-visible {
+  border-color: rgba(92, 107, 122, 0.45);
+  color: var(--text-primary);
+}
+
+.digital-catalog-filters__presets-more-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.digital-catalog-filters__presets--secondary[hidden] {
+  display: none !important;
 }
 
 .digital-catalog-filters__toolbar {
@@ -779,6 +822,141 @@ html {
 
 .digital-catalog-empty[hidden] {
   display: none !important;
+}
+
+@media (min-width: 641px) {
+  .digital-catalog-filters__presets-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+  }
+
+  .digital-catalog-filters__presets--primary,
+  .digital-catalog-filters__presets--secondary {
+    display: contents;
+  }
+
+  .digital-catalog-filters__presets--secondary[hidden] {
+    display: contents !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .digital-catalog-filters__panel {
+    padding: 14px 14px 16px;
+  }
+
+  .digital-catalog-filters__row--search {
+    margin-bottom: 12px;
+    gap: 6px;
+  }
+
+  .digital-catalog-filters__heading {
+    margin-bottom: 8px;
+  }
+
+  .digital-catalog-filters__actions {
+    width: 100%;
+    justify-content: flex-end;
+    align-self: auto;
+    margin-top: -2px;
+  }
+
+  .digital-catalog-filters__clear {
+    min-height: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 400;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(138, 151, 166, 0.45);
+  }
+
+  .digital-catalog-filters__clear:hover,
+  .digital-catalog-filters__clear:focus-visible,
+  .digital-catalog-filters__clear.is-active {
+    background: transparent;
+    border-color: transparent;
+    color: var(--text-primary);
+    text-decoration-color: transparent;
+  }
+
+  .digital-catalog-filters__presets-title {
+    margin-bottom: 7px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+
+  .digital-catalog-filters__presets-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .digital-catalog-filters__presets--primary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 8px;
+  }
+
+  .digital-catalog-filters__presets--secondary:not([hidden]) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 8px;
+  }
+
+  .digital-catalog-filters__presets .digital-presets,
+  .digital-catalog-filters__presets--primary,
+  .digital-catalog-filters__presets--secondary {
+    gap: 6px 8px;
+  }
+
+  .digital-catalog-filters__presets .preset-chip,
+  .digital-catalog-filters__presets--primary .preset-chip,
+  .digital-catalog-filters__presets--secondary .preset-chip {
+    min-height: 32px;
+    padding: 4px 10px;
+    font-size: 13px;
+    line-height: 1.2;
+  }
+
+  .digital-catalog-filters__presets-more-toggle {
+    display: inline-flex;
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    padding: 0;
+  }
+
+  .digital-catalog-filters__toolbar {
+    margin-top: 8px;
+    gap: 8px;
+  }
+
+  .digital-catalog-filters__page-size {
+    gap: 6px;
+    font-size: 13px;
+  }
+
+  .digital-catalog-filters__page-size-label--desktop {
+    display: none;
+  }
+
+  .digital-catalog-filters__page-size-label--mobile {
+    display: inline;
+  }
+
+  .digital-catalog-filters__page-size-select {
+    min-height: 34px;
+    padding: 5px 28px 5px 10px;
+    border-radius: 10px;
+    font-size: 13px;
+  }
 }
 
 @media (min-width: 720px) {
