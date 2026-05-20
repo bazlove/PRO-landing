@@ -1,5 +1,6 @@
 ---
 import type { EmployerRankingBadge } from "../../types/digital";
+import { formatEmployerRankingBadgeLabel } from "../../lib/digital/display";
 import hhWhiteLogo from "../../assets/digital/min-hh-white.png";
 import habrCareerIcon from "../../assets/digital/icons/habr-career.svg";
 
@@ -22,6 +23,7 @@ const sourceConfig = {
 
 const config = sourceConfig[badge.source];
 const descriptionText = badge.year ? `${badge.description} · ${badge.year}` : badge.description;
+const displayLabel = formatEmployerRankingBadgeLabel(badge.source, badge.label);
 ---
 
 <div class:list={["digital-employer-ranking-badge", config.modifierClass]}>
@@ -29,7 +31,7 @@ const descriptionText = badge.year ? `${badge.description} · ${badge.year}` : b
     <img src={config.iconSrc} alt="" width="15" height="15" loading="lazy" decoding="async" />
   </span>
   <span class="digital-employer-ranking-badge__body">
-    <span class="digital-employer-ranking-badge__label">{badge.label}</span>
+    <span class="digital-employer-ranking-badge__label">{displayLabel}</span>
     <span class="digital-employer-ranking-badge__description">{descriptionText}</span>
   </span>
 </div>
