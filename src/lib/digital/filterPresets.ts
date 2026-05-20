@@ -15,3 +15,19 @@ export const DIGITAL_FILTER_PRESETS: DigitalFilterPreset[] = [
   { id: "moscow", label: "Москва" },
   { id: "spb", label: "СПб" },
 ];
+
+/** Primary quick filters shown by default on mobile (order preserved). */
+export const DIGITAL_PRIMARY_PRESET_IDS = new Set([
+  "active-hiring",
+  "remote",
+  "high-rating",
+  "awards-2025",
+]);
+
+export const DIGITAL_FILTER_PRESETS_PRIMARY = DIGITAL_FILTER_PRESETS.filter((preset) =>
+  DIGITAL_PRIMARY_PRESET_IDS.has(preset.id),
+);
+
+export const DIGITAL_FILTER_PRESETS_SECONDARY = DIGITAL_FILTER_PRESETS.filter(
+  (preset) => !DIGITAL_PRIMARY_PRESET_IDS.has(preset.id),
+);
