@@ -62,12 +62,13 @@ const selectPlaceholder = "Все";
             name="q"
             placeholder="Компания, город или ниша"
             autocomplete="off"
+            enterkeyhint="search"
             data-digital-filter-search
             aria-labelledby="digital-catalog-heading"
           />
         </div>
       </div>
-      <div class="digital-catalog-filters__actions">
+      <div class="digital-catalog-filters__actions digital-catalog-filters__actions--search">
         <button type="button" class="digital-catalog-filters__clear" data-digital-filter-clear hidden>
           Сбросить
         </button>
@@ -142,24 +143,36 @@ const selectPlaceholder = "Все";
         <span data-digital-filter-advanced-toggle-label>Показать расширенные фильтры ↓</span>
       </button>
 
-      <label class="digital-catalog-filters__page-size" for="digital-page-size">
-        <span class="digital-catalog-filters__page-size-label digital-catalog-filters__page-size-label--desktop">Показывать по</span>
-        <span class="digital-catalog-filters__page-size-label digital-catalog-filters__page-size-label--mobile">Показывать:</span>
-        <select
-          id="digital-page-size"
-          class="digital-catalog-filters__page-size-select"
-          data-digital-page-size
-          aria-label="Количество компаний на странице"
-        >
-          {
-            DIGITAL_PAGE_SIZE_OPTIONS.map((size) => (
-              <option value={size} selected={size === DIGITAL_DEFAULT_PAGE_SIZE}>
-                {size}
-              </option>
-            ))
-          }
-        </select>
-      </label>
+      <div class="digital-catalog-filters__toolbar-utility">
+        <label class="digital-catalog-filters__page-size" for="digital-page-size">
+          <span class="digital-catalog-filters__page-size-label digital-catalog-filters__page-size-label--desktop">Показывать по</span>
+          <span class="digital-catalog-filters__page-size-label digital-catalog-filters__page-size-label--mobile">Показывать:</span>
+          <select
+            id="digital-page-size"
+            class="digital-catalog-filters__page-size-select"
+            data-digital-page-size
+            aria-label="Количество компаний на странице"
+          >
+            {
+              DIGITAL_PAGE_SIZE_OPTIONS.map((size) => (
+                <option value={size} selected={size === DIGITAL_DEFAULT_PAGE_SIZE}>
+                  {size}
+                </option>
+              ))
+            }
+          </select>
+        </label>
+        <div class="digital-catalog-filters__actions digital-catalog-filters__actions--utility">
+          <button
+            type="button"
+            class="digital-catalog-filters__clear digital-catalog-filters__clear--utility"
+            data-digital-filter-clear
+            data-digital-filter-clear-utility
+          >
+            Сбросить
+          </button>
+        </div>
+      </div>
     </div>
 
     <div
