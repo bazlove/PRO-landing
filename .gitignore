@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+
+# Astro / build output
+.astro/
+dist/
+
+# Environment / local config
+.env
+.env.*
+!.env.example
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# TypeScript
+*.tsbuildinfo
+
+# /digital private source data
+master.xlsx
+*.xlsx
+*.xls
+*.xlsm
+*.csv
+/digital-master*.xlsx
+/private-data/
+/tmp-data/
+/data-private/
+
+# Spreadsheet temp / lock files
+~$*.xlsx
+~$*.xls
+*.xlsm
+
+# Keep public/generated JSON in git.
+!src/data/digital/companies.json
