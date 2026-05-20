@@ -32,8 +32,11 @@ const companies = getDigitalCompanies();
 const stats = getDigitalPageStats(companies);
 const filterOptions = getDigitalFilterOptions(companies);
 
-const heroLead =
-  "Обновляемая база IT и digital компаний России для поиска работодателей: агентства, веб-студии, performance и SEO-команды, продуктовые компании, интеграторы и разработчики. Фильтры помогают найти организации с активным наймом, удалёнкой или гибридом, рейтингами и карьерными страницами. Это не база вакансий, не официальный рейтинг и не каталог подрядчиков.";
+const heroLeadIntro =
+  "Обновляемая база IT и digital работодателей России: агентства, веб-студии, performance и SEO-команды, интеграторы и разработчики.";
+
+const heroLeadMore =
+  "Фильтры помогают найти компании с активным наймом, удалёнкой, рейтингами и карьерными страницами. Это не база вакансий и не официальный рейтинг.";
 
 const pageAnalyticsStats = JSON.stringify({
   companiesCount: stats.totalCompanies,
@@ -50,7 +53,12 @@ const pageAnalyticsStats = JSON.stringify({
   webPageJsonLd={webPageJsonLd}
 >
   <main id="digital-top" data-digital-page-root data-digital-page-stats={pageAnalyticsStats}>
-    <DigitalFirstScreen h1={DIGITAL_PAGE_H1} lead={heroLead} stats={stats} />
+    <DigitalFirstScreen
+      h1={DIGITAL_PAGE_H1}
+      leadIntro={heroLeadIntro}
+      leadMore={heroLeadMore}
+      stats={stats}
+    />
 
     <section
       id="digital-catalog"
