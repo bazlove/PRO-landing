@@ -286,6 +286,21 @@ export function getDrawerHiringFreshnessDisplay(
   };
 }
 
+/** Display-only label for employer ranking trust badges in the drawer. */
+export function formatEmployerRankingBadgeLabel(
+  source: EmployerRankingBadge["source"],
+  label: string,
+): string {
+  const trimmed = label.trim();
+
+  if (source === "habr") {
+    const match = trimmed.match(/^средняя\s+оценка\s+#?(\d+)$/i);
+    if (match) return `#${match[1]} по средней оценке`;
+  }
+
+  return trimmed;
+}
+
 /** Split awards/rankings string into list items for drawer. */
 export function splitAwards(value: string | null | undefined): string[] {
   if (!value) return [];
