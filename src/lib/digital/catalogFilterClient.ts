@@ -339,6 +339,7 @@ export function initDigitalCatalogFilters(): void {
     });
 
     syncUrl();
+    syncPresetsSecondaryVisibility();
   }
 
   function resetVisibleCounts(): void {
@@ -428,8 +429,11 @@ export function initDigitalCatalogFilters(): void {
   });
 
   presetsMoreToggle?.addEventListener("click", () => {
-    const expanded = presetsSecondary ? !presetsSecondary.hidden : false;
-    setPresetsMoreExpanded(!expanded);
+    const isExpanded = presetsSecondary ? !presetsSecondary.hidden : false;
+    if (isExpanded && hasActiveSecondaryPreset()) {
+      return;
+    }
+    setPresetsMoreExpanded(!isExpanded);
   });
 
   searchInput?.addEventListener("input", () => {
