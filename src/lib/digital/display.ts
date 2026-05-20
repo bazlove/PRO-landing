@@ -5,6 +5,13 @@ import { getTagColorClass } from "./tagColors";
 /** Mobile cards: max visible signal badges before `+N`. */
 export const DIGITAL_BADGE_MAX_VISIBLE_MOBILE = 3;
 
+/** Mobile catalog card: max status chips on one row (compact phone layout). */
+export const MOBILE_CARD_SIGNAL_MAX = 3;
+
+/** Short labels for mobile card scanning (drawer keeps full copy). */
+export const MOBILE_CARD_SIGNAL_HR = "HR 4.5+";
+export const MOBILE_CARD_SIGNAL_AWARDS = "Награды";
+
 /** Desktop table: fewer badges to reduce row noise. */
 export const DIGITAL_BADGE_MAX_VISIBLE_TABLE = 2;
 
@@ -40,6 +47,51 @@ export function getCompanyBadges(company: CompanyPublic): string[] {
   }
 
   return badges;
+}
+
+/** Priority-ordered status chips for the mobile catalog card (one row). */
+export function getMobileCardStatusSignals(company: CompanyPublic): DrawerSummaryChip[] {
+  const signals: DrawerSummaryChip[] = [];
+
+  const hiringLabel = company.hasActiveHiring ? BADGE_ACTIVE_HIRING : company.hiringStatus;
+  signals.push({
+    label: hiringLabel,
+    variantClass: company.hasActiveHiring
+      ? getTagColorClass(BADGE_ACTIVE_HIRING)
+      : getTagColorClass(hiringLabel),
+  });
+
+  if (company.workFormat !== "Не указано") {
+    signals.push({
+      label: company.workFormat,
+      variantClass:
+        getTagColorClass(company.workFormat) ||
+        (company.hasRemote ? getTagColorClass(BADGE_REMOTE) : ""),
+    });
+  }
+
+  if (company.hasHighHrRating) {
+    signals.push({
+      label: MOBILE_CARD_SIGNAL_HR,
+      variantClass: getBadgeVariantClass(BADGE_HIGH_RATING),
+    });
+  }
+
+  if (company.hasAwards2025) {
+    signals.push({
+      label: MOBILE_CARD_SIGNAL_AWARDS,
+      variantClass: getBadgeVariantClass(BADGE_AWARDS),
+    });
+  }
+
+  if (company.international === "Да" || company.international === "Частично") {
+    signals.push({
+      label: BADGE_INTERNATIONAL,
+      variantClass: getBadgeVariantClass(BADGE_INTERNATIONAL),
+    });
+  }
+
+  return signals;
 }
 
 /** Human-readable vacancy count line for table and mobile cards. */
