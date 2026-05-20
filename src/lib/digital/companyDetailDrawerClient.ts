@@ -25,6 +25,41 @@ function isVisibleFocusable(el: HTMLElement): boolean {
   return !el.hasAttribute("disabled") && el.getClientRects().length > 0;
 }
 
+function initAwardsToggle(root: HTMLElement): void {
+  const toggle = root.querySelector<HTMLButtonElement>("[data-company-detail-awards-toggle]");
+  const extraItems = Array.from(root.querySelectorAll<HTMLElement>("[data-award-extra='true']"));
+
+  if (!toggle || extraItems.length === 0) return;
+
+  const awardsToggle = toggle;
+  const collapsedLabel =
+    awardsToggle.dataset.awardsCollapsedLabel || `Показать ещё ${extraItems.length}`;
+  const expandedLabel = awardsToggle.dataset.awardsExpandedLabel || "Скрыть";
+  const shouldCollapseAwards = window.matchMedia("(max-width: 640px)").matches;
+
+  function setExpanded(expanded: boolean): void {
+    extraItems.forEach((item) => {
+      item.hidden = !expanded;
+    });
+    awardsToggle.setAttribute("aria-expanded", String(expanded));
+    awardsToggle.textContent = expanded ? expandedLabel : collapsedLabel;
+  }
+
+  if (!shouldCollapseAwards) {
+    awardsToggle.hidden = true;
+    extraItems.forEach((item) => {
+      item.hidden = false;
+    });
+    return;
+  }
+
+  setExpanded(false);
+
+  awardsToggle.addEventListener("click", () => {
+    setExpanded(awardsToggle.getAttribute("aria-expanded") !== "true");
+  });
+}
+
 function queryDrawerElements(): DrawerElements | null {
   const drawer = document.querySelector<HTMLElement>("[data-company-detail-drawer]");
   const templatesRoot = document.querySelector<HTMLElement>("[data-company-detail-templates]");
@@ -139,6 +174,7 @@ export function initDigitalCompanyDetailDrawer(): void {
 
     const fragment = template.content.cloneNode(true);
     content.replaceChildren(fragment);
+    initAwardsToggle(content);
 
     const titleEl = content.querySelector<HTMLElement>("[data-company-detail-title]");
     if (titleEl?.id) {
