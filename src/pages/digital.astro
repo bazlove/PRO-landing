@@ -1,0 +1,106 @@
+---
+import DigitalSeoLayout from "../layouts/DigitalSeoLayout.astro";
+import DigitalFirstScreen from "../components/digital/DigitalFirstScreen.astro";
+import DigitalCompanyTable from "../components/digital/DigitalCompanyTable.astro";
+import DigitalCompanyMobileCards from "../components/digital/DigitalCompanyMobileCards.astro";
+import DigitalCatalogFilters from "../components/digital/DigitalCatalogFilters.astro";
+import DigitalCatalogFiltersScript from "../components/digital/DigitalCatalogFiltersScript.astro";
+import DigitalCompanyDrawer from "../components/digital/DigitalCompanyDrawer.astro";
+import DigitalCompanyDetailsTemplates from "../components/digital/DigitalCompanyDetailsTemplates.astro";
+import DigitalCompanyDetailsScript from "../components/digital/DigitalCompanyDetailsScript.astro";
+import DigitalMethodology from "../components/digital/DigitalMethodology.astro";
+import DigitalFAQ from "../components/digital/DigitalFAQ.astro";
+import DigitalFooter from "../components/digital/DigitalFooter.astro";
+import DigitalPageAnalyticsScript from "../components/digital/DigitalPageAnalyticsScript.astro";
+import DigitalBackToFilters from "../components/digital/DigitalBackToFilters.astro";
+import { getDigitalCompanies } from "../lib/digital/companies";
+import { getDigitalFilterOptions } from "../lib/digital/filterOptions";
+import {
+  DIGITAL_PAGE_DESCRIPTION,
+  DIGITAL_PAGE_H1,
+  DIGITAL_PAGE_TITLE,
+  buildDigitalPageCanonicalUrl,
+  buildDigitalWebPageJsonLd,
+} from "../lib/digital/pageSeo";
+import { getDigitalPageStats } from "../lib/digital/stats";
+import "../styles/digital-page.css";
+
+const canonicalUrl = buildDigitalPageCanonicalUrl(Astro.site);
+const webPageJsonLd = buildDigitalWebPageJsonLd(canonicalUrl);
+
+const companies = getDigitalCompanies();
+const stats = getDigitalPageStats(companies);
+const filterOptions = getDigitalFilterOptions(companies);
+
+const heroLead =
+  "Обновляемая база IT и digital компаний России для поиска работодателей: агентства, веб-студии, performance и SEO-команды, продуктовые компании, интеграторы и разработчики. Фильтры помогают найти работодателей с активным наймом, удалёнкой или гибридом, рейтингами и карьерными страницами. Это не база вакансий, не официальный рейтинг и не каталог подрядчиков.";
+
+const pageAnalyticsStats = JSON.stringify({
+  companiesCount: stats.totalCompanies,
+  activeHiringCount: stats.activeHiringCompanies,
+  remoteCount: stats.remoteHybridDistributedCompanies,
+  highHrRatingCount: stats.highHrRatingCompanies,
+});
+---
+
+<DigitalSeoLayout
+  title={DIGITAL_PAGE_TITLE}
+  description={DIGITAL_PAGE_DESCRIPTION}
+  canonicalUrl={canonicalUrl}
+  webPageJsonLd={webPageJsonLd}
+>
+  <main id="digital-top" data-digital-page-root data-digital-page-stats={pageAnalyticsStats}>
+    <DigitalFirstScreen h1={DIGITAL_PAGE_H1} lead={heroLead} stats={stats} />
+
+    <section
+      id="digital-catalog"
+      class="digital-section digital-section--catalog"
+      aria-labelledby="digital-catalog-heading"
+    >
+      <div class="digital-container">
+        <div class="digital-catalog" data-digital-catalog-root>
+          <DigitalCatalogFilters options={filterOptions} />
+          <DigitalCompanyTable companies={companies} />
+          <DigitalCompanyMobileCards companies={companies} />
+          <DigitalCatalogFiltersScript />
+          <DigitalCompanyDetailsTemplates companies={companies} />
+        </div>
+
+        <DigitalCompanyDrawer />
+        <DigitalCompanyDetailsScript />
+
+        <noscript>
+          <style is:inline>
+            .digital-table tbody tr.digital-catalog-item--hidden {
+              display: table-row !important;
+            }
+            .digital-mobile-cards .digital-mobile-card.digital-catalog-item--hidden {
+              display: block !important;
+            }
+            .digital-catalog-load-more {
+              display: none !important;
+            }
+            .digital-catalog-filters__advanced-toggle {
+              display: none !important;
+            }
+            .digital-catalog-filters__advanced {
+              display: block !important;
+            }
+            .digital-company-detail-trigger,
+            .digital-company-detail-drawer,
+            .digital-company-detail-templates {
+              display: none !important;
+            }
+          </style>
+        </noscript>
+      </div>
+    </section>
+
+    <DigitalBackToFilters />
+
+    <DigitalMethodology />
+    <DigitalFAQ />
+    <DigitalFooter stats={stats} />
+    <DigitalPageAnalyticsScript />
+  </main>
+</DigitalSeoLayout>
