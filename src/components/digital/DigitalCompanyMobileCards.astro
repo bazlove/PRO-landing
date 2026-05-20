@@ -7,6 +7,8 @@ import {
   formatVacanciesRangeCopy,
   getCompanyBadges,
   getHiringFreshnessDisplay,
+  getMobileCardStatusSignals,
+  MOBILE_CARD_SIGNAL_MAX,
 } from "../../lib/digital/display";
 import DigitalCompanyBadges from "./DigitalCompanyBadges.astro";
 import DigitalCompanyName from "./DigitalCompanyName.astro";
@@ -88,6 +90,16 @@ function formatProfileLine(company: CompanyPublic): string {
       const hiring = getHiringFreshnessDisplay(company.hhVacanciesCheckedAt);
       const freshnessShort = formatHiringFreshnessShort(company);
       const tags = getCompanyBadges(company);
+      const statusSignals = getMobileCardStatusSignals(company);
+      const visibleStatusSignals = statusSignals.slice(0, MOBILE_CARD_SIGNAL_MAX);
+      const hiddenStatusCount = statusSignals.length - visibleStatusSignals.length;
+      const hiddenStatusSummary =
+        hiddenStatusCount > 0
+          ? `Ещё ${hiddenStatusCount}: ${statusSignals
+              .slice(MOBILE_CARD_SIGNAL_MAX)
+              .map((signal) => signal.label)
+              .join(", ")}`
+          : "";
       const mobileWorkMeta = formatMobileWorkMetaLine(company);
       const initiallyHidden = isCatalogItemInitiallyHidden(index, mobileInitialVisible);
 
@@ -105,12 +117,30 @@ function formatProfileLine(company: CompanyPublic): string {
           <p class="digital-mobile-card__profile meta">{formatProfileLine(company)}</p>
 
           <div class="digital-mobile-card__compact-phone">
-            {tags.length > 0 && (
-              <DigitalCompanyBadges
-                company={company}
-                maxVisible={DIGITAL_BADGE_MAX_VISIBLE_MOBILE}
-              />
-            )}
+            {
+              statusSignals.length > 0 && (
+                <div class="digital-mobile-card__status-row digital-badges" aria-label="Статус">
+                  {
+                    visibleStatusSignals.map((signal) => (
+                      <span class:list={["digital-badge", signal.variantClass]}>
+                        {signal.label}
+                      </span>
+                    ))
+                  }
+                  {
+                    hiddenStatusCount > 0 && (
+                      <span
+                        class="digital-badge digital-badge--more"
+                        aria-label={hiddenStatusSummary}
+                        title={hiddenStatusSummary}
+                      >
+                        +{hiddenStatusCount}
+                      </span>
+                    )
+                  }
+                </div>
+              )
+            }
             <div class="digital-mobile-card__facts">
               <p class="digital-mobile-card__fact digital-mobile-card__fact--strong">
                 {formatVacanciesRangeCopy(company.vacanciesRange)} ·{" "}
