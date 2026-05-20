@@ -217,11 +217,35 @@ const showActions = hasCareerUrl || sourceLinks.length > 0;
         <h3 id={`${company.id}-awards`} class="digital-company-detail__heading">
           Награды / внешние рейтинги
         </h3>
-        <ul class="digital-company-detail__awards-list">
-          {awardItems.map((item) => (
-            <li>{item}</li>
-          ))}
+        <ul class="digital-company-detail__awards-list" data-company-detail-awards-list>
+          {
+            awardItems.map((item, index) => (
+              <li
+                class:list={[
+                  "digital-company-detail__awards-item",
+                  index >= 3 && "digital-company-detail__awards-item--extra",
+                ]}
+                data-award-extra={index >= 3 ? "true" : undefined}
+              >
+                {item}
+              </li>
+            ))
+          }
         </ul>
+        {
+          awardItems.length > 3 && (
+            <button
+              type="button"
+              class="digital-company-detail__awards-toggle"
+              data-company-detail-awards-toggle
+              data-awards-collapsed-label={`Показать ещё ${awardItems.length - 3}`}
+              data-awards-expanded-label="Скрыть"
+              aria-expanded="false"
+            >
+              {`Показать ещё ${awardItems.length - 3}`}
+            </button>
+          )
+        }
       </section>
     )
   }
