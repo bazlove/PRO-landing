@@ -1236,6 +1236,33 @@ html {
   color: var(--text-primary);
 }
 
+.digital-mobile-card__compact-phone {
+  display: none;
+}
+
+.digital-mobile-card__facts {
+  display: grid;
+  gap: 4px;
+}
+
+.digital-mobile-card__fact {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.42;
+  word-break: break-word;
+}
+
+.digital-mobile-card__fact--strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.digital-mobile-card__fact--secondary {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
 .digital-back-to-filters {
   position: fixed;
   right: 16px;
@@ -1286,6 +1313,52 @@ html {
 @media (max-width: 640px) {
   .digital-back-to-filters {
     bottom: 72px;
+  }
+
+  .digital-mobile-card {
+    padding: 15px 14px;
+  }
+
+  .digital-mobile-card__title {
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 1.28;
+  }
+
+  .digital-mobile-card__profile {
+    font-size: 14px;
+    line-height: 1.42;
+  }
+
+  .digital-mobile-card__compact-phone {
+    display: grid;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .digital-mobile-card__compact-phone .digital-badges {
+    margin-top: 0;
+    gap: 5px;
+  }
+
+  .digital-mobile-card__compact-phone .digital-badge {
+    min-height: 24px;
+    padding: 3px 8px;
+    font-size: 12px;
+  }
+
+  .digital-mobile-card__details {
+    display: none;
+  }
+
+  .digital-company-detail-trigger--mobile {
+    width: 100%;
+    justify-content: center;
+    min-height: 40px;
+    margin-top: 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
   }
 }
 
