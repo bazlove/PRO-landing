@@ -1,6 +1,7 @@
 ---
 import type { CompanyPublic } from "../../types/digital";
 import {
+  BADGE_REMOTE,
   DIGITAL_BADGE_MAX_VISIBLE_MOBILE,
   formatCompanySize,
   formatRatingValueForUi,
@@ -29,6 +30,33 @@ function formatRatings(company: CompanyPublic) {
   return `HeadHunter ${formatRatingValueForUi(company.hhRatingDisplay)} · Habr Career ${formatRatingValueForUi(company.habrRatingDisplay)}`;
 }
 
+function formatRatingsShort(company: CompanyPublic) {
+  return `HH ${formatRatingValueForUi(company.hhRatingDisplay)} · Habr ${formatRatingValueForUi(company.habrRatingDisplay)}`;
+}
+
+function formatHiringFreshnessShort(company: CompanyPublic): {
+  text: string;
+  staleWarning: string | null;
+  isMissing: boolean;
+} {
+  const hiring = getHiringFreshnessDisplay(company.hhVacanciesCheckedAt);
+
+  return {
+    text: hiring.hhLine
+      .replace("Проверено на HH:", "HH проверен")
+      .replace("Проверка HH:", "HH")
+      .trim(),
+    staleWarning: hiring.staleWarning,
+    isMissing: hiring.isMissing,
+  };
+}
+
+function isWorkFormatShownOnPhone(workFormat: CompanyPublic["workFormat"], badges: string[]): boolean {
+  if (workFormat === "Не указано") return false;
+  if (workFormat === "Удалёнка" && badges.includes(BADGE_REMOTE)) return false;
+  return true;
+}
+
 function formatProfileLine(company: CompanyPublic): string {
   const size = formatCompanySize(company.size);
   const parts = [company.city, company.companyType, company.niche];
@@ -45,7 +73,9 @@ function formatProfileLine(company: CompanyPublic): string {
   {
     companies.map((company, index) => {
       const hiring = getHiringFreshnessDisplay(company.hhVacanciesCheckedAt);
+      const freshnessShort = formatHiringFreshnessShort(company);
       const tags = getCompanyBadges(company);
+      const showWorkFormatOnPhone = isWorkFormatShownOnPhone(company.workFormat, tags);
       const initiallyHidden = isCatalogItemInitiallyHidden(index, mobileInitialVisible);
 
       return (
@@ -60,35 +90,70 @@ function formatProfileLine(company: CompanyPublic): string {
             <DigitalCompanyName company={company} />
           </h3>
           <p class="digital-mobile-card__profile meta">{formatProfileLine(company)}</p>
-          <p class="digital-mobile-row">
-            <span class="digital-mobile-row__label">Статус найма:</span> {company.hiringStatus} ·{" "}
-            {formatVacanciesRangeCopy(company.vacanciesRange)}
-          </p>
-          <p class="digital-mobile-row digital-mobile-row--muted">
-            {hiring.isMissing ? (
-              <span class="digital-muted">{hiring.hhLine}</span>
-            ) : (
-              hiring.hhLine
+
+          <div class="digital-mobile-card__compact-phone">
+            {tags.length > 0 && (
+              <DigitalCompanyBadges
+                company={company}
+                maxVisible={DIGITAL_BADGE_MAX_VISIBLE_MOBILE}
+              />
             )}
-            {hiring.staleWarning && (
-              <span class="digital-stale-label"> · {hiring.staleWarning}</span>
-            )}
-          </p>
-          <p class="digital-mobile-row">
-            <span class="digital-mobile-row__label">Формат:</span> {company.workFormat} · Гео:{" "}
-            {company.hiringGeo}
-          </p>
-          <p class="digital-mobile-row">
-            <span class="digital-mobile-row__label">Рейтинги:</span> {formatRatings(company)}
-          </p>
-          {
-            tags.length > 0 && (
-              <p class="digital-mobile-row digital-mobile-row--tags">
-                <span class="digital-mobile-row__label">Теги:</span>
+            <div class="digital-mobile-card__facts">
+              <p class="digital-mobile-card__fact digital-mobile-card__fact--strong">
+                {formatVacanciesRangeCopy(company.vacanciesRange)} ·{" "}
+                {freshnessShort.isMissing ? (
+                  <span class="digital-muted">{freshnessShort.text}</span>
+                ) : (
+                  freshnessShort.text
+                )}
+                {freshnessShort.staleWarning && (
+                  <span class="digital-stale-label"> · {freshnessShort.staleWarning}</span>
+                )}
               </p>
-            )
-          }
-          <DigitalCompanyBadges company={company} maxVisible={DIGITAL_BADGE_MAX_VISIBLE_MOBILE} />
+              <p class="digital-mobile-card__fact">{formatRatingsShort(company)}</p>
+              <p class="digital-mobile-card__fact">
+                География найма: {company.hiringGeo}
+              </p>
+              {showWorkFormatOnPhone && (
+                <p class="digital-mobile-card__fact digital-mobile-card__fact--secondary">
+                  Формат: {company.workFormat}
+                </p>
+              )}
+            </div>
+          </div>
+
+          <div class="digital-mobile-card__details">
+            <p class="digital-mobile-row">
+              <span class="digital-mobile-row__label">Статус найма:</span> {company.hiringStatus} ·{" "}
+              {formatVacanciesRangeCopy(company.vacanciesRange)}
+            </p>
+            <p class="digital-mobile-row digital-mobile-row--muted">
+              {hiring.isMissing ? (
+                <span class="digital-muted">{hiring.hhLine}</span>
+              ) : (
+                hiring.hhLine
+              )}
+              {hiring.staleWarning && (
+                <span class="digital-stale-label"> · {hiring.staleWarning}</span>
+              )}
+            </p>
+            <p class="digital-mobile-row">
+              <span class="digital-mobile-row__label">Формат:</span> {company.workFormat} · Гео:{" "}
+              {company.hiringGeo}
+            </p>
+            <p class="digital-mobile-row">
+              <span class="digital-mobile-row__label">Рейтинги:</span> {formatRatings(company)}
+            </p>
+            {
+              tags.length > 0 && (
+                <p class="digital-mobile-row digital-mobile-row--tags">
+                  <span class="digital-mobile-row__label">Теги:</span>
+                </p>
+              )
+            }
+            <DigitalCompanyBadges company={company} maxVisible={DIGITAL_BADGE_MAX_VISIBLE_MOBILE} />
+          </div>
+
           <DigitalCompanyDetailTrigger
             companyId={company.id}
             class="digital-company-detail-trigger--mobile"
