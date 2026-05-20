@@ -4,21 +4,40 @@ import DigitalHeroSummary from "./DigitalHeroSummary.astro";
 
 interface Props {
   h1: string;
-  lead: string;
+  leadIntro: string;
+  leadMore: string;
   stats: DigitalPageStats;
 }
 
-const { h1, lead, stats } = Astro.props;
+const { h1, leadIntro, leadMore, stats } = Astro.props;
 ---
 
 <section class="digital-first-screen__hero" aria-labelledby="digital-hero-heading">
   <div class="digital-container digital-hero-layout">
     <h1 id="digital-hero-heading" class="digital-h1">{h1}</h1>
     <div class="digital-hero-body">
-      <div class="digital-hero-lead-card">
-        <p class="digital-lead">{lead}</p>
+      <div class="digital-hero-lead-card" data-digital-hero-lead>
+        <div class="digital-lead">
+          <p class="digital-lead__intro">{leadIntro}</p>
+          <p class="digital-lead__more" id="digital-hero-lead-more">{leadMore}</p>
+          <button
+            class="digital-hero-lead-toggle"
+            type="button"
+            data-digital-hero-lead-toggle
+            aria-expanded="false"
+            aria-controls="digital-hero-lead-more"
+          >
+            Показать подробнее ↓
+          </button>
+        </div>
       </div>
       <DigitalHeroSummary stats={stats} />
     </div>
   </div>
 </section>
+
+<script>
+  import { initDigitalHeroLeadToggle } from "../../lib/digital/heroLeadToggleClient";
+
+  initDigitalHeroLeadToggle();
+</script>
