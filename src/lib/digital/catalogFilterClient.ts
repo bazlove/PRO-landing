@@ -5,7 +5,10 @@ import {
   readStoredPageSize,
   writeStoredPageSize,
 } from "./displayLimits";
-import { DIGITAL_FILTER_PRESETS } from "./filterPresets";
+import {
+  DIGITAL_FILTER_PRESETS,
+  DIGITAL_PRIMARY_PRESET_IDS,
+} from "./filterPresets";
 import { normalizeCatalogSearch } from "./searchNormalize";
 
 const SEARCH_ANALYTICS_DEBOUNCE_MS = 600;
@@ -20,6 +23,7 @@ const ADVANCED_FILTER_IDS = {
 } as const;
 
 const DESKTOP_MQ = "(min-width: 960px)";
+const MOBILE_FILTERS_MQ = "(max-width: 640px)";
 const VALID_PRESET_IDS = new Set(DIGITAL_FILTER_PRESETS.map((preset) => preset.id));
 const ADVANCED_TOGGLE_LABEL_SHOW = "Показать расширенные фильтры ↓";
 const ADVANCED_TOGGLE_LABEL_HIDE = "Свернуть расширенные фильтры ↑";
@@ -42,7 +46,7 @@ export function initDigitalCatalogFilters(): void {
   const hiringSelect = root.querySelector<HTMLSelectElement>("[data-digital-filter-hiring]");
   const formatSelect = root.querySelector<HTMLSelectElement>("[data-digital-filter-format]");
   const sizeSelect = root.querySelector<HTMLSelectElement>("[data-digital-filter-size]");
-  const clearBtn = root.querySelector<HTMLButtonElement>("[data-digital-filter-clear]");
+  const clearBtns = root.querySelectorAll<HTMLButtonElement>("[data-digital-filter-clear]");
   const emptyEl = root.querySelector<HTMLElement>("[data-digital-catalog-empty]");
   const presetButtons = root.querySelectorAll<HTMLButtonElement>("[data-digital-preset]");
   const advancedToggle = root.querySelector<HTMLButtonElement>("[data-digital-filter-advanced-toggle]");
@@ -113,10 +117,22 @@ export function initDigitalCatalogFilters(): void {
     }
   }
 
+  function isMobileFiltersViewport(): boolean {
+    return window.matchMedia(MOBILE_FILTERS_MQ).matches;
+  }
+
+  function hasActiveSecondaryPreset(): boolean {
+    for (const id of activePresets) {
+      if (!DIGITAL_PRIMARY_PRESET_IDS.has(id)) return true;
+    }
+    return false;
+  }
+
   function setPresetsMoreExpanded(expanded: boolean): void {
     if (!presetsSecondary || !presetsMoreToggle) return;
     presetsSecondary.hidden = !expanded;
     presetsMoreToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+    presetsMoreToggle.classList.toggle("is-expanded", expanded);
     presetsMoreToggle.setAttribute(
       "aria-label",
       expanded ? PRESETS_MORE_LABEL_HIDE : PRESETS_MORE_LABEL_SHOW,
@@ -124,6 +140,37 @@ export function initDigitalCatalogFilters(): void {
     if (presetsMoreIcon) {
       presetsMoreIcon.textContent = expanded ? "−" : "+";
     }
+  }
+
+  function syncPresetsSecondaryVisibility(): void {
+    if (!isMobileFiltersViewport()) return;
+    if (hasActiveSecondaryPreset()) {
+      setPresetsMoreExpanded(true);
+    }
+  }
+
+  function syncClearButtons(): void {
+    const isMobile = isMobileFiltersViewport();
+    clearBtns.forEach((btn) => {
+      const isUtility = btn.hasAttribute("data-digital-filter-clear-utility");
+      if (isMobile && isUtility) {
+        btn.hidden = false;
+        btn.classList.toggle("is-active", filtersActive);
+        return;
+      }
+      if (isMobile && !isUtility) {
+        btn.hidden = true;
+        btn.classList.remove("is-active");
+        return;
+      }
+      if (!isMobile && isUtility) {
+        btn.hidden = true;
+        btn.classList.remove("is-active");
+        return;
+      }
+      btn.hidden = !filtersActive;
+      btn.classList.toggle("is-active", filtersActive);
+    });
   }
 
   function getItemPresetIds(el: Element): string[] {
@@ -272,10 +319,7 @@ export function initDigitalCatalogFilters(): void {
   function applyCatalog(): void {
     filtersActive = computeFiltersActive();
 
-    if (clearBtn) {
-      clearBtn.hidden = !filtersActive;
-      clearBtn.classList.toggle("is-active", filtersActive);
-    }
+    syncClearButtons();
 
     presetButtons.forEach((btn) => {
       const id = btn.getAttribute("data-digital-preset");
@@ -371,6 +415,9 @@ export function initDigitalCatalogFilters(): void {
     if (sizeSelect) sizeSelect.value = "";
     activePresets.clear();
     setAdvancedExpanded(false);
+    if (isMobileFiltersViewport()) {
+      setPresetsMoreExpanded(false);
+    }
     resetVisibleCounts();
     applyCatalog();
   }
@@ -392,6 +439,11 @@ export function initDigitalCatalogFilters(): void {
   searchInput?.addEventListener("search", () => {
     scheduleSearchAnalytics();
     onFilterChange();
+  });
+  searchInput?.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter") return;
+    event.preventDefault();
+    searchInput.blur();
   });
 
   citySelect?.addEventListener("change", () => {
@@ -419,7 +471,9 @@ export function initDigitalCatalogFilters(): void {
     onFilterChange();
   });
 
-  clearBtn?.addEventListener("click", clearFilters);
+  clearBtns.forEach((btn) => {
+    btn.addEventListener("click", clearFilters);
+  });
 
   presetButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -427,7 +481,12 @@ export function initDigitalCatalogFilters(): void {
       if (!id) return;
       const wasActive = activePresets.has(id);
       if (wasActive) activePresets.delete(id);
-      else activePresets.add(id);
+      else {
+        activePresets.add(id);
+        if (!DIGITAL_PRIMARY_PRESET_IDS.has(id)) {
+          setPresetsMoreExpanded(true);
+        }
+      }
 
       trackDigitalEvent("preset_click", {
         preset: id,
@@ -465,6 +524,7 @@ export function initDigitalCatalogFilters(): void {
   const mq = window.matchMedia(DESKTOP_MQ);
   const onMqChange = () => {
     resetVisibleCounts();
+    syncPresetsSecondaryVisibility();
     applyCatalog();
   };
   if (typeof mq.addEventListener === "function") {
@@ -483,5 +543,6 @@ export function initDigitalCatalogFilters(): void {
   readUrl();
   initPageSizeFromStorage();
   syncAdvancedPanelVisibility();
+  syncPresetsSecondaryVisibility();
   applyCatalog();
 }
