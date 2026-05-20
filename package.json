@@ -1,0 +1,31 @@
+{
+  "name": "digital-map-site",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "lint": "eslint .",
+    "data:sync-companies": "tsx scripts/sync-companies-json.ts",
+    "data:export-companies": "tsx scripts/export-companies-from-xlsx.ts",
+    "data:validate-companies": "node scripts/validateCompaniesJson.mjs src/data/digital/companies.json",
+    "data:validate-companies:min50": "node scripts/validateCompaniesJson.mjs src/data/digital/companies.json --min-count=50",
+    "data:validate-companies:min100": "node scripts/validateCompaniesJson.mjs src/data/digital/companies.json --min-count=100"
+  },
+  "dependencies": {
+    "astro": "^4.16.18"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@types/node": "^22.10.2",
+    "@typescript-eslint/parser": "^8.59.3",
+    "eslint": "^9.15.0",
+    "eslint-plugin-astro": "^1.3.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "xlsx": "^0.18.5"
+  }
+}
