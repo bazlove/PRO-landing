@@ -4,7 +4,10 @@ import {
   DIGITAL_DEFAULT_PAGE_SIZE,
   DIGITAL_PAGE_SIZE_OPTIONS,
 } from "../../lib/digital/displayLimits";
-import { DIGITAL_FILTER_PRESETS } from "../../lib/digital/filterPresets";
+import {
+  DIGITAL_FILTER_PRESETS_PRIMARY,
+  DIGITAL_FILTER_PRESETS_SECONDARY,
+} from "../../lib/digital/filterPresets";
 import { getTagColorClass } from "../../lib/digital/tagColors";
 
 interface Props {
@@ -57,7 +60,7 @@ const selectPlaceholder = "Все";
             class="digital-catalog-filters__input"
             type="search"
             name="q"
-            placeholder="Введите название компании, город или нишу"
+            placeholder="Компания, город или ниша"
             autocomplete="off"
             data-digital-filter-search
             aria-labelledby="digital-catalog-heading"
@@ -75,19 +78,56 @@ const selectPlaceholder = "Все";
       <h3 id="digital-quick-filters-heading" class="digital-catalog-filters__presets-title">
         Быстрые фильтры
       </h3>
-      <div class="digital-presets" role="toolbar" aria-label="Быстрые фильтры">
-        {
-          DIGITAL_FILTER_PRESETS.map((preset) => (
-            <button
-              type="button"
-              class:list={["preset-chip", getTagColorClass(preset.id)]}
-              data-digital-preset={preset.id}
-              aria-pressed="false"
-            >
-              {preset.label}
-            </button>
-          ))
-        }
+      <div class="digital-catalog-filters__presets-row">
+        <div
+          class="digital-presets digital-catalog-filters__presets--primary"
+          role="toolbar"
+          aria-label="Быстрые фильтры"
+        >
+          {
+            DIGITAL_FILTER_PRESETS_PRIMARY.map((preset) => (
+              <button
+                type="button"
+                class:list={["preset-chip", getTagColorClass(preset.id)]}
+                data-digital-preset={preset.id}
+                aria-pressed="false"
+              >
+                {preset.label}
+              </button>
+            ))
+          }
+          <button
+            type="button"
+            class="digital-catalog-filters__presets-more-toggle"
+            data-digital-presets-more-toggle
+            aria-expanded="false"
+            aria-controls="digital-presets-secondary"
+            aria-label="Показать дополнительные быстрые фильтры"
+          >
+            <span class="digital-catalog-filters__presets-more-icon" data-digital-presets-more-icon aria-hidden="true">+</span>
+          </button>
+        </div>
+        <div
+          id="digital-presets-secondary"
+          class="digital-presets digital-catalog-filters__presets--secondary"
+          role="toolbar"
+          aria-label="Дополнительные быстрые фильтры"
+          data-digital-presets-secondary
+          hidden
+        >
+          {
+            DIGITAL_FILTER_PRESETS_SECONDARY.map((preset) => (
+              <button
+                type="button"
+                class:list={["preset-chip", getTagColorClass(preset.id)]}
+                data-digital-preset={preset.id}
+                aria-pressed="false"
+              >
+                {preset.label}
+              </button>
+            ))
+          }
+        </div>
       </div>
     </section>
 
@@ -103,7 +143,8 @@ const selectPlaceholder = "Все";
       </button>
 
       <label class="digital-catalog-filters__page-size" for="digital-page-size">
-        <span class="digital-catalog-filters__page-size-label">Показывать по</span>
+        <span class="digital-catalog-filters__page-size-label digital-catalog-filters__page-size-label--desktop">Показывать по</span>
+        <span class="digital-catalog-filters__page-size-label digital-catalog-filters__page-size-label--mobile">Показывать:</span>
         <select
           id="digital-page-size"
           class="digital-catalog-filters__page-size-select"
