@@ -1336,15 +1336,36 @@ html {
     margin-top: 8px;
   }
 
+  .digital-mobile-card__status-row,
   .digital-mobile-card__compact-phone .digital-badges {
-    margin-top: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
     gap: 5px;
+    max-width: 100%;
+    margin-top: 0;
+    overflow: hidden;
   }
 
+  .digital-mobile-card__status-row .digital-badge,
   .digital-mobile-card__compact-phone .digital-badge {
+    flex: 0 0 auto;
     min-height: 24px;
+    max-width: 100%;
     padding: 3px 8px;
     font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .digital-mobile-card__status-row .digital-badge:not(.digital-badge--more),
+  .digital-mobile-card__compact-phone .digital-badge:not(.digital-badge--more) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .digital-mobile-card__status-row .digital-badge--more,
+  .digital-mobile-card__compact-phone .digital-badge--more {
+    flex-shrink: 0;
   }
 
   .digital-mobile-card__facts {
@@ -2209,14 +2230,44 @@ body.digital-drawer-open {
   }
 
   .digital-company-detail-drawer__close {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
     border-radius: 12px;
-    font-size: 22px;
+    font-size: 21px;
+    background: rgba(255, 255, 255, 0.82);
   }
 
   .digital-company-detail-drawer__body {
     padding-bottom: calc(28px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .digital-company-detail__actions {
+    margin-top: 12px;
+    margin-bottom: 14px;
+  }
+
+  .digital-company-detail__section {
+    margin-top: 18px;
+    padding-top: 14px;
+  }
+
+  .digital-company-detail__section--first {
+    margin-top: 2px;
+  }
+
+  .digital-company-detail__awards-list {
+    font-size: 13px;
+    line-height: 1.5;
+    padding-left: 1rem;
+  }
+
+  .digital-company-detail__awards-list li + li {
+    margin-top: 5px;
+  }
+
+  .digital-company-detail__awards-toggle {
+    margin-top: 8px;
+    font-size: 13px;
   }
 
   .digital-employer-ranking-badge {
