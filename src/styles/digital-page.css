@@ -1852,6 +1852,7 @@ body.digital-drawer-open {
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
+  text-transform: none;
 }
 
 .digital-company-detail__meta {
@@ -2042,6 +2043,35 @@ body.digital-drawer-open {
   margin-top: 6px;
 }
 
+.digital-company-detail__awards-toggle {
+  margin-top: 10px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(92, 107, 122, 0.38);
+  cursor: pointer;
+}
+
+.digital-company-detail__awards-toggle:hover,
+.digital-company-detail__awards-toggle:focus-visible {
+  color: var(--text-primary);
+  text-decoration-color: currentColor;
+}
+
+.digital-company-detail__awards-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 .digital-company-detail__disclaimer {
   margin: 24px 0 0;
   padding-top: 16px;
@@ -2170,6 +2200,42 @@ body.digital-drawer-open {
   }
   to {
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .digital-company-detail-drawer__toolbar {
+    padding: 8px 10px 0;
+  }
+
+  .digital-company-detail-drawer__close {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    font-size: 22px;
+  }
+
+  .digital-company-detail-drawer__body {
+    padding-bottom: calc(28px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .digital-employer-ranking-badge {
+    padding: 7px 9px;
+    gap: 9px;
+  }
+
+  .digital-employer-ranking-badge__icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .digital-employer-ranking-badge__icon img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .digital-employer-ranking-badge--habr .digital-employer-ranking-badge__icon {
+    opacity: 0.86;
   }
 }
 
