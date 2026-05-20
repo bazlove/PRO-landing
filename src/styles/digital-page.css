@@ -164,6 +164,113 @@ html {
   max-width: 62ch;
 }
 
+.digital-lead__intro,
+.digital-lead__more {
+  margin: 0;
+}
+
+.digital-hero-lead-toggle {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .digital-first-screen {
+    padding-top: 20px;
+  }
+
+  .digital-first-screen .digital-h1 {
+    margin-bottom: 20px;
+    font-size: clamp(40px, 11vw, 50px);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+  }
+
+  .digital-hero-layout,
+  .digital-hero-body {
+    gap: 12px;
+  }
+
+  .digital-hero-lead-card {
+    align-items: flex-start;
+    padding: 14px 15px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(11, 31, 51, 0.035);
+  }
+
+  .digital-first-screen .digital-lead,
+  .digital-lead__intro,
+  .digital-lead__more {
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: none;
+  }
+
+  .digital-lead__more {
+    margin-top: 8px;
+  }
+
+  html.js .digital-hero-lead-card:not(.is-expanded) .digital-lead__more {
+    display: none;
+  }
+
+  html.js .digital-hero-lead-toggle {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--text-muted);
+    font: inherit;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.35;
+    text-align: left;
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-underline-offset: 4px;
+    text-decoration-color: rgba(138, 151, 166, 0.38);
+    cursor: pointer;
+  }
+
+  .digital-hero-lead-toggle:hover,
+  .digital-hero-lead-toggle:focus-visible {
+    color: var(--text-primary);
+    text-decoration-color: currentColor;
+  }
+
+  .digital-hero-lead-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .digital-hero-summary.digital-card {
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .digital-hero-summary__metrics {
+    gap: 7px;
+  }
+
+  .digital-hero-summary__metric {
+    min-height: 40px;
+    padding: 7px 9px;
+  }
+
+  .digital-hero-summary__metric-value {
+    font-size: 17px;
+  }
+
+  .digital-hero-summary__metric-label {
+    font-size: 12px;
+    line-height: 1.22;
+  }
+
+  .digital-hero-summary__footer {
+    padding-top: 9px;
+  }
+}
+
 @media (min-width: 900px) {
   .digital-hero-body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
