@@ -23,6 +23,8 @@ const DESKTOP_MQ = "(min-width: 960px)";
 const VALID_PRESET_IDS = new Set(DIGITAL_FILTER_PRESETS.map((preset) => preset.id));
 const ADVANCED_TOGGLE_LABEL_SHOW = "Показать расширенные фильтры ↓";
 const ADVANCED_TOGGLE_LABEL_HIDE = "Свернуть расширенные фильтры ↑";
+const PRESETS_MORE_LABEL_SHOW = "Показать дополнительные быстрые фильтры";
+const PRESETS_MORE_LABEL_HIDE = "Скрыть дополнительные быстрые фильтры";
 
 type CatalogSurface = {
   name: "desktop" | "mobile";
@@ -48,6 +50,11 @@ export function initDigitalCatalogFilters(): void {
   const advancedToggleLabel = root.querySelector<HTMLElement>(
     "[data-digital-filter-advanced-toggle-label]",
   );
+  const presetsMoreToggle = root.querySelector<HTMLButtonElement>(
+    "[data-digital-presets-more-toggle]",
+  );
+  const presetsSecondary = root.querySelector<HTMLElement>("[data-digital-presets-secondary]");
+  const presetsMoreIcon = root.querySelector<HTMLElement>("[data-digital-presets-more-icon]");
   const pageSizeSelect = root.querySelector<HTMLSelectElement>("[data-digital-page-size]");
 
   const surfaces: CatalogSurface[] = [];
@@ -103,6 +110,19 @@ export function initDigitalCatalogFilters(): void {
   function syncAdvancedPanelVisibility(): void {
     if (hasAdvancedSelectValues()) {
       setAdvancedExpanded(true);
+    }
+  }
+
+  function setPresetsMoreExpanded(expanded: boolean): void {
+    if (!presetsSecondary || !presetsMoreToggle) return;
+    presetsSecondary.hidden = !expanded;
+    presetsMoreToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+    presetsMoreToggle.setAttribute(
+      "aria-label",
+      expanded ? PRESETS_MORE_LABEL_HIDE : PRESETS_MORE_LABEL_SHOW,
+    );
+    if (presetsMoreIcon) {
+      presetsMoreIcon.textContent = expanded ? "−" : "+";
     }
   }
 
@@ -358,6 +378,11 @@ export function initDigitalCatalogFilters(): void {
   advancedToggle?.addEventListener("click", () => {
     const expanded = advancedPanel ? !advancedPanel.hidden : false;
     setAdvancedExpanded(!expanded);
+  });
+
+  presetsMoreToggle?.addEventListener("click", () => {
+    const expanded = presetsSecondary ? !presetsSecondary.hidden : false;
+    setPresetsMoreExpanded(!expanded);
   });
 
   searchInput?.addEventListener("input", () => {
