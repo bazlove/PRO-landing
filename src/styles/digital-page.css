@@ -1316,24 +1316,24 @@ html {
   }
 
   .digital-mobile-card {
-    padding: 15px 14px;
+    padding: 14px;
   }
 
   .digital-mobile-card__title {
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     font-size: 16px;
     line-height: 1.28;
   }
 
   .digital-mobile-card__profile {
     font-size: 14px;
-    line-height: 1.42;
+    line-height: 1.4;
   }
 
   .digital-mobile-card__compact-phone {
     display: grid;
-    gap: 10px;
-    margin-top: 10px;
+    gap: 8px;
+    margin-top: 8px;
   }
 
   .digital-mobile-card__compact-phone .digital-badges {
@@ -1347,6 +1347,14 @@ html {
     font-size: 12px;
   }
 
+  .digital-mobile-card__facts {
+    gap: 3px;
+  }
+
+  .digital-mobile-card__fact {
+    line-height: 1.4;
+  }
+
   .digital-mobile-card__details {
     display: none;
   }
@@ -1354,11 +1362,19 @@ html {
   .digital-company-detail-trigger--mobile {
     width: 100%;
     justify-content: center;
-    min-height: 40px;
-    margin-top: 14px;
+    min-height: 42px;
+    margin-top: 12px;
     border-radius: 10px;
+    color: var(--text-primary);
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 650;
+    background: #f1f5f9;
+  }
+
+  .digital-company-detail-trigger--mobile:hover,
+  .digital-company-detail-trigger--mobile:focus-visible {
+    background: #eaf0f6;
+    border-color: rgba(92, 107, 122, 0.45);
   }
 }
 
