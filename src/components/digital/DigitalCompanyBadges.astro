@@ -1,0 +1,35 @@
+---
+import type { CompanyPublic } from "../../types/digital";
+import { getBadgeVariantClass, getCompanyBadges } from "../../lib/digital/display";
+
+interface Props {
+  company: CompanyPublic;
+  maxVisible: number;
+}
+
+const { company, maxVisible } = Astro.props;
+const badges = getCompanyBadges(company);
+const visible = badges.slice(0, maxVisible);
+const hiddenBadges = badges.slice(maxVisible);
+const hiddenSummary =
+  hiddenBadges.length > 0 ? `Ещё ${hiddenBadges.length}: ${hiddenBadges.join(", ")}` : "";
+---
+
+{
+  badges.length > 0 && (
+    <div class="digital-badges" aria-label="Теги">
+      {visible.map((label) => (
+        <span class:list={["digital-badge", getBadgeVariantClass(label)]}>{label}</span>
+      ))}
+      {hiddenBadges.length > 0 && (
+        <span
+          class="digital-badge digital-badge--more"
+          aria-label={hiddenSummary}
+          title={hiddenSummary}
+        >
+          +{hiddenBadges.length}
+        </span>
+      )}
+    </div>
+  )
+}

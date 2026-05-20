@@ -1,0 +1,96 @@
+---
+import type { DigitalPageStats } from "../../lib/digital/stats";
+
+interface Props {
+  stats: DigitalPageStats;
+}
+
+const { stats } = Astro.props;
+
+// TODO: replace with the author's real LinkedIn profile URL when available in project config.
+const authorLinkedInUrl = "https://www.linkedin.com/in/REAL_PROFILE/";
+const authorDisplayName = "Имя Фамилия";
+
+const lastUpdatedLabel = stats.latestUpdateDateIso
+  ? new Intl.DateTimeFormat("ru-RU", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    }).format(new Date(stats.latestUpdateDateIso))
+  : "не указано";
+---
+
+<footer class="digital-footer">
+  <a
+    href="#digital-top"
+    class="digital-footer__back-top"
+    aria-label="Вернуться к началу страницы"
+  >
+    <svg
+      class="digital-footer__back-top-icon"
+      width="18"
+      height="18"
+      viewBox="0 0 20 20"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path
+        d="M5.5 12.5L10 8L14.5 12.5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+    </svg>
+  </a>
+  <div class="digital-container digital-footer__inner">
+    <div class="digital-footer__brand">
+      <p class="digital-footer__title">IT работодатели России</p>
+      <p class="digital-footer__description">
+        Обновляемая база IT организаций для поиска работодателей: агентства, веб-студии, performance и SEO-команды,
+        продуктовые компании, интеграторы и разработка.
+      </p>
+      <p class="digital-footer__disclaimer">
+        Это не официальный рейтинг, не доска вакансий, не каталог подрядчиков и не база HR-контактов.
+        Перед откликом проверяйте актуальность вакансий на стороне компании.
+      </p>
+      <p class="digital-footer__author">
+        Автор проекта: <a
+          href={authorLinkedInUrl}
+          class="digital-text-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >{authorDisplayName}</a>{" "}
+        © 2026
+      </p>
+    </div>
+
+    <div class="digital-footer__aside">
+      <nav class="digital-footer__nav" aria-label="Навигация по странице digital">
+        <p class="digital-footer__nav-label">Навигация</p>
+        <ul class="digital-footer__nav-list">
+          <li><a href="#digital-catalog" class="digital-text-link">Компании</a></li>
+          <li><a href="#methodology" class="digital-text-link">Методология</a></li>
+          <li><a href="#faq" class="digital-text-link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="digital-footer__meta">
+        <p>
+          Последнее обновление:{" "}
+          {
+            stats.latestUpdateDateIso ? (
+              <time datetime={stats.latestUpdateDateIso}>{lastUpdatedLabel}</time>
+            ) : (
+              lastUpdatedLabel
+            )
+          }
+        </p>
+        <p class="digital-footer__feedback">
+          Если вы нашли ошибку в данных, напишите автору проекта или отправьте ссылку на актуальный
+          источник.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

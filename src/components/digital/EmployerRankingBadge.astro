@@ -1,0 +1,35 @@
+---
+import type { EmployerRankingBadge } from "../../types/digital";
+import hhWhiteLogo from "../../assets/digital/min-hh-white.png";
+import habrCareerIcon from "../../assets/digital/icons/habr-career.svg";
+
+interface Props {
+  badge: EmployerRankingBadge;
+}
+
+const { badge } = Astro.props;
+
+const sourceConfig = {
+  hh: {
+    modifierClass: "digital-employer-ranking-badge--hh",
+    iconSrc: hhWhiteLogo.src,
+  },
+  habr: {
+    modifierClass: "digital-employer-ranking-badge--habr",
+    iconSrc: habrCareerIcon.src,
+  },
+} as const;
+
+const config = sourceConfig[badge.source];
+const descriptionText = badge.year ? `${badge.description} · ${badge.year}` : badge.description;
+---
+
+<div class:list={["digital-employer-ranking-badge", config.modifierClass]}>
+  <span class="digital-employer-ranking-badge__icon" aria-hidden="true">
+    <img src={config.iconSrc} alt="" width="15" height="15" loading="lazy" decoding="async" />
+  </span>
+  <span class="digital-employer-ranking-badge__body">
+    <span class="digital-employer-ranking-badge__label">{badge.label}</span>
+    <span class="digital-employer-ranking-badge__description">{descriptionText}</span>
+  </span>
+</div>

@@ -1,0 +1,24 @@
+---
+import type { DigitalPageStats } from "../../lib/digital/stats";
+import DigitalHeroSummary from "./DigitalHeroSummary.astro";
+
+interface Props {
+  h1: string;
+  lead: string;
+  stats: DigitalPageStats;
+}
+
+const { h1, lead, stats } = Astro.props;
+---
+
+<section class="digital-first-screen__hero" aria-labelledby="digital-hero-heading">
+  <div class="digital-container digital-hero-layout">
+    <h1 id="digital-hero-heading" class="digital-h1">{h1}</h1>
+    <div class="digital-hero-body">
+      <div class="digital-hero-lead-card">
+        <p class="digital-lead">{lead}</p>
+      </div>
+      <DigitalHeroSummary stats={stats} />
+    </div>
+  </div>
+</section>

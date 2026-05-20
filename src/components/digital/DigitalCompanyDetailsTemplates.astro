@@ -1,0 +1,25 @@
+---
+import type { CompanyPublic } from "../../types/digital";
+import DigitalCompanyDetailContent from "./DigitalCompanyDetailContent.astro";
+
+interface Props {
+  companies: CompanyPublic[];
+}
+
+const { companies } = Astro.props;
+---
+
+<div
+  class="digital-company-detail-templates"
+  data-company-detail-templates
+  hidden
+  aria-hidden="true"
+>
+  {
+    companies.map((company) => (
+      <template data-company-detail-template data-company-id={company.id}>
+        <DigitalCompanyDetailContent company={company} />
+      </template>
+    ))
+  }
+</div>

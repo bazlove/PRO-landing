@@ -1,0 +1,40 @@
+---
+import {
+  formatCatalogCountText,
+  getCatalogLimitConfig,
+  getInitiallyVisibleCount,
+  getLoadMoreLabel,
+  shouldShowLoadMore,
+  type DigitalCatalogSurface,
+} from "../../lib/digital/displayLimits";
+
+interface Props {
+  surface: DigitalCatalogSurface;
+  total: number;
+}
+
+const { surface, total } = Astro.props;
+const { initial, step } = getCatalogLimitConfig(surface);
+const shown = getInitiallyVisibleCount(total, initial);
+const showButton = shouldShowLoadMore(total, shown);
+---
+
+<div
+  class="digital-catalog-footer"
+  data-digital-catalog-footer={surface}
+  data-digital-initial-visible={initial}
+  data-digital-load-step={step}
+  data-digital-total={total}
+>
+  <p class="digital-catalog-count" data-digital-catalog-count aria-live="polite">
+    {formatCatalogCountText(shown, total)}
+  </p>
+  <button
+    type="button"
+    class="button-secondary digital-catalog-load-more"
+    data-digital-load-more
+    hidden={!showButton}
+  >
+    {getLoadMoreLabel(step)}
+  </button>
+</div>

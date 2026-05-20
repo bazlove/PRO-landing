@@ -1,0 +1,107 @@
+---
+import type { CompanyPublic } from "../../types/digital";
+import {
+  DIGITAL_BADGE_MAX_VISIBLE_TABLE,
+  formatCompanySize,
+  formatVacanciesRangeCopy,
+  getHiringFreshnessDisplay,
+} from "../../lib/digital/display";
+import DigitalCompanyBadges from "./DigitalCompanyBadges.astro";
+import DigitalCompanyName from "./DigitalCompanyName.astro";
+import DigitalRatingCell from "./DigitalRatingCell.astro";
+import DigitalCatalogLoadMore from "./DigitalCatalogLoadMore.astro";
+import DigitalCompanyDetailTrigger from "./DigitalCompanyDetailTrigger.astro";
+import { getCatalogItemDataAttrs } from "../../lib/digital/catalogItemAttrs";
+import {
+  getCatalogLimitConfig,
+  isCatalogItemInitiallyHidden,
+} from "../../lib/digital/displayLimits";
+
+interface Props {
+  companies: CompanyPublic[];
+}
+
+const { companies } = Astro.props;
+const { initial: desktopInitialVisible } = getCatalogLimitConfig("desktop");
+---
+
+<div
+  class="digital-table-wrap digital-table-wrap--desktop"
+  data-digital-catalog-surface="desktop"
+>
+  <table class="digital-table">
+    <caption class="digital-table-caption">
+      Публичная витрина IT и digital работодателей: {companies.length} компаний
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col" class="col-company">Компания</th>
+        <th scope="col" class="col-hiring">Статус найма</th>
+        <th scope="col" class="col-format">Формат работы</th>
+        <th scope="col" class="col-ratings">Рейтинги</th>
+        <th scope="col" class="col-tags">Теги</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        companies.map((company, index) => {
+          const hiring = getHiringFreshnessDisplay(company.hhVacanciesCheckedAt);
+          const size = formatCompanySize(company.size);
+          const initiallyHidden = isCatalogItemInitiallyHidden(index, desktopInitialVisible);
+
+          return (
+            <tr
+              {...getCatalogItemDataAttrs(company)}
+              class:list={{ "digital-catalog-item--hidden": initiallyHidden }}
+            >
+              <td class="col-company">
+                <DigitalCompanyName company={company} class="digital-table-company-name" />
+                <div class="meta">
+                  {company.city} · {company.companyType}
+                </div>
+                <div class="meta">
+                  {company.niche}
+                  {size && <> · {size}</>}
+                </div>
+                <DigitalCompanyDetailTrigger companyId={company.id} />
+              </td>
+              <td class="col-hiring">
+                <span class="digital-table-primary">{company.hiringStatus}</span>
+                <div class="meta">{formatVacanciesRangeCopy(company.vacanciesRange)}</div>
+                <div class="meta digital-table-hh-check">
+                  <span class="digital-table-hh-check__line">
+                    {
+                      hiring.isMissing ? (
+                        <span class="digital-muted">{hiring.hhLine}</span>
+                      ) : (
+                        hiring.hhLine
+                      )
+                    }
+                  </span>
+                  {
+                    hiring.staleWarning && (
+                      <span class="digital-stale-label digital-stale-label--block">
+                        {hiring.staleWarning}
+                      </span>
+                    )
+                  }
+                </div>
+              </td>
+              <td class="col-format">
+                <span class="digital-table-primary">{company.workFormat}</span>
+                <div class="meta">Гео: {company.hiringGeo}</div>
+              </td>
+              <td class="col-ratings">
+                <DigitalRatingCell company={company} />
+              </td>
+              <td class="col-tags">
+                <DigitalCompanyBadges company={company} maxVisible={DIGITAL_BADGE_MAX_VISIBLE_TABLE} />
+              </td>
+            </tr>
+          );
+        })
+      }
+    </tbody>
+  </table>
+  <DigitalCatalogLoadMore surface="desktop" total={companies.length} />
+</div>

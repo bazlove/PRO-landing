@@ -1,0 +1,17 @@
+---
+interface Props {
+  companyId: string;
+  class?: string;
+}
+
+const { companyId, class: className } = Astro.props;
+---
+
+<button
+  type="button"
+  class:list={["digital-company-detail-trigger", className]}
+  data-company-detail-trigger
+  data-company-id={companyId}
+>
+  Подробнее
+</button>

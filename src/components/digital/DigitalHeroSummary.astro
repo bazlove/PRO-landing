@@ -1,0 +1,90 @@
+---
+import type { DigitalPageStats } from "../../lib/digital/stats";
+
+interface Props {
+  stats: DigitalPageStats;
+}
+
+const { stats } = Astro.props;
+
+const latestLabel = stats.latestUpdateDateIso
+  ? new Intl.DateTimeFormat("ru-RU", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    }).format(new Date(stats.latestUpdateDateIso))
+  : "—";
+---
+
+<aside class="digital-hero-summary digital-card" aria-labelledby="digital-summary-heading">
+  <header class="digital-hero-summary__header">
+    <h2 id="digital-summary-heading" class="digital-hero-summary__title">Текущий размер базы</h2>
+    <p class="digital-hero-summary__total" aria-label={`Всего компаний: ${stats.totalCompanies}`}>
+      <span
+        class="digital-hero-summary__total-value digital-summary-counter"
+        data-counter
+        data-counter-value={stats.totalCompanies}
+        data-counter-duration="1100"
+        aria-live="off">{stats.totalCompanies}</span
+      >
+      <span class="digital-hero-summary__total-label">компаний</span>
+    </p>
+  </header>
+
+  <dl class="digital-hero-summary__metrics">
+    <div class="digital-hero-summary__metric digital-tag--green">
+      <dd
+        class="digital-hero-summary__metric-value digital-summary-counter"
+        data-counter
+        data-counter-value={stats.activeHiringCompanies}
+        data-counter-duration="850"
+        aria-live="off">{stats.activeHiringCompanies}</dd
+      >
+      <dt class="digital-hero-summary__metric-label">С активным наймом</dt>
+    </div>
+    <div class="digital-hero-summary__metric digital-tag--blue">
+      <dd
+        class="digital-hero-summary__metric-value digital-summary-counter"
+        data-counter
+        data-counter-value={stats.remoteHybridDistributedCompanies}
+        data-counter-duration="1000"
+        aria-live="off">{stats.remoteHybridDistributedCompanies}</dd
+      >
+      <dt class="digital-hero-summary__metric-label">Есть удалёнка</dt>
+    </div>
+    <div class="digital-hero-summary__metric digital-tag--yellow">
+      <dd
+        class="digital-hero-summary__metric-value digital-summary-counter"
+        data-counter
+        data-counter-value={stats.highHrRatingCompanies}
+        data-counter-duration="950"
+        aria-live="off">{stats.highHrRatingCompanies}</dd
+      >
+      <dt class="digital-hero-summary__metric-label">Высокая HR-оценка</dt>
+    </div>
+    <div class="digital-hero-summary__metric digital-tag--purple">
+      <dd
+        class="digital-hero-summary__metric-value digital-summary-counter"
+        data-counter
+        data-counter-value={stats.awards2025Companies}
+        data-counter-duration="1200"
+        aria-live="off">{stats.awards2025Companies}</dd
+      >
+      <dt class="digital-hero-summary__metric-label">С наградами 2025</dt>
+    </div>
+  </dl>
+
+  <p class="digital-hero-summary__footer">
+    <span class="digital-hero-summary__footer-label">Последнее обновление</span>
+    <time
+      class="digital-hero-summary__footer-date"
+      datetime={stats.latestUpdateDateIso ?? undefined}>{latestLabel}</time
+    >
+  </p>
+</aside>
+
+<script>
+  import { initDigitalHeroSummaryCounters } from "../../lib/digital/heroSummaryCountersClient";
+
+  initDigitalHeroSummaryCounters();
+</script>

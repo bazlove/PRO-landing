@@ -1,0 +1,16 @@
+---
+import DigitalHero from "./DigitalHero.astro";
+import type { DigitalPageStats } from "../../lib/digital/stats";
+
+interface Props {
+  h1: string;
+  lead: string;
+  stats: DigitalPageStats;
+}
+
+const { h1, lead, stats } = Astro.props;
+---
+
+<section class="digital-first-screen" aria-label="Первый экран">
+  <DigitalHero h1={h1} lead={lead} stats={stats} />
+</section>

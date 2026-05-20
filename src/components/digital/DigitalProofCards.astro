@@ -1,0 +1,48 @@
+---
+import type { DigitalPageStats } from "../../lib/digital/stats";
+
+interface Props {
+  stats: DigitalPageStats;
+}
+
+const { stats } = Astro.props;
+
+const latestLabel = stats.latestUpdateDateIso
+  ? new Intl.DateTimeFormat("ru-RU", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    }).format(new Date(stats.latestUpdateDateIso))
+  : "—";
+---
+
+<section class="digital-section digital-section--compact" aria-labelledby="digital-proof-heading">
+  <div class="digital-container">
+    <h2 id="digital-proof-heading" class="digital-section-title">Срез базы</h2>
+    <p class="digital-section-sub">
+      Цифры ниже считаются по текущему публичному срезу данных на странице (демо-набор для разработки интерфейса).
+    </p>
+    <div class="digital-proof-grid">
+      <div class="digital-proof-card">
+        <div class="digital-proof-value">{stats.totalCompanies}</div>
+        <div class="digital-proof-label">Компаний в срезе</div>
+      </div>
+      <div class="digital-proof-card">
+        <div class="digital-proof-value">{stats.activeHiringCompanies}</div>
+        <div class="digital-proof-label">С активным наймом</div>
+      </div>
+      <div class="digital-proof-card">
+        <div class="digital-proof-value">{stats.remoteHybridDistributedCompanies}</div>
+        <div class="digital-proof-label">Удалёнка / гибрид / смешанный формат</div>
+      </div>
+      <div class="digital-proof-card">
+        <div class="digital-proof-value">{stats.highHrRatingCompanies}</div>
+        <div class="digital-proof-label">С высокой HR-оценкой</div>
+      </div>
+      <div class="digital-proof-card">
+        <div class="digital-proof-value">{latestLabel}</div>
+        <div class="digital-proof-label">Последняя проверка записей</div>
+      </div>
+    </div>
+  </div>
+</section>

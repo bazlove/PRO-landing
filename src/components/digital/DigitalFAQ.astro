@@ -1,0 +1,28 @@
+---
+import { DIGITAL_FAQ_ITEMS, buildDigitalFaqPageJsonLd } from "../../lib/digital/faqContent";
+
+const faqJsonLd = buildDigitalFaqPageJsonLd(DIGITAL_FAQ_ITEMS);
+---
+
+<section id="faq" class="digital-section digital-section--faq" aria-labelledby="digital-faq-heading">
+  <div class="digital-container digital-faq">
+    <h2 id="digital-faq-heading" class="digital-section-title">FAQ</h2>
+
+    <div class="digital-faq-list">
+      {
+        DIGITAL_FAQ_ITEMS.map((item, index) => (
+          <details class="digital-faq-item digital-card" open={index === 0 || undefined}>
+            <summary class="digital-faq-item__question">
+              <h3 class="digital-faq-item__heading">{item.question}</h3>
+            </summary>
+            <div class="digital-faq-item__answer">
+              <p>{item.answer}</p>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+
+  <script is:inline type="application/ld+json" set:html={faqJsonLd} />
+</section>

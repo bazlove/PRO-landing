@@ -1,0 +1,28 @@
+---
+import type { CompanyPublic } from "../../types/digital";
+import { formatRatingValueForUi } from "../../lib/digital/display";
+
+interface Props {
+  company: CompanyPublic;
+}
+
+const { company } = Astro.props;
+
+const hhRating = formatRatingValueForUi(company.hhRatingDisplay);
+const habrRating = formatRatingValueForUi(company.habrRatingDisplay);
+
+function ratingValueClass(value: string) {
+  return value === "нет отзывов" || value === "—" ? "digital-ratings__value--empty" : "";
+}
+---
+
+<div class="digital-ratings">
+  <div class="digital-ratings__row">
+    <span class="digital-ratings__label">HeadHunter</span>
+    <span class:list={["digital-ratings__value", ratingValueClass(hhRating)]}>{hhRating}</span>
+  </div>
+  <div class="digital-ratings__row">
+    <span class="digital-ratings__label">Habr Career</span>
+    <span class:list={["digital-ratings__value", ratingValueClass(habrRating)]}>{habrRating}</span>
+  </div>
+</div>

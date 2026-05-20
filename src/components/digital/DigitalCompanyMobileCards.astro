@@ -1,0 +1,101 @@
+---
+import type { CompanyPublic } from "../../types/digital";
+import {
+  DIGITAL_BADGE_MAX_VISIBLE_MOBILE,
+  formatCompanySize,
+  formatRatingValueForUi,
+  formatVacanciesRangeCopy,
+  getCompanyBadges,
+  getHiringFreshnessDisplay,
+} from "../../lib/digital/display";
+import DigitalCompanyBadges from "./DigitalCompanyBadges.astro";
+import DigitalCompanyName from "./DigitalCompanyName.astro";
+import DigitalCatalogLoadMore from "./DigitalCatalogLoadMore.astro";
+import DigitalCompanyDetailTrigger from "./DigitalCompanyDetailTrigger.astro";
+import { getCatalogItemDataAttrs } from "../../lib/digital/catalogItemAttrs";
+import {
+  getCatalogLimitConfig,
+  isCatalogItemInitiallyHidden,
+} from "../../lib/digital/displayLimits";
+
+interface Props {
+  companies: CompanyPublic[];
+}
+
+const { companies } = Astro.props;
+const { initial: mobileInitialVisible } = getCatalogLimitConfig("mobile");
+
+function formatRatings(company: CompanyPublic) {
+  return `HeadHunter ${formatRatingValueForUi(company.hhRatingDisplay)} · Habr Career ${formatRatingValueForUi(company.habrRatingDisplay)}`;
+}
+
+function formatProfileLine(company: CompanyPublic): string {
+  const size = formatCompanySize(company.size);
+  const parts = [company.city, company.companyType, company.niche];
+  if (size) parts.push(size);
+  return parts.join(" · ");
+}
+---
+
+<div
+  class="digital-mobile-cards"
+  aria-label="База digital компаний (мобильная версия)"
+  data-digital-catalog-surface="mobile"
+>
+  {
+    companies.map((company, index) => {
+      const hiring = getHiringFreshnessDisplay(company.hhVacanciesCheckedAt);
+      const tags = getCompanyBadges(company);
+      const initiallyHidden = isCatalogItemInitiallyHidden(index, mobileInitialVisible);
+
+      return (
+        <article
+          {...getCatalogItemDataAttrs(company)}
+          class:list={[
+            "digital-mobile-card",
+            { "digital-catalog-item--hidden": initiallyHidden },
+          ]}
+        >
+          <h3 class="digital-mobile-card__title">
+            <DigitalCompanyName company={company} />
+          </h3>
+          <p class="digital-mobile-card__profile meta">{formatProfileLine(company)}</p>
+          <p class="digital-mobile-row">
+            <span class="digital-mobile-row__label">Статус найма:</span> {company.hiringStatus} ·{" "}
+            {formatVacanciesRangeCopy(company.vacanciesRange)}
+          </p>
+          <p class="digital-mobile-row digital-mobile-row--muted">
+            {hiring.isMissing ? (
+              <span class="digital-muted">{hiring.hhLine}</span>
+            ) : (
+              hiring.hhLine
+            )}
+            {hiring.staleWarning && (
+              <span class="digital-stale-label"> · {hiring.staleWarning}</span>
+            )}
+          </p>
+          <p class="digital-mobile-row">
+            <span class="digital-mobile-row__label">Формат:</span> {company.workFormat} · Гео:{" "}
+            {company.hiringGeo}
+          </p>
+          <p class="digital-mobile-row">
+            <span class="digital-mobile-row__label">Рейтинги:</span> {formatRatings(company)}
+          </p>
+          {
+            tags.length > 0 && (
+              <p class="digital-mobile-row digital-mobile-row--tags">
+                <span class="digital-mobile-row__label">Теги:</span>
+              </p>
+            )
+          }
+          <DigitalCompanyBadges company={company} maxVisible={DIGITAL_BADGE_MAX_VISIBLE_MOBILE} />
+          <DigitalCompanyDetailTrigger
+            companyId={company.id}
+            class="digital-company-detail-trigger--mobile"
+          />
+        </article>
+      );
+    })
+  }
+  <DigitalCatalogLoadMore surface="mobile" total={companies.length} />
+</div>

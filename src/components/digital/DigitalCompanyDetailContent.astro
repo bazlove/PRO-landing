@@ -1,0 +1,233 @@
+---
+import type { CompanyPublic } from "../../types/digital";
+import {
+  buildDrawerHiringDetailParts,
+  formatDrawerInternationalLine,
+  getDrawerHiringStatusValue,
+  getDrawerHeaderMetaParts,
+  getDrawerSummaryChips,
+  shouldShowDrawerInternationalLine,
+  filterDrawerAwardsByEmployerRankingBadges,
+  splitAwards,
+} from "../../lib/digital/display";
+import DigitalRatingCell from "./DigitalRatingCell.astro";
+import EmployerRankingBadge from "./EmployerRankingBadge.astro";
+import DigitalExternalLinkIcon from "./DigitalExternalLinkIcon.astro";
+import hhIcon from "../../assets/digital/icons/hh.svg";
+import habrCareerIcon from "../../assets/digital/icons/habr-career.svg";
+import linkedinIcon from "../../assets/digital/icons/linkedin.svg";
+
+interface Props {
+  company: CompanyPublic;
+}
+
+const { company } = Astro.props;
+const summaryChips = getDrawerSummaryChips(company);
+const hiringStatusValue = getDrawerHiringStatusValue(company);
+const hiringDetailParts = buildDrawerHiringDetailParts(company);
+const titleId = `digital-company-detail-title-${company.id}`;
+const hasCareerUrl = Boolean(company.careerUrl?.trim());
+const employerRankingBadges = company.employerRankingBadges;
+const awardItems = filterDrawerAwardsByEmployerRankingBadges(
+  splitAwards(company.awards2025),
+  employerRankingBadges,
+);
+
+const headerMetaParts = getDrawerHeaderMetaParts(company);
+
+type DrawerSourceLink = {
+  href: string;
+  ariaLabel: string;
+  iconSrc: string;
+  iconClass: string;
+  analyticsId: "hh" | "habr" | "linkedin";
+};
+
+const sourceLinks: DrawerSourceLink[] = [];
+if (company.hhCompanyUrl) {
+  sourceLinks.push({
+    href: company.hhCompanyUrl,
+    ariaLabel: "Открыть страницу компании на HeadHunter",
+    iconSrc: hhIcon.src,
+    iconClass: "digital-company-detail__source-icon--hh",
+    analyticsId: "hh",
+  });
+}
+if (company.habrUrl) {
+  sourceLinks.push({
+    href: company.habrUrl,
+    ariaLabel: "Открыть страницу компании на Habr Career",
+    iconSrc: habrCareerIcon.src,
+    iconClass: "digital-company-detail__source-icon--habr",
+    analyticsId: "habr",
+  });
+}
+if (company.linkedinUrl) {
+  sourceLinks.push({
+    href: company.linkedinUrl,
+    ariaLabel: "Открыть страницу компании в LinkedIn",
+    iconSrc: linkedinIcon.src,
+    iconClass: "digital-company-detail__source-icon--linkedin",
+    analyticsId: "linkedin",
+  });
+}
+
+const showActions = hasCareerUrl || sourceLinks.length > 0;
+---
+
+<article class="digital-company-detail">
+  <header class="digital-company-detail__header">
+    <h2 id={titleId} class="digital-company-detail__title" data-company-detail-title>
+      {company.name}
+    </h2>
+    {
+      headerMetaParts.length > 0 && (
+        <p class="digital-company-detail__meta">{headerMetaParts.join(" · ")}</p>
+      )
+    }
+
+    {
+      summaryChips.length > 0 && (
+        <div class="digital-company-detail__chips" aria-label="Краткая сводка">
+          {summaryChips.map((chip) => (
+            <span class:list={["digital-badge", "digital-company-detail__chip", chip.variantClass]}>
+              {chip.label}
+            </span>
+          ))}
+        </div>
+      )
+    }
+
+    {
+      showActions && (
+        <div class="digital-company-detail__actions">
+          {
+            hasCareerUrl && (
+              <a
+                class="digital-company-detail__primary-link"
+                href={company.careerUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-analytics-drawer-link="career"
+                data-company-id={company.id}
+                data-company-slug={company.slug}
+                data-company-name={company.name}
+              >
+                Карьерная страница
+                <DigitalExternalLinkIcon />
+              </a>
+            )
+          }
+          {
+            sourceLinks.length > 0 && (
+              <div class="digital-company-detail__source-links">
+                {
+                  sourceLinks.map((link) => (
+                    <a
+                      class="digital-company-detail__source-link"
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={link.ariaLabel}
+                      title={link.ariaLabel}
+                      data-analytics-drawer-link={link.analyticsId}
+                      data-company-id={company.id}
+                      data-company-slug={company.slug}
+                      data-company-name={company.name}
+                    >
+                      <img
+                        class:list={["digital-company-detail__source-icon", link.iconClass]}
+                        src={link.iconSrc}
+                        alt=""
+                        aria-hidden="true"
+                        width="18"
+                        height="18"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </a>
+                  ))
+                }
+              </div>
+            )
+          }
+        </div>
+      )
+    }
+  </header>
+
+  <section
+    class="digital-company-detail__section digital-company-detail__section--first"
+    aria-labelledby={`${company.id}-hiring`}
+  >
+    <h3 id={`${company.id}-hiring`} class="digital-company-detail__heading">Статус найма</h3>
+    <p class="digital-company-detail__line">
+      <span class="digital-company-detail__primary">{hiringStatusValue}</span>
+    </p>
+    <p class="digital-company-detail__line digital-company-detail__line--muted">
+      {
+        hiringDetailParts.map((part, index) => (
+          <>
+            {index > 0 && <span aria-hidden="true"> · </span>}
+            {part === "Требует повторной проверки" ? (
+              <span class="digital-stale-label">{part}</span>
+            ) : (
+              part
+            )}
+          </>
+        ))
+      }
+    </p>
+  </section>
+
+  <section class="digital-company-detail__section" aria-labelledby={`${company.id}-format`}>
+    <h3 id={`${company.id}-format`} class="digital-company-detail__heading">Формат работы</h3>
+    <p class="digital-company-detail__line">
+      <span class="digital-company-detail__primary">{company.workFormat}</span>
+    </p>
+    <p class="digital-company-detail__line digital-company-detail__line--muted">
+      География найма: {company.hiringGeo}
+    </p>
+    {
+      shouldShowDrawerInternationalLine(company) && (
+        <p class="digital-company-detail__line digital-company-detail__line--muted">
+          {formatDrawerInternationalLine(company)}
+        </p>
+      )
+    }
+  </section>
+
+  <section class="digital-company-detail__section" aria-labelledby={`${company.id}-ratings`}>
+    <h3 id={`${company.id}-ratings`} class="digital-company-detail__heading">HR-рейтинги</h3>
+    <DigitalRatingCell company={company} />
+    {
+      employerRankingBadges.length > 0 && (
+        <div class="digital-employer-rankings" aria-label="Рейтинги работодателей">
+          {employerRankingBadges.map((badge) => (
+            <EmployerRankingBadge badge={badge} />
+          ))}
+        </div>
+      )
+    }
+  </section>
+
+  {
+    awardItems.length > 0 && (
+      <section class="digital-company-detail__section" aria-labelledby={`${company.id}-awards`}>
+        <h3 id={`${company.id}-awards`} class="digital-company-detail__heading">
+          Награды / внешние рейтинги
+        </h3>
+        <ul class="digital-company-detail__awards-list">
+          {awardItems.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  <p class="digital-company-detail__disclaimer">
+    Данные собраны из открытых источников и нормализованы вручную. Карта не является официальным
+    рейтингом работодателей.
+  </p>
+</article>

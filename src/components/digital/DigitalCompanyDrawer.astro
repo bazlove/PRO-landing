@@ -1,0 +1,27 @@
+<div
+  class="digital-company-detail-drawer"
+  data-company-detail-drawer
+  hidden
+  aria-hidden="true"
+>
+  <div class="digital-company-detail-drawer__overlay" data-company-detail-overlay></div>
+  <div
+    class="digital-company-detail-drawer__panel"
+    data-company-detail-panel
+    role="dialog"
+    aria-modal="true"
+    tabindex="-1"
+  >
+    <div class="digital-company-detail-drawer__toolbar">
+      <button
+        type="button"
+        class="digital-company-detail-drawer__close"
+        data-company-detail-close
+        aria-label="Закрыть подробности о компании"
+      >
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="digital-company-detail-drawer__body" data-company-detail-content></div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+---
+import type { CompanyPublic } from "../../types/digital";
+
+interface Props {
+  company: CompanyPublic;
+  class?: string;
+}
+
+const { company, class: className } = Astro.props;
+---
+
+<span class:list={["digital-company-name-text", className]}>{company.name}</span>
