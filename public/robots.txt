@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://pro.site.com/sitemap.xml
