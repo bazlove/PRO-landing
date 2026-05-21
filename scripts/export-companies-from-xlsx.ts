@@ -20,7 +20,8 @@ import {
 import {
   collectForbiddenKeys,
   compareCompaniesByDefaultOrder,
-  isPublicRow,
+  sheetHasColumn,
+  SHOWCASE_COLUMN_KEYS,
 } from "../src/lib/digital/normalizeCompany.ts";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -86,7 +87,7 @@ function sheetHasPublicShowcaseColumn(sheet: XLSX.WorkSheet): boolean {
     range: 0,
   });
   const first = rows[0];
-  return Boolean(first && PUBLIC_SHOWCASE_COLUMN in first);
+  return Boolean(first && sheetHasColumn(new Set(Object.keys(first)), SHOWCASE_COLUMN_KEYS));
 }
 
 function resolveExportSheet(): { sheet: XLSX.WorkSheet; sheetName: string } {
@@ -127,13 +128,11 @@ if (sheetName === "public_export") {
   assertPublicExportContract(allRows);
 }
 
-const rawRows =
-  sheetName === "public_export"
-    ? allRows
-    : allRows.filter((row) => isPublicRow(row));
+const sheetHeaders = getHeaderKeys(allRows);
+const eligibilityContext = { sheetName, sheetHeaders };
 
 const forbiddenInExport = new Set<string>();
-rawRows.forEach((row) => {
+allRows.forEach((row) => {
   collectForbiddenKeys(row).forEach((key) => forbiddenInExport.add(key));
 });
 
@@ -143,29 +142,37 @@ if (forbiddenInExport.size > 0) {
   );
 }
 
-const { companies, report } = buildPublicCompaniesFromRows(rawRows, {
+const { companies, report } = buildPublicCompaniesFromRows(allRows, {
   preserveOrder: true,
   maxCount: Number.isFinite(exportMax) && exportMax > 0 ? exportMax : undefined,
   allowSourceUrlInference: sheetName !== "public_export",
+  enforceUniqueCompanyIds: true,
+  publicExportEligibility: eligibilityContext,
+  normalizeOptions: {
+    requireCompanyId: true,
+    allowSourceUrlInference: sheetName !== "public_export",
+  },
 });
 
-// Public JSON order is the canonical default display order for `/digital`.
-// Keep the master XLSX / `Сводка` row order untouched and sort only the generated public artifact.
 companies.sort(compareCompaniesByDefaultOrder);
 
 writeFileSync(jsonPath, `${JSON.stringify(companies, null, 2)}\n`, "utf8");
 
-logExportSummary(xlsxPath, sheetName, allRows.length, rawRows.length, report, companies);
+logExportSummary(xlsxPath, sheetName, allRows.length, report.eligibleCount, report, companies);
 
 if (report.warnings.length > 0) {
   console.warn(`[digital] ${report.warnings.length} normalization warning(s).`);
 }
 
+console.log(
+  "[digital] Next: npm run data:validate-companies:min100",
+);
+
 function logExportSummary(
   sourcePath: string,
   sourceSheet: string,
   sheetRowCount: number,
-  consideredRowCount: number,
+  eligibleRowCount: number,
   exportReport: BuildPublicCompaniesReport,
   companies: ReturnType<typeof buildPublicCompaniesFromRows>["companies"],
 ): void {
@@ -173,7 +180,10 @@ function logExportSummary(
     `[digital] Exported ${exportReport.normalizedCount} companies from ${sourcePath} (sheet: ${sourceSheet}) → src/data/digital/companies.json`,
   );
   console.log(
-    `[digital] Rows: sheet=${sheetRowCount}, public candidates=${exportReport.publicCandidatesCount}, considered=${consideredRowCount}, skipped=${exportReport.skippedCount}, capped=${exportReport.cappedCount}`,
+    `[digital] Rows: sheet=${sheetRowCount}, eligible public=${eligibleRowCount}, normalized=${exportReport.normalizedCount}, skipped=${exportReport.skippedCount}, capped=${exportReport.cappedCount}`,
+  );
+  console.log(
+    `[digital] Skipped (pre-filter): invalid company_id=${exportReport.skippedInvalidCompanyId}, public_fit_status∉[P0,P1,P2]=${exportReport.skippedPublicFitStatus}, showcase≠Да=${exportReport.skippedShowcase}, other=${exportReport.skippedOther}`,
   );
 
   const withWebsite = companies.filter((c) => c.websiteUrl).length;
