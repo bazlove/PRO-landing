@@ -2,11 +2,15 @@ import type { CompanyPublic } from "../../types/digital";
 import {
   compareCompaniesByDefaultOrder,
   createSlugAllocator,
-  isPublicRow,
+  getPublicExportSkipReason,
+  isPublicExportEligibleRow,
   normalizeCompany,
+  parseCompanyId,
+  recalculateDerivedFields,
   resolvePublicHhVacanciesCheckedAt,
   warnDigital,
   type NormalizeCompanyOptions,
+  type PublicExportEligibilityContext,
 } from "./normalizeCompany";
 
 export type { NormalizeCompanyOptions };
@@ -16,13 +20,24 @@ export type BuildPublicCompaniesOptions = {
   preserveOrder?: boolean;
   /** Stop after this many valid public rows (e.g. 100 for Phase 9). */
   maxCount?: number;
+  /** Fail when duplicate `company_id` / `id` values appear among input rows. */
+  enforceUniqueCompanyIds?: boolean;
+  /** XLSX export: apply showcase + public_fit_status + company_id gate. */
+  publicExportEligibility?: PublicExportEligibilityContext;
+  /** Passed through to `normalizeCompany`. */
+  normalizeOptions?: NormalizeCompanyOptions;
 } & Pick<NormalizeCompanyOptions, "allowSourceUrlInference">;
 
 export type BuildPublicCompaniesReport = {
   rawCount: number;
   publicCandidatesCount: number;
+  eligibleCount: number;
   normalizedCount: number;
   skippedCount: number;
+  skippedInvalidCompanyId: number;
+  skippedPublicFitStatus: number;
+  skippedShowcase: number;
+  skippedOther: number;
   /** Rows not exported because `maxCount` was reached (not validation failures). */
   cappedCount: number;
   warnings: string[];
@@ -30,41 +45,43 @@ export type BuildPublicCompaniesReport = {
 
 /** Whitelisted public JSON shape written to `companies.json`. */
 export function toPublicCompanyJsonRecord(company: CompanyPublic): CompanyPublic {
+  const recalculated = recalculateDerivedFields(company);
+
   return {
-    id: company.id,
-    slug: company.slug,
-    name: company.name,
-    city: company.city,
-    companyType: company.companyType,
-    niche: company.niche,
-    size: company.size,
-    careerUrl: company.careerUrl,
-    vacanciesRange: company.vacanciesRange,
-    vacanciesWeight: company.vacanciesWeight,
-    hiringStatus: company.hiringStatus,
-    workFormat: company.workFormat,
-    hiringGeo: company.hiringGeo,
-    international: company.international,
-    hhRatingDisplay: company.hhRatingDisplay,
-    hhRatingValue: company.hhRatingValue,
-    habrRatingDisplay: company.habrRatingDisplay,
-    habrRatingValue: company.habrRatingValue,
-    awards2025: company.awards2025,
-    hasAwards2025: company.hasAwards2025,
-    presets: company.presets,
-    hasActiveHiring: company.hasActiveHiring,
-    hasRemote: company.hasRemote,
-    hasHighHrRating: company.hasHighHrRating,
-    lastCheckedAt: company.lastCheckedAt,
+    id: recalculated.id,
+    slug: recalculated.slug,
+    name: recalculated.name,
+    city: recalculated.city,
+    companyType: recalculated.companyType,
+    niche: recalculated.niche,
+    size: recalculated.size,
+    careerUrl: recalculated.careerUrl,
+    vacanciesRange: recalculated.vacanciesRange,
+    vacanciesWeight: recalculated.vacanciesWeight,
+    hiringStatus: recalculated.hiringStatus,
+    workFormat: recalculated.workFormat,
+    hiringGeo: recalculated.hiringGeo,
+    international: recalculated.international,
+    hhRatingDisplay: recalculated.hhRatingDisplay,
+    hhRatingValue: recalculated.hhRatingValue,
+    habrRatingDisplay: recalculated.habrRatingDisplay,
+    habrRatingValue: recalculated.habrRatingValue,
+    awards2025: recalculated.awards2025,
+    hasAwards2025: recalculated.hasAwards2025,
+    presets: recalculated.presets,
+    hasActiveHiring: recalculated.hasActiveHiring,
+    hasRemote: recalculated.hasRemote,
+    hasHighHrRating: recalculated.hasHighHrRating,
+    lastCheckedAt: recalculated.lastCheckedAt,
     hhVacanciesCheckedAt: resolvePublicHhVacanciesCheckedAt(
-      company.vacanciesRange,
-      company.hhVacanciesCheckedAt ?? null,
+      recalculated.vacanciesRange,
+      recalculated.hhVacanciesCheckedAt ?? null,
     ),
-    websiteUrl: company.websiteUrl ?? null,
-    hhCompanyUrl: company.hhCompanyUrl ?? null,
-    habrUrl: company.habrUrl ?? null,
-    linkedinUrl: company.linkedinUrl ?? null,
-    employerRankingBadges: company.employerRankingBadges,
+    websiteUrl: recalculated.websiteUrl ?? null,
+    hhCompanyUrl: recalculated.hhCompanyUrl ?? null,
+    habrUrl: recalculated.habrUrl ?? null,
+    linkedinUrl: recalculated.linkedinUrl ?? null,
+    employerRankingBadges: recalculated.employerRankingBadges,
     publicStatus: "public",
   };
 }
@@ -84,8 +101,93 @@ export function findHiringFreshnessInconsistencies(companies: CompanyPublic[]): 
   return issues;
 }
 
-function isRecord(value: unknown): value is Record<string, unknown> {
+function isRowRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+export function assertUniqueCompanyIds(
+  rows: unknown[],
+  eligibility?: PublicExportEligibilityContext,
+): void {
+  const seen = new Map<string, number>();
+  const duplicates: string[] = [];
+
+  rows.forEach((row, index) => {
+    if (!isRowRecord(row)) return;
+    if (eligibility && !isPublicExportEligibleRow(row, eligibility)) return;
+
+    const id = parseCompanyId(row);
+    if (!id) return;
+
+    if (seen.has(id)) {
+      duplicates.push(
+        `${id} (rows ${seen.get(id)! + 1} and ${index + 1})`,
+      );
+    } else {
+      seen.set(id, index);
+    }
+  });
+
+  if (duplicates.length > 0) {
+    throw new Error(
+      `[digital] Duplicate company_id among public export candidates:\n` +
+        duplicates.map((line) => `  - ${line}`).join("\n"),
+    );
+  }
+}
+
+function countSkipReasons(
+  rows: unknown[],
+  eligibility: PublicExportEligibilityContext | undefined,
+): Pick<
+  BuildPublicCompaniesReport,
+  | "skippedInvalidCompanyId"
+  | "skippedPublicFitStatus"
+  | "skippedShowcase"
+  | "skippedOther"
+  | "eligibleCount"
+> {
+  let skippedInvalidCompanyId = 0;
+  let skippedPublicFitStatus = 0;
+  let skippedShowcase = 0;
+  let skippedOther = 0;
+  let eligibleCount = 0;
+
+  if (!eligibility) {
+    return {
+      skippedInvalidCompanyId: 0,
+      skippedPublicFitStatus: 0,
+      skippedShowcase: 0,
+      skippedOther: 0,
+      eligibleCount: rows.length,
+    };
+  }
+
+  for (const row of rows) {
+    if (!isRowRecord(row)) {
+      skippedOther += 1;
+      continue;
+    }
+
+    if (isPublicExportEligibleRow(row, eligibility)) {
+      eligibleCount += 1;
+      continue;
+    }
+
+    const reason = getPublicExportSkipReason(row, eligibility);
+    if (reason === "invalid_company_id") skippedInvalidCompanyId += 1;
+    else if (reason === "public_fit_status") skippedPublicFitStatus += 1;
+    else if (reason === "showcase") skippedShowcase += 1;
+    else skippedOther += 1;
+  }
+
+  return {
+    skippedInvalidCompanyId,
+    skippedPublicFitStatus,
+    skippedShowcase,
+    skippedOther,
+    eligibleCount,
+  };
 }
 
 export function buildPublicCompaniesFromRows(
@@ -96,17 +198,36 @@ export function buildPublicCompaniesFromRows(
     throw new Error("[digital] Input must be a JSON array of company rows.");
   }
 
-  const { preserveOrder = false, maxCount, allowSourceUrlInference = true } = options;
+  const {
+    preserveOrder = false,
+    maxCount,
+    allowSourceUrlInference = true,
+    enforceUniqueCompanyIds = false,
+    publicExportEligibility,
+    normalizeOptions,
+  } = options;
+
+  if (enforceUniqueCompanyIds) {
+    assertUniqueCompanyIds(rawRows, publicExportEligibility);
+  }
+
+  const skipCounts = countSkipReasons(rawRows, publicExportEligibility);
+
   const allocateSlug = createSlugAllocator();
   const warnings: string[] = [];
   const normalized: CompanyPublic[] = [];
   let skippedCount = 0;
 
-  const publicCandidatesCount = rawRows.filter(
-    (row) => isRecord(row) && isPublicRow(row),
-  ).length;
+  const publicCandidatesCount = publicExportEligibility
+    ? skipCounts.eligibleCount
+    : rawRows.filter((row) => isRowRecord(row)).length;
 
   let stopIndex = rawRows.length;
+
+  const normalizeOpts: NormalizeCompanyOptions = {
+    allowSourceUrlInference,
+    ...normalizeOptions,
+  };
 
   for (let index = 0; index < rawRows.length; index += 1) {
     if (maxCount !== undefined && normalized.length >= maxCount) {
@@ -114,9 +235,15 @@ export function buildPublicCompaniesFromRows(
       break;
     }
 
-    const company = normalizeCompany(rawRows[index], index, allocateSlug, warnings, {
-      allowSourceUrlInference,
-    });
+    const row = rawRows[index];
+    if (publicExportEligibility && isRowRecord(row)) {
+      if (!isPublicExportEligibleRow(row, publicExportEligibility)) {
+        skippedCount += 1;
+        continue;
+      }
+    }
+
+    const company = normalizeCompany(row, index, allocateSlug, warnings, normalizeOpts);
     if (company) {
       normalized.push(toPublicCompanyJsonRecord(company));
     } else {
@@ -158,8 +285,13 @@ export function buildPublicCompaniesFromRows(
     report: {
       rawCount: rawRows.length,
       publicCandidatesCount,
+      eligibleCount: skipCounts.eligibleCount,
       normalizedCount: normalized.length,
       skippedCount,
+      skippedInvalidCompanyId: skipCounts.skippedInvalidCompanyId,
+      skippedPublicFitStatus: skipCounts.skippedPublicFitStatus,
+      skippedShowcase: skipCounts.skippedShowcase,
+      skippedOther: skipCounts.skippedOther,
       cappedCount,
       warnings,
     },
