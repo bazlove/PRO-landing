@@ -26,6 +26,7 @@ const ADVANCED_FILTER_IDS = {
 
 const DESKTOP_MQ = "(min-width: 960px)";
 const MOBILE_FILTERS_MQ = "(max-width: 640px)";
+const TABLET_FILTERS_MQ = "(min-width: 700px) and (max-width: 959px) and (min-height: 700px)";
 const VALID_PRESET_IDS = new Set(DIGITAL_FILTER_PRESETS.map((preset) => preset.id));
 const ADVANCED_TOGGLE_LABEL_SHOW = "Показать расширенные фильтры ↓";
 const ADVANCED_TOGGLE_LABEL_HIDE = "Свернуть расширенные фильтры ↑";
@@ -130,6 +131,14 @@ export function initDigitalCatalogFilters(): void {
     return window.matchMedia(MOBILE_FILTERS_MQ).matches;
   }
 
+  function isTabletFiltersViewport(): boolean {
+    return window.matchMedia(TABLET_FILTERS_MQ).matches;
+  }
+
+  function usesUtilityClearButton(): boolean {
+    return isMobileFiltersViewport() || isTabletFiltersViewport();
+  }
+
   function hasActiveSecondaryPreset(): boolean {
     for (const id of activePresets) {
       if (!DIGITAL_PRIMARY_PRESET_IDS.has(id)) return true;
@@ -159,20 +168,20 @@ export function initDigitalCatalogFilters(): void {
   }
 
   function syncClearButtons(): void {
-    const isMobile = isMobileFiltersViewport();
+    const useUtilityClear = usesUtilityClearButton();
     clearBtns.forEach((btn) => {
       const isUtility = btn.hasAttribute("data-digital-filter-clear-utility");
-      if (isMobile && isUtility) {
+      if (useUtilityClear && isUtility) {
         btn.hidden = false;
         btn.classList.toggle("is-active", filtersActive);
         return;
       }
-      if (isMobile && !isUtility) {
+      if (useUtilityClear && !isUtility) {
         btn.hidden = true;
         btn.classList.remove("is-active");
         return;
       }
-      if (!isMobile && isUtility) {
+      if (!useUtilityClear && isUtility) {
         btn.hidden = true;
         btn.classList.remove("is-active");
         return;
@@ -534,17 +543,23 @@ export function initDigitalCatalogFilters(): void {
     });
   });
 
-  const mq = window.matchMedia(DESKTOP_MQ);
-  const onMqChange = () => {
+  const onLayoutMqChange = () => {
     resetVisibleCounts();
     syncPresetsSecondaryVisibility();
     applyCatalog();
   };
-  if (typeof mq.addEventListener === "function") {
-    mq.addEventListener("change", onMqChange);
-  } else if (typeof mq.addListener === "function") {
-    // Legacy MediaQueryList API (Safari < 14, older Chromium)
-    mq.addListener(onMqChange);
+
+  for (const mq of [
+    window.matchMedia(DESKTOP_MQ),
+    window.matchMedia(TABLET_FILTERS_MQ),
+    window.matchMedia(MOBILE_FILTERS_MQ),
+  ]) {
+    if (typeof mq.addEventListener === "function") {
+      mq.addEventListener("change", onLayoutMqChange);
+    } else if (typeof mq.addListener === "function") {
+      // Legacy MediaQueryList API (Safari < 14, older Chromium)
+      mq.addListener(onLayoutMqChange);
+    }
   }
 
   pageSizeSelect?.addEventListener("change", () => {
