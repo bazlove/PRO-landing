@@ -15,7 +15,31 @@ const FORBIDDEN_KEY_PATTERNS: RegExp[] = [
   /\bcsv\b/i,
   /\braw\b/i,
   /sourceSheet/i,
+  /size_source/i,
+  /size_checked_at/i,
 ];
+
+const PUBLIC_FIT_ELIGIBLE = new Set(["P0", "P1", "P2"]);
+
+export const SHOWCASE_COLUMN_KEYS = [
+  "Показывать в публичной витрине",
+  "showcase",
+  "public_showcase",
+] as const;
+
+const PUBLIC_FIT_COLUMN_KEYS = ["public_fit_status", "publicFitStatus"] as const;
+
+const COMPANY_ID_COLUMN_KEYS = ["company_id", "companyId", "id"] as const;
+
+export const VACANCIES_WEIGHT_BY_RANGE: Record<CompanyPublic["vacanciesRange"], number> = {
+  "10+": 3,
+  "5–10": 2,
+  "1–4": 1,
+  "0": 0,
+  "Не проверено": -1,
+};
+
+const PLACEHOLDER_TOKENS = new Set(["-", "—", "нет", "n/a", "na"]);
 
 const HIRING_STATUSES = new Set<CompanyPublic["hiringStatus"]>([
   "Активный",
@@ -64,14 +88,6 @@ const PRESET_HIGH_RATING = "Высокая HR-оценка";
 const PRESET_AWARDS = "Награды 2025";
 const PRESET_INTERNATIONAL = "Международные";
 
-const SAFE_PRESET_STRINGS = new Set([
-  PRESET_ACTIVE,
-  PRESET_REMOTE,
-  PRESET_HIGH_RATING,
-  PRESET_AWARDS,
-  PRESET_INTERNATIONAL,
-]);
-
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
@@ -104,6 +120,24 @@ function pickOptionalString(raw: Record<string, unknown>, keys: string[]): strin
   return value || null;
 }
 
+function isPlaceholderToken(value: string): boolean {
+  const normalized = value.trim().toLowerCase();
+  return !normalized || PLACEHOLDER_TOKENS.has(normalized);
+}
+
+function isValidHttpUrlString(value: string): boolean {
+  if (!value || /^mailto:/i.test(value) || isPlaceholderToken(value)) return false;
+  try {
+    const url = new URL(value);
+    if (!["http:", "https:"].includes(url.protocol)) return false;
+    if (/\.(csv|xlsx)(\?|#|$)/i.test(url.pathname)) return false;
+    if (/download/i.test(url.pathname)) return false;
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 function pickFirstDefined(raw: Record<string, unknown>, keys: string[]): unknown {
   for (const key of keys) {
     if (raw[key] !== undefined && raw[key] !== null) return raw[key];
@@ -116,9 +150,7 @@ function normalizeOptionalHttpUrl(raw: unknown): string | null {
   if (raw === null || raw === undefined) return null;
 
   const value = String(raw).trim();
-  if (!value || /^mailto:/i.test(value)) return null;
-
-  if (!isValidHttpUrl(value)) return null;
+  if (!isValidHttpUrlString(value)) return null;
 
   try {
     return new URL(value).href;
@@ -216,14 +248,12 @@ function isInternationalHiringGeo(hiringGeo: string): boolean {
 
 function pickOptionalHttpUrl(raw: Record<string, unknown>, keys: string[]): string | null {
   const value = pickOptionalString(raw, keys);
-  if (!value || /^mailto:/i.test(value)) return null;
+  if (!value || !isValidHttpUrlString(value)) return null;
   try {
-    const url = new URL(value);
-    if (url.protocol === "http:" || url.protocol === "https:") return url.href;
+    return new URL(value).href;
   } catch {
     return null;
   }
-  return null;
 }
 
 function urlsEqual(a: string, b: string): boolean {
@@ -460,8 +490,109 @@ export function isPublicRow(raw: Record<string, unknown>): boolean {
   const publicFlag = pickValue(raw, ["public"]);
   if (publicFlag === true || publicFlag === "public") return true;
 
-  const showcase = pickValue(raw, ["Показывать в публичной витрине"]);
+  const showcase = pickValue(raw, [...SHOWCASE_COLUMN_KEYS]);
   return isTruthyPublicFlag(showcase);
+}
+
+export function isValidCompanyId(value: string): boolean {
+  const id = value.trim();
+  return id.length > 0 && !isPlaceholderToken(id);
+}
+
+/** Canonical immutable key: XLSX `company_id` → JSON `id`. */
+export function parseCompanyId(raw: Record<string, unknown>): string | null {
+  for (const key of COMPANY_ID_COLUMN_KEYS) {
+    const candidate = pickString(raw, [key], "");
+    if (candidate && isValidCompanyId(candidate)) {
+      return candidate;
+    }
+  }
+  return null;
+}
+
+export function pickPublicFitStatus(raw: Record<string, unknown>): string {
+  return pickString(raw, [...PUBLIC_FIT_COLUMN_KEYS]);
+}
+
+export function sheetHasColumn(headers: Set<string>, keys: readonly string[]): boolean {
+  return keys.some((key) => headers.has(key));
+}
+
+export type PublicExportEligibilityContext = {
+  sheetName?: string;
+  sheetHeaders?: Set<string>;
+};
+
+/**
+ * Strict XLSX → public JSON gate:
+ * showcase = "Да" AND public_fit_status in [P0,P1,P2] AND valid company_id.
+ */
+export function isPublicExportEligibleRow(
+  raw: Record<string, unknown>,
+  context: PublicExportEligibilityContext = {},
+): boolean {
+  const headers = context.sheetHeaders ?? new Set(Object.keys(raw));
+  const sheetIsPublicExport = context.sheetName === "public_export";
+
+  const hasShowcaseColumn = sheetHasColumn(headers, SHOWCASE_COLUMN_KEYS);
+  if (hasShowcaseColumn) {
+    const showcase = pickValue(raw, [...SHOWCASE_COLUMN_KEYS]);
+    if (!isTruthyPublicFlag(showcase)) return false;
+  } else if (!sheetIsPublicExport && !isPublicRow(raw)) {
+    return false;
+  }
+
+  const hasFitColumn = sheetHasColumn(headers, PUBLIC_FIT_COLUMN_KEYS);
+  if (hasFitColumn) {
+    const fit = pickPublicFitStatus(raw);
+    if (!PUBLIC_FIT_ELIGIBLE.has(fit)) return false;
+  } else if (!sheetIsPublicExport) {
+    return false;
+  }
+
+  return parseCompanyId(raw) !== null;
+}
+
+export type PublicExportSkipReason =
+  | "invalid_company_id"
+  | "public_fit_status"
+  | "showcase"
+  | "other";
+
+export function getPublicExportSkipReason(
+  raw: Record<string, unknown>,
+  context: PublicExportEligibilityContext = {},
+): PublicExportSkipReason | null {
+  if (isPublicExportEligibleRow(raw, context)) return null;
+
+  if (parseCompanyId(raw) === null) return "invalid_company_id";
+
+  const headers = context.sheetHeaders ?? new Set(Object.keys(raw));
+  const sheetIsPublicExport = context.sheetName === "public_export";
+  const hasFitColumn = sheetHasColumn(headers, PUBLIC_FIT_COLUMN_KEYS);
+
+  if (hasFitColumn || !sheetIsPublicExport) {
+    const fit = pickPublicFitStatus(raw);
+    if (!PUBLIC_FIT_ELIGIBLE.has(fit)) return "public_fit_status";
+  }
+
+  const hasShowcaseColumn = sheetHasColumn(headers, SHOWCASE_COLUMN_KEYS);
+  if (hasShowcaseColumn) {
+    const showcase = pickValue(raw, [...SHOWCASE_COLUMN_KEYS]);
+    if (!isTruthyPublicFlag(showcase)) return "showcase";
+  } else if (!sheetIsPublicExport && !isPublicRow(raw)) {
+    return "showcase";
+  }
+
+  return "other";
+}
+
+export function normalizeAwards2025(raw: unknown): string | null {
+  if (raw === null || raw === undefined) return null;
+  const text = String(raw).trim();
+  if (!text || isPlaceholderToken(text)) return null;
+  if (/^не проверено$/i.test(text)) return null;
+  return text;
 }
 
 function parseRatingValue(raw: unknown): number | null {
@@ -589,18 +720,20 @@ function computeHasRemote(workFormat: CompanyPublic["workFormat"]): boolean {
 function computeHasActiveHiring(
   hiringStatus: CompanyPublic["hiringStatus"],
   vacanciesRange: CompanyPublic["vacanciesRange"],
-  vacancyCount: number | null,
 ): boolean {
-  if (hiringStatus === "Активный") return true;
-  if (vacancyCount !== null && vacancyCount >= 5) return true;
-  return vacanciesRange === "5–10" || vacanciesRange === "10+";
+  return (
+    hiringStatus === "Активный" ||
+    vacanciesRange === "5–10" ||
+    vacanciesRange === "10+"
+  );
 }
 
 function computeHasHighHrRating(hh: number | null, habr: number | null): boolean {
   return (hh !== null && hh >= 4.5) || (habr !== null && habr >= 4.5);
 }
 
-function buildPresets(
+/** Presets in canonical order; never auto-add «Прямой отклик». */
+export function buildPresets(
   company: Pick<
     CompanyPublic,
     | "hasActiveHiring"
@@ -609,37 +742,57 @@ function buildPresets(
     | "hasAwards2025"
     | "international"
     | "hiringGeo"
-    | "presets"
   >,
-): string[] {
-  const generated: string[] = [];
-  if (company.hasActiveHiring) generated.push(PRESET_ACTIVE);
-  if (company.hasRemote) generated.push(PRESET_REMOTE);
-  if (company.hasHighHrRating) generated.push(PRESET_HIGH_RATING);
-  if (company.hasAwards2025) generated.push(PRESET_AWARDS);
+): CompanyPublic["presets"] {
+  const presets: CompanyPublic["presets"] = [];
+  if (company.hasActiveHiring) presets.push(PRESET_ACTIVE);
+  if (company.hasRemote) presets.push(PRESET_REMOTE);
+  if (company.hasHighHrRating) presets.push(PRESET_HIGH_RATING);
+  if (company.hasAwards2025) presets.push(PRESET_AWARDS);
   if (
     company.international === "Да" ||
     company.international === "Частично" ||
     isInternationalHiringGeo(company.hiringGeo)
   ) {
-    generated.push(PRESET_INTERNATIONAL);
+    presets.push(PRESET_INTERNATIONAL);
   }
+  return presets;
+}
 
-  const preserved = (company.presets ?? []).filter(
-    (preset) => typeof preset === "string" && SAFE_PRESET_STRINGS.has(preset.trim()),
+/** Recompute derived public fields immediately before JSON write. */
+export function recalculateDerivedFields(company: CompanyPublic): CompanyPublic {
+  const vacanciesRange = normalizeVacanciesRangeToken(company.vacanciesRange) as CompanyPublic["vacanciesRange"];
+  const vacanciesWeight = VACANCIES_WEIGHT_BY_RANGE[vacanciesRange] ?? -1;
+  const awards2025 = normalizeAwards2025(company.awards2025);
+  const hasAwards2025 = awards2025 !== null && awards2025.length > 0;
+  const hasRemote = computeHasRemote(company.workFormat);
+  const hasHighHrRating = computeHasHighHrRating(company.hhRatingValue, company.habrRatingValue);
+  const hasActiveHiring = computeHasActiveHiring(company.hiringStatus, vacanciesRange);
+  const hhVacanciesCheckedAt = resolvePublicHhVacanciesCheckedAt(
+    vacanciesRange,
+    company.hhVacanciesCheckedAt,
   );
 
-  return [...new Set([...generated, ...preserved.map((preset) => preset.trim())])];
+  const withDerived: CompanyPublic = {
+    ...company,
+    vacanciesRange,
+    vacanciesWeight,
+    awards2025,
+    hasAwards2025,
+    hasRemote,
+    hasHighHrRating,
+    hasActiveHiring,
+    hhVacanciesCheckedAt,
+  };
+
+  return {
+    ...withDerived,
+    presets: buildPresets(withDerived),
+  };
 }
 
 function isValidHttpUrl(value: string): boolean {
-  if (!value || /^mailto:/i.test(value)) return false;
-  try {
-    const url = new URL(value);
-    return url.protocol === "http:" || url.protocol === "https:";
-  } catch {
-    return false;
-  }
+  return isValidHttpUrlString(value);
 }
 
 function resolveCareerUrl(raw: Record<string, unknown>): string | null {
@@ -689,20 +842,6 @@ function parseIsoDate(raw: unknown): string | null {
   return new Date(parsed).toISOString().slice(0, 10);
 }
 
-function pickPresetsFromRaw(raw: Record<string, unknown>): string[] {
-  const value = pickValue(raw, ["presets"]);
-  if (Array.isArray(value)) {
-    return value.filter((item): item is string => typeof item === "string");
-  }
-  if (typeof value === "string" && value.trim()) {
-    return value
-      .split(/[;,]/)
-      .map((item) => item.trim())
-      .filter(Boolean);
-  }
-  return [];
-}
-
 export function isStaleDate(date: string | null | undefined, days = 30): boolean {
   if (!date) return true;
   const ms = Date.parse(`${date}T00:00:00Z`);
@@ -725,6 +864,10 @@ function noteDigital(message: string, warnings?: string[]): void {
 export type NormalizeCompanyOptions = {
   /** When false, source URLs come only from explicit columns (public_export contract). */
   allowSourceUrlInference?: boolean;
+  /** XLSX export: require valid `company_id` (maps to JSON `id`). */
+  requireCompanyId?: boolean;
+  /** JSON re-sync: rows are already public artifacts; skip showcase/fit gate. */
+  fromExistingPublicJson?: boolean;
 };
 
 export function normalizeCompany(
@@ -734,7 +877,11 @@ export function normalizeCompany(
   warnings?: string[],
   options: NormalizeCompanyOptions = {},
 ): CompanyPublic | null {
-  const { allowSourceUrlInference = true } = options;
+  const {
+    allowSourceUrlInference = true,
+    requireCompanyId = false,
+    fromExistingPublicJson = false,
+  } = options;
   if (!isRecord(rawInput)) {
     warnDigital(`[digital] Row #${index}: skipped — expected object, got ${typeof rawInput}`, warnings);
     return null;
@@ -748,7 +895,7 @@ export function normalizeCompany(
     );
   }
 
-  if (!isPublicRow(rawInput)) {
+  if (!fromExistingPublicJson && !isPublicRow(rawInput)) {
     noteDigital(`[digital] Row #${index}: skipped — not public`, warnings);
     return null;
   }
@@ -787,12 +934,24 @@ export function normalizeCompany(
   const preferredSlug = pickString(rawInput, ["slug"]);
   const slug = allocateSlug(name, preferredSlug || undefined);
 
-  const existingId = pickString(rawInput, ["id"]);
-  const id = existingId || slug || `company-${stableHash(name)}`;
+  const id = parseCompanyId(rawInput);
+  if (!id) {
+    if (requireCompanyId) {
+      warnDigital(
+        `[digital] Row #${index} (“${name}”): skipped — missing or invalid company_id`,
+        warnings,
+      );
+      return null;
+    }
+    warnDigital(
+      `[digital] Row #${index} (“${name}”): skipped — missing canonical id (company_id / id)`,
+      warnings,
+    );
+    return null;
+  }
 
-  const { vacanciesRange, vacanciesWeight } = normalizeVacancies(rawInput);
+  const { vacanciesRange } = normalizeVacancies(rawInput);
   const hiringStatus = normalizeHiringStatus(rawInput);
-  const vacancyCount = parseVacancyCount(rawInput);
   const workFormat = normalizeWorkFormat(rawInput);
   const international = normalizeInternational(rawInput);
 
@@ -824,17 +983,14 @@ export function normalizeCompany(
     pickString(rawInput, ["habrRatingDisplay", "habr_rating_display"]),
   );
 
-  const awards2025 = pickOptionalString(rawInput, [
-    "awards2025",
-    "awards_2025",
-    "Ключевые награды 2025",
-    "Награды 2025",
-  ]);
-  const hasAwards2025 = Boolean(awards2025);
-
-  const hasRemote = computeHasRemote(workFormat);
-  const hasHighHrRating = computeHasHighHrRating(hhRatingValue, habrRatingValue);
-  const hasActiveHiring = computeHasActiveHiring(hiringStatus, vacanciesRange, vacancyCount);
+  const awards2025 = normalizeAwards2025(
+    pickValue(rawInput, [
+      "awards2025",
+      "awards_2025",
+      "Ключевые награды 2025",
+      "Награды 2025",
+    ]),
+  );
 
   const hhVacanciesCheckedAt = resolvePublicHhVacanciesCheckedAt(
     vacanciesRange,
@@ -867,7 +1023,7 @@ export function normalizeCompany(
     size: pickString(rawInput, ["size", "Размер компании"], "Не указано"),
     careerUrl,
     vacanciesRange,
-    vacanciesWeight,
+    vacanciesWeight: 0,
     hiringStatus,
     workFormat,
     hiringGeo: pickString(rawInput, ["hiringGeo", "hiring_geo", "География найма"], "Не указано"),
@@ -877,11 +1033,11 @@ export function normalizeCompany(
     habrRatingDisplay,
     habrRatingValue,
     awards2025,
-    hasAwards2025,
-    presets: pickPresetsFromRaw(rawInput),
-    hasActiveHiring,
-    hasRemote,
-    hasHighHrRating,
+    hasAwards2025: false,
+    presets: [],
+    hasActiveHiring: false,
+    hasRemote: false,
+    hasHighHrRating: false,
     lastCheckedAt,
     hhVacanciesCheckedAt,
     hhCompanyUrl,
@@ -892,10 +1048,7 @@ export function normalizeCompany(
     publicStatus: "public",
   };
 
-  return {
-    ...partial,
-    presets: buildPresets(partial),
-  };
+  return recalculateDerivedFields(partial);
 }
 
 const SIZE_WEIGHT: Record<string, number> = {
