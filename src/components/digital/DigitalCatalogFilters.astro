@@ -36,9 +36,20 @@ const selectPlaceholder = "Все";
   <div class="digital-catalog-filters__panel digital-card">
     <div class="digital-catalog-filters__row digital-catalog-filters__row--search">
       <div class="digital-catalog-filters__field digital-catalog-filters__field--search">
-        <h2 id="digital-catalog-heading" class="digital-catalog-filters__heading">
-          Поиск работодателей
-        </h2>
+        <div class="digital-catalog-filters__header">
+          <h2 id="digital-catalog-heading" class="digital-catalog-filters__heading">
+            Поиск работодателей
+          </h2>
+          <button
+            type="button"
+            class="digital-catalog-filters__clear digital-catalog-filters__clear--header"
+            data-digital-filter-clear
+            data-digital-filter-clear-tablet-header
+            hidden
+          >
+            Сбросить
+          </button>
+        </div>
         <div class="digital-catalog-filters__search-wrap">
           <svg
             class="digital-catalog-filters__search-icon"
