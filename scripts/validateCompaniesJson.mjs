@@ -89,6 +89,8 @@ const forbiddenKeyPatterns = [
   /download/i,
   /служеб/i,
   /внутрен/i,
+  /size_source/i,
+  /size_checked_at/i,
 ];
 
 const errors = [];
@@ -106,9 +108,16 @@ function isIsoDateOrNull(value) {
   return value === null || (typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value));
 }
 
+const urlPlaceholderTokens = new Set(["-", "—", "нет", "n/a", "na"]);
+
+function isUrlPlaceholder(value) {
+  return urlPlaceholderTokens.has(String(value ?? "").trim().toLowerCase());
+}
+
 function isValidHttpUrlOrNull(value) {
   if (value === null) return true;
   if (typeof value !== "string" || value.trim() === "") return false;
+  if (isUrlPlaceholder(value)) return false;
   if (/^mailto:/i.test(value.trim())) return false;
 
   try {
@@ -345,6 +354,14 @@ function validateCompany(company, index) {
     addError(index, "awards2025 must be string | null");
   }
 
+  if (company.awards2025 === "Не проверено") {
+    addError(index, 'awards2025 must be null, not "Не проверено"');
+  }
+
+  if (typeof company.awards2025 === "string" && /^не проверено$/i.test(company.awards2025.trim())) {
+    addError(index, "awards2025 must be null when unchecked in source");
+  }
+
   for (const field of ["hasAwards2025", "hasActiveHiring", "hasRemote", "hasHighHrRating"]) {
     if (typeof company[field] !== "boolean") addError(index, `${field} must be boolean`);
   }
@@ -392,6 +409,9 @@ function validateCompany(company, index) {
   } else {
     const seen = new Set();
     for (const preset of company.presets) {
+      if (preset === "Прямой отклик") {
+        addError(index, 'preset "Прямой отклик" is not allowed in public JSON');
+      }
       if (!allowedPresetSet.has(preset)) addError(index, `invalid preset: ${preset}`);
       if (seen.has(preset)) addError(index, `duplicate preset: ${preset}`);
       seen.add(preset);
@@ -445,10 +465,15 @@ if (!fs.existsSync(absolutePath)) {
 
         if (company && typeof company === "object") {
           if (typeof company.id === "string") {
+            if (!company.id.trim()) {
+              addError(index, "id (company_id) must be a non-empty string");
+            }
             if (ids.has(company.id)) {
               addError(index, `duplicate id also used in row ${ids.get(company.id) + 1}: ${company.id}`);
             }
             ids.set(company.id, index);
+          } else {
+            addError(index, "id (company_id) must be present");
           }
           if (typeof company.slug === "string") {
             if (slugs.has(company.slug)) {
