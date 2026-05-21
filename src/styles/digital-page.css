@@ -829,12 +829,20 @@ html {
   color: var(--text-primary);
 }
 
+.digital-catalog-filters__header {
+  min-width: 0;
+}
+
 .digital-catalog-filters__heading {
   margin: 0 0 10px;
   font-size: 14px;
   font-weight: 650;
   line-height: 1.35;
   color: var(--text-primary);
+}
+
+.digital-catalog-filters__clear--header {
+  display: none;
 }
 
 .digital-catalog-filters__label {
@@ -1237,7 +1245,62 @@ html {
     width: 100%;
   }
 
+  .digital-catalog-filters__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+
+  .digital-catalog-filters__header .digital-catalog-filters__heading {
+    margin: 0;
+  }
+
+  .digital-catalog-filters__clear--header {
+    display: inline-flex;
+    align-items: center;
+    min-height: auto;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.35;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(138, 151, 166, 0.45);
+    white-space: nowrap;
+  }
+
+  .digital-catalog-filters__clear--header:hover,
+  .digital-catalog-filters__clear--header:focus-visible {
+    background: transparent;
+    color: var(--text-primary);
+    text-decoration-color: transparent;
+  }
+
+  .digital-catalog-filters__clear--header.is-active {
+    background: transparent;
+    color: #b45309;
+    font-weight: 500;
+    text-decoration-color: rgba(180, 83, 9, 0.45);
+  }
+
+  .digital-catalog-filters__clear--header.is-active:hover,
+  .digital-catalog-filters__clear--header.is-active:focus-visible {
+    color: #92400e;
+    text-decoration-color: transparent;
+  }
+
   .digital-catalog-filters__actions--search {
+    display: none !important;
+  }
+
+  .digital-catalog-filters__actions--utility {
     display: none !important;
   }
 
@@ -1248,57 +1311,19 @@ html {
     gap: 16px;
   }
 
-  .digital-catalog-filters__actions--utility {
-    display: flex !important;
-    width: auto;
-    justify-content: flex-end;
-    align-self: center;
-    margin-top: 0;
-    flex-shrink: 0;
-  }
-
-  .digital-catalog-filters__actions--utility .digital-catalog-filters__clear,
-  .digital-catalog-filters__clear--utility {
-    min-height: auto;
-    padding: 0;
-    border: 0;
-    box-shadow: none;
-    background: transparent;
+  .digital-catalog-filters__advanced-toggle {
     color: var(--text-muted);
     font-size: 13px;
     font-weight: 400;
-    text-decoration: underline;
-    text-decoration-line: underline;
     text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
-    text-decoration-color: rgba(138, 151, 166, 0.45);
+    text-underline-offset: 4px;
+    text-decoration-color: rgba(138, 151, 166, 0.32);
   }
 
-  .digital-catalog-filters__actions--utility .digital-catalog-filters__clear:hover,
-  .digital-catalog-filters__actions--utility .digital-catalog-filters__clear:focus-visible,
-  .digital-catalog-filters__clear--utility:hover,
-  .digital-catalog-filters__clear--utility:focus-visible {
-    background: transparent;
-    border-color: transparent;
-    color: var(--text-primary);
-    text-decoration-color: transparent;
-  }
-
-  .digital-catalog-filters__actions--utility .digital-catalog-filters__clear.is-active,
-  .digital-catalog-filters__clear--utility.is-active {
-    background: transparent;
-    border-color: transparent;
-    color: #b45309;
-    font-weight: 500;
-    text-decoration-color: rgba(180, 83, 9, 0.45);
-  }
-
-  .digital-catalog-filters__actions--utility .digital-catalog-filters__clear.is-active:hover,
-  .digital-catalog-filters__actions--utility .digital-catalog-filters__clear.is-active:focus-visible,
-  .digital-catalog-filters__clear--utility.is-active:hover,
-  .digital-catalog-filters__clear--utility.is-active:focus-visible {
-    color: #92400e;
-    text-decoration-color: transparent;
+  .digital-catalog-filters__advanced-toggle:hover,
+  .digital-catalog-filters__advanced-toggle:focus-visible {
+    color: var(--text-secondary);
+    text-decoration-color: rgba(92, 107, 122, 0.55);
   }
 
   .digital-catalog-filters__presets .digital-presets {
