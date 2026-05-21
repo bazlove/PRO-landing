@@ -1241,8 +1241,15 @@ html {
     display: none !important;
   }
 
-  .digital-catalog-filters__actions--utility {
+  .digital-catalog-filters__toolbar {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .digital-catalog-filters__actions--utility {
+    display: flex !important;
     width: auto;
     justify-content: flex-end;
     align-self: center;
@@ -1250,7 +1257,8 @@ html {
     flex-shrink: 0;
   }
 
-  .digital-catalog-filters__actions--utility .digital-catalog-filters__clear {
+  .digital-catalog-filters__actions--utility .digital-catalog-filters__clear,
+  .digital-catalog-filters__clear--utility {
     min-height: auto;
     padding: 0;
     border: 0;
@@ -1267,14 +1275,17 @@ html {
   }
 
   .digital-catalog-filters__actions--utility .digital-catalog-filters__clear:hover,
-  .digital-catalog-filters__actions--utility .digital-catalog-filters__clear:focus-visible {
+  .digital-catalog-filters__actions--utility .digital-catalog-filters__clear:focus-visible,
+  .digital-catalog-filters__clear--utility:hover,
+  .digital-catalog-filters__clear--utility:focus-visible {
     background: transparent;
     border-color: transparent;
     color: var(--text-primary);
     text-decoration-color: transparent;
   }
 
-  .digital-catalog-filters__actions--utility .digital-catalog-filters__clear.is-active {
+  .digital-catalog-filters__actions--utility .digital-catalog-filters__clear.is-active,
+  .digital-catalog-filters__clear--utility.is-active {
     background: transparent;
     border-color: transparent;
     color: #b45309;
@@ -1283,7 +1294,9 @@ html {
   }
 
   .digital-catalog-filters__actions--utility .digital-catalog-filters__clear.is-active:hover,
-  .digital-catalog-filters__actions--utility .digital-catalog-filters__clear.is-active:focus-visible {
+  .digital-catalog-filters__actions--utility .digital-catalog-filters__clear.is-active:focus-visible,
+  .digital-catalog-filters__clear--utility.is-active:hover,
+  .digital-catalog-filters__clear--utility.is-active:focus-visible {
     color: #92400e;
     text-decoration-color: transparent;
   }
@@ -1303,12 +1316,6 @@ html {
     font-size: 12px;
     font-weight: 500;
     color: var(--text-muted);
-  }
-
-  .digital-catalog-filters__toolbar {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
   }
 
   .digital-catalog-filters__toolbar-utility {
