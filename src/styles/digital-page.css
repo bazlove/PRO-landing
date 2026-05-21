@@ -271,6 +271,32 @@ html {
   }
 }
 
+@media (min-width: 768px) and (max-width: 959px) {
+  .digital-first-screen .digital-h1 {
+    font-size: clamp(42px, 5.2vw, 52px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+
+  .digital-first-screen .digital-lead {
+    max-width: 72ch;
+  }
+
+  .digital-hero-lead-card {
+    padding: 16px 18px;
+  }
+
+  .digital-hero-summary.digital-card {
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .digital-hero-summary__metric {
+    min-height: 38px;
+    padding: 7px 9px;
+  }
+}
+
 @media (min-width: 900px) {
   .digital-hero-body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1201,6 +1227,105 @@ html {
   }
 }
 
+@media (min-width: 768px) and (max-width: 959px) {
+  .digital-catalog-filters__row--search {
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .digital-catalog-filters__field--search {
+    width: 100%;
+  }
+
+  .digital-catalog-filters__actions--search {
+    display: none !important;
+  }
+
+  .digital-catalog-filters__actions--utility {
+    display: flex;
+    width: auto;
+    justify-content: flex-end;
+    align-self: center;
+    margin-top: 0;
+    flex-shrink: 0;
+  }
+
+  .digital-catalog-filters__actions--utility .digital-catalog-filters__clear {
+    min-height: auto;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 400;
+    text-decoration: underline;
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(138, 151, 166, 0.45);
+  }
+
+  .digital-catalog-filters__actions--utility .digital-catalog-filters__clear:hover,
+  .digital-catalog-filters__actions--utility .digital-catalog-filters__clear:focus-visible {
+    background: transparent;
+    border-color: transparent;
+    color: var(--text-primary);
+    text-decoration-color: transparent;
+  }
+
+  .digital-catalog-filters__actions--utility .digital-catalog-filters__clear.is-active {
+    background: transparent;
+    border-color: transparent;
+    color: #b45309;
+    font-weight: 500;
+    text-decoration-color: rgba(180, 83, 9, 0.45);
+  }
+
+  .digital-catalog-filters__actions--utility .digital-catalog-filters__clear.is-active:hover,
+  .digital-catalog-filters__actions--utility .digital-catalog-filters__clear.is-active:focus-visible {
+    color: #92400e;
+    text-decoration-color: transparent;
+  }
+
+  .digital-catalog-filters__presets .digital-presets {
+    gap: 7px 9px;
+  }
+
+  .digital-catalog-filters__presets .preset-chip {
+    min-height: 30px;
+    padding: 4px 10px;
+    font-size: 13px;
+    line-height: 1.2;
+  }
+
+  .digital-catalog-filters__presets-title {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+
+  .digital-catalog-filters__toolbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .digital-catalog-filters__toolbar-utility {
+    width: auto;
+    flex-shrink: 0;
+    justify-content: flex-end;
+  }
+
+  .digital-catalog-filters__page-size-label--desktop {
+    display: inline;
+  }
+
+  .digital-catalog-filters__page-size-label--mobile {
+    display: none;
+  }
+}
+
 @media (min-width: 960px) {
   .digital-catalog-filters__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2095,6 +2220,97 @@ html {
   .digital-mobile-cards {
     display: flex;
     margin-top: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 959px) {
+  .digital-mobile-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .digital-mobile-card {
+    padding: 16px;
+  }
+
+  .digital-mobile-card__title {
+    margin-bottom: 4px;
+    font-size: 16px;
+    line-height: 1.28;
+  }
+
+  .digital-mobile-card__profile {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .digital-mobile-card__compact-phone {
+    display: grid;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .digital-mobile-card__status-row,
+  .digital-mobile-card__compact-phone .digital-badges {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 5px;
+    max-width: 100%;
+    margin-top: 0;
+    overflow: hidden;
+  }
+
+  .digital-mobile-card__status-row .digital-badge,
+  .digital-mobile-card__compact-phone .digital-badge {
+    flex: 0 0 auto;
+    min-height: 24px;
+    max-width: 100%;
+    padding: 3px 8px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .digital-mobile-card__status-row .digital-badge:not(.digital-badge--more),
+  .digital-mobile-card__compact-phone .digital-badge:not(.digital-badge--more) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .digital-mobile-card__status-row .digital-badge--more,
+  .digital-mobile-card__compact-phone .digital-badge--more {
+    flex-shrink: 0;
+  }
+
+  .digital-mobile-card__facts {
+    gap: 3px;
+  }
+
+  .digital-mobile-card__fact {
+    line-height: 1.4;
+  }
+
+  .digital-mobile-card__details {
+    display: none;
+  }
+
+  .digital-company-detail-trigger--mobile {
+    width: 100%;
+    justify-content: center;
+    min-height: 40px;
+    margin-top: 12px;
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 650;
+    background: #f1f5f9;
+  }
+
+  .digital-company-detail-trigger--mobile:hover,
+  .digital-company-detail-trigger--mobile:focus-visible {
+    background: #eaf0f6;
+    border-color: rgba(92, 107, 122, 0.45);
   }
 }
 
