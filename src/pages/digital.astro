@@ -18,14 +18,17 @@ import { getDigitalFilterOptions } from "../lib/digital/filterOptions";
 import {
   DIGITAL_PAGE_DESCRIPTION,
   DIGITAL_PAGE_H1,
+  DIGITAL_PAGE_OG_IMAGE_ALT,
   DIGITAL_PAGE_TITLE,
   buildDigitalPageCanonicalUrl,
+  buildDigitalPageOgImageUrl,
   buildDigitalWebPageJsonLd,
 } from "../lib/digital/pageSeo";
 import { getDigitalPageStats } from "../lib/digital/stats";
 import "../styles/digital-page.css";
 
 const canonicalUrl = buildDigitalPageCanonicalUrl(Astro.site);
+const ogImageUrl = buildDigitalPageOgImageUrl(Astro.site);
 const webPageJsonLd = buildDigitalWebPageJsonLd(canonicalUrl);
 
 const companies = getDigitalCompanies();
@@ -50,6 +53,8 @@ const pageAnalyticsStats = JSON.stringify({
   title={DIGITAL_PAGE_TITLE}
   description={DIGITAL_PAGE_DESCRIPTION}
   canonicalUrl={canonicalUrl}
+  ogImageUrl={ogImageUrl}
+  ogImageAlt={DIGITAL_PAGE_OG_IMAGE_ALT}
   webPageJsonLd={webPageJsonLd}
 >
   <main id="digital-top" data-digital-page-root data-digital-page-stats={pageAnalyticsStats}>
