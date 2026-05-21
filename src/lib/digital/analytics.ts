@@ -5,6 +5,7 @@ export type DigitalAnalyticsPayload = Record<
 
 const DIGITAL_EVENT_PREFIX = "digital_";
 const MAX_STRING_PAYLOAD_LENGTH = 120;
+const YANDEX_METRICA_ID = 109083928;
 
 declare global {
   interface Window {
@@ -58,30 +59,14 @@ function sanitizePayload(
   return out;
 }
 
-function getYmCounterId(): number | null {
-  const ym = window.ym;
-  if (!ym || !Array.isArray(ym.a)) return null;
-
-  for (const args of ym.a) {
-    if (!Array.isArray(args)) continue;
-    const id = args[0];
-    if (typeof id === "number" && Number.isFinite(id)) return id;
-  }
-
-  return null;
-}
-
-function sendToYandexMetrica(eventName: string, params: Record<string, string | number | boolean>): void {
+function sendToYandexMetrica(
+  eventName: string,
+  params: Record<string, string | number | boolean>,
+): void {
   const ym = window.ym;
   if (typeof ym !== "function") return;
 
-  const counterId = getYmCounterId();
-  if (counterId != null) {
-    ym(counterId, "reachGoal", eventName, params);
-    return;
-  }
-
-  ym("reachGoal", eventName, params);
+  ym(YANDEX_METRICA_ID, "reachGoal", eventName, params);
 }
 
 function sendToGoogleAnalytics(eventName: string, params: Record<string, string | number | boolean>): void {
