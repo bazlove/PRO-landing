@@ -1,5 +1,8 @@
 export const DIGITAL_DEFAULT_PAGE_SIZE = 50;
 
+/** Default catalog page size on mobile viewports (fresh load, no stored preference). */
+export const DIGITAL_MOBILE_DEFAULT_PAGE_SIZE = 10;
+
 export const DIGITAL_PAGE_SIZE_OPTIONS = [10, 25, 50, 100] as const;
 
 export type DigitalPageSize = (typeof DIGITAL_PAGE_SIZE_OPTIONS)[number];
@@ -9,8 +12,8 @@ export const DIGITAL_PAGE_SIZE_STORAGE_KEY = "digital_page_size";
 export const DIGITAL_DESKTOP_INITIAL_VISIBLE = DIGITAL_DEFAULT_PAGE_SIZE;
 export const DIGITAL_DESKTOP_LOAD_STEP = DIGITAL_DEFAULT_PAGE_SIZE;
 
-export const DIGITAL_MOBILE_INITIAL_VISIBLE = DIGITAL_DEFAULT_PAGE_SIZE;
-export const DIGITAL_MOBILE_LOAD_STEP = DIGITAL_DEFAULT_PAGE_SIZE;
+export const DIGITAL_MOBILE_INITIAL_VISIBLE = DIGITAL_MOBILE_DEFAULT_PAGE_SIZE;
+export const DIGITAL_MOBILE_LOAD_STEP = DIGITAL_MOBILE_DEFAULT_PAGE_SIZE;
 
 export function isValidPageSize(value: number): value is DigitalPageSize {
   return (DIGITAL_PAGE_SIZE_OPTIONS as readonly number[]).includes(value);
@@ -19,6 +22,15 @@ export function isValidPageSize(value: number): value is DigitalPageSize {
 export function parsePageSize(value: string | number | null | undefined): DigitalPageSize {
   const n = typeof value === "number" ? value : Number(value);
   return isValidPageSize(n) ? n : DIGITAL_DEFAULT_PAGE_SIZE;
+}
+
+export function hasStoredPageSize(): boolean {
+  if (typeof localStorage === "undefined") return false;
+  try {
+    return localStorage.getItem(DIGITAL_PAGE_SIZE_STORAGE_KEY) != null;
+  } catch {
+    return false;
+  }
 }
 
 export function readStoredPageSize(): DigitalPageSize {
