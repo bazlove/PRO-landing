@@ -10,6 +10,11 @@ export const DIGITAL_PAGE_TITLE =
 export const DIGITAL_PAGE_DESCRIPTION =
   "База айти компаний России - поиск работодателей в сфере IT. Сравнение digital организаций: активный найм, удалёнка, города, рейтинги и карьерные ссылки.";
 
+export const DIGITAL_PAGE_OG_IMAGE_PATH = "/og/digital-cover.png";
+
+export const DIGITAL_PAGE_OG_IMAGE_ALT =
+  "Карта IT и digital работодателей России";
+
 const WEB_PAGE_SCHEMA_DESCRIPTION =
   "Список IT и digital компаний России для поиска работодателей: активный найм, удалёнка, города, рейтинги и карьерные ссылки.";
 
@@ -22,6 +27,14 @@ export function buildDigitalPageCanonicalUrl(site: URL | string | undefined): st
   return url.pathname.endsWith("/") && url.pathname !== "/"
     ? url.toString().replace(/\/$/, "")
     : url.toString();
+}
+
+export function buildDigitalPageOgImageUrl(site: URL | string | undefined): string {
+  const origin = resolveCanonicalOrigin(site);
+  const url = new URL(DIGITAL_PAGE_OG_IMAGE_PATH, origin);
+  url.search = "";
+  url.hash = "";
+  return url.toString();
 }
 
 export function buildDigitalWebPageJsonLd(canonicalUrl: string): string {
