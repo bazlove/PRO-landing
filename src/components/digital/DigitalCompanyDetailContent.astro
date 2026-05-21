@@ -73,6 +73,7 @@ if (company.linkedinUrl) {
 }
 
 const showActions = hasCareerUrl || sourceLinks.length > 0;
+const hasSourceLinks = sourceLinks.length > 0;
 ---
 
 <article class="digital-company-detail">
@@ -100,7 +101,12 @@ const showActions = hasCareerUrl || sourceLinks.length > 0;
 
     {
       showActions && (
-        <div class="digital-company-detail__actions">
+        <div
+          class:list={[
+            "digital-company-detail__actions",
+            hasSourceLinks && "has-source-links",
+          ]}
+        >
           {
             hasCareerUrl && (
               <a
@@ -108,12 +114,22 @@ const showActions = hasCareerUrl || sourceLinks.length > 0;
                 href={company.careerUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Карьерная страница"
+                title="Карьерная страница"
                 data-analytics-drawer-link="career"
                 data-company-id={company.id}
                 data-company-slug={company.slug}
                 data-company-name={company.name}
               >
-                Карьерная страница
+                <span class="digital-company-detail__primary-link-label digital-company-detail__primary-link-label--full">
+                  Карьерная страница
+                </span>
+                <span
+                  class="digital-company-detail__primary-link-label digital-company-detail__primary-link-label--short"
+                  aria-hidden="true"
+                >
+                  Карьера
+                </span>
                 <DigitalExternalLinkIcon />
               </a>
             )
