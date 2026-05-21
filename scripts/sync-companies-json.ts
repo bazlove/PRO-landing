@@ -13,13 +13,23 @@ import { compareCompaniesByDefaultOrder } from "../src/lib/digital/normalizeComp
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const jsonPath = join(root, "src/data/digital/companies.json");
 
+console.warn(
+  "[digital] public_fit_status eligibility is enforced during XLSX export, not JSON re-sync.",
+);
+
 const raw = JSON.parse(readFileSync(jsonPath, "utf8"));
 if (!Array.isArray(raw)) {
   throw new Error("[digital] companies.json must be a JSON array.");
 }
-const { companies, report } = buildPublicCompaniesFromRows(raw);
 
-// Re-sync must preserve the same canonical public display order as the XLSX export.
+const { companies, report } = buildPublicCompaniesFromRows(raw, {
+  enforceUniqueCompanyIds: true,
+  normalizeOptions: {
+    fromExistingPublicJson: true,
+    allowSourceUrlInference: false,
+  },
+});
+
 companies.sort(compareCompaniesByDefaultOrder);
 
 writeFileSync(jsonPath, `${JSON.stringify(companies, null, 2)}\n`, "utf8");
@@ -41,3 +51,5 @@ const withLinkedin = companies.filter((c) => c.linkedinUrl).length;
 console.log(
   `[digital] Source URLs: website=${withWebsite}, hh=${withHh}, habr=${withHabr}, linkedin=${withLinkedin}`,
 );
+
+console.log("[digital] Next: npm run data:validate-companies");
