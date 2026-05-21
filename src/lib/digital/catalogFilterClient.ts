@@ -131,15 +131,45 @@ export function initDigitalCatalogFilters(): void {
     return window.matchMedia(MOBILE_FILTERS_MQ).matches;
   }
 
-  function usesUtilityClearButton(): boolean {
-    return window.matchMedia(
-      `${MOBILE_FILTERS_MQ}, ${TABLET_FILTERS_MQ}`,
-    ).matches;
+  function isTabletCompactViewport(): boolean {
+    return window.matchMedia(TABLET_FILTERS_MQ).matches;
   }
 
-  function hasUtilityClearButton(): boolean {
-    return Array.from(clearBtns).some((btn) =>
-      btn.hasAttribute("data-digital-filter-clear-utility"),
+  function getPreferredClearButton(): HTMLButtonElement | null {
+    const buttons = Array.from(clearBtns);
+    if (buttons.length === 0) return null;
+
+    if (isMobileFiltersViewport()) {
+      return (
+        buttons.find((btn) => btn.hasAttribute("data-digital-filter-clear-utility")) ??
+        buttons.find((btn) => !btn.hasAttribute("data-digital-filter-clear-tablet-header")) ??
+        buttons[0] ??
+        null
+      );
+    }
+
+    if (isTabletCompactViewport()) {
+      return (
+        buttons.find((btn) => btn.hasAttribute("data-digital-filter-clear-tablet-header")) ??
+        buttons.find((btn) => btn.hasAttribute("data-digital-filter-clear-utility")) ??
+        buttons.find(
+          (btn) =>
+            !btn.hasAttribute("data-digital-filter-clear-utility") &&
+            !btn.hasAttribute("data-digital-filter-clear-tablet-header"),
+        ) ??
+        buttons[0] ??
+        null
+      );
+    }
+
+    return (
+      buttons.find(
+        (btn) =>
+          !btn.hasAttribute("data-digital-filter-clear-utility") &&
+          !btn.hasAttribute("data-digital-filter-clear-tablet-header"),
+      ) ??
+      buttons[0] ??
+      null
     );
   }
 
@@ -172,33 +202,21 @@ export function initDigitalCatalogFilters(): void {
   }
 
   function syncClearButtons(): void {
-    const useUtilityClear = usesUtilityClearButton();
-    const hasUtility = hasUtilityClearButton();
+    const preferred = getPreferredClearButton();
+    const isPhone = isMobileFiltersViewport();
 
     clearBtns.forEach((btn) => {
-      const isUtility = btn.hasAttribute("data-digital-filter-clear-utility");
+      const isPreferred = btn === preferred;
 
-      if (useUtilityClear && hasUtility) {
-        if (isUtility) {
-          // Phone: always show muted utility reset; tablet: show only when filters active.
-          btn.hidden = isMobileFiltersViewport() ? false : !filtersActive;
-          btn.classList.toggle("is-active", filtersActive);
-        } else {
-          btn.hidden = true;
-          btn.classList.remove("is-active");
-        }
-        return;
-      }
-
-      if (useUtilityClear && !hasUtility) {
-        btn.hidden = !filtersActive;
-        btn.classList.toggle("is-active", filtersActive);
-        return;
-      }
-
-      if (!useUtilityClear && isUtility) {
+      if (!isPreferred) {
         btn.hidden = true;
         btn.classList.remove("is-active");
+        return;
+      }
+
+      if (isPhone) {
+        btn.hidden = false;
+        btn.classList.toggle("is-active", filtersActive);
         return;
       }
 
