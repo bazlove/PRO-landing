@@ -131,12 +131,16 @@ export function initDigitalCatalogFilters(): void {
     return window.matchMedia(MOBILE_FILTERS_MQ).matches;
   }
 
-  function isTabletFiltersViewport(): boolean {
-    return window.matchMedia(TABLET_FILTERS_MQ).matches;
+  function usesUtilityClearButton(): boolean {
+    return window.matchMedia(
+      `${MOBILE_FILTERS_MQ}, ${TABLET_FILTERS_MQ}`,
+    ).matches;
   }
 
-  function usesUtilityClearButton(): boolean {
-    return isMobileFiltersViewport() || isTabletFiltersViewport();
+  function hasUtilityClearButton(): boolean {
+    return Array.from(clearBtns).some((btn) =>
+      btn.hasAttribute("data-digital-filter-clear-utility"),
+    );
   }
 
   function hasActiveSecondaryPreset(): boolean {
@@ -169,23 +173,35 @@ export function initDigitalCatalogFilters(): void {
 
   function syncClearButtons(): void {
     const useUtilityClear = usesUtilityClearButton();
+    const hasUtility = hasUtilityClearButton();
+
     clearBtns.forEach((btn) => {
       const isUtility = btn.hasAttribute("data-digital-filter-clear-utility");
-      if (useUtilityClear && isUtility) {
-        btn.hidden = false;
+
+      if (useUtilityClear && hasUtility) {
+        if (isUtility) {
+          // Phone: always show muted utility reset; tablet: show only when filters active.
+          btn.hidden = isMobileFiltersViewport() ? false : !filtersActive;
+          btn.classList.toggle("is-active", filtersActive);
+        } else {
+          btn.hidden = true;
+          btn.classList.remove("is-active");
+        }
+        return;
+      }
+
+      if (useUtilityClear && !hasUtility) {
+        btn.hidden = !filtersActive;
         btn.classList.toggle("is-active", filtersActive);
         return;
       }
-      if (useUtilityClear && !isUtility) {
-        btn.hidden = true;
-        btn.classList.remove("is-active");
-        return;
-      }
+
       if (!useUtilityClear && isUtility) {
         btn.hidden = true;
         btn.classList.remove("is-active");
         return;
       }
+
       btn.hidden = !filtersActive;
       btn.classList.toggle("is-active", filtersActive);
     });
