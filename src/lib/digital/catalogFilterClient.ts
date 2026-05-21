@@ -135,14 +135,12 @@ export function initDigitalCatalogFilters(): void {
     return window.matchMedia(TABLET_FILTERS_MQ).matches;
   }
 
-  function getPreferredClearButton(): HTMLButtonElement | null {
-    const buttons = Array.from(clearBtns);
+  function getPreferredClearButton(buttons: HTMLButtonElement[]): HTMLButtonElement | null {
     if (buttons.length === 0) return null;
 
     if (isMobileFiltersViewport()) {
       return (
         buttons.find((btn) => btn.hasAttribute("data-digital-filter-clear-utility")) ??
-        buttons.find((btn) => !btn.hasAttribute("data-digital-filter-clear-tablet-header")) ??
         buttons[0] ??
         null
       );
@@ -152,11 +150,6 @@ export function initDigitalCatalogFilters(): void {
       return (
         buttons.find((btn) => btn.hasAttribute("data-digital-filter-clear-tablet-header")) ??
         buttons.find((btn) => btn.hasAttribute("data-digital-filter-clear-utility")) ??
-        buttons.find(
-          (btn) =>
-            !btn.hasAttribute("data-digital-filter-clear-utility") &&
-            !btn.hasAttribute("data-digital-filter-clear-tablet-header"),
-        ) ??
         buttons[0] ??
         null
       );
@@ -202,26 +195,14 @@ export function initDigitalCatalogFilters(): void {
   }
 
   function syncClearButtons(): void {
-    const preferred = getPreferredClearButton();
-    const isPhone = isMobileFiltersViewport();
+    const buttons = Array.from(clearBtns);
+    const preferredClearButton = getPreferredClearButton(buttons);
+    const hasActiveFiltersOrSearch = filtersActive;
 
     clearBtns.forEach((btn) => {
-      const isPreferred = btn === preferred;
-
-      if (!isPreferred) {
-        btn.hidden = true;
-        btn.classList.remove("is-active");
-        return;
-      }
-
-      if (isPhone) {
-        btn.hidden = false;
-        btn.classList.toggle("is-active", filtersActive);
-        return;
-      }
-
-      btn.hidden = !filtersActive;
-      btn.classList.toggle("is-active", filtersActive);
+      const isPreferred = btn === preferredClearButton;
+      btn.hidden = !isPreferred || !hasActiveFiltersOrSearch;
+      btn.classList.toggle("is-active", isPreferred && hasActiveFiltersOrSearch);
     });
   }
 
