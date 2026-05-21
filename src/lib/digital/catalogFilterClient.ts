@@ -1,6 +1,8 @@
 import { trackDigitalEvent } from "./analytics";
 import {
   DIGITAL_DEFAULT_PAGE_SIZE,
+  DIGITAL_MOBILE_DEFAULT_PAGE_SIZE,
+  hasStoredPageSize,
   parsePageSize,
   readStoredPageSize,
   writeStoredPageSize,
@@ -79,11 +81,18 @@ export function initDigitalCatalogFilters(): void {
     return DIGITAL_DEFAULT_PAGE_SIZE;
   }
 
+  function getInitialPageSize(): number {
+    if (hasStoredPageSize()) return readStoredPageSize();
+    return isMobileFiltersViewport()
+      ? DIGITAL_MOBILE_DEFAULT_PAGE_SIZE
+      : DIGITAL_DEFAULT_PAGE_SIZE;
+  }
+
   function initPageSizeFromStorage(): void {
-    const stored = readStoredPageSize();
-    if (pageSizeSelect) pageSizeSelect.value = String(stored);
+    const initialSize = getInitialPageSize();
+    if (pageSizeSelect) pageSizeSelect.value = String(initialSize);
     surfaces.forEach((surface) => {
-      visibleBySurface[surface.name] = stored;
+      visibleBySurface[surface.name] = initialSize;
     });
   }
   let filtersActive = false;
