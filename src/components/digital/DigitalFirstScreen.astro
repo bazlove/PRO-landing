@@ -4,13 +4,14 @@ import type { DigitalPageStats } from "../../lib/digital/stats";
 
 interface Props {
   h1: string;
-  lead: string;
+  leadIntro: string;
+  leadMore: string;
   stats: DigitalPageStats;
 }
 
-const { h1, lead, stats } = Astro.props;
+const { h1, leadIntro, leadMore, stats } = Astro.props;
 ---
 
 <section class="digital-first-screen" aria-label="Первый экран">
-  <DigitalHero h1={h1} lead={lead} stats={stats} />
+  <DigitalHero h1={h1} leadIntro={leadIntro} leadMore={leadMore} stats={stats} />
 </section>
