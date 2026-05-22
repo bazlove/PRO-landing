@@ -22,7 +22,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -77,7 +77,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -122,11 +122,9 @@
     "habrRatingValue": 4.16,
     "awards2025": null,
     "hasAwards2025": false,
-    "presets": [
-      "Удалёнка"
-    ],
+    "presets": [],
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-18",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -159,7 +157,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка"
+      "Есть удалёнка"
     ],
     "hasActiveHiring": false,
     "hasRemote": true,
@@ -196,7 +194,7 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Международные"
     ],
     "hasActiveHiring": true,
@@ -208,45 +206,6 @@
     "hhCompanyUrl": "https://hh.ru/employer/3177",
     "habrUrl": "https://career.habr.com/companies/pb",
     "linkedinUrl": "https://www.linkedin.com/company/-1-",
-    "employerRankingBadges": [],
-    "publicStatus": "public"
-  },
-  {
-    "id": "cmp_e635939a7a",
-    "slug": "peredovye-platezhnye-resheniya",
-    "name": "Передовые Платежные Решения",
-    "city": "Москва",
-    "companyType": "Продукт",
-    "niche": "FinTech / Fleet payments / B2B services",
-    "size": "500+",
-    "careerUrl": "https://career.pprcard.ru/",
-    "vacanciesRange": "10+",
-    "vacanciesWeight": 3,
-    "hiringStatus": "Активный",
-    "workFormat": "Удалёнка",
-    "hiringGeo": "РФ",
-    "international": "Частично",
-    "hhRatingDisplay": "4,7",
-    "hhRatingValue": 4.7,
-    "habrRatingDisplay": "Нет отзывов",
-    "habrRatingValue": null,
-    "awards2025": null,
-    "hasAwards2025": false,
-    "presets": [
-      "Активный найм",
-      "Удалёнка",
-      "Высокая HR-оценка",
-      "Международные"
-    ],
-    "hasActiveHiring": true,
-    "hasRemote": true,
-    "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-21",
-    "hhVacanciesCheckedAt": "2026-05-21",
-    "websiteUrl": "https://www.petrolplus.ru/",
-    "hhCompanyUrl": "https://hh.ru/employer/594824",
-    "habrUrl": null,
-    "linkedinUrl": "https://www.linkedin.com/company/%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%BE%D0%B2%D1%8B%D0%B5-%D0%BF%D0%BB%D0%B0%D1%82%D0%B5%D0%B6%D0%BD%D1%8B%D0%B5-%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F",
     "employerRankingBadges": [],
     "publicStatus": "public"
   },
@@ -273,7 +232,7 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -312,7 +271,7 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": true,
@@ -350,7 +309,7 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": true,
@@ -388,7 +347,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Награды 2025",
       "Международные"
     ],
@@ -427,7 +386,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -482,7 +441,7 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Международные"
     ],
     "hasActiveHiring": true,
@@ -519,12 +478,11 @@
     "awards2025": "AdIndex 2025 — digital-рейтинг / категории; Рейтинг Рунета — performance / SEO",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-18",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -558,7 +516,7 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": true,
@@ -596,7 +554,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -635,7 +593,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -675,7 +633,7 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -714,7 +672,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Награды 2025"
     ],
     "hasActiveHiring": true,
@@ -752,7 +710,7 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка"
+      "Есть удалёнка"
     ],
     "hasActiveHiring": true,
     "hasRemote": true,
@@ -789,7 +747,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -880,12 +838,11 @@
     "awards2025": "HH 2025 — рейтинг работодателей: топ-30; Ruward Award 2025 — агентство года / электронная коммерция и ритейл: #1; Ruward Award 2025 — разработка digital-стратегии компании/бренда: #1",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
       "Награды 2025",
       "Международные"
     ],
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-21",
     "hhVacanciesCheckedAt": "2026-05-19",
@@ -926,7 +883,7 @@
     "awards2025": "HH 2025 — рейтинг работодателей: Топ-200",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Награды 2025",
       "Международные"
     ],
@@ -1047,7 +1004,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -1095,7 +1052,7 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка"
+      "Есть удалёнка"
     ],
     "hasActiveHiring": true,
     "hasRemote": true,
@@ -1131,7 +1088,7 @@
     "awards2025": "Workspace 2025 — mobile development: #4; digital design: #15; Рейтинг Рунета 2025 — mobile finance: top-5; WDA 2025 — бронза; HH 2025 — Топ-200 работодателей",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -1179,11 +1136,10 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Международные"
     ],
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-08",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -1217,7 +1173,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -1297,22 +1253,31 @@
     "hhRatingValue": 4.9,
     "habrRatingDisplay": "4,8",
     "habrRatingValue": 4.83,
-    "awards2025": null,
-    "hasAwards2025": false,
+    "awards2025": "Habr Career 2025 — Средняя оценка #12; Интересные задачи #4; Современные технологии #6; Адекватная зарплата #7; Отношения с коллегами #5",
+    "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
-      "Высокая HR-оценка"
+      "Есть удалёнка",
+      "Высокая HR-оценка",
+      "Награды 2025"
     ],
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-21",
-    "hhVacanciesCheckedAt": "2026-05-21",
+    "lastCheckedAt": "2026-05-22",
+    "hhVacanciesCheckedAt": "2026-05-22",
     "websiteUrl": "https://netbell.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/1929231",
     "habrUrl": "https://career.habr.com/companies/netbell",
     "linkedinUrl": null,
-    "employerRankingBadges": [],
+    "employerRankingBadges": [
+      {
+        "source": "habr",
+        "label": "Средняя оценка #12",
+        "description": "Рейтинг Habr Career",
+        "year": 2025,
+        "sourceUrl": "https://career.habr.com/companies/netbell/awards"
+      }
+    ],
     "publicStatus": "public"
   },
   {
@@ -1337,7 +1302,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -1375,7 +1340,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -1402,8 +1367,8 @@
     "vacanciesRange": "10+",
     "vacanciesWeight": 3,
     "hiringStatus": "Активный",
-    "workFormat": "Смешанный",
-    "hiringGeo": "РФ",
+    "workFormat": "Офис",
+    "hiringGeo": "Локально",
     "international": "Нет",
     "hhRatingDisplay": "4,3",
     "hhRatingValue": 4.3,
@@ -1412,11 +1377,10 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Активный найм",
-      "Удалёнка"
+      "Активный найм"
     ],
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-08",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -1485,7 +1449,7 @@
     "awards2025": "Habr Career 2025 — средняя оценка #16; отношения с коллегами #9",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -1532,7 +1496,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -1571,7 +1535,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -1645,7 +1609,7 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка"
+      "Есть удалёнка"
     ],
     "hasActiveHiring": true,
     "hasRemote": true,
@@ -1681,11 +1645,10 @@
     "awards2025": "Workspace 2025 — интернет-реклама и маркетинг: #3; AdIndex 2025 — крупнейшие digital-медиабайеры: #1",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
       "Награды 2025"
     ],
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-21",
     "hhVacanciesCheckedAt": "2026-05-19",
@@ -1719,7 +1682,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -1758,7 +1721,7 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": true,
@@ -1867,11 +1830,9 @@
     "habrRatingValue": null,
     "awards2025": null,
     "hasAwards2025": false,
-    "presets": [
-      "Удалёнка"
-    ],
+    "presets": [],
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-21",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -1939,7 +1900,7 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка"
+      "Есть удалёнка"
     ],
     "hasActiveHiring": true,
     "hasRemote": true,
@@ -2046,7 +2007,7 @@
     "awards2025": "Workspace 2025 — mobile developers: #1; Рейтинг Рунета 2025 — mobile apps РФ: #2; Habr Career 2025 — средняя оценка: #4",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -2129,12 +2090,11 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-18",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -2168,7 +2128,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -2206,7 +2166,7 @@
     "awards2025": "Рейтинг Рунета 2025 — аутстаф-компании #3",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -2245,7 +2205,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Награды 2025"
     ],
     "hasActiveHiring": true,
@@ -2283,7 +2243,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -2322,7 +2282,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка"
+      "Есть удалёнка"
     ],
     "hasActiveHiring": false,
     "hasRemote": true,
@@ -2359,7 +2319,7 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -2397,7 +2357,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка"
+      "Есть удалёнка"
     ],
     "hasActiveHiring": false,
     "hasRemote": true,
@@ -2434,7 +2394,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -2474,7 +2434,7 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Международные"
     ],
     "hasActiveHiring": true,
@@ -2512,7 +2472,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -2621,7 +2581,7 @@
     "awards2025": "Habr Career 2025 — средняя оценка #16; современные технологии #3; комфортные условия #1",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -2661,7 +2621,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -2743,7 +2703,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -2783,7 +2743,7 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Международные"
     ],
     "hasActiveHiring": true,
@@ -2865,7 +2825,7 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": true,
@@ -2903,7 +2863,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -2977,7 +2937,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -3015,7 +2975,7 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": true,
@@ -3088,11 +3048,9 @@
     "habrRatingValue": 4.14,
     "awards2025": null,
     "hasAwards2025": false,
-    "presets": [
-      "Удалёнка"
-    ],
+    "presets": [],
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-21",
     "hhVacanciesCheckedAt": "2026-05-19",
@@ -3133,7 +3091,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -3206,7 +3164,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -3280,7 +3238,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -3318,12 +3276,11 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-21",
     "hhVacanciesCheckedAt": "2026-05-19",
@@ -3331,6 +3288,42 @@
     "hhCompanyUrl": "https://hh.ru/employer/646883",
     "habrUrl": "https://career.habr.com/companies/pixelplus",
     "linkedinUrl": "https://www.linkedin.com/company/pixelplusru",
+    "employerRankingBadges": [],
+    "publicStatus": "public"
+  },
+  {
+    "id": "cmp_15876b007b",
+    "slug": "prostor",
+    "name": "Простор",
+    "city": "Санкт-Петербург",
+    "companyType": "Digital",
+    "niche": "Full-service digital / SEO / Performance / Web development",
+    "size": "51–200",
+    "careerUrl": "https://prosto-r.ru/o-nas/",
+    "vacanciesRange": "1–4",
+    "vacanciesWeight": 1,
+    "hiringStatus": "Точечный",
+    "workFormat": "Офис",
+    "hiringGeo": "Локально",
+    "international": "Частично",
+    "hhRatingDisplay": "4,0",
+    "hhRatingValue": 4,
+    "habrRatingDisplay": "Нет отзывов",
+    "habrRatingValue": null,
+    "awards2025": null,
+    "hasAwards2025": false,
+    "presets": [
+      "Международные"
+    ],
+    "hasActiveHiring": false,
+    "hasRemote": false,
+    "hasHighHrRating": false,
+    "lastCheckedAt": "2026-05-22",
+    "hhVacanciesCheckedAt": "2026-05-22",
+    "websiteUrl": "https://prosto-r.ru/",
+    "hhCompanyUrl": "https://spb.hh.ru/employer/592758",
+    "habrUrl": null,
+    "linkedinUrl": null,
     "employerRankingBadges": [],
     "publicStatus": "public"
   },
@@ -3356,7 +3349,7 @@
     "awards2025": "Habr Career 2025 — грамотность менеджмента #1, средняя оценка #9",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -3468,7 +3461,7 @@
     "awards2025": "Habr Career 2025 — современные технологии #1, средняя оценка #17",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -3506,7 +3499,7 @@
     "awards2025": "Workspace 2025 — веб-разработчики: #30",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Награды 2025",
       "Международные"
     ],
@@ -3544,7 +3537,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка"
+      "Есть удалёнка"
     ],
     "hasActiveHiring": false,
     "hasRemote": true,
@@ -3579,11 +3572,9 @@
     "habrRatingValue": null,
     "awards2025": null,
     "hasAwards2025": false,
-    "presets": [
-      "Удалёнка"
-    ],
+    "presets": [],
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-21",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -3653,7 +3644,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -3728,11 +3719,10 @@
     "awards2025": "Рейтинг Рунета 2025 — контекстная реклама: #2; Ruward Award 2025 — таргетированная реклама / недвижимость: #1; performance-агентства: #3",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
       "Награды 2025"
     ],
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-21",
     "hhVacanciesCheckedAt": "2026-05-19",
@@ -3801,7 +3791,7 @@
     "awards2025": "Workspace 2025 — корпоративные решения: #8; сайты: #11; Ruward 2025 — топ-10",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -3877,7 +3867,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Награды 2025"
     ],
     "hasActiveHiring": true,
@@ -3948,18 +3938,18 @@
     "hhRatingValue": 4.5,
     "habrRatingDisplay": "4,9",
     "habrRatingValue": 4.87,
-    "awards2025": "Habr Career 2025 — Средняя оценка #10; Современные технологии #1; Комфортные условия труда #1; Профессиональный рост #1",
+    "awards2025": "Habr Career 2025 — Средняя оценка #10; Интересные задачи #5; Адекватная зарплата #14; Социальный пакет #3; Комфортные условия труда #1; Профессиональный рост #1",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-21",
-    "hhVacanciesCheckedAt": "2026-05-21",
+    "lastCheckedAt": "2026-05-22",
+    "hhVacanciesCheckedAt": "2026-05-22",
     "websiteUrl": "https://codeinside.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/1096944",
     "habrUrl": "https://career.habr.com/companies/codeinside",
@@ -3997,7 +3987,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка"
+      "Есть удалёнка"
     ],
     "hasActiveHiring": false,
     "hasRemote": true,
@@ -4033,7 +4023,7 @@
     "awards2025": "Рейтинг Рунета 2025 — дизайн для IT и FMCG: #1; брендинг для банков: #1",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Награды 2025",
       "Международные"
     ],
@@ -4071,7 +4061,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -4141,26 +4131,35 @@
     "international": "Частично",
     "hhRatingDisplay": "4,7",
     "hhRatingValue": 4.7,
-    "habrRatingDisplay": "4,9",
-    "habrRatingValue": 4.89,
-    "awards2025": null,
-    "hasAwards2025": false,
+    "habrRatingDisplay": "4,8",
+    "habrRatingValue": 4.83,
+    "awards2025": "Habr Career 2025 — Средняя оценка #12; Интересные задачи #8; Социальный пакет #6; Признание результатов труда #3",
+    "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
+      "Награды 2025",
       "Международные"
     ],
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-21",
-    "hhVacanciesCheckedAt": "2026-05-21",
+    "lastCheckedAt": "2026-05-22",
+    "hhVacanciesCheckedAt": "2026-05-22",
     "websiteUrl": "https://dis-group.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/60975",
     "habrUrl": "https://career.habr.com/companies/dis-group",
     "linkedinUrl": null,
-    "employerRankingBadges": [],
+    "employerRankingBadges": [
+      {
+        "source": "habr",
+        "label": "Средняя оценка #12",
+        "description": "Рейтинг Habr Career",
+        "year": 2025,
+        "sourceUrl": "https://career.habr.com/companies/dis-group/awards"
+      }
+    ],
     "publicStatus": "public"
   },
   {
@@ -4221,7 +4220,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -4258,7 +4257,7 @@
     "awards2025": "Рейтинг Рунета 2025 — eCommerce: #2; CRM: #1; Symfony: #1; 1С-Битрикс: #1",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -4296,7 +4295,7 @@
     "awards2025": "Ruward Award 2025 — агентский HR-бренд: #3",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -4372,7 +4371,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка"
+      "Есть удалёнка"
     ],
     "hasActiveHiring": false,
     "hasRemote": true,
@@ -4408,7 +4407,7 @@
     "awards2025": "Рейтинг Рунета 2025 — комплексные разработчики Екатеринбург: #1; Tagline 2025 — digital-дизайн: #28; Awwwards — 5 наград",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Награды 2025",
       "Международные"
     ],
@@ -4483,7 +4482,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -4567,7 +4566,7 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка"
+      "Есть удалёнка"
     ],
     "hasActiveHiring": true,
     "hasRemote": true,
@@ -4603,7 +4602,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -4640,7 +4639,7 @@
     "awards2025": "Рейтинг Рунета 2025 — таргетированная реклама для IT-компаний: #9",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Награды 2025",
       "Международные"
     ],
@@ -4665,8 +4664,8 @@
     "niche": "Custom software / FinTech / Telecom",
     "size": "51–200",
     "careerUrl": "https://maxilect.ru/careers/",
-    "vacanciesRange": "5–10",
-    "vacanciesWeight": 2,
+    "vacanciesRange": "10+",
+    "vacanciesWeight": 3,
     "hiringStatus": "Активный",
     "workFormat": "Удалёнка",
     "hiringGeo": "РФ",
@@ -4679,7 +4678,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -4687,8 +4686,8 @@
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-21",
-    "hhVacanciesCheckedAt": "2026-05-21",
+    "lastCheckedAt": "2026-05-22",
+    "hhVacanciesCheckedAt": "2026-05-22",
     "websiteUrl": "https://maxilect.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/2563058",
     "habrUrl": "https://career.habr.com/companies/maxilect",
@@ -4799,7 +4798,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -4834,19 +4833,19 @@
     "hhRatingValue": 4.9,
     "habrRatingDisplay": "4,8",
     "habrRatingValue": 4.84,
-    "awards2025": "CNews Awards 2025 — победитель; Habr Career 2025 — Средняя оценка #11; Профессиональный рост #3; Интересные задачи #6; Адекватная зарплата #8",
+    "awards2025": "CNews Awards 2025 — победитель; Habr Career 2025 — Средняя оценка #11; Профессиональный рост #3; Интересные задачи #6; Современные технологии #6; Адекватная зарплата #8",
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-21",
-    "hhVacanciesCheckedAt": "2026-05-21",
+    "lastCheckedAt": "2026-05-22",
+    "hhVacanciesCheckedAt": "2026-05-22",
     "websiteUrl": "https://mindsw.io/",
     "hhCompanyUrl": "https://hh.ru/employer/9495373",
     "habrUrl": "https://career.habr.com/companies/mindsw",
@@ -4956,7 +4955,7 @@
     "awards2025": "Рейтинг Рунета 2025 — подрядчики для IT-компаний: #8; таргетированная реклама для IT-компаний: #3",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Награды 2025"
     ],
     "hasActiveHiring": false,
@@ -4994,7 +4993,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Награды 2025"
     ],
     "hasActiveHiring": true,
@@ -5031,7 +5030,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Международные"
     ],
     "hasActiveHiring": false,
@@ -5103,7 +5102,7 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -5178,7 +5177,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -5216,7 +5215,7 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -5324,19 +5323,19 @@
     "hhRatingValue": 4.8,
     "habrRatingDisplay": "4,9",
     "habrRatingValue": 4.9,
-    "awards2025": "Habr Career 2025 — Средняя оценка #6; Интересные задачи #1; Адекватная зарплата #7; Социальный пакет #17",
+    "awards2025": "Habr Career 2025 — Средняя оценка #6; Интересные задачи #1; Современные технологии #9; Адекватная зарплата #7; Социальный пакет #17; Комфортные условия труда #4; Профессиональный рост #8",
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-21",
-    "hhVacanciesCheckedAt": "2026-05-21",
+    "lastCheckedAt": "2026-05-22",
+    "hhVacanciesCheckedAt": "2026-05-22",
     "websiteUrl": "https://rtln.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/3649870",
     "habrUrl": "https://career.habr.com/companies/rightline",
@@ -5374,7 +5373,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -5448,7 +5447,7 @@
     "awards2025": "Рейтинг Рунета 2025 — сайты и мобильные приложения: #1 в Твери; иностранные заказчики: #7",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -5487,7 +5486,7 @@
     "awards2025": "AdIndex 2025 — influencer marketing: лидеры знания; Ruward Spec 2025 — продвижение на маркетплейсах",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Награды 2025"
     ],
     "hasActiveHiring": false,
@@ -5524,7 +5523,7 @@
     "awards2025": "Workspace 2025 / Рейтинг Рунета 2025 — авто и репутация; Рейтинг Рунета — репутация: #1/#3",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Награды 2025"
     ],
     "hasActiveHiring": false,
@@ -5599,7 +5598,7 @@
     "awards2025": "Рейтинг Рунета 2025 — 157 дипломов по SEO и рекламе",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -5637,7 +5636,7 @@
     "awards2025": "Рейтинг Рунета 2025 — лучшее диджитал-медиа: #1; культура/искусство: #2; Workspace Digital Awards — номинант",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Награды 2025"
     ],
     "hasActiveHiring": false,
@@ -5674,7 +5673,7 @@
     "awards2025": "Рейтинг Рунета 2025 — 12 первых мест; контекст: медицина/HR/детское образование #1; performance: HR/детское образование #1",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -5782,7 +5781,7 @@
     "awards2025": "Рейтинг Рунета 2025 — e-commerce/ORM: #1; Workspace 2025 — мобильные приложения: #3",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -5929,7 +5928,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Международные"
     ],
     "hasActiveHiring": false,
@@ -6217,7 +6216,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -6254,7 +6253,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка"
+      "Есть удалёнка"
     ],
     "hasActiveHiring": false,
     "hasRemote": true,
@@ -6290,7 +6289,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка"
+      "Есть удалёнка"
     ],
     "hasActiveHiring": false,
     "hasRemote": true,
@@ -6326,7 +6325,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -6400,7 +6399,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -6437,12 +6436,11 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-18",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -6545,7 +6543,7 @@
     "awards2025": "RUWARD AWARD 2025 — Performance-маркетинг / Агентство года",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -6691,7 +6689,7 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -6763,7 +6761,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Международные"
     ],
     "hasActiveHiring": false,
@@ -6800,7 +6798,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -6873,7 +6871,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -6911,7 +6909,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -7094,7 +7092,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка"
+      "Есть удалёнка"
     ],
     "hasActiveHiring": false,
     "hasRemote": true,
@@ -7166,7 +7164,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -7240,7 +7238,7 @@
     "awards2025": "Рейтинг Рунета 2025 — разработка сайтов и веб-сервисов: топ-3",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Награды 2025"
     ],
     "hasActiveHiring": false,
@@ -7277,7 +7275,7 @@
     "awards2025": "Рейтинг Рунета 2025 — SMM-агентства: #2",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Награды 2025"
     ],
     "hasActiveHiring": false,
@@ -7314,7 +7312,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -7352,7 +7350,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -7389,7 +7387,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -7499,7 +7497,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -7537,7 +7535,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -7637,7 +7635,7 @@
     "careerUrl": "https://uniofweb.ru/company/vacancy/",
     "vacanciesRange": "5–10",
     "vacanciesWeight": 2,
-    "hiringStatus": "Активный",
+    "hiringStatus": "Точечный",
     "workFormat": "Смешанный",
     "hiringGeo": "РФ",
     "international": "Нет",
@@ -7645,19 +7643,19 @@
     "hhRatingValue": 4.7,
     "habrRatingDisplay": "4,9",
     "habrRatingValue": 4.9,
-    "awards2025": "Habr Career 2025 — Средняя оценка #7; Интересные задачи #1; Профессиональный рост #1; Связь с топ-менеджментом #1",
+    "awards2025": "Habr Career 2025 — Средняя оценка #7; Интересные задачи #1; Адекватная зарплата #6; Социальный пакет #20; Комфортные условия труда #12; Профессиональный рост #1; Карьерный рост #10; Отношения с коллегами #2; Признание результатов труда #2; Грамотность менеджмента #4",
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-21",
-    "hhVacanciesCheckedAt": "2026-05-21",
+    "lastCheckedAt": "2026-05-22",
+    "hhVacanciesCheckedAt": "2026-05-22",
     "websiteUrl": "https://uniofweb.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/1196086",
     "habrUrl": "https://career.habr.com/companies/uniofweb",
@@ -7804,7 +7802,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -7847,7 +7845,7 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-21",
+    "lastCheckedAt": "2026-05-22",
     "hhVacanciesCheckedAt": null,
     "websiteUrl": "https://www.aporia.su/",
     "hhCompanyUrl": null,
@@ -7920,7 +7918,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Международные"
     ],
     "hasActiveHiring": false,
@@ -7957,7 +7955,7 @@
     "awards2025": "Есть в отраслевых рейтингах; 2025 не подтверждено",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Награды 2025",
       "Международные"
     ],
@@ -8033,7 +8031,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -8160,14 +8158,14 @@
     "companyType": "Веб-студия",
     "niche": "Web development",
     "size": "1–50",
-    "careerUrl": "https://career.habr.com/companies/capybara-digital",
+    "careerUrl": "https://capyba.ru/about/",
     "vacanciesRange": "0",
     "vacanciesWeight": 0,
     "hiringStatus": "На паузе",
     "workFormat": "Не указано",
     "hiringGeo": "Локально",
     "international": "Нет",
-    "hhRatingDisplay": "Нет отзывов",
+    "hhRatingDisplay": "4.9",
     "hhRatingValue": null,
     "habrRatingDisplay": "4,9",
     "habrRatingValue": 4.94,
@@ -8180,10 +8178,10 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-21",
+    "lastCheckedAt": "2026-05-22",
     "hhVacanciesCheckedAt": null,
     "websiteUrl": "https://capyba.ru/",
-    "hhCompanyUrl": null,
+    "hhCompanyUrl": "https://hh.ru/employer/2523583",
     "habrUrl": "https://career.habr.com/companies/capybara-digital",
     "linkedinUrl": null,
     "employerRankingBadges": [
@@ -8219,7 +8217,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка"
+      "Есть удалёнка"
     ],
     "hasActiveHiring": false,
     "hasRemote": true,
@@ -8255,7 +8253,7 @@
     "awards2025": "Habr Career 2025 — интересные задачи #12; условия #18; коллеги #1; признание #7; топ-менеджмент #1",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -8293,7 +8291,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Международные"
     ],
     "hasActiveHiring": false,
@@ -8330,7 +8328,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -8367,7 +8365,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка"
+      "Есть удалёнка"
     ],
     "hasActiveHiring": false,
     "hasRemote": true,
@@ -8439,7 +8437,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -8476,7 +8474,7 @@
     "awards2025": "Рейтинг Рунета 2025 — подрядчики для IT-компаний: #13; разработчики сайтов и веб-сервисов: #67; промо-сайты: #51",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -8551,7 +8549,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -8588,7 +8586,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -8626,7 +8624,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка"
+      "Есть удалёнка"
     ],
     "hasActiveHiring": false,
     "hasRemote": true,
@@ -8700,7 +8698,7 @@
     "awards2025": "RUWARD AWARD 2025 — email-маркетинг #1, HR-бренд #3; WDA 2025 — CRM/рассылки #1; Tagline 2025 — silver/bronze",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -8725,20 +8723,20 @@
     "niche": "Web development / Custom software",
     "size": "1–50",
     "careerUrl": "https://hr.fuse8.ru/",
-    "vacanciesRange": "0",
-    "vacanciesWeight": 0,
-    "hiringStatus": "На паузе",
-    "workFormat": "Смешанный",
+    "vacanciesRange": "1–4",
+    "vacanciesWeight": 1,
+    "hiringStatus": "Точечный",
+    "workFormat": "Удалёнка",
     "hiringGeo": "РФ",
     "international": "Частично",
     "hhRatingDisplay": "Нет отзывов",
     "hhRatingValue": null,
     "habrRatingDisplay": "4,9",
     "habrRatingValue": 4.86,
-    "awards2025": "Habr Career 2025 — Средняя оценка #11; Отношения с коллегами #2; Комфортные условия труда #6; Рейтинг Рунета 2025 — аутстаффинг: #45",
+    "awards2025": "Habr Career 2025 — Средняя оценка #11; Интересные задачи #11; Адекватная зарплата #8; Социальный пакет #10; Комфортные условия труда #6; Отношения с коллегами #2; Рейтинг Рунета 2025 — аутстаффинг: #45",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -8746,7 +8744,7 @@
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-21",
+    "lastCheckedAt": "2026-05-22",
     "hhVacanciesCheckedAt": null,
     "websiteUrl": "https://fuse8.ru/",
     "hhCompanyUrl": null,
@@ -8785,7 +8783,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -8968,7 +8966,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка"
+      "Есть удалёнка"
     ],
     "hasActiveHiring": false,
     "hasRemote": true,
@@ -9040,7 +9038,7 @@
     "awards2025": "Рейтинг Рунета 2025 — разработка и продвижение сайтов: топ-10 РФ; SEO Екатеринбург: #1",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -9078,7 +9076,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -9257,7 +9255,7 @@
     "awards2025": "Habr Career 2025 — средняя оценка #5, интересные задачи #1; Рейтинг Рунета — топ-10 e-commerce",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -9296,7 +9294,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -9371,7 +9369,7 @@
     "awards2025": "Рейтинг Рунета 2025 — образовательные платформы: #3; общий рейтинг: #31; Tagline 2025 — топ-75",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -9481,7 +9479,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -9518,7 +9516,7 @@
     "awards2025": "Рейтинг Рунета — топ-3 мобильная разработка; Habr Career 2025 — отношения с коллегами #1, адекватная зарплата #6",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -9594,7 +9592,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Международные"
     ],
     "hasActiveHiring": false,
@@ -9631,7 +9629,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Международные"
     ],
     "hasActiveHiring": false,
@@ -9704,7 +9702,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -9779,7 +9777,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -9853,7 +9851,7 @@
     "awards2025": "Habr Career 2025 — средняя оценка #1, интересные задачи #1, адекватная зарплата #1, соцпакет #1",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -10001,7 +9999,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка"
+      "Есть удалёнка"
     ],
     "hasActiveHiring": false,
     "hasRemote": true,
@@ -10034,7 +10032,7 @@
     "hhRatingValue": null,
     "habrRatingDisplay": "5,0",
     "habrRatingValue": 4.98,
-    "awards2025": "Habr Career 2025 — Средняя оценка #3; Интересные задачи #1; Комфортные условия труда #1; Профессиональный рост #1; Отношения с коллегами #1",
+    "awards2025": "Habr Career 2025 — Средняя оценка #3; Интересные задачи #1; Адекватная зарплата #2; Социальный пакет #5; Комфортные условия труда #1; Профессиональный рост #1; Карьерный рост #2; Отношения с коллегами #1",
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
@@ -10045,7 +10043,7 @@
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-21",
+    "lastCheckedAt": "2026-05-22",
     "hhVacanciesCheckedAt": null,
     "websiteUrl": "https://prideinbrains.com/",
     "hhCompanyUrl": null,
@@ -10081,19 +10079,18 @@
     "hhRatingValue": 4.6,
     "habrRatingDisplay": "4,9",
     "habrRatingValue": 4.94,
-    "awards2025": "Habr Career 2025 — Средняя оценка #5; Современные технологии #1; Профессиональный рост #1; Карьерный рост #1; Отношения с коллегами #1",
+    "awards2025": "Habr Career 2025 — Средняя оценка #5; Интересные задачи #3; Адекватная зарплата #3; Социальный пакет #6; Комфортные условия труда #3; Профессиональный рост #1; Карьерный рост #1; Отношения с коллегами #1",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
     ],
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-21",
-    "hhVacanciesCheckedAt": "2026-05-21",
+    "lastCheckedAt": "2026-05-22",
+    "hhVacanciesCheckedAt": "2026-05-22",
     "websiteUrl": "https://www.qlever.com/",
     "hhCompanyUrl": "https://hh.ru/employer/2160858",
     "habrUrl": "https://career.habr.com/companies/qlever",
@@ -10273,7 +10270,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка"
+      "Есть удалёнка"
     ],
     "hasActiveHiring": false,
     "hasRemote": true,
@@ -10309,7 +10306,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -10488,7 +10485,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -10525,7 +10522,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Международные"
     ],
     "hasActiveHiring": false,
@@ -10562,7 +10559,7 @@
     "awards2025": "Habr Career 2025 — средняя оценка #9; соцпакет #1; комфортные условия #2; карьерный рост #4",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -10601,7 +10598,7 @@
     "awards2025": "Рейтинг Рунета 2025 — топ-3 по Авито в РФ; топ-20 по контекстной рекламе в Москве",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -10673,7 +10670,7 @@
     "awards2025": "Ruward Award 2025 — Агентство года. Недвижимость и строительство: #3; Ruward Award 2025 — Кейс года: #2",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -10711,7 +10708,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -10894,7 +10891,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка"
+      "Есть удалёнка"
     ],
     "hasActiveHiring": false,
     "hasRemote": true,
@@ -10927,7 +10924,7 @@
     "hhRatingValue": 4.7,
     "habrRatingDisplay": "4,9",
     "habrRatingValue": 4.87,
-    "awards2025": "Habr Career 2025 — Средняя оценка #10; Профессиональный рост #2; Карьерный рост #1; Отношения с коллегами #1; Связь с топ-менеджментом #1",
+    "awards2025": "Habr Career 2025 — Средняя оценка #10; Интересные задачи #7; Адекватная зарплата #18; Социальный пакет #18; Комфортные условия труда #10; Профессиональный рост #2; Карьерный рост #1; Отношения с коллегами #1",
     "hasAwards2025": true,
     "presets": [
       "Высокая HR-оценка",
@@ -10936,8 +10933,8 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-21",
-    "hhVacanciesCheckedAt": "2026-05-21",
+    "lastCheckedAt": "2026-05-22",
+    "hhVacanciesCheckedAt": "2026-05-22",
     "websiteUrl": "https://worksolutions.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/1229565",
     "habrUrl": "https://career.habr.com/companies/worksolutions",
@@ -11046,15 +11043,15 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-21",
-    "hhVacanciesCheckedAt": "2026-05-21",
+    "lastCheckedAt": "2026-05-22",
+    "hhVacanciesCheckedAt": "2026-05-22",
     "websiteUrl": "https://zerobit.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/864614",
     "habrUrl": null,
@@ -11190,7 +11187,7 @@
     "awards2025": "Рейтинг Рунета 2025 — топ-10 интеграторов и разработчиков Битрикс24",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -11228,7 +11225,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
@@ -11265,7 +11262,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
+      "Есть удалёнка",
       "Высокая HR-оценка"
     ],
     "hasActiveHiring": false,
