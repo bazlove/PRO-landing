@@ -8,6 +8,25 @@ export type EmployerRankingBadge = {
   sourceUrl: string | null;
 };
 
+export type CompanyHiringSource = "HH" | "Habr" | "Career site" | "Mixed" | null;
+
+export type CompanyDataFreshness = "fresh" | "stale" | "unknown";
+
+export type CompanyPreset =
+  | "Активный найм"
+  | "Удалёнка"
+  | "Высокая HR-оценка"
+  | "Награды 2025"
+  | "Международные";
+
+export type CompanySignals = {
+  hasDirectApply: boolean;
+  hasCareerPage: boolean;
+  hiringSource: CompanyHiringSource;
+  dataFreshness: CompanyDataFreshness;
+  remoteExplicitlyDenied: boolean;
+};
+
 export type CompanyPublic = {
   id: string;
   slug: string;
@@ -35,7 +54,8 @@ export type CompanyPublic = {
   awards2025: string | null;
   hasAwards2025: boolean;
 
-  presets: string[];
+  presets: CompanyPreset[];
+  signals: CompanySignals;
 
   hasActiveHiring: boolean;
   hasRemote: boolean;
