@@ -1,4 +1,4 @@
-import type { CompanyPublic } from "../../types/digital";
+import type { CompanyPublic, CompanySignals } from "../../types/digital";
 import { PUBLIC_PRESET_VALUES, type PublicPresetValue } from "./presetLabels";
 
 const FORBIDDEN_KEY_PATTERNS: RegExp[] = [
@@ -18,6 +18,9 @@ const FORBIDDEN_KEY_PATTERNS: RegExp[] = [
   /sourceSheet/i,
   /size_source/i,
   /size_checked_at/i,
+  /public_fit_status/i,
+  /active_vacancies_source/i,
+  /search_aliases/i,
 ];
 
 const PUBLIC_FIT_ELIGIBLE = new Set(["P0", "P1", "P2"]);
@@ -557,11 +560,12 @@ export function isPublicExportEligibleRow(
     return false;
   }
 
-  const hasFitColumn = sheetHasColumn(headers, PUBLIC_FIT_COLUMN_KEYS);
-  if (hasFitColumn) {
-    const fit = pickPublicFitStatus(raw);
-    if (!PUBLIC_FIT_ELIGIBLE.has(fit)) return false;
-  } else if (!sheetIsPublicExport) {
+  if (!sheetHasColumn(headers, PUBLIC_FIT_COLUMN_KEYS)) {
+    return false;
+  }
+
+  const fit = pickPublicFitStatus(raw);
+  if (!PUBLIC_FIT_ELIGIBLE.has(fit)) {
     return false;
   }
 
@@ -584,12 +588,13 @@ export function getPublicExportSkipReason(
 
   const headers = context.sheetHeaders ?? new Set(Object.keys(raw));
   const sheetIsPublicExport = context.sheetName === "public_export";
-  const hasFitColumn = sheetHasColumn(headers, PUBLIC_FIT_COLUMN_KEYS);
 
-  if (hasFitColumn || !sheetIsPublicExport) {
-    const fit = pickPublicFitStatus(raw);
-    if (!PUBLIC_FIT_ELIGIBLE.has(fit)) return "public_fit_status";
+  if (!sheetHasColumn(headers, PUBLIC_FIT_COLUMN_KEYS)) {
+    return sheetIsPublicExport ? "public_fit_status" : "other";
   }
+
+  const fit = pickPublicFitStatus(raw);
+  if (!PUBLIC_FIT_ELIGIBLE.has(fit)) return "public_fit_status";
 
   const hasShowcaseColumn = sheetHasColumn(headers, SHOWCASE_COLUMN_KEYS);
   if (hasShowcaseColumn) {
@@ -747,6 +752,189 @@ function computeHasHighHrRating(hh: number | null, habr: number | null): boolean
   return (hh !== null && hh >= 4.5) || (habr !== null && habr >= 4.5);
 }
 
+const SOURCE_PRESETS_COLUMN_KEYS = ["Пресеты", "presets_source", "source_presets"] as const;
+
+const ACTIVE_VACANCIES_SOURCE_KEYS = [
+  "active_vacancies_source",
+  "activeVacanciesSource",
+  "Источник активных вакансий",
+] as const;
+
+const QA_COMMENT_KEYS = [
+  "QA комментарий",
+  "qa_comment",
+  "qaComment",
+  "комментарий",
+  "comment",
+] as const;
+
+const DIRECT_APPLY_FLAG_KEYS = [
+  "Прямой отклик",
+  "direct_apply",
+  "has_direct_apply",
+  "hasDirectApply",
+] as const;
+
+const REMOTE_DENIED_PATTERNS = [
+  /remote explicitly denied/i,
+  /не рассматриваем кандидатов на удаленную работу/i,
+  /не рассматриваем кандидатов на удалённую работу/i,
+  /удаленная работа не рассматривается/i,
+  /удалённая работа не рассматривается/i,
+  /\boffice only\b/i,
+] as const;
+
+function isAggregatorCareerHost(url: string): boolean {
+  try {
+    const host = new URL(url).hostname.toLowerCase();
+    return host.includes("hh.ru") || host.includes("habr.com") || host.includes("career.habr");
+  } catch {
+    return false;
+  }
+}
+
+function parseSourcePresets(raw: Record<string, unknown>): string[] {
+  const value = pickValue(raw, [...SOURCE_PRESETS_COLUMN_KEYS]);
+  if (Array.isArray(value)) {
+    return value.map((item) => String(item).trim()).filter(Boolean);
+  }
+  if (typeof value === "string") {
+    return value
+      .split(/[,;|]/)
+      .map((item) => item.trim())
+      .filter(Boolean);
+  }
+  return [];
+}
+
+function hasDedicatedCareerPage(raw: Record<string, unknown>): boolean {
+  const career = pickString(raw, [
+    "careerUrl",
+    "career_url",
+    "Карьерная страница",
+    "Карьерная ссылка",
+  ]);
+  return Boolean(career && isValidHttpUrlString(career) && !isAggregatorCareerHost(career));
+}
+
+function detectHasDirectApply(raw: Record<string, unknown>): boolean {
+  if (parseSourcePresets(raw).includes("Прямой отклик")) return true;
+
+  if (hasDedicatedCareerPage(raw)) return true;
+
+  for (const key of DIRECT_APPLY_FLAG_KEYS) {
+    const value = raw[key];
+    if (value === true) return true;
+    if (typeof value === "string" && isTruthyPublicFlag(value)) return true;
+  }
+
+  return false;
+}
+
+export function normalizeHiringSource(value: unknown): CompanySignals["hiringSource"] {
+  const normalized = String(value ?? "").trim().toLowerCase();
+
+  if (!normalized || normalized === "-" || normalized === "—" || normalized === "не проверено") {
+    return null;
+  }
+  if (normalized.includes("mixed") || normalized.includes("+")) return "Mixed";
+  if (normalized.includes("hh") || normalized.includes("headhunter")) return "HH";
+  if (normalized.includes("habr") || normalized.includes("хабр")) return "Habr";
+  if (normalized.includes("career") || normalized.includes("сайт")) return "Career site";
+
+  return null;
+}
+
+function detectRemoteExplicitlyDenied(raw: Record<string, unknown>): boolean {
+  const texts = QA_COMMENT_KEYS.map((key) => pickString(raw, [key], "")).filter(Boolean);
+  return texts.some((text) => REMOTE_DENIED_PATTERNS.some((pattern) => pattern.test(text)));
+}
+
+export function computeDataFreshness(
+  lastCheckedAt: string | null | undefined,
+  hhVacanciesCheckedAt: string | null | undefined,
+): CompanySignals["dataFreshness"] {
+  const candidates = [lastCheckedAt, hhVacanciesCheckedAt].filter(
+    (date): date is string => Boolean(date),
+  );
+
+  if (candidates.length === 0) return "unknown";
+
+  let newestMs = Number.NEGATIVE_INFINITY;
+  let newestDate: string | null = null;
+
+  for (const date of candidates) {
+    const ms = Date.parse(`${date}T00:00:00Z`);
+    if (Number.isNaN(ms)) continue;
+    if (ms > newestMs) {
+      newestMs = ms;
+      newestDate = date;
+    }
+  }
+
+  if (!newestDate) return "unknown";
+  return isStaleDate(newestDate) ? "stale" : "fresh";
+}
+
+function computeHasCareerPage(careerUrl: string | null | undefined): boolean {
+  // TODO: distinguish company career pages from HH/Habr profile URLs when data allows.
+  return Boolean(careerUrl && isValidHttpUrlString(careerUrl));
+}
+
+function readSignalsFromJson(raw: Record<string, unknown>): Partial<CompanySignals> | null {
+  const value = raw.signals;
+  if (!isRecord(value)) return null;
+
+  const partial: Partial<CompanySignals> = {};
+
+  if (typeof value.hasDirectApply === "boolean") partial.hasDirectApply = value.hasDirectApply;
+  if (typeof value.hasCareerPage === "boolean") partial.hasCareerPage = value.hasCareerPage;
+  if (
+    value.hiringSource === null ||
+    value.hiringSource === "HH" ||
+    value.hiringSource === "Habr" ||
+    value.hiringSource === "Career site" ||
+    value.hiringSource === "Mixed"
+  ) {
+    partial.hiringSource = value.hiringSource;
+  }
+  if (
+    value.dataFreshness === "fresh" ||
+    value.dataFreshness === "stale" ||
+    value.dataFreshness === "unknown"
+  ) {
+    partial.dataFreshness = value.dataFreshness;
+  }
+  if (typeof value.remoteExplicitlyDenied === "boolean") {
+    partial.remoteExplicitlyDenied = value.remoteExplicitlyDenied;
+  }
+
+  return Object.keys(partial).length > 0 ? partial : null;
+}
+
+export function buildCompanySignals(
+  raw: Record<string, unknown>,
+  company: Pick<CompanyPublic, "careerUrl" | "lastCheckedAt" | "vacanciesRange" | "hhVacanciesCheckedAt">,
+): CompanySignals {
+  const fromJson = readSignalsFromJson(raw);
+  const hhCheckedAt = resolvePublicHhVacanciesCheckedAt(
+    company.vacanciesRange,
+    company.hhVacanciesCheckedAt,
+  );
+
+  const hiringSource =
+    fromJson?.hiringSource ??
+    normalizeHiringSource(pickValue(raw, [...ACTIVE_VACANCIES_SOURCE_KEYS]));
+
+  return {
+    hasDirectApply: fromJson?.hasDirectApply ?? detectHasDirectApply(raw),
+    hasCareerPage: computeHasCareerPage(company.careerUrl),
+    hiringSource,
+    dataFreshness: computeDataFreshness(company.lastCheckedAt, hhCheckedAt),
+    remoteExplicitlyDenied: fromJson?.remoteExplicitlyDenied ?? detectRemoteExplicitlyDenied(raw),
+  };
+}
+
 /** Presets in canonical order; never auto-add «Прямой отклик». */
 export function buildPresets(
   company: Pick<
@@ -800,9 +988,23 @@ export function recalculateDerivedFields(company: CompanyPublic): CompanyPublic 
     hhVacanciesCheckedAt,
   };
 
+  const hhCheckedAt = resolvePublicHhVacanciesCheckedAt(
+    withDerived.vacanciesRange,
+    withDerived.hhVacanciesCheckedAt,
+  );
+
+  const signals: CompanySignals = {
+    hasDirectApply: company.signals?.hasDirectApply ?? false,
+    hasCareerPage: computeHasCareerPage(withDerived.careerUrl),
+    hiringSource: company.signals?.hiringSource ?? null,
+    dataFreshness: computeDataFreshness(withDerived.lastCheckedAt, hhCheckedAt),
+    remoteExplicitlyDenied: company.signals?.remoteExplicitlyDenied ?? false,
+  };
+
   return {
     ...withDerived,
     presets: buildPresets(withDerived),
+    signals,
   };
 }
 
@@ -1050,6 +1252,13 @@ export function normalizeCompany(
     awards2025,
     hasAwards2025: false,
     presets: [],
+    signals: {
+      hasDirectApply: false,
+      hasCareerPage: false,
+      hiringSource: null,
+      dataFreshness: "unknown",
+      remoteExplicitlyDenied: false,
+    },
     hasActiveHiring: false,
     hasRemote: false,
     hasHighHrRating: false,
@@ -1063,7 +1272,12 @@ export function normalizeCompany(
     publicStatus: "public",
   };
 
-  return recalculateDerivedFields(partial);
+  const recalculated = recalculateDerivedFields(partial);
+
+  return {
+    ...recalculated,
+    signals: buildCompanySignals(rawInput, recalculated),
+  };
 }
 
 const SIZE_WEIGHT: Record<string, number> = {
