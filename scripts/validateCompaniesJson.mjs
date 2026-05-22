@@ -46,6 +46,7 @@ const allowedFields = [
   "awards2025",
   "hasAwards2025",
   "presets",
+  "signals",
   "hasActiveHiring",
   "hasRemote",
   "hasHighHrRating",
@@ -91,6 +92,9 @@ const forbiddenKeyPatterns = [
   /внутрен/i,
   /size_source/i,
   /size_checked_at/i,
+  /public_fit_status/i,
+  /active_vacancies_source/i,
+  /search_aliases/i,
 ];
 
 const errors = [];
@@ -277,6 +281,51 @@ function validateEmployerRankingBadges(value, index) {
   });
 }
 
+const allowedHiringSources = new Set(["HH", "Habr", "Career site", "Mixed"]);
+const allowedDataFreshness = new Set(["fresh", "stale", "unknown"]);
+const forbiddenPresetValues = new Set(["Прямой отклик", "Есть удалёнка"]);
+
+function validateSignals(value, index) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    addError(index, "signals must be an object");
+    return;
+  }
+
+  const allowedSignalKeys = new Set([
+    "hasDirectApply",
+    "hasCareerPage",
+    "hiringSource",
+    "dataFreshness",
+    "remoteExplicitlyDenied",
+  ]);
+
+  for (const key of Object.keys(value)) {
+    if (!allowedSignalKeys.has(key)) {
+      addError(index, `signals extra field is not allowed: ${key}`);
+    }
+  }
+
+  if (typeof value.hasDirectApply !== "boolean") {
+    addError(index, "signals.hasDirectApply must be boolean");
+  }
+
+  if (typeof value.hasCareerPage !== "boolean") {
+    addError(index, "signals.hasCareerPage must be boolean");
+  }
+
+  if (!(value.hiringSource === null || allowedHiringSources.has(value.hiringSource))) {
+    addError(index, 'signals.hiringSource must be "HH", "Habr", "Career site", "Mixed", or null');
+  }
+
+  if (!allowedDataFreshness.has(value.dataFreshness)) {
+    addError(index, 'signals.dataFreshness must be "fresh", "stale", or "unknown"');
+  }
+
+  if (typeof value.remoteExplicitlyDenied !== "boolean") {
+    addError(index, "signals.remoteExplicitlyDenied must be boolean");
+  }
+}
+
 function validateCompany(company, index) {
   if (!company || typeof company !== "object" || Array.isArray(company)) {
     addError(index, "must be an object");
@@ -404,13 +453,15 @@ function validateCompany(company, index) {
     addError(index, `hasAwards2025 must be ${expectedHasAwards2025}`);
   }
 
+  validateSignals(company.signals, index);
+
   if (!Array.isArray(company.presets)) {
     addError(index, "presets must be an array");
   } else {
     const seen = new Set();
     for (const preset of company.presets) {
-      if (preset === "Прямой отклик") {
-        addError(index, 'preset "Прямой отклик" is not allowed in public JSON');
+      if (forbiddenPresetValues.has(preset)) {
+        addError(index, `preset "${preset}" is not allowed in public JSON`);
       }
       if (!allowedPresetSet.has(preset)) addError(index, `invalid preset: ${preset}`);
       if (seen.has(preset)) addError(index, `duplicate preset: ${preset}`);
