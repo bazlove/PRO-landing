@@ -205,9 +205,9 @@ html.reduced-motion .hero-title-block {
   .hero-title {
     max-width: 680px;
     max-inline-size: min(680px, calc(100vw - 36px));
-    font-size: clamp(20px, 4.2vw, 30px);
-    line-height: 1.16;
-    letter-spacing: -0.028em;
+    font-size: clamp(18px, 3.7vw, 28px);
+    line-height: 1.18;
+    letter-spacing: -0.026em;
     white-space: normal;
   }
 }
@@ -215,38 +215,77 @@ html.reduced-motion .hero-title-block {
 @media (max-width: 700px) {
   .hero-main {
     justify-content: center;
-    gap: clamp(18px, 2.8vh, 26px);
+    gap: clamp(48px, 6.4vh, 72px);
   }
 
   .hero-title-block {
     width: min(100%, calc(100vw - 24px));
     padding: 0 12px;
-    --hero-title-lift: -22px;
+    --hero-title-lift: -8px;
   }
 
   .hero-title {
     max-width: 520px;
     max-inline-size: min(520px, calc(100vw - 28px));
-    font-size: clamp(18px, 5.4vw, 25px);
-    line-height: 1.16;
-    letter-spacing: -0.024em;
+    font-size: clamp(16px, 4.6vw, 22px);
+    line-height: 1.18;
+    letter-spacing: -0.022em;
     white-space: normal;
+    opacity: 1;
+    clip-path: none;
+    animation: none;
+  }
+
+  .hero-title::after {
+    display: none;
+  }
+
+  html.is-footer-visible .hero-title {
+    opacity: 1;
+    clip-path: none;
+    animation: none;
+  }
+
+  html.is-footer-visible .hero-title::after {
+    display: none;
+    animation: none;
+  }
+
+  .scene-tooltip {
+    top: -28px;
+    width: min(330px, 82vw);
+    font-size: clamp(12px, 3vw, 13px);
+    line-height: 1.35;
   }
 }
 
 @media (max-width: 400px), (max-height: 700px) {
   .hero-main {
-    gap: 10px;
+    gap: clamp(34px, 5.2vh, 48px);
   }
 
   .hero-title-block {
-    --hero-title-lift: -16px;
+    --hero-title-lift: -4px;
   }
 
   .hero-title {
-    font-size: clamp(17px, 5.2vw, 23px);
-    line-height: 1.16;
+    font-size: clamp(15px, 4.8vw, 20px);
+    line-height: 1.18;
     white-space: normal;
+    opacity: 1;
+    clip-path: none;
+    animation: none;
+  }
+
+  .hero-title::after {
+    display: none;
+  }
+
+  .scene-tooltip {
+    top: -22px;
+    width: min(300px, 84vw);
+    font-size: 12px;
+    line-height: 1.35;
   }
 }
 
@@ -1060,9 +1099,10 @@ html.is-links-visible .orbit-link--research {
   }
 
   .scene-tooltip {
-    width: min(320px, 84vw);
-    font-size: 14px;
-    top: -52px;
+    width: min(330px, 82vw);
+    font-size: clamp(12px, 3vw, 13px);
+    line-height: 1.35;
+    top: -28px;
   }
 }
 
@@ -1087,8 +1127,9 @@ html.is-links-visible .orbit-link--research {
   }
 
   .scene-tooltip {
-    top: -46px;
-    font-size: 13px;
+    top: -22px;
+    font-size: 12px;
+    line-height: 1.35;
   }
 }
 
@@ -1263,3 +1304,15 @@ html.reduced-motion .loader-layer {
   }
 }
 
+
+@media (max-width: 700px) {
+  .hero-title__name,
+  .hero-title__role {
+    display: inline;
+  }
+
+  .hero-title__role {
+    color: rgba(11, 31, 51, 0.5);
+    font-weight: 600;
+  }
+}
