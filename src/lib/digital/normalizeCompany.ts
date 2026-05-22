@@ -83,7 +83,7 @@ const INTERNATIONAL_VALUES = new Set<CompanyPublic["international"]>([
 ]);
 
 const PRESET_ACTIVE = "Активный найм";
-const PRESET_REMOTE = "Удалёнка";
+const PRESET_REMOTE = "Есть удалёнка";
 const PRESET_HIGH_RATING = "Высокая HR-оценка";
 const PRESET_AWARDS = "Награды 2025";
 const PRESET_INTERNATIONAL = "Международные";
@@ -714,7 +714,7 @@ function normalizeInternational(raw: Record<string, unknown>): CompanyPublic["in
 }
 
 function computeHasRemote(workFormat: CompanyPublic["workFormat"]): boolean {
-  return workFormat === "Удалёнка" || workFormat === "Гибрид" || workFormat === "Смешанный";
+  return workFormat === "Удалёнка" || workFormat === "Смешанный";
 }
 
 function computeHasActiveHiring(
