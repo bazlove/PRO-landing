@@ -20,9 +20,11 @@ export const DIGITAL_BADGE_MAX_VISIBLE = DIGITAL_BADGE_MAX_VISIBLE_MOBILE;
 
 const SIZE_UNKNOWN = "Не указано";
 
+import { getPresetDisplayLabel } from "./presetLabels";
+
 export const BADGE_ACTIVE_HIRING = "Активный найм";
-/** Public label for `hasRemote` / remote preset (not factual `workFormat`). */
-export const REMOTE_SIGNAL_LABEL = "Есть удалёнка";
+/** UI label for remote contract preset `Удалёнка` (not factual `workFormat`). */
+export const REMOTE_SIGNAL_LABEL = getPresetDisplayLabel("Удалёнка");
 export const BADGE_REMOTE = REMOTE_SIGNAL_LABEL;
 export const BADGE_HIGH_RATING = "Высокая HR-оценка";
 export const BADGE_AWARDS = "Награды 2025";
