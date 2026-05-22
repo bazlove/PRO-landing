@@ -21,7 +21,7 @@ export const DIGITAL_BADGE_MAX_VISIBLE = DIGITAL_BADGE_MAX_VISIBLE_MOBILE;
 const SIZE_UNKNOWN = "Не указано";
 
 export const BADGE_ACTIVE_HIRING = "Активный найм";
-export const BADGE_REMOTE = "Удалёнка";
+export const BADGE_REMOTE = "Есть удалёнка";
 export const BADGE_HIGH_RATING = "Высокая HR-оценка";
 export const BADGE_AWARDS = "Награды 2025";
 export const BADGE_INTERNATIONAL = "Международные";
