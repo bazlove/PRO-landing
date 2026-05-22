@@ -1,11 +1,5 @@
 import type { CompanyPublic } from "../../types/digital";
 
-const FLEXIBLE_WORK_FORMATS: CompanyPublic["workFormat"][] = [
-  "Удалёнка",
-  "Гибрид",
-  "Смешанный",
-];
-
 export type DigitalPageStats = {
   totalCompanies: number;
   activeHiringCompanies: number;
@@ -17,16 +11,14 @@ export type DigitalPageStats = {
 
 /**
  * Aggregates proof-block metrics from the public company list.
- * Remote/hybrid/distributed: work formats that typically include remote or hybrid work.
+ * Remote signal: companies with a confirmed remote option (`hasRemote`).
  */
 export function getDigitalPageStats(companies: CompanyPublic[]): DigitalPageStats {
   const totalCompanies = companies.length;
 
   const activeHiringCompanies = companies.filter((c) => c.hasActiveHiring).length;
 
-  const remoteHybridDistributedCompanies = companies.filter((c) =>
-    FLEXIBLE_WORK_FORMATS.includes(c.workFormat),
-  ).length;
+  const remoteHybridDistributedCompanies = companies.filter((c) => c.hasRemote).length;
 
   const highHrRatingCompanies = companies.filter((c) => c.hasHighHrRating).length;
 
