@@ -1379,3 +1379,167 @@ html.reduced-motion .loader-layer {
     display: none;
   }
 }
+
+/* ===== H1 word-by-word animation override ===== */
+/* Use with .hero-title__word spans and --i index on each word. */
+
+.hero-title {
+  display: block;
+  max-width: none;
+  max-inline-size: min(1120px, calc(100vw - 48px));
+  padding-block: 0.08em 0.18em;
+  overflow: visible;
+
+  opacity: 1;
+  clip-path: none;
+  animation: none;
+  white-space: nowrap;
+}
+
+.hero-title__name,
+.hero-title__role {
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+.hero-title__role {
+  color: rgba(11, 31, 51, 0.52);
+  font-weight: 610;
+}
+
+.hero-title__word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.08em);
+  will-change: opacity, transform;
+}
+
+.hero-title::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 0.82em;
+  margin-left: 5px;
+  background: rgba(11, 31, 51, 0.34);
+  transform: translateY(0.11em);
+  opacity: 0;
+}
+
+html.is-footer-visible .hero-title {
+  opacity: 1;
+  clip-path: none;
+  animation: none;
+}
+
+html.is-footer-visible .hero-title__word {
+  animation:
+    hero-title-word-type 180ms steps(1, end)
+    calc(360ms + (var(--i, 0) * 155ms))
+    both;
+}
+
+html.is-footer-visible .hero-title::after {
+  animation:
+    hero-title-word-caret 780ms step-end 360ms 5 both;
+}
+
+.hero-title__tablet-break {
+  display: none;
+}
+
+@media (min-width: 701px) and (max-width: 1023.98px) {
+  .hero-title {
+    max-inline-size: min(720px, calc(100vw - 40px));
+    white-space: normal;
+    text-align: center;
+  }
+
+  .hero-title__tablet-break {
+    display: block;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-title {
+    max-inline-size: min(520px, calc(100vw - 28px));
+    white-space: normal;
+    text-align: center;
+    opacity: 1;
+    clip-path: none;
+    animation: none;
+  }
+
+  .hero-title__tablet-break {
+    display: none;
+  }
+
+  .hero-title__name,
+  .hero-title__role {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .hero-title__word {
+    opacity: 0;
+    transform: translateY(0.1em);
+  }
+
+  html.is-footer-visible .hero-title__word {
+    animation:
+      hero-title-word-type 180ms steps(1, end)
+      calc(300ms + (var(--i, 0) * 145ms))
+      both;
+  }
+
+  .hero-title::after,
+  html.is-footer-visible .hero-title::after {
+    display: none;
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title,
+  html.is-footer-visible .hero-title {
+    opacity: 1;
+    clip-path: none;
+    animation: none;
+  }
+
+  .hero-title__word,
+  html.is-footer-visible .hero-title__word {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .hero-title::after {
+    display: none;
+  }
+}
+
+@keyframes hero-title-word-type {
+  0% {
+    opacity: 0;
+    transform: translateY(0.08em);
+  }
+
+  1%,
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-title-word-caret {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
