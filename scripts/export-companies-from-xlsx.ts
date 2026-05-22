@@ -30,6 +30,10 @@ const jsonPath = join(root, "src/data/digital/companies.json");
 const PUBLIC_SHOWCASE_COLUMN = "Показывать в публичной витрине";
 
 const REQUIRED_PUBLIC_EXPORT_COLUMNS = [
+  "company_id",
+  "public_fit_status",
+  "Показывать в публичной витрине",
+  "active_vacancies_source",
   "website_url",
   "hh_company_url",
   "habr_url",
@@ -41,7 +45,7 @@ const REQUIRED_PUBLIC_EXPORT_COLUMNS = [
   "habr_employer_rank_label",
   "habr_employer_rank_year",
   "habr_employer_rank_source_url",
-];
+] as const;
 
 function getHeaderKeys(rows: Record<string, unknown>[]): Set<string> {
   return new Set(Object.keys(rows[0] ?? {}));
@@ -49,7 +53,12 @@ function getHeaderKeys(rows: Record<string, unknown>[]): Set<string> {
 
 function assertPublicExportContract(rows: Record<string, unknown>[]): void {
   const headers = getHeaderKeys(rows);
-  const missing = REQUIRED_PUBLIC_EXPORT_COLUMNS.filter((column) => !headers.has(column));
+  const missing = REQUIRED_PUBLIC_EXPORT_COLUMNS.filter((column) => {
+    if (column === PUBLIC_SHOWCASE_COLUMN) {
+      return !sheetHasColumn(headers, SHOWCASE_COLUMN_KEYS);
+    }
+    return !headers.has(column);
+  });
 
   if (missing.length > 0) {
     console.error(
