@@ -119,7 +119,7 @@ body {
 
 .hero-title {
   margin: 0 auto;
-  max-width: 760px;
+  max-width: none;
 
   font-family:
     Inter,
@@ -130,30 +130,32 @@ body {
     "Segoe UI",
     sans-serif;
 
-  font-size: clamp(21px, 2.45vw, 34px);
-  line-height: 1.12;
-  font-weight: 680;
-  letter-spacing: -0.032em;
+  font-size: clamp(20px, 2.05vw, 30px);
+  line-height: 1.18;
+  font-weight: 670;
+  letter-spacing: -0.026em;
 
   color: rgba(11, 31, 51, 0.88);
   text-wrap: balance;
+  white-space: nowrap;
 }
 
 .hero-title__name {
-  color: rgba(11, 31, 51, 0.92);
+  color: rgba(11, 31, 51, 0.94);
   font-weight: 720;
 }
 
 .hero-title__role {
-  color: rgba(11, 31, 51, 0.58);
-  font-weight: 640;
+  color: rgba(11, 31, 51, 0.52);
+  font-weight: 610;
 }
 
 .hero-title {
   display: inline-block;
-  max-inline-size: min(960px, calc(100vw - 32px));
+  max-inline-size: min(1120px, calc(100vw - 48px));
+  padding-block: 0.08em 0.18em;
   opacity: 0;
-  clip-path: inset(0 100% 0 0);
+  clip-path: inset(-0.16em 100% -0.28em 0);
   will-change: clip-path, opacity;
 }
 
@@ -161,21 +163,21 @@ body {
   content: "";
   display: inline-block;
   width: 2px;
-  height: 0.86em;
+  height: 0.82em;
   margin-left: 5px;
-  background: rgba(11, 31, 51, 0.38);
-  transform: translateY(0.12em);
+  background: rgba(11, 31, 51, 0.34);
+  transform: translateY(0.11em);
   opacity: 0;
 }
 
 html.is-footer-visible .hero-title {
-  animation: hero-title-type-reveal 1120ms steps(44, end) 220ms both;
+  animation: hero-title-type-reveal 2200ms steps(64, end) 260ms both;
 }
 
 html.is-footer-visible .hero-title::after {
   animation:
-    hero-title-caret-reveal 1120ms steps(1, end) 220ms both,
-    hero-title-caret-blink 720ms step-end 1380ms 3 both;
+    hero-title-caret-reveal 2200ms steps(1, end) 260ms both,
+    hero-title-caret-blink 780ms step-end 2520ms 4 both;
 }
 
 
@@ -202,9 +204,11 @@ html.reduced-motion .hero-title-block {
 
   .hero-title {
     max-width: 680px;
-    font-size: clamp(21px, 4.6vw, 32px);
-    line-height: 1.12;
-    letter-spacing: -0.03em;
+    max-inline-size: min(680px, calc(100vw - 36px));
+    font-size: clamp(20px, 4.2vw, 30px);
+    line-height: 1.16;
+    letter-spacing: -0.028em;
+    white-space: normal;
   }
 }
 
@@ -222,9 +226,11 @@ html.reduced-motion .hero-title-block {
 
   .hero-title {
     max-width: 520px;
-    font-size: clamp(19px, 5.8vw, 27px);
-    line-height: 1.14;
-    letter-spacing: -0.026em;
+    max-inline-size: min(520px, calc(100vw - 28px));
+    font-size: clamp(18px, 5.4vw, 25px);
+    line-height: 1.16;
+    letter-spacing: -0.024em;
+    white-space: normal;
   }
 }
 
@@ -238,8 +244,9 @@ html.reduced-motion .hero-title-block {
   }
 
   .hero-title {
-    font-size: clamp(18px, 5.6vw, 24px);
-    line-height: 1.14;
+    font-size: clamp(17px, 5.2vw, 23px);
+    line-height: 1.16;
+    white-space: normal;
   }
 }
 
@@ -918,8 +925,9 @@ html.is-links-visible .orbit-link--research {
   }
 
   .hero-title {
-    font-size: clamp(20px, 2.2vw, 28px);
-    line-height: 1.12;
+    font-size: clamp(18px, 1.85vw, 25px);
+    line-height: 1.18;
+    white-space: nowrap;
   }
 
   .hero-main {
@@ -1224,12 +1232,12 @@ html.reduced-motion .loader-layer {
 @keyframes hero-title-type-reveal {
   0% {
     opacity: 1;
-    clip-path: inset(0 100% 0 0);
+    clip-path: inset(-0.16em 100% -0.28em 0);
   }
 
   100% {
     opacity: 1;
-    clip-path: inset(0 0 0 0);
+    clip-path: inset(-0.16em 0 -0.28em 0);
   }
 }
 
