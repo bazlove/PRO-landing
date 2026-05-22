@@ -5,7 +5,7 @@ export type DigitalFilterPreset = {
 
 export const DIGITAL_FILTER_PRESETS: DigitalFilterPreset[] = [
   { id: "active-hiring", label: "Активный найм" },
-  { id: "remote", label: "Удалёнка" },
+  { id: "remote", label: "Есть удалёнка" },
   { id: "high-rating", label: "HR 4.5+" },
   { id: "awards-2025", label: "Награды" },
   { id: "international", label: "Международные" },
