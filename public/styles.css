@@ -97,7 +97,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: clamp(8px, 1.6vh, 16px);
+  gap: clamp(26px, 3.4vh, 42px);
 }
 
 .hero-title-block {
@@ -150,7 +150,7 @@ body {
 
 @media (max-width: 1023.98px) {
   .hero-main {
-    gap: clamp(10px, 2vh, 18px);
+    gap: clamp(22px, 3vh, 34px);
   }
 
   .hero-title-block {
@@ -169,7 +169,7 @@ body {
 @media (max-width: 700px) {
   .hero-main {
     justify-content: center;
-    gap: clamp(14px, 2.4vh, 20px);
+    gap: clamp(18px, 2.8vh, 26px);
   }
 
   .hero-title-block {
@@ -213,12 +213,12 @@ body {
 .scene-tooltip {
   position: absolute;
   left: 50%;
-  top: -6px;
-  width: min(420px, 84vw);
+  top: -24px;
+  width: min(460px, 84vw);
   margin: 0;
   transform: translateX(-50%) translateY(4px);
   text-align: center;
-  font-size: clamp(14px, 1.1vw, 16px);
+  font-size: clamp(13px, 1vw, 15px);
   line-height: 1.45;
   color: var(--text-secondary);
   opacity: 0;
@@ -849,7 +849,7 @@ html.is-links-visible .orbit-link--research {
 
 @media (min-width: 1024px) and (max-height: 760px) {
   :root {
-    --scene-scale: 0.84;
+    --scene-scale: 0.8;
   }
 
   .debris {
@@ -862,7 +862,12 @@ html.is-links-visible .orbit-link--research {
   }
 
   .hero-main {
-    gap: 6px;
+    gap: 22px;
+  }
+
+  .scene-tooltip {
+    top: -20px;
+    font-size: 13px;
   }
 }
 
