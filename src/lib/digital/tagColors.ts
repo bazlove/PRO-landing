@@ -30,6 +30,7 @@ const PRESET_ID_TO_COLOR: Record<string, string> = {
 const LABEL_TO_COLOR: Record<string, string> = {
   "Активный найм": TAG_COLOR_CLASS.green,
   Удалёнка: TAG_COLOR_CLASS.blue,
+  "Есть удалёнка": TAG_COLOR_CLASS.blue,
   "Высокая HR-оценка": TAG_COLOR_CLASS.yellow,
   "HR 4.5+": TAG_COLOR_CLASS.yellow,
   "Награды 2025": TAG_COLOR_CLASS.purple,
