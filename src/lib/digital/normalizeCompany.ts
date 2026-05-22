@@ -1,4 +1,5 @@
 import type { CompanyPublic } from "../../types/digital";
+import { PUBLIC_PRESET_VALUES, type PublicPresetValue } from "./presetLabels";
 
 const FORBIDDEN_KEY_PATTERNS: RegExp[] = [
   /hrEmail/i,
@@ -82,11 +83,25 @@ const INTERNATIONAL_VALUES = new Set<CompanyPublic["international"]>([
   "Неясно",
 ]);
 
-const PRESET_ACTIVE = "Активный найм";
-const PRESET_REMOTE = "Есть удалёнка";
-const PRESET_HIGH_RATING = "Высокая HR-оценка";
-const PRESET_AWARDS = "Награды 2025";
-const PRESET_INTERNATIONAL = "Международные";
+const PRESET_ACTIVE: PublicPresetValue = "Активный найм";
+const PRESET_REMOTE: PublicPresetValue = "Удалёнка";
+const PRESET_HIGH_RATING: PublicPresetValue = "Высокая HR-оценка";
+const PRESET_AWARDS: PublicPresetValue = "Награды 2025";
+const PRESET_INTERNATIONAL: PublicPresetValue = "Международные";
+
+export const ALLOWED_PRESETS = PUBLIC_PRESET_VALUES;
+
+const ALLOWED_PRESET_SET = new Set<string>(ALLOWED_PRESETS);
+
+/** Map legacy/UI preset tokens to contract values before validation/output. */
+export function normalizePresetValue(value: string): PublicPresetValue | null {
+  const trimmed = value.trim();
+  if (trimmed === "Есть удалёнка") return "Удалёнка";
+  if (ALLOWED_PRESET_SET.has(trimmed)) return trimmed as PublicPresetValue;
+  return null;
+}
+
+const REMOTE_WORK_FORMATS = new Set<CompanyPublic["workFormat"]>(["Удалёнка", "Гибрид", "Смешанный"]);
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -714,7 +729,7 @@ function normalizeInternational(raw: Record<string, unknown>): CompanyPublic["in
 }
 
 function computeHasRemote(workFormat: CompanyPublic["workFormat"]): boolean {
-  return workFormat === "Удалёнка" || workFormat === "Смешанный";
+  return REMOTE_WORK_FORMATS.has(workFormat);
 }
 
 function computeHasActiveHiring(
