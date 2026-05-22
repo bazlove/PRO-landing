@@ -150,6 +150,10 @@ body {
   font-weight: 610;
 }
 
+.hero-title__tablet-break {
+  display: none;
+}
+
 .hero-title {
   display: inline-block;
   max-inline-size: min(1120px, calc(100vw - 48px));
@@ -209,6 +213,19 @@ html.reduced-motion .hero-title-block {
     line-height: 1.18;
     letter-spacing: -0.026em;
     white-space: normal;
+  }
+}
+
+
+/* Tablet / iPad: force H1 break after “and” when markup includes .hero-title__tablet-break */
+@media (min-width: 701px) and (max-width: 1023.98px) {
+  .hero-title__tablet-break {
+    display: block;
+  }
+
+  .hero-title {
+    max-inline-size: min(720px, calc(100vw - 40px));
+    text-align: center;
   }
 }
 
@@ -1356,3 +1373,9 @@ html.reduced-motion .loader-layer {
   }
 }
 
+
+@media (max-width: 700px) {
+  .hero-title__tablet-break {
+    display: none;
+  }
+}
