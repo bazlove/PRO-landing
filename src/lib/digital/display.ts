@@ -21,7 +21,9 @@ export const DIGITAL_BADGE_MAX_VISIBLE = DIGITAL_BADGE_MAX_VISIBLE_MOBILE;
 const SIZE_UNKNOWN = "Не указано";
 
 export const BADGE_ACTIVE_HIRING = "Активный найм";
-export const BADGE_REMOTE = "Есть удалёнка";
+/** Public label for `hasRemote` / remote preset (not factual `workFormat`). */
+export const REMOTE_SIGNAL_LABEL = "Есть удалёнка";
+export const BADGE_REMOTE = REMOTE_SIGNAL_LABEL;
 export const BADGE_HIGH_RATING = "Высокая HR-оценка";
 export const BADGE_AWARDS = "Награды 2025";
 export const BADGE_INTERNATIONAL = "Международные";
@@ -61,14 +63,7 @@ export function getMobileCardStatusSignals(company: CompanyPublic): DrawerSummar
       : getTagColorClass(hiringLabel),
   });
 
-  if (company.workFormat !== "Не указано") {
-    signals.push({
-      label: company.workFormat,
-      variantClass:
-        getTagColorClass(company.workFormat) ||
-        (company.hasRemote ? getTagColorClass(BADGE_REMOTE) : ""),
-    });
-  }
+  appendWorkFormatStatusChip(signals, company);
 
   if (company.hasHighHrRating) {
     signals.push({
@@ -157,6 +152,24 @@ export type DrawerSummaryChip = {
 
 const DRAWER_SUMMARY_CHIP_MAX = 5;
 
+/** Status chip for catalog mobile card or drawer header (signal, not factual work format). */
+function appendWorkFormatStatusChip(chips: DrawerSummaryChip[], company: CompanyPublic): void {
+  if (company.hasRemote) {
+    chips.push({
+      label: REMOTE_SIGNAL_LABEL,
+      variantClass: getBadgeVariantClass(REMOTE_SIGNAL_LABEL),
+    });
+    return;
+  }
+
+  if (company.workFormat === "Не указано") return;
+
+  chips.push({
+    label: company.workFormat,
+    variantClass: getTagColorClass(company.workFormat),
+  });
+}
+
 /** Hiring geo strings that already imply international scope. */
 export function isExplicitInternationalHiringGeo(hiringGeo: string): boolean {
   const geo = hiringGeo.trim().toLowerCase();
@@ -199,14 +212,7 @@ export function getDrawerSummaryChips(company: CompanyPublic): DrawerSummaryChip
       : getTagColorClass(hiringLabel),
   });
 
-  if (company.workFormat !== "Не указано") {
-    chips.push({
-      label: company.workFormat,
-      variantClass:
-        getTagColorClass(company.workFormat) ||
-        (company.hasRemote ? getTagColorClass(BADGE_REMOTE) : ""),
-    });
-  }
+  appendWorkFormatStatusChip(chips, company);
 
   if (company.hasHighHrRating) {
     chips.push({
