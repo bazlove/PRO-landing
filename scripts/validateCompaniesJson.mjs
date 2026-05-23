@@ -97,6 +97,22 @@ const forbiddenKeyPatterns = [
   /search_aliases/i,
 ];
 
+function isCanonicalHeadHunterEmployerUrl(value) {
+  if (value === null || value === undefined) return true;
+
+  try {
+    const url = new URL(value);
+    const host = url.hostname.toLowerCase().replace(/^www\./, "");
+    return (
+      url.protocol === "https:" &&
+      host === "hh.ru" &&
+      /^\/employer\/\d+\/?$/.test(url.pathname)
+    );
+  } catch {
+    return false;
+  }
+}
+
 const errors = [];
 
 function addError(index, message) {
@@ -362,6 +378,13 @@ function validateCompany(company, index) {
     if (!isValidHttpUrlOrNull(company[field])) {
       addError(index, `${field} must be a valid http(s) URL or null`);
     }
+  }
+
+  if (!isCanonicalHeadHunterEmployerUrl(company.hhCompanyUrl)) {
+    addError(
+      index,
+      `hhCompanyUrl must use canonical HeadHunter employer URL: https://hh.ru/employer/<id>, got: ${company.hhCompanyUrl}`,
+    );
   }
 
   if (company.careerUrl === null) {
