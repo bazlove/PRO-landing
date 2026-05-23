@@ -94,17 +94,9 @@ const selectPlaceholder = "Все";
     </div>
 
     <section class="digital-catalog-filters__presets" aria-labelledby="digital-quick-filters-heading">
-      <div class="digital-catalog-filters__presets-heading-row">
-        <h3 id="digital-quick-filters-heading" class="digital-catalog-filters__presets-title">
-          Быстрые фильтры
-        </h3>
-        <p
-          class="digital-catalog-filters__active-status digital-catalog-filters__active-status--desktop"
-          data-digital-filter-active-status-desktop
-          aria-live="polite"
-          hidden
-        ></p>
-      </div>
+      <h3 id="digital-quick-filters-heading" class="digital-catalog-filters__presets-title">
+        Быстрые фильтры
+      </h3>
       <div class="digital-catalog-filters__presets-row">
         <div
           class="digital-presets digital-catalog-filters__presets--primary"
@@ -158,12 +150,20 @@ const selectPlaceholder = "Все";
       </div>
     </section>
 
-    <p
-      class="digital-catalog-filters__active-status digital-catalog-filters__active-status--mobile"
-      data-digital-filter-active-status-mobile
-      aria-live="polite"
-      hidden
-    ></p>
+    <div class="digital-catalog-filters__active-status-row">
+      <p
+        class="digital-catalog-filters__active-status digital-catalog-filters__active-status--desktop"
+        data-digital-filter-active-status-desktop
+        aria-live="polite"
+        hidden
+      ></p>
+      <p
+        class="digital-catalog-filters__active-status digital-catalog-filters__active-status--mobile"
+        data-digital-filter-active-status-mobile
+        aria-live="polite"
+        hidden
+      ></p>
+    </div>
 
     <div class="digital-catalog-filters__toolbar">
       <button
