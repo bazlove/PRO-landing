@@ -4,6 +4,7 @@ import {
   DIGITAL_BADGE_MAX_VISIBLE_MOBILE,
   formatRatingValueForUi,
   formatVacanciesRangeCopy,
+  formatMobileCardProofLine,
   getCompanyBadges,
   getHiringFreshnessDisplay,
   getMobileCardPrimaryMeta,
@@ -32,27 +33,6 @@ const { initial: mobileInitialVisible } = getCatalogLimitConfig("mobile");
 function formatRatings(company: CompanyPublic) {
   return `HeadHunter ${formatRatingValueForUi(company.hhRatingDisplay)} · Habr Career ${formatRatingValueForUi(company.habrRatingDisplay)}`;
 }
-
-function formatRatingsShort(company: CompanyPublic) {
-  return `HH ${formatRatingValueForUi(company.hhRatingDisplay)} · Habr ${formatRatingValueForUi(company.habrRatingDisplay)}`;
-}
-
-function formatHiringFreshnessShort(company: CompanyPublic): {
-  text: string;
-  staleWarning: string | null;
-  isMissing: boolean;
-} {
-  const hiring = getHiringFreshnessDisplay(company.hhVacanciesCheckedAt);
-
-  return {
-    text: hiring.hhLine
-      .replace("Проверено на HH:", "HH проверен")
-      .replace("Проверка HH:", "HH")
-      .trim(),
-    staleWarning: hiring.staleWarning,
-    isMissing: hiring.isMissing,
-  };
-}
 ---
 
 <div
@@ -63,7 +43,6 @@ function formatHiringFreshnessShort(company: CompanyPublic): {
   {
     companies.map((company, index) => {
       const hiring = getHiringFreshnessDisplay(company.hhVacanciesCheckedAt);
-      const freshnessShort = formatHiringFreshnessShort(company);
       const tags = getCompanyBadges(company);
       const primaryMeta = getMobileCardPrimaryMeta(company);
       const secondaryMeta = getMobileCardSecondaryMeta(company);
@@ -128,32 +107,7 @@ function formatHiringFreshnessShort(company: CompanyPublic): {
                 </div>
               )
             }
-            <div class="digital-mobile-card__facts">
-              <p class="digital-mobile-card__fact digital-mobile-card__fact--hiring">
-                <span class="digital-mobile-card__fact--strong">
-                  {formatVacanciesRangeCopy(company.vacanciesRange)}
-                </span>
-                {freshnessShort.text && (
-                  <>
-                    <span class="digital-mobile-card__fact-separator" aria-hidden="true">
-                      ·
-                    </span>
-                    <span
-                      class:list={[
-                        "digital-mobile-card__fact-muted",
-                        { "digital-muted": freshnessShort.isMissing },
-                      ]}
-                    >
-                      {freshnessShort.text}
-                    </span>
-                  </>
-                )}
-                {freshnessShort.staleWarning && (
-                  <span class="digital-stale-label"> · {freshnessShort.staleWarning}</span>
-                )}
-              </p>
-              <p class="digital-mobile-card__fact">{formatRatingsShort(company)}</p>
-            </div>
+            <p class="digital-mobile-card__proof-line">{formatMobileCardProofLine(company)}</p>
           </div>
 
           <div class="digital-mobile-card__details">
