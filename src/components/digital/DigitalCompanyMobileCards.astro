@@ -2,11 +2,12 @@
 import type { CompanyPublic } from "../../types/digital";
 import {
   DIGITAL_BADGE_MAX_VISIBLE_MOBILE,
-  formatCompanySize,
   formatRatingValueForUi,
   formatVacanciesRangeCopy,
   getCompanyBadges,
   getHiringFreshnessDisplay,
+  getMobileCardPrimaryMeta,
+  getMobileCardSecondaryMeta,
   getMobileCardStatusDisplay,
   getMobileCardStatusSignals,
 } from "../../lib/digital/display";
@@ -52,33 +53,6 @@ function formatHiringFreshnessShort(company: CompanyPublic): {
     isMissing: hiring.isMissing,
   };
 }
-
-function isMeaningfulDisplayValue(value: string | null | undefined): value is string {
-  if (!value) return false;
-  const normalized = value.trim();
-  return normalized !== "" && normalized !== "-" && normalized !== "—" && normalized !== "Не указано";
-}
-
-function formatMobileWorkMetaLine(company: CompanyPublic): string {
-  const parts: string[] = [];
-
-  if (isMeaningfulDisplayValue(company.hiringGeo)) {
-    parts.push(`География: ${company.hiringGeo}`);
-  }
-
-  if (isMeaningfulDisplayValue(company.workFormat)) {
-    parts.push(`Формат: ${company.workFormat}`);
-  }
-
-  return parts.join(" · ");
-}
-
-function formatProfileLine(company: CompanyPublic): string {
-  const size = formatCompanySize(company.size);
-  const parts = [company.city, company.companyType, company.niche];
-  if (size) parts.push(size);
-  return parts.join(" · ");
-}
 ---
 
 <div
@@ -91,6 +65,8 @@ function formatProfileLine(company: CompanyPublic): string {
       const hiring = getHiringFreshnessDisplay(company.hhVacanciesCheckedAt);
       const freshnessShort = formatHiringFreshnessShort(company);
       const tags = getCompanyBadges(company);
+      const primaryMeta = getMobileCardPrimaryMeta(company);
+      const secondaryMeta = getMobileCardSecondaryMeta(company);
       const statusDisplay = getMobileCardStatusDisplay(company);
       const visibleStatusSignals: DrawerSummaryChip[] = statusDisplay.visible;
       const hiddenStatusCount = statusDisplay.hiddenCount;
@@ -103,7 +79,6 @@ function formatProfileLine(company: CompanyPublic): string {
               .map((signal: DrawerSummaryChip) => signal.label)
               .join(", ")}`
           : "";
-      const mobileWorkMeta = formatMobileWorkMetaLine(company);
       const initiallyHidden = isCatalogItemInitiallyHidden(index, mobileInitialVisible);
 
       return (
@@ -117,7 +92,16 @@ function formatProfileLine(company: CompanyPublic): string {
           <h3 class="digital-mobile-card__title">
             <DigitalCompanyName company={company} />
           </h3>
-          <p class="digital-mobile-card__profile meta">{formatProfileLine(company)}</p>
+          {
+            (primaryMeta || secondaryMeta) && (
+              <div class="digital-mobile-card__meta">
+                {primaryMeta && <p class="digital-mobile-card__meta-primary">{primaryMeta}</p>}
+                {secondaryMeta && (
+                  <p class="digital-mobile-card__meta-secondary">{secondaryMeta}</p>
+                )}
+              </div>
+            )
+          }
 
           <div class="digital-mobile-card__compact-phone">
             {
@@ -146,7 +130,7 @@ function formatProfileLine(company: CompanyPublic): string {
             }
             <div class="digital-mobile-card__facts">
               <p class="digital-mobile-card__fact digital-mobile-card__fact--hiring">
-                <span class="digital-mobile-card__fact-strong">
+                <span class="digital-mobile-card__fact--strong">
                   {formatVacanciesRangeCopy(company.vacanciesRange)}
                 </span>
                 {freshnessShort.text && (
@@ -169,7 +153,6 @@ function formatProfileLine(company: CompanyPublic): string {
                 )}
               </p>
               <p class="digital-mobile-card__fact">{formatRatingsShort(company)}</p>
-              {mobileWorkMeta && <p class="digital-mobile-card__fact">{mobileWorkMeta}</p>}
             </div>
           </div>
 
