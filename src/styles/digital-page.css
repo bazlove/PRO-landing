@@ -851,19 +851,6 @@ html {
   min-width: 0;
 }
 
-.digital-catalog-filters__presets-heading-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 6px;
-  min-width: 0;
-}
-
-.digital-catalog-filters__presets-heading-row .digital-catalog-filters__presets-title {
-  margin: 0;
-}
-
 .digital-catalog-filters__presets-title {
   margin: 0 0 6px;
   font-size: 12px;
@@ -876,26 +863,28 @@ html {
   min-width: 0;
 }
 
+.digital-catalog-filters__active-status-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+  min-height: 16px;
+}
+
 .digital-catalog-filters__active-status {
   display: none;
   margin: 0;
   font-size: 12px;
   line-height: 1.35;
   color: var(--text-muted);
+  text-align: center;
+}
+
+.digital-catalog-filters__active-status[hidden] {
+  display: none !important;
 }
 
 .digital-catalog-filters__active-status:not([hidden]) {
   display: block;
-}
-
-.digital-catalog-filters__active-status--desktop {
-  flex-shrink: 0;
-  text-align: right;
-  white-space: nowrap;
-}
-
-.digital-catalog-filters__active-status--mobile {
-  display: none;
 }
 
 .digital-catalog-filters__presets .digital-presets {
@@ -1326,6 +1315,10 @@ html {
     display: none !important;
   }
 
+  .digital-catalog-filters__active-status-row {
+    justify-content: center;
+  }
+
   .digital-catalog-filters__presets-row {
     display: flex;
     flex-wrap: wrap;
@@ -1419,13 +1412,16 @@ html {
     text-decoration-color: transparent;
   }
 
-  .digital-catalog-filters__presets-heading-row {
-    display: block;
+  .digital-catalog-filters__presets-title {
     margin-bottom: 7px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
   }
 
-  .digital-catalog-filters__presets-heading-row .digital-catalog-filters__presets-title {
-    margin: 0;
+  .digital-catalog-filters__active-status-row {
+    justify-content: flex-start;
+    margin-top: 8px;
   }
 
   .digital-catalog-filters__active-status--desktop {
@@ -1434,20 +1430,9 @@ html {
 
   .digital-catalog-filters__active-status--mobile:not([hidden]) {
     display: block;
-    margin-top: 8px;
     font-size: 13px;
     color: var(--text-secondary);
-  }
-
-  .digital-catalog-filters__presets-title {
-    margin-bottom: 0;
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--text-muted);
-  }
-
-  .digital-catalog-filters__active-status:not([hidden]) {
-    display: block;
+    text-align: left;
   }
 
   .digital-catalog-filters__presets-row {
@@ -1818,15 +1803,16 @@ html {
 }
 
 .digital-table-wrap {
-  overflow: visible;
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  background: var(--surface);
+  overflow-x: clip;
+  border-radius: 18px;
+  border: 1px solid rgba(203, 213, 225, 0.78);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 14px 34px rgba(11, 31, 51, 0.055);
 }
 
 .digital-table-wrap.digital-table-wrap--desktop {
   margin-bottom: 0;
-  border-radius: 0 0 20px 20px;
+  border-radius: 18px;
 }
 
 .digital-table {
@@ -1869,7 +1855,7 @@ html {
 
 .digital-table thead th {
   padding: 10px 14px;
-  background: rgba(241, 245, 249, 0.96);
+  background: rgba(241, 245, 249, 0.88);
   border-bottom: 1px solid rgba(203, 213, 225, 0.9);
   color: #475569;
   font-size: 12px;
@@ -1884,8 +1870,10 @@ html {
   border-top: 1px solid var(--border);
 }
 
-.digital-table tbody tr:hover td {
-  background: #f8fafc;
+@media (hover: hover) and (pointer: fine) {
+  .digital-table tbody tr:hover td {
+    background: rgba(248, 250, 252, 0.82);
+  }
 }
 
 .digital-table .col-company {
@@ -2293,7 +2281,8 @@ html {
 
 @media (max-width: 640px) {
   .digital-back-to-filters {
-    bottom: 72px;
+    right: 18px;
+    bottom: calc(78px + env(safe-area-inset-bottom, 0px));
     width: 40px;
     min-width: 40px;
     height: 40px;
@@ -2322,6 +2311,7 @@ html {
   }
 
   .digital-mobile-card__profile {
+    margin-bottom: 4px;
     font-size: 14px;
     line-height: 1.4;
   }
@@ -2329,7 +2319,7 @@ html {
   .digital-mobile-card__compact-phone {
     display: grid;
     gap: 8px;
-    margin-top: 8px;
+    margin-top: 6px;
   }
 
   .digital-mobile-card__status-row,
@@ -2347,7 +2337,7 @@ html {
   .digital-mobile-card__compact-phone .digital-badge {
     flex: 0 0 auto;
     min-height: 24px;
-    max-width: 100%;
+    max-width: calc(100% - 2.5rem);
     padding: 3px 8px;
     font-size: 12px;
     white-space: nowrap;
@@ -2357,11 +2347,16 @@ html {
   .digital-mobile-card__compact-phone .digital-badge:not(.digital-badge--more) {
     overflow: hidden;
     text-overflow: ellipsis;
+    min-width: 0;
+    flex: 1 1 auto;
+    max-width: 9.5rem;
   }
 
   .digital-mobile-card__status-row .digital-badge--more,
   .digital-mobile-card__compact-phone .digital-badge--more {
-    flex-shrink: 0;
+    flex: 0 0 auto;
+    max-width: none;
+    min-width: 2.25rem;
   }
 
   .digital-mobile-card__facts {
@@ -2382,16 +2377,17 @@ html {
     min-height: 42px;
     margin-top: 12px;
     border-radius: 10px;
+    border-color: rgba(203, 213, 225, 0.78);
     color: var(--text-primary);
     font-size: 14px;
     font-weight: 650;
-    background: #f1f5f9;
+    background: rgba(241, 245, 249, 0.72);
   }
 
   .digital-company-detail-trigger--mobile:hover,
   .digital-company-detail-trigger--mobile:focus-visible {
-    background: #eaf0f6;
-    border-color: rgba(92, 107, 122, 0.45);
+    background: rgba(226, 232, 240, 0.72);
+    border-color: rgba(148, 163, 184, 0.75);
   }
 }
 
@@ -2702,6 +2698,7 @@ html {
   }
 
   .digital-mobile-card__profile {
+    margin-bottom: 4px;
     font-size: 14px;
     line-height: 1.4;
   }
@@ -2709,7 +2706,7 @@ html {
   .digital-mobile-card__compact-phone {
     display: grid;
     gap: 8px;
-    margin-top: 8px;
+    margin-top: 6px;
   }
 
   .digital-mobile-card__status-row,
@@ -2727,7 +2724,7 @@ html {
   .digital-mobile-card__compact-phone .digital-badge {
     flex: 0 0 auto;
     min-height: 24px;
-    max-width: 100%;
+    max-width: calc(100% - 2.5rem);
     padding: 3px 8px;
     font-size: 12px;
     white-space: nowrap;
@@ -2737,11 +2734,16 @@ html {
   .digital-mobile-card__compact-phone .digital-badge:not(.digital-badge--more) {
     overflow: hidden;
     text-overflow: ellipsis;
+    min-width: 0;
+    flex: 1 1 auto;
+    max-width: 9.5rem;
   }
 
   .digital-mobile-card__status-row .digital-badge--more,
   .digital-mobile-card__compact-phone .digital-badge--more {
-    flex-shrink: 0;
+    flex: 0 0 auto;
+    max-width: none;
+    min-width: 2.25rem;
   }
 
   .digital-mobile-card__facts {
@@ -2781,15 +2783,15 @@ html {
   }
 
   .digital-table-wrap--desktop .digital-table thead th:first-child {
-    border-top-left-radius: 0;
+    border-top-left-radius: 17px;
   }
 
   .digital-table-wrap--desktop .digital-table thead th:last-child {
-    border-top-right-radius: 0;
+    border-top-right-radius: 17px;
   }
 
   .digital-table-wrap--desktop .digital-catalog-footer {
-    border-radius: 0 0 19px 19px;
+    border-radius: 0 0 17px 17px;
   }
 
   .digital-table thead th {
@@ -2836,34 +2838,40 @@ html {
 }
 
 .digital-table .digital-company-detail-trigger:not(.digital-company-detail-trigger--mobile) {
-  font-weight: 400;
+  font-weight: 500;
+  color: var(--text-secondary);
   text-decoration-line: underline;
   text-decoration-style: dotted;
   text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-  text-decoration-color: rgba(92, 107, 122, 0.4);
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(138, 151, 166, 0.45);
 }
 
 .digital-table .digital-company-detail-trigger:not(.digital-company-detail-trigger--mobile):hover,
 .digital-table .digital-company-detail-trigger:not(.digital-company-detail-trigger--mobile):focus-visible {
   color: var(--text-primary);
-  text-decoration: none;
+  text-decoration-style: solid;
+  text-decoration-color: rgba(92, 107, 122, 0.55);
 }
 
 .digital-company-detail-trigger--mobile {
   margin-top: 12px;
   min-height: 34px;
   padding: 6px 12px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(203, 213, 225, 0.78);
   border-radius: 8px;
-  background: var(--surface-soft);
+  background: rgba(241, 245, 249, 0.72);
+  color: var(--text-primary);
+  font-weight: 650;
   text-decoration: none;
 }
 
-.digital-company-detail-trigger--mobile:hover,
-.digital-company-detail-trigger--mobile:focus-visible {
-  border-color: rgba(92, 107, 122, 0.45);
-  background: #eef2f6;
+@media (hover: hover) and (pointer: fine) {
+  .digital-company-detail-trigger--mobile:hover,
+  .digital-company-detail-trigger--mobile:focus-visible {
+    border-color: rgba(148, 163, 184, 0.75);
+    background: rgba(226, 232, 240, 0.72);
+  }
 }
 
 .digital-company-detail-templates {
