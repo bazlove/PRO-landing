@@ -69,6 +69,7 @@ export function toPublicCompanyJsonRecord(company: CompanyPublic): CompanyPublic
     awards2025: recalculated.awards2025,
     hasAwards2025: recalculated.hasAwards2025,
     presets: recalculated.presets,
+    signals: recalculated.signals,
     hasActiveHiring: recalculated.hasActiveHiring,
     hasRemote: recalculated.hasRemote,
     hasHighHrRating: recalculated.hasHighHrRating,
