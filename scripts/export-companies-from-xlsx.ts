@@ -18,6 +18,7 @@ import {
   type BuildPublicCompaniesReport,
 } from "../src/lib/digital/buildPublicCompaniesJson.ts";
 import {
+  assertNoRegionalHeadHunterEmployerUrlsInRows,
   collectForbiddenKeys,
   compareCompaniesByDefaultOrder,
   sheetHasColumn,
@@ -135,6 +136,15 @@ const allRows = XLSX.utils.sheet_to_json<Record<string, unknown>>(targetSheet, {
 
 if (sheetName === "public_export") {
   assertPublicExportContract(allRows);
+}
+
+const svodkaSheet = workbook.Sheets["Сводка"];
+if (svodkaSheet) {
+  const svodkaRows = XLSX.utils.sheet_to_json<Record<string, unknown>>(svodkaSheet, {
+    defval: "",
+    raw: false,
+  });
+  assertNoRegionalHeadHunterEmployerUrlsInRows(svodkaRows, { sheetName: "Сводка" });
 }
 
 const sheetHeaders = getHeaderKeys(allRows);
