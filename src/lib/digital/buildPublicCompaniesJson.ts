@@ -1,5 +1,6 @@
 import type { CompanyPublic } from "../../types/digital";
 import {
+  assertNoRegionalHeadHunterEmployerUrlsInRows,
   compareCompaniesByDefaultOrder,
   createSlugAllocator,
   getPublicExportSkipReason,
@@ -210,6 +211,12 @@ export function buildPublicCompaniesFromRows(
 
   if (enforceUniqueCompanyIds) {
     assertUniqueCompanyIds(rawRows, publicExportEligibility);
+  }
+
+  if (publicExportEligibility) {
+    assertNoRegionalHeadHunterEmployerUrlsInRows(rawRows, {
+      sheetName: publicExportEligibility.sheetName,
+    });
   }
 
   const skipCounts = countSkipReasons(rawRows, publicExportEligibility);
