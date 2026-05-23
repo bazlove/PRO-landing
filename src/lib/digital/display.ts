@@ -134,6 +134,32 @@ export type MobileCardStatusDisplay = {
   hiddenCount: number;
 };
 
+function isMeaningfulMobileMetaValue(value: string | null | undefined): value is string {
+  if (!value) return false;
+  const normalized = value.trim();
+  return (
+    normalized !== "" &&
+    normalized !== "-" &&
+    normalized !== "—" &&
+    normalized !== SIZE_UNKNOWN &&
+    normalized !== "Не указано"
+  );
+}
+
+/** Mobile card line 1: city · company type. */
+export function getMobileCardPrimaryMeta(company: CompanyPublic): string {
+  return [company.city, company.companyType].filter(isMeaningfulMobileMetaValue).join(" · ");
+}
+
+/** Mobile card line 2: niche · size. */
+export function getMobileCardSecondaryMeta(company: CompanyPublic): string {
+  const size = formatCompanySize(company.size);
+  const parts = [company.niche, size].filter(
+    (part): part is string => Boolean(part && isMeaningfulMobileMetaValue(part)),
+  );
+  return parts.join(" · ");
+}
+
 /** Split status chips for compact mobile row: reserve room for a full `+N` chip. */
 export function getMobileCardStatusDisplay(
   company: CompanyPublic,
