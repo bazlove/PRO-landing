@@ -1,3 +1,5 @@
+import type { CompanyPreset } from "../../types/digital";
+
 /** Contract preset values stored in `companies.json` (machine keys). */
 export const PUBLIC_PRESET_VALUES = [
   "Активный найм",
@@ -5,9 +7,9 @@ export const PUBLIC_PRESET_VALUES = [
   "Высокая HR-оценка",
   "Награды 2025",
   "Международные",
-] as const;
+] as const satisfies readonly CompanyPreset[];
 
-export type PublicPresetValue = (typeof PUBLIC_PRESET_VALUES)[number];
+export type PublicPresetValue = CompanyPreset;
 
 /** UI labels for contract presets (render-time only). */
 export const PRESET_LABELS: Record<PublicPresetValue, string> = {
