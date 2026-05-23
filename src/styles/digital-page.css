@@ -202,8 +202,8 @@ html {
 
   .digital-first-screen .digital-h1 {
     margin-bottom: 14px;
-    font-size: clamp(32px, 9.2vw, 40px);
-    line-height: 1.03;
+    font-size: clamp(31px, 8.5vw, 36px);
+    line-height: 1.04;
     letter-spacing: -0.04em;
   }
 
@@ -307,6 +307,14 @@ html {
     letter-spacing: -0.035em;
   }
 
+  .digital-hero-summary__metric-label-desktop {
+    display: none;
+  }
+
+  .digital-hero-summary__metric-label-mobile {
+    display: inline;
+  }
+
   .digital-hero-summary__metric-label {
     grid-area: label;
     align-self: start;
@@ -314,12 +322,25 @@ html {
     line-height: 1.18;
     font-weight: 650;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    overflow: visible;
+    text-overflow: clip;
   }
 
   .digital-hero-summary__footer {
     padding-top: 9px;
+  }
+
+  .digital-catalog-filters__presets .preset-chip[aria-pressed="true"] {
+    border-width: 1.5px;
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.65),
+      0 1px 0 rgba(11, 31, 51, 0.04);
+  }
+}
+
+@media (min-width: 380px) and (max-width: 430px) {
+  .digital-first-screen .digital-h1 {
+    font-size: clamp(31px, 8.2vw, 34px);
   }
 }
 
@@ -633,6 +654,10 @@ html {
   min-width: 0;
 }
 
+.digital-hero-summary__metric-label-mobile {
+  display: none;
+}
+
 .digital-hero-summary__metric-value {
   margin: 0;
   font-size: 18px;
@@ -828,6 +853,11 @@ html {
 
 .digital-catalog-filters__presets-row {
   min-width: 0;
+}
+
+.digital-catalog-filters__active-status {
+  display: none;
+  margin: 0;
 }
 
 .digital-catalog-filters__presets .digital-presets {
@@ -1352,6 +1382,19 @@ html {
     font-size: 12px;
     font-weight: 500;
     color: var(--text-muted);
+  }
+
+  .digital-catalog-filters__active-status:not([hidden]) {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.35;
+    color: var(--text-secondary);
+  }
+
+  .digital-catalog-filters__active-status strong {
+    color: var(--text-primary);
+    font-weight: 650;
   }
 
   .digital-catalog-filters__presets-row {
