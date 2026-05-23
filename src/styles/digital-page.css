@@ -201,8 +201,8 @@ html {
   }
 
   .digital-first-screen .digital-h1 {
-    margin-bottom: 16px;
-    font-size: clamp(33px, 9.4vw, 40px);
+    margin-bottom: 14px;
+    font-size: clamp(32px, 9.2vw, 40px);
     line-height: 1.03;
     letter-spacing: -0.04em;
   }
@@ -275,18 +275,36 @@ html {
   }
 
   .digital-hero-summary__metric {
-    gap: 6px;
-    min-height: 36px;
-    padding: 6px 8px;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "icon value"
+      "label label";
+    align-items: center;
+    gap: 4px 8px;
+    min-height: 60px;
+    padding: 8px 10px;
+  }
+
+  .digital-hero-summary__metric-icon {
+    grid-area: icon;
+    width: 15px;
+    height: 15px;
+    opacity: 0.78;
   }
 
   .digital-hero-summary__metric-value {
-    font-size: 17px;
+    grid-area: value;
+    justify-self: end;
+    align-self: center;
+    font-size: 23px;
+    line-height: 1;
   }
 
   .digital-hero-summary__metric-label {
-    font-size: 11.5px;
-    line-height: 1.2;
+    grid-area: label;
+    align-self: start;
+    font-size: 13px;
+    line-height: 1.22;
   }
 
   .digital-hero-summary__footer {
@@ -324,7 +342,7 @@ html {
 @media (min-width: 900px) {
   .digital-hero-body {
     grid-template-columns: minmax(0, 1.06fr) minmax(380px, 0.94fr);
-    gap: clamp(16px, 2.2vw, 28px);
+    gap: clamp(16px, 2vw, 28px);
     align-items: stretch;
   }
 
@@ -345,6 +363,44 @@ html {
 
   .digital-first-screen .digital-lead {
     max-width: none;
+  }
+}
+
+@media (min-width: 900px) and (max-height: 820px) {
+  .digital-first-screen {
+    padding-top: clamp(14px, 2vh, 20px);
+    padding-bottom: 4px;
+  }
+
+  .digital-first-screen .digital-h1 {
+    margin-bottom: clamp(14px, 2vh, 18px);
+    font-size: clamp(36px, 4.2vw, 48px);
+    line-height: 1.04;
+  }
+
+  .digital-hero-body {
+    align-items: start;
+    gap: clamp(14px, 2vw, 22px);
+  }
+
+  .digital-hero-lead-card,
+  .digital-hero-summary.digital-card {
+    height: auto;
+    min-height: 0;
+  }
+
+  .digital-hero-lead-card {
+    align-items: center;
+    padding: 16px 18px;
+    padding-left: 21px;
+  }
+
+  .digital-hero-summary.digital-card {
+    padding: 16px;
+  }
+
+  .digital-section--catalog {
+    padding-top: 6px;
   }
 }
 
