@@ -63,6 +63,7 @@ export function initDigitalCatalogFilters(): void {
   const presetsSecondary = root.querySelector<HTMLElement>("[data-digital-presets-secondary]");
   const presetsMoreIcon = root.querySelector<HTMLElement>("[data-digital-presets-more-icon]");
   const pageSizeSelect = root.querySelector<HTMLSelectElement>("[data-digital-page-size]");
+  const activeStatusEl = root.querySelector<HTMLElement>("[data-digital-filter-active-status]");
 
   const surfaces: CatalogSurface[] = [];
   const desktopRoot = root.querySelector('[data-digital-catalog-surface="desktop"]');
@@ -287,6 +288,47 @@ export function initDigitalCatalogFilters(): void {
     return count;
   }
 
+  function getActivePresetLabels(): string[] {
+    return DIGITAL_FILTER_PRESETS.filter((preset) => activePresets.has(preset.id)).map(
+      (preset) => preset.label,
+    );
+  }
+
+  function updateMobileActiveFilterStatus(): void {
+    if (!activeStatusEl) return;
+
+    if (!isMobileFiltersViewport()) {
+      activeStatusEl.hidden = true;
+      activeStatusEl.textContent = "";
+      return;
+    }
+
+    const presetLabels = getActivePresetLabels();
+    const advancedCount = countActiveAdvancedFilters();
+    const filterCount = presetLabels.length + advancedCount;
+    const hasSearch = Boolean(normalizeCatalogSearch(searchInput?.value ?? ""));
+
+    if (filterCount === 0 && !hasSearch) {
+      activeStatusEl.hidden = true;
+      activeStatusEl.textContent = "";
+      return;
+    }
+
+    let text = "";
+    if (filterCount === 1 && !hasSearch) {
+      text = `Активен фильтр: ${presetLabels[0] ?? "выбранный параметр"}`;
+    } else if (filterCount > 1 && !hasSearch) {
+      text = `Активны фильтры: ${filterCount}`;
+    } else if (filterCount === 0 && hasSearch) {
+      text = "Активен поиск";
+    } else {
+      text = `Активны фильтры: ${filterCount} + поиск`;
+    }
+
+    activeStatusEl.textContent = text;
+    activeStatusEl.hidden = false;
+  }
+
   function scheduleSearchAnalytics(): void {
     if (searchAnalyticsTimer) clearTimeout(searchAnalyticsTimer);
     searchAnalyticsTimer = setTimeout(() => {
@@ -373,6 +415,7 @@ export function initDigitalCatalogFilters(): void {
 
     syncUrl();
     syncPresetsSecondaryVisibility();
+    updateMobileActiveFilterStatus();
   }
 
   function resetVisibleCounts(): void {
