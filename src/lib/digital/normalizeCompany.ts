@@ -282,13 +282,79 @@ function urlsEqual(a: string, b: string): boolean {
   }
 }
 
-function isHhEmployerUrl(href: string): boolean {
+function parseHeadHunterEmployerId(href: string): string | null {
+  const raw = href.trim();
+  if (!raw) return null;
   try {
-    const url = new URL(href);
-    return /(^|\.)hh\.ru$/i.test(url.hostname) && /\/employer\//i.test(url.pathname);
+    const url = new URL(raw);
+    if (!/(^|\.)hh\.ru$/i.test(url.hostname)) return null;
+    const match = url.pathname.match(/^\/employer\/(\d+)\/?$/i);
+    return match ? match[1] : null;
+  } catch {
+    return null;
+  }
+}
+
+function headHunterEmployerHost(href: string): string | null {
+  try {
+    return new URL(href.trim()).hostname.toLowerCase().replace(/^www\./, "");
+  } catch {
+    return null;
+  }
+}
+
+/** True when value is an HH `/employer/<id>` profile URL on any `*.hh.ru` host. */
+export function isHeadHunterEmployerProfileUrl(value: unknown): boolean {
+  return parseHeadHunterEmployerId(String(value ?? "")) !== null;
+}
+
+/** True when value is a regional HH employer profile URL (`spb.hh.ru`, etc.). */
+export function isRegionalHeadHunterEmployerUrl(value: unknown): boolean {
+  if (!isHeadHunterEmployerProfileUrl(value)) return false;
+  const host = headHunterEmployerHost(String(value ?? ""));
+  return Boolean(host && host.endsWith(".hh.ru") && host !== "hh.ru");
+}
+
+/**
+ * Canonicalize HH employer profile URLs to `https://hh.ru/employer/<id>`.
+ * Non-employer URLs are returned unchanged (when parseable) or as trimmed raw text.
+ */
+export function toCanonicalHeadHunterEmployerUrl(value: unknown): string | null {
+  const raw = String(value ?? "").trim();
+  if (!raw || raw === "-" || raw === "—") return null;
+
+  const employerId = parseHeadHunterEmployerId(raw);
+  if (employerId) {
+    return `https://hh.ru/employer/${employerId}`;
+  }
+
+  if (!isValidHttpUrlString(raw)) return null;
+  try {
+    return new URL(raw).href;
+  } catch {
+    return raw;
+  }
+}
+
+/** Final JSON contract: `https://hh.ru/employer/<id>` only; `null` is allowed. */
+export function isCanonicalHeadHunterEmployerUrl(value: unknown): boolean {
+  if (value === null || value === undefined) return true;
+  if (typeof value !== "string") return false;
+  try {
+    const url = new URL(value);
+    const host = url.hostname.toLowerCase().replace(/^www\./, "");
+    return (
+      url.protocol === "https:" &&
+      host === "hh.ru" &&
+      /^\/employer\/\d+\/?$/.test(url.pathname)
+    );
   } catch {
     return false;
   }
+}
+
+function isHhEmployerUrl(href: string): boolean {
+  return parseHeadHunterEmployerId(href) !== null;
 }
 
 function isHabrCompanyUrl(href: string): boolean {
@@ -359,6 +425,69 @@ const HH_COMPANY_URL_KEYS = [
   "Ссылка HH",
   "Ссылка на HH",
 ];
+
+export type RegionalHeadHunterEmployerUrlViolation = {
+  rowNumber: number;
+  companyName: string;
+  field: string;
+  actualUrl: string;
+  expectedUrl: string;
+};
+
+export function collectRegionalHeadHunterEmployerUrlViolations(
+  row: Record<string, unknown>,
+  rowNumber: number,
+): RegionalHeadHunterEmployerUrlViolation[] {
+  const violations: RegionalHeadHunterEmployerUrlViolation[] = [];
+  const companyName = pickString(
+    row,
+    ["name", "company", "companyName", "Название компании", "Компания"],
+    "—",
+  );
+
+  for (const field of HH_COMPANY_URL_KEYS) {
+    const value = pickOptionalString(row, [field]);
+    if (!value || !isRegionalHeadHunterEmployerUrl(value)) continue;
+    const expectedUrl = toCanonicalHeadHunterEmployerUrl(value);
+    if (!expectedUrl) continue;
+    violations.push({
+      rowNumber,
+      companyName,
+      field,
+      actualUrl: value.trim(),
+      expectedUrl,
+    });
+  }
+
+  return violations;
+}
+
+export function assertNoRegionalHeadHunterEmployerUrlsInRows(
+  rows: unknown[],
+  options: { sheetName?: string } = {},
+): void {
+  const violations: RegionalHeadHunterEmployerUrlViolation[] = [];
+
+  rows.forEach((row, index) => {
+    if (!row || typeof row !== "object" || Array.isArray(row)) return;
+    violations.push(
+      ...collectRegionalHeadHunterEmployerUrlViolations(row as Record<string, unknown>, index + 2),
+    );
+  });
+
+  if (violations.length === 0) return;
+
+  const sheetSuffix = options.sheetName ? ` (sheet: ${options.sheetName})` : "";
+  throw new Error(
+    `[digital] HeadHunter URL must use canonical domain hh.ru${sheetSuffix}:\n` +
+      violations
+        .map(
+          (violation) =>
+            `  row ${violation.rowNumber}, company "${violation.companyName}", field "${violation.field}", got "${violation.actualUrl}", expected "${violation.expectedUrl}"`,
+        )
+        .join("\n"),
+  );
+}
 
 const HABR_URL_KEYS = [
   "habr_url",
@@ -440,6 +569,10 @@ function resolvePublicSourceUrls(
 
   if (habrUrl && urlsEqual(habrUrl, careerUrl) && !isHabrCompanyUrl(careerUrl)) {
     habrUrl = null;
+  }
+
+  if (hhCompanyUrl) {
+    hhCompanyUrl = toCanonicalHeadHunterEmployerUrl(hhCompanyUrl) ?? hhCompanyUrl;
   }
 
   return { hhCompanyUrl, habrUrl, websiteUrl, linkedinUrl };
