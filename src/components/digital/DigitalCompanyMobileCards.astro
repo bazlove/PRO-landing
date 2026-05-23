@@ -7,8 +7,8 @@ import {
   formatVacanciesRangeCopy,
   getCompanyBadges,
   getHiringFreshnessDisplay,
+  getMobileCardStatusDisplay,
   getMobileCardStatusSignals,
-  MOBILE_CARD_SIGNAL_MAX,
 } from "../../lib/digital/display";
 import DigitalCompanyBadges from "./DigitalCompanyBadges.astro";
 import DigitalCompanyName from "./DigitalCompanyName.astro";
@@ -90,13 +90,12 @@ function formatProfileLine(company: CompanyPublic): string {
       const hiring = getHiringFreshnessDisplay(company.hhVacanciesCheckedAt);
       const freshnessShort = formatHiringFreshnessShort(company);
       const tags = getCompanyBadges(company);
-      const statusSignals = getMobileCardStatusSignals(company);
-      const visibleStatusSignals = statusSignals.slice(0, MOBILE_CARD_SIGNAL_MAX);
-      const hiddenStatusCount = statusSignals.length - visibleStatusSignals.length;
+      const { visible: visibleStatusSignals, hiddenCount: hiddenStatusCount } =
+        getMobileCardStatusDisplay(company);
       const hiddenStatusSummary =
         hiddenStatusCount > 0
-          ? `Ещё ${hiddenStatusCount}: ${statusSignals
-              .slice(MOBILE_CARD_SIGNAL_MAX)
+          ? `Ещё ${hiddenStatusCount}: ${getMobileCardStatusSignals(company)
+              .slice(visibleStatusSignals.length)
               .map((signal) => signal.label)
               .join(", ")}`
           : "";
@@ -118,7 +117,7 @@ function formatProfileLine(company: CompanyPublic): string {
 
           <div class="digital-mobile-card__compact-phone">
             {
-              statusSignals.length > 0 && (
+              (visibleStatusSignals.length > 0 || hiddenStatusCount > 0) && (
                 <div class="digital-mobile-card__status-row digital-badges" aria-label="Статус">
                   {
                     visibleStatusSignals.map((signal) => (
