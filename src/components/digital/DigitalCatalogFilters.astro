@@ -150,20 +150,12 @@ const selectPlaceholder = "Все";
       </div>
     </section>
 
-    <div class="digital-catalog-filters__active-status-row">
-      <p
-        class="digital-catalog-filters__active-status digital-catalog-filters__active-status--desktop"
-        data-digital-filter-active-status-desktop
-        aria-live="polite"
-        hidden
-      ></p>
-      <p
-        class="digital-catalog-filters__active-status digital-catalog-filters__active-status--mobile"
-        data-digital-filter-active-status-mobile
-        aria-live="polite"
-        hidden
-      ></p>
-    </div>
+    <p
+      class="digital-catalog-filters__active-status digital-catalog-filters__active-status--mobile"
+      data-digital-filter-active-status-mobile
+      aria-live="polite"
+      hidden
+    ></p>
 
     <div class="digital-catalog-filters__toolbar">
       <button
@@ -175,6 +167,13 @@ const selectPlaceholder = "Все";
       >
         <span data-digital-filter-advanced-toggle-label>Показать расширенные фильтры ↓</span>
       </button>
+
+      <p
+        class="digital-catalog-filters__active-status digital-catalog-filters__active-status--desktop"
+        data-digital-filter-active-status-desktop
+        aria-live="polite"
+        hidden
+      ></p>
 
       <div class="digital-catalog-filters__toolbar-utility">
         <label class="digital-catalog-filters__page-size" for="digital-page-size">
