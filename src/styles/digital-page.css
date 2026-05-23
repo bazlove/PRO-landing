@@ -149,6 +149,9 @@ html {
 .digital-first-screen .digital-h1 {
   margin: 0 0 clamp(18px, 2.4vw, 28px);
   max-width: none;
+  font-size: clamp(36px, 4.1vw, 50px);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
 }
 
 .digital-hero-lead-card {
@@ -199,7 +202,7 @@ html {
 
   .digital-first-screen .digital-h1 {
     margin-bottom: 16px;
-    font-size: clamp(34px, 9.7vw, 42px);
+    font-size: clamp(33px, 9.4vw, 40px);
     line-height: 1.03;
     letter-spacing: -0.04em;
   }
@@ -272,8 +275,9 @@ html {
   }
 
   .digital-hero-summary__metric {
-    min-height: 38px;
-    padding: 7px 8px;
+    gap: 6px;
+    min-height: 36px;
+    padding: 6px 8px;
   }
 
   .digital-hero-summary__metric-value {
@@ -281,8 +285,8 @@ html {
   }
 
   .digital-hero-summary__metric-label {
-    font-size: 12px;
-    line-height: 1.22;
+    font-size: 11.5px;
+    line-height: 1.2;
   }
 
   .digital-hero-summary__footer {
@@ -292,9 +296,9 @@ html {
 
 @media (min-width: 700px) and (max-width: 959px) and (min-height: 700px) {
   .digital-first-screen .digital-h1 {
-    font-size: clamp(42px, 5.2vw, 52px);
-    line-height: 1.05;
-    letter-spacing: -0.03em;
+    font-size: clamp(36px, 4.6vw, 46px);
+    line-height: 1.04;
+    letter-spacing: -0.04em;
   }
 
   .digital-first-screen .digital-lead {
@@ -320,7 +324,7 @@ html {
 @media (min-width: 900px) {
   .digital-hero-body {
     grid-template-columns: minmax(0, 1.06fr) minmax(380px, 0.94fr);
-    gap: clamp(22px, 3vw, 36px);
+    gap: clamp(16px, 2.2vw, 28px);
     align-items: stretch;
   }
 
@@ -474,12 +478,13 @@ html {
 
 .digital-hero-summary__metric {
   box-sizing: border-box;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   margin: 0;
-  min-height: 42px;
-  padding: 8px 10px;
+  min-height: 38px;
+  padding: 7px 9px;
   border-radius: 12px;
   border: 1px solid var(--digital-tag-border, var(--border));
   background: var(--digital-tag-bg, var(--surface));
@@ -491,6 +496,36 @@ html {
     border-color 160ms ease,
     background-color 160ms ease,
     box-shadow 160ms ease;
+}
+
+.digital-hero-summary__metric-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  color: var(--digital-tag-fg, var(--text-muted));
+  opacity: 0.78;
+  flex-shrink: 0;
+}
+
+.digital-hero-summary__metric-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.85;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (min-width: 641px) {
+  .digital-hero-summary__metric-icon {
+    width: 17px;
+    height: 17px;
+    opacity: 0.8;
+  }
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -505,9 +540,8 @@ html {
   margin: 0;
   font-size: 12px;
   font-weight: 600;
-  line-height: 1.25;
+  line-height: 1.2;
   color: var(--text-secondary);
-  flex: 1;
   min-width: 0;
 }
 
@@ -519,6 +553,7 @@ html {
   color: var(--digital-tag-fg, var(--text-primary));
   font-variant-numeric: tabular-nums;
   flex-shrink: 0;
+  text-align: right;
 }
 
 .digital-hero-summary__footer {
