@@ -10,6 +10,7 @@ import {
   getMobileCardStatusDisplay,
   getMobileCardStatusSignals,
 } from "../../lib/digital/display";
+import type { DrawerSummaryChip } from "../../lib/digital/display";
 import DigitalCompanyBadges from "./DigitalCompanyBadges.astro";
 import DigitalCompanyName from "./DigitalCompanyName.astro";
 import DigitalCatalogLoadMore from "./DigitalCatalogLoadMore.astro";
@@ -90,13 +91,16 @@ function formatProfileLine(company: CompanyPublic): string {
       const hiring = getHiringFreshnessDisplay(company.hhVacanciesCheckedAt);
       const freshnessShort = formatHiringFreshnessShort(company);
       const tags = getCompanyBadges(company);
-      const { visible: visibleStatusSignals, hiddenCount: hiddenStatusCount } =
-        getMobileCardStatusDisplay(company);
+      const statusDisplay = getMobileCardStatusDisplay(company);
+      const visibleStatusSignals: DrawerSummaryChip[] = statusDisplay.visible;
+      const hiddenStatusCount = statusDisplay.hiddenCount;
+      const hiddenStatusSignals: DrawerSummaryChip[] = getMobileCardStatusSignals(company).slice(
+        visibleStatusSignals.length,
+      );
       const hiddenStatusSummary =
         hiddenStatusCount > 0
-          ? `Ещё ${hiddenStatusCount}: ${getMobileCardStatusSignals(company)
-              .slice(visibleStatusSignals.length)
-              .map((signal) => signal.label)
+          ? `Ещё ${hiddenStatusCount}: ${hiddenStatusSignals
+              .map((signal: DrawerSummaryChip) => signal.label)
               .join(", ")}`
           : "";
       const mobileWorkMeta = formatMobileWorkMetaLine(company);
@@ -120,7 +124,7 @@ function formatProfileLine(company: CompanyPublic): string {
               (visibleStatusSignals.length > 0 || hiddenStatusCount > 0) && (
                 <div class="digital-mobile-card__status-row digital-badges" aria-label="Статус">
                   {
-                    visibleStatusSignals.map((signal) => (
+                    visibleStatusSignals.map((signal: DrawerSummaryChip) => (
                       <span class:list={["digital-badge", signal.variantClass]}>
                         {signal.label}
                       </span>
