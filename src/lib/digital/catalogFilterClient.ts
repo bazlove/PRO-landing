@@ -26,6 +26,9 @@ const ADVANCED_FILTER_IDS = {
 
 const DESKTOP_MQ = "(min-width: 960px)";
 const MOBILE_FILTERS_MQ = "(max-width: 640px)";
+const NARROW_SEARCH_PLACEHOLDER_MQ = "(max-width: 359px)";
+const SEARCH_PLACEHOLDER_DEFAULT = "Компания, город или ниша";
+const SEARCH_PLACEHOLDER_NARROW = "Компания или ниша";
 const TABLET_FILTERS_MQ = "(min-width: 700px) and (max-width: 959px) and (min-height: 700px)";
 const VALID_PRESET_IDS = new Set(DIGITAL_FILTER_PRESETS.map((preset) => preset.id));
 const ADVANCED_TOGGLE_LABEL_SHOW = "Показать расширенные фильтры ↓";
@@ -63,7 +66,12 @@ export function initDigitalCatalogFilters(): void {
   const presetsSecondary = root.querySelector<HTMLElement>("[data-digital-presets-secondary]");
   const presetsMoreIcon = root.querySelector<HTMLElement>("[data-digital-presets-more-icon]");
   const pageSizeSelect = root.querySelector<HTMLSelectElement>("[data-digital-page-size]");
-  const activeStatusEl = root.querySelector<HTMLElement>("[data-digital-filter-active-status]");
+  const activeStatusDesktopEl = root.querySelector<HTMLElement>(
+    "[data-digital-filter-active-status-desktop]",
+  );
+  const activeStatusMobileEl = root.querySelector<HTMLElement>(
+    "[data-digital-filter-active-status-mobile]",
+  );
 
   const surfaces: CatalogSurface[] = [];
   const desktopRoot = root.querySelector('[data-digital-catalog-surface="desktop"]');
@@ -294,39 +302,55 @@ export function initDigitalCatalogFilters(): void {
     );
   }
 
-  function updateMobileActiveFilterStatus(): void {
-    if (!activeStatusEl) return;
-
-    if (!isMobileFiltersViewport()) {
-      activeStatusEl.hidden = true;
-      activeStatusEl.textContent = "";
-      return;
-    }
-
+  function getActiveStatusText(): string {
     const presetLabels = getActivePresetLabels();
     const advancedCount = countActiveAdvancedFilters();
     const filterCount = presetLabels.length + advancedCount;
     const hasSearch = Boolean(normalizeCatalogSearch(searchInput?.value ?? ""));
 
-    if (filterCount === 0 && !hasSearch) {
-      activeStatusEl.hidden = true;
-      activeStatusEl.textContent = "";
-      return;
-    }
+    if (filterCount === 0 && !hasSearch) return "";
 
-    let text = "";
     if (filterCount === 1 && !hasSearch) {
-      text = `Активен фильтр: ${presetLabels[0] ?? "выбранный параметр"}`;
-    } else if (filterCount > 1 && !hasSearch) {
-      text = `Активны фильтры: ${filterCount}`;
-    } else if (filterCount === 0 && hasSearch) {
-      text = "Активен поиск";
-    } else {
-      text = `Активны фильтры: ${filterCount} + поиск`;
+      return `Активен: ${presetLabels[0] ?? "выбранный фильтр"}`;
     }
+    if (filterCount > 1 && !hasSearch) {
+      return `Активные фильтры: ${filterCount}`;
+    }
+    if (filterCount === 0 && hasSearch) {
+      return "Активен поиск";
+    }
+    return `Активные фильтры: ${filterCount} + поиск`;
+  }
 
-    activeStatusEl.textContent = text;
-    activeStatusEl.hidden = false;
+  function updateActiveFilterStatus(): void {
+    const text = getActiveStatusText();
+    const statusEls = [activeStatusDesktopEl, activeStatusMobileEl].filter(
+      (el): el is HTMLElement => el instanceof HTMLElement,
+    );
+
+    statusEls.forEach((el) => {
+      if (!text) {
+        el.hidden = true;
+        el.textContent = "";
+        return;
+      }
+
+      el.textContent = text;
+      el.hidden = false;
+    });
+  }
+
+  function syncSearchPlaceholder(): void {
+    if (!searchInput) return;
+
+    const defaultPlaceholder =
+      searchInput.dataset.digitalFilterSearchDefaultPlaceholder ?? SEARCH_PLACEHOLDER_DEFAULT;
+    const narrowPlaceholder =
+      searchInput.dataset.digitalFilterSearchNarrowPlaceholder ?? SEARCH_PLACEHOLDER_NARROW;
+
+    searchInput.placeholder = window.matchMedia(NARROW_SEARCH_PLACEHOLDER_MQ).matches
+      ? narrowPlaceholder
+      : defaultPlaceholder;
   }
 
   function scheduleSearchAnalytics(): void {
@@ -415,7 +439,7 @@ export function initDigitalCatalogFilters(): void {
 
     syncUrl();
     syncPresetsSecondaryVisibility();
-    updateMobileActiveFilterStatus();
+    updateActiveFilterStatus();
   }
 
   function resetVisibleCounts(): void {
@@ -604,6 +628,7 @@ export function initDigitalCatalogFilters(): void {
   const onLayoutMqChange = () => {
     resetVisibleCounts();
     syncPresetsSecondaryVisibility();
+    syncSearchPlaceholder();
     applyCatalog();
   };
 
@@ -611,6 +636,7 @@ export function initDigitalCatalogFilters(): void {
     window.matchMedia(DESKTOP_MQ),
     window.matchMedia(TABLET_FILTERS_MQ),
     window.matchMedia(MOBILE_FILTERS_MQ),
+    window.matchMedia(NARROW_SEARCH_PLACEHOLDER_MQ),
   ]) {
     if (typeof mq.addEventListener === "function") {
       mq.addEventListener("change", onLayoutMqChange);
@@ -630,5 +656,6 @@ export function initDigitalCatalogFilters(): void {
   initPageSizeFromStorage();
   syncAdvancedPanelVisibility();
   syncPresetsSecondaryVisibility();
+  syncSearchPlaceholder();
   applyCatalog();
 }
