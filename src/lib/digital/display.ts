@@ -146,18 +146,42 @@ function isMeaningfulMobileMetaValue(value: string | null | undefined): value is
   );
 }
 
-/** Mobile card line 1: city · company type. */
+/** Mobile card line 1: city · company type · size. */
 export function getMobileCardPrimaryMeta(company: CompanyPublic): string {
-  return [company.city, company.companyType].filter(isMeaningfulMobileMetaValue).join(" · ");
+  const size = formatCompanySize(company.size);
+  return [company.city, company.companyType, size]
+    .filter((part): part is string => Boolean(part && isMeaningfulMobileMetaValue(part)))
+    .join(" · ");
 }
 
-/** Mobile card line 2: niche · size. */
+/** Mobile card line 2: niche only. */
 export function getMobileCardSecondaryMeta(company: CompanyPublic): string {
-  const size = formatCompanySize(company.size);
-  const parts = [company.niche, size].filter(
-    (part): part is string => Boolean(part && isMeaningfulMobileMetaValue(part)),
-  );
-  return parts.join(" · ");
+  const niche = company.niche?.trim() ?? "";
+  return isMeaningfulMobileMetaValue(niche) ? niche : "";
+}
+
+/** Short rating token for compact mobile proof line (`—` when missing). */
+export function formatMobileRatingValue(display: string | null | undefined): string {
+  const value = display?.trim();
+  if (
+    !value ||
+    value === "-" ||
+    value === "—" ||
+    value === "Нет" ||
+    value === "Нет отзывов" ||
+    value.toLowerCase() === "нет отзывов"
+  ) {
+    return "—";
+  }
+  return value;
+}
+
+/** Mobile listing proof: vacancies · HH rating · Habr rating (no freshness date). */
+export function formatMobileCardProofLine(company: CompanyPublic): string {
+  const vacancies = formatVacanciesRangeCopy(company.vacanciesRange);
+  const hh = formatMobileRatingValue(company.hhRatingDisplay);
+  const habr = formatMobileRatingValue(company.habrRatingDisplay);
+  return `${vacancies} · HH ${hh} · Habr ${habr}`;
 }
 
 /** Split status chips for compact mobile row: reserve room for a full `+N` chip. */
