@@ -1,12 +1,12 @@
-import type { CompanyPublic, EmployerRankingBadge } from "../../types/digital";
+import type { CompanyPublic, CompanySignals, EmployerRankingBadge } from "../../types/digital";
 import { isStaleDate } from "./normalizeCompany";
 import { getTagColorClass } from "./tagColors";
 
 /** Mobile cards: max visible signal badges before `+N`. */
 export const DIGITAL_BADGE_MAX_VISIBLE_MOBILE = 3;
 
-/** Mobile catalog card: max status chips on one row (compact phone layout). */
-export const MOBILE_CARD_SIGNAL_MAX = 3;
+/** Mobile catalog card: max status chips on one row before `+N` (keeps +N fully visible). */
+export const MOBILE_CARD_SIGNAL_MAX = 2;
 
 /** Short labels for mobile card scanning (drawer keeps full copy). */
 export const MOBILE_CARD_SIGNAL_HR = "HR 4.5+";
@@ -38,19 +38,57 @@ const VACANCIES_RANGE_COPY: Record<CompanyPublic["vacanciesRange"], string> = {
   "Не проверено": "вакансии не проверены",
 };
 
-/** Public signal badges derived from normalized fields only. */
+/** Catalog table/mobile preset chips from JSON `presets` only (not drawer signals). */
 export function getCompanyBadges(company: CompanyPublic): string[] {
-  const badges: string[] = [];
+  return company.presets.map(getPresetDisplayLabel);
+}
 
-  if (company.hasActiveHiring) badges.push(BADGE_ACTIVE_HIRING);
-  if (company.hasRemote) badges.push(BADGE_REMOTE);
-  if (company.hasHighHrRating) badges.push(BADGE_HIGH_RATING);
-  if (company.hasAwards2025) badges.push(BADGE_AWARDS);
-  if (company.international === "Да" || company.international === "Частично") {
-    badges.push(BADGE_INTERNATIONAL);
+export const DRAWER_SIGNAL_CHIP_CLASS = "digital-badge digital-badge--signal";
+
+function formatHiringSourceLabel(source: CompanySignals["hiringSource"]): string | null {
+  switch (source) {
+    case "HH":
+      return "Источник найма: HH";
+    case "Habr":
+      return "Источник найма: Habr";
+    case "Career site":
+      return "Источник найма: сайт компании";
+    case "Mixed":
+      return "Источник найма: несколько источников";
+    default:
+      return null;
+  }
+}
+
+/** Drawer-only factual metadata chips (not quick filters). */
+export function getDrawerSignalChips(company: CompanyPublic): DrawerSummaryChip[] {
+  const chips: DrawerSummaryChip[] = [];
+  const { signals } = company;
+
+  if (signals.hasDirectApply) {
+    chips.push({ label: "Прямой отклик", variantClass: DRAWER_SIGNAL_CHIP_CLASS });
   }
 
-  return badges;
+  if (signals.hasCareerPage) {
+    chips.push({ label: "Карьерная страница", variantClass: DRAWER_SIGNAL_CHIP_CLASS });
+  }
+
+  const hiringSourceLabel = formatHiringSourceLabel(signals.hiringSource);
+  if (hiringSourceLabel) {
+    chips.push({ label: hiringSourceLabel, variantClass: DRAWER_SIGNAL_CHIP_CLASS });
+  }
+
+  if (signals.dataFreshness === "fresh") {
+    chips.push({ label: "Проверено недавно", variantClass: DRAWER_SIGNAL_CHIP_CLASS });
+  } else if (signals.dataFreshness === "stale") {
+    chips.push({ label: "Нужна перепроверка", variantClass: DRAWER_SIGNAL_CHIP_CLASS });
+  }
+
+  if (signals.remoteExplicitlyDenied) {
+    chips.push({ label: "Удалёнка не рассматривается", variantClass: DRAWER_SIGNAL_CHIP_CLASS });
+  }
+
+  return chips;
 }
 
 /** Priority-ordered status chips for the mobile catalog card (one row). */
@@ -89,6 +127,26 @@ export function getMobileCardStatusSignals(company: CompanyPublic): DrawerSummar
   }
 
   return signals;
+}
+
+export type MobileCardStatusDisplay = {
+  visible: DrawerSummaryChip[];
+  hiddenCount: number;
+};
+
+/** Split status chips for compact mobile row: reserve room for a full `+N` chip. */
+export function getMobileCardStatusDisplay(
+  company: CompanyPublic,
+  maxVisible: number = MOBILE_CARD_SIGNAL_MAX,
+): MobileCardStatusDisplay {
+  const signals = getMobileCardStatusSignals(company);
+  if (signals.length <= maxVisible) {
+    return { visible: signals, hiddenCount: 0 };
+  }
+  return {
+    visible: signals.slice(0, maxVisible),
+    hiddenCount: signals.length - maxVisible,
+  };
 }
 
 /** Human-readable vacancy count line for table and mobile cards. */
