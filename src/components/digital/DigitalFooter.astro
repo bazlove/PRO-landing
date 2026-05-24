@@ -8,8 +8,8 @@ interface Props {
 const { stats } = Astro.props;
 
 // TODO: replace with the author's real LinkedIn profile URL when available in project config.
-const authorLinkedInUrl = "https://pro.bazlove.com";
-const authorDisplayName = "Андрей Базлов";
+const authorLinkedInUrl = "https://www.linkedin.com/in/REAL_PROFILE/";
+const authorDisplayName = "Имя Фамилия";
 
 const lastUpdatedLabel = stats.latestUpdateDateIso
   ? new Intl.DateTimeFormat("ru-RU", {
@@ -47,12 +47,12 @@ const lastUpdatedLabel = stats.latestUpdateDateIso
     <div class="digital-footer__brand">
       <p class="digital-footer__title">IT работодатели России</p>
       <p class="digital-footer__description">
-        Обновляемая база IT организаций для поиска работодателей: агентства, веб-студии, performance и SEO-команды,
-        продуктовые компании, интеграторы и разработка.
+        Обновляемая база ИТ компаний для поиска работодателей: агентства, веб-студии, performance и SEO-команды,
+        интеграторы и команды разработки.
       </p>
       <p class="digital-footer__disclaimer">
-        Это не официальный рейтинг, не доска вакансий, не каталог подрядчиков и не база HR-контактов.
-        Перед откликом проверяйте актуальность вакансий на стороне компании.
+        Это не доска вакансий, не каталог подрядчиков и не база HR-контактов. Перед откликом проверяйте актуальность
+        вакансий на стороне организаций.
       </p>
       <p class="digital-footer__author">
         Автор проекта: <a
