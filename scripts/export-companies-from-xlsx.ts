@@ -24,6 +24,7 @@ import {
   sheetHasColumn,
   SHOWCASE_COLUMN_KEYS,
 } from "../src/lib/digital/normalizeCompany.ts";
+import { assertValidPublicExportSizeSource } from "../src/lib/digital/publicExportSourceQa.ts";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const jsonPath = join(root, "src/data/digital/companies.json");
@@ -136,6 +137,7 @@ const allRows = XLSX.utils.sheet_to_json<Record<string, unknown>>(targetSheet, {
 
 if (sheetName === "public_export") {
   assertPublicExportContract(allRows);
+  assertValidPublicExportSizeSource(allRows);
 }
 
 const svodkaSheet = workbook.Sheets["Сводка"];
