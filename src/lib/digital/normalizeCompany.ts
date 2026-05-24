@@ -1,5 +1,6 @@
 import type { CompanyPublic, CompanySignals } from "../../types/digital";
 import { PUBLIC_PRESET_VALUES, type PublicPresetValue } from "./presetLabels";
+import { isForbiddenGenericWebsiteUrl, sanitizePublicWebsiteUrl } from "./websiteUrlDenylist";
 
 const FORBIDDEN_KEY_PATTERNS: RegExp[] = [
   /hrEmail/i,
@@ -21,6 +22,13 @@ const FORBIDDEN_KEY_PATTERNS: RegExp[] = [
   /public_fit_status/i,
   /active_vacancies_source/i,
   /search_aliases/i,
+  /^legal_name$/i,
+  /^inn$/i,
+  /^ogrn$/i,
+  /^legal_identity_/i,
+  /^legal_checked_at$/i,
+  /^it_accreditation_/i,
+  /^qa_confidence$/i,
 ];
 
 const PUBLIC_FIT_ELIGIBLE = new Set(["P0", "P1", "P2"]);
@@ -50,6 +58,7 @@ const HIRING_STATUSES = new Set<CompanyPublic["hiringStatus"]>([
   "Точечный",
   "На паузе",
   "Неясно",
+  "Не проверено",
 ]);
 
 const VACANCIES_RANGES = new Set<CompanyPublic["vacanciesRange"]>([
@@ -136,6 +145,14 @@ function pickString(raw: Record<string, unknown>, keys: string[], fallback = "")
 function pickOptionalString(raw: Record<string, unknown>, keys: string[]): string | null {
   const value = pickString(raw, keys, "");
   return value || null;
+}
+
+function normalizePublicSize(value: string): string | null {
+  const trimmed = value.trim();
+  if (!trimmed || isPlaceholderToken(trimmed) || /^не указано$/i.test(trimmed)) {
+    return null;
+  }
+  return trimmed;
 }
 
 function isPlaceholderToken(value: string): boolean {
@@ -575,7 +592,9 @@ function resolvePublicSourceUrls(
     hhCompanyUrl = toCanonicalHeadHunterEmployerUrl(hhCompanyUrl) ?? hhCompanyUrl;
   }
 
-  return { hhCompanyUrl, habrUrl, websiteUrl, linkedinUrl };
+  const sanitizedWebsiteUrl = sanitizePublicWebsiteUrl(websiteUrl);
+
+  return { hhCompanyUrl, habrUrl, websiteUrl: sanitizedWebsiteUrl, linkedinUrl };
 }
 
 function warnMissingNormalizedSourceLinks(
@@ -1354,8 +1373,16 @@ export function normalizeCompany(
     ),
   );
 
+  const rawWebsiteUrl = pickOptionalHttpUrl(rawInput, WEBSITE_URL_KEYS);
   const sourceUrls = resolvePublicSourceUrls(rawInput, careerUrl, allowSourceUrlInference);
   const { hhCompanyUrl, habrUrl, websiteUrl, linkedinUrl } = sourceUrls;
+
+  if (rawWebsiteUrl && isForbiddenGenericWebsiteUrl(rawWebsiteUrl)) {
+    warnDigital(
+      `[digital] Row #${index} (“${name}”): cleared forbidden generic websiteUrl`,
+      warnings,
+    );
+  }
 
   warnMissingNormalizedSourceLinks(name, rawInput, sourceUrls, warnings);
 
@@ -1370,7 +1397,7 @@ export function normalizeCompany(
       "Не указано",
     ),
     niche: pickString(rawInput, ["niche", "Ключевая ниша"], "Не указано"),
-    size: pickString(rawInput, ["size", "Размер компании"], "Не указано"),
+    size: normalizePublicSize(pickString(rawInput, ["size", "Размер компании"], "")),
     careerUrl,
     vacanciesRange,
     vacanciesWeight: 0,
