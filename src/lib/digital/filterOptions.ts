@@ -55,7 +55,7 @@ export function getDigitalFilterOptions(companies: CompanyPublic[]): DigitalFilt
     cities: uniqueSorted(companies.map((c) => c.city)),
     companyTypes: uniqueSorted(companies.map((c) => c.companyType)),
     niches: uniqueSorted(companies.map((c) => c.niche)),
-    sizes: sortSizes(companies.map((c) => c.size)),
+    sizes: sortSizes(companies.map((c) => c.size).filter((size): size is string => size !== null)),
     hiringStatuses: DIGITAL_HIRING_STATUS_OPTIONS,
     workFormats: DIGITAL_WORK_FORMAT_OPTIONS,
   };
