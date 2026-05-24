@@ -1,6 +1,10 @@
 #!/usr/bin/env node
 import fs from "node:fs";
 import path from "node:path";
+import {
+  FORBIDDEN_PUBLIC_EXACT_KEYS,
+  isForbiddenGenericWebsiteUrl,
+} from "./lib/forbiddenPublicKeys.mjs";
 
 const args = process.argv.slice(2);
 const filePath = args.find((arg) => !arg.startsWith("--"));
@@ -355,6 +359,10 @@ function validateCompany(company, index) {
       addError(index, `extra field is not allowed: ${key}`);
     }
 
+    if (FORBIDDEN_PUBLIC_EXACT_KEYS.has(key)) {
+      addError(index, `forbidden internal field key: ${key}`);
+    }
+
     if (forbiddenKeyPatterns.some((pattern) => pattern.test(key))) {
       addError(index, `forbidden/suspicious field key: ${key}`);
     }
@@ -385,6 +393,10 @@ function validateCompany(company, index) {
       index,
       `hhCompanyUrl must use canonical HeadHunter employer URL: https://hh.ru/employer/<id>, got: ${company.hhCompanyUrl}`,
     );
+  }
+
+  if (isForbiddenGenericWebsiteUrl(company.websiteUrl)) {
+    addError(index, `websiteUrl must not be a generic aggregator root: ${company.websiteUrl}`);
   }
 
   if (company.careerUrl === null) {
