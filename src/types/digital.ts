@@ -34,13 +34,13 @@ export type CompanyPublic = {
   city: string;
   companyType: string;
   niche: string;
-  size: string;
+  size: string | null;
   careerUrl: string;
 
   vacanciesRange: "10+" | "5–10" | "1–4" | "0" | "Не проверено";
   vacanciesWeight: number;
 
-  hiringStatus: "Активный" | "Точечный" | "На паузе" | "Неясно";
+  hiringStatus: "Активный" | "Точечный" | "На паузе" | "Неясно" | "Не проверено";
   workFormat: "Удалёнка" | "Гибрид" | "Офис" | "Смешанный" | "Не указано";
   hiringGeo: string;
   international: "Да" | "Нет" | "Частично" | "Неясно";
