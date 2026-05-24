@@ -13,7 +13,8 @@
     "data:export-companies": "tsx scripts/export-companies-from-xlsx.ts",
     "data:validate-companies": "node scripts/validateCompaniesJson.mjs src/data/digital/companies.json",
     "data:validate-companies:min50": "node scripts/validateCompaniesJson.mjs src/data/digital/companies.json --min-count=50",
-    "data:validate-companies:min100": "node scripts/validateCompaniesJson.mjs src/data/digital/companies.json --min-count=100"
+    "data:validate-companies:min100": "node scripts/validateCompaniesJson.mjs src/data/digital/companies.json --min-count=100",
+    "data:drift-check": "tsx scripts/check-public-export-drift.ts"
   },
   "dependencies": {
     "astro": "^4.16.18"
