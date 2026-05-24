@@ -226,8 +226,8 @@ export function formatDateRu(isoDate: string): string {
 }
 
 /** Public company size for profile meta; omits unknown placeholder. */
-export function formatCompanySize(size: string): string | null {
-  const trimmed = size.trim();
+export function formatCompanySize(size: string | null | undefined): string | null {
+  const trimmed = String(size ?? "").trim();
   if (!trimmed || trimmed === SIZE_UNKNOWN) return null;
   return trimmed;
 }
