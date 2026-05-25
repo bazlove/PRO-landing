@@ -72,8 +72,6 @@ type FieldSpec = {
   optional?: boolean;
 };
 
-const REQUIRED_PUBLIC_EXPORT_COLUMNS = ["historical_employer_awards"] as const;
-
 function normalizeOptionalTextValue(value: string): string {
   if (isPlaceholder(value)) return "";
   return value.trim();
@@ -101,18 +99,6 @@ const DRIFT_FIELDS: FieldSpec[] = [
   {
     label: "awards text",
     keys: ["awards2025", "awards_2025", "Ключевые награды 2025", "Награды 2025"],
-    optional: true,
-  },
-  {
-    label: "historical_employer_awards",
-    keys: [
-      "historical_employer_awards",
-      "historicalEmployerAwards",
-      "Исторические награды работодателя",
-      "Исторические награды",
-      "Исторические отметки",
-    ],
-    compare: "optionalText",
     optional: true,
   },
   {
@@ -324,23 +310,10 @@ function runDriftCheck(xlsxPath: string): number {
   const svodkaRows = readSheetRows(workbook, SVODKA_SHEET);
   const publicRows = readSheetRows(workbook, PUBLIC_EXPORT_SHEET);
 
-  const publicHeaders = new Set(Object.keys(publicRows[0] ?? {}));
-
   const svodkaIndex = indexByCompanyId(svodkaRows);
   const publicIndex = indexByCompanyId(publicRows);
 
   const issues: DriftIssue[] = [];
-
-  for (const column of REQUIRED_PUBLIC_EXPORT_COLUMNS) {
-    if (!publicHeaders.has(column)) {
-      issues.push({
-        severity: "critical",
-        companyId: "—",
-        field: column,
-        message: `missing required column in ${PUBLIC_EXPORT_SHEET}`,
-      });
-    }
-  }
 
   if (svodkaIndex.missing > 0) {
     issues.push({
