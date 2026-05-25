@@ -1,7 +1,7 @@
 ---
 import type { CompanyPublic } from "../../types/digital";
 import {
-  buildDrawerHiringDetailParts,
+  buildDrawerHiringMeta,
   formatDrawerInternationalLine,
   getDrawerHiringStatusValue,
   getDrawerHeaderMetaParts,
@@ -27,7 +27,10 @@ const { company } = Astro.props;
 const summaryChips = getDrawerSummaryChips(company);
 const hiringStatusValue = getDrawerHiringStatusValue(company);
 const showRemoteDeniedNote = company.signals.remoteExplicitlyDenied;
-const hiringDetailParts = buildDrawerHiringDetailParts(company);
+const hiringMeta = buildDrawerHiringMeta(company);
+const showHiringSecondaryLine = Boolean(
+  hiringMeta.sourceName || hiringMeta.checkedDate || hiringMeta.staleWarning,
+);
 const titleId = `digital-company-detail-title-${company.id}`;
 const hasCareerUrl = Boolean(company.careerUrl?.trim());
 const employerRankingBadges = company.employerRankingBadges;
@@ -184,20 +187,48 @@ const hasSourceLinks = sourceLinks.length > 0;
     <p class="digital-company-detail__line">
       <span class="digital-company-detail__primary">{hiringStatusValue}</span>
     </p>
-    <p class="digital-company-detail__line digital-company-detail__line--muted">
+    <p class="digital-company-detail__meta-line digital-company-detail__meta-line--hiring-primary">
+      <span>{hiringMeta.vacanciesLabel}</span>
       {
-        hiringDetailParts.map((part, index) => (
+        hiringMeta.hasDirectApply && (
           <>
-            {index > 0 && <span aria-hidden="true"> · </span>}
-            {part === "Нужна перепроверка" || part === "Требует повторной проверки" ? (
-              <span class="digital-stale-label">{part}</span>
-            ) : (
-              part
-            )}
+            <span aria-hidden="true"> · </span>
+            <span class="digital-company-detail__inline-signal">Прямой отклик</span>
           </>
-        ))
+        )
       }
     </p>
+    {
+      showHiringSecondaryLine && (
+        <p class="digital-company-detail__meta-line digital-company-detail__meta-line--hiring-secondary">
+          {
+            hiringMeta.sourceName && (
+              <span>Источник: {hiringMeta.sourceName}</span>
+            )
+          }
+          {hiringMeta.sourceName && hiringMeta.checkedDate && (
+            <span aria-hidden="true"> · </span>
+          )}
+          {
+            hiringMeta.checkedDate && (
+              <span class="digital-company-detail__checked-date">
+                Проверено: {hiringMeta.checkedDate}
+              </span>
+            )
+          }
+          {
+            (hiringMeta.sourceName || hiringMeta.checkedDate) && hiringMeta.staleWarning && (
+              <span aria-hidden="true"> · </span>
+            )
+          }
+          {
+            hiringMeta.staleWarning && (
+              <span class="digital-stale-label">{hiringMeta.staleWarning}</span>
+            )
+          }
+        </p>
+      )
+    }
   </section>
 
   <section class="digital-company-detail__section" aria-labelledby={`${company.id}-format`}>
