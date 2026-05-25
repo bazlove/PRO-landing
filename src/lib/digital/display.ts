@@ -46,20 +46,63 @@ export function getCompanyBadges(company: CompanyPublic): string[] {
   return company.presets.map(getPresetDisplayLabel);
 }
 
-/** Inline hiring metadata (drawer body, not header chips). */
-export function formatDrawerHiringSourceInline(source: CompanySignals["hiringSource"]): string | null {
+/** Drawer hiring section: source name for «Источник: …» (not header chips). */
+export function formatDrawerHiringSourceName(source: CompanySignals["hiringSource"]): string | null {
   switch (source) {
     case "HH":
-      return "Источник: HH";
+      return "HeadHunter";
     case "Habr":
-      return "Источник: Habr";
+      return "Habr Career";
     case "Career site":
-      return "Источник: сайт компании";
+      return "сайт компании";
     case "Mixed":
-      return "Источник: несколько источников";
+      return "несколько источников";
     default:
       return null;
   }
+}
+
+export type DrawerHiringMeta = {
+  vacanciesLabel: string;
+  hasDirectApply: boolean;
+  sourceName: string | null;
+  /** Russian day-month, e.g. `19 мая` (without «Проверено:»). */
+  checkedDate: string | null;
+  staleWarning: string | null;
+};
+
+/** Drawer hiring block: primary line (vacancies + direct apply) and secondary (source + date). */
+export function buildDrawerHiringMeta(company: CompanyPublic): DrawerHiringMeta {
+  const { signals } = company;
+
+  let vacanciesLabel: string;
+  if (company.vacanciesRange === "Не проверено") {
+    vacanciesLabel = "Вакансии не проверены";
+  } else if (company.vacanciesRange === "0") {
+    vacanciesLabel = "Нет активных вакансий";
+  } else {
+    vacanciesLabel = formatVacanciesRangeCopy(company.vacanciesRange);
+  }
+
+  let checkedDate: string | null = null;
+  let staleWarning: string | null = null;
+  if (company.hhVacanciesCheckedAt) {
+    const dayMonth = formatRussianDayMonth(company.hhVacanciesCheckedAt);
+    if (dayMonth) {
+      checkedDate = dayMonth;
+      if (isStaleDate(company.hhVacanciesCheckedAt)) {
+        staleWarning = "Нужна перепроверка";
+      }
+    }
+  }
+
+  return {
+    vacanciesLabel,
+    hasDirectApply: signals.hasDirectApply,
+    sourceName: formatDrawerHiringSourceName(signals.hiringSource),
+    checkedDate,
+    staleWarning,
+  };
 }
 
 /** Priority-ordered status chips for the mobile catalog card (one row). */
@@ -385,40 +428,25 @@ export function formatRussianDayMonth(dateValue: string | null | undefined): str
   return `${date.getDate()} ${RUSSIAN_MONTHS_GENITIVE[date.getMonth()]}`;
 }
 
-/** Drawer hiring metadata row (vacancies · source · direct apply · check date). */
+/** @deprecated Use `buildDrawerHiringMeta()` for two-line drawer hiring layout. */
 export function buildDrawerHiringDetailParts(company: CompanyPublic): string[] {
-  const parts: string[] = [];
-  const { signals } = company;
+  const meta = buildDrawerHiringMeta(company);
+  const parts: string[] = [meta.vacanciesLabel];
 
-  if (company.vacanciesRange === "Не проверено") {
-    parts.push("Вакансии не проверены");
-  } else if (company.vacanciesRange === "0") {
-    parts.push("Нет активных вакансий");
-  } else {
-    parts.push(formatVacanciesRangeCopy(company.vacanciesRange));
-  }
-
-  const sourceInline = formatDrawerHiringSourceInline(signals.hiringSource);
-  if (sourceInline) {
-    parts.push(sourceInline);
-  }
-
-  if (signals.hasDirectApply) {
+  if (meta.hasDirectApply) {
     parts.push("Прямой отклик");
   }
 
-  if (company.hhVacanciesCheckedAt) {
-    const dayMonth = formatRussianDayMonth(company.hhVacanciesCheckedAt);
-    if (dayMonth) {
-      const checkedLabel =
-        signals.hiringSource === "HH"
-          ? `Проверено: ${dayMonth}`
-          : `Проверено на HH: ${dayMonth}`;
-      parts.push(checkedLabel);
-      if (isStaleDate(company.hhVacanciesCheckedAt)) {
-        parts.push("Нужна перепроверка");
-      }
-    }
+  if (meta.sourceName) {
+    parts.push(`Источник: ${meta.sourceName}`);
+  }
+
+  if (meta.checkedDate) {
+    parts.push(`Проверено: ${meta.checkedDate}`);
+  }
+
+  if (meta.staleWarning) {
+    parts.push(meta.staleWarning);
   }
 
   return parts;
