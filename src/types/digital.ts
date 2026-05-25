@@ -56,7 +56,6 @@ export type CompanyPublic = {
 
   presets: CompanyPreset[];
   signals: CompanySignals;
-  historicalEmployerAwards: string | null;
 
   hasActiveHiring: boolean;
   hasRemote: boolean;
