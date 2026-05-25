@@ -7,7 +7,7 @@
  *
  * Optional env:
  *   DIGITAL_XLSX_SHEET=public_export
- *   DIGITAL_EXPORT_MAX=100        (default: 100 for public_export expansion)
+ *   DIGITAL_EXPORT_MAX=300        (default: 300 for public_export expansion)
  */
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -47,6 +47,7 @@ const REQUIRED_PUBLIC_EXPORT_COLUMNS = [
   "habr_employer_rank_label",
   "habr_employer_rank_year",
   "habr_employer_rank_source_url",
+  "historical_employer_awards",
 ] as const;
 
 function getHeaderKeys(rows: Record<string, unknown>[]): Set<string> {
@@ -87,7 +88,7 @@ if (!existsSync(xlsxPath)) {
 
 const exportMax = process.env.DIGITAL_EXPORT_MAX
   ? Number(process.env.DIGITAL_EXPORT_MAX)
-  : 100;
+  : 300;
 
 const workbook = XLSX.read(readFileSync(xlsxPath), { type: "buffer" });
 
