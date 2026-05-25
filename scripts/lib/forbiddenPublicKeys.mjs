@@ -1,3 +1,10 @@
+/** Historical employer awards — removed from public MVP contract. */
+export const FORBIDDEN_HISTORICAL_AWARDS_KEYS = new Set([
+  "historicalEmployerAwards",
+  "historical_employer_awards",
+  "historical_awards_source_url",
+]);
+
 /** Internal P2 trust / legal pilot fields — must never appear in public JSON. */
 export const FORBIDDEN_PUBLIC_EXACT_KEYS = new Set([
   "legal_name",
