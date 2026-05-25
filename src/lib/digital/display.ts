@@ -469,6 +469,13 @@ export function formatEmployerRankingBadgeLabel(
   return trimmed;
 }
 
+/** Drawer-only: split passive historical employer awards into list items. */
+export function getHistoricalEmployerAwardItems(company: CompanyPublic): string[] {
+  const raw = company.historicalEmployerAwards?.trim();
+  if (!raw) return [];
+  return splitAwards(raw);
+}
+
 /** Split awards/rankings string into list items for drawer. */
 export function splitAwards(value: string | null | undefined): string[] {
   if (!value) return [];
