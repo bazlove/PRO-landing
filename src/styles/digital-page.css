@@ -3248,10 +3248,6 @@ body.digital-drawer-open {
   border-radius: 2px;
 }
 
-.digital-company-detail__section--historical-awards {
-  opacity: 0.86;
-}
-
 .digital-company-detail__awards-list--muted {
   color: var(--text-secondary);
 }
