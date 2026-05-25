@@ -187,7 +187,16 @@ const hasSourceLinks = sourceLinks.length > 0;
         hiringMeta.hasDirectApply && (
           <>
             <span aria-hidden="true"> · </span>
-            <span class="digital-company-detail__inline-signal">Прямой отклик</span>
+            <span
+              class:list={[
+                "digital-badge",
+                "digital-tag--slate",
+                "digital-company-detail__chip",
+                "digital-company-detail__inline-signal",
+              ]}
+            >
+              Прямой отклик
+            </span>
           </>
         )
       }
