@@ -619,13 +619,6 @@ function isAwardDuplicatedByEmployerBadge(award: string, badge: EmployerRankingB
   return false;
 }
 
-/** @deprecated Historical awards are not shown in public drawer MVP. */
-export function getHistoricalEmployerAwardItems(company: CompanyPublic): string[] {
-  const raw = company.historicalEmployerAwards?.trim();
-  if (!raw) return [];
-  return splitAwards(raw);
-}
-
 /** Hide award lines already shown as employer ranking trust badges in the drawer. */
 export function filterDrawerAwardsByEmployerRankingBadges(
   awardItems: string[],
