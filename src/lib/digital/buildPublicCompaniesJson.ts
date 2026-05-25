@@ -71,7 +71,6 @@ export function toPublicCompanyJsonRecord(company: CompanyPublic): CompanyPublic
     hasAwards2025: recalculated.hasAwards2025,
     presets: recalculated.presets,
     signals: recalculated.signals,
-    historicalEmployerAwards: recalculated.historicalEmployerAwards ?? null,
     hasActiveHiring: recalculated.hasActiveHiring,
     hasRemote: recalculated.hasRemote,
     hasHighHrRating: recalculated.hasHighHrRating,
