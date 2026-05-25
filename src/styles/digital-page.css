@@ -3210,11 +3210,11 @@ body.digital-drawer-open {
 }
 
 .digital-company-detail__section--historical-awards {
-  opacity: 0.88;
+  opacity: 0.86;
 }
 
 .digital-company-detail__awards-list--muted {
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .digital-company-detail__awards-item--muted {
