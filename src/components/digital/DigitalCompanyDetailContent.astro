@@ -5,8 +5,8 @@ import {
   formatDrawerInternationalLine,
   getDrawerHiringStatusValue,
   getDrawerHeaderMetaParts,
+  DRAWER_AWARDS_VISIBLE_COUNT,
   getDrawerSummaryChips,
-  getDrawerSignalChips,
   shouldShowDrawerInternationalLine,
   filterDrawerAwardsByEmployerRankingBadges,
   getHistoricalEmployerAwardItems,
@@ -25,8 +25,8 @@ interface Props {
 
 const { company } = Astro.props;
 const summaryChips = getDrawerSummaryChips(company);
-const signalChips = getDrawerSignalChips(company);
 const hiringStatusValue = getDrawerHiringStatusValue(company);
+const showRemoteDeniedNote = company.signals.remoteExplicitlyDenied;
 const hiringDetailParts = buildDrawerHiringDetailParts(company);
 const titleId = `digital-company-detail-title-${company.id}`;
 const hasCareerUrl = Boolean(company.careerUrl?.trim());
@@ -51,7 +51,7 @@ const sourceLinks: DrawerSourceLink[] = [];
 if (company.hhCompanyUrl) {
   sourceLinks.push({
     href: company.hhCompanyUrl,
-    ariaLabel: "Открыть страницу компании на HeadHunter",
+    ariaLabel: "HeadHunter",
     iconSrc: hhIcon.src,
     iconClass: "digital-company-detail__source-icon--hh",
     analyticsId: "hh",
@@ -60,7 +60,7 @@ if (company.hhCompanyUrl) {
 if (company.habrUrl) {
   sourceLinks.push({
     href: company.habrUrl,
-    ariaLabel: "Открыть страницу компании на Habr Career",
+    ariaLabel: "Habr Career",
     iconSrc: habrCareerIcon.src,
     iconClass: "digital-company-detail__source-icon--habr",
     analyticsId: "habr",
@@ -69,7 +69,7 @@ if (company.habrUrl) {
 if (company.linkedinUrl) {
   sourceLinks.push({
     href: company.linkedinUrl,
-    ariaLabel: "Открыть страницу компании в LinkedIn",
+    ariaLabel: "LinkedIn",
     iconSrc: linkedinIcon.src,
     iconClass: "digital-company-detail__source-icon--linkedin",
     analyticsId: "linkedin",
@@ -98,16 +98,6 @@ const hasSourceLinks = sourceLinks.length > 0;
             <span class:list={["digital-badge", "digital-company-detail__chip", chip.variantClass]}>
               {chip.label}
             </span>
-          ))}
-        </div>
-      )
-    }
-
-    {
-      signalChips.length > 0 && (
-        <div class="digital-company-detail__signals" aria-label="Сигналы для кандидата">
-          {signalChips.map((chip) => (
-            <span class:list={["digital-company-detail__chip", chip.variantClass]}>{chip.label}</span>
           ))}
         </div>
       )
@@ -199,7 +189,7 @@ const hasSourceLinks = sourceLinks.length > 0;
         hiringDetailParts.map((part, index) => (
           <>
             {index > 0 && <span aria-hidden="true"> · </span>}
-            {part === "Требует повторной проверки" ? (
+            {part === "Нужна перепроверка" || part === "Требует повторной проверки" ? (
               <span class="digital-stale-label">{part}</span>
             ) : (
               part
@@ -218,6 +208,13 @@ const hasSourceLinks = sourceLinks.length > 0;
     <p class="digital-company-detail__line digital-company-detail__line--muted">
       География найма: {company.hiringGeo}
     </p>
+    {
+      showRemoteDeniedNote && (
+        <p class="digital-company-detail__line digital-company-detail__line--muted">
+          Удалёнка не рассматривается
+        </p>
+      )
+    }
     {
       shouldShowDrawerInternationalLine(company) && (
         <p class="digital-company-detail__line digital-company-detail__line--muted">
@@ -253,9 +250,12 @@ const hasSourceLinks = sourceLinks.length > 0;
               <li
                 class:list={[
                   "digital-company-detail__awards-item",
-                  index >= 3 && "digital-company-detail__awards-item--extra",
+                  index >= DRAWER_AWARDS_VISIBLE_COUNT &&
+                    "digital-company-detail__awards-item--extra",
                 ]}
-                data-award-extra={index >= 3 ? "true" : undefined}
+                data-award-extra={
+                  index >= DRAWER_AWARDS_VISIBLE_COUNT ? "true" : undefined
+                }
               >
                 {item}
               </li>
@@ -263,16 +263,16 @@ const hasSourceLinks = sourceLinks.length > 0;
           }
         </ul>
         {
-          awardItems.length > 3 && (
+          awardItems.length > DRAWER_AWARDS_VISIBLE_COUNT && (
             <button
               type="button"
               class="digital-company-detail__awards-toggle"
               data-company-detail-awards-toggle
-              data-awards-collapsed-label={`Показать ещё ${awardItems.length - 3}`}
+              data-awards-collapsed-label={`Показать ещё ${awardItems.length - DRAWER_AWARDS_VISIBLE_COUNT}`}
               data-awards-expanded-label="Скрыть"
               aria-expanded="false"
             >
-              {`Показать ещё ${awardItems.length - 3}`}
+              {`Показать ещё ${awardItems.length - DRAWER_AWARDS_VISIBLE_COUNT}`}
             </button>
           )
         }
