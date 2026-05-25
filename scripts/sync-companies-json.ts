@@ -1,9 +1,6 @@
 /**
  * Re-normalize `src/data/digital/companies.json` and write explicit public fields
- * (including source URLs and `historicalEmployerAwards` as string | null on every row).
- *
- * Reads `historicalEmployerAwards` or `historical_employer_awards` from input rows;
- * never writes snake_case `historical_employer_awards` to output.
+ * (including source URLs on every row). Strips legacy fields removed from the public contract.
  *
  * Usage: npm run data:sync-companies
  */
@@ -54,8 +51,5 @@ const withLinkedin = companies.filter((c) => c.linkedinUrl).length;
 console.log(
   `[digital] Source URLs: website=${withWebsite}, hh=${withHh}, habr=${withHabr}, linkedin=${withLinkedin}`,
 );
-
-const withHistoricalAwards = companies.filter((c) => c.historicalEmployerAwards).length;
-console.log(`[digital] historicalEmployerAwards: ${withHistoricalAwards} non-null`);
 
 console.log("[digital] Next: npm run data:validate-companies");
