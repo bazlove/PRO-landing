@@ -3195,14 +3195,14 @@ body.digital-drawer-open {
 .digital-company-detail__inline-signal {
   display: inline-flex;
   align-items: center;
-  padding: 1px 6px;
+  padding: 1px 5px;
   border-radius: 999px;
-  border: 1px solid rgba(203, 213, 225, 0.9);
-  background: rgba(248, 250, 252, 0.9);
-  color: var(--text-secondary);
-  font-size: 0.92em;
+  border: 1px solid rgba(203, 213, 225, 0.65);
+  background: rgba(248, 250, 252, 0.72);
+  color: var(--text-muted);
+  font-size: 0.84em;
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.35;
   vertical-align: baseline;
 }
 
