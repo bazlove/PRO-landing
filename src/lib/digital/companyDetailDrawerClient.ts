@@ -35,7 +35,6 @@ function initAwardsToggle(root: HTMLElement): void {
   const collapsedLabel =
     awardsToggle.dataset.awardsCollapsedLabel || `Показать ещё ${extraItems.length}`;
   const expandedLabel = awardsToggle.dataset.awardsExpandedLabel || "Скрыть";
-  const shouldCollapseAwards = window.matchMedia("(max-width: 640px)").matches;
 
   function setExpanded(expanded: boolean): void {
     extraItems.forEach((item) => {
@@ -43,14 +42,6 @@ function initAwardsToggle(root: HTMLElement): void {
     });
     awardsToggle.setAttribute("aria-expanded", String(expanded));
     awardsToggle.textContent = expanded ? expandedLabel : collapsedLabel;
-  }
-
-  if (!shouldCollapseAwards) {
-    awardsToggle.hidden = true;
-    extraItems.forEach((item) => {
-      item.hidden = false;
-    });
-    return;
   }
 
   setExpanded(false);
