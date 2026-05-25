@@ -8,9 +8,7 @@ import {
   DRAWER_AWARDS_VISIBLE_COUNT,
   getDrawerSummaryChips,
   shouldShowDrawerInternationalLine,
-  filterDrawerAwardsByEmployerRankingBadges,
-  getHistoricalEmployerAwardItems,
-  splitAwards,
+  getDrawerAwards2025DisplayItems,
 } from "../../lib/digital/display";
 import DigitalRatingCell from "./DigitalRatingCell.astro";
 import EmployerRankingBadge from "./EmployerRankingBadge.astro";
@@ -34,11 +32,7 @@ const showHiringSecondaryLine = Boolean(
 const titleId = `digital-company-detail-title-${company.id}`;
 const hasCareerUrl = Boolean(company.careerUrl?.trim());
 const employerRankingBadges = company.employerRankingBadges;
-const awardItems = filterDrawerAwardsByEmployerRankingBadges(
-  splitAwards(company.awards2025),
-  employerRankingBadges,
-);
-const historicalAwardItems = getHistoricalEmployerAwardItems(company);
+const awardItems = getDrawerAwards2025DisplayItems(company);
 
 const headerMetaParts = getDrawerHeaderMetaParts(company);
 
@@ -307,28 +301,6 @@ const hasSourceLinks = sourceLinks.length > 0;
             </button>
           )
         }
-      </section>
-    )
-  }
-
-  {
-    historicalAwardItems.length > 0 && (
-      <section
-        class="digital-company-detail__section digital-company-detail__section--historical-awards"
-        aria-labelledby={`${company.id}-historical-awards`}
-      >
-        <h3 id={`${company.id}-historical-awards`} class="digital-company-detail__heading">
-          Исторические отметки
-        </h3>
-        <ul class="digital-company-detail__awards-list digital-company-detail__awards-list--muted">
-          {
-            historicalAwardItems.map((item) => (
-              <li class="digital-company-detail__awards-item digital-company-detail__awards-item--muted">
-                {item}
-              </li>
-            ))
-          }
-        </ul>
       </section>
     )
   }
