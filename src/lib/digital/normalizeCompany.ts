@@ -22,6 +22,8 @@ const FORBIDDEN_KEY_PATTERNS: RegExp[] = [
   /public_fit_status/i,
   /active_vacancies_source/i,
   /historical_employer_awards/i,
+  /historical_awards_source_url/i,
+  /historicalEmployerAwards/i,
   /search_aliases/i,
   /^legal_name$/i,
   /^inn$/i,
@@ -772,18 +774,6 @@ export function normalizeAwards2025(raw: unknown): string | null {
   return normalizeOptionalPublicText(raw);
 }
 
-const HISTORICAL_EMPLOYER_AWARDS_KEYS = [
-  "historicalEmployerAwards",
-  "historical_employer_awards",
-  "Исторические награды работодателя",
-  "Исторические награды",
-  "Исторические отметки",
-] as const;
-
-function normalizeHistoricalEmployerAwards(raw: Record<string, unknown>): string | null {
-  return normalizeOptionalPublicText(pickValue(raw, [...HISTORICAL_EMPLOYER_AWARDS_KEYS]));
-}
-
 function parseRatingValue(raw: unknown): number | null {
   if (raw === null || raw === undefined) return null;
   if (typeof raw === "number") {
@@ -1436,7 +1426,6 @@ export function normalizeCompany(
       dataFreshness: "unknown",
       remoteExplicitlyDenied: false,
     },
-    historicalEmployerAwards: normalizeHistoricalEmployerAwards(rawInput),
     hasActiveHiring: false,
     hasRemote: false,
     hasHighHrRating: false,
