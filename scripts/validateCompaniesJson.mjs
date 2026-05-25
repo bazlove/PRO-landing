@@ -2,6 +2,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import {
+  FORBIDDEN_HISTORICAL_AWARDS_KEYS,
   FORBIDDEN_PUBLIC_EXACT_KEYS,
   isForbiddenGenericWebsiteUrl,
 } from "./lib/forbiddenPublicKeys.mjs";
@@ -51,7 +52,6 @@ const allowedFields = [
   "hasAwards2025",
   "presets",
   "signals",
-  "historicalEmployerAwards",
   "hasActiveHiring",
   "hasRemote",
   "hasHighHrRating",
@@ -365,6 +365,17 @@ function validateCompany(company, index) {
       addError(index, `forbidden internal field key: ${key}`);
     }
 
+    if (FORBIDDEN_HISTORICAL_AWARDS_KEYS.has(key)) {
+      const label =
+        typeof company.name === "string" && company.name.trim()
+          ? `${company.name} (id: ${company.id ?? "—"})`
+          : `id: ${company.id ?? "—"}`;
+      addError(
+        index,
+        `Forbidden field ${key} found in row ${label}. Historical awards are removed from the public contract.`,
+      );
+    }
+
     if (forbiddenKeyPatterns.some((pattern) => pattern.test(key))) {
       addError(index, `forbidden/suspicious field key: ${key}`);
     }
@@ -438,10 +449,6 @@ function validateCompany(company, index) {
 
   if (!(company.awards2025 === null || typeof company.awards2025 === "string")) {
     addError(index, "awards2025 must be string | null");
-  }
-
-  if (!(company.historicalEmployerAwards === null || typeof company.historicalEmployerAwards === "string")) {
-    addError(index, "historicalEmployerAwards must be string | null");
   }
 
   if (company.awards2025 === "Не проверено") {
