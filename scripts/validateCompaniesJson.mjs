@@ -51,6 +51,7 @@ const allowedFields = [
   "hasAwards2025",
   "presets",
   "signals",
+  "historicalEmployerAwards",
   "hasActiveHiring",
   "hasRemote",
   "hasHighHrRating",
@@ -98,6 +99,7 @@ const forbiddenKeyPatterns = [
   /size_checked_at/i,
   /public_fit_status/i,
   /active_vacancies_source/i,
+  /historical_employer_awards/i,
   /search_aliases/i,
 ];
 
@@ -436,6 +438,10 @@ function validateCompany(company, index) {
 
   if (!(company.awards2025 === null || typeof company.awards2025 === "string")) {
     addError(index, "awards2025 must be string | null");
+  }
+
+  if (!(company.historicalEmployerAwards === null || typeof company.historicalEmployerAwards === "string")) {
+    addError(index, "historicalEmployerAwards must be string | null");
   }
 
   if (company.awards2025 === "Не проверено") {
