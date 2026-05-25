@@ -34,7 +34,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -96,7 +95,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -122,50 +120,6 @@
         "sourceUrl": "https://career.habr.com/companies/korusconsulting"
       }
     ],
-    "publicStatus": "public"
-  },
-  {
-    "id": "cmp_c7d9acc2ae",
-    "slug": "moyofis",
-    "name": "МойОфис",
-    "city": "Санкт-Петербург",
-    "companyType": "Продукт",
-    "niche": "Product / SaaS",
-    "size": "500+",
-    "careerUrl": "https://myoffice.ru/career/",
-    "vacanciesRange": "0",
-    "vacanciesWeight": 0,
-    "hiringStatus": "На паузе",
-    "workFormat": "Гибрид",
-    "hiringGeo": "РФ",
-    "international": "Нет",
-    "hhRatingDisplay": "4,3",
-    "hhRatingValue": 4.3,
-    "habrRatingDisplay": "4,2",
-    "habrRatingValue": 4.16,
-    "awards2025": null,
-    "hasAwards2025": false,
-    "presets": [
-      "Удалёнка"
-    ],
-    "signals": {
-      "hasDirectApply": true,
-      "hasCareerPage": true,
-      "hiringSource": "HH",
-      "dataFreshness": "fresh",
-      "remoteExplicitlyDenied": false
-    },
-    "historicalEmployerAwards": null,
-    "hasActiveHiring": false,
-    "hasRemote": true,
-    "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-18",
-    "hhVacanciesCheckedAt": "2026-05-18",
-    "websiteUrl": "https://myoffice.ru/",
-    "hhCompanyUrl": "https://hh.ru/employer/213397",
-    "habrUrl": "https://career.habr.com/companies/myoffice",
-    "linkedinUrl": null,
-    "employerRankingBadges": [],
     "publicStatus": "public"
   },
   {
@@ -199,7 +153,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -245,7 +198,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -292,7 +244,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": "Habr Career 2024 — средняя оценка #12; интересные задачи #19; современные технологии #12; соцпакет #18; комфортные условия #13; проф. рост #16; карьерный рост #7; отношения с коллегами #10; признание результатов #16; менеджмент #15; связь с топ-менеджментом #14; компания делает мир лучше #16; Habr Career 2021 / 2020 — historical employer awards",
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -346,7 +297,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": "Habr Career 2024 — средняя оценка #4; интересные задачи #9; современные технологии #8; адекватная зарплата #5; признание #2; 2023 — средняя оценка #15; интересные задачи #11; современные технологии #13; комфортные условия #2",
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -378,12 +328,13 @@
     "hhRatingValue": 3.9,
     "habrRatingDisplay": "4,6",
     "habrRatingValue": 4.63,
-    "awards2025": null,
-    "hasAwards2025": false,
+    "awards2025": "HH 2025 — рейтинг работодателей: Топ-100",
+    "hasAwards2025": true,
     "presets": [
       "Активный найм",
       "Удалёнка",
-      "Высокая HR-оценка"
+      "Высокая HR-оценка",
+      "Награды 2025"
     ],
     "signals": {
       "hasDirectApply": true,
@@ -392,7 +343,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -402,7 +352,15 @@
     "hhCompanyUrl": "https://hh.ru/employer/5744540",
     "habrUrl": "https://career.habr.com/companies/foxford",
     "linkedinUrl": "https://www.linkedin.com/company/edufoxford",
-    "employerRankingBadges": [],
+    "employerRankingBadges": [
+      {
+        "source": "hh",
+        "label": "Топ-100",
+        "description": "Рейтинг работодателей hh.ru",
+        "year": 2025,
+        "sourceUrl": "https://hh.ru/employer/5744540"
+      }
+    ],
     "publicStatus": "public"
   },
   {
@@ -439,7 +397,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -487,7 +444,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -548,7 +504,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -594,7 +549,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -640,7 +594,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -687,7 +640,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": "Habr Career 2018 — средняя оценка #18; интересные задачи #6; современные технологии #18; комфортные условия #19; проф. рост #9; карьерный рост #6; отношения с коллегами #12; признание #17",
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -735,7 +687,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -782,7 +733,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -828,7 +778,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -874,7 +823,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -930,7 +878,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -990,7 +937,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -1036,7 +982,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -1076,11 +1021,10 @@
     "hhRatingValue": 4.3,
     "habrRatingDisplay": "4,5",
     "habrRatingValue": 4.48,
-    "awards2025": "HH 2025 — рейтинг работодателей: Топ-200",
-    "hasAwards2025": true,
+    "awards2025": null,
+    "hasAwards2025": false,
     "presets": [
       "Удалёнка",
-      "Награды 2025",
       "Международные"
     ],
     "signals": {
@@ -1090,11 +1034,10 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-21",
+    "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-19",
     "websiteUrl": "https://redmadrobot.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/567799",
@@ -1143,7 +1086,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -1191,7 +1133,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -1228,9 +1169,9 @@
     "niche": "EdTech",
     "size": "500+",
     "careerUrl": "https://skillbox.ru/jobs/",
-    "vacanciesRange": "1–4",
-    "vacanciesWeight": 1,
-    "hiringStatus": "Точечный",
+    "vacanciesRange": "5–10",
+    "vacanciesWeight": 2,
+    "hiringStatus": "Активный",
     "workFormat": "Смешанный",
     "hiringGeo": "РФ",
     "international": "Нет",
@@ -1241,6 +1182,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
+      "Активный найм",
       "Удалёнка"
     ],
     "signals": {
@@ -1250,8 +1192,7 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
-    "hasActiveHiring": false,
+    "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-25",
@@ -1297,7 +1238,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -1351,7 +1291,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -1398,7 +1337,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -1451,7 +1389,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -1497,7 +1434,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -1551,7 +1487,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": "Habr Career 2021 — средняя оценка #15; интересные задачи #19; соцпакет #20; комфортные условия #19; проф. рост #17; карьерный рост #13; отношения с коллегами #9",
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -1596,7 +1531,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -1640,7 +1574,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -1672,7 +1605,7 @@
     "hhRatingValue": 4.9,
     "habrRatingDisplay": "4,8",
     "habrRatingValue": 4.77,
-    "awards2025": "Habr Career 2025 — средняя оценка #16; отношения с коллегами #9",
+    "awards2025": "Habr Career 2025 — средняя оценка #16; отношения с коллегами #9; Habr Career 2025 — средняя оценка #16; интересные задачи #14; адекватная зарплата #18; соцпакет #18; комфортные условия #11; проф. рост #16; карьерный рост #18; отношения с коллегами #9; признание #20; менеджмент #17",
     "hasAwards2025": true,
     "presets": [
       "Удалёнка",
@@ -1686,7 +1619,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -1703,6 +1635,13 @@
         "description": "Рейтинг работодателей hh.ru",
         "year": 2025,
         "sourceUrl": "https://rating.hh.ru/"
+      },
+      {
+        "source": "habr",
+        "label": "Habr Career 2025 — средняя оценка #16; интересные задачи #14; адекватная зарплата #18; соцпакет #18; комфортные условия #11; проф. рост #16; карьерный рост #18; отношения с коллегами #9; признание #20; менеджмент #17",
+        "description": "Рейтинг Habr Career",
+        "year": 2025,
+        "sourceUrl": "https://career.habr.com/companies/awg-ru"
       }
     ],
     "publicStatus": "public"
@@ -1742,7 +1681,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -1787,7 +1725,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -1831,7 +1768,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -1853,9 +1789,9 @@
     "niche": "E-commerce enablement",
     "size": "201–500",
     "careerUrl": "https://dinnovate.group/career",
-    "vacanciesRange": "1–4",
-    "vacanciesWeight": 1,
-    "hiringStatus": "Точечный",
+    "vacanciesRange": "10+",
+    "vacanciesWeight": 3,
+    "hiringStatus": "Активный",
     "workFormat": "Смешанный",
     "hiringGeo": "РФ",
     "international": "Неясно",
@@ -1866,6 +1802,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
+      "Активный найм",
       "Удалёнка"
     ],
     "signals": {
@@ -1875,8 +1812,7 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
-    "hasActiveHiring": false,
+    "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-25",
@@ -1920,7 +1856,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -1967,11 +1902,10 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-21",
+    "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-19",
     "websiteUrl": "https://www.extyl-pro.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/626837",
@@ -2012,7 +1946,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -2057,7 +1990,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -2101,7 +2033,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -2147,7 +2078,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -2191,7 +2121,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -2236,7 +2165,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -2278,7 +2206,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -2323,7 +2250,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -2369,7 +2295,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -2428,7 +2353,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -2475,7 +2399,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -2522,7 +2445,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -2568,7 +2490,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -2614,7 +2535,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -2662,7 +2582,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -2706,7 +2625,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -2753,7 +2671,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -2797,7 +2714,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -2819,8 +2735,8 @@
     "niche": "Enterprise IT / System integration",
     "size": "201–500",
     "careerUrl": "https://nota.media/career/",
-    "vacanciesRange": "10+",
-    "vacanciesWeight": 3,
+    "vacanciesRange": "5–10",
+    "vacanciesWeight": 2,
     "hiringStatus": "Активный",
     "workFormat": "Смешанный",
     "hiringGeo": "РФ",
@@ -2829,7 +2745,7 @@
     "hhRatingValue": 4.4,
     "habrRatingDisplay": "4,7",
     "habrRatingValue": 4.67,
-    "awards2025": "Habr Career 2025 — интересные задачи #6; современные технологии #12",
+    "awards2025": "Habr Career 2025 — интересные задачи #6; современные технологии #12; Habr Career 2025 — интересные задачи #6; современные технологии #12; комфортные условия #15; связь с топ-менеджментом #14; компания делает мир лучше #18",
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
@@ -2845,7 +2761,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -2855,7 +2770,15 @@
     "hhCompanyUrl": "https://hh.ru/employer/553714",
     "habrUrl": "https://career.habr.com/companies/nota",
     "linkedinUrl": "https://www.linkedin.com/company/notamedia",
-    "employerRankingBadges": [],
+    "employerRankingBadges": [
+      {
+        "source": "habr",
+        "label": "Habr Career 2025 — интересные задачи #6; современные технологии #12; комфортные условия #15; связь с топ-менеджментом #14; компания делает мир лучше #18",
+        "description": "Рейтинг Habr Career",
+        "year": 2025,
+        "sourceUrl": "https://career.habr.com/companies/nota/awards"
+      }
+    ],
     "publicStatus": "public"
   },
   {
@@ -2891,7 +2814,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -2938,7 +2860,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -2990,7 +2911,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -3040,7 +2960,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -3087,7 +3006,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -3119,7 +3037,7 @@
     "hhRatingValue": 4.6,
     "habrRatingDisplay": "4,9",
     "habrRatingValue": 4.93,
-    "awards2025": "Workspace 2025 — дизайн-студии / образование: #1; Awwwards 2025 — Honorable Mention",
+    "awards2025": "Workspace 2025 — дизайн-студии / образование: #1; Awwwards 2025 — DSK Supply: Honorable Mention",
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
@@ -3135,11 +3053,10 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-21",
+    "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-18",
     "websiteUrl": "https://redcollar.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/1737908",
@@ -3185,7 +3102,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -3233,7 +3149,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -3279,7 +3194,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -3323,7 +3237,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -3377,7 +3290,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -3421,13 +3333,12 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-22",
     "hhVacanciesCheckedAt": "2026-05-22",
-    "websiteUrl": "https://www.starlinkrussia.ru/",
+    "websiteUrl": null,
     "hhCompanyUrl": "https://hh.ru/employer/11185156",
     "habrUrl": null,
     "linkedinUrl": null,
@@ -3476,7 +3387,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -3520,7 +3430,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": "Habr Career 2022 — комфортные условия #14",
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -3565,7 +3474,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -3611,7 +3519,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -3657,7 +3564,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": "Habr Career 2024 — современные технологии #8; социальный пакет #17; комфортные условия #5; карьерный рост #19; отношения с коллегами #8; 2023 — интересные задачи #11; современные технологии #18; социальный пакет #18; комфортные условия #1; проф. рост #18; отношения с коллегами #11; компания делает мир лучше #15; 2022 — комфортные условия #13; отношения с коллегами #16; 2020 — интересные задачи #19; отношения с коллегами #18; компания делает мир лучше #12",
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -3666,7 +3572,7 @@
     "websiteUrl": null,
     "hhCompanyUrl": "https://hh.ru/employer/32566",
     "habrUrl": "https://career.habr.com/companies/aero/vacancies",
-    "linkedinUrl": "https://ru.linkedin.com/company/aeroidea",
+    "linkedinUrl": "https://www.linkedin.com/company/aeroidea",
     "employerRankingBadges": [],
     "publicStatus": "public"
   },
@@ -3702,7 +3608,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -3746,7 +3651,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -3801,7 +3705,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -3846,11 +3749,10 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-21",
+    "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-19",
     "websiteUrl": "https://inostudio.com/",
     "hhCompanyUrl": "https://hh.ru/employer/161989",
@@ -3890,7 +3792,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -3936,7 +3837,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": "Habr Career 2019 — интересные задачи #18; современные технологии #15; комфортные условия #5; проф. рост #10; карьерный рост #13; отношения с коллегами #16",
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -3981,7 +3881,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -4026,7 +3925,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -4071,7 +3969,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -4118,7 +4015,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -4162,7 +4058,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -4209,7 +4104,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": "Habr Career 2024 — средняя оценка #13; интересные задачи #4; современные технологии #4; признание #5; 2023 — средняя оценка #5; интересные задачи #5; современные технологии #1; 2021 — адекватная зарплата #1; проф. рост #1; отношения с коллегами #1; связь с топ-менеджментом #1",
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -4259,7 +4153,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -4306,7 +4199,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -4352,7 +4244,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": "Habr Career 2022 — средняя оценка #13; интересные задачи #10; современные технологии #3; комфортные условия #1; проф. рост #1; карьерный рост #1; отношения с коллегами #5; признание #4",
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -4406,7 +4297,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -4450,7 +4340,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -4494,7 +4383,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -4539,7 +4427,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -4584,7 +4471,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -4630,7 +4516,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -4675,7 +4560,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -4719,7 +4603,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -4765,7 +4648,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -4818,7 +4700,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -4863,7 +4744,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -4909,7 +4789,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -4954,7 +4833,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": "Habr Career 2024 — средняя оценка #2; интересные задачи #1; современные технологии #1; адекватная зарплата #1; социальный пакет #4; комфортные условия #1; проф. рост #1; карьерный рост #1; отношения с коллегами #1; признание результатов #1; грамотность менеджмента #1; связь с топ-менеджментом #1; компания делает мир лучше #1; 2023 — средняя оценка #3; интересные задачи #1; современные технологии #1; адекватная зарплата #5; социальный пакет #8; комфортные условия #1; проф. рост #1; карьерный рост #7; отношения с коллегами #1; признание результатов #1; грамотность менеджмента #1; связь с топ-менеджментом #1; компания делает мир лучше #1; 2022 — средняя оценка #8; интересные задачи #7; современные технологии #1; адекватная зарплата #12; социальный пакет #4; комфортные условия #1; проф. рост #15; отношения с коллегами #1; признание результатов #7; грамотность менеджмента #8; связь с топ-менеджментом #1; компания делает мир лучше #1",
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -5008,7 +4886,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -5060,7 +4937,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -5106,7 +4982,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -5152,7 +5027,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -5197,7 +5071,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -5243,7 +5116,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -5291,7 +5163,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -5344,7 +5215,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -5389,7 +5259,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": "Habr Career 2024 — средняя оценка #15; интересные задачи #3; адекватная зарплата #14; комфортные условия #4; проф. рост #4; карьерный рост #8; отношения с коллегами #6; признание результатов #8; связь с топ-менеджментом #7; компания делает мир лучше #1; Habr Career 2021 / 2020 — historical employer awards",
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -5448,7 +5317,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -5480,7 +5348,7 @@
     "hhRatingValue": 4.6,
     "habrRatingDisplay": "Нет отзывов",
     "habrRatingValue": null,
-    "awards2025": "Рейтинг Рунета 2025 — eCommerce: #2; CRM: #1; Symfony: #1; 1С-Битрикс: #1",
+    "awards2025": "Рейтинг Рунета 2025 — Symfony / 1С-Битрикс / VueJS: #1; eCommerce: #2; CRM: #1",
     "hasAwards2025": true,
     "presets": [
       "Удалёнка",
@@ -5494,11 +5362,10 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-21",
+    "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-19",
     "websiteUrl": "https://intaro.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/1431967",
@@ -5541,7 +5408,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -5586,7 +5452,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -5630,7 +5495,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -5684,7 +5548,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -5728,7 +5591,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -5760,7 +5622,7 @@
     "hhRatingValue": 4.9,
     "habrRatingDisplay": "4,9",
     "habrRatingValue": 4.9,
-    "awards2025": "Рейтинг Рунета 2025 — корпоративный сервис «под ключ»: #8; Habr Career 2025 — топ-10 работодателей",
+    "awards2025": "Рейтинг Рунета 2025 — корпоративный сервис «под ключ»: #8",
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
@@ -5775,11 +5637,10 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-21",
+    "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-19",
     "websiteUrl": "https://kotelov.com/",
     "hhCompanyUrl": "https://hh.ru/employer/843093",
@@ -5828,7 +5689,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -5873,7 +5733,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -5918,7 +5777,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": "Habr Career 2024 — средняя оценка #14; интересные задачи #7; современные технологии #15; социальный пакет #7; комфортные условия #1; проф. рост #4; карьерный рост #7; отношения с коллегами #1; признание результатов #3; грамотность менеджмента #13; связь с топ-менеджментом #2; компания делает мир лучше #18",
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -5964,7 +5822,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -5992,8 +5849,8 @@
     "workFormat": "Удалёнка",
     "hiringGeo": "РФ",
     "international": "Частично",
-    "hhRatingDisplay": "4,6",
-    "hhRatingValue": 4.6,
+    "hhRatingDisplay": "Нет отзывов",
+    "hhRatingValue": null,
     "habrRatingDisplay": "4,9",
     "habrRatingValue": 4.89,
     "awards2025": "Habr Career 2025 — Средняя оценка #8; Современные технологии #1; Адекватная зарплата #1; Профессиональный рост #1; Связь с топ-менеджментом #1",
@@ -6012,7 +5869,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -6064,7 +5920,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -6109,7 +5964,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -6155,7 +6009,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -6202,7 +6055,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -6254,7 +6106,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -6299,7 +6150,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -6345,11 +6195,10 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-21",
+    "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-19",
     "websiteUrl": "https://only.digital/",
     "hhCompanyUrl": "https://hh.ru/employer/2049601",
@@ -6390,7 +6239,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -6432,7 +6280,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": "Habr Career 2021 — современные технологии #18; социальный пакет #11; комфортные условия #14; карьерный рост #11; отношения с коллегами #11; компания делает мир лучше #20",
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -6479,7 +6326,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": "Habr Career 2023 — интересные задачи #19; современные технологии #1; комфортные условия #16; проф. рост #12; карьерный рост #8; отношения с коллегами #9",
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -6532,11 +6378,10 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-21",
+    "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-19",
     "websiteUrl": "https://qtim.pro/",
     "hhCompanyUrl": "https://hh.ru/employer/4127247",
@@ -6577,7 +6422,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -6624,7 +6468,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": "Habr Career 2024 — комфортные условия #19; грамотность менеджмента #14; компания делает мир лучше #20",
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -6676,7 +6519,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -6723,7 +6565,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -6776,7 +6617,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": "Habr Career 2024 — интересные задачи #9; комфортные условия #2; проф. рост #19; карьерный рост #11; отношения с коллегами #1; признание результатов #15; менеджмент #18; компания делает мир лучше #6",
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -6830,7 +6670,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -6885,11 +6724,10 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-21",
+    "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-18",
     "websiteUrl": "https://snp.agency/",
     "hhCompanyUrl": "https://hh.ru/employer/894907",
@@ -6930,7 +6768,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -6975,7 +6812,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -7021,7 +6857,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -7067,7 +6902,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -7112,7 +6946,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -7144,7 +6977,7 @@
     "hhRatingValue": 4.7,
     "habrRatingDisplay": "4,9",
     "habrRatingValue": 4.87,
-    "awards2025": "Рейтинг Рунета 2025 — 12 первых мест; контекст: медицина/HR/детское образование #1; performance: HR/детское образование #1",
+    "awards2025": "Рейтинг Рунета 2025 — 12 первых мест; контекст: медицина/HR/детское образование #1; performance: HR/детское образование #1; Habr Career 2025 — средняя оценка #19; интересные задачи #2; современные технологии #7; комфортные условия #20; проф. рост #6; карьерный рост #12; отношения с коллегами #8; признание #16; менеджмент #14; связь с топ-менеджментом #7; компания делает мир лучше #11",
     "hasAwards2025": true,
     "presets": [
       "Удалёнка",
@@ -7158,7 +6991,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -7168,7 +7000,15 @@
     "hhCompanyUrl": "https://hh.ru/employer/1835132",
     "habrUrl": "https://career.habr.com/companies/vbi",
     "linkedinUrl": "https://www.linkedin.com/company/vbi-agency",
-    "employerRankingBadges": [],
+    "employerRankingBadges": [
+      {
+        "source": "habr",
+        "label": "Habr Career 2025 — средняя оценка #19; интересные задачи #2; современные технологии #7; комфортные условия #20; проф. рост #6; карьерный рост #12; отношения с коллегами #8; признание результатов #16; менеджмент #14; связь с топ-менеджментом #7; компания делает мир лучше #11",
+        "description": "Рейтинг Habr Career",
+        "year": 2025,
+        "sourceUrl": "https://career.habr.com/companies/vbi/awards"
+      }
+    ],
     "publicStatus": "public"
   },
   {
@@ -7200,7 +7040,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -7244,7 +7083,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -7290,7 +7128,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -7335,7 +7172,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": "Habr Career 2024 — средняя оценка #7; интересные задачи #1; современные технологии #1; адекватная зарплата #6; социальный пакет #13; комфортные условия #1; проф. рост #7; карьерный рост #2; отношения с коллегами #4; признание результатов #1; грамотность менеджмента #9; связь с топ-менеджментом #10; компания делает мир лучше #1; 2023 — средняя оценка #18; интересные задачи #8; современные технологии #6; комфортные условия #2; проф. рост #5; карьерный рост #2; отношения с коллегами #9; признание результатов #8; связь с топ-менеджментом #12; компания делает мир лучше #2",
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -7380,7 +7216,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -7424,7 +7259,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -7469,7 +7303,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -7513,7 +7346,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -7555,7 +7387,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -7587,10 +7418,11 @@
     "hhRatingValue": 5,
     "habrRatingDisplay": "Нет отзывов",
     "habrRatingValue": null,
-    "awards2025": null,
-    "hasAwards2025": false,
+    "awards2025": "Habr Career 2025 — средняя оценка #13; интересные задачи #12; современные технологии #6; адекватная зарплата #16; проф. рост #8; карьерный рост #18; отношения с коллегами #13; признание #12; менеджмент #16; связь с топ-менеджментом #14; компания делает мир лучше #4",
+    "hasAwards2025": true,
     "presets": [
-      "Высокая HR-оценка"
+      "Высокая HR-оценка",
+      "Награды 2025"
     ],
     "signals": {
       "hasDirectApply": true,
@@ -7599,7 +7431,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -7609,7 +7440,15 @@
     "hhCompanyUrl": "https://hh.ru/employer/5270496",
     "habrUrl": "https://career.habr.com/companies/inetstudio",
     "linkedinUrl": null,
-    "employerRankingBadges": [],
+    "employerRankingBadges": [
+      {
+        "source": "habr",
+        "label": "Habr Career 2025 — средняя оценка #13; интересные задачи #12; современные технологии #6; адекватная зарплата #16; проф. рост #8; карьерный рост #18; отношения с коллегами #13; признание #12; менеджмент #16; связь с топ-менеджментом #14; компания делает мир лучше #4",
+        "description": "Рейтинг Habr Career",
+        "year": 2025,
+        "sourceUrl": "https://career.habr.com/companies/inetstudio/awards"
+      }
+    ],
     "publicStatus": "public"
   },
   {
@@ -7644,7 +7483,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -7688,7 +7526,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -7730,7 +7567,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -7775,7 +7611,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -7819,7 +7654,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -7863,7 +7697,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -7909,7 +7742,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -7953,7 +7785,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -7998,7 +7829,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -8044,7 +7874,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -8086,7 +7915,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -8130,7 +7958,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -8176,7 +8003,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -8218,7 +8044,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -8263,7 +8088,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -8271,50 +8095,6 @@
     "hhVacanciesCheckedAt": "2026-05-19",
     "websiteUrl": "https://mediacontext.pro/",
     "hhCompanyUrl": "https://hh.ru/employer/4699827",
-    "habrUrl": null,
-    "linkedinUrl": null,
-    "employerRankingBadges": [],
-    "publicStatus": "public"
-  },
-  {
-    "id": "cmp_a2d4e0aa4d",
-    "slug": "metateg",
-    "name": "Метатег",
-    "city": "Москва",
-    "companyType": "Performance",
-    "niche": "SEO",
-    "size": "1–50",
-    "careerUrl": "https://metatag.ru/vacancies/",
-    "vacanciesRange": "0",
-    "vacanciesWeight": 0,
-    "hiringStatus": "На паузе",
-    "workFormat": "Не указано",
-    "hiringGeo": "РФ",
-    "international": "Нет",
-    "hhRatingDisplay": "5,0",
-    "hhRatingValue": 5,
-    "habrRatingDisplay": "Нет отзывов",
-    "habrRatingValue": null,
-    "awards2025": null,
-    "hasAwards2025": false,
-    "presets": [
-      "Высокая HR-оценка"
-    ],
-    "signals": {
-      "hasDirectApply": true,
-      "hasCareerPage": true,
-      "hiringSource": "HH",
-      "dataFreshness": "fresh",
-      "remoteExplicitlyDenied": false
-    },
-    "historicalEmployerAwards": null,
-    "hasActiveHiring": false,
-    "hasRemote": false,
-    "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-18",
-    "hhVacanciesCheckedAt": "2026-05-18",
-    "websiteUrl": "https://metatag.ru/",
-    "hhCompanyUrl": "https://hh.ru/employer/3478799",
     "habrUrl": null,
     "linkedinUrl": null,
     "employerRankingBadges": [],
@@ -8354,7 +8134,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -8396,7 +8175,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -8441,7 +8219,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -8485,7 +8262,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -8531,7 +8307,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -8576,7 +8351,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -8621,7 +8395,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -8665,7 +8438,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -8709,7 +8481,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -8754,7 +8525,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -8798,7 +8568,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -8842,7 +8611,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -8886,7 +8654,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -8932,7 +8699,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -8976,7 +8742,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -9021,7 +8786,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -9066,7 +8830,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -9112,7 +8875,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -9157,7 +8919,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -9202,7 +8963,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -9247,7 +9007,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -9291,7 +9050,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -9337,7 +9095,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -9382,7 +9139,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -9427,7 +9183,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -9472,7 +9227,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -9519,7 +9273,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -9571,7 +9324,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -9615,7 +9367,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -9660,7 +9411,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -9705,7 +9455,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -9750,12 +9499,11 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-22",
-    "hhVacanciesCheckedAt": null,
+    "hhVacanciesCheckedAt": "2026-05-22",
     "websiteUrl": "https://www.aporia.su/",
     "hhCompanyUrl": null,
     "habrUrl": "https://career.habr.com/companies/aporia",
@@ -9800,7 +9548,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -9846,7 +9593,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -9892,7 +9638,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -9937,7 +9682,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -9979,7 +9723,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -10021,7 +9764,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -10065,7 +9807,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -10093,8 +9834,8 @@
     "workFormat": "Не указано",
     "hiringGeo": "Локально",
     "international": "Нет",
-    "hhRatingDisplay": "4.9",
-    "hhRatingValue": null,
+    "hhRatingDisplay": "4,9",
+    "hhRatingValue": 4.9,
     "habrRatingDisplay": "4,9",
     "habrRatingValue": 4.94,
     "awards2025": "Habr Career 2025 — Средняя оценка #5; Адекватная зарплата #1; Комфортные условия труда #1; Отношения с коллегами #1; Рейтинг Рунета 2025 — комплексная разработка / Самара: #1",
@@ -10110,12 +9851,11 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-22",
-    "hhVacanciesCheckedAt": null,
+    "hhVacanciesCheckedAt": "2026-05-22",
     "websiteUrl": "https://capyba.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/2523583",
     "habrUrl": "https://career.habr.com/companies/capybara-digital",
@@ -10162,7 +9902,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -10208,7 +9947,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -10253,7 +9991,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -10298,7 +10035,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -10342,7 +10078,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -10386,7 +10121,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -10431,7 +10165,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -10477,7 +10210,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -10522,7 +10254,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -10567,7 +10298,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -10611,7 +10341,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -10657,7 +10386,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -10703,7 +10431,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -10750,12 +10477,11 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-22",
-    "hhVacanciesCheckedAt": null,
+    "hhVacanciesCheckedAt": "2026-05-22",
     "websiteUrl": "https://fuse8.ru/",
     "hhCompanyUrl": null,
     "habrUrl": "https://career.habr.com/companies/fuse8",
@@ -10803,7 +10529,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -10848,7 +10573,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -10892,7 +10616,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -10936,7 +10659,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -10981,7 +10703,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -11025,7 +10746,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -11071,7 +10791,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -11117,7 +10836,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -11159,7 +10877,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -11204,7 +10921,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -11246,7 +10962,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -11290,7 +11005,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -11337,7 +11051,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": "Habr Career 2024 — интересные задачи #9; проф. рост #19; карьерный рост #17; отношения с коллегами #12; признание #15; грамотность менеджмента #10; компания делает мир лучше #6",
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -11390,7 +11103,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -11436,7 +11148,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -11476,7 +11187,7 @@
     "hhRatingValue": 4.8,
     "habrRatingDisplay": "Нет отзывов",
     "habrRatingValue": null,
-    "awards2025": "Рейтинг Рунета 2025 — образовательные платформы: #3; общий рейтинг: #31; Tagline 2025 — топ-75",
+    "awards2025": "Рейтинг Рунета 2025 — образовательные платформы: #3; сайты и веб-сервисы: #31; Tagline 2025 — топ-75",
     "hasAwards2025": true,
     "presets": [
       "Удалёнка",
@@ -11490,11 +11201,10 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-21",
+    "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-18",
     "websiteUrl": "https://machaon.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/1425119",
@@ -11534,7 +11244,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -11578,7 +11287,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -11623,7 +11331,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -11669,7 +11376,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -11723,7 +11429,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -11768,7 +11473,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -11813,7 +11517,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -11857,7 +11560,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -11901,7 +11603,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -11946,7 +11647,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -11992,7 +11692,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -12037,7 +11736,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -12082,7 +11780,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -12127,7 +11824,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -12173,7 +11869,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": "Habr Career 2024 — средняя оценка #11; интересные задачи #19; современные технологии #1; адекватная зарплата #14; соцпакет #3; комфортные условия #1; проф. рост #17; карьерный рост #8; отношения с коллегами #1; признание результатов #4; менеджмент #15; связь с топ-менеджментом #3; компания делает мир лучше #1; Habr Career 2023 / 2022 — historical employer awards",
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -12227,7 +11922,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -12271,7 +11965,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -12315,7 +12008,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -12359,7 +12051,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -12406,12 +12097,11 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-22",
-    "hhVacanciesCheckedAt": null,
+    "hhVacanciesCheckedAt": "2026-05-22",
     "websiteUrl": "https://prideinbrains.com/",
     "hhCompanyUrl": null,
     "habrUrl": "https://career.habr.com/companies/prideinbrains",
@@ -12461,7 +12151,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -12513,7 +12202,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -12558,7 +12246,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -12602,7 +12289,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -12644,7 +12330,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -12688,7 +12373,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -12732,7 +12416,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -12777,7 +12460,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -12821,7 +12503,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -12865,7 +12546,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -12909,7 +12589,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -12951,7 +12630,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -12996,7 +12674,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -13041,7 +12718,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -13088,7 +12764,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -13134,7 +12809,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -13176,7 +12850,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -13222,7 +12895,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -13268,7 +12940,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -13312,7 +12983,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -13356,7 +13026,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -13400,7 +13069,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -13445,7 +13113,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -13489,7 +13156,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
@@ -13534,7 +13200,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -13584,7 +13249,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -13628,7 +13292,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -13637,6 +13300,47 @@
     "websiteUrl": null,
     "hhCompanyUrl": "https://hh.ru/employer/5411338",
     "habrUrl": "https://career.habr.com/companies/zapal-agency",
+    "linkedinUrl": null,
+    "employerRankingBadges": [],
+    "publicStatus": "public"
+  },
+  {
+    "id": "cmp_e2e237eb6a",
+    "slug": "mediakod",
+    "name": "МедиаКод",
+    "city": "Воронеж",
+    "companyType": "Digital",
+    "niche": "Performance marketing",
+    "size": null,
+    "careerUrl": "https://mediakod.ru/",
+    "vacanciesRange": "1–4",
+    "vacanciesWeight": 1,
+    "hiringStatus": "Точечный",
+    "workFormat": "Офис",
+    "hiringGeo": "Локально",
+    "international": "Нет",
+    "hhRatingDisplay": "Нет отзывов",
+    "hhRatingValue": null,
+    "habrRatingDisplay": "Нет отзывов",
+    "habrRatingValue": null,
+    "awards2025": null,
+    "hasAwards2025": false,
+    "presets": [],
+    "signals": {
+      "hasDirectApply": true,
+      "hasCareerPage": true,
+      "hiringSource": "HH",
+      "dataFreshness": "fresh",
+      "remoteExplicitlyDenied": false
+    },
+    "hasActiveHiring": false,
+    "hasRemote": false,
+    "hasHighHrRating": false,
+    "lastCheckedAt": "2026-05-23",
+    "hhVacanciesCheckedAt": "2026-05-23",
+    "websiteUrl": null,
+    "hhCompanyUrl": "https://hh.ru/employer/12231809",
+    "habrUrl": null,
     "linkedinUrl": null,
     "employerRankingBadges": [],
     "publicStatus": "public"
@@ -13672,7 +13376,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -13714,7 +13417,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -13758,7 +13460,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
@@ -13804,7 +13505,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -13812,6 +13512,47 @@
     "hhVacanciesCheckedAt": "2026-05-18",
     "websiteUrl": "https://crmacademy.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/9295341",
+    "habrUrl": null,
+    "linkedinUrl": null,
+    "employerRankingBadges": [],
+    "publicStatus": "public"
+  },
+  {
+    "id": "cmp_9ec5324556",
+    "slug": "daskipper",
+    "name": "DA!Skipper",
+    "city": "Москва",
+    "companyType": "Digital",
+    "niche": "Media / Content / PR",
+    "size": null,
+    "careerUrl": "https://www.daskipper.com/",
+    "vacanciesRange": "0",
+    "vacanciesWeight": 0,
+    "hiringStatus": "На паузе",
+    "workFormat": "Офис",
+    "hiringGeo": "Локально",
+    "international": "Нет",
+    "hhRatingDisplay": "Нет отзывов",
+    "hhRatingValue": null,
+    "habrRatingDisplay": "Нет отзывов",
+    "habrRatingValue": null,
+    "awards2025": null,
+    "hasAwards2025": false,
+    "presets": [],
+    "signals": {
+      "hasDirectApply": true,
+      "hasCareerPage": true,
+      "hiringSource": "Career site",
+      "dataFreshness": "fresh",
+      "remoteExplicitlyDenied": false
+    },
+    "hasActiveHiring": false,
+    "hasRemote": false,
+    "hasHighHrRating": false,
+    "lastCheckedAt": "2026-05-23",
+    "hhVacanciesCheckedAt": "2026-05-23",
+    "websiteUrl": null,
+    "hhCompanyUrl": null,
     "habrUrl": null,
     "linkedinUrl": null,
     "employerRankingBadges": [],
@@ -13849,7 +13590,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
@@ -13891,7 +13631,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
@@ -13936,7 +13675,6 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "historicalEmployerAwards": null,
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": true,
