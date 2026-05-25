@@ -6,8 +6,10 @@ import {
   getDrawerHiringStatusValue,
   getDrawerHeaderMetaParts,
   getDrawerSummaryChips,
+  getDrawerSignalChips,
   shouldShowDrawerInternationalLine,
   filterDrawerAwardsByEmployerRankingBadges,
+  getHistoricalEmployerAwardItems,
   splitAwards,
 } from "../../lib/digital/display";
 import DigitalRatingCell from "./DigitalRatingCell.astro";
@@ -23,6 +25,7 @@ interface Props {
 
 const { company } = Astro.props;
 const summaryChips = getDrawerSummaryChips(company);
+const signalChips = getDrawerSignalChips(company);
 const hiringStatusValue = getDrawerHiringStatusValue(company);
 const hiringDetailParts = buildDrawerHiringDetailParts(company);
 const titleId = `digital-company-detail-title-${company.id}`;
@@ -32,6 +35,7 @@ const awardItems = filterDrawerAwardsByEmployerRankingBadges(
   splitAwards(company.awards2025),
   employerRankingBadges,
 );
+const historicalAwardItems = getHistoricalEmployerAwardItems(company);
 
 const headerMetaParts = getDrawerHeaderMetaParts(company);
 
@@ -94,6 +98,16 @@ const hasSourceLinks = sourceLinks.length > 0;
             <span class:list={["digital-badge", "digital-company-detail__chip", chip.variantClass]}>
               {chip.label}
             </span>
+          ))}
+        </div>
+      )
+    }
+
+    {
+      signalChips.length > 0 && (
+        <div class="digital-company-detail__signals" aria-label="Сигналы для кандидата">
+          {signalChips.map((chip) => (
+            <span class:list={["digital-company-detail__chip", chip.variantClass]}>{chip.label}</span>
           ))}
         </div>
       )
@@ -262,6 +276,28 @@ const hasSourceLinks = sourceLinks.length > 0;
             </button>
           )
         }
+      </section>
+    )
+  }
+
+  {
+    historicalAwardItems.length > 0 && (
+      <section
+        class="digital-company-detail__section digital-company-detail__section--historical-awards"
+        aria-labelledby={`${company.id}-historical-awards`}
+      >
+        <h3 id={`${company.id}-historical-awards`} class="digital-company-detail__heading">
+          Исторические отметки
+        </h3>
+        <ul class="digital-company-detail__awards-list digital-company-detail__awards-list--muted">
+          {
+            historicalAwardItems.map((item) => (
+              <li class="digital-company-detail__awards-item digital-company-detail__awards-item--muted">
+                {item}
+              </li>
+            ))
+          }
+        </ul>
       </section>
     )
   }
