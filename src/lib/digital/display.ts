@@ -487,31 +487,43 @@ export function formatEmployerRankingBadgeLabel(
   return trimmed;
 }
 
-/** Drawer badge title: shorten long Habr multi-category labels. */
+/** Drawer badge title: short Habr label without category counts. */
 export function getEmployerRankingBadgeDisplayLabel(badge: EmployerRankingBadge): string {
-  const trimmed = badge.label.trim();
-
-  if (badge.source !== "habr" || !trimmed.includes(";")) {
-    return formatEmployerRankingBadgeLabel(badge.source, trimmed);
+  if (badge.source !== "habr") {
+    return formatEmployerRankingBadgeLabel(badge.source, badge.label.trim());
   }
 
-  const segments = trimmed
-    .split(";")
-    .map((segment) => segment.trim())
-    .filter(Boolean);
-  const first = segments[0] ?? trimmed;
-  const main = formatEmployerRankingBadgeLabel("habr", first);
-  const extraCount = segments.length - 1;
+  const label = String(badge.label ?? "").trim();
 
-  if (extraCount <= 0) return main;
-  return `${main} · +${extraCount} категорий`;
+  const averageMatch = label.match(
+    /(?:средн(?:яя|ей)\s+оценк\w*|average\s+rating)[^#№]*(?:#|№)\s*(\d+)/i,
+  );
+  if (averageMatch) return `Средняя оценка #${averageMatch[1]}`;
+
+  const firstSegment = label.split(";")[0]?.trim();
+  if (firstSegment && firstSegment.length <= 42) return firstSegment;
+
+  return "Habr Career";
 }
 
-/** Drawer-only: split passive historical employer awards into list items. */
-export function getHistoricalEmployerAwardItems(company: CompanyPublic): string[] {
-  const raw = company.historicalEmployerAwards?.trim();
-  if (!raw) return [];
-  return splitAwards(raw);
+/** Generic drawer badge subtitle (no category counts). */
+export function getEmployerRankingBadgeDescriptionText(badge: EmployerRankingBadge): string {
+  const yearSuffix = badge.year ? ` · ${badge.year}` : "";
+  if (badge.source === "habr") return `Рейтинг Habr Career${yearSuffix}`;
+  return `Рейтинг работодателей hh.ru${yearSuffix}`;
+}
+
+/** Drawer awards: hide obvious pre-2025 years (display-only). */
+export function isCurrentDrawerAwardItem(item: string): boolean {
+  const text = String(item ?? "");
+  if (/\b202[0-4]\b/.test(text)) return false;
+  return true;
+}
+
+/** Drawer `awards2025` list: current-year items only, with badge dedupe. */
+export function getDrawerAwards2025DisplayItems(company: CompanyPublic): string[] {
+  const items = splitAwards(company.awards2025).filter(isCurrentDrawerAwardItem);
+  return filterDrawerAwardsByEmployerRankingBadges(items, company.employerRankingBadges);
 }
 
 /** Split awards/rankings string into list items for drawer. */
@@ -605,6 +617,13 @@ function isAwardDuplicatedByEmployerBadge(award: string, badge: EmployerRankingB
   }
 
   return false;
+}
+
+/** @deprecated Historical awards are not shown in public drawer MVP. */
+export function getHistoricalEmployerAwardItems(company: CompanyPublic): string[] {
+  const raw = company.historicalEmployerAwards?.trim();
+  if (!raw) return [];
+  return splitAwards(raw);
 }
 
 /** Hide award lines already shown as employer ranking trust badges in the drawer. */
