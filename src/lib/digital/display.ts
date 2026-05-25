@@ -2,6 +2,9 @@ import type { CompanyPublic, CompanySignals, EmployerRankingBadge } from "../../
 import { isStaleDate } from "./normalizeCompany";
 import { getTagColorClass } from "./tagColors";
 
+/** Drawer awards list: visible items before «Показать ещё». */
+export const DRAWER_AWARDS_VISIBLE_COUNT = 4;
+
 /** Mobile cards: max visible signal badges before `+N`. */
 export const DIGITAL_BADGE_MAX_VISIBLE_MOBILE = 3;
 
@@ -43,52 +46,20 @@ export function getCompanyBadges(company: CompanyPublic): string[] {
   return company.presets.map(getPresetDisplayLabel);
 }
 
-export const DRAWER_SIGNAL_CHIP_CLASS = "digital-badge digital-badge--signal";
-
-function formatHiringSourceLabel(source: CompanySignals["hiringSource"]): string | null {
+/** Inline hiring metadata (drawer body, not header chips). */
+export function formatDrawerHiringSourceInline(source: CompanySignals["hiringSource"]): string | null {
   switch (source) {
     case "HH":
-      return "Источник найма: HH";
+      return "Источник: HH";
     case "Habr":
-      return "Источник найма: Habr";
+      return "Источник: Habr";
     case "Career site":
-      return "Источник найма: сайт компании";
+      return "Источник: сайт компании";
     case "Mixed":
-      return "Источник найма: несколько источников";
+      return "Источник: несколько источников";
     default:
       return null;
   }
-}
-
-/** Drawer-only factual metadata chips (not quick filters). */
-export function getDrawerSignalChips(company: CompanyPublic): DrawerSummaryChip[] {
-  const chips: DrawerSummaryChip[] = [];
-  const { signals } = company;
-
-  if (signals.hasDirectApply) {
-    chips.push({ label: "Прямой отклик", variantClass: DRAWER_SIGNAL_CHIP_CLASS });
-  }
-
-  if (signals.hasCareerPage) {
-    chips.push({ label: "Карьерная страница", variantClass: DRAWER_SIGNAL_CHIP_CLASS });
-  }
-
-  const hiringSourceLabel = formatHiringSourceLabel(signals.hiringSource);
-  if (hiringSourceLabel) {
-    chips.push({ label: hiringSourceLabel, variantClass: DRAWER_SIGNAL_CHIP_CLASS });
-  }
-
-  if (signals.dataFreshness === "fresh") {
-    chips.push({ label: "Проверено недавно", variantClass: DRAWER_SIGNAL_CHIP_CLASS });
-  } else if (signals.dataFreshness === "stale") {
-    chips.push({ label: "Нужна перепроверка", variantClass: DRAWER_SIGNAL_CHIP_CLASS });
-  }
-
-  if (signals.remoteExplicitlyDenied) {
-    chips.push({ label: "Удалёнка не рассматривается", variantClass: DRAWER_SIGNAL_CHIP_CLASS });
-  }
-
-  return chips;
 }
 
 /** Priority-ordered status chips for the mobile catalog card (one row). */
@@ -342,6 +313,13 @@ export function getDrawerSummaryChips(company: CompanyPublic): DrawerSummaryChip
     });
   }
 
+  if (company.hasAwards2025 && chips.length < DRAWER_SUMMARY_CHIP_MAX) {
+    chips.push({
+      label: BADGE_AWARDS,
+      variantClass: getBadgeVariantClass(BADGE_AWARDS),
+    });
+  }
+
   return chips.slice(0, DRAWER_SUMMARY_CHIP_MAX);
 }
 
@@ -407,26 +385,38 @@ export function formatRussianDayMonth(dateValue: string | null | undefined): str
   return `${date.getDate()} ${RUSSIAN_MONTHS_GENITIVE[date.getMonth()]}`;
 }
 
-/** Drawer hiring detail line parts (vacancies + optional HH check). */
+/** Drawer hiring metadata row (vacancies · source · direct apply · check date). */
 export function buildDrawerHiringDetailParts(company: CompanyPublic): string[] {
-  if (company.vacanciesRange === "Не проверено") {
-    return ["Вакансии не проверены"];
-  }
-
   const parts: string[] = [];
+  const { signals } = company;
 
-  if (company.vacanciesRange === "0") {
+  if (company.vacanciesRange === "Не проверено") {
+    parts.push("Вакансии не проверены");
+  } else if (company.vacanciesRange === "0") {
     parts.push("Нет активных вакансий");
   } else {
     parts.push(formatVacanciesRangeCopy(company.vacanciesRange));
   }
 
+  const sourceInline = formatDrawerHiringSourceInline(signals.hiringSource);
+  if (sourceInline) {
+    parts.push(sourceInline);
+  }
+
+  if (signals.hasDirectApply) {
+    parts.push("Прямой отклик");
+  }
+
   if (company.hhVacanciesCheckedAt) {
     const dayMonth = formatRussianDayMonth(company.hhVacanciesCheckedAt);
     if (dayMonth) {
-      parts.push(`Проверено на HH: ${dayMonth}`);
+      const checkedLabel =
+        signals.hiringSource === "HH"
+          ? `Проверено: ${dayMonth}`
+          : `Проверено на HH: ${dayMonth}`;
+      parts.push(checkedLabel);
       if (isStaleDate(company.hhVacanciesCheckedAt)) {
-        parts.push("Требует повторной проверки");
+        parts.push("Нужна перепроверка");
       }
     }
   }
@@ -467,6 +457,26 @@ export function formatEmployerRankingBadgeLabel(
   }
 
   return trimmed;
+}
+
+/** Drawer badge title: shorten long Habr multi-category labels. */
+export function getEmployerRankingBadgeDisplayLabel(badge: EmployerRankingBadge): string {
+  const trimmed = badge.label.trim();
+
+  if (badge.source !== "habr" || !trimmed.includes(";")) {
+    return formatEmployerRankingBadgeLabel(badge.source, trimmed);
+  }
+
+  const segments = trimmed
+    .split(";")
+    .map((segment) => segment.trim())
+    .filter(Boolean);
+  const first = segments[0] ?? trimmed;
+  const main = formatEmployerRankingBadgeLabel("habr", first);
+  const extraCount = segments.length - 1;
+
+  if (extraCount <= 0) return main;
+  return `${main} · +${extraCount} категорий`;
 }
 
 /** Drawer-only: split passive historical employer awards into list items. */
