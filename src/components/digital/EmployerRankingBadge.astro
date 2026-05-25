@@ -1,6 +1,9 @@
 ---
 import type { EmployerRankingBadge } from "../../types/digital";
-import { getEmployerRankingBadgeDisplayLabel } from "../../lib/digital/display";
+import {
+  getEmployerRankingBadgeDescriptionText,
+  getEmployerRankingBadgeDisplayLabel,
+} from "../../lib/digital/display";
 import hhWhiteLogo from "../../assets/digital/min-hh-white.png";
 import habrCareerIcon from "../../assets/digital/icons/habr-career.svg";
 
@@ -22,7 +25,7 @@ const sourceConfig = {
 } as const;
 
 const config = sourceConfig[badge.source];
-const descriptionText = badge.year ? `${badge.description} · ${badge.year}` : badge.description;
+const descriptionText = getEmployerRankingBadgeDescriptionText(badge);
 const displayLabel = getEmployerRankingBadgeDisplayLabel(badge);
 ---
 
