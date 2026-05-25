@@ -45,8 +45,6 @@ export const mockCompanies: CompanyPublic[] = [
     habrUrl: null,
     linkedinUrl: null,
     employerRankingBadges: [],
-    historicalEmployerAwards:
-      "Рейтинг Рунета 2024 — SEO: #3; Ruward 2023 — агентство года: #5",
     publicStatus: "public",
   },
   {
@@ -82,7 +80,6 @@ export const mockCompanies: CompanyPublic[] = [
     habrUrl: null,
     linkedinUrl: null,
     employerRankingBadges: [],
-    historicalEmployerAwards: null,
     publicStatus: "public",
   },
   {
@@ -118,7 +115,6 @@ export const mockCompanies: CompanyPublic[] = [
     habrUrl: null,
     linkedinUrl: null,
     employerRankingBadges: [],
-    historicalEmployerAwards: null,
     publicStatus: "public",
   },
   {
@@ -154,7 +150,6 @@ export const mockCompanies: CompanyPublic[] = [
     habrUrl: null,
     linkedinUrl: null,
     employerRankingBadges: [],
-    historicalEmployerAwards: null,
     publicStatus: "public",
   },
   {
@@ -190,7 +185,6 @@ export const mockCompanies: CompanyPublic[] = [
     habrUrl: null,
     linkedinUrl: null,
     employerRankingBadges: [],
-    historicalEmployerAwards: null,
     publicStatus: "public",
   },
   {
@@ -226,7 +220,6 @@ export const mockCompanies: CompanyPublic[] = [
     habrUrl: null,
     linkedinUrl: null,
     employerRankingBadges: [],
-    historicalEmployerAwards: null,
     publicStatus: "public",
   },
   {
@@ -262,7 +255,6 @@ export const mockCompanies: CompanyPublic[] = [
     habrUrl: null,
     linkedinUrl: null,
     employerRankingBadges: [],
-    historicalEmployerAwards: null,
     publicStatus: "public",
   },
   {
@@ -298,7 +290,6 @@ export const mockCompanies: CompanyPublic[] = [
     habrUrl: null,
     linkedinUrl: null,
     employerRankingBadges: [],
-    historicalEmployerAwards: null,
     publicStatus: "public",
   },
   {
@@ -334,7 +325,6 @@ export const mockCompanies: CompanyPublic[] = [
     habrUrl: null,
     linkedinUrl: null,
     employerRankingBadges: [],
-    historicalEmployerAwards: null,
     publicStatus: "public",
   },
   {
@@ -370,7 +360,6 @@ export const mockCompanies: CompanyPublic[] = [
     habrUrl: null,
     linkedinUrl: null,
     employerRankingBadges: [],
-    historicalEmployerAwards: null,
     publicStatus: "public",
   },
   {
@@ -406,7 +395,6 @@ export const mockCompanies: CompanyPublic[] = [
     habrUrl: null,
     linkedinUrl: null,
     employerRankingBadges: [],
-    historicalEmployerAwards: null,
     publicStatus: "public",
   },
   {
@@ -442,7 +430,6 @@ export const mockCompanies: CompanyPublic[] = [
     habrUrl: null,
     linkedinUrl: null,
     employerRankingBadges: [],
-    historicalEmployerAwards: null,
     publicStatus: "public",
   },
   {
@@ -478,7 +465,6 @@ export const mockCompanies: CompanyPublic[] = [
     habrUrl: null,
     linkedinUrl: null,
     employerRankingBadges: [],
-    historicalEmployerAwards: null,
     publicStatus: "public",
   },
   {
@@ -514,7 +500,6 @@ export const mockCompanies: CompanyPublic[] = [
     habrUrl: null,
     linkedinUrl: null,
     employerRankingBadges: [],
-    historicalEmployerAwards: null,
     publicStatus: "public",
   },
   {
@@ -550,7 +535,6 @@ export const mockCompanies: CompanyPublic[] = [
     habrUrl: null,
     linkedinUrl: null,
     employerRankingBadges: [],
-    historicalEmployerAwards: null,
     publicStatus: "public",
   },
 ];
