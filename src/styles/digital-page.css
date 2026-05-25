@@ -3192,18 +3192,15 @@ body.digital-drawer-open {
   white-space: nowrap;
 }
 
-.digital-company-detail__inline-signal {
-  display: inline-flex;
-  align-items: center;
-  padding: 1px 5px;
-  border-radius: 999px;
-  border: 1px solid rgba(203, 213, 225, 0.65);
-  background: rgba(248, 250, 252, 0.72);
-  color: var(--text-muted);
-  font-size: 0.84em;
+/* Inline hiring signal: same chip system as header tags, smaller/lighter (slate). */
+.digital-company-detail__inline-signal.digital-badge {
+  min-height: 20px;
+  padding: 1px 7px;
+  font-size: 11px;
   font-weight: 600;
   line-height: 1.35;
-  vertical-align: baseline;
+  vertical-align: middle;
+  white-space: nowrap;
 }
 
 .digital-company-detail__awards-list {
