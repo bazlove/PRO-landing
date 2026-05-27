@@ -542,9 +542,9 @@ function validateCompany(company, index) {
     addError(index, `hasActiveHiring must be ${expectedHasActiveHiring}`);
   }
 
-  const expectedHasRemote = ["Удалёнка", "Гибрид", "Смешанный"].includes(company.workFormat);
-  if (company.hasRemote !== expectedHasRemote) {
-    addError(index, `hasRemote must be ${expectedHasRemote}`);
+  const hasRemotePreset = Array.isArray(company.presets) && company.presets.includes("Удалёнка");
+  if (company.hasRemote !== hasRemotePreset) {
+    addError(index, 'hasRemote must match presence of "Удалёнка" in presets');
   }
 
   const expectedHasHighHrRating =
@@ -589,6 +589,37 @@ function validateCompany(company, index) {
 
   if (Object.prototype.hasOwnProperty.call(company, "itAccreditation")) {
     validateItAccreditation(company.itAccreditation, index);
+  }
+}
+
+function validateRemotePresetContractExamples() {
+  const cases = [
+    {
+      name: "A/B remote",
+      company: { workFormat: "Удалёнка", hasRemote: true, presets: ["Удалёнка"] },
+      shouldPass: true,
+    },
+    {
+      name: "C/D weak remote",
+      company: { workFormat: "Смешанный", hasRemote: false, presets: [] },
+      shouldPass: true,
+    },
+    {
+      name: "Invalid remote drift",
+      company: { workFormat: "Офис", hasRemote: true, presets: [] },
+      shouldPass: false,
+    },
+  ];
+
+  for (const item of cases) {
+    const hasRemotePreset = item.company.presets.includes("Удалёнка");
+    const passes = item.company.hasRemote === hasRemotePreset;
+    if (passes !== item.shouldPass) {
+      addError(
+        null,
+        `remote contract regression failed for "${item.name}" (workFormat=${item.company.workFormat}, hasRemote=${item.company.hasRemote}, presets=[${item.company.presets.join(", ")}])`,
+      );
+    }
   }
 }
 
@@ -649,6 +680,8 @@ if (!fs.existsSync(absolutePath)) {
     }
   }
 }
+
+validateRemotePresetContractExamples();
 
 if (errors.length > 0) {
   console.error(`[digital-contract] FAILED with ${errors.length} error(s):`);
