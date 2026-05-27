@@ -47,6 +47,9 @@ const REQUIRED_PUBLIC_EXPORT_COLUMNS = [
   "habr_employer_rank_label",
   "habr_employer_rank_year",
   "habr_employer_rank_source_url",
+  "it_accreditation_status",
+  "it_accreditation_checked_at",
+  "it_accreditation_source_url",
 ] as const;
 
 function getHeaderKeys(rows: Record<string, unknown>[]): Set<string> {
