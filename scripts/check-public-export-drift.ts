@@ -77,6 +77,19 @@ function normalizeOptionalTextValue(value: string): string {
   return value.trim();
 }
 
+function parseBooleanFlag(value: unknown): boolean | null {
+  if (value === true || value === 1) return true;
+  if (value === false || value === 0) return false;
+
+  const normalized = String(value ?? "").trim().toLowerCase();
+  if (!normalized) return null;
+
+  if (["true", "1", "yes", "y", "да", "истина"].includes(normalized)) return true;
+  if (["false", "0", "no", "n", "нет", "ложь"].includes(normalized)) return false;
+
+  return null;
+}
+
 const DRIFT_FIELDS: FieldSpec[] = [
   { label: "company name", keys: ["name", "company", "companyName", "Название компании", "Компания"] },
   {
@@ -91,6 +104,7 @@ const DRIFT_FIELDS: FieldSpec[] = [
   },
   { label: "hiring status", keys: ["hiringStatus", "hiring_status", "Статус найма"] },
   { label: "work format", keys: ["workFormat", "work_format", "Формат работы"] },
+  { label: "has_remote", keys: ["has_remote", "hasRemote"], optional: true },
   { label: "hiring geography", keys: ["hiringGeo", "hiring_geo", "География найма"] },
   { label: "HH rating display", keys: ["hhRatingDisplay", "hh_rating_display", "Рейтинг HH (display)"] },
   { label: "HH rating value", keys: ["hhRatingValue", "hh_rating_value", "Рейтинг HH"] },
@@ -221,6 +235,17 @@ function hiringFieldsDisagree(publicRow: Record<string, unknown>): string | null
   if (statusActive || presetActive || flagActive) return null;
 
   return `vacanciesRange=${range} but hiring status/preset/active flag are not active`;
+}
+
+function remotePresetFieldsDisagree(publicRow: Record<string, unknown>): string | null {
+  const presets = pickString(publicRow, ["Пресеты", "presets", "presets_source"]);
+  const hasRemoteRaw = pickString(publicRow, ["has_remote", "hasRemote"]);
+
+  const presetRemote = /(^|[;,|]\s*)Удалёнка(\s*[;,|]|$)/i.test(presets);
+  const hasRemote = parseBooleanFlag(hasRemoteRaw);
+  if (hasRemote === null || hasRemote === presetRemote) return null;
+
+  return `has_remote=${hasRemoteRaw || "(empty)"} but presets=${presets || "(empty)"}`;
 }
 
 function compareField(
@@ -409,6 +434,16 @@ function runDriftCheck(xlsxPath: string): number {
         companyId,
         field: "hiring consistency",
         message: hiringMismatch,
+      });
+    }
+
+    const remoteMismatch = remotePresetFieldsDisagree(publicRow);
+    if (remoteMismatch) {
+      issues.push({
+        severity: "critical",
+        companyId,
+        field: "remote consistency",
+        message: remoteMismatch,
       });
     }
 
