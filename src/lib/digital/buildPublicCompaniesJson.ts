@@ -91,6 +91,12 @@ export function toPublicCompanyJsonRecord(company: CompanyPublic): CompanyPublic
     record.itAccreditation = recalculated.itAccreditation;
   }
 
+  if (record.hasRemote !== record.presets.includes("Удалёнка")) {
+    throw new Error(
+      `[digital] Remote preset drift for ${record.id}: hasRemote=${record.hasRemote}, presets=${record.presets.join("; ")}`,
+    );
+  }
+
   return record;
 }
 
