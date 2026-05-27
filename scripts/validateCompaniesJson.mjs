@@ -65,7 +65,9 @@ const allowedFields = [
   "employerRankingBadges",
 ];
 
-const allowedFieldSet = new Set(allowedFields);
+const optionalFields = ["itAccreditation"];
+
+const allowedFieldSet = new Set([...allowedFields, ...optionalFields]);
 
 const allowedVacanciesRange = new Set(["10+", "5–10", "1–4", "0", "Не проверено"]);
 const allowedHiringStatus = new Set(["Активный", "Точечный", "На паузе", "Неясно", "Не проверено"]);
@@ -307,6 +309,44 @@ const allowedHiringSources = new Set(["HH", "Habr", "Career site", "Mixed"]);
 const allowedDataFreshness = new Set(["fresh", "stale", "unknown"]);
 const forbiddenPresetValues = new Set(["Прямой отклик", "Есть удалёнка"]);
 
+const allowedItAccreditationStatuses = new Set([
+  "confirmed_official",
+  "confirmed_open_registry_mention",
+  "hh_accreditation_signal",
+  "manual_check_required",
+  "not_confirmed",
+  "not_applicable_foreign_entity",
+]);
+
+const allowedItAccreditationKeys = new Set(["status", "checkedAt", "sourceUrl"]);
+
+function validateItAccreditation(value, index) {
+  if (value === null || value === undefined) return;
+
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    addError(index, "itAccreditation must be an object or omitted");
+    return;
+  }
+
+  for (const key of Object.keys(value)) {
+    if (!allowedItAccreditationKeys.has(key)) {
+      addError(index, `itAccreditation extra field is not allowed: ${key}`);
+    }
+  }
+
+  if (!allowedItAccreditationStatuses.has(value.status)) {
+    addError(index, "itAccreditation.status must be a known accreditation status");
+  }
+
+  if (!isIsoDateOrNull(value.checkedAt)) {
+    addError(index, "itAccreditation.checkedAt must be ISO YYYY-MM-DD or null");
+  }
+
+  if (!isValidHttpUrlOrNull(value.sourceUrl)) {
+    addError(index, "itAccreditation.sourceUrl must be a valid http(s) URL or null");
+  }
+}
+
 function validateSignals(value, index) {
   if (!value || typeof value !== "object" || Array.isArray(value)) {
     addError(index, "signals must be an object");
@@ -528,6 +568,10 @@ function validateCompany(company, index) {
   }
 
   validateEmployerRankingBadges(company.employerRankingBadges, index);
+
+  if (Object.prototype.hasOwnProperty.call(company, "itAccreditation")) {
+    validateItAccreditation(company.itAccreditation, index);
+  }
 }
 
 const absolutePath = path.resolve(process.cwd(), filePath);
