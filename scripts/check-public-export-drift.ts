@@ -117,6 +117,24 @@ const DRIFT_FIELDS: FieldSpec[] = [
     keys: ["hh_vacancies_checked_at", "hhVacanciesCheckedAt", "Дата проверки вакансий"],
     optional: true,
   },
+  {
+    label: "it_accreditation_status",
+    keys: ["it_accreditation_status", "itAccreditationStatus"],
+    compare: "optionalText",
+    optional: true,
+  },
+  {
+    label: "it_accreditation_checked_at",
+    keys: ["it_accreditation_checked_at", "itAccreditationCheckedAt"],
+    compare: "optionalText",
+    optional: true,
+  },
+  {
+    label: "it_accreditation_source_url",
+    keys: ["it_accreditation_source_url", "itAccreditationSourceUrl"],
+    compare: "url",
+    optional: true,
+  },
   { label: "hh_employer_rank_label", keys: ["hh_employer_rank_label", "hhEmployerRankLabel"], optional: true },
   { label: "hh_employer_rank_year", keys: ["hh_employer_rank_year", "hhEmployerRankYear"], optional: true },
   {
