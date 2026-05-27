@@ -30,6 +30,18 @@ const { companies, report } = buildPublicCompaniesFromRows(raw, {
   },
 });
 
+const remoteDrift = companies.filter(
+  (company) => company.hasRemote !== company.presets.includes("Удалёнка"),
+);
+if (remoteDrift.length > 0) {
+  throw new Error(
+    `[digital] Remote preset drift after sync: ${remoteDrift
+      .slice(0, 10)
+      .map((c) => `${c.id}:${c.name}`)
+      .join(", ")}`,
+  );
+}
+
 companies.sort(compareCompaniesByDefaultOrder);
 
 writeFileSync(jsonPath, `${JSON.stringify(companies, null, 2)}\n`, "utf8");
