@@ -1,6 +1,9 @@
 import type { CompanyPublic, CompanySignals, EmployerRankingBadge } from "../../types/digital";
+import { showsPublicItAccreditationChip } from "./itAccreditationPublic";
 import { isStaleDate } from "./normalizeCompany";
 import { getTagColorClass } from "./tagColors";
+
+export { showsPublicItAccreditationChip } from "./itAccreditationPublic";
 
 /** Drawer awards list: visible items before «Показать ещё». */
 export const DRAWER_AWARDS_VISIBLE_COUNT = 4;
@@ -65,6 +68,7 @@ export function formatDrawerHiringSourceName(source: CompanySignals["hiringSourc
 export type DrawerHiringMeta = {
   vacanciesLabel: string;
   hasDirectApply: boolean;
+  showItAccreditation: boolean;
   sourceName: string | null;
   /** Russian day-month, e.g. `19 мая` (without «Проверено:»). */
   checkedDate: string | null;
@@ -99,6 +103,7 @@ export function buildDrawerHiringMeta(company: CompanyPublic): DrawerHiringMeta 
   return {
     vacanciesLabel,
     hasDirectApply: signals.hasDirectApply,
+    showItAccreditation: showsPublicItAccreditationChip(company),
     sourceName: formatDrawerHiringSourceName(signals.hiringSource),
     checkedDate,
     staleWarning,
@@ -435,6 +440,10 @@ export function buildDrawerHiringDetailParts(company: CompanyPublic): string[] {
 
   if (meta.hasDirectApply) {
     parts.push("Прямой отклик");
+  }
+
+  if (meta.showItAccreditation) {
+    parts.push("IT-аккредитация");
   }
 
   if (meta.sourceName) {
