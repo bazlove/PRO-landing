@@ -35,6 +35,7 @@ const REQUIRED_PUBLIC_EXPORT_COLUMNS = [
   "company_id",
   "public_fit_status",
   "Показывать в публичной витрине",
+  "has_remote",
   "active_vacancies_source",
   "website_url",
   "hh_company_url",
