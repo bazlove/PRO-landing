@@ -184,19 +184,42 @@ const hasSourceLinks = sourceLinks.length > 0;
     <p class="digital-company-detail__meta-line digital-company-detail__meta-line--hiring-primary">
       <span>{hiringMeta.vacanciesLabel}</span>
       {
-        hiringMeta.hasDirectApply && (
+        (hiringMeta.hasDirectApply || hiringMeta.showItAccreditation) && (
           <>
             <span aria-hidden="true"> · </span>
-            <span
-              class:list={[
-                "digital-badge",
-                "digital-tag--slate",
-                "digital-company-detail__chip",
-                "digital-company-detail__inline-signal",
-              ]}
-            >
-              Прямой отклик
-            </span>
+            {
+              hiringMeta.hasDirectApply && (
+                <span
+                  class:list={[
+                    "digital-badge",
+                    "digital-tag--slate",
+                    "digital-company-detail__chip",
+                    "digital-company-detail__inline-signal",
+                  ]}
+                >
+                  Прямой отклик
+                </span>
+              )
+            }
+            {
+              hiringMeta.showItAccreditation && (
+                <>
+                  {hiringMeta.hasDirectApply && <span aria-hidden="true"> </span>}
+                  <span
+                    class:list={[
+                      "digital-badge",
+                      "digital-tag--cyan",
+                      "digital-company-detail__chip",
+                      "digital-company-detail__inline-signal",
+                    ]}
+                    title="IT-аккредитация подтверждена по публичному источнику"
+                    aria-label="IT-аккредитация подтверждена по публичному источнику"
+                  >
+                    IT-аккредитация
+                  </span>
+                </>
+              )
+            }
           </>
         )
       }
