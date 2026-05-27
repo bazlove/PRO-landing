@@ -35,7 +35,6 @@ const FORBIDDEN_KEY_PATTERNS: RegExp[] = [
   /^ogrn$/i,
   /^legal_identity_/i,
   /^legal_checked_at$/i,
-  /^it_accreditation_/i,
   /^qa_confidence$/i,
 ];
 
