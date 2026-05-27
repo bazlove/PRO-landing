@@ -3,6 +3,7 @@ import type { CompanyPublic, ItAccreditationStatus } from "../../types/digital";
 export const PUBLIC_IT_ACCREDITATION_STATUSES: ReadonlySet<ItAccreditationStatus> = new Set([
   "confirmed_official",
   "confirmed_open_registry_mention",
+  "hh_accreditation_signal",
 ]);
 
 /** Whether the drawer may show the public `IT-аккредитация` inline chip. */
