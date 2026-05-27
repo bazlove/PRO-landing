@@ -186,7 +186,7 @@ const hasSourceLinks = sourceLinks.length > 0;
       {
         (hiringMeta.hasDirectApply || hiringMeta.showItAccreditation) && (
           <>
-            <span aria-hidden="true"> · </span>
+            <span class="digital-company-detail__hiring-chip-separator" aria-hidden="true">·</span>
             {
               hiringMeta.hasDirectApply && (
                 <span
@@ -202,22 +202,25 @@ const hasSourceLinks = sourceLinks.length > 0;
               )
             }
             {
+              hiringMeta.hasDirectApply && hiringMeta.showItAccreditation && (
+                <span class="digital-company-detail__hiring-chip-separator" aria-hidden="true">·</span>
+              )
+            }
+            {
               hiringMeta.showItAccreditation && (
-                <>
-                  {hiringMeta.hasDirectApply && <span aria-hidden="true"> </span>}
-                  <span
-                    class:list={[
-                      "digital-badge",
-                      "digital-tag--cyan",
-                      "digital-company-detail__chip",
-                      "digital-company-detail__inline-signal",
-                    ]}
-                    title="IT-аккредитация подтверждена по публичному источнику"
-                    aria-label="IT-аккредитация подтверждена по публичному источнику"
-                  >
-                    IT-аккредитация
-                  </span>
-                </>
+                <span
+                  class:list={[
+                    "digital-badge",
+                    "digital-tag--cyan",
+                    "digital-company-detail__chip",
+                    "digital-company-detail__inline-signal",
+                    "digital-company-detail__inline-signal--it-accreditation",
+                  ]}
+                  title="IT-аккредитация подтверждена по публичному источнику"
+                  aria-label="IT-аккредитация подтверждена по публичному источнику"
+                >
+                  IT-аккредитация
+                </span>
               )
             }
           </>
