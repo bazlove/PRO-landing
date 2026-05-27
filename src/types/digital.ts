@@ -19,6 +19,20 @@ export type CompanyPreset =
   | "Награды 2025"
   | "Международные";
 
+export type ItAccreditationStatus =
+  | "confirmed_official"
+  | "confirmed_open_registry_mention"
+  | "hh_accreditation_signal"
+  | "manual_check_required"
+  | "not_confirmed"
+  | "not_applicable_foreign_entity";
+
+export type CompanyItAccreditation = {
+  status: ItAccreditationStatus;
+  checkedAt: string | null;
+  sourceUrl: string | null;
+};
+
 export type CompanySignals = {
   hasDirectApply: boolean;
   hasCareerPage: boolean;
@@ -69,6 +83,8 @@ export type CompanyPublic = {
   linkedinUrl: string | null;
 
   employerRankingBadges: EmployerRankingBadge[];
+
+  itAccreditation?: CompanyItAccreditation | null;
 
   publicStatus: "public";
 };
