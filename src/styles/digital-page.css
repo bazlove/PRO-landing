@@ -3180,8 +3180,18 @@ body.digital-drawer-open {
 }
 
 .digital-company-detail__meta-line--hiring-primary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   font-size: 15px;
   color: var(--text-secondary);
+}
+
+.digital-company-detail__hiring-chip-separator {
+  margin-inline: 0.35em;
+  color: var(--text-muted);
+  font-weight: 400;
+  user-select: none;
 }
 
 .digital-company-detail__meta-line--hiring-secondary {
@@ -3201,6 +3211,18 @@ body.digital-drawer-open {
   line-height: 1.35;
   vertical-align: middle;
   white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .digital-company-detail__inline-signal.digital-badge {
+    padding-inline: 8px;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  .digital-company-detail__hiring-chip-separator {
+    margin-inline: 2px;
+  }
 }
 
 .digital-company-detail__awards-list {
