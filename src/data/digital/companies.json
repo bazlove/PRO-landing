@@ -59,7 +59,12 @@
         "sourceUrl": "https://career.habr.com/companies/ratings?sz=3&y=2025"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-05-26",
+      "sourceUrl": "https://cio-navigator.ru/ia-dalee-7704642617/"
+    }
   },
   {
     "id": "cmp_58ee5e87f7",
@@ -469,7 +474,12 @@
         "sourceUrl": "https://career.habr.com/companies/ratings?sz=3&y=2025"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-05-26",
+      "sourceUrl": "https://hh.ru/employer/238354"
+    }
   },
   {
     "id": "cmp_3dec5a8cc3",
@@ -744,7 +754,12 @@
     "habrUrl": "https://career.habr.com/companies/company-fix",
     "linkedinUrl": "https://www.linkedin.com/company/fix-llc/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-05-26",
+      "sourceUrl": "https://cio-navigator.ru/fiks-1655177515/"
+    }
   },
   {
     "id": "cmp_6bb844e485",
@@ -1001,7 +1016,12 @@
         "sourceUrl": "https://hh.ru/employer/7851"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-05-26",
+      "sourceUrl": "https://star-pro.ru/proverka-kontragenta/organization/1057811290767"
+    }
   },
   {
     "id": "cmp_e088933b4e",
@@ -1053,7 +1073,12 @@
         "sourceUrl": "https://hh.ru/employer/567799"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://career.habr.com/companies/red-mad-robot"
+    }
   },
   {
     "id": "cmp_yjyudr",
@@ -3073,7 +3098,12 @@
         "sourceUrl": "https://career.habr.com/companies/ratings?sz=3&y=2025"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://redcollar.ru/accreditation.pdf"
+    }
   },
   {
     "id": "cmp_b3ba4b6e70",
@@ -3673,7 +3703,12 @@
         "sourceUrl": "https://hh.ru/employer/726289"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-05-26",
+      "sourceUrl": "https://cio-navigator.ru/vebpraktik-6163109767/"
+    }
   },
   {
     "id": "cmp_5870799a7d",
@@ -3763,7 +3798,12 @@
     "habrUrl": "https://career.habr.com/companies/inostudio",
     "linkedinUrl": "https://www.linkedin.com/company/inostudio-solutions",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://www.gosuslugi.ru/newsearch/proverit-akkreditaciyu-it-kompanii"
+    }
   },
   {
     "id": "cmp_dc47b7b541",
@@ -4313,7 +4353,12 @@
     "habrUrl": null,
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://www.gosuslugi.ru/newsearch/proverit-akkreditaciyu-it-kompanii"
+    }
   },
   {
     "id": "cmp_9faea00756",
@@ -5000,7 +5045,12 @@
     "habrUrl": null,
     "linkedinUrl": "https://www.linkedin.com/company/creativepeople/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://www.gosuslugi.ru/newsearch/proverit-akkreditaciyu-it-kompanii"
+    }
   },
   {
     "id": "cmp_9bbfe7ba41",
@@ -5380,7 +5430,12 @@
     "habrUrl": null,
     "linkedinUrl": "https://www.linkedin.com/company/intaro",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://www.gosuslugi.ru/newsearch/proverit-akkreditaciyu-it-kompanii"
+    }
   },
   {
     "id": "cmp_b50a85a9fd",
@@ -5426,7 +5481,12 @@
     "habrUrl": "https://career.habr.com/companies/it-agency",
     "linkedinUrl": "https://www.linkedin.com/company/itagency1/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-26",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_29b7d8813b",
@@ -5843,7 +5903,12 @@
     "habrUrl": null,
     "linkedinUrl": "https://www.linkedin.com/company/magnetto-agency",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-05-26",
+      "sourceUrl": "https://hh.ru/employer/5846464"
+    }
   },
   {
     "id": "cmp_a5c8931110",
@@ -6172,7 +6237,12 @@
     "habrUrl": "https://career.habr.com/companies/nimax",
     "linkedinUrl": "https://www.linkedin.com/company/nmx-agency/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-26",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_8d98e64738",
@@ -6218,7 +6288,12 @@
     "habrUrl": null,
     "linkedinUrl": "https://www.linkedin.com/company/maier-only-gmail-com",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://career.habr.com/companies/onlydigital"
+    }
   },
   {
     "id": "cmp_18f4d0c917",
@@ -6401,7 +6476,12 @@
     "habrUrl": null,
     "linkedinUrl": "https://www.linkedin.com/company/qtim",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://www.gosuslugi.ru/newsearch/proverit-akkreditaciyu-it-kompanii"
+    }
   },
   {
     "id": "cmp_54f7b80367",
@@ -6748,7 +6828,12 @@
     "habrUrl": "https://career.habr.com/companies/snpagency",
     "linkedinUrl": "https://www.linkedin.com/company/salt-pepper-digital-agency/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://snp.agency/ru/contact"
+    }
   },
   {
     "id": "cmp_7fd4186b50",
@@ -7238,7 +7323,12 @@
     "habrUrl": null,
     "linkedinUrl": "https://www.linkedin.com/company/dotwrk/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-05-26",
+      "sourceUrl": "https://novosibirsk.hh.ru/employer/1199641"
+    }
   },
   {
     "id": "cmp_yhu8jt",
@@ -10413,7 +10503,12 @@
     "habrUrl": "https://career.habr.com/companies/dterra",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-05-26",
+      "sourceUrl": "https://cio-navigator.ru/didzhital-terra-7710965905/"
+    }
   },
   {
     "id": "cmp_ba66eea29c",
@@ -11231,7 +11326,12 @@
     "habrUrl": null,
     "linkedinUrl": "https://ru.linkedin.com/company/machaon-web",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://machaon.ru/accreditation/"
+    }
   },
   {
     "id": "cmp_fb6b93c8a8",
