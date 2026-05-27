@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import type { CompanyPublic } from "../../types/digital";
+import { buildDrawerHiringMeta } from "./display.ts";
 import { showsPublicItAccreditationChip } from "./itAccreditationPublic.ts";
 import { normalizeItAccreditation } from "./normalizeCompany.ts";
 
@@ -80,7 +81,7 @@ describe("normalizeItAccreditation", () => {
 });
 
 describe("showsPublicItAccreditationChip", () => {
-  it("returns true only for confirmed public statuses", () => {
+  it("returns true only for public-renderable accreditation statuses", () => {
     // confirmed_official
     assert.equal(
       showsPublicItAccreditationChip(
@@ -132,7 +133,7 @@ describe("showsPublicItAccreditationChip", () => {
           },
         }),
       ),
-      false,
+      true,
     );
 
     // manual_check_required
@@ -260,7 +261,7 @@ describe("drawer hiring inline chips regression", () => {
     assert.equal(meta.showItAccreditation, true);
   });
 
-  it("hh signal only shows direct apply chip", () => {
+  it("hh signal shows both direct apply and accreditation chips", () => {
     const meta = hiringInlineSignals(
       baseCompany({
         id: "3",
@@ -283,7 +284,39 @@ describe("drawer hiring inline chips regression", () => {
     );
 
     assert.equal(meta.hasDirectApply, true);
-    assert.equal(meta.showItAccreditation, false);
+    assert.equal(meta.showItAccreditation, true);
+  });
+
+  it("buildDrawerHiringMeta maps accreditation visibility correctly", () => {
+    const hhSignalMeta = buildDrawerHiringMeta(
+      baseCompany({
+        id: "5",
+        slug: "hh-signal-drawer",
+        name: "HH Signal Drawer",
+        careerUrl: "https://example.com/hh-signal-drawer",
+        itAccreditation: {
+          status: "hh_accreditation_signal",
+          checkedAt: "2026-05-17",
+          sourceUrl: "https://example.com/hh-signal-source",
+        },
+      }),
+    );
+    const manualCheckMeta = buildDrawerHiringMeta(
+      baseCompany({
+        id: "6",
+        slug: "manual-check-drawer",
+        name: "Manual Check Drawer",
+        careerUrl: "https://example.com/manual-check-drawer",
+        itAccreditation: {
+          status: "manual_check_required",
+          checkedAt: "2026-05-16",
+          sourceUrl: "https://example.com/manual-check-source",
+        },
+      }),
+    );
+
+    assert.equal(hhSignalMeta.showItAccreditation, true);
+    assert.equal(manualCheckMeta.showItAccreditation, false);
   });
 
   it("missing accreditation shows no chips", () => {
