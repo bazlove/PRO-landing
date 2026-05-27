@@ -319,6 +319,11 @@ const allowedItAccreditationStatuses = new Set([
 ]);
 
 const allowedItAccreditationKeys = new Set(["status", "checkedAt", "sourceUrl"]);
+const publicRenderableItAccreditationStatuses = new Set([
+  "confirmed_official",
+  "confirmed_open_registry_mention",
+  "hh_accreditation_signal",
+]);
 
 function validateItAccreditation(value, index) {
   if (value === null || value === undefined) return;
@@ -346,20 +351,17 @@ function validateItAccreditation(value, index) {
     addError(index, "itAccreditation.sourceUrl must be a valid http(s) URL or null");
   }
 
-  if (
-    value.status === "confirmed_official" ||
-    value.status === "confirmed_open_registry_mention"
-  ) {
+  if (publicRenderableItAccreditationStatuses.has(value.status)) {
     if (!value.checkedAt) {
       addError(
         index,
-        "itAccreditation.checkedAt must be a non-null ISO date for confirmed accreditation statuses",
+        "itAccreditation.checkedAt must be a non-null ISO date for public-renderable accreditation statuses",
       );
     }
     if (!value.sourceUrl) {
       addError(
         index,
-        "itAccreditation.sourceUrl must be a non-null http(s) URL for confirmed accreditation statuses",
+        "itAccreditation.sourceUrl must be a non-null http(s) URL for public-renderable accreditation statuses",
       );
     }
   }
