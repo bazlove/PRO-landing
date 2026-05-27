@@ -120,8 +120,6 @@ export function normalizePresetValue(value: string): PublicPresetValue | null {
   return null;
 }
 
-const REMOTE_WORK_FORMATS = new Set<CompanyPublic["workFormat"]>(["Удалёнка", "Гибрид", "Смешанный"]);
-
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
@@ -896,10 +894,6 @@ function normalizeInternational(raw: Record<string, unknown>): CompanyPublic["in
   return "Неясно";
 }
 
-function computeHasRemote(workFormat: CompanyPublic["workFormat"]): boolean {
-  return REMOTE_WORK_FORMATS.has(workFormat);
-}
-
 function computeHasActiveHiring(
   hiringStatus: CompanyPublic["hiringStatus"],
   vacanciesRange: CompanyPublic["vacanciesRange"],
@@ -916,6 +910,7 @@ function computeHasHighHrRating(hh: number | null, habr: number | null): boolean
 }
 
 const SOURCE_PRESETS_COLUMN_KEYS = ["Пресеты", "presets_source", "source_presets"] as const;
+const HAS_REMOTE_KEYS = ["has_remote", "hasRemote", "Есть удалёнка", "Удалёнка"] as const;
 
 const ACTIVE_VACANCIES_SOURCE_KEYS = [
   "active_vacancies_source",
@@ -957,7 +952,7 @@ function isAggregatorCareerHost(url: string): boolean {
 }
 
 function parseSourcePresets(raw: Record<string, unknown>): string[] {
-  const value = pickValue(raw, [...SOURCE_PRESETS_COLUMN_KEYS]);
+  const value = pickValue(raw, [...SOURCE_PRESETS_COLUMN_KEYS, "presets"]);
   if (Array.isArray(value)) {
     return value.map((item) => String(item).trim()).filter(Boolean);
   }
@@ -968,6 +963,37 @@ function parseSourcePresets(raw: Record<string, unknown>): string[] {
       .filter(Boolean);
   }
   return [];
+}
+
+function parseBooleanFlag(value: unknown): boolean | null {
+  if (value === true || value === 1) return true;
+  if (value === false || value === 0) return false;
+
+  const normalized = String(value ?? "").trim().toLowerCase();
+  if (!normalized) return null;
+
+  if (["true", "1", "yes", "y", "да", "истина"].includes(normalized)) return true;
+  if (["false", "0", "no", "n", "нет", "ложь"].includes(normalized)) return false;
+
+  return null;
+}
+
+function normalizeSourcePresets(raw: Record<string, unknown>): PublicPresetValue[] {
+  return parseSourcePresets(raw)
+    .map(normalizePresetValue)
+    .filter((preset): preset is PublicPresetValue => preset !== null);
+}
+
+function resolveHasRemote(raw: Record<string, unknown>, fallback = false): boolean {
+  for (const key of HAS_REMOTE_KEYS) {
+    if (key in raw) {
+      const parsed = parseBooleanFlag(raw[key]);
+      if (parsed !== null) return parsed;
+    }
+  }
+
+  if (normalizeSourcePresets(raw).includes(PRESET_REMOTE)) return true;
+  return fallback;
 }
 
 function hasDedicatedCareerPage(raw: Record<string, unknown>): boolean {
@@ -1131,7 +1157,7 @@ export function recalculateDerivedFields(company: CompanyPublic): CompanyPublic 
   const vacanciesWeight = VACANCIES_WEIGHT_BY_RANGE[vacanciesRange] ?? -1;
   const awards2025 = normalizeAwards2025(company.awards2025);
   const hasAwards2025 = awards2025 !== null && awards2025.length > 0;
-  const hasRemote = computeHasRemote(company.workFormat);
+  const hasRemote = Boolean(company.hasRemote);
   const hasHighHrRating = computeHasHighHrRating(company.hhRatingValue, company.habrRatingValue);
   const hasActiveHiring = computeHasActiveHiring(company.hiringStatus, vacanciesRange);
   const hhVacanciesCheckedAt = resolvePublicHhVacanciesCheckedAt(
@@ -1500,7 +1526,10 @@ export function normalizeCompany(
       remoteExplicitlyDenied: false,
     },
     hasActiveHiring: false,
-    hasRemote: false,
+    hasRemote: resolveHasRemote(
+      rawInput,
+      fromExistingPublicJson && typeof rawInput.hasRemote === "boolean" ? rawInput.hasRemote : false,
+    ),
     hasHighHrRating: false,
     lastCheckedAt,
     hhVacanciesCheckedAt,
