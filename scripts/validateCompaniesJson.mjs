@@ -345,6 +345,24 @@ function validateItAccreditation(value, index) {
   if (!isValidHttpUrlOrNull(value.sourceUrl)) {
     addError(index, "itAccreditation.sourceUrl must be a valid http(s) URL or null");
   }
+
+  if (
+    value.status === "confirmed_official" ||
+    value.status === "confirmed_open_registry_mention"
+  ) {
+    if (!value.checkedAt) {
+      addError(
+        index,
+        "itAccreditation.checkedAt must be a non-null ISO date for confirmed accreditation statuses",
+      );
+    }
+    if (!value.sourceUrl) {
+      addError(
+        index,
+        "itAccreditation.sourceUrl must be a non-null http(s) URL for confirmed accreditation statuses",
+      );
+    }
+  }
 }
 
 function validateSignals(value, index) {
