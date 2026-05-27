@@ -48,7 +48,7 @@ export type BuildPublicCompaniesReport = {
 export function toPublicCompanyJsonRecord(company: CompanyPublic): CompanyPublic {
   const recalculated = recalculateDerivedFields(company);
 
-  return {
+  const record: CompanyPublic = {
     id: recalculated.id,
     slug: recalculated.slug,
     name: recalculated.name,
@@ -86,6 +86,12 @@ export function toPublicCompanyJsonRecord(company: CompanyPublic): CompanyPublic
     employerRankingBadges: recalculated.employerRankingBadges,
     publicStatus: "public",
   };
+
+  if (recalculated.itAccreditation) {
+    record.itAccreditation = recalculated.itAccreditation;
+  }
+
+  return record;
 }
 
 /** Rows where vacancies are unchecked must not carry an HH check date. */
