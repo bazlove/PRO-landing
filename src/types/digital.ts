@@ -72,6 +72,10 @@ export type CompanyPublic = {
   signals: CompanySignals;
 
   hasActiveHiring: boolean;
+  /**
+   * Gated public remote preset flag.
+   * Source of truth: public_export.has_remote / gated presets, not workFormat.
+   */
   hasRemote: boolean;
   hasHighHrRating: boolean;
 
