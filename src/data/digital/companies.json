@@ -22,7 +22,6 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -35,7 +34,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-19",
@@ -125,7 +124,12 @@
         "sourceUrl": "https://career.habr.com/companies/korusconsulting"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://career.habr.com/companies/korusconsulting"
+    }
   },
   {
     "id": "cmp_2587fb79b6",
@@ -193,7 +197,6 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Международные"
     ],
     "signals": {
@@ -204,7 +207,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-08",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -292,7 +295,6 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Высокая HR-оценка"
     ],
     "signals": {
@@ -303,7 +305,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-25",
     "hhVacanciesCheckedAt": "2026-05-25",
@@ -391,7 +393,6 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Награды 2025",
       "Международные"
     ],
@@ -403,7 +404,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-25",
     "hhVacanciesCheckedAt": "2026-05-25",
@@ -437,7 +438,6 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -450,7 +450,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-19",
@@ -784,7 +784,6 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Награды 2025"
     ],
     "signals": {
@@ -795,7 +794,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-25",
     "hhVacanciesCheckedAt": "2026-05-25",
@@ -804,7 +803,12 @@
     "habrUrl": "https://career.habr.com/companies/ingate",
     "linkedinUrl": "https://www.linkedin.com/company/ingate-group/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://www.gosuslugi.ru/newsearch/proverit-akkreditaciyu-it-kompanii"
+    }
   },
   {
     "id": "cmp_44c7d61645",
@@ -919,7 +923,12 @@
         "sourceUrl": "https://career.habr.com/companies/kokocgroup"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://career.habr.com/companies/kokocgroup"
+    }
   },
   {
     "id": "cmp_fadbe297ce",
@@ -963,7 +972,12 @@
     "habrUrl": "https://career.habr.com/companies/okkam",
     "linkedinUrl": "https://www.linkedin.com/company/okkam-group/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://career.habr.com/companies/okkam"
+    }
   },
   {
     "id": "cmp_1a54b4a2d5",
@@ -1092,7 +1106,7 @@
     "vacanciesRange": "10+",
     "vacanciesWeight": 3,
     "hiringStatus": "Активный",
-    "workFormat": "Не указано",
+    "workFormat": "Смешанный",
     "hiringGeo": "Локально",
     "international": "Нет",
     "hhRatingDisplay": "4,0",
@@ -1147,7 +1161,6 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -1160,7 +1173,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-19",
@@ -1184,7 +1197,12 @@
         "sourceUrl": "https://career.habr.com/companies/simbirsoft"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://www.simbirsoft.com/company/history/"
+    }
   },
   {
     "id": "cmp_37d261a3fb",
@@ -1281,7 +1299,12 @@
         "sourceUrl": "https://hh.ru/employer/1178447"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://www.gosuslugi.ru/newsearch/proverit-akkreditaciyu-it-kompanii"
+    }
   },
   {
     "id": "cmp_6b2262ef97",
@@ -1306,7 +1329,6 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Международные"
     ],
     "signals": {
@@ -1317,7 +1339,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-08",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -1351,7 +1373,6 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -1363,7 +1384,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-19",
@@ -1380,7 +1401,12 @@
         "sourceUrl": "https://hh.ru/employer/16233"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://www.gosuslugi.ru/newsearch/proverit-akkreditaciyu-it-kompanii"
+    }
   },
   {
     "id": "cmp_pekxhx",
@@ -1394,8 +1420,8 @@
     "vacanciesRange": "5–10",
     "vacanciesWeight": 2,
     "hiringStatus": "Активный",
-    "workFormat": "Не указано",
-    "hiringGeo": "Весь мир",
+    "workFormat": "Смешанный",
+    "hiringGeo": "Локально",
     "international": "Да",
     "hhRatingDisplay": "4,4",
     "hhRatingValue": 4.4,
@@ -1448,7 +1474,6 @@
     "awards2025": "Habr Career 2025 — Средняя оценка #12; Интересные задачи #4; Современные технологии #6; Адекватная зарплата #7; Отношения с коллегами #5",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -1460,7 +1485,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-22",
     "hhVacanciesCheckedAt": "2026-05-22",
@@ -1694,7 +1719,6 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -1707,7 +1731,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-26",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -1716,7 +1740,12 @@
     "habrUrl": "https://career.habr.com/companies/bsl-dev",
     "linkedinUrl": "https://www.linkedin.com/company/bsl-dev/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://career.habr.com/companies/bsl-dev"
+    }
   },
   {
     "id": "cmp_cae0ba13f3",
@@ -1828,8 +1857,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Активный найм",
-      "Удалёнка"
+      "Активный найм"
     ],
     "signals": {
       "hasDirectApply": true,
@@ -1839,7 +1867,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-26",
     "hhVacanciesCheckedAt": "2026-05-25",
@@ -1892,7 +1920,12 @@
     "habrUrl": "https://career.habr.com/companies/epromogroup",
     "linkedinUrl": "https://www.linkedin.com/company/e-promo/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://hh.ru/employer/613353"
+    }
   },
   {
     "id": "cmp_63ecd107ce",
@@ -1938,7 +1971,12 @@
     "habrUrl": "https://career.habr.com/companies/extyl",
     "linkedinUrl": "https://www.linkedin.com/company/extyl-official",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://star-pro.ru/proverka-kontragenta/organization/1157746728501"
+    }
   },
   {
     "id": "cmp_caa333cf15",
@@ -1962,7 +2000,6 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
       "Высокая HR-оценка"
     ],
     "signals": {
@@ -1973,7 +2010,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-26",
     "hhVacanciesCheckedAt": "2026-05-25",
@@ -2026,7 +2063,12 @@
     "habrUrl": "https://career.habr.com/companies/goahead",
     "linkedinUrl": "https://www.linkedin.com/company/gomobileindonesia/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://www.gosuslugi.ru/newsearch/proverit-akkreditaciyu-it-kompanii"
+    }
   },
   {
     "id": "cmp_165439c4d4",
@@ -2069,7 +2111,12 @@
     "habrUrl": "https://career.habr.com/companies/i-media",
     "linkedinUrl": "https://www.linkedin.com/company/i-media_4/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://www.gosuslugi.ru/newsearch/proverit-akkreditaciyu-it-kompanii"
+    }
   },
   {
     "id": "cmp_2361bad016",
@@ -2094,7 +2141,6 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Награды 2025"
     ],
     "signals": {
@@ -2105,7 +2151,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-25",
     "hhVacanciesCheckedAt": "2026-05-25",
@@ -2114,7 +2160,12 @@
     "habrUrl": null,
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://www.gosuslugi.ru/newsearch/proverit-akkreditaciyu-it-kompanii"
+    }
   },
   {
     "id": "cmp_af58371ad4",
@@ -2182,8 +2233,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Активный найм",
-      "Удалёнка"
+      "Активный найм"
     ],
     "signals": {
       "hasDirectApply": true,
@@ -2193,7 +2243,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-25",
     "hhVacanciesCheckedAt": "2026-05-25",
@@ -2312,7 +2362,6 @@
     "awards2025": "Рейтинг Рунета 2025 — дизайн мобильных приложений: #1; Рейтинг Рунета / Tagline / Tadviser / Workspace / CNews — мобильная разработка: #1; Smart Ranking — AI-разработчики России: топ-50",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -2324,7 +2373,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-19",
@@ -2348,7 +2397,12 @@
         "sourceUrl": "https://career.habr.com/companies/appkode"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://career.habr.com/companies/appkode"
+    }
   },
   {
     "id": "cmp_3lw159",
@@ -2362,7 +2416,7 @@
     "vacanciesRange": "10+",
     "vacanciesWeight": 3,
     "hiringStatus": "Активный",
-    "workFormat": "Не указано",
+    "workFormat": "Смешанный",
     "hiringGeo": "РФ",
     "international": "Нет",
     "hhRatingDisplay": "4,0",
@@ -2416,7 +2470,6 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -2428,7 +2481,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-26",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -2462,7 +2515,6 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -2474,7 +2526,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-19",
@@ -2483,7 +2535,12 @@
     "habrUrl": "https://career.habr.com/companies/mediainstinctgroup",
     "linkedinUrl": "https://www.linkedin.com/company/media-instinct-group/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://www.gosuslugi.ru/newsearch/proverit-akkreditaciyu-it-kompanii"
+    }
   },
   {
     "id": "cmp_a4b3025d26",
@@ -2552,7 +2609,6 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Награды 2025"
     ],
     "signals": {
@@ -2563,7 +2619,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-19",
@@ -2572,7 +2628,12 @@
     "habrUrl": null,
     "linkedinUrl": "https://www.linkedin.com/company/mgcom/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://star-pro.ru/proverka-kontragenta/organization/1067746216548"
+    }
   },
   {
     "id": "cmp_09f488936f",
@@ -2731,9 +2792,7 @@
     "habrRatingValue": null,
     "awards2025": null,
     "hasAwards2025": false,
-    "presets": [
-      "Удалёнка"
-    ],
+    "presets": [],
     "signals": {
       "hasDirectApply": false,
       "hasCareerPage": true,
@@ -2742,7 +2801,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-26",
     "hhVacanciesCheckedAt": "2026-05-25",
@@ -2876,7 +2935,6 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -2888,7 +2946,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-25",
     "hhVacanciesCheckedAt": "2026-05-25",
@@ -3021,7 +3079,6 @@
     "awards2025": "Habr Career 2025 — средняя оценка #16; современные технологии #3; комфортные условия #1",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -3034,7 +3091,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-26",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -3126,9 +3183,7 @@
     "habrRatingValue": null,
     "awards2025": null,
     "hasAwards2025": false,
-    "presets": [
-      "Удалёнка"
-    ],
+    "presets": [],
     "signals": {
       "hasDirectApply": false,
       "hasCareerPage": true,
@@ -3137,7 +3192,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-18",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -3171,7 +3226,6 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -3184,7 +3238,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-19",
@@ -3193,7 +3247,12 @@
     "habrUrl": "https://career.habr.com/companies/rocket10",
     "linkedinUrl": "https://www.linkedin.com/company/rocket10/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://www.gosuslugi.ru/newsearch/proverit-akkreditaciyu-it-kompanii"
+    }
   },
   {
     "id": "cmp_s21qir",
@@ -3347,7 +3406,7 @@
     "vacanciesRange": "10+",
     "vacanciesWeight": 3,
     "hiringStatus": "Активный",
-    "workFormat": "Офис",
+    "workFormat": "Смешанный",
     "hiringGeo": "Локально",
     "international": "Нет",
     "hhRatingDisplay": "4,2",
@@ -3532,8 +3591,8 @@
     "vacanciesRange": "1–4",
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
-    "workFormat": "Не указано",
-    "hiringGeo": "Локально",
+    "workFormat": "Смешанный",
+    "hiringGeo": "РФ",
     "international": "Частично",
     "hhRatingDisplay": "4,7",
     "hhRatingValue": 4.7,
@@ -3588,7 +3647,6 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Высокая HR-оценка"
     ],
     "signals": {
@@ -3599,7 +3657,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-25",
     "hhVacanciesCheckedAt": "2026-05-25",
@@ -3652,7 +3710,12 @@
     "habrUrl": null,
     "linkedinUrl": "https://www.linkedin.com/company/%D0%BE%D0%BE%D0%BE-%D0%B2%D0%B5%D0%B1%D1%86%D0%B5%D0%BD%D1%82%D1%80-",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://web-c.ru/about/"
+    }
   },
   {
     "id": "cmp_7fba060747",
@@ -3675,9 +3738,7 @@
     "habrRatingValue": 4.14,
     "awards2025": null,
     "hasAwards2025": false,
-    "presets": [
-      "Удалёнка"
-    ],
+    "presets": [],
     "signals": {
       "hasDirectApply": true,
       "hasCareerPage": true,
@@ -3686,7 +3747,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-19",
@@ -3722,7 +3783,7 @@
     "vacanciesRange": "5–10",
     "vacanciesWeight": 2,
     "hiringStatus": "Активный",
-    "workFormat": "Удалёнка",
+    "workFormat": "Смешанный",
     "hiringGeo": "РФ",
     "international": "Частично",
     "hhRatingDisplay": "4,5",
@@ -3733,7 +3794,6 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -3745,7 +3805,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-22",
     "hhVacanciesCheckedAt": "2026-05-22",
@@ -3827,7 +3887,6 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
       "Высокая HR-оценка"
     ],
     "signals": {
@@ -3838,7 +3897,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-18",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -3872,7 +3931,6 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Высокая HR-оценка"
     ],
     "signals": {
@@ -3883,7 +3941,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-25",
     "hhVacanciesCheckedAt": "2026-05-25",
@@ -3906,8 +3964,8 @@
     "vacanciesRange": "0",
     "vacanciesWeight": 0,
     "hiringStatus": "На паузе",
-    "workFormat": "Не указано",
-    "hiringGeo": "Локально",
+    "workFormat": "Смешанный",
+    "hiringGeo": "РФ",
     "international": "Нет",
     "hhRatingDisplay": "4,5",
     "hhRatingValue": 4.5,
@@ -4070,7 +4128,12 @@
     "habrUrl": "https://career.habr.com/companies/pixelplus",
     "linkedinUrl": "https://www.linkedin.com/company/pixelplusru",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://hh.ru/employer/646883"
+    }
   },
   {
     "id": "cmp_15876b007b",
@@ -4084,7 +4147,7 @@
     "vacanciesRange": "1–4",
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
-    "workFormat": "Офис",
+    "workFormat": "Не указано",
     "hiringGeo": "Локально",
     "international": "Частично",
     "hhRatingDisplay": "4,0",
@@ -4233,7 +4296,6 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -4246,7 +4308,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-18",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -4424,9 +4486,7 @@
     "habrRatingValue": null,
     "awards2025": null,
     "hasAwards2025": false,
-    "presets": [
-      "Удалёнка"
-    ],
+    "presets": [],
     "signals": {
       "hasDirectApply": true,
       "hasCareerPage": true,
@@ -4435,7 +4495,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -4444,7 +4504,12 @@
     "habrUrl": "https://career.habr.com/companies/adventum",
     "linkedinUrl": "https://www.linkedin.com/company/adventum/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://www.gosuslugi.ru/newsearch/proverit-akkreditaciyu-it-kompanii"
+    }
   },
   {
     "id": "cmp_d4a9a89163",
@@ -4488,7 +4553,12 @@
     "habrUrl": "https://career.habr.com/companies/aic",
     "linkedinUrl": "https://www.linkedin.com/company/aicglobal/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://www.gosuslugi.ru/newsearch/proverit-akkreditaciyu-it-kompanii"
+    }
   },
   {
     "id": "cmp_2fa8d2c490",
@@ -4512,7 +4582,6 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
       "Высокая HR-оценка"
     ],
     "signals": {
@@ -4523,7 +4592,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-18",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -4602,7 +4671,6 @@
     "awards2025": "Ruward Award 2025 / Рейтинг Рунета — таргетированная реклама / недвижимость: #1; контекстная реклама: #2; performance / недвижимость: #3; performance-агентства: #3",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
       "Награды 2025"
     ],
     "signals": {
@@ -4613,7 +4681,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-19",
@@ -4622,7 +4690,12 @@
     "habrUrl": "https://career.habr.com/companies/arrowmedia",
     "linkedinUrl": "https://www.linkedin.com/company/arrow-media/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://hh.ru/employer/23632"
+    }
   },
   {
     "id": "cmp_530fe2cfcd",
@@ -4666,7 +4739,12 @@
     "habrUrl": "https://career.habr.com/companies/artics",
     "linkedinUrl": "https://www.linkedin.com/company/artix-it/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://career.habr.com/companies/artics"
+    }
   },
   {
     "id": "cmp_ef5b99215d",
@@ -4719,7 +4797,12 @@
         "sourceUrl": "https://career.habr.com/companies/artw"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://star-pro.ru/proverka-kontragenta/organization/1147847196562--ooo-artv"
+    }
   },
   {
     "id": "cmp_0e17761721",
@@ -4852,7 +4935,12 @@
     "habrUrl": null,
     "linkedinUrl": "https://www.linkedin.com/company/deeep-com/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://career.habr.com/companies/olegchulakovstudio"
+    }
   },
   {
     "id": "cmp_970e55d23e",
@@ -5024,7 +5112,6 @@
     "awards2025": "Рейтинг Рунета 2025 — дизайн для IT и FMCG: #1; брендинг для банков: #1",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
       "Награды 2025",
       "Международные"
     ],
@@ -5036,7 +5123,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-19",
@@ -5163,7 +5250,6 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -5175,7 +5261,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-18",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -5283,7 +5369,12 @@
     "habrUrl": "https://career.habr.com/companies/doubletapp",
     "linkedinUrl": "https://www.linkedin.com/company/doubletapp/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://career.habr.com/companies/doubletapp"
+    }
   },
   {
     "id": "cmp_95fb87129a",
@@ -5356,7 +5447,7 @@
     "vacanciesRange": "1–4",
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
-    "workFormat": "Не указано",
+    "workFormat": "Смешанный",
     "hiringGeo": "РФ",
     "international": "Нет",
     "hhRatingDisplay": "Нет отзывов",
@@ -5554,9 +5645,7 @@
     "habrRatingValue": null,
     "awards2025": null,
     "hasAwards2025": false,
-    "presets": [
-      "Удалёнка"
-    ],
+    "presets": [],
     "signals": {
       "hasDirectApply": false,
       "hasCareerPage": true,
@@ -5565,7 +5654,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-25",
     "hhVacanciesCheckedAt": "2026-05-25",
@@ -5650,7 +5739,6 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
       "Международные"
     ],
     "signals": {
@@ -5661,7 +5749,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-18",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -5725,7 +5813,12 @@
         "sourceUrl": "https://career.habr.com/companies/ratings?sz=2&y=2025"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://career.habr.com/companies/kotelov"
+    }
   },
   {
     "id": "cmp_1a026rt",
@@ -5739,7 +5832,7 @@
     "vacanciesRange": "1–4",
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
-    "workFormat": "Офис",
+    "workFormat": "Смешанный",
     "hiringGeo": "РФ",
     "international": "Частично",
     "hhRatingDisplay": "3,9",
@@ -5749,6 +5842,7 @@
     "awards2025": "RUWARD AWARD 2025 — e-commerce & retail digital development / agency of the year",
     "hasAwards2025": true,
     "presets": [
+      "Удалёнка",
       "Награды 2025",
       "Международные"
     ],
@@ -5760,7 +5854,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": false,
+    "hasRemote": true,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-18",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -5882,7 +5976,6 @@
     "awards2025": "Рейтинг Рунета 2025 — таргетированная реклама: #9; таргетированная реклама / Москва: #7; Telegram Ads: #3; подрядчики IT-компаний / таргетированная реклама: #3",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
       "Награды 2025",
       "Международные"
     ],
@@ -5894,7 +5987,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-19",
@@ -6120,7 +6213,6 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -6132,7 +6224,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-22",
     "hhVacanciesCheckedAt": "2026-05-22",
@@ -6403,7 +6495,6 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -6415,7 +6506,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-25",
     "hhVacanciesCheckedAt": "2026-05-25",
@@ -6550,7 +6641,6 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -6562,7 +6652,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-25",
     "hhVacanciesCheckedAt": "2026-05-25",
@@ -6593,7 +6683,7 @@
     "vacanciesRange": "1–4",
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
-    "workFormat": "Не указано",
+    "workFormat": "Смешанный",
     "hiringGeo": "РФ",
     "international": "Да",
     "hhRatingDisplay": "4,3",
@@ -6647,7 +6737,6 @@
     "hasAwards2025": true,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -6659,7 +6748,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-22",
     "hhVacanciesCheckedAt": "2026-05-22",
@@ -6782,7 +6871,12 @@
         "sourceUrl": "https://career.habr.com/companies/rockstonedev"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://www.gosuslugi.ru/newsearch/proverit-akkreditaciyu-it-kompanii"
+    }
   },
   {
     "id": "cmp_157940ae24",
@@ -6857,7 +6951,6 @@
     "awards2025": "Ruward Spec 2025 — influencer marketing и работа с блогерами: #7",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
       "Награды 2025"
     ],
     "signals": {
@@ -6868,7 +6961,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -6965,7 +7058,12 @@
     "habrUrl": "https://career.habr.com/companies/touchinstinct",
     "linkedinUrl": "https://www.linkedin.com/company/touchinstinct/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://star-pro.ru/proverka-kontragenta/organization/1147847342862--ooo-tachin"
+    }
   },
   {
     "id": "cmp_de444ca130",
@@ -7235,7 +7333,12 @@
     "habrUrl": null,
     "linkedinUrl": "https://www.linkedin.com/company/webit1",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-05-27",
+      "sourceUrl": "https://www.webit.ru/contacts/"
+    }
   },
   {
     "id": "cmp_29af614dba",
@@ -7342,7 +7445,7 @@
     "vacanciesRange": "1–4",
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
-    "workFormat": "Не указано",
+    "workFormat": "Удалёнка",
     "hiringGeo": "РФ",
     "international": "Нет",
     "hhRatingDisplay": "5,0",
@@ -7472,7 +7575,7 @@
     "vacanciesRange": "1–4",
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
-    "workFormat": "Офис",
+    "workFormat": "Не указано",
     "hiringGeo": "Локально",
     "international": "Нет",
     "hhRatingDisplay": "4,2",
@@ -7565,7 +7668,7 @@
     "vacanciesRange": "0",
     "vacanciesWeight": 0,
     "hiringStatus": "На паузе",
-    "workFormat": "Офис",
+    "workFormat": "Не указано",
     "hiringGeo": "Локально",
     "international": "Нет",
     "hhRatingDisplay": "4,9",
@@ -7653,7 +7756,7 @@
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
     "workFormat": "Не указано",
-    "hiringGeo": "РФ",
+    "hiringGeo": "Локально",
     "international": "Нет",
     "hhRatingDisplay": "Нет отзывов",
     "hhRatingValue": null,
@@ -7746,9 +7849,7 @@
     "habrRatingValue": null,
     "awards2025": null,
     "hasAwards2025": false,
-    "presets": [
-      "Удалёнка"
-    ],
+    "presets": [],
     "signals": {
       "hasDirectApply": true,
       "hasCareerPage": true,
@@ -7757,7 +7858,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-19",
     "hhVacanciesCheckedAt": "2026-05-19",
@@ -7780,7 +7881,7 @@
     "vacanciesRange": "0",
     "vacanciesWeight": 0,
     "hiringStatus": "На паузе",
-    "workFormat": "Удалёнка",
+    "workFormat": "Смешанный",
     "hiringGeo": "РФ",
     "international": "Нет",
     "hhRatingDisplay": "Нет отзывов",
@@ -7789,9 +7890,7 @@
     "habrRatingValue": null,
     "awards2025": null,
     "hasAwards2025": false,
-    "presets": [
-      "Удалёнка"
-    ],
+    "presets": [],
     "signals": {
       "hasDirectApply": true,
       "hasCareerPage": true,
@@ -7800,7 +7899,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-18",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -7922,7 +8021,6 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
       "Высокая HR-оценка"
     ],
     "signals": {
@@ -7933,7 +8031,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-18",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -8001,8 +8099,8 @@
     "vacanciesRange": "1–4",
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
-    "workFormat": "Не указано",
-    "hiringGeo": "Не указано",
+    "workFormat": "Офис",
+    "hiringGeo": "Локально",
     "international": "Нет",
     "hhRatingDisplay": "4,3",
     "hhRatingValue": 4.3,
@@ -8096,7 +8194,6 @@
     "awards2025": "RUWARD AWARD 2025 — Performance-маркетинг / Агентство года",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -8108,7 +8205,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-18",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -8568,8 +8665,8 @@
     "vacanciesRange": "1–4",
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
-    "workFormat": "Не указано",
-    "hiringGeo": "Не указано",
+    "workFormat": "Удалёнка",
+    "hiringGeo": "РФ",
     "international": "Нет",
     "hhRatingDisplay": "4,5",
     "hhRatingValue": 4.5,
@@ -8578,6 +8675,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
+      "Удалёнка",
       "Высокая HR-оценка"
     ],
     "signals": {
@@ -8588,7 +8686,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": false,
+    "hasRemote": true,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -8698,7 +8796,7 @@
     "vacanciesRange": "1–4",
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
-    "workFormat": "Не указано",
+    "workFormat": "Гибрид",
     "hiringGeo": "Локально",
     "international": "Нет",
     "hhRatingDisplay": "5,0",
@@ -8741,8 +8839,8 @@
     "vacanciesRange": "0",
     "vacanciesWeight": 0,
     "hiringStatus": "На паузе",
-    "workFormat": "Не указано",
-    "hiringGeo": "Не указано",
+    "workFormat": "Смешанный",
+    "hiringGeo": "РФ",
     "international": "Нет",
     "hhRatingDisplay": "5,0",
     "hhRatingValue": 5,
@@ -8970,7 +9068,6 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -8982,7 +9079,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -9015,7 +9112,6 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
       "Высокая HR-оценка"
     ],
     "signals": {
@@ -9026,7 +9122,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-18",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -9235,7 +9331,6 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
       "Высокая HR-оценка"
     ],
     "signals": {
@@ -9246,7 +9341,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -9323,7 +9418,6 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -9335,7 +9429,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-18",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -9359,7 +9453,7 @@
     "vacanciesWeight": 2,
     "hiringStatus": "Активный",
     "workFormat": "Смешанный",
-    "hiringGeo": "РФ",
+    "hiringGeo": "Локально",
     "international": "Нет",
     "hhRatingDisplay": "4,7",
     "hhRatingValue": 4.7,
@@ -9456,7 +9550,7 @@
     "vacanciesRange": "1–4",
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
-    "workFormat": "Не указано",
+    "workFormat": "Смешанный",
     "hiringGeo": "РФ",
     "international": "Нет",
     "hhRatingDisplay": "4,9",
@@ -9499,7 +9593,7 @@
     "vacanciesRange": "5–10",
     "vacanciesWeight": 2,
     "hiringStatus": "Активный",
-    "workFormat": "Не указано",
+    "workFormat": "Смешанный",
     "hiringGeo": "РФ",
     "international": "Нет",
     "hhRatingDisplay": "Нет отзывов",
@@ -9640,7 +9734,7 @@
     "vacanciesWeight": 0,
     "hiringStatus": "На паузе",
     "workFormat": "Не указано",
-    "hiringGeo": "Не указано",
+    "hiringGeo": "Локально",
     "international": "Неясно",
     "hhRatingDisplay": "Нет отзывов",
     "hhRatingValue": null,
@@ -9690,7 +9784,6 @@
     "awards2025": "Есть в отраслевых рейтингах; 2025 не подтверждено",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
       "Награды 2025",
       "Международные"
     ],
@@ -9702,7 +9795,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -9725,8 +9818,8 @@
     "vacanciesRange": "5–10",
     "vacanciesWeight": 2,
     "hiringStatus": "Активный",
-    "workFormat": "Не указано",
-    "hiringGeo": "Локально",
+    "workFormat": "Смешанный",
+    "hiringGeo": "РФ",
     "international": "Нет",
     "hhRatingDisplay": "4,8",
     "hhRatingValue": 4.8,
@@ -9814,7 +9907,7 @@
     "vacanciesRange": "1–4",
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
-    "workFormat": "Офис",
+    "workFormat": "Смешанный",
     "hiringGeo": "Локально",
     "international": "Нет",
     "hhRatingDisplay": "4,1",
@@ -9906,7 +9999,6 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
       "Высокая HR-оценка"
     ],
     "signals": {
@@ -9917,7 +10009,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-18",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -10211,7 +10303,7 @@
     "vacanciesRange": "1–4",
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
-    "workFormat": "Не указано",
+    "workFormat": "Гибрид",
     "hiringGeo": "Локально",
     "international": "Нет",
     "hhRatingDisplay": "4,3",
@@ -10299,7 +10391,7 @@
     "vacanciesRange": "0",
     "vacanciesWeight": 0,
     "hiringStatus": "На паузе",
-    "workFormat": "Удалёнка",
+    "workFormat": "Смешанный",
     "hiringGeo": "РФ",
     "international": "Нет",
     "hhRatingDisplay": "4,7",
@@ -10568,7 +10660,7 @@
     "vacanciesRange": "1–4",
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
-    "workFormat": "Удалёнка",
+    "workFormat": "Смешанный",
     "hiringGeo": "РФ",
     "international": "Частично",
     "hhRatingDisplay": "Нет отзывов",
@@ -10666,8 +10758,8 @@
     "vacanciesRange": "5–10",
     "vacanciesWeight": 2,
     "hiringStatus": "Активный",
-    "workFormat": "Не указано",
-    "hiringGeo": "Не указано",
+    "workFormat": "Гибрид",
+    "hiringGeo": "Локально",
     "international": "Нет",
     "hhRatingDisplay": "4,3",
     "hhRatingValue": 4.3,
@@ -10973,7 +11065,7 @@
     "vacanciesRange": "1–4",
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
-    "workFormat": "Не указано",
+    "workFormat": "Смешанный",
     "hiringGeo": "РФ",
     "international": "Нет",
     "hhRatingDisplay": "Нет отзывов",
@@ -11207,7 +11299,6 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
       "Высокая HR-оценка"
     ],
     "signals": {
@@ -11218,7 +11309,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -11305,7 +11396,6 @@
     "awards2025": "Рейтинг Рунета 2025 — образовательные платформы: #3; сайты и веб-сервисы: #31; Tagline 2025 — топ-75",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -11317,7 +11407,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -11390,7 +11480,7 @@
     "vacanciesWeight": 2,
     "hiringStatus": "Активный",
     "workFormat": "Не указано",
-    "hiringGeo": "Не указано",
+    "hiringGeo": "Локально",
     "international": "Нет",
     "hhRatingDisplay": "Нет отзывов",
     "hhRatingValue": null,
@@ -11584,7 +11674,6 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
       "Международные"
     ],
     "signals": {
@@ -11595,7 +11684,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-18",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -11663,7 +11752,7 @@
     "vacanciesWeight": 0,
     "hiringStatus": "На паузе",
     "workFormat": "Не указано",
-    "hiringGeo": "РФ",
+    "hiringGeo": "Локально",
     "international": "Нет",
     "hhRatingDisplay": "5,0",
     "hhRatingValue": 5,
@@ -11705,7 +11794,7 @@
     "vacanciesRange": "1–4",
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
-    "workFormat": "Не указано",
+    "workFormat": "Смешанный",
     "hiringGeo": "РФ",
     "international": "Нет",
     "hhRatingDisplay": "4,5",
@@ -11748,7 +11837,7 @@
     "vacanciesRange": "0",
     "vacanciesWeight": 0,
     "hiringStatus": "На паузе",
-    "workFormat": "Удалёнка",
+    "workFormat": "Смешанный",
     "hiringGeo": "РФ",
     "international": "Нет",
     "hhRatingDisplay": "5,0",
@@ -11891,7 +11980,6 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
       "Высокая HR-оценка",
       "Международные"
     ],
@@ -11903,7 +11991,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-26",
     "hhVacanciesCheckedAt": "2026-05-25",
@@ -11981,7 +12069,6 @@
     "awards2025": "Habr Career 2025 — средняя оценка #1, интересные задачи #1, адекватная зарплата #1, соцпакет #1",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -11993,7 +12080,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-18",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -12024,7 +12111,7 @@
     "vacanciesRange": "5–10",
     "vacanciesWeight": 2,
     "hiringStatus": "Активный",
-    "workFormat": "Не указано",
+    "workFormat": "Удалёнка",
     "hiringGeo": "РФ",
     "international": "Частично",
     "hhRatingDisplay": "4,0",
@@ -12112,8 +12199,8 @@
     "vacanciesRange": "0",
     "vacanciesWeight": 0,
     "hiringStatus": "На паузе",
-    "workFormat": "Не указано",
-    "hiringGeo": "Не указано",
+    "workFormat": "Смешанный",
+    "hiringGeo": "РФ",
     "international": "Нет",
     "hhRatingDisplay": "4,0",
     "hhRatingValue": 4,
@@ -12164,9 +12251,7 @@
     "habrRatingValue": null,
     "awards2025": null,
     "hasAwards2025": false,
-    "presets": [
-      "Удалёнка"
-    ],
+    "presets": [],
     "signals": {
       "hasDirectApply": false,
       "hasCareerPage": true,
@@ -12175,7 +12260,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-26",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -12262,7 +12347,6 @@
     "awards2025": "Habr Career 2025 — Средняя оценка #5; Интересные задачи #3; Адекватная зарплата #3; Социальный пакет #6; Комфортные условия труда #3; Профессиональный рост #1; Карьерный рост #1; Отношения с коллегами #1",
     "hasAwards2025": true,
     "presets": [
-      "Удалёнка",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -12275,7 +12359,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-22",
     "hhVacanciesCheckedAt": "2026-05-22",
@@ -12359,7 +12443,6 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
       "Международные"
     ],
     "signals": {
@@ -12370,7 +12453,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-23",
@@ -12437,7 +12520,7 @@
     "vacanciesWeight": 0,
     "hiringStatus": "На паузе",
     "workFormat": "Не указано",
-    "hiringGeo": "Не указано",
+    "hiringGeo": "Локально",
     "international": "Нет",
     "hhRatingDisplay": "Нет отзывов",
     "hhRatingValue": null,
@@ -12608,8 +12691,8 @@
     "vacanciesRange": "1–4",
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
-    "workFormat": "Не указано",
-    "hiringGeo": "Не указано",
+    "workFormat": "Смешанный",
+    "hiringGeo": "РФ",
     "international": "Нет",
     "hhRatingDisplay": "4,7",
     "hhRatingValue": 4.7,
@@ -12651,8 +12734,8 @@
     "vacanciesRange": "0",
     "vacanciesWeight": 0,
     "hiringStatus": "На паузе",
-    "workFormat": "Не указано",
-    "hiringGeo": "Не указано",
+    "workFormat": "Смешанный",
+    "hiringGeo": "РФ",
     "international": "Нет",
     "hhRatingDisplay": "4,6",
     "hhRatingValue": 4.6,
@@ -12661,6 +12744,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
+      "Удалёнка",
       "Высокая HR-оценка"
     ],
     "signals": {
@@ -12671,7 +12755,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": false,
+    "hasRemote": true,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -12694,7 +12778,7 @@
     "vacanciesRange": "1–4",
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
-    "workFormat": "Не указано",
+    "workFormat": "Офис",
     "hiringGeo": "РФ",
     "international": "Частично",
     "hhRatingDisplay": "4,1",
@@ -12737,8 +12821,8 @@
     "vacanciesRange": "1–4",
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
-    "workFormat": "Офис",
-    "hiringGeo": "Локально",
+    "workFormat": "Смешанный",
+    "hiringGeo": "РФ",
     "international": "Нет",
     "hhRatingDisplay": "4,4",
     "hhRatingValue": 4.4,
@@ -12746,7 +12830,9 @@
     "habrRatingValue": null,
     "awards2025": null,
     "hasAwards2025": false,
-    "presets": [],
+    "presets": [
+      "Удалёнка"
+    ],
     "signals": {
       "hasDirectApply": true,
       "hasCareerPage": true,
@@ -12755,7 +12841,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": false,
+    "hasRemote": true,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-19",
@@ -12958,7 +13044,7 @@
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
     "workFormat": "Не указано",
-    "hiringGeo": "РФ",
+    "hiringGeo": "Локально",
     "international": "Нет",
     "hhRatingDisplay": "4,4",
     "hhRatingValue": 4.4,
@@ -13088,8 +13174,8 @@
     "vacanciesRange": "0",
     "vacanciesWeight": 0,
     "hiringStatus": "На паузе",
-    "workFormat": "Не указано",
-    "hiringGeo": "Не указано",
+    "workFormat": "Удалёнка",
+    "hiringGeo": "Весь мир",
     "international": "Да",
     "hhRatingDisplay": "Нет отзывов",
     "hhRatingValue": null,
@@ -13098,6 +13184,7 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
+      "Удалёнка",
       "Международные"
     ],
     "signals": {
@@ -13108,7 +13195,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": false,
+    "hasRemote": true,
     "hasHighHrRating": false,
     "lastCheckedAt": "2026-05-23",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -13141,7 +13228,6 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Удалёнка",
       "Высокая HR-оценка"
     ],
     "signals": {
@@ -13152,7 +13238,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-18",
     "hhVacanciesCheckedAt": "2026-05-18",
@@ -13309,7 +13395,7 @@
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
     "workFormat": "Офис",
-    "hiringGeo": "РФ",
+    "hiringGeo": "Локально",
     "international": "Нет",
     "hhRatingDisplay": "4,7",
     "hhRatingValue": 4.7,
@@ -13446,7 +13532,7 @@
     "vacanciesRange": "1–4",
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
-    "workFormat": "Офис",
+    "workFormat": "Не указано",
     "hiringGeo": "Локально",
     "international": "Нет",
     "hhRatingDisplay": "Нет отзывов",
@@ -13571,7 +13657,7 @@
     "vacanciesRange": "1–4",
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
-    "workFormat": "Офис",
+    "workFormat": "Смешанный",
     "hiringGeo": "Локально",
     "international": "Нет",
     "hhRatingDisplay": "5,0",
@@ -13659,7 +13745,7 @@
     "vacanciesRange": "0",
     "vacanciesWeight": 0,
     "hiringStatus": "На паузе",
-    "workFormat": "Офис",
+    "workFormat": "Не указано",
     "hiringGeo": "Локально",
     "international": "Нет",
     "hhRatingDisplay": "Нет отзывов",
@@ -13796,7 +13882,6 @@
     "hasAwards2025": false,
     "presets": [
       "Активный найм",
-      "Удалёнка",
       "Высокая HR-оценка"
     ],
     "signals": {
@@ -13807,7 +13892,7 @@
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": true,
-    "hasRemote": true,
+    "hasRemote": false,
     "hasHighHrRating": true,
     "lastCheckedAt": "2026-05-26",
     "hhVacanciesCheckedAt": "2026-05-18",
