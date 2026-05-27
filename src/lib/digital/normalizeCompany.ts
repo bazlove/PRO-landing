@@ -1,4 +1,9 @@
-import type { CompanyPublic, CompanySignals } from "../../types/digital";
+import type {
+  CompanyItAccreditation,
+  CompanyPublic,
+  CompanySignals,
+  ItAccreditationStatus,
+} from "../../types/digital";
 import { PUBLIC_PRESET_VALUES, type PublicPresetValue } from "./presetLabels";
 import { isForbiddenGenericWebsiteUrl, sanitizePublicWebsiteUrl } from "./websiteUrlDenylist";
 
@@ -1194,6 +1199,73 @@ function resolveCareerUrl(raw: Record<string, unknown>): string | null {
   return null;
 }
 
+const IT_ACCREDITATION_STATUSES = new Set<ItAccreditationStatus>([
+  "confirmed_official",
+  "confirmed_open_registry_mention",
+  "hh_accreditation_signal",
+  "manual_check_required",
+  "not_confirmed",
+  "not_applicable_foreign_entity",
+]);
+
+const IT_ACCREDITATION_STATUS_KEYS = [
+  "it_accreditation_status",
+  "itAccreditationStatus",
+] as const;
+
+const IT_ACCREDITATION_CHECKED_AT_KEYS = [
+  "it_accreditation_checked_at",
+  "itAccreditationCheckedAt",
+] as const;
+
+const IT_ACCREDITATION_SOURCE_URL_KEYS = [
+  "it_accreditation_source_url",
+  "itAccreditationSourceUrl",
+] as const;
+
+function parseItAccreditationStatus(raw: unknown): ItAccreditationStatus | null {
+  if (raw === null || raw === undefined) return null;
+  const text = String(raw).trim();
+  if (!text) return null;
+  if (IT_ACCREDITATION_STATUSES.has(text as ItAccreditationStatus)) {
+    return text as ItAccreditationStatus;
+  }
+  return null;
+}
+
+function readItAccreditationFromJson(
+  raw: Record<string, unknown>,
+): CompanyItAccreditation | null {
+  const value = raw.itAccreditation;
+  if (!isRecord(value)) return null;
+
+  const status = parseItAccreditationStatus(value.status);
+  if (!status) return null;
+
+  return {
+    status,
+    checkedAt: parseIsoDate(value.checkedAt),
+    sourceUrl: pickOptionalHttpUrl(value, ["sourceUrl"]),
+  };
+}
+
+/** Maps workbook / public JSON fields to `itAccreditation`; snake_case source columns are not exported. */
+export function normalizeItAccreditation(
+  raw: Record<string, unknown>,
+): CompanyItAccreditation | null {
+  const fromJson = readItAccreditationFromJson(raw);
+  if (fromJson) return fromJson;
+
+  const status = parseItAccreditationStatus(pickValue(raw, [...IT_ACCREDITATION_STATUS_KEYS]));
+  if (!status) return null;
+
+  return {
+    status,
+    checkedAt: parseIsoDate(pickValue(raw, [...IT_ACCREDITATION_CHECKED_AT_KEYS])),
+    sourceUrl: pickOptionalHttpUrl(raw, [...IT_ACCREDITATION_SOURCE_URL_KEYS]),
+  };
+}
+
 function parseIsoDate(raw: unknown): string | null {
   if (raw === null || raw === undefined) return null;
   const text = String(raw).trim();
@@ -1393,6 +1465,8 @@ export function normalizeCompany(
 
   warnMissingNormalizedSourceLinks(name, rawInput, sourceUrls, warnings);
 
+  const itAccreditation = normalizeItAccreditation(rawInput);
+
   const partial: CompanyPublic = {
     id,
     slug,
@@ -1436,6 +1510,7 @@ export function normalizeCompany(
     websiteUrl,
     linkedinUrl,
     employerRankingBadges: normalizeEmployerRankingBadges(rawInput),
+    ...(itAccreditation ? { itAccreditation } : {}),
     publicStatus: "public",
   };
 
