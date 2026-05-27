@@ -80,35 +80,123 @@ describe("normalizeItAccreditation", () => {
 });
 
 describe("showsPublicItAccreditationChip", () => {
-  it("shows only confirmed public statuses", () => {
+  it("returns true only for confirmed public statuses", () => {
+    // confirmed_official
     assert.equal(
       showsPublicItAccreditationChip(
         baseCompany({
           id: "1",
-          slug: "a",
-          name: "A",
-          careerUrl: "https://example.com/a",
+          slug: "confirmed-official",
+          name: "Confirmed Official",
+          careerUrl: "https://example.com/official",
           itAccreditation: {
             status: "confirmed_official",
-            checkedAt: null,
-            sourceUrl: null,
+            checkedAt: "2026-05-19",
+            sourceUrl: "https://example.com/registry",
           },
         }),
       ),
       true,
     );
+
+    // confirmed_open_registry_mention
     assert.equal(
       showsPublicItAccreditationChip(
         baseCompany({
           id: "2",
-          slug: "b",
-          name: "B",
-          careerUrl: "https://example.com/b",
+          slug: "confirmed-registry",
+          name: "Confirmed Registry",
+          careerUrl: "https://example.com/registry",
+          itAccreditation: {
+            status: "confirmed_open_registry_mention",
+            checkedAt: "2026-05-18",
+            sourceUrl: "https://example.com/open-registry",
+          },
+        }),
+      ),
+      true,
+    );
+
+    // hh_accreditation_signal
+    assert.equal(
+      showsPublicItAccreditationChip(
+        baseCompany({
+          id: "3",
+          slug: "hh-signal",
+          name: "HH Signal",
+          careerUrl: "https://example.com/hh-signal",
           itAccreditation: {
             status: "hh_accreditation_signal",
+            checkedAt: "2026-05-17",
+            sourceUrl: "https://example.com/hh",
+          },
+        }),
+      ),
+      false,
+    );
+
+    // manual_check_required
+    assert.equal(
+      showsPublicItAccreditationChip(
+        baseCompany({
+          id: "4",
+          slug: "manual-check",
+          name: "Manual Check",
+          careerUrl: "https://example.com/manual-check",
+          itAccreditation: {
+            status: "manual_check_required",
+            checkedAt: "2026-05-16",
+            sourceUrl: "https://example.com/manual",
+          },
+        }),
+      ),
+      false,
+    );
+
+    // not_confirmed
+    assert.equal(
+      showsPublicItAccreditationChip(
+        baseCompany({
+          id: "5",
+          slug: "not-confirmed",
+          name: "Not Confirmed",
+          careerUrl: "https://example.com/not-confirmed",
+          itAccreditation: {
+            status: "not_confirmed",
             checkedAt: null,
             sourceUrl: null,
           },
+        }),
+      ),
+      false,
+    );
+
+    // not_applicable_foreign_entity
+    assert.equal(
+      showsPublicItAccreditationChip(
+        baseCompany({
+          id: "6",
+          slug: "foreign-entity",
+          name: "Foreign Entity",
+          careerUrl: "https://example.com/foreign",
+          itAccreditation: {
+            status: "not_applicable_foreign_entity",
+            checkedAt: null,
+            sourceUrl: null,
+          },
+        }),
+      ),
+      false,
+    );
+
+    // missing / null accreditation
+    assert.equal(
+      showsPublicItAccreditationChip(
+        baseCompany({
+          id: "7",
+          slug: "no-accreditation",
+          name: "No Accreditation",
+          careerUrl: "https://example.com/no-accreditation",
         }),
       ),
       false,
