@@ -11,7 +11,7 @@ import {
   DIGITAL_FILTER_PRESETS,
   DIGITAL_PRIMARY_PRESET_IDS,
 } from "./filterPresets";
-import { normalizeCatalogSearch } from "./searchNormalize";
+import { getCatalogSearchVariants, normalizeCatalogSearch } from "./searchNormalize";
 
 const SEARCH_ANALYTICS_DEBOUNCE_MS = 600;
 
@@ -27,8 +27,8 @@ const ADVANCED_FILTER_IDS = {
 const DESKTOP_MQ = "(min-width: 960px)";
 const MOBILE_FILTERS_MQ = "(max-width: 640px)";
 const NARROW_SEARCH_PLACEHOLDER_MQ = "(max-width: 359px)";
-const SEARCH_PLACEHOLDER_DEFAULT = "Компания, город или ниша";
-const SEARCH_PLACEHOLDER_NARROW = "Компания или ниша";
+const SEARCH_PLACEHOLDER_DEFAULT = "Название, домен, город или ниша";
+const SEARCH_PLACEHOLDER_NARROW = "Компания, домен или ниша";
 const TABLET_FILTERS_MQ = "(min-width: 700px) and (max-width: 959px) and (min-height: 700px)";
 const VALID_PRESET_IDS = new Set(DIGITAL_FILTER_PRESETS.map((preset) => preset.id));
 const ADVANCED_TOGGLE_LABEL_SHOW = "Показать расширенные фильтры ↓";
@@ -232,10 +232,10 @@ export function initDigitalCatalogFilters(): void {
   }
 
   function itemMatchesFilters(el: Element): boolean {
-    const search = normalizeCatalogSearch(searchInput?.value ?? "");
-    if (search) {
+    const queries = getCatalogSearchVariants(searchInput?.value ?? "");
+    if (queries.length > 0) {
       const hay = el.getAttribute("data-search-text") || "";
-      if (!hay.includes(search)) return false;
+      if (!queries.some((query) => hay.includes(query))) return false;
     }
 
     if (citySelect?.value && el.getAttribute("data-city") !== citySelect.value) return false;
