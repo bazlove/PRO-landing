@@ -11,7 +11,7 @@ const MOCK_SIGNALS_DEFAULT: CompanySignals = {
 /**
  * Synthetic mock data for UI development only. Replace with `companies.json` in production.
  */
-export const mockCompanies: CompanyPublic[] = [
+const mockCompaniesBase: Array<Omit<CompanyPublic, "searchAliases"> & { searchAliases?: string[] }> = [
   {
     id: "mock-001",
     slug: "north-star-digital",
@@ -701,3 +701,8 @@ export const mockCompanies: CompanyPublic[] = [
     publicStatus: "public",
   },
 ];
+
+export const mockCompanies: CompanyPublic[] = mockCompaniesBase.map((company) => ({
+  ...company,
+  searchAliases: company.searchAliases ?? [],
+}));
