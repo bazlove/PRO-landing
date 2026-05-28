@@ -45,6 +45,7 @@ export type CompanyPublic = {
   id: string;
   slug: string;
   name: string;
+  searchAliases: string[];
   city: string;
   companyType: string;
   niche: string;
