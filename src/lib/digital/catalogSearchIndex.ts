@@ -33,6 +33,10 @@ function parseDomainFromUrl(rawUrl: string | null): string | null {
   }
 }
 
+function isHostLikeTerm(value: string): boolean {
+  return /^[a-z0-9-]+(\.[a-z0-9-]+)+$/i.test(value.trim());
+}
+
 function maybeBaseDomain(host: string): string | null {
   const parts = host.split(".");
   if (parts.length < 3) return null;
@@ -60,7 +64,7 @@ export function buildCatalogSearchText(company: CompanyPublic): string {
   const values = [
     company.name,
     company.slug,
-    ...company.searchAliases,
+    ...(company.searchAliases ?? []),
     company.city,
     company.companyType,
     company.niche,
@@ -69,6 +73,10 @@ export function buildCatalogSearchText(company: CompanyPublic): string {
 
   const tokens = new Set<string>();
   for (const value of values) {
+    const raw = String(value ?? "").trim();
+    if (!raw) continue;
+    if (isHostLikeTerm(raw) && isDeniedPlatformDomain(raw)) continue;
+
     for (const variant of getCatalogSearchVariants(value ?? "")) {
       tokens.add(variant);
     }
