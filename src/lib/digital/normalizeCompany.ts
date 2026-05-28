@@ -4,7 +4,9 @@ import type {
   CompanySignals,
   ItAccreditationStatus,
 } from "../../types/digital";
+import { isDeniedPlatformDomain } from "./catalogSearchIndex";
 import { PUBLIC_PRESET_VALUES, type PublicPresetValue } from "./presetLabels";
+import { normalizeCatalogSearch } from "./searchNormalize";
 import { isForbiddenGenericWebsiteUrl, sanitizePublicWebsiteUrl } from "./websiteUrlDenylist";
 
 const FORBIDDEN_KEY_PATTERNS: RegExp[] = [
@@ -29,7 +31,6 @@ const FORBIDDEN_KEY_PATTERNS: RegExp[] = [
   /historical_employer_awards/i,
   /historical_awards_source_url/i,
   /historicalEmployerAwards/i,
-  /search_aliases/i,
   /^legal_name$/i,
   /^inn$/i,
   /^ogrn$/i,
@@ -918,6 +919,90 @@ const ACTIVE_VACANCIES_SOURCE_KEYS = [
   "Источник активных вакансий",
 ] as const;
 
+const SEARCH_ALIASES_COLUMN_KEYS = [
+  "search_aliases",
+  "searchAliases",
+  "Поисковые алиасы",
+  "Алиасы поиска",
+] as const;
+
+const SEARCH_ALIAS_MAX_COUNT = 20;
+const SEARCH_ALIAS_MAX_LENGTH = 80;
+const SEARCH_ALIAS_FORBIDDEN_PATTERNS: RegExp[] = [
+  /\bооо\b/i,
+  /\bао\b/i,
+  /\bпао\b/i,
+  /\bзао\b/i,
+  /\bип\b/i,
+  /\bинн\b/i,
+  /\bогрн\b/i,
+  /\bкпп\b/i,
+  /юридическ(?:ий|ого)\s+адрес/i,
+  /hr[\s_-]?email/i,
+  /\bemail\b/i,
+  /\bmailto:/i,
+  /\bhttps?:\/\//i,
+  /\bwww\./i,
+];
+
+function hasForbiddenSearchAliasToken(value: string): boolean {
+  if (SEARCH_ALIAS_FORBIDDEN_PATTERNS.some((pattern) => pattern.test(value))) return true;
+  if (/\S+@\S+\.\S+/.test(value)) return true;
+
+  const normalized = normalizeCatalogSearch(value);
+  return normalized.includes("hh ru") || normalized.includes("career habr com") || normalized.includes("linkedin com");
+}
+
+function isDomainLikeAlias(value: string): boolean {
+  try {
+    const url = new URL(`https://${value.trim()}`);
+    const host = url.hostname.toLowerCase().replace(/^www\./, "");
+    return host.includes(".") && !isDeniedPlatformDomain(host);
+  } catch {
+    return false;
+  }
+}
+
+function normalizeSearchAliases(raw: unknown, warnings?: string[]): string[] {
+  if (raw === null || raw === undefined) return [];
+
+  const sourceValues = Array.isArray(raw) ? raw.map((item) => String(item ?? "")) : [String(raw)];
+  const chunks = sourceValues.flatMap((value) => value.split(/[;\n\r]+/g));
+
+  const aliases: string[] = [];
+  const seen = new Set<string>();
+
+  for (const chunk of chunks) {
+    const alias = chunk.trim();
+    if (!alias) continue;
+
+    if (alias.length > SEARCH_ALIAS_MAX_LENGTH) {
+      warnDigital(`[digital] Search alias dropped (too long): "${alias.slice(0, 80)}..."`, warnings);
+      continue;
+    }
+
+    if (hasForbiddenSearchAliasToken(alias)) {
+      warnDigital(`[digital] Search alias dropped (forbidden token): "${alias}"`, warnings);
+      continue;
+    }
+
+    if (isDomainLikeAlias(alias)) {
+      warnDigital(`[digital] Search alias dropped (domain-like value): "${alias}"`, warnings);
+      continue;
+    }
+
+    const normalized = normalizeCatalogSearch(alias);
+    if (!normalized) continue;
+    if (seen.has(normalized)) continue;
+
+    seen.add(normalized);
+    aliases.push(alias);
+    if (aliases.length >= SEARCH_ALIAS_MAX_COUNT) break;
+  }
+
+  return aliases;
+}
+
 const QA_COMMENT_KEYS = [
   "QA комментарий",
   "qa_comment",
@@ -1192,6 +1277,7 @@ export function recalculateDerivedFields(company: CompanyPublic): CompanyPublic 
 
   return {
     ...withDerived,
+    searchAliases: normalizeSearchAliases(withDerived.searchAliases),
     presets: buildPresets(withDerived),
     signals,
   };
@@ -1496,6 +1582,10 @@ export function normalizeCompany(
     id,
     slug,
     name,
+    searchAliases: normalizeSearchAliases(
+      pickValue(rawInput, [...SEARCH_ALIASES_COLUMN_KEYS]),
+      warnings,
+    ),
     city: pickString(rawInput, ["city", "Город", "HQ", "Город / HQ"], "Не указано"),
     companyType: pickString(
       rawInput,
@@ -1595,13 +1685,6 @@ export function compareCompaniesByName(a: Pick<CompanyPublic, "name">, b: Pick<C
   });
 }
 
-/**
- * Canonical public display order for generated `companies.json`.
- *
- * Size DESC → name ASC (Russian locale). This is a neutral UX ordering, not an employer ranking.
- * Hiring status, ratings, awards, remote format, and other signals are filters/presets only.
- * The master XLSX / `Сводка` row order must not be used as the website display order.
- */
 export function compareCompaniesByDefaultOrder(a: CompanyPublic, b: CompanyPublic): number {
   const sizeDiff = getCompanySizeWeight(b.size) - getCompanySizeWeight(a.size);
   if (sizeDiff !== 0) return sizeDiff;
@@ -1609,7 +1692,6 @@ export function compareCompaniesByDefaultOrder(a: CompanyPublic, b: CompanyPubli
   return compareCompaniesByName(a, b);
 }
 
-/** Alias for `compareCompaniesByDefaultOrder`. */
 export function compareCompanies(a: CompanyPublic, b: CompanyPublic): number {
   return compareCompaniesByDefaultOrder(a, b);
 }
