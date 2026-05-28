@@ -52,6 +52,7 @@ export function toPublicCompanyJsonRecord(company: CompanyPublic): CompanyPublic
     id: recalculated.id,
     slug: recalculated.slug,
     name: recalculated.name,
+    searchAliases: recalculated.searchAliases ?? [],
     city: recalculated.city,
     companyType: recalculated.companyType,
     niche: recalculated.niche,
