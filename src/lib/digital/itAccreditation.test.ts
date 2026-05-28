@@ -14,6 +14,7 @@ function baseCompany(
     id,
     slug,
     name,
+    searchAliases: [],
     city: "Москва",
     companyType: "Digital",
     niche: "QA",
