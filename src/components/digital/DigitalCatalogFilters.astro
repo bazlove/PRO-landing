@@ -41,7 +41,14 @@ const selectPlaceholder = "Все";
             <h2 id="digital-catalog-heading" class="digital-catalog-filters__heading">
               Поиск работодателей
             </h2>
-            <p class="digital-catalog-filters__subheading">По названию, домену, городу и нише</p>
+            <p class="digital-catalog-filters__subheading">
+              <span class="digital-catalog-filters__subheading-text digital-catalog-filters__subheading-text--desktop">
+                По типу компании, статусу найма, формату работы и географии
+              </span>
+              <span class="digital-catalog-filters__subheading-text digital-catalog-filters__subheading-text--mobile">
+                По типу компании, формату работы и географии
+              </span>
+            </p>
           </div>
           <button
             type="button"
@@ -283,3 +290,19 @@ const selectPlaceholder = "Все";
     Ничего не найдено. Попробуйте изменить фильтры.
   </p>
 </div>
+
+<style is:global>
+  .digital-catalog-filters__subheading-text--mobile {
+    display: none;
+  }
+
+  @media (max-width: 640px) {
+    .digital-catalog-filters__subheading-text--desktop {
+      display: none;
+    }
+
+    .digital-catalog-filters__subheading-text--mobile {
+      display: inline;
+    }
+  }
+</style>
