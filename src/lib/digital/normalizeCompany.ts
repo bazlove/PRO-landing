@@ -4,7 +4,6 @@ import type {
   CompanySignals,
   ItAccreditationStatus,
 } from "../../types/digital";
-import { isDeniedPlatformDomain } from "./catalogSearchIndex";
 import { PUBLIC_PRESET_VALUES, type PublicPresetValue } from "./presetLabels";
 import { normalizeCatalogSearch } from "./searchNormalize";
 import { isForbiddenGenericWebsiteUrl, sanitizePublicWebsiteUrl } from "./websiteUrlDenylist";
@@ -928,6 +927,7 @@ const SEARCH_ALIASES_COLUMN_KEYS = [
 
 const SEARCH_ALIAS_MAX_COUNT = 20;
 const SEARCH_ALIAS_MAX_LENGTH = 80;
+const SEARCH_ALIAS_PLATFORM_DENYLIST = ["hh.ru", "career.habr.com", "linkedin.com"] as const;
 const SEARCH_ALIAS_FORBIDDEN_PATTERNS: RegExp[] = [
   /\bооо\b/i,
   /\bао\b/i,
@@ -957,7 +957,10 @@ function isDomainLikeAlias(value: string): boolean {
   try {
     const url = new URL(`https://${value.trim()}`);
     const host = url.hostname.toLowerCase().replace(/^www\./, "");
-    return host.includes(".") && !isDeniedPlatformDomain(host);
+    const isDeniedPlatform = SEARCH_ALIAS_PLATFORM_DENYLIST.some(
+      (domain) => host === domain || host.endsWith(`.${domain}`),
+    );
+    return host.includes(".") && !isDeniedPlatform;
   } catch {
     return false;
   }
@@ -1685,6 +1688,13 @@ export function compareCompaniesByName(a: Pick<CompanyPublic, "name">, b: Pick<C
   });
 }
 
+/**
+ * Canonical public display order for generated `companies.json`.
+ *
+ * Size DESC → name ASC (Russian locale). This is a neutral UX ordering, not an employer ranking.
+ * Hiring status, ratings, awards, remote format, and other signals are filters/presets only.
+ * The master XLSX / `Сводка` row order must not be used as the website display order.
+ */
 export function compareCompaniesByDefaultOrder(a: CompanyPublic, b: CompanyPublic): number {
   const sizeDiff = getCompanySizeWeight(b.size) - getCompanySizeWeight(a.size);
   if (sizeDiff !== 0) return sizeDiff;
@@ -1692,6 +1702,7 @@ export function compareCompaniesByDefaultOrder(a: CompanyPublic, b: CompanyPubli
   return compareCompaniesByName(a, b);
 }
 
+/** Alias for `compareCompaniesByDefaultOrder`. */
 export function compareCompanies(a: CompanyPublic, b: CompanyPublic): number {
   return compareCompaniesByDefaultOrder(a, b);
 }
