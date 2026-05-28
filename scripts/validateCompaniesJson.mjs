@@ -33,6 +33,7 @@ const allowedFields = [
   "id",
   "slug",
   "name",
+  "searchAliases",
   "city",
   "companyType",
   "niche",
@@ -66,6 +67,52 @@ const allowedFields = [
 ];
 
 const optionalFields = ["itAccreditation"];
+const SEARCH_ALIAS_MAX_COUNT = 20;
+const SEARCH_ALIAS_MAX_LENGTH = 80;
+const PLATFORM_DOMAIN_DENYLIST = ["hh.ru", "career.habr.com", "linkedin.com"];
+
+function normalizeSearchAliasForValidation(value) {
+  return String(value)
+    .trim()
+    .toLowerCase()
+    .replace(/ё/g, "е")
+    .replace(/[\u2010-\u2015\u2212\uFE58\uFE63\uFF0D-]/g, "-")
+    .replace(/[.,/_&()'"`|«»“”„\/\\]+/g, " ")
+    .replace(/\s+/g, " ");
+}
+
+function hasForbiddenSearchAliasToken(value) {
+  const text = String(value).trim();
+  const normalized = normalizeSearchAliasForValidation(text);
+  if (!normalized) return false;
+
+  const forbiddenPatterns = [
+    /\bооо\b/i,
+    /\bао\b/i,
+    /\bпао\b/i,
+    /\bзао\b/i,
+    /\bип\b/i,
+    /\bинн\b/i,
+    /\bогрн\b/i,
+    /\bкпп\b/i,
+    /юридическ(?:ий|ого)\s+адрес/i,
+    /hr[\s_-]?email/i,
+    /\bemail\b/i,
+    /\bmailto:/i,
+    /\bhttps?:\/\//i,
+    /\bwww\./i,
+  ];
+  if (forbiddenPatterns.some((pattern) => pattern.test(text))) return true;
+  if (/\S+@\S+\.\S+/.test(text)) return true;
+  return normalized.includes("hh ru") || normalized.includes("career habr com") || normalized.includes("linkedin com");
+}
+
+function hasForbiddenPlatformDomain(value) {
+  const normalized = normalizeSearchAliasForValidation(value);
+  return PLATFORM_DOMAIN_DENYLIST.some((domain) =>
+    normalized.includes(domain.replace(/\./g, " ")),
+  );
+}
 
 const allowedFieldSet = new Set([...allowedFields, ...optionalFields]);
 
@@ -449,6 +496,40 @@ function validateCompany(company, index) {
 
   for (const field of ["id", "slug", "name", "city", "companyType", "niche", "hiringGeo"]) {
     if (!isNonEmptyString(company[field])) addError(index, `${field} must be a non-empty string`);
+  }
+
+  if (!Array.isArray(company.searchAliases)) {
+    addError(index, "searchAliases must be an array");
+  } else {
+    if (company.searchAliases.length > SEARCH_ALIAS_MAX_COUNT) {
+      addError(index, `searchAliases must contain at most ${SEARCH_ALIAS_MAX_COUNT} items`);
+    }
+    const seenAliases = new Set();
+    for (const [aliasIndex, alias] of company.searchAliases.entries()) {
+      if (!isNonEmptyString(alias)) {
+        addError(index, `searchAliases[${aliasIndex}] must be a non-empty string`);
+        continue;
+      }
+      if (alias.length > SEARCH_ALIAS_MAX_LENGTH) {
+        addError(index, `searchAliases[${aliasIndex}] exceeds ${SEARCH_ALIAS_MAX_LENGTH} chars`);
+      }
+      if (/^\s*(mailto:|https?:\/\/|www\.)/i.test(alias) || /\S+@\S+\.\S+/.test(alias)) {
+        addError(index, `searchAliases[${aliasIndex}] must not contain URL/email-like values`);
+      }
+      if (hasForbiddenSearchAliasToken(alias)) {
+        addError(index, `searchAliases[${aliasIndex}] contains forbidden legal/private token`);
+      }
+      if (hasForbiddenPlatformDomain(alias)) {
+        addError(index, `searchAliases[${aliasIndex}] must not contain platform domains`);
+      }
+
+      const normalizedAlias = normalizeSearchAliasForValidation(alias);
+      if (seenAliases.has(normalizedAlias)) {
+        addError(index, `searchAliases[${aliasIndex}] duplicates another alias after normalization`);
+      } else {
+        seenAliases.add(normalizedAlias);
+      }
+    }
   }
 
   if (!(typeof company.size === "string" || company.size === null)) {
