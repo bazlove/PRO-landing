@@ -1,11 +1,9 @@
 import type { CompanyPublic } from "../../types/digital";
 import { formatCatalogPresetIdsAttr } from "./catalogPresetIds";
-import { normalizeCatalogSearch } from "./searchNormalize";
+import { buildCatalogSearchText } from "./catalogSearchIndex";
 
 export function getCatalogSearchText(company: CompanyPublic): string {
-  return normalizeCatalogSearch(
-    `${company.name} ${company.city} ${company.companyType} ${company.niche}`,
-  );
+  return buildCatalogSearchText(company);
 }
 
 /** Public-safe data attributes for catalog filter script (table rows + mobile cards). */
