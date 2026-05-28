@@ -11,7 +11,11 @@ import {
   DIGITAL_FILTER_PRESETS,
   DIGITAL_PRIMARY_PRESET_IDS,
 } from "./filterPresets";
-import { getCatalogSearchVariants, normalizeCatalogSearch } from "./searchNormalize";
+import {
+  getCatalogSearchVariants,
+  isDeniedLegalSearchQuery,
+  normalizeCatalogSearch,
+} from "./searchNormalize";
 
 const SEARCH_ANALYTICS_DEBOUNCE_MS = 600;
 
@@ -232,7 +236,9 @@ export function initDigitalCatalogFilters(): void {
   }
 
   function itemMatchesFilters(el: Element): boolean {
-    const queries = getCatalogSearchVariants(searchInput?.value ?? "");
+    const searchValue = searchInput?.value ?? "";
+    if (isDeniedLegalSearchQuery(searchValue)) return false;
+    const queries = getCatalogSearchVariants(searchValue);
     if (queries.length > 0) {
       const hay = el.getAttribute("data-search-text") || "";
       if (!queries.some((query) => hay.includes(query))) return false;
