@@ -72,7 +72,11 @@
     "id": "cmp_58ee5e87f7",
     "slug": "gk-korus-konsalting",
     "name": "КОРУС Консалтинг",
-    "searchAliases": [],
+    "searchAliases": [
+      "KORUS Consulting",
+      "КОРУС",
+      "Корус Консалтинг"
+    ],
     "city": "Москва",
     "companyType": "Интегратор",
     "niche": "Analytics / CRM / BI",
@@ -228,7 +232,14 @@
     "id": "cmp_c3f1b4652c",
     "slug": "reksoft",
     "name": "Рексофт",
-    "searchAliases": [],
+    "searchAliases": [
+      "Рексофт",
+      "Reksoft",
+      "Reksoft Group",
+      "Reksoft Company",
+      "Рек софт",
+      "Рексофт Групп"
+    ],
     "city": "Москва",
     "companyType": "Интегратор",
     "niche": "Enterprise IT / System integration",
@@ -283,7 +294,12 @@
     "id": "cmp_c454603257",
     "slug": "sbermarketing",
     "name": "СберМаркетинг",
-    "searchAliases": [],
+    "searchAliases": [
+      "СберМаркетинг",
+      "SberMarketing",
+      "Sber Marketing",
+      "Сбер Маркетинг"
+    ],
     "city": "Москва",
     "companyType": "Холдинг",
     "niche": "Full-service digital",
@@ -383,7 +399,16 @@
     "id": "cmp_5b80495d5d",
     "slug": "adv",
     "name": "ADV",
-    "searchAliases": [],
+    "searchAliases": [
+      "ADV",
+      "ADV Group",
+      "ADV Digital",
+      "ADVgroup",
+      "АДВ",
+      "АДВ Групп",
+      "ЭйДиВи",
+      "Эй Ди Ви"
+    ],
     "city": "Москва",
     "companyType": "Холдинг",
     "niche": "Full-service digital",
@@ -544,7 +569,15 @@
     "id": "cmp_c3d4a5e241",
     "slug": "artox-media-digital",
     "name": "Artox Media Digital",
-    "searchAliases": [],
+    "searchAliases": [
+      "AMDG",
+      "Artox",
+      "Artox Media",
+      "Артокс Медиа",
+      "Артокс",
+      "АМДГ",
+      "ЭйЭмДиДжи"
+    ],
     "city": "Москва",
     "companyType": "Performance",
     "niche": "Performance marketing",
@@ -585,7 +618,12 @@
     "habrUrl": "https://career.habr.com/companies/artox",
     "linkedinUrl": "https://www.linkedin.com/company/artox-media/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-29",
+      "sourceUrl": "https://www.gosuslugi.ru/newsearch/proverit-akkreditaciyu-it-kompanii"
+    }
   },
   {
     "id": "cmp_c184caea9d",
@@ -637,7 +675,14 @@
     "id": "cmp_391d4e003f",
     "slug": "demis-group",
     "name": "Demis Group",
-    "searchAliases": [],
+    "searchAliases": [
+      "Demis",
+      "Demis Group",
+      "Демис",
+      "Демис Групп",
+      "Demis Digital",
+      "Demis Agency"
+    ],
     "city": "Москва",
     "companyType": "Digital",
     "niche": "SEO",
@@ -789,7 +834,13 @@
     "id": "cmp_6bb844e485",
     "slug": "ingate-group",
     "name": "Ingate Group",
-    "searchAliases": [],
+    "searchAliases": [
+      "Ingate",
+      "Ингейт",
+      "Ингейт Групп",
+      "Ingate Digital",
+      "Ингейт Диджитал"
+    ],
     "city": "Тула",
     "companyType": "Холдинг",
     "niche": "Full-service digital",
@@ -839,7 +890,13 @@
     "id": "cmp_44c7d61645",
     "slug": "it-one",
     "name": "IT_One",
-    "searchAliases": [],
+    "searchAliases": [
+      "IT-One",
+      "ITONE",
+      "IT One Russia",
+      "АйТи Уан",
+      "АйТи Один"
+    ],
     "city": "Москва",
     "companyType": "Интегратор",
     "niche": "Enterprise IT / System integration",
@@ -887,13 +944,24 @@
         "sourceUrl": "https://habr.com/ru/specials/965986/"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-05-29",
+      "sourceUrl": "https://career.habr.com/companies/it-one"
+    }
   },
   {
     "id": "cmp_897e7c0688",
     "slug": "kokoc-group",
     "name": "Kokoc Group",
-    "searchAliases": [],
+    "searchAliases": [
+      "Kokoc",
+      "KokocGroup",
+      "Кокос",
+      "Кокос Групп",
+      "Кокос Груп"
+    ],
     "city": "Москва",
     "companyType": "Холдинг",
     "niche": "Performance marketing",
@@ -961,7 +1029,10 @@
     "id": "cmp_fadbe297ce",
     "slug": "okkam",
     "name": "OKKAM",
-    "searchAliases": [],
+    "searchAliases": [
+      "Okkam Group",
+      "Оккам"
+    ],
     "city": "Москва",
     "companyType": "Холдинг",
     "niche": "Full-service digital",
@@ -1073,7 +1144,12 @@
     "id": "cmp_e088933b4e",
     "slug": "red-mad-robot",
     "name": "Red Mad Robot",
-    "searchAliases": [],
+    "searchAliases": [
+      "RMR",
+      "RedMadRobot",
+      "Ред Мэд Робот",
+      "РедМэдРобот"
+    ],
     "city": "Москва",
     "companyType": "Разработка",
     "niche": "Mobile development",
@@ -1176,7 +1252,11 @@
     "id": "cmp_37936e38e6",
     "slug": "simbirsoft",
     "name": "SimbirSoft",
-    "searchAliases": [],
+    "searchAliases": [
+      "Simbir Soft",
+      "СимбирСофт",
+      "Симбир Софт"
+    ],
     "city": "Ульяновск",
     "companyType": "Разработка",
     "niche": "Web development",
@@ -1287,7 +1367,12 @@
     "id": "cmp_002bef8d11",
     "slug": "umbrella-it",
     "name": "Umbrella IT",
-    "searchAliases": [],
+    "searchAliases": [
+      "Umbrella",
+      "UmbrellaIT",
+      "Амбрелла АйТи",
+      "Амбрелла IT"
+    ],
     "city": "Таганрог",
     "companyType": "Разработка",
     "niche": "Web development",
@@ -1392,7 +1477,12 @@
     "id": "cmp_b17x6e",
     "slug": "ashmanov-i-partnery",
     "name": "Ашманов и партнеры",
-    "searchAliases": [],
+    "searchAliases": [
+      "Ashmanov and Partners",
+      "Ashmanov Partners",
+      "Ашманов Партнеры",
+      "АиП"
+    ],
     "city": "Москва",
     "companyType": "Performance",
     "niche": "SEO",
@@ -1552,7 +1642,17 @@
     "id": "cmp_7fd87e71c3",
     "slug": "serf",
     "name": "Сёрф",
-    "searchAliases": [],
+    "searchAliases": [
+      "Сёрф",
+      "Surf",
+      "Surf Studio",
+      "SurfStudio",
+      "Surf Mobile",
+      "Surf IT",
+      "Surfint",
+      "Сурф",
+      "Сёрф Студио"
+    ],
     "city": "Воронеж",
     "companyType": "Разработка",
     "niche": "Mobile development",
@@ -1748,7 +1848,9 @@
     "id": "cmp_d5c8f83d81",
     "slug": "bsl",
     "name": "BSL",
-    "searchAliases": [],
+    "searchAliases": [
+      "BSL Dev"
+    ],
     "city": "Москва",
     "companyType": "Разработка",
     "niche": "Web development",
@@ -1845,7 +1947,13 @@
     "id": "cmp_6229014a69",
     "slug": "cross-technologies",
     "name": "CROSS TECHNOLOGIES",
-    "searchAliases": [],
+    "searchAliases": [
+      "CROSS TECHNOLOGIES",
+      "CrossTech",
+      "Cross Tech",
+      "Кросстех",
+      "Кросс Технолоджис"
+    ],
     "city": "Москва",
     "companyType": "Интегратор",
     "niche": "Enterprise IT / System integration",
@@ -1934,7 +2042,13 @@
     "id": "cmp_01ef61e46e",
     "slug": "e-promo-group",
     "name": "E-Promo Group",
-    "searchAliases": [],
+    "searchAliases": [
+      "E-Promo",
+      "Epromo",
+      "И-Промо",
+      "Е-Промо",
+      "Епромо"
+    ],
     "city": "Нижний Новгород",
     "companyType": "Performance",
     "niche": "Performance marketing",
@@ -1984,7 +2098,11 @@
     "id": "cmp_63ecd107ce",
     "slug": "extyl",
     "name": "Extyl",
-    "searchAliases": [],
+    "searchAliases": [
+      "Экстил",
+      "Extyl Pro",
+      "Extyl Digital"
+    ],
     "city": "Москва",
     "companyType": "Разработка",
     "niche": "Web development",
@@ -2080,7 +2198,10 @@
     "id": "cmp_cf26908c91",
     "slug": "go-ahead",
     "name": "Go Ahead",
-    "searchAliases": [],
+    "searchAliases": [
+      "GoAhead",
+      "Go Ahead AI"
+    ],
     "city": "Москва",
     "companyType": "Performance",
     "niche": "Performance marketing",
@@ -2130,7 +2251,11 @@
     "id": "cmp_165439c4d4",
     "slug": "i-media",
     "name": "i-Media",
-    "searchAliases": [],
+    "searchAliases": [
+      "iMedia",
+      "I Media",
+      "Ай-Медиа"
+    ],
     "city": "Москва",
     "companyType": "Performance",
     "niche": "Performance marketing",
@@ -2179,7 +2304,12 @@
     "id": "cmp_2361bad016",
     "slug": "i-com",
     "name": "i.com",
-    "searchAliases": [],
+    "searchAliases": [
+      "iCom",
+      "Айком",
+      "Ай Ком",
+      "i.com agency"
+    ],
     "city": "Москва",
     "companyType": "Performance",
     "niche": "Performance marketing",
@@ -2229,7 +2359,16 @@
     "id": "cmp_af58371ad4",
     "slug": "icl",
     "name": "ICL",
-    "searchAliases": [],
+    "searchAliases": [
+      "ICL",
+      "ICL Services",
+      "ICL Soft",
+      "ICL Techno",
+      "ICL ST",
+      "АйСиЭл",
+      "Ай Си Эл",
+      "ИКЛ"
+    ],
     "city": "Казань",
     "companyType": "Интегратор",
     "niche": "Enterprise IT / System integration",
@@ -2274,7 +2413,14 @@
     "id": "cmp_57926a4243",
     "slug": "icontext-group",
     "name": "iConText Group",
-    "searchAliases": [],
+    "searchAliases": [
+      "iConText Group",
+      "iConText",
+      "Айконтекст",
+      "Ай Контекст",
+      "ИконТекст",
+      "Контекст Групп"
+    ],
     "city": "Москва",
     "companyType": "Performance",
     "niche": "Performance marketing",
@@ -2406,7 +2552,10 @@
     "id": "cmp_4aa9fa5b82",
     "slug": "kode",
     "name": "KODE",
-    "searchAliases": [],
+    "searchAliases": [
+      "AppKode",
+      "App Kode"
+    ],
     "city": "Калининград",
     "companyType": "Разработка",
     "niche": "Mobile development",
@@ -2561,7 +2710,11 @@
     "id": "cmp_40674d1fd3",
     "slug": "media-instinct",
     "name": "Media Instinct",
-    "searchAliases": [],
+    "searchAliases": [
+      "MediaInstinct",
+      "Медиа Инстинкт",
+      "МедиаИнстинкт"
+    ],
     "city": "Москва",
     "companyType": "Холдинг",
     "niche": "Media / Content / PR",
@@ -2657,7 +2810,11 @@
     "id": "cmp_29b514b4e9",
     "slug": "mgcom",
     "name": "MGCom",
-    "searchAliases": [],
+    "searchAliases": [
+      "MG Com",
+      "МГКом",
+      "МГ Ком"
+    ],
     "city": "Москва",
     "companyType": "Performance",
     "niche": "Performance marketing",
@@ -2990,7 +3147,15 @@
     "id": "cmp_6a7b510885",
     "slug": "orion-soft",
     "name": "Orion soft",
-    "searchAliases": [],
+    "searchAliases": [
+      "Orion soft",
+      "OrionSoft",
+      "Orion",
+      "Орион Софт",
+      "ОрионСофт",
+      "Орион",
+      "ORNSFT"
+    ],
     "city": "Москва",
     "companyType": "Продукт",
     "niche": "Product / SaaS",
@@ -3044,7 +3209,13 @@
     "id": "cmp_323b452835",
     "slug": "qsoft",
     "name": "QSOFT",
-    "searchAliases": [],
+    "searchAliases": [
+      "QSOFT",
+      "Q Soft",
+      "Кьюсофт",
+      "Кью Софт",
+      "КуСофт"
+    ],
     "city": "Москва",
     "companyType": "Интегратор",
     "niche": "E-commerce enablement",
@@ -3184,7 +3355,12 @@
     "id": "cmp_ee3654fe06",
     "slug": "red-collar",
     "name": "Red Collar",
-    "searchAliases": [],
+    "searchAliases": [
+      "RedCollar",
+      "Ред Коллар",
+      "РедКоллар",
+      "Red Collar Co"
+    ],
     "city": "Воронеж",
     "companyType": "Digital",
     "niche": "UX/UI & design",
@@ -3287,7 +3463,11 @@
     "id": "cmp_1212318b72",
     "slug": "rocket10",
     "name": "Rocket10",
-    "searchAliases": [],
+    "searchAliases": [
+      "Rocket 10",
+      "Рокет10",
+      "Рокет 10"
+    ],
     "city": "Москва",
     "companyType": "Performance",
     "niche": "Performance marketing",
@@ -3587,7 +3767,13 @@
     "id": "cmp_d637483d42",
     "slug": "zebrains",
     "name": "ZeBrains",
-    "searchAliases": [],
+    "searchAliases": [
+      "ZeBrains",
+      "Ze Brains",
+      "ZeBrains IT",
+      "Зебрейнс",
+      "Зе Брейнс"
+    ],
     "city": "Ульяновск",
     "companyType": "Разработка",
     "niche": "AI / Data",
@@ -3631,7 +3817,14 @@
     "id": "cmp_c323927ef2",
     "slug": "65apps",
     "name": "65apps",
-    "searchAliases": [],
+    "searchAliases": [
+      "65apps",
+      "65 Apps",
+      "Sixty Five Apps",
+      "65 Эпс",
+      "Сиксти Файв Аппс",
+      "Сиксти Файв Эпс"
+    ],
     "city": "Ижевск",
     "companyType": "Разработка",
     "niche": "Mobile development",
@@ -3722,7 +3915,14 @@
     "id": "cmp_ce3ad6fbfd",
     "slug": "aero",
     "name": "АЭРО",
-    "searchAliases": [],
+    "searchAliases": [
+      "AERO",
+      "Aeroidea",
+      "Aero Idea",
+      "Аэро",
+      "Аэроидея",
+      "Аэро Идея"
+    ],
     "city": "Москва",
     "companyType": "Интегратор",
     "niche": "E-commerce enablement",
@@ -3761,13 +3961,24 @@
     "habrUrl": "https://career.habr.com/companies/aero/vacancies",
     "linkedinUrl": "https://www.linkedin.com/company/aeroidea",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-05-29",
+      "sourceUrl": "https://career.habr.com/companies/aero"
+    }
   },
   {
     "id": "cmp_b0a9511a77",
     "slug": "veb-centr",
     "name": "Веб-Центр",
-    "searchAliases": [],
+    "searchAliases": [
+      "Web-C",
+      "Web Center",
+      "Web Centre",
+      "Вебцентр",
+      "Веб Центр"
+    ],
     "city": "Брянск",
     "companyType": "Performance",
     "niche": "SEO",
@@ -3921,7 +4132,11 @@
     "id": "cmp_638bc32fee",
     "slug": "inostudio",
     "name": "Иностудио",
-    "searchAliases": [],
+    "searchAliases": [
+      "Inostudio",
+      "Ино Студио",
+      "ИНОСТУДИО"
+    ],
     "city": "Таганрог",
     "companyType": "Разработка",
     "niche": "Web development",
@@ -4015,7 +4230,15 @@
     "id": "cmp_ca16a33f49",
     "slug": "layv-tayping",
     "name": "Лайв Тайпинг",
-    "searchAliases": [],
+    "searchAliases": [
+      "Лайв Тайпинг",
+      "Live Typing",
+      "LiveTyping",
+      "Live Typing Studio",
+      "ЛайвТайпинг",
+      "Лайв Тайпинг Студио",
+      "LTST"
+    ],
     "city": "Омск",
     "companyType": "Разработка",
     "niche": "Mobile development",
@@ -4195,7 +4418,13 @@
     "id": "cmp_cb80a787e1",
     "slug": "piksel-plyus",
     "name": "Пиксель Плюс",
-    "searchAliases": [],
+    "searchAliases": [
+      "Pixel Plus",
+      "PixelPlus",
+      "ПиксельПлюс",
+      "Pixel+",
+      "Пиксель +"
+    ],
     "city": "Москва",
     "companyType": "Digital",
     "niche": "Full-service digital",
@@ -4296,7 +4525,14 @@
     "id": "cmp_m0q1z7",
     "slug": "rash-edzhensi",
     "name": "Раш Эдженси",
-    "searchAliases": [],
+    "searchAliases": [
+      "Раш Эдженси",
+      "Rush Agency",
+      "RushAgency",
+      "Раш Агентство",
+      "Раш",
+      "Rush"
+    ],
     "city": "Москва",
     "companyType": "Performance",
     "niche": "SEO",
@@ -4440,7 +4676,13 @@
     "id": "cmp_367f8b6cd7",
     "slug": "ceh-dizayn",
     "name": "ЦЕХ.ДИЗАЙН",
-    "searchAliases": [],
+    "searchAliases": [
+      "TSEKH Design",
+      "Цех Дизайн",
+      "ЦехДизайн",
+      "TSEKH",
+      "ЦЕХ"
+    ],
     "city": "Тольятти",
     "companyType": "Digital",
     "niche": "UX/UI & design",
@@ -4494,7 +4736,11 @@
     "id": "cmp_73660edcb0",
     "slug": "eir-prodakshn",
     "name": "ЭИР Продакшн",
-    "searchAliases": [],
+    "searchAliases": [
+      "AIR Production",
+      "AIR Agency",
+      "Эйр Продакшн"
+    ],
     "city": "Москва",
     "companyType": "Разработка",
     "niche": "Web development",
@@ -4545,7 +4791,14 @@
     "id": "cmp_9faea00756",
     "slug": "em-si-art",
     "name": "Эм Си Арт",
-    "searchAliases": [],
+    "searchAliases": [
+      "MC Art",
+      "MCart",
+      "M-C Art",
+      "М-Си Арт",
+      "ЭмСиАрт",
+      "Эм Си Арт"
+    ],
     "city": "Санкт-Петербург",
     "companyType": "Интегратор",
     "niche": "Analytics / CRM / BI",
@@ -4589,7 +4842,11 @@
     "id": "cmp_6d0b0164f6",
     "slug": "adventum",
     "name": "Adventum",
-    "searchAliases": [],
+    "searchAliases": [
+      "Адвентум",
+      "Adventum Digital",
+      "Adventum Agency"
+    ],
     "city": "Москва",
     "companyType": "Performance",
     "niche": "Performance marketing",
@@ -4636,7 +4893,12 @@
     "id": "cmp_d4a9a89163",
     "slug": "aic",
     "name": "AIC",
-    "searchAliases": [],
+    "searchAliases": [
+      "AIC Digital",
+      "AIC Agency",
+      "АИК",
+      "ЭйАйСи"
+    ],
     "city": "Москва",
     "companyType": "Digital",
     "niche": "UX/UI & design",
@@ -4777,7 +5039,12 @@
     "id": "cmp_326d4b5f11",
     "slug": "arrowmedia",
     "name": "ArrowMedia",
-    "searchAliases": [],
+    "searchAliases": [
+      "Arrow Media",
+      "ArrowMedia Group",
+      "АрроуМедиа",
+      "Арроу Медиа"
+    ],
     "city": "Москва",
     "companyType": "Performance",
     "niche": "Performance marketing",
@@ -4826,7 +5093,10 @@
     "id": "cmp_530fe2cfcd",
     "slug": "artics",
     "name": "Artics",
-    "searchAliases": [],
+    "searchAliases": [
+      "Artix",
+      "Артикс"
+    ],
     "city": "Москва",
     "companyType": "Performance",
     "niche": "Performance marketing",
@@ -4876,7 +5146,11 @@
     "id": "cmp_ef5b99215d",
     "slug": "artw",
     "name": "ARTW",
-    "searchAliases": [],
+    "searchAliases": [
+      "Artw",
+      "ART-W",
+      "Артв"
+    ],
     "city": "Санкт-Петербург",
     "companyType": "Digital",
     "niche": "Web development",
@@ -5025,7 +5299,13 @@
     "id": "cmp_944c624747",
     "slug": "chulakov",
     "name": "Chulakov",
-    "searchAliases": [],
+    "searchAliases": [
+      "Студия Олега Чулакова",
+      "Oleg Chulakov Studio",
+      "Oleg Chulakov",
+      "Чулаков",
+      "Chulakov Studio"
+    ],
     "city": "Ростов-на-Дону",
     "companyType": "Digital",
     "niche": "UX/UI & design",
@@ -5076,7 +5356,13 @@
     "id": "cmp_970e55d23e",
     "slug": "cleverpumpkin",
     "name": "CleverPumpkin",
-    "searchAliases": [],
+    "searchAliases": [
+      "Clever Pumpkin",
+      "CleverPumpkin",
+      "CleverPumpkin Ltd",
+      "Клевер Пампкин",
+      "КлеверПампкин"
+    ],
     "city": "Санкт-Петербург",
     "companyType": "Разработка",
     "niche": "Web development",
@@ -5227,7 +5513,12 @@
     "id": "cmp_b086285949",
     "slug": "creativepeople",
     "name": "CreativePeople",
-    "searchAliases": [],
+    "searchAliases": [
+      "Creative People",
+      "Cpeople",
+      "Креатив Пипл",
+      "КреативПипл"
+    ],
     "city": "Москва",
     "companyType": "Digital",
     "niche": "Branding / Creative",
@@ -5277,7 +5568,16 @@
     "id": "cmp_9bbfe7ba41",
     "slug": "darvin-digital",
     "name": "Darvin Digital",
-    "searchAliases": [],
+    "searchAliases": [
+      "Darvin Digital",
+      "DarvinDigital",
+      "Darvin Digital Agency",
+      "Darvin",
+      "Darwin Digital",
+      "Дарвин Диджитал",
+      "Дарвин Digital",
+      "Дарвин"
+    ],
     "city": "Владимир",
     "companyType": "Digital",
     "niche": "Full-service digital",
@@ -5323,7 +5623,15 @@
     "id": "cmp_caf0580303",
     "slug": "didenok-team",
     "name": "DIDENOK TEAM",
-    "searchAliases": [],
+    "searchAliases": [
+      "DIDENOK TEAM",
+      "Didenokteam",
+      "Didenok",
+      "Didenok Team Agency",
+      "Диденок Тим",
+      "Диденок",
+      "Диденок Агентство"
+    ],
     "city": "Москва",
     "companyType": "Digital",
     "niche": "Media / Content / PR",
@@ -5473,7 +5781,13 @@
     "id": "cmp_e57461fde3",
     "slug": "doubletapp",
     "name": "Doubletapp",
-    "searchAliases": [],
+    "searchAliases": [
+      "Double Tapp",
+      "DoubleTap",
+      "Double Tap",
+      "Даблтапп",
+      "Дабл Тапп"
+    ],
     "city": "Екатеринбург",
     "companyType": "Разработка",
     "niche": "AI / Data",
@@ -5523,7 +5837,16 @@
     "id": "cmp_95fb87129a",
     "slug": "hflabs",
     "name": "HFLabs",
-    "searchAliases": [],
+    "searchAliases": [
+      "HFLabs",
+      "HF Labs",
+      "DaData",
+      "Дадата",
+      "ХФЛабс",
+      "ХФ Лабс",
+      "ЭйчЭф Лабс",
+      "Эйч Эф Лабс"
+    ],
     "city": "Москва",
     "companyType": "Продукт",
     "niche": "AI / Data",
@@ -5627,7 +5950,9 @@
     "id": "cmp_a2045ea4b7",
     "slug": "intaro",
     "name": "Intaro",
-    "searchAliases": [],
+    "searchAliases": [
+      "Интаро"
+    ],
     "city": "Москва",
     "companyType": "Интегратор",
     "niche": "E-commerce enablement",
@@ -5734,7 +6059,16 @@
     "id": "cmp_29b7d8813b",
     "slug": "itb",
     "name": "ITB",
-    "searchAliases": [],
+    "searchAliases": [
+      "ITB",
+      "ITB Company",
+      "ITB Digital",
+      "ITB Agency",
+      "ИТБ",
+      "АйТиБи",
+      "Ай Ти Би",
+      "ITB Омск"
+    ],
     "city": "Омск",
     "companyType": "Digital",
     "niche": "Full-service digital",
@@ -5780,7 +6114,12 @@
     "id": "cmp_e86ec23609",
     "slug": "itech",
     "name": "ITECH",
-    "searchAliases": [],
+    "searchAliases": [
+      "ITECH",
+      "ITECH Group",
+      "Айтек",
+      "Ай Тек"
+    ],
     "city": "Ульяновск",
     "companyType": "Интегратор",
     "niche": "Analytics / CRM / BI",
@@ -5830,7 +6169,13 @@
     "id": "cmp_a08c9dc5b7",
     "slug": "jetstyle",
     "name": "JetStyle",
-    "searchAliases": [],
+    "searchAliases": [
+      "Jet Style",
+      "Jetstyle",
+      "JetStyle Agency",
+      "ДжетСтайл",
+      "Джет Стайл"
+    ],
     "city": "Екатеринбург",
     "companyType": "Веб-студия",
     "niche": "UX/UI & design",
@@ -5869,7 +6214,12 @@
     "habrUrl": "https://career.habr.com/companies/jetstyle",
     "linkedinUrl": "https://www.linkedin.com/company/jetstyle/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-05-29",
+      "sourceUrl": "https://jetstyle.ru/"
+    }
   },
   {
     "id": "cmp_76679d0987",
@@ -5919,7 +6269,12 @@
     "id": "cmp_282375e58b",
     "slug": "kotelov",
     "name": "KOTELOV",
-    "searchAliases": [],
+    "searchAliases": [
+      "Котелов",
+      "Kotelov",
+      "Kotelov Digital",
+      "Kotelov Agency"
+    ],
     "city": "Москва",
     "companyType": "Разработка",
     "niche": "Web development",
@@ -6071,7 +6426,13 @@
     "id": "cmp_455899fcfb",
     "slug": "loyalty-labs",
     "name": "Loyalty Labs",
-    "searchAliases": [],
+    "searchAliases": [
+      "LoyaltyLabs",
+      "Loyalty Labs",
+      "LoyLabs",
+      "Лоялти Лабс",
+      "ЛоялтиЛабс"
+    ],
     "city": "Санкт-Петербург",
     "companyType": "Разработка",
     "niche": "Analytics / CRM / BI",
@@ -6519,7 +6880,12 @@
     "id": "cmp_8d98e64738",
     "slug": "only",
     "name": "Only",
-    "searchAliases": [],
+    "searchAliases": [
+      "Only Digital",
+      "Only Agency",
+      "Онли",
+      "Онли Диджитал"
+    ],
     "city": "Москва",
     "companyType": "Digital",
     "niche": "UX/UI & design",
@@ -6616,7 +6982,12 @@
     "id": "cmp_98b1e9ec59",
     "slug": "profsoft",
     "name": "PROFSOFT",
-    "searchAliases": [],
+    "searchAliases": [
+      "Profsoft",
+      "Prof Soft",
+      "Профсофт",
+      "Проф Софт"
+    ],
     "city": "Саратов",
     "companyType": "Разработка",
     "niche": "Mobile development",
@@ -6652,13 +7023,24 @@
     "habrUrl": "https://career.habr.com/companies/profsoft",
     "linkedinUrl": "https://www.linkedin.com/company/profsoft",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-05-29",
+      "sourceUrl": "https://profsoft.ru/contacts"
+    }
   },
   {
     "id": "cmp_1019d3cc3b",
     "slug": "purrweb",
     "name": "Purrweb",
-    "searchAliases": [],
+    "searchAliases": [
+      "PurrWeb",
+      "Purr Web",
+      "Purrweb Studio",
+      "Пуррвеб",
+      "Пурвеб"
+    ],
     "city": "Омск",
     "companyType": "Разработка",
     "niche": "Mobile development",
@@ -6706,13 +7088,22 @@
         "sourceUrl": "https://career.habr.com/companies/purrweb/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "not_confirmed",
+      "checkedAt": "2026-05-29",
+      "sourceUrl": "https://www.gosuslugi.ru/newsearch/proverit-akkreditaciyu-it-kompanii"
+    }
   },
   {
     "id": "cmp_544e9fff4d",
     "slug": "qtim",
     "name": "Qtim",
-    "searchAliases": [],
+    "searchAliases": [
+      "Q Tim",
+      "Q-time",
+      "Кьютим"
+    ],
     "city": "Тула",
     "companyType": "Разработка",
     "niche": "Web development",
@@ -6762,7 +7153,13 @@
     "id": "cmp_54f7b80367",
     "slug": "rdv",
     "name": "RDV",
-    "searchAliases": [],
+    "searchAliases": [
+      "RDV IT",
+      "RDV",
+      "РДВ",
+      "РДВ Айти",
+      "РДВ ИТ"
+    ],
     "city": "Москва",
     "companyType": "Интегратор",
     "niche": "Analytics / CRM / BI",
@@ -6807,7 +7204,13 @@
     "id": "cmp_0b1a7d788d",
     "slug": "redlab",
     "name": "RedLab",
-    "searchAliases": [],
+    "searchAliases": [
+      "Red Lab",
+      "Redlab",
+      "RedLab Development",
+      "РедЛаб",
+      "Ред Лаб"
+    ],
     "city": "Ульяновск",
     "companyType": "Разработка",
     "niche": "Web development",
@@ -6855,7 +7258,12 @@
         "sourceUrl": "https://career.habr.com/companies/redlab/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-05-29",
+      "sourceUrl": "https://career.habr.com/companies/redlab"
+    }
   },
   {
     "id": "cmp_11hgwjq",
@@ -6964,7 +7372,15 @@
     "id": "cmp_913fb091df",
     "slug": "riverstart",
     "name": "Riverstart",
-    "searchAliases": [],
+    "searchAliases": [
+      "Riverstart",
+      "River Start",
+      "Riverstart Digital",
+      "River Start Digital",
+      "Риверстарт",
+      "Ривер Старт",
+      "Риверстарт Диджитал"
+    ],
     "city": "Нижний Новгород",
     "companyType": "Digital",
     "niche": "Web development",
@@ -7018,7 +7434,12 @@
     "id": "cmp_50d63e2c2a",
     "slug": "rockstone",
     "name": "ROCKSTONE",
-    "searchAliases": [],
+    "searchAliases": [
+      "Rockstone",
+      "Rock Stone",
+      "Рокстоун",
+      "Рок Стоун"
+    ],
     "city": "Санкт-Петербург",
     "companyType": "Разработка",
     "niche": "Mobile development",
@@ -7077,7 +7498,12 @@
     "id": "cmp_157940ae24",
     "slug": "salt-and-pepper",
     "name": "SALT AND PEPPER",
-    "searchAliases": [],
+    "searchAliases": [
+      "Salt & Pepper",
+      "SNP Agency",
+      "Солт энд Пеппер",
+      "Солт Пеппер"
+    ],
     "city": "Тверь",
     "companyType": "Разработка",
     "niche": "Web development",
@@ -7129,7 +7555,12 @@
     "id": "cmp_7fd4186b50",
     "slug": "setters",
     "name": "SETTERS",
-    "searchAliases": [],
+    "searchAliases": [
+      "SETTERS Agency",
+      "Setters",
+      "Сеттерс",
+      "Сеттерс Агентство"
+    ],
     "city": "Санкт-Петербург",
     "companyType": "Digital",
     "niche": "Branding / Creative",
@@ -7167,7 +7598,12 @@
     "habrUrl": null,
     "linkedinUrl": "https://www.linkedin.com/company/settersagency/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-05-29",
+      "sourceUrl": "https://www.gosuslugi.ru/newsearch/proverit-akkreditaciyu-it-kompanii"
+    }
   },
   {
     "id": "cmp_0594e489d2",
@@ -7217,7 +7653,10 @@
     "id": "cmp_909743ea10",
     "slug": "touch-instinct",
     "name": "Touch Instinct",
-    "searchAliases": [],
+    "searchAliases": [
+      "TouchInstinct",
+      "Тач Инстинкт"
+    ],
     "city": "Санкт-Петербург",
     "companyType": "Разработка",
     "niche": "Mobile development",
@@ -7313,7 +7752,13 @@
     "id": "cmp_21e5296d3c",
     "slug": "uplab",
     "name": "Uplab",
-    "searchAliases": [],
+    "searchAliases": [
+      "Uplab Agency",
+      "Uplab Digital",
+      "Аплаб",
+      "Ап Лаб",
+      "Юплаб"
+    ],
     "city": "Чебоксары",
     "companyType": "Веб-студия",
     "niche": "Web development",
@@ -7352,7 +7797,12 @@
     "habrUrl": "https://career.habr.com/companies/uplab",
     "linkedinUrl": "https://www.linkedin.com/company/uplab-interactive-agency/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-05-29",
+      "sourceUrl": "https://www.uplab.ru/it-accreditation/"
+    }
   },
   {
     "id": "cmp_2e35615a12",
@@ -7412,7 +7862,15 @@
     "id": "cmp_e531e0b745",
     "slug": "webcanape",
     "name": "WebCanape",
-    "searchAliases": [],
+    "searchAliases": [
+      "WebCanape",
+      "Web Canape",
+      "Web Canape Agency",
+      "ВебКанапе",
+      "Веб Канапе",
+      "Веб Канапэ",
+      "ВебКанапэ"
+    ],
     "city": "Смоленск",
     "companyType": "Веб-студия",
     "niche": "Web development",
@@ -7498,7 +7956,12 @@
     "id": "cmp_54938a3b60",
     "slug": "webit",
     "name": "WebIT",
-    "searchAliases": [],
+    "searchAliases": [
+      "Web IT",
+      "Webit",
+      "ВебИТ",
+      "Веб ИТ"
+    ],
     "city": "Москва",
     "companyType": "Performance",
     "niche": "SEO",
@@ -7549,7 +8012,13 @@
     "id": "cmp_29af614dba",
     "slug": "wemakefab",
     "name": "Wemakefab",
-    "searchAliases": [],
+    "searchAliases": [
+      "WeMakeFab",
+      "We Make Fab",
+      "WeMakeFab Agency",
+      "Вимейкфаб",
+      "Ви Мейк Фаб"
+    ],
     "city": "Санкт-Петербург",
     "companyType": "Digital",
     "niche": "Web development",
@@ -7692,7 +8161,16 @@
     "id": "cmp_52569723ed",
     "slug": "19agency84",
     "name": "19agency84",
-    "searchAliases": [],
+    "searchAliases": [
+      "19agency84",
+      "19 Agency 84",
+      "19agency",
+      "1984 Agency",
+      "Nineteen Agency Eighty Four",
+      "Агентство 19 84",
+      "19 Эдженси 84",
+      "Найнтин Эдженси 84"
+    ],
     "city": "Екатеринбург",
     "companyType": "Digital",
     "niche": "Branding / Creative",
@@ -7737,7 +8215,16 @@
     "id": "cmp_c4733b0bfa",
     "slug": "365-media-group",
     "name": "365 Media Group",
-    "searchAliases": [],
+    "searchAliases": [
+      "365 Media Group",
+      "365MG",
+      "365 MG",
+      "365 Media",
+      "365 Media Digital",
+      "365 Медиа Групп",
+      "365 Медиа",
+      "Триста Шестьдесят Пять Медиа"
+    ],
     "city": "Омск",
     "companyType": "Digital",
     "niche": "Full-service digital",
@@ -8941,7 +9428,16 @@
     "id": "cmp_4cc3f05ec3",
     "slug": "rikorda",
     "name": "Рикорда",
-    "searchAliases": [],
+    "searchAliases": [
+      "Рикорда",
+      "Rikorda",
+      "Rikorda Group",
+      "Rikorda Digital",
+      "Рикорда Групп",
+      "Рикорда Digital",
+      "Рикорда агентство",
+      "Рикорда Иваново"
+    ],
     "city": "Иваново",
     "companyType": "Digital",
     "niche": "Full-service digital",
@@ -9482,7 +9978,14 @@
     "id": "cmp_753d3004df",
     "slug": "umnyy-marketing",
     "name": "Умный Маркетинг",
-    "searchAliases": [],
+    "searchAliases": [
+      "Умный Маркетинг",
+      "Umnyy Marketing",
+      "Umny Marketing",
+      "UP Advert",
+      "УП Адверт",
+      "Ап Адверт"
+    ],
     "city": "Пермь",
     "companyType": "Performance",
     "niche": "Performance marketing",
@@ -10126,7 +10629,16 @@
     "id": "cmp_2cc39d43cb",
     "slug": "bondsoft",
     "name": "BondSoft",
-    "searchAliases": [],
+    "searchAliases": [
+      "BondSoft",
+      "Bond Soft",
+      "BondSoft Agency",
+      "BondSoft Digital",
+      "BondSoft Performance",
+      "БондСофт",
+      "Бонд Софт",
+      "Бондсофт агентство"
+    ],
     "city": "Ростов-на-Дону",
     "companyType": "Performance",
     "niche": "Performance marketing",
@@ -10487,7 +10999,16 @@
     "id": "cmp_e431e3453d",
     "slug": "convertme",
     "name": "ConvertMe",
-    "searchAliases": [],
+    "searchAliases": [
+      "ConvertMe",
+      "Convert Me",
+      "ConvertMe Agency",
+      "ConvertMe Performance",
+      "КонвертМи",
+      "Конверт Ми",
+      "КонвертМе",
+      "Конверт Ме"
+    ],
     "city": "Краснодар",
     "companyType": "Performance",
     "niche": "Performance marketing",
@@ -11446,7 +11967,16 @@
     "id": "cmp_acadb8e261",
     "slug": "itsoft",
     "name": "ITSOFT",
-    "searchAliases": [],
+    "searchAliases": [
+      "ITSOFT",
+      "IT Soft",
+      "ИТСофт",
+      "ИТ Софт",
+      "Айтисофт",
+      "Айти Софт",
+      "Web Studio ITSOFT",
+      "веб-студия ITSOFT"
+    ],
     "city": "Москва",
     "companyType": "Веб-студия",
     "niche": "Web development",
@@ -11533,7 +12063,13 @@
     "id": "cmp_da4aaa78d9",
     "slug": "kislorod",
     "name": "KISLOROD",
-    "searchAliases": [],
+    "searchAliases": [
+      "KISLOROD",
+      "O2K",
+      "Кислород",
+      "Кислород Digital",
+      "O2K Digital"
+    ],
     "city": "Чебоксары",
     "companyType": "Digital",
     "niche": "E-commerce enablement",
@@ -11632,7 +12168,13 @@
     "id": "cmp_b6504dfd4d",
     "slug": "lexica",
     "name": "Lexica",
-    "searchAliases": [],
+    "searchAliases": [
+      "Lexica",
+      "Lexica Pro",
+      "Лексика",
+      "Лексика Про",
+      "Лексика Digital"
+    ],
     "city": "Пермь",
     "companyType": "Разработка",
     "niche": "Web development",
@@ -11687,7 +12229,11 @@
     "id": "cmp_14f2moy",
     "slug": "machaon",
     "name": "MACHAON",
-    "searchAliases": [],
+    "searchAliases": [
+      "Махаон",
+      "Machaon Web",
+      "Махаон Веб"
+    ],
     "city": "Москва",
     "companyType": "Разработка",
     "niche": "Web development",
@@ -11871,7 +12417,13 @@
     "id": "cmp_9d81d15a07",
     "slug": "men-in-dev",
     "name": "MEN IN DEV",
-    "searchAliases": [],
+    "searchAliases": [
+      "MEN IN DEV",
+      "MenInDev",
+      "Mendev",
+      "Мен ин Дев",
+      "МенИнДев"
+    ],
     "city": "Обнинск",
     "companyType": "Разработка",
     "niche": "Mobile development",
@@ -12375,7 +12927,12 @@
     "id": "cmp_6ecc35851b",
     "slug": "orca-codes",
     "name": "ORCA.codes",
-    "searchAliases": [],
+    "searchAliases": [
+      "ORCA Codes",
+      "ORCA",
+      "Орка Кодс",
+      "Орка"
+    ],
     "city": "Санкт-Петербург",
     "companyType": "Разработка",
     "niche": "Web development",
@@ -13475,7 +14032,15 @@
     "id": "cmp_fadcd48d7a",
     "slug": "texterra",
     "name": "TexTerra",
-    "searchAliases": [],
+    "searchAliases": [
+      "TexTerra",
+      "Tex Terra",
+      "TexTerra Digital",
+      "TexTerra Agency",
+      "Текстерра",
+      "Текс Терра",
+      "Текстерра агентство"
+    ],
     "city": "Москва",
     "companyType": "Digital",
     "niche": "Media / Content / PR",
@@ -13655,7 +14220,16 @@
     "id": "cmp_20c1a35c49",
     "slug": "why-seo-serious",
     "name": "Why SEO Serious",
-    "searchAliases": [],
+    "searchAliases": [
+      "Why SEO Serious",
+      "WhySEO Serious",
+      "WSS",
+      "WSS Media",
+      "WSS SEO Analytics",
+      "wssmedia",
+      "Вай SEO Serious",
+      "Вай Сео Сириус"
+    ],
     "city": "Санкт-Петербург",
     "companyType": "Performance",
     "niche": "SEO",
