@@ -1,6 +1,6 @@
 import { resolveCanonicalOrigin } from "./siteOrigin";
 
-export const DIGITAL_PAGE_PATH = "/digital";
+export const DIGITAL_PAGE_PATH = "/digital/";
 
 export const DIGITAL_PAGE_H1 = "Карта IT и digital работодателей России";
 
@@ -18,15 +18,13 @@ export const DIGITAL_PAGE_OG_IMAGE_ALT =
 const WEB_PAGE_SCHEMA_DESCRIPTION =
   "Список IT и digital компаний России для поиска работодателей: активный найм, удалёнка/гибрид, города, рейтинги HH/Habr и карьерные ссылки.";
 
-/** Clean `/digital` URL without query params or trailing slash. */
+/** Clean `/digital/` URL without query params or hash. */
 export function buildDigitalPageCanonicalUrl(site: URL | string | undefined): string {
   const origin = resolveCanonicalOrigin(site);
   const url = new URL(DIGITAL_PAGE_PATH, origin);
   url.search = "";
   url.hash = "";
-  return url.pathname.endsWith("/") && url.pathname !== "/"
-    ? url.toString().replace(/\/$/, "")
-    : url.toString();
+  return url.toString();
 }
 
 export function buildDigitalPageOgImageUrl(site: URL | string | undefined): string {
