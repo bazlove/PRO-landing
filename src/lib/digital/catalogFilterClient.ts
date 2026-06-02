@@ -479,26 +479,25 @@ export function initDigitalCatalogFilters(): void {
     if (params.get("international") === "1") activePresets.add("international");
   }
 
-  function syncUrl(): void {
-    const params = new URLSearchParams();
-    const search = normalizeCatalogSearch(searchInput?.value ?? "");
-    if (search) params.set("q", search);
-    if (citySelect?.value) params.set("city", citySelect.value);
-    if (typeSelect?.value) params.set("type", typeSelect.value);
-    if (nicheSelect?.value) params.set("niche", nicheSelect.value);
-    if (hiringSelect?.value) params.set("hiring", hiringSelect.value);
-    if (formatSelect?.value) params.set("format", formatSelect.value);
-    if (sizeSelect?.value) params.set("size", sizeSelect.value);
-    if (activePresets.size > 0) {
-      params.set("preset", Array.from(activePresets).join(","));
-    }
+  function getCleanCatalogPath(): string {
+    const path = window.location.pathname;
+    return path.endsWith("/") ? path : `${path}/`;
+  }
 
-    const query = params.toString();
-    const next = query ? `${window.location.pathname}?${query}` : window.location.pathname;
-    const currentUrl = window.location.pathname + window.location.search;
-    if (next !== currentUrl) {
-      window.history.replaceState(null, "", next);
+  function normalizeLegacyQueryUrl(): void {
+    if (!window.location.search) return;
+
+    const cleanPath = getCleanCatalogPath();
+    const currentUrl = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+    const nextUrl = `${cleanPath}${window.location.hash || ""}`;
+
+    if (currentUrl !== nextUrl) {
+      window.history.replaceState(null, "", nextUrl);
     }
+  }
+
+  function syncUrl(): void {
+    normalizeLegacyQueryUrl();
   }
 
   function onFilterChange(): void {
@@ -659,6 +658,7 @@ export function initDigitalCatalogFilters(): void {
   });
 
   readUrl();
+  normalizeLegacyQueryUrl();
   initPageSizeFromStorage();
   syncAdvancedPanelVisibility();
   syncPresetsSecondaryVisibility();
