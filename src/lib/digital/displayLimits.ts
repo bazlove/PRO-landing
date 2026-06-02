@@ -1,4 +1,4 @@
-export const DIGITAL_DEFAULT_PAGE_SIZE = 50;
+export const DIGITAL_DEFAULT_PAGE_SIZE = 100;
 
 /** Default catalog page size on mobile viewports (fresh load, no stored preference). */
 export const DIGITAL_MOBILE_DEFAULT_PAGE_SIZE = 10;
