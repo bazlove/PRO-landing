@@ -18,4 +18,5 @@ const site = configuredSite || PLACEHOLDER_SITE;
 export default defineConfig({
   site,
   compressHTML: true,
+  trailingSlash: "always",
 });
