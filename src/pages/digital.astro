@@ -6,8 +6,8 @@ import DigitalCompanyMobileCards from "../components/digital/DigitalCompanyMobil
 import DigitalCatalogFilters from "../components/digital/DigitalCatalogFilters.astro";
 import DigitalCatalogFiltersScript from "../components/digital/DigitalCatalogFiltersScript.astro";
 import DigitalCompanyDrawer from "../components/digital/DigitalCompanyDrawer.astro";
-import DigitalCompanyDetailsTemplates from "../components/digital/DigitalCompanyDetailsTemplates.astro";
 import DigitalCompanyDetailsScript from "../components/digital/DigitalCompanyDetailsScript.astro";
+import { buildDigitalDrawerData } from "../lib/digital/buildDigitalDrawerData";
 import DigitalMethodology from "../components/digital/DigitalMethodology.astro";
 import DigitalFAQ from "../components/digital/DigitalFAQ.astro";
 import DigitalFooter from "../components/digital/DigitalFooter.astro";
@@ -32,6 +32,8 @@ const ogImageUrl = buildDigitalPageOgImageUrl(Astro.site);
 const webPageJsonLd = buildDigitalWebPageJsonLd(canonicalUrl);
 
 const companies = getDigitalCompanies();
+const drawerCompanies = companies.map(buildDigitalDrawerData);
+const drawerCompanyDataJson = JSON.stringify(drawerCompanies).replace(/</g, "\\u003c");
 const stats = getDigitalPageStats(companies);
 const filterOptions = getDigitalFilterOptions(companies);
 
@@ -76,10 +78,15 @@ const pageAnalyticsStats = JSON.stringify({
           <DigitalCompanyTable companies={companies} />
           <DigitalCompanyMobileCards companies={companies} />
           <DigitalCatalogFiltersScript />
-          <DigitalCompanyDetailsTemplates companies={companies} />
         </div>
 
         <DigitalCompanyDrawer />
+        <script
+          is:inline
+          type="application/json"
+          id="digital-company-detail-data"
+          set:html={drawerCompanyDataJson}
+        />
         <DigitalCompanyDetailsScript />
 
         <noscript>
@@ -100,8 +107,7 @@ const pageAnalyticsStats = JSON.stringify({
               display: block !important;
             }
             .digital-company-detail-trigger,
-            .digital-company-detail-drawer,
-            .digital-company-detail-templates {
+            .digital-company-detail-drawer {
               display: none !important;
             }
           </style>
