@@ -1,4 +1,6 @@
 import { trackDigitalEvent } from "./analytics";
+import type { DrawerCompanyData } from "./buildDigitalDrawerData";
+import { renderDigitalCompanyDetailContent } from "./companyDetailDrawerRender";
 
 const FOCUSABLE_SELECTOR =
   'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
@@ -10,11 +12,12 @@ const DRAWER_LINK_EVENT_NAMES: Record<string, string> = {
   linkedin: "linkedin_click",
 };
 
+const DRAWER_DATA_ELEMENT_ID = "digital-company-detail-data";
+
 type DrawerOpenSource = "table" | "mobile" | "unknown";
 
 type DrawerElements = {
   drawer: HTMLElement;
-  templatesRoot: HTMLElement;
   overlay: HTMLElement;
   panel: HTMLElement;
   content: HTMLElement;
@@ -53,8 +56,7 @@ function initAwardsToggle(root: HTMLElement): void {
 
 function queryDrawerElements(): DrawerElements | null {
   const drawer = document.querySelector<HTMLElement>("[data-company-detail-drawer]");
-  const templatesRoot = document.querySelector<HTMLElement>("[data-company-detail-templates]");
-  if (!drawer || !templatesRoot) return null;
+  if (!drawer) return null;
 
   const overlay = drawer.querySelector<HTMLElement>("[data-company-detail-overlay]");
   const panel = drawer.querySelector<HTMLElement>("[data-company-detail-panel]");
@@ -63,22 +65,37 @@ function queryDrawerElements(): DrawerElements | null {
 
   if (!overlay || !panel || !content || !closeBtn) return null;
 
-  return { drawer, templatesRoot, overlay, panel, content, closeBtn };
+  return { drawer, overlay, panel, content, closeBtn };
+}
+
+function loadDrawerCompanyMap(): Map<string, DrawerCompanyData> | null {
+  const dataEl = document.getElementById(DRAWER_DATA_ELEMENT_ID);
+  if (!dataEl?.textContent?.trim()) return null;
+
+  try {
+    const companies = JSON.parse(dataEl.textContent) as DrawerCompanyData[];
+    if (!Array.isArray(companies)) return null;
+    return new Map(companies.map((company) => [company.id, company]));
+  } catch {
+    return null;
+  }
 }
 
 export function initDigitalCompanyDetailDrawer(): void {
   const elements = queryDrawerElements();
   if (!elements) return;
 
-  const { drawer, templatesRoot, panel, content, closeBtn } = elements;
+  const { drawer, panel, content, closeBtn } = elements;
 
   let lastTrigger: HTMLElement | null = null;
   let isOpen = false;
+  let companyMap: Map<string, DrawerCompanyData> | null = null;
 
-  function getTemplate(companyId: string): HTMLTemplateElement | null {
-    return templatesRoot.querySelector<HTMLTemplateElement>(
-      `template[data-company-detail-template][data-company-id="${CSS.escape(companyId)}"]`,
-    );
+  function getCompanyMap(): Map<string, DrawerCompanyData> | null {
+    if (!companyMap) {
+      companyMap = loadDrawerCompanyMap();
+    }
+    return companyMap;
   }
 
   function getFocusableElements(): HTMLElement[] {
@@ -107,7 +124,7 @@ export function initDigitalCompanyDetailDrawer(): void {
   }
 
   function getDrawerOpenSource(trigger: HTMLElement): DrawerOpenSource {
-    const surface = trigger.closest('[data-digital-catalog-surface]');
+    const surface = trigger.closest("[data-digital-catalog-surface]");
     const surfaceName = surface?.getAttribute("data-digital-catalog-surface");
     if (surfaceName === "desktop") return "table";
     if (surfaceName === "mobile") return "mobile";
@@ -115,7 +132,7 @@ export function initDigitalCompanyDetailDrawer(): void {
   }
 
   function getCatalogItemPosition(catalogItem: Element): number | null {
-    const surface = catalogItem.closest('[data-digital-catalog-surface]');
+    const surface = catalogItem.closest("[data-digital-catalog-surface]");
     if (!surface) return null;
 
     const visibleItems = Array.from(
@@ -151,8 +168,9 @@ export function initDigitalCompanyDetailDrawer(): void {
   }
 
   function openDrawer(companyId: string, trigger: HTMLElement): void {
-    const template = getTemplate(companyId);
-    if (!template) return;
+    const map = getCompanyMap();
+    const company = map?.get(companyId);
+    if (!company) return;
 
     const catalogItem = trigger.closest("[data-digital-catalog-item]");
     if (!catalogItem || catalogItem.classList.contains("digital-catalog-item--hidden")) {
@@ -163,8 +181,7 @@ export function initDigitalCompanyDetailDrawer(): void {
 
     lastTrigger = trigger;
 
-    const fragment = template.content.cloneNode(true);
-    content.replaceChildren(fragment);
+    content.replaceChildren(renderDigitalCompanyDetailContent(company));
     initAwardsToggle(content);
 
     const titleEl = content.querySelector<HTMLElement>("[data-company-detail-title]");
