@@ -141,3 +141,26 @@ export function initDigitalPageAnalytics(): void {
   initTrustLinksAnalytics();
   initFooterAnalytics();
 }
+
+function runWhenIdle(callback: () => void): void {
+  if (typeof window.requestIdleCallback === "function") {
+    window.requestIdleCallback(callback, { timeout: 2500 });
+    return;
+  }
+
+  setTimeout(callback, 1200);
+}
+
+/** Defer page-level listeners and page_view until after load / idle. */
+export function scheduleInitDigitalPageAnalytics(): void {
+  const start = (): void => {
+    runWhenIdle(() => initDigitalPageAnalytics());
+  };
+
+  if (document.readyState === "complete") {
+    start();
+    return;
+  }
+
+  window.addEventListener("load", start, { once: true });
+}
