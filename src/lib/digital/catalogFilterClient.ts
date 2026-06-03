@@ -42,8 +42,30 @@ const PRESETS_MORE_LABEL_HIDE = "Скрыть дополнительные бы�
 
 type CatalogSurface = {
   name: "desktop" | "mobile";
-  root: Element;
+  root: HTMLElement;
+  items: HTMLElement[];
+  footer: HTMLElement | null;
+  countEl: HTMLElement | null;
+  loadMoreBtn: HTMLButtonElement | null;
 };
+
+function buildCatalogSurface(
+  name: "desktop" | "mobile",
+  root: Element,
+): CatalogSurface | null {
+  if (!(root instanceof HTMLElement)) return null;
+
+  const footer = root.querySelector<HTMLElement>("[data-digital-catalog-footer]");
+
+  return {
+    name,
+    root,
+    items: Array.from(root.querySelectorAll<HTMLElement>("[data-digital-catalog-item]")),
+    footer,
+    countEl: footer?.querySelector<HTMLElement>("[data-digital-catalog-count]") ?? null,
+    loadMoreBtn: footer?.querySelector<HTMLButtonElement>("[data-digital-load-more]") ?? null,
+  };
+}
 
 export function initDigitalCatalogFilters(): void {
   const root = document.querySelector("[data-digital-catalog-root]");
@@ -80,11 +102,20 @@ export function initDigitalCatalogFilters(): void {
   const surfaces: CatalogSurface[] = [];
   const desktopRoot = root.querySelector('[data-digital-catalog-surface="desktop"]');
   const mobileRoot = root.querySelector('[data-digital-catalog-surface="mobile"]');
-  if (desktopRoot) {
-    surfaces.push({ name: "desktop", root: desktopRoot });
+  const desktopSurface = desktopRoot ? buildCatalogSurface("desktop", desktopRoot) : null;
+  const mobileSurface = mobileRoot ? buildCatalogSurface("mobile", mobileRoot) : null;
+  if (desktopSurface) surfaces.push(desktopSurface);
+  if (mobileSurface) surfaces.push(mobileSurface);
+
+  const desktopMedia = window.matchMedia(DESKTOP_MQ);
+
+  function getActiveSurfaceName(): "desktop" | "mobile" {
+    return desktopMedia.matches ? "desktop" : "mobile";
   }
-  if (mobileRoot) {
-    surfaces.push({ name: "mobile", root: mobileRoot });
+
+  function getActiveSurface(): CatalogSurface | null {
+    const activeName = getActiveSurfaceName();
+    return surfaces.find((surface) => surface.name === activeName) ?? surfaces[0] ?? null;
   }
 
   const activePresets = new Set<string>();
@@ -283,12 +314,18 @@ export function initDigitalCatalogFilters(): void {
     return `Показано ${shown} из ${total} компаний`;
   }
 
+  function countMatchingItems(surface: CatalogSurface): number {
+    let count = 0;
+    for (const item of surface.items) {
+      if (itemMatchesFilters(item)) count += 1;
+    }
+    return count;
+  }
+
   function getFilteredCount(): number {
-    const desktopSurface = surfaces.find((surface) => surface.name === "desktop");
-    if (!desktopSurface) return 0;
-    return Array.from(
-      desktopSurface.root.querySelectorAll("[data-digital-catalog-item]"),
-    ).filter(itemMatchesFilters).length;
+    const activeSurface = getActiveSurface();
+    if (!activeSurface) return 0;
+    return countMatchingItems(activeSurface);
   }
 
   function countActiveAdvancedFilters(): number {
@@ -383,13 +420,12 @@ export function initDigitalCatalogFilters(): void {
   }
 
   function syncSurface(surface: CatalogSurface): void {
-    const items = Array.from(surface.root.querySelectorAll("[data-digital-catalog-item]"));
-    const matching = items.filter(itemMatchesFilters);
+    const matching = surface.items.filter(itemMatchesFilters);
     const pageSize = getPageSize();
     const visibleLimit = visibleBySurface[surface.name] ?? pageSize;
     let shown = 0;
 
-    items.forEach((el) => {
+    surface.items.forEach((el) => {
       el.classList.add("digital-catalog-item--hidden");
     });
 
@@ -400,25 +436,35 @@ export function initDigitalCatalogFilters(): void {
       }
     });
 
-    const footer = surface.root.querySelector("[data-digital-catalog-footer]");
-    if (!footer) return;
-
-    const countEl = footer.querySelector("[data-digital-catalog-count]");
-    const btn = footer.querySelector<HTMLButtonElement>("[data-digital-load-more]");
     const filteredTotal = matching.length;
 
-    if (countEl) {
-      countEl.textContent = formatCount(
+    if (surface.countEl) {
+      surface.countEl.textContent = formatCount(
         Math.min(shown, filteredTotal),
         filteredTotal,
         filtersActive,
       );
     }
-    if (btn) {
+    if (surface.loadMoreBtn) {
       const hasMoreToShow = filteredTotal > shown;
-      btn.hidden = !hasMoreToShow;
-      btn.textContent = `Показать ещё ${pageSize}`;
+      surface.loadMoreBtn.hidden = !hasMoreToShow;
+      surface.loadMoreBtn.textContent = `Показать ещё ${pageSize}`;
     }
+  }
+
+  function updateCatalogChrome(): void {
+    const filteredCount = getFilteredCount();
+
+    if (emptyEl) emptyEl.hidden = filteredCount > 0;
+
+    surfaces.forEach((surface) => {
+      const wrap = surface.root.closest(".digital-table-wrap, .digital-mobile-cards");
+      if (wrap instanceof HTMLElement) wrap.hidden = filteredCount === 0;
+    });
+
+    syncUrl();
+    syncPresetsSecondaryVisibility();
+    updateActiveFilterStatus();
   }
 
   function applyCatalog(): void {
@@ -432,20 +478,12 @@ export function initDigitalCatalogFilters(): void {
       btn.setAttribute("aria-pressed", pressed ? "true" : "false");
     });
 
-    const filteredCount = getFilteredCount();
+    const activeSurface = getActiveSurface();
+    if (activeSurface) {
+      syncSurface(activeSurface);
+    }
 
-    surfaces.forEach(syncSurface);
-
-    if (emptyEl) emptyEl.hidden = filteredCount > 0;
-
-    surfaces.forEach((surface) => {
-      const wrap = surface.root.closest(".digital-table-wrap, .digital-mobile-cards");
-      if (wrap instanceof HTMLElement) wrap.hidden = filteredCount === 0;
-    });
-
-    syncUrl();
-    syncPresetsSecondaryVisibility();
-    updateActiveFilterStatus();
+    updateCatalogChrome();
   }
 
   function resetVisibleCounts(): void {
@@ -608,14 +646,10 @@ export function initDigitalCatalogFilters(): void {
   });
 
   surfaces.forEach((surface) => {
-    const footer = surface.root.querySelector("[data-digital-catalog-footer]");
-    const btn = footer?.querySelector<HTMLButtonElement>("[data-digital-load-more]");
-    btn?.addEventListener("click", () => {
+    surface.loadMoreBtn?.addEventListener("click", () => {
       const pageSize = getPageSize();
       const current = visibleBySurface[surface.name] ?? pageSize;
-      const matchCount = Array.from(
-        surface.root.querySelectorAll("[data-digital-catalog-item]"),
-      ).filter(itemMatchesFilters).length;
+      const matchCount = countMatchingItems(surface);
       const visibleBefore = Math.min(current, matchCount);
       const visibleAfter = Math.min(current + pageSize, matchCount);
 
@@ -626,30 +660,34 @@ export function initDigitalCatalogFilters(): void {
       });
 
       visibleBySurface[surface.name] = visibleAfter;
-      applyCatalog();
+      syncSurface(surface);
+      updateCatalogChrome();
     });
   });
 
-  const onLayoutMqChange = () => {
+  function onDesktopBreakpointChange(): void {
     resetVisibleCounts();
+    applyCatalog();
+  }
+
+  function onChromeLayoutChange(): void {
     syncPresetsSecondaryVisibility();
     syncSearchPlaceholder();
-    applyCatalog();
-  };
+    syncClearButtons();
+  }
 
-  for (const mq of [
-    window.matchMedia(DESKTOP_MQ),
-    window.matchMedia(TABLET_FILTERS_MQ),
-    window.matchMedia(MOBILE_FILTERS_MQ),
-    window.matchMedia(NARROW_SEARCH_PLACEHOLDER_MQ),
-  ]) {
+  function bindMediaQueryChange(mq: MediaQueryList, handler: () => void): void {
     if (typeof mq.addEventListener === "function") {
-      mq.addEventListener("change", onLayoutMqChange);
+      mq.addEventListener("change", handler);
     } else if (typeof mq.addListener === "function") {
-      // Legacy MediaQueryList API (Safari < 14, older Chromium)
-      mq.addListener(onLayoutMqChange);
+      mq.addListener(handler);
     }
   }
+
+  bindMediaQueryChange(desktopMedia, onDesktopBreakpointChange);
+  bindMediaQueryChange(window.matchMedia(TABLET_FILTERS_MQ), onChromeLayoutChange);
+  bindMediaQueryChange(window.matchMedia(MOBILE_FILTERS_MQ), onChromeLayoutChange);
+  bindMediaQueryChange(window.matchMedia(NARROW_SEARCH_PLACEHOLDER_MQ), onChromeLayoutChange);
 
   pageSizeSelect?.addEventListener("change", () => {
     writeStoredPageSize(parsePageSize(pageSizeSelect.value));
