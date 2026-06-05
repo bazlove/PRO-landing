@@ -304,7 +304,12 @@
         "sourceUrl": "https://career.habr.com/companies/reksoft/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://www.reksoft.com/it-accreditation-reksoft/"
+    }
   },
   {
     "id": "cmp_c454603257",
@@ -354,7 +359,12 @@
     "habrUrl": "https://career.habr.com/companies/sbermarketing",
     "linkedinUrl": "https://www.linkedin.com/company/sbermarketing",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_5be6e7ad7a",
@@ -472,7 +482,12 @@
     "habrUrl": "https://career.habr.com/companies/advgroup",
     "linkedinUrl": "https://www.linkedin.com/company/adv-group",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://career.habr.com/companies/advgroup"
+    }
   },
   {
     "id": "cmp_926a2cf437",
@@ -766,13 +781,25 @@
     "habrUrl": "https://career.habr.com/companies/demis-group",
     "linkedinUrl": "https://www.linkedin.com/company/demis-group",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_7t5ptc",
     "slug": "directum",
     "name": "Directum",
-    "searchAliases": [],
+    "searchAliases": [
+      "Directum",
+      "Директум",
+      "Directum RX",
+      "Директум RX",
+      "Directum ECM",
+      "Directum ERP"
+    ],
     "city": "Ижевск",
     "companyType": "Продукт",
     "niche": "Enterprise IT / System integration",
@@ -822,7 +849,6 @@
     "name": "FIX",
     "searchAliases": [
       "Фикс",
-      "Fix LLC",
       "GK Fix",
       "ГК FIX"
     ],
@@ -1250,7 +1276,15 @@
     "id": "cmp_yjyudr",
     "slug": "rore",
     "name": "RoRe",
-    "searchAliases": [],
+    "searchAliases": [
+      "RoRe",
+      "RoRe Group",
+      "RoreGroup",
+      "RoRe digital",
+      "РоРе",
+      "Роре Груп",
+      "RoRe Habr"
+    ],
     "city": "Москва",
     "companyType": "Холдинг",
     "niche": "Media / Content / PR",
@@ -1333,8 +1367,8 @@
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-23",
-    "hhVacanciesCheckedAt": "2026-05-19",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://www.simbirsoft.com/",
     "hhCompanyUrl": "https://hh.ru/employer/668019",
     "habrUrl": "https://career.habr.com/companies/simbirsoft",
@@ -1471,6 +1505,13 @@
         "description": "Рейтинг работодателей hh.ru",
         "year": 2025,
         "sourceUrl": "https://hh.ru/employer/1178447"
+      },
+      {
+        "source": "habr",
+        "label": "-",
+        "description": "Рейтинг Habr Career",
+        "year": null,
+        "sourceUrl": null
       }
     ],
     "publicStatus": "public",
@@ -1547,9 +1588,9 @@
     "niche": "SEO",
     "size": "201–500",
     "careerUrl": "https://www.ashmanov.com/company/vacancy/",
-    "vacanciesRange": "5–10",
-    "vacanciesWeight": 2,
-    "hiringStatus": "Активный",
+    "vacanciesRange": "1–4",
+    "vacanciesWeight": 1,
+    "hiringStatus": "Точечный",
     "workFormat": "Смешанный",
     "hiringGeo": "РФ",
     "international": "Нет",
@@ -1560,7 +1601,6 @@
     "awards2025": "Рейтинг Рунета 2025 — SEO-агентства: #3",
     "hasAwards2025": true,
     "presets": [
-      "Активный найм",
       "Высокая HR-оценка",
       "Награды 2025"
     ],
@@ -1571,11 +1611,11 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "hasActiveHiring": true,
+    "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-23",
-    "hhVacanciesCheckedAt": "2026-05-19",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://www.ashmanov.com/",
     "hhCompanyUrl": "https://hh.ru/employer/16233",
     "habrUrl": "https://career.habr.com/companies/ashmanov",
@@ -1600,7 +1640,15 @@
     "id": "cmp_pekxhx",
     "slug": "didzhital-layn",
     "name": "Диджитал Лайн",
-    "searchAliases": [],
+    "searchAliases": [
+      "Диджитал Лайн",
+      "Digital Line",
+      "DigitalLine",
+      "dg-line",
+      "ДиджиталЛайн",
+      "Digital Line agency",
+      "Диджитал Лайн Habr"
+    ],
     "city": "Москва",
     "companyType": "Digital",
     "niche": "Full-service digital",
@@ -1750,13 +1798,25 @@
     "habrUrl": "https://career.habr.com/companies/surf",
     "linkedinUrl": "https://www.linkedin.com/company/surfint",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://surf.ru/contacts/"
+    }
   },
   {
     "id": "cmp_908a257514",
     "slug": "sinergium",
     "name": "Синергиум",
-    "searchAliases": [],
+    "searchAliases": [
+      "Синергиум",
+      "Sinergium",
+      "Sinergium Group",
+      "Синергиум агентство",
+      "Синергиум маркетинг",
+      "Sinergium performance"
+    ],
     "city": "Воронеж",
     "companyType": "Performance",
     "niche": "Performance marketing",
@@ -1961,8 +2021,8 @@
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://bsl.dev/",
     "hhCompanyUrl": "https://hh.ru/employer/3879484",
     "habrUrl": "https://career.habr.com/companies/bsl-dev",
@@ -2079,7 +2139,12 @@
     "habrUrl": "https://career.habr.com/companies/crosstech",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://career.habr.com/companies/crosstech"
+    }
   },
   {
     "id": "cmp_dd36faf3bb",
@@ -2232,8 +2297,8 @@
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-23",
-    "hhVacanciesCheckedAt": "2026-05-19",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://www.extyl-pro.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/626837",
     "habrUrl": "https://career.habr.com/companies/extyl",
@@ -2252,7 +2317,7 @@
     "name": "Globus",
     "searchAliases": [
       "Globus",
-      "Globus LTD",
+      "Globus-ltd",
       "Глобус",
       "Глобус ЛТД",
       "Глобус Нижний Новгород",
@@ -2512,7 +2577,12 @@
     "habrUrl": "https://career.habr.com/companies/icl-st",
     "linkedinUrl": "https://www.linkedin.com/company/icl-services",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://career.habr.com/companies/icl-st"
+    }
   },
   {
     "id": "cmp_57926a4243",
@@ -2563,13 +2633,26 @@
     "habrUrl": "https://career.habr.com/companies/icontext",
     "linkedinUrl": "https://www.linkedin.com/company/icontext",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_988e9e56c7",
     "slug": "jami-lup",
     "name": "JAMI LUP",
-    "searchAliases": [],
+    "searchAliases": [
+      "JAMI LUP",
+      "JAMILUP",
+      "JAMI",
+      "Джами Луп",
+      "Джами",
+      "ЛУП",
+      "LUP"
+    ],
     "city": "Москва",
     "companyType": "Холдинг",
     "niche": "Media / Content / PR",
@@ -2735,7 +2818,15 @@
     "id": "cmp_3lw159",
     "slug": "lofty",
     "name": "Lofty",
-    "searchAliases": [],
+    "searchAliases": [
+      "Lofty",
+      "Lofty Today",
+      "Лофти",
+      "Лофти Тудей",
+      "Lofty ecommerce",
+      "Lofty digital products",
+      "Lofty jobs"
+    ],
     "city": "Москва",
     "companyType": "Продукт",
     "niche": "E-commerce enablement",
@@ -2930,8 +3021,8 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": null,
     "hhCompanyUrl": "https://hh.ru/employer/1666189",
     "habrUrl": "https://career.habr.com/companies/mediasoft",
@@ -2979,8 +3070,8 @@
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-23",
-    "hhVacanciesCheckedAt": "2026-05-19",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://mgcom.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/95255",
     "habrUrl": null,
@@ -3094,8 +3185,8 @@
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://mish.design/",
     "hhCompanyUrl": "https://hh.ru/employer/3980424",
     "habrUrl": "https://career.habr.com/companies/mish-design",
@@ -3107,7 +3198,16 @@
     "id": "cmp_fa8714b370",
     "slug": "napoleon-it",
     "name": "Napoleon IT",
-    "searchAliases": [],
+    "searchAliases": [
+      "Napoleon IT",
+      "NapoleonIT",
+      "Napoleon",
+      "Наполеон IT",
+      "Наполеон ИТ",
+      "Наполеон Айти",
+      "Napoleon IT AI",
+      "Napoleon IT Data"
+    ],
     "city": "Москва",
     "companyType": "Разработка",
     "niche": "AI / Data",
@@ -3271,7 +3371,14 @@
     "id": "cmp_1f8hjmd",
     "slug": "novakid",
     "name": "Novakid",
-    "searchAliases": [],
+    "searchAliases": [
+      "Novakid",
+      "novakidschool",
+      "Новакид",
+      "Нова Кид",
+      "Novakid School",
+      "Novakid Russia"
+    ],
     "city": "Москва",
     "companyType": "Продукт",
     "niche": "EdTech",
@@ -3373,7 +3480,12 @@
         "sourceUrl": "https://career.habr.com/companies/orionsoft/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://www.orionsoft.ru/legal-information"
+    }
   },
   {
     "id": "cmp_323b452835",
@@ -3431,59 +3543,12 @@
         "sourceUrl": "https://career.habr.com/companies/qsoft/awards"
       }
     ],
-    "publicStatus": "public"
-  },
-  {
-    "id": "cmp_20c002650a",
-    "slug": "r-one",
-    "name": "R-One",
-    "searchAliases": [
-      "R-One",
-      "R1",
-      "R1 Team",
-      "R-One Company",
-      "R1 Company",
-      "Эр Ван",
-      "R-One Москва",
-      "R-One SaaS",
-      "R-One продукт"
-    ],
-    "city": "Москва",
-    "companyType": "Продукт",
-    "niche": "Product / SaaS",
-    "size": "201–500",
-    "careerUrl": "https://r1.team/#vacancies",
-    "vacanciesRange": "0",
-    "vacanciesWeight": 0,
-    "hiringStatus": "На паузе",
-    "workFormat": "Офис",
-    "hiringGeo": "РФ",
-    "international": "Нет",
-    "hhRatingDisplay": "Нет отзывов",
-    "hhRatingValue": null,
-    "habrRatingDisplay": "Нет отзывов",
-    "habrRatingValue": null,
-    "awards2025": null,
-    "hasAwards2025": false,
-    "presets": [],
-    "signals": {
-      "hasDirectApply": true,
-      "hasCareerPage": true,
-      "hiringSource": "Career site",
-      "dataFreshness": "fresh",
-      "remoteExplicitlyDenied": false
-    },
-    "hasActiveHiring": false,
-    "hasRemote": false,
-    "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
-    "websiteUrl": "https://r1.team/",
-    "hhCompanyUrl": null,
-    "habrUrl": "https://career.habr.com/companies/r1-company",
-    "linkedinUrl": "https://www.linkedin.com/company/r-one-company/",
-    "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://teamly.ru/details/"
+    }
   },
   {
     "id": "cmp_2d93784edc",
@@ -3585,8 +3650,8 @@
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-23",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://redcollar.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/1737908",
     "habrUrl": "https://career.habr.com/companies/redcollar",
@@ -3700,8 +3765,8 @@
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-23",
-    "hhVacanciesCheckedAt": "2026-05-19",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://www.rocket10.com/",
     "hhCompanyUrl": "https://hh.ru/employer/1721725",
     "habrUrl": "https://career.habr.com/companies/rocket10",
@@ -3718,7 +3783,14 @@
     "id": "cmp_s21qir",
     "slug": "roistat",
     "name": "Roistat",
-    "searchAliases": [],
+    "searchAliases": [
+      "Roistat",
+      "Ройстат",
+      "Роистат",
+      "Roistat analytics",
+      "Roistat CRM",
+      "Roistat сквозная аналитика"
+    ],
     "city": "Москва",
     "companyType": "Продукт",
     "niche": "Analytics / CRM / BI",
@@ -3805,8 +3877,8 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://sidorinlab.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/1491238",
     "habrUrl": "https://career.habr.com/companies/sidorinlab",
@@ -4039,7 +4111,12 @@
     "habrUrl": "https://career.habr.com/companies/zebrains",
     "linkedinUrl": "https://ru.linkedin.com/company/zebrains",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://career.habr.com/companies/zebrains"
+    }
   },
   {
     "id": "cmp_c323927ef2",
@@ -4091,13 +4168,25 @@
     "habrUrl": "https://career.habr.com/companies/65apps",
     "linkedinUrl": "https://www.linkedin.com/company/65apps",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://career.habr.com/companies/65apps"
+    }
   },
   {
     "id": "cmp_ryjxma",
     "slug": "atvinta",
     "name": "Атвинта",
-    "searchAliases": [],
+    "searchAliases": [
+      "Атвинта",
+      "Atwinta",
+      "At Vinta",
+      "Atwinta agency",
+      "Атвинта агентство",
+      "Atwinta digital"
+    ],
     "city": "Кемерово",
     "companyType": "Разработка",
     "niche": "Web development",
@@ -4314,7 +4403,14 @@
     "id": "cmp_5870799a7d",
     "slug": "zerobit",
     "name": "Зеробит",
-    "searchAliases": [],
+    "searchAliases": [
+      "Зеробит",
+      "Zerobit",
+      "Зеро бит",
+      "Zero Bit",
+      "Zerobit IT",
+      "Зеробит вакансии"
+    ],
     "city": "Москва",
     "companyType": "Интегратор",
     "niche": "Enterprise IT / System integration",
@@ -4414,7 +4510,14 @@
     "id": "cmp_dc47b7b541",
     "slug": "kompleto",
     "name": "Комплето",
-    "searchAliases": [],
+    "searchAliases": [
+      "Комплето",
+      "Kompleto",
+      "Completo",
+      "digital-агентство Комплето",
+      "агентство Комплето",
+      "Kompleto agency"
+    ],
     "city": "Москва",
     "companyType": "Digital",
     "niche": "Full-service digital",
@@ -4472,9 +4575,9 @@
     "niche": "Mobile development",
     "size": "51–200",
     "careerUrl": "https://livetyping.com/ru/job",
-    "vacanciesRange": "5–10",
-    "vacanciesWeight": 2,
-    "hiringStatus": "Активный",
+    "vacanciesRange": "1–4",
+    "vacanciesWeight": 1,
+    "hiringStatus": "Точечный",
     "workFormat": "Смешанный",
     "hiringGeo": "РФ",
     "international": "Неясно",
@@ -4485,7 +4588,6 @@
     "awards2025": null,
     "hasAwards2025": false,
     "presets": [
-      "Активный найм",
       "Высокая HR-оценка"
     ],
     "signals": {
@@ -4495,23 +4597,36 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "hasActiveHiring": true,
+    "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-28",
-    "hhVacanciesCheckedAt": "2026-05-28",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://livetyping.com/",
     "hhCompanyUrl": "https://hh.ru/employer/1929475",
     "habrUrl": "https://career.habr.com/companies/ltst",
     "linkedinUrl": "https://www.linkedin.com/company/livetyping",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://livetyping.com/ru/rekvizity"
+    }
   },
   {
     "id": "cmp_u4hct9",
     "slug": "metasharks",
     "name": "Меташаркс",
-    "searchAliases": [],
+    "searchAliases": [
+      "Меташаркс",
+      "MetaSharks",
+      "Meta Sharks",
+      "Мета Шаркс",
+      "Меташаркс digital",
+      "MetaSharks agency",
+      "MetaSharks вакансии"
+    ],
     "city": "Зеленоград",
     "companyType": "Разработка",
     "niche": "Web development",
@@ -4556,7 +4671,15 @@
     "id": "cmp_1c97927df3",
     "slug": "mobio",
     "name": "Мобио",
-    "searchAliases": [],
+    "searchAliases": [
+      "Мобио",
+      "Mobio",
+      "Мобио агентство",
+      "Mobio performance",
+      "Mobio mobile",
+      "Mobio CPA",
+      "Mobio Agency"
+    ],
     "city": "Москва",
     "companyType": "Performance",
     "niche": "Performance marketing",
@@ -4601,7 +4724,14 @@
     "id": "cmp_c6fce80dca",
     "slug": "palindrom",
     "name": "Палиндром",
-    "searchAliases": [],
+    "searchAliases": [
+      "Палиндром",
+      "Palindrome",
+      "Palindrome Media",
+      "Палиндром Медиа",
+      "медиа Палиндром",
+      "Palindrome agency"
+    ],
     "city": "Москва",
     "companyType": "Digital",
     "niche": "Media / Content / PR",
@@ -4808,7 +4938,12 @@
         "sourceUrl": "https://career.habr.com/companies/rush-agency/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_c3b1478752",
@@ -4851,8 +4986,8 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://www.reaspekt.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/61870",
     "habrUrl": "https://career.habr.com/companies/1d7ce6b9-ae9c-496c-aac2-bd7491f8e2c9",
@@ -4975,7 +5110,12 @@
         "sourceUrl": "https://career.habr.com/companies/tsekh-design/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://career.habr.com/companies/tsekh-design"
+    }
   },
   {
     "id": "cmp_73660edcb0",
@@ -5081,7 +5221,12 @@
     "habrUrl": "https://career.habr.com/companies/mcart",
     "linkedinUrl": "https://www.linkedin.com/company/m-c-art",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_6d0b0164f6",
@@ -5149,9 +5294,9 @@
     "niche": "UX/UI & design",
     "size": "51–200",
     "careerUrl": "https://aic.ru/vacancies/",
-    "vacanciesRange": "5–10",
-    "vacanciesWeight": 2,
-    "hiringStatus": "Активный",
+    "vacanciesRange": "1–4",
+    "vacanciesWeight": 1,
+    "hiringStatus": "Точечный",
     "workFormat": "Не указано",
     "hiringGeo": "РФ",
     "international": "Нет",
@@ -5162,7 +5307,6 @@
     "awards2025": "Tagline 2025 — digital design: #1; Ruward 2025 — UX: #1; Рейтинг Рунета 2025 — разработка: #5",
     "hasAwards2025": true,
     "presets": [
-      "Активный найм",
       "Награды 2025"
     ],
     "signals": {
@@ -5172,11 +5316,11 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "hasActiveHiring": true,
+    "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-23",
-    "hhVacanciesCheckedAt": "2026-05-19",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://aic.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/718826",
     "habrUrl": "https://career.habr.com/companies/aic",
@@ -5193,7 +5337,13 @@
     "id": "cmp_2fa8d2c490",
     "slug": "ant-team",
     "name": "Ant-Team",
-    "searchAliases": [],
+    "searchAliases": [
+      "Ant-Team",
+      "Ант Тим",
+      "AntTeam",
+      "Ant-Team SEO",
+      "Ant-Team performance"
+    ],
     "city": "Санкт-Петербург",
     "companyType": "Performance",
     "niche": "SEO",
@@ -5463,7 +5613,14 @@
     "id": "cmp_0e17761721",
     "slug": "asia-pacific",
     "name": "Asia Pacific",
-    "searchAliases": [],
+    "searchAliases": [
+      "Asia Pacific",
+      "as-pacific",
+      "Азия Пасифик",
+      "Эйша Пасифик",
+      "Asia Pacific agency",
+      "Asia Pacific marketing"
+    ],
     "city": "Москва",
     "companyType": "Digital",
     "niche": "Media / Content / PR",
@@ -5508,7 +5665,16 @@
     "id": "cmp_1c3c98fdb8",
     "slug": "augment",
     "name": "Augment",
-    "searchAliases": [],
+    "searchAliases": [
+      "Augment",
+      "Augment Tech",
+      "Augment Technology",
+      "Аугмент",
+      "Огмент",
+      "Augment интегратор",
+      "Augment outstaffing",
+      "Augment IT"
+    ],
     "city": "Москва",
     "companyType": "Интегратор",
     "niche": "IT consulting / Automation",
@@ -5613,7 +5779,6 @@
     "searchAliases": [
       "Clever Pumpkin",
       "CleverPumpkin",
-      "CleverPumpkin Ltd",
       "Клевер Пампкин",
       "КлеверПампкин"
     ],
@@ -5663,13 +5828,27 @@
         "sourceUrl": "https://career.habr.com/companies/cleverpumpkin/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://career.habr.com/companies/cleverpumpkin"
+    }
   },
   {
     "id": "cmp_d0cc6098bc",
     "slug": "codeinside",
     "name": "CodeInside",
-    "searchAliases": [],
+    "searchAliases": [
+      "CodeInside",
+      "Code Inside",
+      "КодИнсайд",
+      "Код Инсайд",
+      "CodeInside company",
+      "CodeInside IT",
+      "Code Inside Russia",
+      "CodeInside вакансии"
+    ],
     "city": "Пенза",
     "companyType": "Разработка",
     "niche": "Web development",
@@ -5764,8 +5943,8 @@
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://codingteam.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/5208335",
     "habrUrl": "https://career.habr.com/companies/codingteam",
@@ -5881,7 +6060,12 @@
     "habrUrl": null,
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_caf0580303",
@@ -5934,13 +6118,25 @@
     "habrUrl": "https://career.habr.com/companies/didenokteam",
     "linkedinUrl": "https://www.linkedin.com/company/didenok-team",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_a66b2f67b6",
     "slug": "digital-strategy",
     "name": "Digital Strategy",
-    "searchAliases": [],
+    "searchAliases": [
+      "Digital Strategy",
+      "digitalstrategy",
+      "Digital Strategy agency",
+      "Диджитал Стратеги",
+      "Диджитал Стратегия",
+      "агентство Digital Strategy"
+    ],
     "city": "Москва",
     "companyType": "Performance",
     "niche": "Performance marketing",
@@ -6164,13 +6360,25 @@
         "sourceUrl": "https://career.habr.com/companies/hflabs/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://career.habr.com/companies/hflabs"
+    }
   },
   {
     "id": "cmp_1iyvzkl",
     "slug": "infoshell",
     "name": "Infoshell",
-    "searchAliases": [],
+    "searchAliases": [
+      "Infoshell",
+      "Info Shell",
+      "Инфошелл",
+      "Инфо Шелл",
+      "Infoshell mobile",
+      "Infoshell разработка"
+    ],
     "city": "Санкт-Петербург",
     "companyType": "Разработка",
     "niche": "Mobile development",
@@ -6201,8 +6409,8 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-23",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": null,
     "hhCompanyUrl": "https://hh.ru/employer/10499896",
     "habrUrl": "https://career.habr.com/companies/infoshell",
@@ -6372,7 +6580,12 @@
     "habrUrl": "https://career.habr.com/companies/itb-company",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_e86ec23609",
@@ -6427,7 +6640,12 @@
         "sourceUrl": "https://hh.ru/employer/150082"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://career.habr.com/companies/itech"
+    }
   },
   {
     "id": "cmp_a08c9dc5b7",
@@ -6489,7 +6707,14 @@
     "id": "cmp_76679d0987",
     "slug": "kodix",
     "name": "Kodix",
-    "searchAliases": [],
+    "searchAliases": [
+      "Kodix",
+      "Кодикс",
+      "Кодикс агентство",
+      "Kodix Automotive",
+      "Kodix digital",
+      "KODIX agency"
+    ],
     "city": "Москва",
     "companyType": "Digital",
     "niche": "E-commerce enablement",
@@ -6520,8 +6745,8 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-18",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": null,
     "hhCompanyUrl": "https://hh.ru/employer/548557",
     "habrUrl": "https://career.habr.com/companies/kodix",
@@ -6573,8 +6798,8 @@
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-19",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://kotelov.com/",
     "hhCompanyUrl": "https://hh.ru/employer/843093",
     "habrUrl": "https://career.habr.com/companies/kotelov",
@@ -6599,7 +6824,14 @@
     "id": "cmp_1a026rt",
     "slug": "kt-team",
     "name": "KT.Team",
-    "searchAliases": [],
+    "searchAliases": [
+      "KT Team",
+      "KTTeam",
+      "КТ Тим",
+      "КТ Команда",
+      "KT Team HR",
+      "KT.Team интегратор"
+    ],
     "city": "Тольятти",
     "companyType": "Интегратор",
     "niche": "Enterprise IT / System integration",
@@ -6746,7 +6978,12 @@
     "habrUrl": "https://career.habr.com/companies/loylabs",
     "linkedinUrl": "https://www.linkedin.com/company/loyalty-labs",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://career.habr.com/companies/loylabs"
+    }
   },
   {
     "id": "cmp_80deeaf767",
@@ -6805,7 +7042,14 @@
     "id": "cmp_a5c8931110",
     "slug": "maxilect",
     "name": "Maxilect",
-    "searchAliases": [],
+    "searchAliases": [
+      "Maxilect",
+      "Максилект",
+      "Макси лект",
+      "Maxilect careers",
+      "Maxilect IT",
+      "Maxilect remote"
+    ],
     "city": "Санкт-Петербург",
     "companyType": "Разработка",
     "niche": "Enterprise IT / System integration",
@@ -6840,8 +7084,8 @@
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-22",
-    "hhVacanciesCheckedAt": "2026-05-22",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://maxilect.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/2563058",
     "habrUrl": "https://career.habr.com/companies/maxilect",
@@ -7011,8 +7255,8 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://medianation.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/584898",
     "habrUrl": "https://career.habr.com/companies/medianation",
@@ -7126,8 +7370,8 @@
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": null,
     "hhCompanyUrl": "https://hh.ru/employer/59378",
     "habrUrl": "https://career.habr.com/companies/mstagency",
@@ -7232,8 +7476,8 @@
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-19",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://only.digital/",
     "hhCompanyUrl": "https://hh.ru/employer/2049601",
     "habrUrl": null,
@@ -7250,7 +7494,15 @@
     "id": "cmp_18f4d0c917",
     "slug": "perx-soft",
     "name": "Perx Soft",
-    "searchAliases": [],
+    "searchAliases": [
+      "Perx Soft",
+      "PerxSoft",
+      "PERX",
+      "Перкс Софт",
+      "Перкс",
+      "Perx software",
+      "Perx команда"
+    ],
     "city": "Москва",
     "companyType": "Разработка",
     "niche": "E-commerce enablement",
@@ -7282,8 +7534,8 @@
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-18",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": null,
     "hhCompanyUrl": "https://hh.ru/employer/2451566",
     "habrUrl": "https://career.habr.com/companies/perx",
@@ -7511,7 +7763,12 @@
     "habrUrl": "https://career.habr.com/companies/rdv-it",
     "linkedinUrl": "https://www.linkedin.com/company/rdv-it",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://career.habr.com/companies/rdv-it"
+    }
   },
   {
     "id": "cmp_0b1a7d788d",
@@ -7577,50 +7834,6 @@
       "checkedAt": "2026-05-29",
       "sourceUrl": "https://career.habr.com/companies/redlab"
     }
-  },
-  {
-    "id": "cmp_11hgwjq",
-    "slug": "retail-rocket",
-    "name": "Retail Rocket",
-    "searchAliases": [],
-    "city": "Москва",
-    "companyType": "Продукт",
-    "niche": "MarTech / CRM / CDP",
-    "size": "51–200",
-    "careerUrl": "https://retailrocket.ru/",
-    "vacanciesRange": "1–4",
-    "vacanciesWeight": 1,
-    "hiringStatus": "Точечный",
-    "workFormat": "Смешанный",
-    "hiringGeo": "РФ",
-    "international": "Да",
-    "hhRatingDisplay": "4,3",
-    "hhRatingValue": 4.3,
-    "habrRatingDisplay": "Нет отзывов",
-    "habrRatingValue": null,
-    "awards2025": null,
-    "hasAwards2025": false,
-    "presets": [
-      "Международные"
-    ],
-    "signals": {
-      "hasDirectApply": true,
-      "hasCareerPage": true,
-      "hiringSource": "HH",
-      "dataFreshness": "fresh",
-      "remoteExplicitlyDenied": false
-    },
-    "hasActiveHiring": false,
-    "hasRemote": false,
-    "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-18",
-    "hhVacanciesCheckedAt": "2026-05-18",
-    "websiteUrl": null,
-    "hhCompanyUrl": "https://hh.ru/employer/2887273",
-    "habrUrl": "https://career.habr.com/companies/retailrocket",
-    "linkedinUrl": "https://www.linkedin.com/company/retailrocket/",
-    "employerRankingBadges": [],
-    "publicStatus": "public"
   },
   {
     "id": "cmp_3bc20c0e6e",
@@ -7741,7 +7954,12 @@
         "sourceUrl": "https://hh.ru/employer/1262880"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://riverstart.ru/software-registration"
+    }
   },
   {
     "id": "cmp_50d63e2c2a",
@@ -7937,9 +8155,9 @@
     "niche": "Performance marketing",
     "size": "51–200",
     "careerUrl": "https://tandemdigital.ru/o-kompanii/vakansii/",
-    "vacanciesRange": "0",
-    "vacanciesWeight": 0,
-    "hiringStatus": "На паузе",
+    "vacanciesRange": "1–4",
+    "vacanciesWeight": 1,
+    "hiringStatus": "Точечный",
     "workFormat": "Не указано",
     "hiringGeo": "Локально",
     "international": "Нет",
@@ -7962,12 +8180,64 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://tandemdigital.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/3817",
     "habrUrl": null,
     "linkedinUrl": "https://www.linkedin.com/company/tandem-digital-agency",
+    "employerRankingBadges": [],
+    "publicStatus": "public"
+  },
+  {
+    "id": "cmp_5e248cc869",
+    "slug": "topface-media",
+    "name": "Topface Media",
+    "searchAliases": [
+      "Topface Media",
+      "Topface",
+      "Топфейс Медиа",
+      "Топфейс",
+      "Top Face Media",
+      "Бренд Войс"
+    ],
+    "city": "Санкт-Петербург",
+    "companyType": "Performance",
+    "niche": "Media / Content / PR",
+    "size": "51–200",
+    "careerUrl": "https://hh.ru/employer/4138182",
+    "vacanciesRange": "5–10",
+    "vacanciesWeight": 2,
+    "hiringStatus": "Активный",
+    "workFormat": "Не указано",
+    "hiringGeo": "РФ",
+    "international": "Нет",
+    "hhRatingDisplay": "4,9",
+    "hhRatingValue": 4.9,
+    "habrRatingDisplay": "Нет отзывов",
+    "habrRatingValue": null,
+    "awards2025": null,
+    "hasAwards2025": false,
+    "presets": [
+      "Активный найм",
+      "Высокая HR-оценка"
+    ],
+    "signals": {
+      "hasDirectApply": false,
+      "hasCareerPage": true,
+      "hiringSource": "HH",
+      "dataFreshness": "fresh",
+      "remoteExplicitlyDenied": false
+    },
+    "hasActiveHiring": true,
+    "hasRemote": false,
+    "hasHighHrRating": true,
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
+    "websiteUrl": "https://topfacemedia.com/",
+    "hhCompanyUrl": "https://hh.ru/employer/4138182",
+    "habrUrl": "https://career.habr.com/companies/topfacemedia",
+    "linkedinUrl": null,
     "employerRankingBadges": [],
     "publicStatus": "public"
   },
@@ -8244,7 +8514,12 @@
     "habrUrl": "https://career.habr.com/companies/web-canape",
     "linkedinUrl": "https://www.linkedin.com/company/web-canape",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://www.web-canape.ru/about/it-ooo-twins/"
+    }
   },
   {
     "id": "cmp_6ecc4989bd",
@@ -8403,7 +8678,12 @@
     "habrUrl": "https://career.habr.com/companies/wemakefab",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://career.habr.com/companies/wemakefab"
+    }
   },
   {
     "id": "cmp_e36b8fd5f3",
@@ -8463,7 +8743,17 @@
     "id": "cmp_yhu8jt",
     "slug": "5x10",
     "name": "5x10",
-    "searchAliases": [],
+    "searchAliases": [
+      "5x10",
+      "5 x 10",
+      "5*10",
+      "five by ten",
+      "five-ten",
+      "Пять на десять",
+      "Пять десять",
+      "5x10 digital",
+      "5x10 design"
+    ],
     "city": "Москва",
     "companyType": "Digital",
     "niche": "Product / SaaS",
@@ -8494,8 +8784,8 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-18",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": null,
     "hhCompanyUrl": "https://hh.ru/employer/10041977",
     "habrUrl": "https://career.habr.com/companies/5x10",
@@ -8555,7 +8845,12 @@
     "habrUrl": "https://career.habr.com/companies/19agency84",
     "linkedinUrl": "https://www.linkedin.com/company/19agency84",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_c4733b0bfa",
@@ -8601,20 +8896,33 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://365mg.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/9896296",
     "habrUrl": null,
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_d6ae6b232f",
     "slug": "agentstvo-gorilla",
     "name": "Агентство Горилла",
-    "searchAliases": [],
+    "searchAliases": [
+      "Агентство Горилла",
+      "Горилла",
+      "Gorilla",
+      "Gorilla Agency",
+      "Gorilla Digital",
+      "Горилла агентство",
+      "digital-агентство Горилла"
+    ],
     "city": "Казань",
     "companyType": "Digital",
     "niche": "Full-service digital",
@@ -8671,9 +8979,9 @@
     "niche": "Web development",
     "size": "1–50",
     "careerUrl": "https://inetstudio.ru/old#team",
-    "vacanciesRange": "1–4",
-    "vacanciesWeight": 1,
-    "hiringStatus": "Точечный",
+    "vacanciesRange": "0",
+    "vacanciesWeight": 0,
+    "hiringStatus": "На паузе",
     "workFormat": "Не указано",
     "hiringGeo": "Локально",
     "international": "Нет",
@@ -8697,8 +9005,8 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://inetstudio.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/5270496",
     "habrUrl": "https://career.habr.com/companies/inetstudio",
@@ -8718,7 +9026,15 @@
     "id": "cmp_f01ad6b944",
     "slug": "company-3vei36",
     "name": "Аксиома Веб",
-    "searchAliases": [],
+    "searchAliases": [
+      "Аксиома Веб",
+      "АксиомаWeb",
+      "Aksioma Web",
+      "Axioma Web",
+      "Аксиома Вэб",
+      "Аксиома агентство",
+      "Aksioma performance"
+    ],
     "city": "Санкт-Петербург",
     "companyType": "Performance",
     "niche": "Performance marketing",
@@ -8763,7 +9079,15 @@
     "id": "cmp_dvjor6",
     "slug": "alfa-sayt",
     "name": "Альфа.Сайт",
-    "searchAliases": [],
+    "searchAliases": [
+      "Альфа Сайт",
+      "Alfa Site",
+      "Alpha Site",
+      "АльфаСайт",
+      "AlfaSite",
+      "Альфа сайт студия",
+      "Alfa Site web"
+    ],
     "city": "Орел",
     "companyType": "Веб-студия",
     "niche": "Web development",
@@ -8807,7 +9131,16 @@
     "id": "cmp_1vk4dvd",
     "slug": "veb-anatomiya",
     "name": "Веб Анатомия",
-    "searchAliases": [],
+    "searchAliases": [
+      "Веб Анатомия",
+      "ВебАнатомия",
+      "Web Anatomy",
+      "WebAnatomy",
+      "Web Anatomy agency",
+      "Веб Анатомия агентство",
+      "Web Anatomy digital",
+      "WebAnatomy Habr"
+    ],
     "city": "Санкт-Петербург",
     "companyType": "Разработка",
     "niche": "Web development",
@@ -8849,7 +9182,15 @@
     "id": "cmp_3f7e9ea6d4",
     "slug": "vebbi",
     "name": "Вебби",
-    "searchAliases": [],
+    "searchAliases": [
+      "Вебби",
+      "Webbee",
+      "Web Bee",
+      "Веб Би",
+      "WebBee studio",
+      "Вебби студия",
+      "Webbee agency"
+    ],
     "city": "Дубна",
     "companyType": "Веб-студия",
     "niche": "Web development",
@@ -8894,7 +9235,15 @@
     "id": "cmp_1xd8rmf",
     "slug": "vebbuster",
     "name": "ВебБустер",
-    "searchAliases": [],
+    "searchAliases": [
+      "ВебБустер",
+      "Веб Бустер",
+      "WebBooster",
+      "WBooster",
+      "Web Booster",
+      "WebBooster SEO",
+      "WebBooster digital"
+    ],
     "city": "Москва",
     "companyType": "Performance",
     "niche": "SEO",
@@ -8936,7 +9285,15 @@
     "id": "cmp_0770b883d9",
     "slug": "vebrayz",
     "name": "ВебРайз",
-    "searchAliases": [],
+    "searchAliases": [
+      "ВебРайз",
+      "Веб Райз",
+      "WebRise",
+      "Web Rise",
+      "WebRise agency",
+      "ВебРайз агентство",
+      "ВебРайз студия"
+    ],
     "city": "Москва",
     "companyType": "Веб-студия",
     "niche": "Web development",
@@ -8978,7 +9335,13 @@
     "id": "cmp_p627l3",
     "slug": "gusi-lebedi",
     "name": "Гуси-Лебеди",
-    "searchAliases": [],
+    "searchAliases": [
+      "Гуси-Лебеди",
+      "Gusi-Lebedi",
+      "Gusi Lebedi agency",
+      "Гуси-Лебеди агентство",
+      "Goose Swans"
+    ],
     "city": "Москва",
     "companyType": "Digital",
     "niche": "Branding / Creative",
@@ -9079,7 +9442,15 @@
     "id": "cmp_1s45ily",
     "slug": "impuls-guru",
     "name": "Импульс.гуру",
-    "searchAliases": [],
+    "searchAliases": [
+      "Импульс Гуру",
+      "Impulse Guru",
+      "impulseguru",
+      "Импульс",
+      "Impulse",
+      "impulse.guru work",
+      "Импульс агентство"
+    ],
     "city": "Владимир",
     "companyType": "Performance",
     "niche": "SEO",
@@ -9123,7 +9494,16 @@
     "id": "cmp_45b6e5367c",
     "slug": "ingruppa",
     "name": "Ингруппа",
-    "searchAliases": [],
+    "searchAliases": [
+      "Ингруппа",
+      "Ingru",
+      "InGroup",
+      "Ingruppa",
+      "Ингру",
+      "Ингруппа CRM",
+      "Ингруппа интегратор",
+      "Ingru CRM"
+    ],
     "city": "Пенза",
     "companyType": "Интегратор",
     "niche": "IT consulting / Automation",
@@ -9166,10 +9546,68 @@
     "publicStatus": "public"
   },
   {
+    "id": "cmp_4a21498425",
+    "slug": "insaim",
+    "name": "Инсэйм",
+    "searchAliases": [
+      "Инсэйм",
+      "INSAIM",
+      "Insaim Design",
+      "студия Инсэйм"
+    ],
+    "city": "Москва",
+    "companyType": "Веб-студия",
+    "niche": "UX/UI & design",
+    "size": "1–50",
+    "careerUrl": "https://insaim.ru/vacancies",
+    "vacanciesRange": "5–10",
+    "vacanciesWeight": 2,
+    "hiringStatus": "Активный",
+    "workFormat": "Не указано",
+    "hiringGeo": "Не указано",
+    "international": "Частично",
+    "hhRatingDisplay": "Нет отзывов",
+    "hhRatingValue": null,
+    "habrRatingDisplay": "Нет отзывов",
+    "habrRatingValue": null,
+    "awards2025": null,
+    "hasAwards2025": false,
+    "presets": [
+      "Активный найм",
+      "Международные"
+    ],
+    "signals": {
+      "hasDirectApply": true,
+      "hasCareerPage": true,
+      "hiringSource": "Career site",
+      "dataFreshness": "fresh",
+      "remoteExplicitlyDenied": false
+    },
+    "hasActiveHiring": true,
+    "hasRemote": false,
+    "hasHighHrRating": false,
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": null,
+    "websiteUrl": "https://insaim.ru/",
+    "hhCompanyUrl": null,
+    "habrUrl": null,
+    "linkedinUrl": null,
+    "employerRankingBadges": [],
+    "publicStatus": "public"
+  },
+  {
     "id": "cmp_zwgldr",
     "slug": "internet-aktiv",
     "name": "Интернет Актив",
-    "searchAliases": [],
+    "searchAliases": [
+      "Интернет Актив",
+      "Internet Active",
+      "InternetActive",
+      "ИнтернетАктив",
+      "Internet Aktiv",
+      "Интернет Актив агентство",
+      "Internet Active digital"
+    ],
     "city": "Пермь",
     "companyType": "Digital",
     "niche": "Full-service digital",
@@ -9266,7 +9704,13 @@
     "id": "cmp_135vyj8",
     "slug": "kit-soler",
     "name": "КИТ СОЛЕР",
-    "searchAliases": [],
+    "searchAliases": [
+      "КИТ СОЛЕР",
+      "KIT SOLER",
+      "kitsoler",
+      "КитСолер",
+      "KIT SOLER digital"
+    ],
     "city": "Москва",
     "companyType": "Performance",
     "niche": "Performance marketing",
@@ -9414,7 +9858,15 @@
     "id": "cmp_f84c1f34ed",
     "slug": "muraveynik",
     "name": "Муравейник",
-    "searchAliases": [],
+    "searchAliases": [
+      "Муравейник",
+      "Anthome",
+      "Муравейник digital",
+      "Муравейник агентство",
+      "Anthome agency",
+      "Антхоум",
+      "Ант Хоум"
+    ],
     "city": "Уфа",
     "companyType": "Digital",
     "niche": "Full-service digital",
@@ -9515,7 +9967,16 @@
     "id": "cmp_1ske1ie",
     "slug": "panshin-grupp",
     "name": "Паньшин Групп",
-    "searchAliases": [],
+    "searchAliases": [
+      "Паньшин Групп",
+      "Паньшин Груп",
+      "Panshin Group",
+      "Panshin",
+      "Apanshin",
+      "Паншин Групп",
+      "Паньшин агентство",
+      "Panshin digital"
+    ],
     "city": "Краснодар",
     "companyType": "Performance",
     "niche": "SEO",
@@ -9736,9 +10197,9 @@
     "niche": "SEO",
     "size": "1–50",
     "careerUrl": "https://redbee.ru/vacancy/",
-    "vacanciesRange": "0",
-    "vacanciesWeight": 0,
-    "hiringStatus": "На паузе",
+    "vacanciesRange": "1–4",
+    "vacanciesWeight": 1,
+    "hiringStatus": "Точечный",
     "workFormat": "Не указано",
     "hiringGeo": "РФ",
     "international": "Нет",
@@ -9762,8 +10223,8 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://redbee.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/26136",
     "habrUrl": null,
@@ -9775,7 +10236,16 @@
     "id": "cmp_1tb0enr",
     "slug": "redstar",
     "name": "Редстар",
-    "searchAliases": [],
+    "searchAliases": [
+      "Редстар",
+      "Redstar",
+      "Red Star",
+      "redstaragency",
+      "Ред Стар",
+      "Redstar Agency",
+      "Редстар агентство",
+      "Redstar digital"
+    ],
     "city": "Ярославль",
     "companyType": "Веб-студия",
     "niche": "Web development",
@@ -9819,7 +10289,15 @@
     "id": "cmp_1dblyzg",
     "slug": "refakt",
     "name": "Рефакт",
-    "searchAliases": [],
+    "searchAliases": [
+      "Рефакт",
+      "Refakt",
+      "ReFact",
+      "Refakt agency",
+      "Рефакт агентство",
+      "Refakt digital",
+      "Refakt разработка"
+    ],
     "city": "Казань",
     "companyType": "Digital",
     "niche": "Full-service digital",
@@ -9912,13 +10390,26 @@
     "habrUrl": null,
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_6b2c8dff15",
     "slug": "sdelaem",
     "name": "Сделаем",
-    "searchAliases": [],
+    "searchAliases": [
+      "Сделаем",
+      "Sdelaem",
+      "Sdelaem Agency",
+      "Сделаем агентство",
+      "Сделаем медиа",
+      "Sdelaem content",
+      "Sdelaem media"
+    ],
     "city": "Москва",
     "companyType": "Digital",
     "niche": "Media / Content / PR",
@@ -10011,7 +10502,15 @@
     "id": "cmp_a38k5t",
     "slug": "sklifosovskiy-pro",
     "name": "Склифосовский Про",
-    "searchAliases": [],
+    "searchAliases": [
+      "Склифосовский Про",
+      "Sklifosovsky Pro",
+      "Sklifosovskiy Pro",
+      "sklifosovsky",
+      "Склифосовский",
+      "Sklifosovsky agency",
+      "Склифосовский агентство"
+    ],
     "city": "Москва",
     "companyType": "Digital",
     "niche": "Full-service digital",
@@ -10055,7 +10554,14 @@
     "id": "cmp_1ef893e161",
     "slug": "soda",
     "name": "СОДА",
-    "searchAliases": [],
+    "searchAliases": [
+      "СОДА",
+      "SODA",
+      "SODAA",
+      "SODA Agency",
+      "СОДА агентство",
+      "СОДА performance"
+    ],
     "city": "Самара",
     "companyType": "Performance",
     "niche": "Performance marketing",
@@ -10155,7 +10661,16 @@
     "id": "cmp_4e44de402d",
     "slug": "looch",
     "name": "Студия Луч",
-    "searchAliases": [],
+    "searchAliases": [
+      "Студия Луч",
+      "Луч",
+      "Looch",
+      "Luch Studio",
+      "Studio Luch",
+      "Луч студия",
+      "Студия Looch",
+      "Студия Луч дизайн"
+    ],
     "city": "Москва",
     "companyType": "Digital",
     "niche": "UX/UI & design",
@@ -10255,7 +10770,15 @@
     "id": "cmp_fa53ac6ab4",
     "slug": "tolstov-grup",
     "name": "Толстов груп",
-    "searchAliases": [],
+    "searchAliases": [
+      "Толстов груп",
+      "Толстов Групп",
+      "Tolstov Group",
+      "TolstovGroup",
+      "Толстов",
+      "Tolstov",
+      "Tolstov Group digital"
+    ],
     "city": "Москва",
     "companyType": "Performance",
     "niche": "Full-service digital",
@@ -10395,8 +10918,8 @@
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": null,
     "hhCompanyUrl": "https://hh.ru/employer/5966898",
     "habrUrl": "https://career.habr.com/companies/triadasite",
@@ -10508,7 +11031,12 @@
     "habrUrl": "http://career.habr.com/companies/up-advert",
     "linkedinUrl": "https://www.linkedin.com/company/up-advert",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_0cfdb941d8",
@@ -10568,7 +11096,16 @@
     "id": "cmp_9ff6dc27a8",
     "slug": "fyuche",
     "name": "Фьюче",
-    "searchAliases": [],
+    "searchAliases": [
+      "Фьюче",
+      "Фьюче Груп",
+      "Фьюче групп",
+      "Future Group",
+      "FutureGroup",
+      "Future",
+      "Фьюче разработка",
+      "Future Group web"
+    ],
     "city": "Москва",
     "companyType": "Разработка",
     "niche": "Web development",
@@ -10650,8 +11187,8 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://4rome.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/1874459",
     "habrUrl": "https://career.habr.com/companies/4rome",
@@ -10663,7 +11200,16 @@
     "id": "cmp_a90dbd4964",
     "slug": "embasi",
     "name": "Эмбаси",
-    "searchAliases": [],
+    "searchAliases": [
+      "Эмбаси",
+      "Embacy",
+      "Embacy Agency",
+      "Embacy Studio",
+      "Эмбэси",
+      "Эмбаси агентство",
+      "Embacy дизайн",
+      "Embacy брендинг"
+    ],
     "city": "Москва",
     "companyType": "Digital",
     "niche": "Branding / Creative",
@@ -10708,15 +11254,22 @@
     "id": "cmp_612b520354",
     "slug": "yuniveb",
     "name": "ЮниВеб",
-    "searchAliases": [],
+    "searchAliases": [
+      "ЮниВеб",
+      "Юни Веб",
+      "UniWeb",
+      "Uni Web",
+      "Uniofweb",
+      "Юниофвеб"
+    ],
     "city": "Тула",
     "companyType": "Веб-студия",
     "niche": "Web development",
     "size": "1–50",
     "careerUrl": "https://uniofweb.ru/company/vacancy/",
-    "vacanciesRange": "5–10",
-    "vacanciesWeight": 2,
-    "hiringStatus": "Активный",
+    "vacanciesRange": "1–4",
+    "vacanciesWeight": 1,
+    "hiringStatus": "Точечный",
     "workFormat": "Смешанный",
     "hiringGeo": "Локально",
     "international": "Нет",
@@ -10727,7 +11280,6 @@
     "awards2025": "Habr Career 2025 — Средняя оценка #7; Интересные задачи #1; Адекватная зарплата #6; Социальный пакет #20; Комфортные условия труда #12; Профессиональный рост #1; Карьерный рост #10; Отношения с коллегами #2; Признание результатов труда #2; Грамотность менеджмента #4",
     "hasAwards2025": true,
     "presets": [
-      "Активный найм",
       "Удалёнка",
       "Высокая HR-оценка",
       "Награды 2025"
@@ -10739,11 +11291,11 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "hasActiveHiring": true,
+    "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-22",
-    "hhVacanciesCheckedAt": "2026-05-22",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://uniofweb.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/1196086",
     "habrUrl": "https://career.habr.com/companies/uniofweb",
@@ -10818,7 +11370,14 @@
     "id": "cmp_a3585be112",
     "slug": "advertalyze",
     "name": "Advertalyze",
-    "searchAliases": [],
+    "searchAliases": [
+      "Advertalyze",
+      "Адверталайз",
+      "Advertalyze agency",
+      "Advertalyze performance",
+      "Advertalyze digital",
+      "Advertalyze marketing"
+    ],
     "city": "Санкт-Петербург",
     "companyType": "Performance",
     "niche": "Performance marketing",
@@ -10849,8 +11408,8 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-23",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://advertalyze.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/10546615",
     "habrUrl": null,
@@ -10862,7 +11421,15 @@
     "id": "cmp_dd6fe91755",
     "slug": "alteasy",
     "name": "Alteasy",
-    "searchAliases": [],
+    "searchAliases": [
+      "Alteasy",
+      "Alt Easy",
+      "Альт Изи",
+      "Алтизи",
+      "Альтизи",
+      "Alteasy agency",
+      "Alteasy digital"
+    ],
     "city": "Москва",
     "companyType": "Performance",
     "niche": "Performance marketing",
@@ -10949,8 +11516,8 @@
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://alto.codes/",
     "hhCompanyUrl": "https://hh.ru/employer/1822184",
     "habrUrl": "https://career.habr.com/companies/alto",
@@ -10962,7 +11529,16 @@
     "id": "cmp_fa123fc58f",
     "slug": "aporia",
     "name": "Aporia",
-    "searchAliases": [],
+    "searchAliases": [
+      "Aporia",
+      "Апория",
+      "Апориа",
+      "Aporia IT",
+      "Aporia software",
+      "Aporia product",
+      "Aporia вакансии",
+      "Aporia Habr"
+    ],
     "city": "Севастополь",
     "companyType": "Разработка",
     "niche": "Web development",
@@ -11015,7 +11591,15 @@
     "id": "cmp_15e2o8x",
     "slug": "asanov",
     "name": "Asanov",
-    "searchAliases": [],
+    "searchAliases": [
+      "Asanov",
+      "Asanov Agency",
+      "Асанов",
+      "Асанов агентство",
+      "Asanov UX",
+      "Asanov e-commerce",
+      "Asanov design"
+    ],
     "city": "Санкт-Петербург",
     "companyType": "Digital",
     "niche": "UX/UI & design",
@@ -11057,7 +11641,16 @@
     "id": "cmp_1tigt3q",
     "slug": "beaversbrothers",
     "name": "BeaversBrothers",
-    "searchAliases": [],
+    "searchAliases": [
+      "BeaversBrothers",
+      "Beavers Brothers",
+      "BeaversBro",
+      "Биверс Бразерс",
+      "БиверсБразерс",
+      "Бобры Бразерс",
+      "Beavers Brothers agency",
+      "BeaversBrothers web"
+    ],
     "city": "Екатеринбург",
     "companyType": "Разработка",
     "niche": "Web development",
@@ -11089,8 +11682,8 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-23",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://case.beaversbrothers.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/1882805",
     "habrUrl": "https://career.habr.com/companies/beaversbrothers",
@@ -11102,7 +11695,15 @@
     "id": "cmp_iesoh9",
     "slug": "big-media",
     "name": "Big Media",
-    "searchAliases": [],
+    "searchAliases": [
+      "Big Media",
+      "BigMedia",
+      "Биг Медиа",
+      "БигМедиа",
+      "Big Media agency",
+      "Big Media digital",
+      "Big Media Habr"
+    ],
     "city": "Москва",
     "companyType": "Digital",
     "niche": "Media / Content / PR",
@@ -11189,20 +11790,32 @@
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://www.bondsoft.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/1520218",
     "habrUrl": null,
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_06000179a8",
     "slug": "borevich-agency",
     "name": "borevich.agency°",
-    "searchAliases": [],
+    "searchAliases": [
+      "Borevich Agency",
+      "Borevich",
+      "Боревич",
+      "Боревич агентство",
+      "Borevich digital",
+      "Borevich performance"
+    ],
     "city": "Тверь",
     "companyType": "Performance",
     "niche": "Performance marketing",
@@ -11335,8 +11948,8 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-18",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": null,
     "hhCompanyUrl": "https://hh.ru/employer/1692727",
     "habrUrl": "https://career.habr.com/companies/business-up1",
@@ -11348,7 +11961,14 @@
     "id": "cmp_581f5d28e0",
     "slug": "capybara-digital",
     "name": "CAPYBARA digital",
-    "searchAliases": [],
+    "searchAliases": [
+      "CAPYBARA digital",
+      "capyba",
+      "Капибара диджитал",
+      "Капибара",
+      "Capybara",
+      "Capybara вакансии"
+    ],
     "city": "Самара",
     "companyType": "Веб-студия",
     "niche": "Web development",
@@ -11401,7 +12021,15 @@
     "id": "cmp_830b4046aa",
     "slug": "cinar",
     "name": "Cinar",
-    "searchAliases": [],
+    "searchAliases": [
+      "Cinar",
+      "Казань Cinar",
+      "Синар",
+      "Цинар",
+      "Cinar SEO",
+      "Cinar agency",
+      "Cinar digital"
+    ],
     "city": "Казань",
     "companyType": "Performance",
     "niche": "SEO",
@@ -11432,8 +12060,8 @@
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-23",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://kazan.cinar.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/1518186",
     "habrUrl": null,
@@ -11542,8 +12170,8 @@
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://www.convergent.digital/",
     "hhCompanyUrl": "https://hh.ru/employer/57862",
     "habrUrl": "https://career.habr.com/companies/cmg",
@@ -11603,13 +12231,25 @@
     "habrUrl": "https://career.habr.com/companies/convertme",
     "linkedinUrl": "https://www.linkedin.com/company/convertme-agency",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_43c8e8f068",
     "slug": "creadigital",
     "name": "Creadigital",
-    "searchAliases": [],
+    "searchAliases": [
+      "Creadigital",
+      "Crea Digital",
+      "Креадиджитал",
+      "Креа Диджитал",
+      "Creadigital Agency",
+      "Creadigital workplace"
+    ],
     "city": "Москва",
     "companyType": "Digital",
     "niche": "Branding / Creative",
@@ -11640,8 +12280,8 @@
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-23",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://creadigital.agency/",
     "hhCompanyUrl": "https://hh.ru/employer/1598384",
     "habrUrl": null,
@@ -11653,7 +12293,15 @@
     "id": "cmp_gu6nin",
     "slug": "crop-media",
     "name": "CROP media",
-    "searchAliases": [],
+    "searchAliases": [
+      "CROP media",
+      "CROPMEDIA",
+      "Кроп Медиа",
+      "КропМедиа",
+      "CROP media career",
+      "Crop Media digital",
+      "Crop Media agency"
+    ],
     "city": "Санкт-Петербург",
     "companyType": "Digital",
     "niche": "Full-service digital",
@@ -11751,7 +12399,15 @@
     "id": "cmp_1ubqa55",
     "slug": "delaweb",
     "name": "Delaweb",
-    "searchAliases": [],
+    "searchAliases": [
+      "Delaweb",
+      "Dela Web",
+      "ДелаВеб",
+      "Дела Веб",
+      "Delaweb agency",
+      "Delaweb digital",
+      "Delaweb SEO"
+    ],
     "city": "Волжский",
     "companyType": "Разработка",
     "niche": "Web development",
@@ -11890,8 +12546,8 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://studio.digital-lab.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/597793",
     "habrUrl": "https://career.habr.com/companies/digital-lab",
@@ -11941,8 +12597,8 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": null,
     "hhCompanyUrl": "https://hh.ru/employer/11529",
     "habrUrl": null,
@@ -12049,8 +12705,8 @@
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-18",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://emailmatrix.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/2188765",
     "habrUrl": "https://career.habr.com/companies/emailmatrix",
@@ -12062,7 +12718,13 @@
     "id": "cmp_d14780a709",
     "slug": "fuse8",
     "name": "fuse8",
-    "searchAliases": [],
+    "searchAliases": [
+      "fuse8",
+      "Фьюз8",
+      "Фьюз 8",
+      "Fuse Eight",
+      "Fuse8 вакансии"
+    ],
     "city": "Челябинск",
     "companyType": "Разработка",
     "niche": "Web development",
@@ -12158,8 +12820,8 @@
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://head-promo.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/3883449",
     "habrUrl": null,
@@ -12171,7 +12833,16 @@
     "id": "cmp_8aszot",
     "slug": "headshot",
     "name": "HEADSHOT",
-    "searchAliases": [],
+    "searchAliases": [
+      "HEADSHOT",
+      "Head Shot",
+      "smmheadshot",
+      "Хедшот",
+      "Хэдшот",
+      "Headshot SMM",
+      "HEADSHOT agency",
+      "Headshot digital"
+    ],
     "city": "Краснодар",
     "companyType": "Digital",
     "niche": "Performance marketing",
@@ -12310,8 +12981,8 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://housevl.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/2022372",
     "habrUrl": "https://career.habr.com/companies/housevl",
@@ -12377,7 +13048,13 @@
     "id": "cmp_1oanhw9",
     "slug": "idem-agency",
     "name": "idem.agency",
-    "searchAliases": [],
+    "searchAliases": [
+      "Idem",
+      "idem.agency career",
+      "idem agency",
+      "Идем",
+      "Idem web"
+    ],
     "city": "Ульяновск",
     "companyType": "Веб-студия",
     "niche": "Web development",
@@ -12434,9 +13111,9 @@
     "niche": "SEO",
     "size": "1–50",
     "careerUrl": "https://ipos.digital/rabota_v_ipos",
-    "vacanciesRange": "1–4",
-    "vacanciesWeight": 1,
-    "hiringStatus": "Точечный",
+    "vacanciesRange": "0",
+    "vacanciesWeight": 0,
+    "hiringStatus": "На паузе",
     "workFormat": "Смешанный",
     "hiringGeo": "РФ",
     "international": "Нет",
@@ -12461,8 +13138,8 @@
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://ipos.digital/",
     "hhCompanyUrl": "https://hh.ru/employer/1305312",
     "habrUrl": "https://career.habr.com/companies/ipos-digital",
@@ -12474,7 +13151,14 @@
     "id": "cmp_c72b967914",
     "slug": "iseo",
     "name": "iSEO",
-    "searchAliases": [],
+    "searchAliases": [
+      "iSEO",
+      "Айсео",
+      "iSEO Agency",
+      "iSEO performance",
+      "iSEO digital",
+      "агентство iSEO"
+    ],
     "city": "Москва",
     "companyType": "Performance",
     "niche": "SEO",
@@ -12520,7 +13204,16 @@
     "id": "cmp_d7128235e1",
     "slug": "its",
     "name": "ITS",
-    "searchAliases": [],
+    "searchAliases": [
+      "ITS",
+      "ИТС",
+      "Ай Ти Эс",
+      "Strategy IT",
+      "strategyit",
+      "ITS digital",
+      "ITS agency",
+      "ITS Москва"
+    ],
     "city": "Москва",
     "companyType": "Digital",
     "niche": "Full-service digital",
@@ -12549,8 +13242,8 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-23",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://strategyit.tilda.ws/",
     "hhCompanyUrl": "https://hh.ru/employer/4348791",
     "habrUrl": null,
@@ -12603,8 +13296,8 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": null,
     "hhCompanyUrl": "https://hh.ru/employer/156205",
     "habrUrl": "https://career.habr.com/companies/its",
@@ -12661,7 +13354,12 @@
     "habrUrl": "https://career.habr.com/companies/itsoft",
     "linkedinUrl": "https://www.linkedin.com/company/%D0%B2%D0%B5%D0%B1-%D1%81%D1%82%D1%83%D0%B4%D0%B8%D1%8F-%D0%B8-%D0%B4%D0%B0%D1%82%D0%B0-%D1%86%D0%B5%D0%BD%D1%82%D1%80-itsoft",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://career.habr.com/companies/itsoft"
+    }
   },
   {
     "id": "cmp_6682f34585",
@@ -12709,8 +13407,8 @@
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": null,
     "hhCompanyUrl": "https://hh.ru/employer/419015",
     "habrUrl": "https://career.habr.com/companies/kinetica",
@@ -12777,13 +13475,25 @@
         "sourceUrl": "https://career.habr.com/companies/o2k/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://o2k.ru/akkreditaciya-it-kompanii-kislorod"
+    }
   },
   {
     "id": "cmp_32pno8",
     "slug": "kite",
     "name": "kite.",
-    "searchAliases": [],
+    "searchAliases": [
+      "Kite",
+      "kite-da",
+      "Кайт",
+      "Кайт агентство",
+      "Kite Digital Agency",
+      "Kite design"
+    ],
     "city": "Краснодар",
     "companyType": "Performance",
     "niche": "SEO",
@@ -12867,8 +13577,8 @@
     "hasActiveHiring": true,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-28",
-    "hhVacanciesCheckedAt": "2026-05-28",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://lexica.pro/",
     "hhCompanyUrl": "https://hh.ru/employer/5235122",
     "habrUrl": "https://career.habr.com/companies/lexica",
@@ -12882,7 +13592,12 @@
         "sourceUrl": "https://career.habr.com/companies/lexica/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://career.habr.com/companies/lexica"
+    }
   },
   {
     "id": "cmp_14f2moy",
@@ -12957,9 +13672,9 @@
     "niche": "Full-service digital",
     "size": "1–50",
     "careerUrl": "https://maze-marketing.ru/company/vacancy/",
-    "vacanciesRange": "0",
-    "vacanciesWeight": 0,
-    "hiringStatus": "На паузе",
+    "vacanciesRange": "1–4",
+    "vacanciesWeight": 1,
+    "hiringStatus": "Точечный",
     "workFormat": "Смешанный",
     "hiringGeo": "РФ",
     "international": "Нет",
@@ -12983,8 +13698,8 @@
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://maze-marketing.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/10312734",
     "habrUrl": null,
@@ -12996,7 +13711,15 @@
     "id": "cmp_aa92340faf",
     "slug": "mdmarketing",
     "name": "MDmarketing",
-    "searchAliases": [],
+    "searchAliases": [
+      "MDmarketing",
+      "MD Marketing",
+      "МДмаркетинг",
+      "МД Маркетинг",
+      "MD маркетинг",
+      "MDmarketing digital",
+      "MDmarketing агентство"
+    ],
     "city": "Набережные Челны",
     "companyType": "Digital",
     "niche": "Full-service digital",
@@ -13149,7 +13872,12 @@
         "sourceUrl": "https://career.habr.com/companies/mendev/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://career.habr.com/companies/mendev"
+    }
   },
   {
     "id": "cmp_1c2a7741fa",
@@ -13170,9 +13898,9 @@
     "niche": "Media / Content / PR",
     "size": "1–50",
     "careerUrl": "https://www.migel.agency/job",
-    "vacanciesRange": "1–4",
-    "vacanciesWeight": 1,
-    "hiringStatus": "Точечный",
+    "vacanciesRange": "5–10",
+    "vacanciesWeight": 2,
+    "hiringStatus": "Активный",
     "workFormat": "Офис",
     "hiringGeo": "РФ",
     "international": "Да",
@@ -13183,6 +13911,7 @@
     "awards2025": "Ruward Award 2025 — Agency of the Year / Perspective: #1",
     "hasAwards2025": true,
     "presets": [
+      "Активный найм",
       "Высокая HR-оценка",
       "Награды 2025",
       "Международные"
@@ -13194,11 +13923,11 @@
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
-    "hasActiveHiring": false,
+    "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-18",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://www.migel.agency/",
     "hhCompanyUrl": "https://hh.ru/employer/3361399",
     "habrUrl": null,
@@ -13264,7 +13993,16 @@
     "id": "cmp_1rbp7be",
     "slug": "mmp-group",
     "name": "MMP Group",
-    "searchAliases": [],
+    "searchAliases": [
+      "MMP Group",
+      "MMPGroup",
+      "MMP Group Russia",
+      "ММП Групп",
+      "ММП Груп",
+      "ММП",
+      "MMP Group вакансии",
+      "MMP Group Habr"
+    ],
     "city": "Москва",
     "companyType": "Digital",
     "niche": "Full-service digital",
@@ -13309,7 +14047,14 @@
     "id": "cmp_9ac92cdbc5",
     "slug": "moab",
     "name": "Moab",
-    "searchAliases": [],
+    "searchAliases": [
+      "Moab",
+      "Моаб",
+      "Moab Pro",
+      "Moab Agency",
+      "Moab SEO",
+      "Моаб агентство"
+    ],
     "city": "Москва",
     "companyType": "Performance",
     "niche": "SEO",
@@ -13353,15 +14098,22 @@
     "id": "cmp_1wsvu3u",
     "slug": "mobx-agency",
     "name": "MobX Agency",
-    "searchAliases": [],
+    "searchAliases": [
+      "MobX Agency",
+      "MobX",
+      "Мобикс",
+      "MobX digital",
+      "MobX performance",
+      "MobX agency Russia"
+    ],
     "city": "Москва",
     "companyType": "Performance",
     "niche": "Performance marketing",
     "size": "1–50",
     "careerUrl": "https://mobx.agency/",
-    "vacanciesRange": "1–4",
-    "vacanciesWeight": 1,
-    "hiringStatus": "Точечный",
+    "vacanciesRange": "0",
+    "vacanciesWeight": 0,
+    "hiringStatus": "На паузе",
     "workFormat": "Смешанный",
     "hiringGeo": "РФ",
     "international": "Нет",
@@ -13384,8 +14136,8 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-23",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": null,
     "hhCompanyUrl": "https://hh.ru/employer/3120819",
     "habrUrl": "https://career.habr.com/companies/mobx-agency",
@@ -13397,7 +14149,15 @@
     "id": "cmp_194hb3o",
     "slug": "nedigital",
     "name": "Nedigital",
-    "searchAliases": [],
+    "searchAliases": [
+      "Nedigital",
+      "Ne Digital",
+      "Не диджитал",
+      "Недиджитал",
+      "НеDigital",
+      "Nedigital вакансии",
+      "Nedigital agency"
+    ],
     "city": "Москва",
     "companyType": "Веб-студия",
     "niche": "UX/UI & design",
@@ -13442,7 +14202,13 @@
     "id": "cmp_929c029256",
     "slug": "off-group",
     "name": "Off Group",
-    "searchAliases": [],
+    "searchAliases": [
+      "Off Group",
+      "Офф Групп",
+      "OFF",
+      "Off Group Bitrix24",
+      "Off Group Битрикс24"
+    ],
     "city": "Санкт-Петербург",
     "companyType": "Интегратор",
     "niche": "IT consulting / Automation",
@@ -13703,13 +14469,25 @@
         "sourceUrl": "https://career.habr.com/companies/orca-codes/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://career.habr.com/companies/orca-codes"
+    }
   },
   {
     "id": "cmp_zdtdi8",
     "slug": "osmi-it",
     "name": "OSMI IT",
-    "searchAliases": [],
+    "searchAliases": [
+      "OSMI IT",
+      "OSMI",
+      "Осми ИТ",
+      "Осми",
+      "OSMI IT company",
+      "OSMI IT Habr"
+    ],
     "city": "Самара",
     "companyType": "Разработка",
     "niche": "AI / Data",
@@ -13755,7 +14533,14 @@
     "id": "cmp_a6h8g5",
     "slug": "overclick",
     "name": "OVERCLICK",
-    "searchAliases": [],
+    "searchAliases": [
+      "OVERCLICK",
+      "Оверклик",
+      "Овер Клик",
+      "Over Click",
+      "Overclick Studio",
+      "Overclick performance"
+    ],
     "city": "Москва",
     "companyType": "Performance",
     "niche": "SEO",
@@ -13799,7 +14584,14 @@
     "id": "cmp_728581f889",
     "slug": "panda-digital",
     "name": "Panda Digital",
-    "searchAliases": [],
+    "searchAliases": [
+      "Panda Digital",
+      "PandaDigital",
+      "Панда Диджитал",
+      "Панда Digital",
+      "Panda agency",
+      "Panda Digital agency"
+    ],
     "city": "Ростов-на-Дону",
     "companyType": "Digital",
     "niche": "Full-service digital",
@@ -13883,8 +14675,8 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": null,
     "hhCompanyUrl": "https://hh.ru/employer/1932136",
     "habrUrl": "https://career.habr.com/companies/pinkman",
@@ -13896,7 +14688,16 @@
     "id": "cmp_1778e1de5c",
     "slug": "prideinbrains",
     "name": "PrideInBrains",
-    "searchAliases": [],
+    "searchAliases": [
+      "PrideInBrains",
+      "Pride In Brains",
+      "ПрайдИнБрейнс",
+      "Прайд Ин Брейнс",
+      "PrideBrains",
+      "Pride In Brains IT",
+      "PrideInBrains вакансии",
+      "PrideInBrains careers"
+    ],
     "city": "Москва",
     "companyType": "Разработка",
     "niche": "IT consulting / Automation",
@@ -13930,8 +14731,8 @@
     "hasActiveHiring": true,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-22",
-    "hhVacanciesCheckedAt": "2026-05-22",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://prideinbrains.com/",
     "hhCompanyUrl": null,
     "habrUrl": "https://career.habr.com/companies/prideinbrains",
@@ -13951,7 +14752,17 @@
     "id": "cmp_904635cc2b",
     "slug": "qlever-solutions",
     "name": "Qlever Solutions",
-    "searchAliases": [],
+    "searchAliases": [
+      "Qlever Solutions",
+      "Qlever",
+      "Qlever IT",
+      "Qlever Solutions IT",
+      "Клевер Солюшнс",
+      "Кьюлевер Солюшнс",
+      "Клевер",
+      "Qlever вакансии",
+      "Qlever Habr"
+    ],
     "city": "Санкт-Петербург",
     "companyType": "Интегратор",
     "niche": "Analytics / CRM / BI",
@@ -14148,8 +14959,8 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": null,
     "hhCompanyUrl": "https://hh.ru/employer/805622",
     "habrUrl": "https://career.habr.com/companies/relevant",
@@ -14161,7 +14972,15 @@
     "id": "cmp_yjyv35",
     "slug": "rize",
     "name": "Rize",
-    "searchAliases": [],
+    "searchAliases": [
+      "Rize",
+      "Райз",
+      "Риз",
+      "Rize agency",
+      "Rize branding",
+      "Rize digital",
+      "Rize Саратов"
+    ],
     "city": "Саратов",
     "companyType": "Digital",
     "niche": "Branding / Creative",
@@ -14246,8 +15065,8 @@
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": null,
     "hhCompanyUrl": "https://hh.ru/employer/661688",
     "habrUrl": "https://career.habr.com/companies/rocketdev",
@@ -14365,7 +15184,14 @@
     "id": "cmp_1hk3r80",
     "slug": "runita",
     "name": "RUNITA",
-    "searchAliases": [],
+    "searchAliases": [
+      "RUNITA",
+      "Рунита",
+      "Runita SEO",
+      "Рунита SEO",
+      "RUNITA performance",
+      "Runita digital"
+    ],
     "city": "Санкт-Петербург",
     "companyType": "Performance",
     "niche": "SEO",
@@ -14396,8 +15222,8 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-23",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://runita.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/773993",
     "habrUrl": null,
@@ -14409,7 +15235,14 @@
     "id": "cmp_145q8um",
     "slug": "semantica",
     "name": "SEMANTICA",
-    "searchAliases": [],
+    "searchAliases": [
+      "SEMANTICA",
+      "Семантика",
+      "Семантика Ин",
+      "SEMANTICA SEO",
+      "Semantica agency",
+      "Semantica performance"
+    ],
     "city": "Воронеж",
     "companyType": "Performance",
     "niche": "SEO",
@@ -14454,15 +15287,22 @@
     "id": "cmp_1jrufhx",
     "slug": "seo-ru",
     "name": "SEO.RU",
-    "searchAliases": [],
+    "searchAliases": [
+      "SEO RU",
+      "SEORU",
+      "SEO.RU agency",
+      "SEO.RU агентство",
+      "СЕО РУ",
+      "SEO.RU продвижение"
+    ],
     "city": "Ульяновск",
     "companyType": "Performance",
     "niche": "SEO",
     "size": "1–50",
     "careerUrl": "https://seo.ru/company/job/",
-    "vacanciesRange": "1–4",
-    "vacanciesWeight": 1,
-    "hiringStatus": "Точечный",
+    "vacanciesRange": "0",
+    "vacanciesWeight": 0,
+    "hiringStatus": "На паузе",
     "workFormat": "Офис",
     "hiringGeo": "РФ",
     "international": "Частично",
@@ -14485,55 +15325,11 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-23",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://seo.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/1073205",
     "habrUrl": "https://career.habr.com/companies/seoru",
-    "linkedinUrl": null,
-    "employerRankingBadges": [],
-    "publicStatus": "public"
-  },
-  {
-    "id": "cmp_996633cacb",
-    "slug": "seowork",
-    "name": "SEOWORK",
-    "searchAliases": [],
-    "city": "Санкт-Петербург",
-    "companyType": "Продукт",
-    "niche": "SEO",
-    "size": "1–50",
-    "careerUrl": "https://seowork.ru/job",
-    "vacanciesRange": "1–4",
-    "vacanciesWeight": 1,
-    "hiringStatus": "Точечный",
-    "workFormat": "Смешанный",
-    "hiringGeo": "РФ",
-    "international": "Нет",
-    "hhRatingDisplay": "4,4",
-    "hhRatingValue": 4.4,
-    "habrRatingDisplay": "Нет отзывов",
-    "habrRatingValue": null,
-    "awards2025": null,
-    "hasAwards2025": false,
-    "presets": [
-      "Удалёнка"
-    ],
-    "signals": {
-      "hasDirectApply": true,
-      "hasCareerPage": true,
-      "hiringSource": "HH",
-      "dataFreshness": "fresh",
-      "remoteExplicitlyDenied": false
-    },
-    "hasActiveHiring": false,
-    "hasRemote": true,
-    "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-23",
-    "hhVacanciesCheckedAt": "2026-05-19",
-    "websiteUrl": "https://seowork.ru/",
-    "hhCompanyUrl": "https://hh.ru/employer/5254493",
-    "habrUrl": null,
     "linkedinUrl": null,
     "employerRankingBadges": [],
     "publicStatus": "public"
@@ -14596,7 +15392,14 @@
     "id": "cmp_de9d16e295",
     "slug": "site-up",
     "name": "Site UP",
-    "searchAliases": [],
+    "searchAliases": [
+      "Site UP",
+      "SiteUp",
+      "Сайт Ап",
+      "Site UP студия",
+      "Site UP web",
+      "Site UP разработка"
+    ],
     "city": "Санкт-Петербург",
     "companyType": "Веб-студия",
     "niche": "Web development",
@@ -14685,8 +15488,8 @@
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": null,
     "hhCompanyUrl": "https://hh.ru/employer/668996",
     "habrUrl": "https://career.habr.com/companies/southmedia",
@@ -14741,8 +15544,8 @@
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://sv-digital.com/",
     "hhCompanyUrl": "https://hh.ru/employer/4993647",
     "habrUrl": null,
@@ -14754,7 +15557,14 @@
     "id": "cmp_gpua8",
     "slug": "teamscore",
     "name": "TEAMSCORE",
-    "searchAliases": [],
+    "searchAliases": [
+      "TEAMSCORE",
+      "Тимскор",
+      "Тим Скор",
+      "Team Score",
+      "TEAMSCORE Habr",
+      "TeamScore analytics"
+    ],
     "city": "Самара",
     "companyType": "Интегратор",
     "niche": "Enterprise IT / System integration",
@@ -14796,7 +15606,15 @@
     "id": "cmp_qyokq3",
     "slug": "tereshev",
     "name": "Tereshev",
-    "searchAliases": [],
+    "searchAliases": [
+      "Tereshev",
+      "Терешев",
+      "Tereshev agency",
+      "агентство Терешев",
+      "Tereshev real estate marketing",
+      "Терешев недвижимость",
+      "Tereshev performance"
+    ],
     "city": "Санкт-Петербург",
     "companyType": "Performance",
     "niche": "Performance marketing",
@@ -14856,9 +15674,9 @@
     "niche": "Media / Content / PR",
     "size": "1–50",
     "careerUrl": "https://texterra.ru/rabota-v-texterre/",
-    "vacanciesRange": "1–4",
-    "vacanciesWeight": 1,
-    "hiringStatus": "Точечный",
+    "vacanciesRange": "0",
+    "vacanciesWeight": 0,
+    "hiringStatus": "На паузе",
     "workFormat": "Смешанный",
     "hiringGeo": "РФ и СНГ",
     "international": "Частично",
@@ -14883,20 +15701,33 @@
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://texterra.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/2131486",
     "habrUrl": "https://career.habr.com/companies/texterra",
     "linkedinUrl": "https://www.linkedin.com/company/texterra",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://texterra.ru/it-accreditation/"
+    }
   },
   {
     "id": "cmp_0bda521c3f",
     "slug": "upflow",
     "name": "Upflow",
-    "searchAliases": [],
+    "searchAliases": [
+      "Upflow",
+      "Upflow Agency",
+      "Up Flow",
+      "Апфлоу",
+      "Апфло",
+      "Upflow SEO",
+      "Upflow content"
+    ],
     "city": "Гонконг",
     "companyType": "Performance",
     "niche": "SEO",
@@ -15038,8 +15869,8 @@
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": null,
     "hhCompanyUrl": "https://hh.ru/employer/6111175",
     "habrUrl": "https://career.habr.com/companies/whiteleads",
@@ -15100,7 +15931,12 @@
     "habrUrl": "https://career.habr.com/companies/wss-media",
     "linkedinUrl": "https://www.linkedin.com/company/wss-seo-analytics",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_e64add16c8",
@@ -15147,8 +15983,8 @@
     "hasActiveHiring": false,
     "hasRemote": true,
     "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://wim.agency/",
     "hhCompanyUrl": "https://hh.ru/employer/3923916",
     "habrUrl": "https://career.habr.com/companies/wim",
@@ -15160,7 +15996,15 @@
     "id": "cmp_b5e4031c35",
     "slug": "work-solutions",
     "name": "Work Solutions",
-    "searchAliases": [],
+    "searchAliases": [
+      "Work Solutions",
+      "WorkSolutions",
+      "Ворк Солюшнс",
+      "ВоркСолюшнс",
+      "Work Solutions IT",
+      "Work Solutions careers",
+      "Work Solutions вакансии"
+    ],
     "city": "Ростов-на-Дону",
     "companyType": "Разработка",
     "niche": "Web development",
@@ -15317,23 +16161,26 @@
     "publicStatus": "public"
   },
   {
-    "id": "cmp_e2e237eb6a",
-    "slug": "mediakod",
-    "name": "МедиаКод",
+    "id": "cmp_644f7f2eff",
+    "slug": "digitali",
+    "name": "Диджитал Ай",
     "searchAliases": [
-      "МедиаКод",
-      "MediaKod",
-      "Media Code"
+      "Диджитал Ай",
+      "Digitali",
+      "Digital I",
+      "Digital Ai",
+      "ООО Диджитал Ай",
+      "технологическое performance-агентство"
     ],
-    "city": "Воронеж",
-    "companyType": "Digital",
+    "city": "Москва",
+    "companyType": "Performance",
     "niche": "Performance marketing",
     "size": null,
-    "careerUrl": "https://mediakod.ru/",
+    "careerUrl": "https://digitali.ru/vacancies/",
     "vacanciesRange": "1–4",
     "vacanciesWeight": 1,
     "hiringStatus": "Точечный",
-    "workFormat": "Не указано",
+    "workFormat": "Гибрид",
     "hiringGeo": "Локально",
     "international": "Нет",
     "hhRatingDisplay": "Нет отзывов",
@@ -15346,17 +16193,17 @@
     "signals": {
       "hasDirectApply": true,
       "hasCareerPage": true,
-      "hiringSource": "HH",
+      "hiringSource": "Career site",
       "dataFreshness": "fresh",
       "remoteExplicitlyDenied": false
     },
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-23",
-    "hhVacanciesCheckedAt": "2026-05-23",
-    "websiteUrl": null,
-    "hhCompanyUrl": "https://hh.ru/employer/12231809",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": null,
+    "websiteUrl": "https://digitali.ru/",
+    "hhCompanyUrl": null,
     "habrUrl": null,
     "linkedinUrl": null,
     "employerRankingBadges": [],
@@ -15406,8 +16253,8 @@
     "hasActiveHiring": false,
     "hasRemote": false,
     "hasHighHrRating": true,
-    "lastCheckedAt": "2026-05-26",
-    "hhVacanciesCheckedAt": "2026-05-18",
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
     "websiteUrl": "https://www.media-sfera.com/",
     "hhCompanyUrl": "https://hh.ru/employer/206801",
     "habrUrl": null,
@@ -15471,7 +16318,16 @@
     "id": "cmp_s2h6wq",
     "slug": "tskr-sistema",
     "name": "ЦКР Система",
-    "searchAliases": [],
+    "searchAliases": [
+      "ЦКР Система",
+      "ЦКР",
+      "CKR System",
+      "CKR Systems",
+      "ckrsys",
+      "ЦКР Систем",
+      "TsKR Sistema",
+      "CKR digital"
+    ],
     "city": "Уфа",
     "companyType": "Продукт",
     "niche": "Product / SaaS",
@@ -15512,10 +16368,67 @@
     "publicStatus": "public"
   },
   {
+    "id": "cmp_336104f3c3",
+    "slug": "eto-legko",
+    "name": "Это Легко",
+    "searchAliases": [
+      "Это Легко",
+      "etolegko",
+      "Интерактивное агентство Это Легко",
+      "Eto Legko",
+      "ЭтоЛегко"
+    ],
+    "city": "Москва",
+    "companyType": "Digital",
+    "niche": "Full-service digital",
+    "size": null,
+    "careerUrl": "https://hh.ru/employer/632228",
+    "vacanciesRange": "5–10",
+    "vacanciesWeight": 2,
+    "hiringStatus": "Активный",
+    "workFormat": "Не указано",
+    "hiringGeo": "Локально",
+    "international": "Нет",
+    "hhRatingDisplay": "4,3",
+    "hhRatingValue": 4.3,
+    "habrRatingDisplay": "Нет отзывов",
+    "habrRatingValue": null,
+    "awards2025": null,
+    "hasAwards2025": false,
+    "presets": [
+      "Активный найм"
+    ],
+    "signals": {
+      "hasDirectApply": false,
+      "hasCareerPage": true,
+      "hiringSource": "HH",
+      "dataFreshness": "fresh",
+      "remoteExplicitlyDenied": false
+    },
+    "hasActiveHiring": true,
+    "hasRemote": false,
+    "hasHighHrRating": false,
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
+    "websiteUrl": "https://etolegko.ru/",
+    "hhCompanyUrl": "https://hh.ru/employer/632228",
+    "habrUrl": null,
+    "linkedinUrl": null,
+    "employerRankingBadges": [],
+    "publicStatus": "public"
+  },
+  {
     "id": "cmp_e26af700b0",
     "slug": "crm-akademiya",
     "name": "CRM Академия",
-    "searchAliases": [],
+    "searchAliases": [
+      "CRM Академия",
+      "CRM Academy",
+      "CRMAcademy",
+      "ЦРМ Академия",
+      "CRM Akademiya",
+      "Академия CRM"
+    ],
     "city": "Москва",
     "companyType": "Интегратор",
     "niche": "MarTech / CRM / CDP",
@@ -15552,54 +16465,6 @@
     "hhVacanciesCheckedAt": "2026-05-18",
     "websiteUrl": "https://crmacademy.ru/",
     "hhCompanyUrl": "https://hh.ru/employer/9295341",
-    "habrUrl": null,
-    "linkedinUrl": null,
-    "employerRankingBadges": [],
-    "publicStatus": "public"
-  },
-  {
-    "id": "cmp_9ec5324556",
-    "slug": "daskipper",
-    "name": "DA!Skipper",
-    "searchAliases": [
-      "DA!Skipper",
-      "DA Skipper",
-      "daskipper",
-      "ДА Скиппер",
-      "Skipper digital"
-    ],
-    "city": "Москва",
-    "companyType": "Digital",
-    "niche": "Media / Content / PR",
-    "size": null,
-    "careerUrl": "https://www.daskipper.com/",
-    "vacanciesRange": "0",
-    "vacanciesWeight": 0,
-    "hiringStatus": "На паузе",
-    "workFormat": "Не указано",
-    "hiringGeo": "Локально",
-    "international": "Нет",
-    "hhRatingDisplay": "Нет отзывов",
-    "hhRatingValue": null,
-    "habrRatingDisplay": "Нет отзывов",
-    "habrRatingValue": null,
-    "awards2025": null,
-    "hasAwards2025": false,
-    "presets": [],
-    "signals": {
-      "hasDirectApply": true,
-      "hasCareerPage": true,
-      "hiringSource": "Career site",
-      "dataFreshness": "fresh",
-      "remoteExplicitlyDenied": false
-    },
-    "hasActiveHiring": false,
-    "hasRemote": false,
-    "hasHighHrRating": false,
-    "lastCheckedAt": "2026-05-23",
-    "hhVacanciesCheckedAt": "2026-05-23",
-    "websiteUrl": null,
-    "hhCompanyUrl": null,
     "habrUrl": null,
     "linkedinUrl": null,
     "employerRankingBadges": [],
@@ -15659,6 +16524,62 @@
     "linkedinUrl": null,
     "employerRankingBadges": [],
     "publicStatus": "public"
+  },
+  {
+    "id": "cmp_4049440bd2",
+    "slug": "kadema-digital",
+    "name": "Kadema Digital",
+    "searchAliases": [
+      "Kadema Digital",
+      "Kadema",
+      "Кадема",
+      "Кадема Диджитал",
+      "Маркетинг на 100",
+      "marketing-na100"
+    ],
+    "city": "Пенза",
+    "companyType": "Performance",
+    "niche": "Performance marketing",
+    "size": null,
+    "careerUrl": "https://kadema.ru/vakansii/",
+    "vacanciesRange": "1–4",
+    "vacanciesWeight": 1,
+    "hiringStatus": "Точечный",
+    "workFormat": "Не указано",
+    "hiringGeo": "Локально",
+    "international": "Нет",
+    "hhRatingDisplay": "5,0",
+    "hhRatingValue": 5,
+    "habrRatingDisplay": "Нет отзывов",
+    "habrRatingValue": null,
+    "awards2025": null,
+    "hasAwards2025": false,
+    "presets": [
+      "Высокая HR-оценка"
+    ],
+    "signals": {
+      "hasDirectApply": true,
+      "hasCareerPage": true,
+      "hiringSource": "HH",
+      "dataFreshness": "fresh",
+      "remoteExplicitlyDenied": false
+    },
+    "hasActiveHiring": false,
+    "hasRemote": false,
+    "hasHighHrRating": true,
+    "lastCheckedAt": "2026-06-05",
+    "hhVacanciesCheckedAt": "2026-06-05",
+    "websiteUrl": "https://kadema.ru/",
+    "hhCompanyUrl": "https://hh.ru/employer/1968656",
+    "habrUrl": null,
+    "linkedinUrl": null,
+    "employerRankingBadges": [],
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-05",
+      "sourceUrl": "https://hh.ru/employer/1968656"
+    }
   },
   {
     "id": "cmp_010636c0f2",
