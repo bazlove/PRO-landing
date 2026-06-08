@@ -133,9 +133,9 @@
     ],
     "publicStatus": "public",
     "itAccreditation": {
-      "status": "manual_check_required",
-      "checkedAt": "2026-05-27",
-      "sourceUrl": "https://career.habr.com/companies/korusconsulting"
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.cnews.ru/book/%D0%9C%D0%B8%D0%BD%D1%86%D0%B8%D1%84%D1%80%D1%8B_%D0%A0%D0%A4_-_%D0%A0%D0%B5%D0%B5%D1%81%D1%82%D1%80_%D0%B0%D0%BA%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85_%D0%98%D0%A2-%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B9"
     }
   },
   {
@@ -242,7 +242,12 @@
     "habrUrl": "https://career.habr.com/companies/pb",
     "linkedinUrl": "https://www.linkedin.com/company/-1-",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_c3f1b4652c",
@@ -361,8 +366,8 @@
     "employerRankingBadges": [],
     "publicStatus": "public",
     "itAccreditation": {
-      "status": "manual_check_required",
-      "checkedAt": "2026-06-05",
+      "status": "not_confirmed",
+      "checkedAt": "2026-06-08",
       "sourceUrl": "https://www.gosuslugi.ru/itorgs"
     }
   },
@@ -485,8 +490,8 @@
     "publicStatus": "public",
     "itAccreditation": {
       "status": "manual_check_required",
-      "checkedAt": "2026-06-05",
-      "sourceUrl": "https://career.habr.com/companies/advgroup"
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
     }
   },
   {
@@ -783,8 +788,8 @@
     "employerRankingBadges": [],
     "publicStatus": "public",
     "itAccreditation": {
-      "status": "manual_check_required",
-      "checkedAt": "2026-06-05",
+      "status": "not_confirmed",
+      "checkedAt": "2026-06-08",
       "sourceUrl": "https://www.gosuslugi.ru/itorgs"
     }
   },
@@ -950,9 +955,9 @@
     "employerRankingBadges": [],
     "publicStatus": "public",
     "itAccreditation": {
-      "status": "manual_check_required",
-      "checkedAt": "2026-05-27",
-      "sourceUrl": "https://www.gosuslugi.ru/newsearch/proverit-akkreditaciyu-it-kompanii"
+      "status": "not_confirmed",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
     }
   },
   {
@@ -1089,9 +1094,9 @@
     ],
     "publicStatus": "public",
     "itAccreditation": {
-      "status": "manual_check_required",
-      "checkedAt": "2026-05-27",
-      "sourceUrl": "https://career.habr.com/companies/kokocgroup"
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://cio-navigator.ru/korporatsiya-rbs-7710934777/"
     }
   },
   {
@@ -1142,9 +1147,9 @@
     "employerRankingBadges": [],
     "publicStatus": "public",
     "itAccreditation": {
-      "status": "manual_check_required",
-      "checkedAt": "2026-05-27",
-      "sourceUrl": "https://career.habr.com/companies/okkam"
+      "status": "not_confirmed",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
     }
   },
   {
@@ -1323,7 +1328,12 @@
     "habrUrl": "https://career.habr.com/companies/roregroup",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "not_confirmed",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_37936e38e6",
@@ -1908,7 +1918,12 @@
     "habrUrl": "https://career.habr.com/companies/techart",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "not_confirmed",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_6cae11a255",
@@ -2031,8 +2046,8 @@
     "publicStatus": "public",
     "itAccreditation": {
       "status": "manual_check_required",
-      "checkedAt": "2026-05-27",
-      "sourceUrl": "https://career.habr.com/companies/bsl-dev"
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
     }
   },
   {
@@ -2197,7 +2212,12 @@
     "habrUrl": "https://career.habr.com/companies/dinnovate-group",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "not_confirmed",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_01ef61e46e",
@@ -2520,9 +2540,9 @@
     "employerRankingBadges": [],
     "publicStatus": "public",
     "itAccreditation": {
-      "status": "manual_check_required",
-      "checkedAt": "2026-05-27",
-      "sourceUrl": "https://www.gosuslugi.ru/newsearch/proverit-akkreditaciyu-it-kompanii"
+      "status": "not_confirmed",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
     }
   },
   {
@@ -2635,8 +2655,8 @@
     "employerRankingBadges": [],
     "publicStatus": "public",
     "itAccreditation": {
-      "status": "manual_check_required",
-      "checkedAt": "2026-06-05",
+      "status": "not_confirmed",
+      "checkedAt": "2026-06-08",
       "sourceUrl": "https://www.gosuslugi.ru/itorgs"
     }
   },
@@ -2920,7 +2940,12 @@
     "habrUrl": "https://career.habr.com/companies/mediadirectiongroup",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_40674d1fd3",
@@ -2972,9 +2997,9 @@
     "employerRankingBadges": [],
     "publicStatus": "public",
     "itAccreditation": {
-      "status": "manual_check_required",
-      "checkedAt": "2026-05-27",
-      "sourceUrl": "https://www.gosuslugi.ru/newsearch/proverit-akkreditaciyu-it-kompanii"
+      "status": "not_confirmed",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
     }
   },
   {
@@ -3248,7 +3273,12 @@
     "habrUrl": "https://career.habr.com/companies/napoleonit",
     "linkedinUrl": "https://www.linkedin.com/company/napoleonit/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://napoleonit.ru/contacts"
+    }
   },
   {
     "id": "cmp_28fe4d73bc",
@@ -3365,7 +3395,12 @@
         "sourceUrl": "https://career.habr.com/companies/nota/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://nota.media/accreditation/"
+    }
   },
   {
     "id": "cmp_1f8hjmd",
@@ -3774,9 +3809,9 @@
     "employerRankingBadges": [],
     "publicStatus": "public",
     "itAccreditation": {
-      "status": "manual_check_required",
-      "checkedAt": "2026-05-27",
-      "sourceUrl": "https://www.gosuslugi.ru/newsearch/proverit-akkreditaciyu-it-kompanii"
+      "status": "not_confirmed",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
     }
   },
   {
@@ -4061,7 +4096,12 @@
     "habrUrl": "https://career.habr.com/companies/victoryagency",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://victoryagency.ru/"
+    }
   },
   {
     "id": "cmp_d637483d42",
@@ -4450,7 +4490,12 @@
     "habrUrl": null,
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://hh.ru/employer/864614"
+    }
   },
   {
     "id": "cmp_638bc32fee",
@@ -5050,7 +5095,12 @@
     "habrUrl": "https://career.habr.com/companies/technokratos",
     "linkedinUrl": "https://www.linkedin.com/company/technokratosit/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://technokratos.com/contacts"
+    }
   },
   {
     "id": "cmp_367f8b6cd7",
@@ -5438,7 +5488,12 @@
     "habrUrl": "https://career.habr.com/companies/appbooster",
     "linkedinUrl": "https://www.linkedin.com/company/appbooster-com/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "not_confirmed",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_326d4b5f11",
@@ -5767,9 +5822,9 @@
     "employerRankingBadges": [],
     "publicStatus": "public",
     "itAccreditation": {
-      "status": "manual_check_required",
-      "checkedAt": "2026-05-27",
-      "sourceUrl": "https://career.habr.com/companies/olegchulakovstudio"
+      "status": "not_confirmed",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
     }
   },
   {
@@ -6235,7 +6290,12 @@
         "sourceUrl": "https://career.habr.com/companies/dis-group/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_e57461fde3",
@@ -6816,8 +6876,8 @@
     "publicStatus": "public",
     "itAccreditation": {
       "status": "manual_check_required",
-      "checkedAt": "2026-05-27",
-      "sourceUrl": "https://career.habr.com/companies/kotelov"
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
     }
   },
   {
@@ -6926,7 +6986,12 @@
     "habrUrl": "https://career.habr.com/companies/ktstech",
     "linkedinUrl": "https://www.linkedin.com/company/ktsdev",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://kts.tech/posts/legal-information"
+    }
   },
   {
     "id": "cmp_455899fcfb",
@@ -7099,7 +7164,12 @@
         "sourceUrl": "https://career.habr.com/companies/maxilect/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://maxilect.ru/"
+    }
   },
   {
     "id": "cmp_e667409259",
@@ -7154,7 +7224,12 @@
     "habrUrl": "https://career.habr.com/companies/media108",
     "linkedinUrl": "https://www.linkedin.com/company/media108",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "not_confirmed",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_9184c86ece",
@@ -7321,7 +7396,12 @@
         "sourceUrl": "https://career.habr.com/companies/mindsw/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "manual_check_required",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_75dafe793c",
@@ -7485,9 +7565,9 @@
     "employerRankingBadges": [],
     "publicStatus": "public",
     "itAccreditation": {
-      "status": "manual_check_required",
-      "checkedAt": "2026-05-27",
-      "sourceUrl": "https://career.habr.com/companies/onlydigital"
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://cio-navigator.ru/onli-4217167122/"
     }
   },
   {
@@ -7656,8 +7736,8 @@
     "publicStatus": "public",
     "itAccreditation": {
       "status": "not_confirmed",
-      "checkedAt": "2026-05-29",
-      "sourceUrl": "https://www.gosuslugi.ru/newsearch/proverit-akkreditaciyu-it-kompanii"
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
     }
   },
   {
@@ -7830,9 +7910,9 @@
     ],
     "publicStatus": "public",
     "itAccreditation": {
-      "status": "hh_accreditation_signal",
-      "checkedAt": "2026-05-29",
-      "sourceUrl": "https://career.habr.com/companies/redlab"
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://gmonit.ru/career/sales-manager"
     }
   },
   {
@@ -7892,7 +7972,12 @@
         "sourceUrl": "https://career.habr.com/companies/rightline/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "confirmed_open_registry_mention",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://rtln.ru/contacts/"
+    }
   },
   {
     "id": "cmp_913fb091df",
@@ -9907,7 +9992,12 @@
     "habrUrl": null,
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "not_confirmed",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_40af50402b",
@@ -10283,7 +10373,12 @@
     "habrUrl": null,
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "not_confirmed",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_1dblyzg",
@@ -10980,7 +11075,12 @@
     "habrUrl": "https://career.habr.com/companies/2leads",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "not_confirmed",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_753d3004df",
@@ -11468,7 +11568,12 @@
     "habrUrl": null,
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "not_confirmed",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_b50b52608b",
@@ -11743,7 +11848,12 @@
     "habrUrl": "https://career.habr.com/companies/big-media",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "not_confirmed",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_2cc39d43cb",
@@ -13595,7 +13705,7 @@
     "publicStatus": "public",
     "itAccreditation": {
       "status": "hh_accreditation_signal",
-      "checkedAt": "2026-06-05",
+      "checkedAt": "2026-06-08",
       "sourceUrl": "https://career.habr.com/companies/lexica"
     }
   },
@@ -13757,7 +13867,12 @@
     "habrUrl": null,
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "not_confirmed",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_856410b05d",
@@ -13933,7 +14048,12 @@
     "habrUrl": null,
     "linkedinUrl": "https://www.linkedin.com/company/migel-agency/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "not_confirmed",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_ef48999185",
@@ -14411,7 +14531,12 @@
     "habrUrl": "https://career.habr.com/companies/ony-",
     "linkedinUrl": "https://www.linkedin.com/company/ony/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "not_confirmed",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_6ecc35851b",
@@ -14527,7 +14652,12 @@
     "habrUrl": "https://career.habr.com/companies/osmi-it",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "not_confirmed",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_a6h8g5",
@@ -14746,7 +14876,12 @@
         "sourceUrl": "https://career.habr.com/companies/prideinbrains/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "not_confirmed",
+      "checkedAt": "2026-06-08",
+      "sourceUrl": "https://www.gosuslugi.ru/itorgs"
+    }
   },
   {
     "id": "cmp_904635cc2b",
