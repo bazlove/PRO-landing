@@ -5,4 +5,4 @@ User-agent: Yandex
 Clean-param: preset /digital/
 Clean-param: q&city&type&niche&hiring&format&size /digital/
 
-Sitemap: https://pro.site.com/sitemap.xml
+Sitemap: https://pro.bazlove.com/sitemap.xml
