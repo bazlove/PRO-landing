@@ -191,7 +191,12 @@
     "habrUrl": "https://career.habr.com/companies/netology",
     "linkedinUrl": "https://www.linkedin.com/company/%D0%BD%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/netology"
+    }
   },
   {
     "id": "cmp_3a8f87eba8",
@@ -245,7 +250,12 @@
     "habrUrl": "https://career.habr.com/companies/pb",
     "linkedinUrl": "https://www.linkedin.com/company/-1-",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/pb"
+    }
   },
   {
     "id": "cmp_c3f1b4652c",
@@ -430,7 +440,12 @@
         "sourceUrl": "https://hh.ru/employer/5744540"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/foxford"
+    }
   },
   {
     "id": "cmp_5b80495d5d",
@@ -549,7 +564,12 @@
         "sourceUrl": "https://career.habr.com/companies/ratings?sz=3&y=2025"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/agima"
+    }
   },
   {
     "id": "cmp_3dec5a8cc3",
@@ -604,7 +624,12 @@
     "habrUrl": "https://career.habr.com/companies/amocrm",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/amocrm"
+    }
   },
   {
     "id": "cmp_c3d4a5e241",
@@ -720,7 +745,12 @@
     "habrUrl": "https://career.habr.com/companies/artsofte",
     "linkedinUrl": "https://www.linkedin.com/company/artsofte",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/artsofte"
+    }
   },
   {
     "id": "cmp_391d4e003f",
@@ -833,7 +863,12 @@
     "habrUrl": "https://career.habr.com/companies/directum-ru",
     "linkedinUrl": "https://www.linkedin.com/company/directum/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/directum-ru"
+    }
   },
   {
     "id": "cmp_9ac938b4e4",
@@ -1253,7 +1288,12 @@
         "sourceUrl": "https://hh.ru/employer/567799"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/red-mad-robot"
+    }
   },
   {
     "id": "cmp_yjyudr",
@@ -1560,7 +1600,12 @@
     "habrUrl": "https://career.habr.com/companies/yadro",
     "linkedinUrl": "https://www.linkedin.com/company/yadro/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/yadro"
+    }
   },
   {
     "id": "cmp_b17x6e",
@@ -1732,7 +1777,12 @@
         "sourceUrl": "https://career.habr.com/companies/netbell/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/netbell"
+    }
   },
   {
     "id": "cmp_7fd87e71c3",
@@ -2028,7 +2078,12 @@
     "habrUrl": "https://career.habr.com/companies/bsl-dev",
     "linkedinUrl": "https://www.linkedin.com/company/bsl-dev/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/bsl-dev"
+    }
   },
   {
     "id": "cmp_cae0ba13f3",
@@ -2083,7 +2138,12 @@
     "habrUrl": "https://career.habr.com/companies/calltouch",
     "linkedinUrl": "https://www.linkedin.com/company/calltouch/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/calltouch"
+    }
   },
   {
     "id": "cmp_6229014a69",
@@ -2135,7 +2195,12 @@
     "habrUrl": "https://career.habr.com/companies/crosstech",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/crosstech"
+    }
   },
   {
     "id": "cmp_dd36faf3bb",
@@ -2356,7 +2421,12 @@
     "habrUrl": "https://career.habr.com/companies/globus-ltdcom",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-22",
+      "sourceUrl": "https://career.habr.com/companies/globus-ltdcom"
+    }
   },
   {
     "id": "cmp_cf26908c91",
@@ -2454,7 +2524,12 @@
     "habrUrl": "https://career.habr.com/companies/handh",
     "linkedinUrl": "https://www.linkedin.com/company/heads-and-hands",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-10",
+      "sourceUrl": "https://career.habr.com/companies/handh"
+    }
   },
   {
     "id": "cmp_165439c4d4",
@@ -3081,7 +3156,12 @@
     "habrUrl": "https://career.habr.com/companies/mediasoft",
     "linkedinUrl": "https://www.linkedin.com/company/mediasoftteam",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/mediasoft"
+    }
   },
   {
     "id": "cmp_29b514b4e9",
@@ -3245,7 +3325,12 @@
     "habrUrl": "https://career.habr.com/companies/mish-design",
     "linkedinUrl": "https://www.linkedin.com/company/mishdesign",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/mish-design"
+    }
   },
   {
     "id": "cmp_fa8714b370",
@@ -3783,7 +3868,12 @@
     "habrUrl": "https://career.habr.com/companies/raft",
     "linkedinUrl": "https://www.linkedin.com/company/raft-digital-solutions",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/raft"
+    }
   },
   {
     "id": "cmp_ee3654fe06",
@@ -3900,7 +3990,12 @@
     "habrUrl": "https://career.habr.com/companies/retailcrm",
     "linkedinUrl": "https://www.linkedin.com/company/retailcrm",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/retailcrm"
+    }
   },
   {
     "id": "cmp_1212318b72",
@@ -4009,7 +4104,12 @@
     "habrUrl": "https://career.habr.com/companies/roistat",
     "linkedinUrl": "https://www.linkedin.com/company/roistat/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/roistat"
+    }
   },
   {
     "id": "cmp_535f0d2557",
@@ -4187,7 +4287,12 @@
     "habrUrl": "https://career.habr.com/companies/spectrumdata",
     "linkedinUrl": "https://www.linkedin.com/company/spectrumdataru",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/spectrumdata"
+    }
   },
   {
     "id": "cmp_f0177838f3",
@@ -4979,7 +5084,12 @@
     "habrUrl": "https://career.habr.com/companies/metasharks",
     "linkedinUrl": "https://www.linkedin.com/company/metasharks-studio/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/metasharks"
+    }
   },
   {
     "id": "cmp_1c97927df3",
@@ -5252,7 +5362,12 @@
         "sourceUrl": "https://career.habr.com/companies/rush-agency/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/rush-agency"
+    }
   },
   {
     "id": "cmp_c3b1478752",
@@ -5421,7 +5536,12 @@
     "habrUrl": "https://career.habr.com/companies/fintablo",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-22",
+      "sourceUrl": "https://career.habr.com/companies/fintablo"
+    }
   },
   {
     "id": "cmp_367f8b6cd7",
@@ -5916,7 +6036,12 @@
     "habrUrl": "https://career.habr.com/companies/artics",
     "linkedinUrl": "https://www.linkedin.com/company/artix-it/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/artics"
+    }
   },
   {
     "id": "cmp_ef5b99215d",
@@ -6673,7 +6798,12 @@
         "sourceUrl": "https://career.habr.com/companies/dis-group/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/dis-group"
+    }
   },
   {
     "id": "cmp_e57461fde3",
@@ -7189,7 +7319,12 @@
     "habrUrl": "https://career.habr.com/companies/kodix",
     "linkedinUrl": "https://www.linkedin.com/company/kodixxx/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/kodix"
+    }
   },
   {
     "id": "cmp_282375e58b",
@@ -7250,7 +7385,12 @@
         "sourceUrl": "https://career.habr.com/companies/ratings?sz=2&y=2025"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/kotelov"
+    }
   },
   {
     "id": "cmp_1a026rt",
@@ -7837,7 +7977,12 @@
         "sourceUrl": "https://career.habr.com/companies/mindsw/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/mindsw"
+    }
   },
   {
     "id": "cmp_75dafe793c",
@@ -7893,7 +8038,12 @@
     "habrUrl": "https://career.habr.com/companies/mstagency",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/mstagency"
+    }
   },
   {
     "id": "cmp_5c826ba1bf",
@@ -8057,7 +8207,12 @@
     "habrUrl": "https://career.habr.com/companies/perx",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/perx"
+    }
   },
   {
     "id": "cmp_98b1e9ec59",
@@ -9669,7 +9824,12 @@
         "sourceUrl": "https://career.habr.com/companies/inetstudio/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-22",
+      "sourceUrl": "https://career.habr.com/companies/inetstudio"
+    }
   },
   {
     "id": "cmp_f01ad6b944",
@@ -10205,7 +10365,12 @@
     "habrUrl": "https://career.habr.com/companies/ingru",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/ingru"
+    }
   },
   {
     "id": "cmp_4a21498425",
@@ -10791,7 +10956,12 @@
     "habrUrl": null,
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/rktv"
+    }
   },
   {
     "id": "cmp_1ske1ie",
@@ -11920,7 +12090,12 @@
     "habrUrl": "https://career.habr.com/companies/triadasite",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/triadasite"
+    }
   },
   {
     "id": "cmp_669f58c8ba",
@@ -12374,7 +12549,12 @@
     "habrUrl": null,
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/business-up1"
+    }
   },
   {
     "id": "cmp_8e08a9edd5",
@@ -13087,7 +13267,12 @@
     "habrUrl": "https://career.habr.com/companies/business-up1",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/business-up1"
+    }
   },
   {
     "id": "cmp_581f5d28e0",
@@ -13259,7 +13444,12 @@
     "habrUrl": "https://career.habr.com/companies/code-pilots",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/code-pilots"
+    }
   },
   {
     "id": "cmp_140d7bcb38",
@@ -13314,7 +13504,12 @@
     "habrUrl": "https://career.habr.com/companies/cmg",
     "linkedinUrl": "https://www.linkedin.com/company/convergentdigital",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/cmg"
+    }
   },
   {
     "id": "cmp_e431e3453d",
@@ -13750,7 +13945,12 @@
     "habrUrl": "https://career.habr.com/companies/dextra",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/dextra"
+    }
   },
   {
     "id": "cmp_d97357db38",
@@ -14311,7 +14511,12 @@
     "habrUrl": "https://career.habr.com/companies/holyweb",
     "linkedinUrl": "https://www.linkedin.com/company/holywb",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/holyweb"
+    }
   },
   {
     "id": "cmp_285cd9b076",
@@ -14532,7 +14737,12 @@
     "habrUrl": "https://career.habr.com/companies/ipos-digital",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/ipos-digital"
+    }
   },
   {
     "id": "cmp_c72b967914",
@@ -14857,7 +15067,12 @@
     "habrUrl": "https://career.habr.com/companies/kinetica",
     "linkedinUrl": "https://www.linkedin.com/company/kineticaagency",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/kinetica"
+    }
   },
   {
     "id": "cmp_da4aaa78d9",
@@ -15035,7 +15250,12 @@
         "sourceUrl": "https://career.habr.com/companies/lexica/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-22",
+      "sourceUrl": "https://career.habr.com/companies/lexica"
+    }
   },
   {
     "id": "cmp_14f2moy",
@@ -15321,7 +15541,12 @@
         "sourceUrl": "https://career.habr.com/companies/mendev/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/mendev"
+    }
   },
   {
     "id": "cmp_502594cae3",
@@ -15921,7 +16146,12 @@
     "habrUrl": "https://career.habr.com/companies/oganov-digital",
     "linkedinUrl": "https://www.linkedin.com/company/oganov-digital",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/oganov-digital"
+    }
   },
   {
     "id": "cmp_2efa4aca94",
@@ -16457,7 +16687,12 @@
         "sourceUrl": "https://career.habr.com/companies/qlever/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/qlever"
+    }
   },
   {
     "id": "cmp_010636c0f2",
@@ -16675,7 +16910,12 @@
     "habrUrl": "https://career.habr.com/companies/relevant",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-22",
+      "sourceUrl": "https://career.habr.com/companies/relevant"
+    }
   },
   {
     "id": "cmp_eb8181f128",
@@ -16887,7 +17127,12 @@
     "habrUrl": "https://career.habr.com/companies/rocketdev",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/rocketdev"
+    }
   },
   {
     "id": "cmp_104b1b9d20",
@@ -17380,7 +17625,12 @@
     "habrUrl": "https://career.habr.com/companies/southmedia",
     "linkedinUrl": "https://www.linkedin.com/company/southmedia-marketing/",
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/southmedia"
+    }
   },
   {
     "id": "cmp_ec74b61757",
@@ -17490,7 +17740,12 @@
     "habrUrl": "https://career.habr.com/companies/teamscore",
     "linkedinUrl": null,
     "employerRankingBadges": [],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/teamscore"
+    }
   },
   {
     "id": "cmp_qyokq3",
@@ -17946,7 +18201,12 @@
         "sourceUrl": "https://career.habr.com/companies/worksolutions/awards"
       }
     ],
-    "publicStatus": "public"
+    "publicStatus": "public",
+    "itAccreditation": {
+      "status": "hh_accreditation_signal",
+      "checkedAt": "2026-06-24",
+      "sourceUrl": "https://career.habr.com/companies/worksolutions"
+    }
   },
   {
     "id": "cmp_a34a85b191",
