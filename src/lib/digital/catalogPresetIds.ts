@@ -1,4 +1,5 @@
 import type { CompanyPublic } from "../../types/digital";
+import { showsPublicItAccreditationChip } from "./itAccreditationPublic";
 
 function typeNicheHaystack(company: CompanyPublic): string {
   return `${company.companyType} ${company.niche}`.toLowerCase();
@@ -21,17 +22,6 @@ export function matchesWebDevPreset(company: CompanyPublic): boolean {
   );
 }
 
-/** Performance / SEO preset. */
-export function matchesPerformanceSeoPreset(company: CompanyPublic): boolean {
-  const hay = typeNicheHaystack(company);
-  return (
-    /\bperformance\b/.test(hay) ||
-    /\bseo\b/.test(hay) ||
-    hay.includes("paid media") ||
-    /перформанс/.test(hay)
-  );
-}
-
 /**
  * Public-safe preset ids for `data-preset-ids` (pipe-separated in DOM).
  * Client matches active chips by id membership — no substring logic in the browser.
@@ -48,7 +38,7 @@ export function getCatalogPresetIds(company: CompanyPublic): string[] {
   }
   if (matchesDigitalAgenciesPreset(company)) ids.push("digital-agencies");
   if (matchesWebDevPreset(company)) ids.push("web-dev");
-  if (matchesPerformanceSeoPreset(company)) ids.push("performance-seo");
+  if (showsPublicItAccreditationChip(company)) ids.push("it-accreditation");
   if (company.city === "Москва") ids.push("moscow");
   if (company.city === "Санкт-Петербург") ids.push("spb");
 
