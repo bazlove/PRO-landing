@@ -22,7 +22,7 @@ const PRESET_ID_TO_COLOR: Record<string, string> = {
   international: TAG_COLOR_CLASS.indigo,
   "digital-agencies": TAG_COLOR_CLASS.violet,
   "web-dev": TAG_COLOR_CLASS.cyan,
-  "performance-seo": TAG_COLOR_CLASS.orange,
+  "it-accreditation": TAG_COLOR_CLASS.orange,
   moscow: TAG_COLOR_CLASS.slate,
   spb: TAG_COLOR_CLASS.teal,
 };
@@ -38,7 +38,7 @@ const LABEL_TO_COLOR: Record<string, string> = {
   Международные: TAG_COLOR_CLASS.indigo,
   "Digital-агентства": TAG_COLOR_CLASS.violet,
   "Веб-разработка": TAG_COLOR_CLASS.cyan,
-  "Performance / SEO": TAG_COLOR_CLASS.orange,
+  "IT-аккредитация": TAG_COLOR_CLASS.orange,
   Москва: TAG_COLOR_CLASS.slate,
   СПб: TAG_COLOR_CLASS.teal,
 };
