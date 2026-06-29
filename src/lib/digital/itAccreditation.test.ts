@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import type { CompanyPublic } from "../../types/digital";
+import { getCatalogPresetIds } from "./catalogPresetIds.ts";
 import { buildDrawerHiringMeta } from "./display.ts";
 import { showsPublicItAccreditationChip } from "./itAccreditationPublic.ts";
 import { normalizeItAccreditation } from "./normalizeCompany.ts";
@@ -332,5 +333,66 @@ describe("drawer hiring inline chips regression", () => {
 
     assert.equal(meta.hasDirectApply, false);
     assert.equal(meta.showItAccreditation, false);
+  });
+});
+
+describe("IT accreditation catalog preset", () => {
+  it("adds it-accreditation only for public-renderable accreditation statuses", () => {
+    const publicStatuses = [
+      "confirmed_official",
+      "confirmed_open_registry_mention",
+      "hh_accreditation_signal",
+    ] as const;
+
+    for (const status of publicStatuses) {
+      assert.ok(
+        getCatalogPresetIds(
+          baseCompany({
+            id: status,
+            slug: status,
+            name: status,
+            careerUrl: `https://example.com/${status}`,
+            itAccreditation: {
+              status,
+              checkedAt: null,
+              sourceUrl: null,
+            },
+          }),
+        ).includes("it-accreditation"),
+      );
+    }
+
+    assert.equal(
+      getCatalogPresetIds(
+        baseCompany({
+          id: "manual-check-required",
+          slug: "manual-check-required",
+          name: "Manual Check Required",
+          careerUrl: "https://example.com/manual-check-required",
+          itAccreditation: {
+            status: "manual_check_required",
+            checkedAt: null,
+            sourceUrl: null,
+          },
+        }),
+      ).includes("it-accreditation"),
+      false,
+    );
+  });
+
+  it("does not add the retired performance-seo preset id", () => {
+    assert.equal(
+      getCatalogPresetIds(
+        baseCompany({
+          id: "performance-seo",
+          slug: "performance-seo",
+          name: "Performance SEO",
+          careerUrl: "https://example.com/performance-seo",
+          companyType: "Performance",
+          niche: "SEO / paid media",
+        }),
+      ).includes("performance-seo"),
+      false,
+    );
   });
 });
