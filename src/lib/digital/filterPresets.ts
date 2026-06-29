@@ -11,7 +11,7 @@ export const DIGITAL_FILTER_PRESETS: DigitalFilterPreset[] = [
   { id: "international", label: "Международные" },
   { id: "digital-agencies", label: "Digital-агентства" },
   { id: "web-dev", label: "Веб-разработка" },
-  { id: "performance-seo", label: "Performance / SEO" },
+  { id: "it-accreditation", label: "IT-аккредитация" },
   { id: "moscow", label: "Москва" },
   { id: "spb", label: "СПб" },
 ];
