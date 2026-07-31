@@ -1,0 +1,79 @@
+---
+interface Fact {
+  label: string;
+  value: string;
+}
+
+interface Props {
+  scenario: string;
+  initials: string;
+  name: string;
+  type: string;
+  location: string;
+  facts: Fact[];
+  chips: string[];
+  rating: string;
+  ratingNote: string;
+  freshness: string;
+  trustTone: "verified" | "warning" | "neutral" | "critical";
+  logo?: boolean;
+  selected?: boolean;
+  openQuickView?: boolean;
+}
+
+const {
+  scenario,
+  initials,
+  name,
+  type,
+  location,
+  facts,
+  chips,
+  rating,
+  ratingNote,
+  freshness,
+  trustTone,
+  logo = true,
+  selected = false,
+  openQuickView = false,
+} = Astro.props;
+---
+
+<article class:list={["ui-kit-company-card", { "is-selected": selected }]}>
+  <div class="ui-kit-company-card__scenario">{scenario}</div>
+  <header class="ui-kit-company-card__identity">
+    <div class:list={["ui-kit-company-card__logo", { "is-fallback": !logo }]} aria-hidden="true">
+      {initials}
+    </div>
+    <div>
+      <h3>{name}</h3>
+      <p>{type} · {location}</p>
+    </div>
+    <button class="ui-kit-icon-button" type="button" aria-label={`Добавить ${name} в избранное`} title="В избранное">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"></path></svg>
+    </button>
+  </header>
+
+  <dl class="ui-kit-company-card__facts">
+    {facts.slice(0, 3).map((fact) => <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}
+  </dl>
+
+  <div class="ui-kit-chip-row" aria-label="Ключевые признаки">
+    {chips.slice(0, 3).map((chip) => <span class="ui-kit-chip ui-kit-chip--category">{chip}</span>)}
+  </div>
+
+  <div class="ui-kit-company-card__signals">
+    <div><strong>{rating}</strong><span>{ratingNote}</span></div>
+    <span class:list={["ui-kit-data-state", `ui-kit-data-state--${trustTone}`]}>{freshness}</span>
+  </div>
+
+  <footer class="ui-kit-company-card__actions">
+    {openQuickView ? (
+      <button class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" type="button" data-ui-kit-quick-view-open>Быстрый просмотр</button>
+    ) : (
+      <a class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" href="#company-page">Открыть пример</a>
+    )}
+    <button class="ui-kit-button ui-kit-button--tertiary ui-kit-button--compact" type="button">Сравнить</button>
+  </footer>
+</article>
+

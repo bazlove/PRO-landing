@@ -1,0 +1,20 @@
+---
+interface Props {
+  token: string;
+  value: string;
+  role: string;
+  color: string;
+}
+
+const { token, value, role, color } = Astro.props;
+---
+
+<article class="ui-kit-swatch">
+  <div class="ui-kit-swatch__color" style={`--ui-kit-swatch: ${color}`} aria-hidden="true"></div>
+  <div class="ui-kit-swatch__copy">
+    <code>{token}</code>
+    <strong>{value}</strong>
+    <span>{role}</span>
+  </div>
+</article>
+
