@@ -1,0 +1,307 @@
+---
+import UiKitSection from "../components/ui-kit/UiKitSection.astro";
+import UiKitSwatch from "../components/ui-kit/UiKitSwatch.astro";
+import UiKitTrustState from "../components/ui-kit/UiKitTrustState.astro";
+import UiKitCompanyCard from "../components/ui-kit/UiKitCompanyCard.astro";
+import UiKitCompanyQuickView from "../components/ui-kit/UiKitCompanyQuickView.astro";
+import UiKitCompanyPagePreview from "../components/ui-kit/UiKitCompanyPagePreview.astro";
+import "../styles/ui-kit/tokens.css";
+import "../styles/ui-kit/ui-kit.css";
+
+const paletteGroups = [
+  {
+    name: "Neutral",
+    swatches: [
+      ["neutral.0", "#FFFFFF", "Белая поверхность"], ["neutral.25", "#FCFCFA", "Фон страницы"],
+      ["neutral.50", "#F7F7F3", "Secondary background"], ["neutral.100", "#EFEFEA", "Disabled surface"],
+      ["neutral.200", "#DEDED7", "Border"], ["neutral.300", "#C6C6BE", "Strong border"],
+      ["neutral.500", "#7A7D82", "Muted text"], ["neutral.700", "#3B414A", "Supporting text"],
+      ["neutral.900", "#121A26", "Primary text"], ["neutral.950", "#0B111B", "Darkest surface"],
+    ],
+  },
+  { name: "Indigo", swatches: [["indigo.50", "#F1F3FF", "Brand soft"], ["indigo.100", "#E3E7FF", "Selected soft"], ["indigo.200", "#C7CFFF", "Brand border"], ["indigo.400", "#7484F4", "Accent"], ["indigo.500", "#596BE5", "Brand bright"], ["indigo.600", "#4254CC", "Primary CTA"], ["indigo.700", "#3443A8", "Primary hover"], ["indigo.800", "#293683", "Primary active"], ["indigo.900", "#202A64", "Deep brand"]] },
+  { name: "Coral", swatches: [["coral.50", "#FFF4F0", "Signature soft"], ["coral.100", "#FFE5DC", "Signature border"], ["coral.300", "#FFAB91", "Signature light"], ["coral.500", "#F56F4F", "Signature accent"], ["coral.600", "#DA5638", "Signature strong"], ["coral.700", "#B8432B", "Employer claim"]] },
+  { name: "Mint / verified", swatches: [["mint.50", "#EFFAF4", "Verified background"], ["mint.100", "#D8F2E4", "Verified border"], ["mint.500", "#2F9B65", "Fresh"], ["mint.700", "#1E7048", "Verified text"]] },
+  { name: "Amber / warning", swatches: [["amber.50", "#FFF8E8", "Warning background"], ["amber.100", "#FDECC4", "Warning border"], ["amber.500", "#C88519", "Warning icon"], ["amber.700", "#8B5B0E", "Warning text"]] },
+  { name: "Red / critical", swatches: [["red.50", "#FFF1F1", "Critical background"], ["red.100", "#FFDADA", "Critical border"], ["red.500", "#D94B4B", "Critical icon"], ["red.700", "#A52E2E", "Critical text"]] },
+  { name: "Violet / premium", swatches: [["violet.50", "#F7F2FF", "Premium background"], ["violet.100", "#EBDDFF", "Premium border"], ["violet.500", "#8358D9", "Premium accent"], ["violet.700", "#5E38A5", "Premium text"]] },
+] as const;
+
+const toc = [
+  ["overview", "Overview"], ["foundations", "Foundations"], ["colors", "Colors"],
+  ["typography", "Typography"], ["spacing-grid", "Spacing & grid"], ["shape", "Radius & elevation"],
+  ["buttons", "Buttons"], ["forms", "Form controls"], ["chips", "Chips & badges"],
+  ["trust", "Trust & evidence"], ["feedback", "Feedback"], ["company-card", "Company Card"],
+  ["quick-view", "Quick View"], ["company-page", "Company Page"], ["responsive", "Responsive"],
+  ["motion", "Motion policy"], ["accessibility", "Accessibility"],
+] as const;
+
+const spacing = [["space.1", 4], ["space.2", 8], ["space.3", 12], ["space.4", 16], ["space.5", 20], ["space.6", 24], ["space.8", 32], ["space.10", 40], ["space.12", 48], ["space.16", 64], ["space.20", 80], ["space.24", 96]] as const;
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UI Kit — Verified Editorial UI</title>
+    <meta name="description" content="Изолированная living documentation дизайн-системы Verified Editorial UI." />
+    <meta name="robots" content="noindex, nofollow" />
+  </head>
+  <body class="ui-kit-page">
+    <a class="ui-kit-skip-link" href="#ui-kit-main">Перейти к содержанию</a>
+    <div class="ui-kit-app" data-ui-kit-root data-theme="light">
+      <script is:inline>
+        (() => {
+          const root = document.currentScript?.parentElement;
+          if (!(root instanceof HTMLElement)) return;
+          const key = "verified-editorial-ui-kit-theme";
+          const media = window.matchMedia("(prefers-color-scheme: dark)");
+          let preference = "system";
+          try { preference = localStorage.getItem(key) || "system"; } catch {}
+          root.dataset.themePreference = preference;
+          root.dataset.theme = preference === "system" ? (media.matches ? "dark" : "light") : preference;
+        })();
+      </script>
+
+      <header class="ui-kit-header">
+        <div class="ui-kit-container ui-kit-header__inner">
+          <a class="ui-kit-brand" href="#overview" aria-label="Verified Editorial UI, начало страницы">
+            <span aria-hidden="true">VE</span><strong>Verified Editorial UI</strong>
+          </a>
+          <div class="ui-kit-theme-switcher" role="group" aria-label="Тема UI Kit">
+            <button type="button" data-ui-kit-theme="light" aria-pressed="false">Light</button>
+            <button type="button" data-ui-kit-theme="dark" aria-pressed="false">Dark</button>
+            <button type="button" data-ui-kit-theme="system" aria-pressed="false">System</button>
+          </div>
+        </div>
+      </header>
+
+      <nav class="ui-kit-toc" aria-label="Содержание UI Kit">
+        <div class="ui-kit-container ui-kit-toc__track">
+          {toc.map(([id, label], index) => <a href={`#${id}`}><span>{String(index + 1).padStart(2, "0")}</span>{label}</a>)}
+        </div>
+      </nav>
+
+      <main id="ui-kit-main" class="ui-kit-main">
+        <section id="overview" class="ui-kit-hero" aria-labelledby="ui-kit-title">
+          <div class="ui-kit-container ui-kit-hero__layout">
+            <div>
+              <p class="ui-kit-eyebrow">Design system · v0.2 · Living prototype</p>
+              <h1 id="ui-kit-title">Verified<br />Editorial UI</h1>
+              <p class="ui-kit-hero__lead">Data-first интерфейс с редакционной подачей и прозрачным trust layer для осознанного выбора работодателя.</p>
+              <div class="ui-kit-hero__principles"><span>Facts first</span><span>Visible trust</span><span>Progressive disclosure</span><span>Real-data resilience</span></div>
+            </div>
+            <aside class="ui-kit-hero__status">
+              <span class="ui-kit-badge ui-kit-badge--beta">Prototype</span>
+              <strong>Документация для review</strong>
+              <p>Не production-компоненты. Все компании, метрики и доказательства на странице вымышлены.</p>
+              <dl><div><dt>Версия</dt><dd>0.2</dd></div><div><dt>Дата</dt><dd>31.07.2026</dd></div><div><dt>Темы</dt><dd>Light / Dark / System</dd></div></dl>
+            </aside>
+          </div>
+        </section>
+
+        <div class="ui-kit-container ui-kit-content">
+          <UiKitSection id="foundations" eyebrow="01 · Foundations" title="Семантика прежде значений" description="Компоненты обращаются к назначению токена, а не к конкретному оттенку. Тема меняет mapping, но не контракт.">
+            <div class="ui-kit-token-flow" aria-label="Уровни дизайн-токенов"><div><span>Primitive</span><code>indigo.600</code></div><b aria-hidden="true">→</b><div><span>Semantic</span><code>color.brand.primary</code></div><b aria-hidden="true">→</b><div><span>Component</span><code>button.primary.bg</code></div></div>
+            <div class="ui-kit-surface-demo">
+              <div class="ui-kit-surface-demo__page"><span>Page</span><div class="ui-kit-surface-demo__primary"><span>Primary surface</span><div class="ui-kit-surface-demo__elevated">Elevated surface</div></div></div>
+              <div class="ui-kit-text-roles"><p class="is-primary">Primary text — ключевой факт</p><p class="is-secondary">Secondary text — пояснение</p><p class="is-muted">Muted text — служебная метаинформация</p><p class="is-inverse">Inverse text — контрастная поверхность</p></div>
+            </div>
+            <div class="ui-kit-semantic-roles"><span class="is-brand">Brand</span><span class="is-signature">Signature</span><span class="is-verified">Verified</span><span class="is-warning">Warning</span><span class="is-critical">Critical</span><span class="is-premium">Premium</span><span class="is-neutral">Neutral</span></div>
+          </UiKitSection>
+
+          <UiKitSection id="colors" eyebrow="02 · Colors" title="Тёплая база, глубокий indigo" description="Coral применяется редко; semantic colors зарезервированы для статусов и никогда не работают без текста.">
+            {paletteGroups.map((group) => <div class="ui-kit-palette-group"><h3>{group.name}</h3><div class="ui-kit-swatch-grid">{group.swatches.map(([token, value, role]) => <UiKitSwatch token={token} value={value} role={role} color={value} />)}</div></div>)}
+          </UiKitSection>
+
+          <UiKitSection id="typography" eyebrow="03 · Typography" title="Одна семья, ясная иерархия" description="Onest в репозитории не подключён, поэтому showcase честно использует утверждённый fallback stack: Inter / system UI.">
+            <div class="ui-kit-type-specimens">
+              <div class="ui-kit-type-row"><code>display.l · 64/42</code><p class="ui-kit-type-display-l">Работа, которой можно доверять</p></div>
+              <div class="ui-kit-type-row"><code>display.m · 52/38</code><p class="ui-kit-type-display-m">Проверенные сигналы</p></div>
+              <div class="ui-kit-type-row"><code>heading.h1 · 44/32</code><p class="ui-kit-type-h1">Northstar Digital Lab</p></div>
+              <div class="ui-kit-type-heading-grid"><div><code>H2 · 34/28</code><h2>Решение до отклика</h2></div><div><code>H3 · 24/22</code><h3>Найм и карьера</h3></div><div><code>H4 · 20/18</code><h4>Свежесть данных</h4></div></div>
+              <div class="ui-kit-type-body-grid"><p class="ui-kit-body-l"><code>body.l</code> Длинное русское описание проверяет комфорт чтения и естественные переносы на узком экране.</p><p><code>body.m</code> Facts remain readable in English and Russian without a decorative typeface.</p><p class="ui-kit-body-s"><code>body.s</code> Источник, методология и дополнительный контекст.</p><p class="ui-kit-caption"><code>caption</code> Проверено 31.07.2026</p><p class="ui-kit-label"><code>label</code> АКТИВНЫЙ НАЙМ</p></div>
+              <div class="ui-kit-tabular"><span>Tabular numerals</span><strong>4,7</strong><strong>1 284</strong><strong>31.07.2026</strong></div>
+            </div>
+          </UiKitSection>
+
+          <UiKitSection id="spacing-grid" eyebrow="04 · Spacing & grid" title="Ритм 8 px, детализация 4 px" description="Outer padding меняется по поведению: 32 px desktop, 24 px tablet, 16 px smartphone.">
+            <div class="ui-kit-spacing-scale">{spacing.map(([token, value]) => <div><code>{token}</code><span style={`--space-demo: ${value}px`}></span><b>{value}px</b></div>)}</div>
+            <div class="ui-kit-grid-demo"><div><h3>Desktop · 12 columns</h3><div class="ui-kit-grid ui-kit-grid--12">{Array.from({ length: 12 }, (_, i) => <span>{i + 1}</span>)}</div><p>Gutter 24–32 · outer 32 · max 1280</p></div><div><h3>Tablet · 8 columns</h3><div class="ui-kit-grid ui-kit-grid--8">{Array.from({ length: 8 }, (_, i) => <span>{i + 1}</span>)}</div><p>Gutter 20 · outer 24</p></div><div><h3>Smartphone · 4 columns</h3><div class="ui-kit-grid ui-kit-grid--4">{Array.from({ length: 4 }, (_, i) => <span>{i + 1}</span>)}</div><p>Gutter 16 · outer 16</p></div></div>
+          </UiKitSection>
+
+          <UiKitSection id="shape" eyebrow="05 · Shape & elevation" title="Радиус описывает тип объекта" description="Статические поверхности полагаются на границы и пространство; тень появляется только у реального верхнего слоя.">
+            <div class="ui-kit-radius-grid">{[["xs",4],["s",8],["m",12],["l",16],["xl",20],["2xl",24],["round",999]].map(([name, value]) => <div style={`--radius-demo: ${value}px`}><span></span><code>radius.{name}</code><b>{value}px</b></div>)}</div>
+            <div class="ui-kit-border-grid"><div class="is-subtle">Subtle · 1 px</div><div>Default · 1 px</div><div class="is-strong">Strong · 2 px</div><button type="button">Focus ring · 2 + 2</button></div>
+            <div class="ui-kit-elevation-grid"><div>Static surface<small>shadow.none</small></div><div class="is-hover">Hover surface<small>shadow.hover</small></div><div class="is-dropdown">Dropdown<small>shadow.dropdown</small></div><div class="is-sticky">Sticky<small>shadow.sticky</small></div><div class="is-overlay">Overlay / sidepage<small>shadow.overlay</small></div></div>
+          </UiKitSection>
+
+          <UiKitSection id="buttons" eyebrow="06 · Actions" title="Один главный CTA на блок" description="Все демонстрации используют реальные button или link элементы, видимый focus и стабильную ширину в loading state.">
+            <div class="ui-kit-demo-band"><h3>Variants</h3><div class="ui-kit-button-row"><button class="ui-kit-button ui-kit-button--primary" type="button">Primary</button><button class="ui-kit-button ui-kit-button--secondary" type="button">Secondary</button><button class="ui-kit-button ui-kit-button--tertiary" type="button">Tertiary</button><button class="ui-kit-button ui-kit-button--destructive" type="button">Destructive</button><button class="ui-kit-button ui-kit-button--premium" type="button">Premium</button><button class="ui-kit-icon-button" type="button" aria-label="Поиск" title="Поиск"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg></button></div></div>
+            <div class="ui-kit-demo-band"><h3>States</h3><div class="ui-kit-button-row"><button class="ui-kit-button ui-kit-button--primary is-active" type="button" aria-pressed="true">Pressed</button><button class="ui-kit-button ui-kit-button--primary is-loading" type="button" aria-busy="true"><span>Loading</span></button><button class="ui-kit-button ui-kit-button--primary" type="button" disabled>Disabled</button><button class="ui-kit-button ui-kit-button--success" type="button">Сохранено</button><button class="ui-kit-button ui-kit-button--secondary ui-kit-focus-demo" type="button">Focus-visible</button></div></div>
+            <div class="ui-kit-demo-band"><h3>Sizes</h3><div class="ui-kit-button-row ui-kit-button-row--end"><button class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" type="button">Compact 36</button><button class="ui-kit-button ui-kit-button--secondary" type="button">Default 44</button><button class="ui-kit-button ui-kit-button--primary ui-kit-button--large" type="button">Prominent 52</button></div></div>
+          </UiKitSection>
+
+          <UiKitSection id="forms" eyebrow="07 · Form controls" title="Labels остаются видимыми" description="Placeholder показывает пример, но не заменяет label. Error, hint и pending состояния стоят рядом с полем.">
+            <form class="ui-kit-form-showcase" novalidate>
+              <label class="ui-kit-field"><span>Название компании</span><input type="text" placeholder="Например, Signal Works" /><small>Введите название или домен</small></label>
+              <label class="ui-kit-field ui-kit-field--search"><span>Поиск по каталогу</span><div><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg><input type="search" value="Product studio" /></div></label>
+              <label class="ui-kit-field"><span>Тип компании</span><select><option>Все типы</option><option selected>Product studio</option><option>Интегратор</option></select></label>
+              <label class="ui-kit-field ui-kit-field--error"><span>Рабочий email</span><input type="email" value="name@" aria-invalid="true" aria-describedby="email-error" /><small id="email-error">Укажите полный адрес, например name@company.ru</small></label>
+              <label class="ui-kit-field"><span>Комментарий</span><textarea rows="4">Нужна компания с прозрачным форматом удалённой работы.</textarea></label>
+              <label class="ui-kit-field"><span>Read-only evidence</span><input type="text" value="Проверено 31.07.2026" readonly /></label>
+              <label class="ui-kit-field"><span>Disabled source</span><input type="text" value="Источник недоступен" disabled /></label>
+              <label class="ui-kit-field ui-kit-field--pending"><span>Pending verification</span><input type="text" value="Проверяем источник" readonly aria-busy="true" /><small>Обычно занимает несколько секунд</small></label>
+              <fieldset class="ui-kit-fieldset"><legend>Формат работы</legend><label><input type="checkbox" checked /> Удалённо</label><label><input type="checkbox" /> Гибрид</label></fieldset>
+              <fieldset class="ui-kit-fieldset"><legend>Уровень данных</legend><label><input type="radio" name="data-level" checked /> Public</label><label><input type="radio" name="data-level" /> Enriched</label></fieldset>
+              <label class="ui-kit-toggle"><input type="checkbox" checked /><span aria-hidden="true"></span><b>Только недавно обновлённые</b></label>
+              <div class="ui-kit-filter-control"><button class="ui-kit-button ui-kit-button--secondary" type="button"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"></path></svg>Фильтры <span>3</span></button></div>
+            </form>
+          </UiKitSection>
+
+          <UiKitSection id="chips" eyebrow="08 · Chips, badges & tags" title="Цвет несёт смысл, label объясняет его">
+            <div class="ui-kit-demo-band"><h3>Chips</h3><div class="ui-kit-chip-row"><button class="ui-kit-chip ui-kit-chip--active" type="button" aria-pressed="true">Активный найм</button><button class="ui-kit-chip ui-kit-chip--removable" type="button">Москва <span aria-hidden="true">×</span></button><span class="ui-kit-chip ui-kit-chip--category">Product studio</span><span class="ui-kit-chip ui-kit-chip--verified">Удалённо</span><span class="ui-kit-chip ui-kit-chip--selected">Выбрано для сравнения</span></div></div>
+            <div class="ui-kit-demo-band"><h3>Badges</h3><div class="ui-kit-chip-row"><span class="ui-kit-badge ui-kit-badge--verified">Проверено</span><span class="ui-kit-badge ui-kit-badge--warning">Требует перепроверки</span><span class="ui-kit-badge ui-kit-badge--premium">Premium</span><span class="ui-kit-badge ui-kit-badge--beta">Beta</span><span class="ui-kit-badge ui-kit-badge--claim">По данным компании</span><span class="ui-kit-badge ui-kit-badge--external">Внешний сигнал</span></div></div>
+          </UiKitSection>
+
+          <UiKitSection id="trust" eyebrow="09 · Trust layer" title="Evidence является частью интерфейса" description="Каждое состояние сочетает иконку, текст, источник или причину, дату и confidence там, где это уместно." wide>
+            <div class="ui-kit-trust-grid">
+              <UiKitTrustState tone="verified" label="Проверено" detail="Размер компании подтверждён публичным реестром." source="Публичный реестр" date="18 июля 2026" confidence="Высокий" />
+              <UiKitTrustState tone="fresh" label="Обновлено недавно" detail="Список вакансий наблюдался семь дней назад." source="Карьерная страница" date="24 июля 2026" />
+              <UiKitTrustState tone="warning" label="Требует перепроверки" detail="Статус найма старше установленного порога свежести." source="Career source" date="3 мая 2026" />
+              <UiKitTrustState tone="neutral" label="Данных недостаточно" detail="Размер компании нельзя показать как подтверждённый факт." reason="Источник не раскрывает размер" />
+              <UiKitTrustState tone="critical" label="Есть расхождения" detail="Карьерная страница указывает remote, вакансия — только офис." source="2 публичных источника" date="30 июля 2026" confidence="Низкий" />
+              <UiKitTrustState tone="insight" label="Аналитика платформы" detail="Несколько сигналов могут указывать на точечный найм." source="3 наблюдаемых сигнала" confidence="Средний" />
+              <UiKitTrustState tone="claim" label="По данным компании" detail="Работодатель заявляет о проектах в трёх странах." source="Описание работодателя" date="12 июля 2026" />
+              <UiKitTrustState tone="fresh" label="Внешний сигнал" detail="Рейтинг 4,7 сформирован по 186 отзывам." source="External Review" date="20 июля 2026" />
+              <UiKitTrustState tone="ugc" label="Пользовательский контент" detail="Отзыв прошёл автоматическую и ручную модерацию." source="Анонимный сотрудник" date="июль 2026" />
+            </div>
+          </UiKitSection>
+
+          <UiKitSection id="feedback" eyebrow="10 · Feedback states" title="Состояние объясняет следующий шаг">
+            <div class="ui-kit-feedback-grid">
+              <article class="ui-kit-feedback-card"><span class="ui-kit-badge">Loading</span><div class="ui-kit-skeleton" aria-label="Загрузка карточки"><i></i><b></b><b></b><b></b></div></article>
+              <article class="ui-kit-feedback-card"><span class="ui-kit-badge">Empty</span><h3>Избранное пока пусто</h3><p>Сохраняйте компании, чтобы вернуться к ним позже.</p><button class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" type="button">Открыть каталог</button></article>
+              <article class="ui-kit-feedback-card"><span class="ui-kit-badge">No results</span><h3>Ничего не найдено</h3><p>Уберите один из фильтров или измените запрос.</p><button class="ui-kit-button ui-kit-button--tertiary ui-kit-button--compact" type="button">Сбросить фильтры</button></article>
+              <article class="ui-kit-feedback-card ui-kit-feedback-card--error" role="alert"><span class="ui-kit-badge ui-kit-badge--critical">Error</span><h3>Источник временно недоступен</h3><p>Сохранённые данные не потеряны. Повторите позже.</p><button class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" type="button">Повторить</button></article>
+              <article class="ui-kit-feedback-card ui-kit-feedback-card--info"><span class="ui-kit-badge ui-kit-badge--beta">Info</span><h3>Как читается confidence</h3><p>Это оценка согласованности источников, а не рейтинг работодателя.</p></article>
+              <article class="ui-kit-feedback-card ui-kit-feedback-card--warning"><span class="ui-kit-badge ui-kit-badge--warning">Stale</span><h3>Данные старше 60 дней</h3><p>Это не негативный сигнал, а повод перепроверить текущий статус.</p></article>
+              <article class="ui-kit-feedback-card ui-kit-feedback-card--premium"><span class="ui-kit-badge ui-kit-badge--premium">Premium</span><h3>История изменения найма</h3><div class="ui-kit-locked-structure"><span></span><span></span><span></span></div><p>Сравните динамику по периодам после подключения аналитики.</p></article>
+              <article class="ui-kit-feedback-card"><span class="ui-kit-badge ui-kit-badge--verified">Toast demo</span><h3>Подтверждение действия</h3><p>Toast сообщает о кратком обратимом действии.</p><button class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" type="button" data-ui-kit-toast-trigger>Добавить в сравнение</button></article>
+            </div>
+          </UiKitSection>
+
+          <UiKitSection id="company-card" eyebrow="11 · Product pattern" title="Company Card" description="Четыре сценария используют только локальные вымышленные данные и проверяют длинный текст, missing, stale и conflict states." wide>
+            <p class="ui-kit-mock-note">Все компании и метрики ниже — fictional samples для проверки устойчивости интерфейса.</p>
+            <div class="ui-kit-company-grid">
+              <UiKitCompanyCard scenario="A · Enriched & verified" initials="NW" name="Northstar Digital Lab" type="Product studio" location="Санкт-Петербург" facts={[{label:"Найм",value:"Точечный · 5–10"},{label:"Формат",value:"Удалённо"},{label:"Размер",value:"201–500"}]} chips={["IT-аккредитация","Прямой отклик","International"]} rating="4,7" ratingNote="186 внешних отзывов" freshness="Проверено 7 дней назад" trustTone="verified" openQuickView />
+              <UiKitCompanyCard scenario="B · Incomplete profile" initials="SW" name="Signal Works" type="Data consulting" location="Казань" facts={[{label:"Найм",value:"Не проверено"},{label:"Формат",value:"Гибрид"},{label:"Размер",value:"Не раскрыт"}]} chips={["Нет логотипа","Размер неизвестен"]} rating="—" ratingNote="Рейтинг не найден" freshness="Данных недостаточно" trustTone="neutral" logo={false} />
+              <UiKitCompanyCard scenario="C · Stale hiring" initials="LC" name="Long Company Name Used to Test Responsive Wrapping" type="Enterprise software" location="Новосибирск · РФ и СНГ" facts={[{label:"Найм",value:"1–4 вакансии"},{label:"Формат",value:"Удалённо"},{label:"Размер",value:"51–200"}]} chips={["Backend","B2B","Distributed"]} rating="4,2" ratingNote="28 внешних отзывов" freshness="Требует перепроверки" trustTone="warning" />
+              <UiKitCompanyCard scenario="D · Conflicting sources" initials="EP" name="Example Product Studio" type="UX / Product" location="Москва" facts={[{label:"Найм",value:"Источники расходятся"},{label:"Формат",value:"Remote / офис"},{label:"Размер",value:"51–200"}]} chips={["Conflict","Design","Product"]} rating="4,5" ratingNote="12 отзывов · малая выборка" freshness="Есть расхождения" trustTone="critical" selected />
+            </div>
+          </UiKitSection>
+
+          <UiKitSection id="quick-view" eyebrow="12 · Overlay pattern" title="Company Quick View" description="Desktop sidepage, tablet drawer и full-screen mobile dialog используют один DOM и сохраняют контекст каталога.">
+            <div class="ui-kit-quick-view-launch"><div><strong>Northstar Digital Lab</strong><span>Decision snapshot без перехода со страницы</span></div><button class="ui-kit-button ui-kit-button--primary" type="button" data-ui-kit-quick-view-open>Открыть Quick View</button></div>
+          </UiKitSection>
+
+          <UiKitSection id="company-page" eyebrow="13 · Page pattern" title="Reduced Company Page" description="Реалистичный L2 template показывает факты, внешние сигналы, employer claim, missing data и premium teaser как разные типы данных." wide>
+            <UiKitCompanyPagePreview />
+          </UiKitSection>
+
+          <UiKitSection id="responsive" eyebrow="14 · Responsive behaviour" title="Структура меняется, факты остаются" description="Showcase построен одним DOM-деревом и перестраивается на 12, 8 и 4 колонки без обязательного горизонтального scroll.">
+            <div class="ui-kit-responsive-table" role="table" aria-label="Адаптивные преобразования"><div role="row" class="is-head"><span role="columnheader">Pattern</span><span role="columnheader">Desktop</span><span role="columnheader">Tablet</span><span role="columnheader">Smartphone</span></div>{[["Company grid","3 columns","2 columns","1 column"],["Quick View","Right sidepage","Wide drawer","Full-screen dialog"],["Company Page","8 + 4 rail","Single column","Single + sticky CTA"],["Local nav","Sticky row","Scrollable row","Scrollable anchors"],["Data table","Full table","Reduced","Criterion cards"]].map((row) => <div role="row">{row.map((cell) => <span role="cell">{cell}</span>)}</div>)}</div>
+            <div class="ui-kit-breakpoint-row"><span>320</span><span>390</span><span>768</span><span>1024</span><span>1280</span><span>1440</span></div>
+          </UiKitSection>
+
+          <UiKitSection id="motion" eyebrow="15 · Motion policy" title="Motion объясняет изменение состояния" description="React Bits не установлен. Здесь показаны только CSS tokens, drawer transition и policy для будущего отдельного spike.">
+            <div class="ui-kit-motion-tokens">{[["fast","120 ms","hover / focus"],["default","180 ms","chip / validation"],["slow","240 ms","drawer / modal"],["page","300 ms","large transition"],["marketing","480 ms","single reveal"]].map(([name,value,use]) => <div><code>motion.{name}</code><strong>{value}</strong><span>{use}</span></div>)}</div>
+            <div class="ui-kit-motion-demo"><div class="ui-kit-fade-demo" data-ui-kit-fade-demo><span>CSS-only Fade Content</span><strong>Контент доступен до анимации</strong><p>Однократный вход на 8 px, static fallback при reduced motion.</p></div><button class="ui-kit-button ui-kit-button--secondary" type="button" data-ui-kit-fade-replay>Повторить пример</button></div>
+            <div class="ui-kit-policy-table" role="table" aria-label="Политика React Bits"><div role="row" class="is-head"><span>Pattern</span><span>Priority</span><span>Allowed surface</span><span>Status</span></div>{[["Fade Content","P1","SEO / onboarding / showcase","Experimental"],["Animated Content","P1","Marketing / premium","Restricted"],["Count Up","P1","Coverage metrics","Experimental"],["Animated List","P2","AI / change history","Deferred"],["Spotlight Card","P2","One premium teaser","Deferred"],["Soft Aurora / Aurora","Experimental","One hero only","Spike required"]].map((row) => <div role="row">{row.map((cell) => <span>{cell}</span>)}</div>)}</div>
+            <div class="ui-kit-motion-restrictions"><strong>Forbidden</strong><span>Particles</span><span>Cursor trails</span><span>3D tilt</span><span>Glitch</span><span>Continuous data-area backgrounds</span><span>Animation on every card</span></div>
+            <p class="ui-kit-callout">Actual React Bits components, dependencies, licensing and performance will be assessed in a separate technical spike.</p>
+          </UiKitSection>
+
+          <UiKitSection id="accessibility" eyebrow="16 · Accessibility checklist" title="Safeguards implemented, not a compliance claim" description="Формальная WCAG-проверка не заявляется; ниже перечислены реализованные меры и дальнейшие ручные проверки.">
+            <div class="ui-kit-a11y-grid">{["Semantic heading hierarchy","Skip link","Visible focus ring","Keyboard-operable anchors","Visible form labels","Text + icon status","40–52 px touch targets","Dialog semantics","Escape and focus return","Background scroll lock","Reduced-motion fallback","Responsive source order","No color-only meaning","320 px overflow stress test"].map((item) => <div><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4 10-10"></path></svg><span>{item}</span></div>)}</div>
+          </UiKitSection>
+        </div>
+      </main>
+
+      <footer class="ui-kit-footer"><div class="ui-kit-container"><strong>Verified Editorial UI · v0.2</strong><p>Living prototype. Fictional data only. Not linked from production navigation.</p><a href="#overview">К началу</a></div></footer>
+
+      <div class="ui-kit-toast" role="status" aria-live="polite" aria-atomic="true" hidden data-ui-kit-toast>Добавлено в сравнение</div>
+      <UiKitCompanyQuickView />
+
+      <script is:inline>
+        (() => {
+          const root = document.querySelector("[data-ui-kit-root]");
+          if (!(root instanceof HTMLElement)) return;
+          const themeKey = "verified-editorial-ui-kit-theme";
+          const themeButtons = Array.from(root.querySelectorAll("[data-ui-kit-theme]"));
+          const media = window.matchMedia("(prefers-color-scheme: dark)");
+          const applyTheme = (preference) => {
+            root.dataset.themePreference = preference;
+            root.dataset.theme = preference === "system" ? (media.matches ? "dark" : "light") : preference;
+            themeButtons.forEach((button) => button.setAttribute("aria-pressed", String(button.getAttribute("data-ui-kit-theme") === preference)));
+          };
+          themeButtons.forEach((button) => button.addEventListener("click", () => {
+            const preference = button.getAttribute("data-ui-kit-theme") || "system";
+            try { localStorage.setItem(themeKey, preference); } catch {}
+            applyTheme(preference);
+          }));
+          const onSystemChange = () => { if (root.dataset.themePreference === "system") applyTheme("system"); };
+          media.addEventListener("change", onSystemChange);
+          applyTheme(root.dataset.themePreference || "system");
+
+          const quickView = root.querySelector("[data-ui-kit-quick-view]");
+          const panel = root.querySelector("[data-ui-kit-quick-view-panel]");
+          const openers = Array.from(root.querySelectorAll("[data-ui-kit-quick-view-open]"));
+          const closers = Array.from(root.querySelectorAll("[data-ui-kit-quick-view-close]"));
+          let returnFocus = null;
+          const focusableSelector = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+          const closeQuickView = () => {
+            if (!(quickView instanceof HTMLElement) || quickView.hidden) return;
+            quickView.classList.remove("is-open");
+            window.setTimeout(() => { quickView.hidden = true; }, window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 240);
+            document.body.classList.remove("ui-kit-dialog-open");
+            if (returnFocus instanceof HTMLElement) returnFocus.focus();
+          };
+          const openQuickView = (trigger) => {
+            if (!(quickView instanceof HTMLElement) || !(panel instanceof HTMLElement)) return;
+            returnFocus = trigger;
+            quickView.hidden = false;
+            document.body.classList.add("ui-kit-dialog-open");
+            requestAnimationFrame(() => { quickView.classList.add("is-open"); panel.focus(); });
+          };
+          openers.forEach((opener) => opener.addEventListener("click", () => openQuickView(opener)));
+          closers.forEach((closer) => closer.addEventListener("click", closeQuickView));
+          document.addEventListener("keydown", (event) => {
+            if (!(quickView instanceof HTMLElement) || quickView.hidden) return;
+            if (event.key === "Escape") { event.preventDefault(); closeQuickView(); return; }
+            if (event.key !== "Tab" || !(panel instanceof HTMLElement)) return;
+            const focusable = Array.from(panel.querySelectorAll(focusableSelector)).filter((node) => node instanceof HTMLElement && !node.hidden);
+            const first = focusable[0]; const last = focusable[focusable.length - 1];
+            if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+            else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+          });
+
+          const toast = root.querySelector("[data-ui-kit-toast]");
+          let toastTimer;
+          root.querySelector("[data-ui-kit-toast-trigger]")?.addEventListener("click", () => {
+            if (!(toast instanceof HTMLElement)) return;
+            window.clearTimeout(toastTimer); toast.hidden = false; toast.classList.add("is-visible");
+            toastTimer = window.setTimeout(() => { toast.classList.remove("is-visible"); toast.hidden = true; }, 2600);
+          });
+
+          const fadeDemo = root.querySelector("[data-ui-kit-fade-demo]");
+          root.querySelector("[data-ui-kit-fade-replay]")?.addEventListener("click", () => {
+            if (!(fadeDemo instanceof HTMLElement)) return;
+            fadeDemo.classList.remove("is-replaying"); void fadeDemo.offsetWidth; fadeDemo.classList.add("is-replaying");
+          });
+        })();
+      </script>
+    </div>
+  </body>
+</html>
