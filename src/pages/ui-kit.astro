@@ -147,7 +147,36 @@ const spacing = [["space.1", 4], ["space.2", 8], ["space.3", 12], ["space.4", 16
             <form class="ui-kit-form-showcase" novalidate>
               <label class="ui-kit-field"><span>Название компании</span><input type="text" placeholder="Например, Signal Works" /><small>Введите название или домен</small></label>
               <label class="ui-kit-field ui-kit-field--search"><span>Поиск по каталогу</span><div><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg><input type="search" value="Product studio" /></div></label>
-              <label class="ui-kit-field"><span>Тип компании</span><select><option>Все типы</option><option selected>Product studio</option><option>Интегратор</option></select></label>
+              <div class="ui-kit-field">
+                <label for="ui-kit-company-type">Тип компании</label>
+                <div class="ui-kit-select" data-state="closed">
+                  <select id="ui-kit-company-type" class="ui-kit-select__control">
+                    <option>Все типы</option><option selected>Product studio</option><option>Интегратор</option>
+                  </select>
+                  <span class="ui-kit-select__icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"></path></svg></span>
+                </div>
+                <small>Нативный select сохраняет системное меню и keyboard navigation</small>
+              </div>
+              <div class="ui-kit-field ui-kit-field--select-error">
+                <label for="ui-kit-company-type-error">Тип компании · error</label>
+                <div class="ui-kit-select ui-kit-select--error" data-state="closed">
+                  <select id="ui-kit-company-type-error" class="ui-kit-select__control" aria-invalid="true" aria-describedby="ui-kit-company-type-error-message">
+                    <option selected value="">Выберите тип</option><option>Product studio</option><option>Интегратор</option>
+                  </select>
+                  <span class="ui-kit-select__icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"></path></svg></span>
+                </div>
+                <small id="ui-kit-company-type-error-message">Выберите один вариант</small>
+              </div>
+              <div class="ui-kit-field">
+                <label for="ui-kit-company-type-disabled">Тип компании · disabled</label>
+                <div class="ui-kit-select" data-state="closed">
+                  <select id="ui-kit-company-type-disabled" class="ui-kit-select__control" disabled>
+                    <option selected>Источник недоступен</option>
+                  </select>
+                  <span class="ui-kit-select__icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"></path></svg></span>
+                </div>
+                <small>Выбор недоступен, пока источник не отвечает</small>
+              </div>
               <label class="ui-kit-field ui-kit-field--error"><span>Рабочий email</span><input type="email" value="name@" aria-invalid="true" aria-describedby="email-error" /><small id="email-error">Укажите полный адрес, например name@company.ru</small></label>
               <label class="ui-kit-field"><span>Комментарий</span><textarea rows="4">Нужна компания с прозрачным форматом удалённой работы.</textarea></label>
               <label class="ui-kit-field"><span>Read-only evidence</span><input type="text" value="Проверено 31.07.2026" readonly /></label>
@@ -254,6 +283,22 @@ const spacing = [["space.1", 4], ["space.2", 8], ["space.3", 12], ["space.4", 16
           const onSystemChange = () => { if (root.dataset.themePreference === "system") applyTheme("system"); };
           media.addEventListener("change", onSystemChange);
           applyTheme(root.dataset.themePreference || "system");
+
+          root.querySelectorAll(".ui-kit-select").forEach((wrapper) => {
+            if (!(wrapper instanceof HTMLElement) || wrapper.dataset.enhanced === "true") return;
+            const select = wrapper.querySelector("select");
+            if (!(select instanceof HTMLSelectElement)) return;
+            wrapper.dataset.enhanced = "true";
+            const open = () => { if (!select.disabled) wrapper.dataset.state = "open"; };
+            const close = () => { wrapper.dataset.state = "closed"; };
+            select.addEventListener("pointerdown", open);
+            select.addEventListener("keydown", (event) => {
+              if (["Enter", " ", "ArrowDown", "ArrowUp"].includes(event.key)) open();
+              if (event.key === "Escape") close();
+            });
+            select.addEventListener("change", close);
+            select.addEventListener("blur", close);
+          });
 
           const quickView = root.querySelector("[data-ui-kit-quick-view]");
           const panel = root.querySelector("[data-ui-kit-quick-view-panel]");
