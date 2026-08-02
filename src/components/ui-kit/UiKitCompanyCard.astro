@@ -108,11 +108,11 @@ const meta = `${type} · ${location} · ${size}`;
     </div>
   )}
 
-  <div class="ui-kit-chip-row ui-kit-company-card__tags" aria-label="Ключевые признаки">
+  <div class="ui-kit-label-row ui-kit-company-card__tags" aria-label="Ключевые признаки">
     {visibleChips.map((chip, index) => (
-      <span class:list={["ui-kit-chip", `ui-kit-chip--${chipTones[index] || "neutral"}`]}>{chip}</span>
+      <span class:list={["ui-kit-tag", "ui-kit-label--m", `ui-kit-tag--${chipTones[index] || "neutral"}`]}>{chip}</span>
     ))}
-    {hiddenChipCount > 0 && <span class="ui-kit-chip ui-kit-chip--overflow" aria-label={`Ещё признаков: ${hiddenChipCount}`}>+{hiddenChipCount}</span>}
+    {hiddenChipCount > 0 && <span class="ui-kit-tag ui-kit-tag--overflow ui-kit-label--m" aria-label={`Ещё признаков: ${hiddenChipCount}`}>+{hiddenChipCount}</span>}
   </div>
 
   <div class="ui-kit-company-card__evidence-summary">
