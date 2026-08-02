@@ -224,15 +224,69 @@ const spacing = [["space.1", 4], ["space.2", 8], ["space.3", 12], ["space.4", 16
           <UiKitSection id="company-card" eyebrow="11 · Product pattern" title="Company Card" description="Четыре сценария используют только локальные вымышленные данные и проверяют длинный текст, missing, stale и conflict states." wide>
             <p class="ui-kit-mock-note">Все компании и метрики ниже — fictional samples для проверки устойчивости интерфейса.</p>
             <div class="ui-kit-company-grid">
-              <UiKitCompanyCard scenario="A · Enriched & verified" initials="NW" name="Northstar Digital Lab" type="Product studio" location="Санкт-Петербург" facts={[{label:"Найм",value:"Точечный · 5–10"},{label:"Формат",value:"Удалённо"},{label:"Размер",value:"201–500"}]} chips={["IT-аккредитация","Прямой отклик","International"]} rating="4,7" ratingNote="186 внешних отзывов" freshness="Проверено 7 дней назад" trustTone="verified" openQuickView />
-              <UiKitCompanyCard scenario="B · Incomplete profile" initials="SW" name="Signal Works" type="Data consulting" location="Казань" facts={[{label:"Найм",value:"Не проверено"},{label:"Формат",value:"Гибрид"},{label:"Размер",value:"Не раскрыт"}]} chips={["Нет логотипа","Размер неизвестен"]} rating="—" ratingNote="Рейтинг не найден" freshness="Данных недостаточно" trustTone="neutral" logo={false} />
-              <UiKitCompanyCard scenario="C · Stale hiring" initials="LC" name="Long Company Name Used to Test Responsive Wrapping" type="Enterprise software" location="Новосибирск · РФ и СНГ" facts={[{label:"Найм",value:"1–4 вакансии"},{label:"Формат",value:"Удалённо"},{label:"Размер",value:"51–200"}]} chips={["Backend","B2B","Distributed"]} rating="4,2" ratingNote="28 внешних отзывов" freshness="Требует перепроверки" trustTone="warning" />
-              <UiKitCompanyCard scenario="D · Conflicting sources" initials="EP" name="Example Product Studio" type="UX / Product" location="Москва" facts={[{label:"Найм",value:"Источники расходятся"},{label:"Формат",value:"Remote / офис"},{label:"Размер",value:"51–200"}]} chips={["Conflict","Design","Product"]} rating="4,5" ratingNote="12 отзывов · малая выборка" freshness="Есть расхождения" trustTone="critical" selected />
+              <UiKitCompanyCard scenario="A · Enriched + verified" initials="NW" name="Northstar Digital Lab" type="Product studio" location="Санкт-Петербург" size="201–500" facts={[{label:"Найм",value:"Точечный · 5–10 вакансий"},{label:"Формат",value:"Удалённо · РФ"}]} chips={["IT-аккредитация","Прямой отклик","International"]} chipTones={["verified","employment","neutral"]} rating="4,7" ratingNote="186 внешних отзывов" freshness="Обновлено 7 дней назад" trustTone="verified" completeness="enriched" trust="verified" logoVariant="mark" />
+              <UiKitCompanyCard scenario="B · Incomplete + unknown" initials="SW" name="Signal Works" type="Data consulting" location="Казань" size="Размер не раскрыт" facts={[{label:"Найм",value:"Статус не проверен"},{label:"Формат",value:"Гибрид · Казань"}]} chips={["Data","B2B"]} rating="—" ratingNote="Рейтинг не найден" freshness="Дата обновления неизвестна" trustTone="neutral" completeness="incomplete" trust="unknown" logoVariant="generic" />
+              <UiKitCompanyCard scenario="C · Complete + stale" initials="LC" name="Long Company Name Used to Test Responsive Wrapping" type="Enterprise software" location="Новосибирск · РФ и страны СНГ" size="51–200" facts={[{label:"Найм",value:"Ограниченный активный найм · 1–4 вакансии"},{label:"Формат",value:"Удалённо · РФ и СНГ"}]} chips={["Backend","B2B","Distributed"]} rating="4,2" ratingNote="28 внешних отзывов" freshness="Профиль требует обновления" trustTone="warning" completeness="complete" trust="stale" logoVariant="initials" />
+              <UiKitCompanyCard scenario="D · Complete + conflicting" initials="EP" name="Example Product Studio" type="UX / Product" location="Москва" size="51–200" facts={[{label:"Найм",value:"Точечный · 3–6 вакансий"},{label:"Формат",value:"Remote / офис · РФ"}]} chips={["Design","Product","B2B"]} rating="4,5" ratingNote="12 внешних отзывов" ratingQuality="Малая выборка" freshness="Обновлено 18 дней назад" trustTone="critical" trustMessage="Источники расходятся по формату работы" completeness="complete" trust="conflicting" logoVariant="initials" />
+            </div>
+
+            <div class="ui-kit-card-state-doc" aria-labelledby="card-state-model-title">
+              <div>
+                <p class="ui-kit-eyebrow">Independent state model</p>
+                <h3 id="card-state-model-title">Состояния не конкурируют за один border</h3>
+              </div>
+              <dl>
+                <div><dt>Completeness</dt><dd>enriched · complete · incomplete · minimal</dd></div>
+                <div><dt>Trust</dt><dd>verified · stale · conflicting · low-confidence · unknown</dd></div>
+                <div><dt>Interaction</dt><dd>default · quick-view-open · compare-selected · favorite-selected</dd></div>
+                <div><dt>Access</dt><dd>public · premium-preview · unavailable</dd></div>
+              </dl>
+            </div>
+
+            <div class="ui-kit-company-state-grid" aria-label="Дополнительные состояния Company Card">
+              <article class="ui-kit-company-state ui-kit-company-state--premium" data-access="premium-preview">
+                <span class="ui-kit-badge ui-kit-badge--premium">Premium preview</span>
+                <h3>Динамика найма</h3>
+                <p>Публичные факты остаются видимыми. Расширенная аналитика не показана.</p>
+                <div class="ui-kit-premium-preview"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg><span>Доступно в расширенном профиле</span></div>
+              </article>
+              <article class="ui-kit-company-state" data-provenance="platform-analysis">
+                <span class="ui-kit-badge ui-kit-badge--beta">Персональный preview</span>
+                <h3>Подходит по 4 из 6 критериев</h3>
+                <p>Аналитика платформы · производный сигнал, не проверенный факт.</p>
+              </article>
+              <article class="ui-kit-company-state ui-kit-company-state--compare is-compare-selected" data-interaction="compare-selected" data-ui-kit-compare-demo>
+                <span class="ui-kit-badge ui-kit-badge--beta">Compare selected</span>
+                <h3>Northstar Digital Lab</h3>
+                <p>Interaction state не меняет trust или completeness компании.</p>
+                <button class="ui-kit-button ui-kit-button--tertiary ui-kit-button--compact is-active" type="button" aria-pressed="true" data-ui-kit-compare>В сравнении</button>
+              </article>
+              <article class="ui-kit-company-state" data-access="unavailable">
+                <span class="ui-kit-badge">Unavailable</span>
+                <h3>Данные временно недоступны</h3>
+                <p>Источник не отвечает. Это состояние отличается от missing, loading и access restriction.</p>
+              </article>
+              <article class="ui-kit-company-state" aria-busy="true" aria-label="Загрузка карточки компании">
+                <span class="ui-kit-badge">Card skeleton</span>
+                <div class="ui-kit-company-card-skeleton" aria-hidden="true"><i></i><div><b></b><b></b></div><span></span><span></span><span></span></div>
+              </article>
+              <article class="ui-kit-company-state" aria-busy="true" aria-label="Загрузка быстрого просмотра">
+                <span class="ui-kit-badge">Quick View loading</span>
+                <div class="ui-kit-quick-view-skeleton" aria-hidden="true"><b></b><span></span><span></span><span></span></div>
+              </article>
+              <article class="ui-kit-company-state">
+                <span class="ui-kit-badge">Logo fallbacks</span>
+                <div class="ui-kit-logo-variants" aria-label="Варианты логотипа">
+                  <div><span class="ui-kit-company-card__logo ui-kit-company-card__logo--mark" aria-hidden="true"><b class="ui-kit-company-card__brand-mark">N</b></span><small>Brand mark</small></div>
+                  <div><span class="ui-kit-company-card__logo ui-kit-company-card__logo--initials" aria-hidden="true">LNG</span><small>Initials</small></div>
+                  <div><span class="ui-kit-company-card__logo ui-kit-company-card__logo--generic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V7l8-4 8 4v14M8 10h2m4 0h2m-8 4h2m4 0h2M9 21v-3h6v3"></path></svg></span><small>Safe fallback</small></div>
+                </div>
+              </article>
             </div>
           </UiKitSection>
 
           <UiKitSection id="quick-view" eyebrow="12 · Overlay pattern" title="Company Quick View" description="Desktop sidepage, tablet drawer и full-screen mobile dialog используют один DOM и сохраняют контекст каталога.">
-            <div class="ui-kit-quick-view-launch"><div><strong>Northstar Digital Lab</strong><span>Decision snapshot без перехода со страницы</span></div><button class="ui-kit-button ui-kit-button--primary" type="button" data-ui-kit-quick-view-open>Открыть Quick View</button></div>
+            <div class="ui-kit-quick-view-launch"><div><strong>Northstar Digital Lab</strong><span>Краткий профиль без выхода из каталога</span></div><button class="ui-kit-button ui-kit-button--primary" type="button" data-ui-kit-quick-view-open>Быстрый просмотр</button></div>
           </UiKitSection>
 
           <UiKitSection id="company-page" eyebrow="13 · Page pattern" title="Reduced Company Page" description="Реалистичный L2 template показывает факты, внешние сигналы, employer claim, missing data и premium teaser как разные типы данных." wide>
@@ -305,20 +359,44 @@ const spacing = [["space.1", 4], ["space.2", 8], ["space.3", 12], ["space.4", 16
           const openers = Array.from(root.querySelectorAll("[data-ui-kit-quick-view-open]"));
           const closers = Array.from(root.querySelectorAll("[data-ui-kit-quick-view-close]"));
           let returnFocus = null;
+          let activeCard = null;
+          const backgroundRegions = Array.from(root.querySelectorAll(":scope > header, :scope > nav, :scope > main, :scope > footer"));
           const focusableSelector = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+          const updateCardInteraction = (card) => {
+            if (!(card instanceof HTMLElement)) return;
+            card.dataset.interaction = card.classList.contains("is-quick-view-open") ? "quick-view-open" : card.classList.contains("is-compare-selected") ? "compare-selected" : card.classList.contains("is-favorite-selected") ? "favorite-selected" : "default";
+          };
           const closeQuickView = () => {
             if (!(quickView instanceof HTMLElement) || quickView.hidden) return;
             quickView.classList.remove("is-open");
             window.setTimeout(() => { quickView.hidden = true; }, window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 240);
             document.body.classList.remove("ui-kit-dialog-open");
+            backgroundRegions.forEach((region) => { if (region instanceof HTMLElement) region.inert = false; });
+            if (activeCard instanceof HTMLElement) { activeCard.classList.remove("is-quick-view-open"); updateCardInteraction(activeCard); }
             if (returnFocus instanceof HTMLElement) returnFocus.focus();
+            activeCard = null;
           };
           const openQuickView = (trigger) => {
             if (!(quickView instanceof HTMLElement) || !(panel instanceof HTMLElement)) return;
             returnFocus = trigger;
+            activeCard = trigger.closest("[data-ui-kit-company-card]");
+            if (activeCard instanceof HTMLElement) { activeCard.classList.add("is-quick-view-open"); updateCardInteraction(activeCard); }
+            const setText = (selector, value) => { const node = quickView.querySelector(selector); if (node && value) node.textContent = value; };
+            setText("[data-ui-kit-qv-title]", trigger.dataset.companyName);
+            setText("[data-ui-kit-qv-meta]", trigger.dataset.companyMeta);
+            setText("[data-ui-kit-qv-logo]", trigger.dataset.companyInitials);
+            setText("[data-ui-kit-qv-hiring]", trigger.dataset.companyHiring);
+            setText("[data-ui-kit-qv-hiring-detail]", trigger.dataset.companyHiring);
+            setText("[data-ui-kit-qv-format]", trigger.dataset.companyFormat);
+            setText("[data-ui-kit-qv-format-detail]", trigger.dataset.companyFormat);
+            setText("[data-ui-kit-qv-rating]", trigger.dataset.companyRating && trigger.dataset.companyRatingNote ? `${trigger.dataset.companyRating} · ${trigger.dataset.companyRatingNote}` : "—");
+            setText("[data-ui-kit-qv-rating-score]", trigger.dataset.companyRating);
+            setText("[data-ui-kit-qv-rating-note]", trigger.dataset.companyRatingNote);
+            setText("[data-ui-kit-qv-freshness]", trigger.dataset.companyFreshness);
             quickView.hidden = false;
             document.body.classList.add("ui-kit-dialog-open");
-            requestAnimationFrame(() => { quickView.classList.add("is-open"); panel.focus(); });
+            backgroundRegions.forEach((region) => { if (region instanceof HTMLElement) region.inert = true; });
+            requestAnimationFrame(() => { quickView.classList.add("is-open"); const closeButton = quickView.querySelector(".ui-kit-quick-view__header [data-ui-kit-quick-view-close]"); if (closeButton instanceof HTMLElement) closeButton.focus(); else panel.focus(); });
           };
           openers.forEach((opener) => opener.addEventListener("click", () => openQuickView(opener)));
           closers.forEach((closer) => closer.addEventListener("click", closeQuickView));
@@ -331,6 +409,31 @@ const spacing = [["space.1", 4], ["space.2", 8], ["space.3", 12], ["space.4", 16
             if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
             else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
           });
+
+          root.querySelectorAll("[data-ui-kit-favorite]").forEach((button) => button.addEventListener("click", () => {
+            if (!(button instanceof HTMLButtonElement)) return;
+            const pressed = button.getAttribute("aria-pressed") !== "true";
+            button.setAttribute("aria-pressed", String(pressed));
+            button.classList.toggle("is-pressed", pressed);
+            button.title = pressed ? "Удалить из избранного" : "Добавить в избранное";
+            const card = button.closest("[data-ui-kit-company-card]");
+            if (card instanceof HTMLElement) { card.classList.toggle("is-favorite-selected", pressed); updateCardInteraction(card); }
+          }));
+
+          root.querySelectorAll("[data-ui-kit-compare]").forEach((button) => button.addEventListener("click", () => {
+            if (!(button instanceof HTMLButtonElement)) return;
+            const pressed = button.getAttribute("aria-pressed") !== "true";
+            button.setAttribute("aria-pressed", String(pressed));
+            button.classList.toggle("is-active", pressed);
+            if (!button.classList.contains("ui-kit-icon-button")) button.textContent = pressed ? "В сравнении" : (button.closest("[data-ui-kit-quick-view]") ? "Добавить в сравнение" : "Сравнить");
+            const card = button.closest("[data-ui-kit-company-card], [data-ui-kit-compare-demo]") || activeCard;
+            if (card instanceof HTMLElement) {
+              card.classList.toggle("is-compare-selected", pressed);
+              const cardButton = card.querySelector("[data-ui-kit-compare]");
+              if (cardButton instanceof HTMLButtonElement && cardButton !== button) { cardButton.setAttribute("aria-pressed", String(pressed)); cardButton.classList.toggle("is-active", pressed); cardButton.textContent = pressed ? "В сравнении" : "Сравнить"; }
+              updateCardInteraction(card);
+            }
+          }));
 
           const toast = root.querySelector("[data-ui-kit-toast]");
           let toastTimer;
