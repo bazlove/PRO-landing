@@ -74,8 +74,41 @@
   --ui-color-status-neutral-bg: #efefea;
   --ui-color-status-insight: #4254cc;
   --ui-color-status-insight-bg: #f1f3ff;
-  --ui-color-status-claim: #b8432b;
-  --ui-color-status-claim-bg: #fff4f0;
+  --ui-color-status-claim: #6f5b3e;
+  --ui-color-status-claim-bg: #f6f1e7;
+  --ui-color-status-external: #315f9a;
+  --ui-color-status-external-bg: #eef5ff;
+  --ui-color-status-ugc: #69577f;
+  --ui-color-status-ugc-bg: #f3eff8;
+
+  /* Semantic short-label tokens */
+  --ui-label-interactive-bg: var(--ui-color-surface-primary);
+  --ui-label-interactive-bg-hover: var(--ui-color-surface-secondary);
+  --ui-label-interactive-bg-selected: var(--ui-color-brand-soft);
+  --ui-label-interactive-border: var(--ui-color-border-default);
+  --ui-label-interactive-border-selected: var(--ui-color-brand-primary);
+  --ui-label-interactive-text: var(--ui-color-text-secondary);
+  --ui-label-tag-bg: var(--ui-color-surface-secondary);
+  --ui-label-tag-border: var(--ui-color-border-default);
+  --ui-label-tag-text: var(--ui-color-text-secondary);
+  --ui-label-verified-bg: var(--ui-color-status-verified-bg);
+  --ui-label-verified-text: var(--ui-color-status-verified);
+  --ui-label-stale-bg: var(--ui-color-status-warning-bg);
+  --ui-label-stale-text: var(--ui-color-status-warning);
+  --ui-label-conflict-bg: var(--ui-color-status-critical-bg);
+  --ui-label-conflict-text: var(--ui-color-status-critical);
+  --ui-label-unknown-bg: var(--ui-color-status-neutral-bg);
+  --ui-label-unknown-text: var(--ui-color-status-neutral);
+  --ui-label-employer-claim-bg: var(--ui-color-status-claim-bg);
+  --ui-label-employer-claim-text: var(--ui-color-status-claim);
+  --ui-label-external-source-bg: var(--ui-color-status-external-bg);
+  --ui-label-external-source-text: var(--ui-color-status-external);
+  --ui-label-platform-analysis-bg: var(--ui-color-status-insight-bg);
+  --ui-label-platform-analysis-text: var(--ui-color-status-insight);
+  --ui-label-user-generated-bg: var(--ui-color-status-ugc-bg);
+  --ui-label-user-generated-text: var(--ui-color-status-ugc);
+  --ui-label-premium-bg: var(--ui-color-status-premium-bg);
+  --ui-label-premium-text: var(--ui-color-status-premium);
 
   /* Spacing, shape, grid and motion */
   --ui-space-0: 0;
@@ -125,6 +158,11 @@
   --ui-control-value-font-weight: var(--ui-font-weight-regular);
   --ui-control-label-font-weight: var(--ui-font-weight-semibold);
   --ui-control-status-font-weight: var(--ui-font-weight-medium);
+  --ui-chip-font-weight: var(--ui-font-weight-medium);
+  --ui-tag-font-weight: var(--ui-font-weight-regular);
+  --ui-feature-tag-font-weight: var(--ui-font-weight-medium);
+  --ui-badge-font-weight: var(--ui-font-weight-medium);
+  --ui-count-badge-font-weight: var(--ui-font-weight-semibold);
   --ui-card-title-font-weight: var(--ui-font-weight-semibold);
   --ui-card-value-font-weight: var(--ui-font-weight-medium);
   --ui-card-meta-font-weight: var(--ui-font-weight-regular);
@@ -166,8 +204,12 @@
   --ui-color-status-neutral-bg: #202d3d;
   --ui-color-status-insight: #a6b0ff;
   --ui-color-status-insight-bg: #202a50;
-  --ui-color-status-claim: #ffab91;
-  --ui-color-status-claim-bg: #3a221f;
+  --ui-color-status-claim: #d8c29c;
+  --ui-color-status-claim-bg: #332c21;
+  --ui-color-status-external: #9fc5ff;
+  --ui-color-status-external-bg: #172b45;
+  --ui-color-status-ugc: #cab8df;
+  --ui-color-status-ugc-bg: #2c2536;
   --ui-shadow-hover: 0 12px 28px rgb(0 0 0 / 28%);
   --ui-shadow-dropdown: 0 18px 42px rgb(0 0 0 / 40%);
   --ui-shadow-overlay: -18px 0 48px rgb(0 0 0 / 48%);
