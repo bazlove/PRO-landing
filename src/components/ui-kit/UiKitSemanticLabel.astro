@@ -1,0 +1,67 @@
+---
+import { semanticLabels, type SemanticLabelId } from "../../lib/ui-kit/semanticLabels";
+
+interface Props {
+  id: SemanticLabelId;
+  size?: "s" | "m";
+  label?: string;
+  selected?: boolean;
+  disabled?: boolean;
+  removable?: boolean;
+  demoState?: "hover" | "focus" | "pressed";
+}
+
+const {
+  id,
+  size = "m",
+  label: labelOverride,
+  selected = false,
+  disabled = false,
+  removable = false,
+  demoState,
+} = Astro.props;
+const definition = semanticLabels[id];
+const label = labelOverride || definition.label;
+const isRemovable = removable || definition.variant === "removable";
+const iconPaths = {
+  check: "m5 12 4 4 10-10",
+  refresh: "M20 11a8 8 0 1 0-2.3 5.7M20 5v6h-6",
+  alert: "M12 9v4m0 4h.01M10.3 3.8 2 18a2 2 0 0 0 1.7 3h16.6a2 2 0 0 0 1.7-3L13.7 3.8a2 2 0 0 0-3.4 0Z",
+  diamond: "m12 3 8 9-8 9-8-9 8-9Z",
+  spark: "M12 3v4m0 10v4M3 12h4m10 0h4m-3.6-6.4-2.8 2.8m-5.2 5.2-2.8 2.8m10.8 0-2.8-2.8M9.4 8.4 6.6 5.6",
+} as const;
+const iconPath = definition.icon ? iconPaths[definition.icon] : undefined;
+const classes = [
+  `ui-kit-${definition.family}`,
+  `ui-kit-${definition.family}--${definition.variant}`,
+  `ui-kit-label--${size}`,
+  selected && "is-selected",
+  demoState && `is-${demoState}-demo`,
+];
+---
+
+{definition.family === "chip" ? (
+  <button
+    class:list={classes}
+    type="button"
+    aria-pressed={isRemovable ? undefined : (selected ? "true" : "false")}
+    aria-label={isRemovable ? `Снять фильтр ${label}` : undefined}
+    disabled={disabled}
+    data-ui-kit-chip-toggle={!isRemovable ? "" : undefined}
+    data-ui-kit-chip-remove={isRemovable ? "" : undefined}
+  >
+    {iconPath && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={iconPath}></path></svg>}
+    <span>{label}</span>
+    {isRemovable && <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"></path></svg>}
+  </button>
+) : definition.family === "tag" ? (
+  <span class:list={classes}>
+    {iconPath && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={iconPath}></path></svg>}
+    <span>{label}</span>
+  </span>
+) : (
+  <span class:list={classes}>
+    {iconPath && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={iconPath}></path></svg>}
+    <span>{label}</span>
+  </span>
+)}
