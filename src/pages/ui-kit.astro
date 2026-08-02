@@ -5,6 +5,8 @@ import UiKitTrustState from "../components/ui-kit/UiKitTrustState.astro";
 import UiKitCompanyCard from "../components/ui-kit/UiKitCompanyCard.astro";
 import UiKitCompanyQuickView from "../components/ui-kit/UiKitCompanyQuickView.astro";
 import UiKitCompanyPagePreview from "../components/ui-kit/UiKitCompanyPagePreview.astro";
+import UiKitSemanticLabel from "../components/ui-kit/UiKitSemanticLabel.astro";
+import { semanticLabels } from "../lib/ui-kit/semanticLabels";
 import "../styles/ui-kit/tokens.css";
 import "../styles/ui-kit/ui-kit.css";
 
@@ -189,9 +191,71 @@ const spacing = [["space.1", 4], ["space.2", 8], ["space.3", 12], ["space.4", 16
             </form>
           </UiKitSection>
 
-          <UiKitSection id="chips" eyebrow="08 · Chips, badges & tags" title="Цвет несёт смысл, label объясняет его">
-            <div class="ui-kit-demo-band"><h3>Chips</h3><div class="ui-kit-chip-row"><button class="ui-kit-chip ui-kit-chip--active" type="button" aria-pressed="true">Активный найм</button><button class="ui-kit-chip ui-kit-chip--removable" type="button">Москва <span aria-hidden="true">×</span></button><span class="ui-kit-chip ui-kit-chip--category">Product studio</span><span class="ui-kit-chip ui-kit-chip--verified">Удалённо</span><span class="ui-kit-chip ui-kit-chip--selected">Выбрано для сравнения</span></div></div>
-            <div class="ui-kit-demo-band"><h3>Badges</h3><div class="ui-kit-chip-row"><span class="ui-kit-badge ui-kit-badge--verified">Проверено</span><span class="ui-kit-badge ui-kit-badge--warning">Требует перепроверки</span><span class="ui-kit-badge ui-kit-badge--premium">Premium</span><span class="ui-kit-badge ui-kit-badge--beta">Beta</span><span class="ui-kit-badge ui-kit-badge--claim">По данным компании</span><span class="ui-kit-badge ui-kit-badge--external">Внешний сигнал</span></div></div>
+          <UiKitSection id="chips" eyebrow="08 · Chips, badges & tags" title="Семантика определяет компонент" description="Короткая подпись получает family и variant по смыслу, а не по желаемому цвету.">
+            <dl class="ui-kit-label-rules" aria-label="Правила выбора компонента">
+              <div><dt>Chip</dt><dd>Пользователь может взаимодействовать со значением.</dd></div>
+              <div><dt>Tag</dt><dd>Описывает характеристику компании или сущности.</dd></div>
+              <div><dt>Badge</dt><dd>Передаёт статус, источник, доступ или lifecycle.</dd></div>
+            </dl>
+
+            <div class="ui-kit-label-family-grid">
+              <article class="ui-kit-label-family">
+                <header><span>A</span><div><h3>Interactive Chips</h3><p>Фильтры, пользовательский выбор и удаляемые значения.</p></div></header>
+                <div class="ui-kit-label-example"><small>Default / selected</small><div class="ui-kit-label-row"><UiKitSemanticLabel id="active_hiring" /><UiKitSemanticLabel id="remote" selected /><UiKitSemanticLabel id="comparison" selected /></div></div>
+                <div class="ui-kit-label-example"><small>Hover / focus-visible / pressed</small><div class="ui-kit-label-row"><UiKitSemanticLabel id="active_hiring" label="Hover" demoState="hover" /><UiKitSemanticLabel id="active_hiring" label="Focus" demoState="focus" /><UiKitSemanticLabel id="active_hiring" label="Pressed" selected demoState="pressed" /></div></div>
+                <div class="ui-kit-label-example"><small>Removable / disabled</small><div class="ui-kit-label-row"><span class="ui-kit-removable-slot"><UiKitSemanticLabel id="moscow" removable /><span class="ui-kit-removal-status" role="status" aria-live="polite"></span></span><UiKitSemanticLabel id="remote" disabled /></div></div>
+                <div class="ui-kit-label-example"><small>Long label wraps safely</small><UiKitSemanticLabel id="active_hiring" label="Международная распределённая команда" /></div>
+              </article>
+
+              <article class="ui-kit-label-family">
+                <header><span>B</span><div><h3>Static Tags</h3><p>Неинтерактивная taxonomy. На карточке показываются максимум два тега и <code>+N</code>.</p></div></header>
+                <div class="ui-kit-label-example"><small>Taxonomy</small><div class="ui-kit-label-row"><UiKitSemanticLabel id="product_studio" /><UiKitSemanticLabel id="b2b" /><UiKitSemanticLabel id="backend" /><UiKitSemanticLabel id="international" /><UiKitSemanticLabel id="tag_overflow" /></div></div>
+                <div class="ui-kit-label-example"><small>Feature / verified legal</small><div class="ui-kit-label-row"><UiKitSemanticLabel id="direct_application" /><UiKitSemanticLabel id="it_accredited" /></div></div>
+                <p class="ui-kit-label-note"><code>+N</code> остаётся статическим: критические trust-состояния никогда не скрываются в overflow.</p>
+              </article>
+
+              <article class="ui-kit-label-family">
+                <header><span>C</span><div><h3>Trust & Status Badges</h3><p>Качество, свежесть и согласованность данных. Warning всегда содержит icon и text.</p></div></header>
+                <div class="ui-kit-label-example"><small>Trust states</small><div class="ui-kit-label-row"><UiKitSemanticLabel id="verified" /><UiKitSemanticLabel id="stale" /><UiKitSemanticLabel id="conflicting" /><UiKitSemanticLabel id="insufficient_data" /><UiKitSemanticLabel id="unchecked" /></div></div>
+              </article>
+
+              <article class="ui-kit-label-family">
+                <header><span>D</span><div><h3>Provenance, Access & Lifecycle</h3><p>Происхождение не означает ошибку; доступ и lifecycle не смешиваются с trust.</p></div></header>
+                <div class="ui-kit-label-example"><small>Provenance</small><div class="ui-kit-label-row"><UiKitSemanticLabel id="employer_claim" /><UiKitSemanticLabel id="external_source" /><UiKitSemanticLabel id="platform_analysis" /><UiKitSemanticLabel id="user_generated" /></div></div>
+                <div class="ui-kit-label-example"><small>Access / lifecycle</small><div class="ui-kit-label-row"><UiKitSemanticLabel id="premium" /><UiKitSemanticLabel id="beta" /><UiKitSemanticLabel id="coming_soon" /><UiKitSemanticLabel id="unavailable" /></div></div>
+              </article>
+            </div>
+
+            <div class="ui-kit-label-system-grid">
+              <article class="ui-kit-label-panel">
+                <h3>E · Size matrix</h3>
+                <div class="ui-kit-label-size-row"><b>S</b><UiKitSemanticLabel id="remote" size="s" /><UiKitSemanticLabel id="product_studio" size="s" /><UiKitSemanticLabel id="verified" size="s" /></div>
+                <div class="ui-kit-label-size-row"><b>M</b><UiKitSemanticLabel id="remote" size="m" /><UiKitSemanticLabel id="product_studio" size="m" /><UiKitSemanticLabel id="verified" size="m" /></div>
+              </article>
+              <article class="ui-kit-label-panel">
+                <h3>Count badges</h3>
+                <div class="ui-kit-label-row" aria-label="Numeric count badges"><span class="ui-kit-count-badge">3</span><span class="ui-kit-count-badge">+3</span><span class="ui-kit-count-badge">12</span><span class="ui-kit-count-badge">99+</span></div>
+                <p>Count badge — число действий или результатов. <code>+N</code> tag — скрытые характеристики.</p>
+              </article>
+              <article class="ui-kit-label-panel">
+                <h3>Loading geometry</h3>
+                <div class="ui-kit-label-row" aria-label="Загрузка labels" aria-busy="true"><span class="ui-kit-label-skeleton is-chip"></span><span class="ui-kit-label-skeleton is-tag"></span><span class="ui-kit-label-skeleton is-badge"></span></div>
+                <p>Skeleton сохраняет размеры family и не показывает фиктивные labels.</p>
+              </article>
+              <article class="ui-kit-label-panel">
+                <h3>Long text</h3>
+                <div class="ui-kit-label-long-list"><UiKitSemanticLabel id="international" label="Международная распределённая команда" /><UiKitSemanticLabel id="stale" label="Требует дополнительной ручной проверки" /><UiKitSemanticLabel id="employer_claim" label="По данным официальной страницы компании" /></div>
+                <p>Tags могут переноситься; badges ограничены по ширине, но critical text не скрывается только в tooltip.</p>
+              </article>
+            </div>
+
+            <div class="ui-kit-label-registry" aria-labelledby="semantic-registry-title">
+              <div><p class="ui-kit-eyebrow">Local semantic registry</p><h3 id="semantic-registry-title">Page passes ID, registry selects family and variant</h3></div>
+              <div role="table" aria-label="Примеры semantic registry">
+                <div role="row" class="is-head"><span role="columnheader">ID</span><span role="columnheader">Family</span><span role="columnheader">Variant</span></div>
+                {(["active_hiring","product_studio","verified","conflicting","employer_claim","external_source","premium","beta"] as const).map((id) => <div role="row"><code role="cell">{id}</code><span role="cell">{semanticLabels[id].family}</span><span role="cell">{semanticLabels[id].variant}</span></div>)}
+              </div>
+            </div>
           </UiKitSection>
 
           <UiKitSection id="trust" eyebrow="09 · Trust layer" title="Evidence является частью интерфейса" description="Каждое состояние сочетает иконку, текст, источник или причину, дату и confidence там, где это уместно." wide>
@@ -353,6 +417,24 @@ const spacing = [["space.1", 4], ["space.2", 8], ["space.3", 12], ["space.4", 16
             select.addEventListener("change", close);
             select.addEventListener("blur", close);
           });
+
+          root.querySelectorAll("[data-ui-kit-chip-toggle]").forEach((chip) => chip.addEventListener("click", () => {
+            if (!(chip instanceof HTMLButtonElement)) return;
+            const selected = chip.getAttribute("aria-pressed") !== "true";
+            chip.setAttribute("aria-pressed", String(selected));
+            chip.classList.toggle("is-selected", selected);
+          }));
+
+          root.querySelectorAll("[data-ui-kit-chip-remove]").forEach((chip) => chip.addEventListener("click", () => {
+            if (!(chip instanceof HTMLButtonElement)) return;
+            const slot = chip.closest(".ui-kit-removable-slot");
+            const status = slot?.querySelector(".ui-kit-removal-status");
+            chip.classList.add("is-removing");
+            window.setTimeout(() => {
+              chip.hidden = true;
+              if (status) status.textContent = "Фильтр снят";
+            }, window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 120);
+          }));
 
           const quickView = root.querySelector("[data-ui-kit-quick-view]");
           const panel = root.querySelector("[data-ui-kit-quick-view-panel]");
