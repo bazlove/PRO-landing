@@ -125,6 +125,11 @@
   --ui-control-value-font-weight: var(--ui-font-weight-regular);
   --ui-control-label-font-weight: var(--ui-font-weight-semibold);
   --ui-control-status-font-weight: var(--ui-font-weight-medium);
+  --ui-card-title-font-weight: var(--ui-font-weight-semibold);
+  --ui-card-value-font-weight: var(--ui-font-weight-medium);
+  --ui-card-meta-font-weight: var(--ui-font-weight-regular);
+  --ui-card-tag-font-weight: var(--ui-font-weight-regular);
+  --ui-card-status-font-weight: var(--ui-font-weight-medium);
   --ui-container: 1280px;
   --ui-outer: 32px;
   --ui-gutter: 24px;
