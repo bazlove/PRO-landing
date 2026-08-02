@@ -119,6 +119,12 @@
   --ui-motion-opacity-subtle: 0.72;
   --ui-motion-blur-subtle: 6px;
   --ui-motion-effect-intensity: 0.35;
+  --ui-font-weight-regular: 400;
+  --ui-font-weight-medium: 500;
+  --ui-font-weight-semibold: 600;
+  --ui-control-value-font-weight: var(--ui-font-weight-regular);
+  --ui-control-label-font-weight: var(--ui-font-weight-semibold);
+  --ui-control-status-font-weight: var(--ui-font-weight-medium);
   --ui-container: 1280px;
   --ui-outer: 32px;
   --ui-gutter: 24px;
