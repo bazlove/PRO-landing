@@ -10,15 +10,23 @@ interface Props {
   name: string;
   type: string;
   location: string;
+  size: string;
   facts: Fact[];
   chips: string[];
+  chipTones?: Array<"verified" | "employment" | "neutral">;
   rating: string;
   ratingNote: string;
+  ratingQuality?: string;
   freshness: string;
   trustTone: "verified" | "warning" | "neutral" | "critical";
-  logo?: boolean;
-  selected?: boolean;
-  openQuickView?: boolean;
+  trustMessage?: string;
+  completeness?: "enriched" | "complete" | "incomplete" | "minimal";
+  trust?: "verified" | "stale" | "conflicting" | "low-confidence" | "unknown";
+  access?: "public" | "premium-preview" | "unavailable";
+  logoVariant?: "mark" | "initials" | "generic";
+  compareSelected?: boolean;
+  favoriteSelected?: boolean;
+  disabled?: boolean;
 }
 
 const {
@@ -27,53 +35,116 @@ const {
   name,
   type,
   location,
+  size,
   facts,
   chips,
+  chipTones = [],
   rating,
   ratingNote,
+  ratingQuality,
   freshness,
   trustTone,
-  logo = true,
-  selected = false,
-  openQuickView = false,
+  trustMessage,
+  completeness = "complete",
+  trust = "unknown",
+  access = "public",
+  logoVariant = "initials",
+  compareSelected = false,
+  favoriteSelected = false,
+  disabled = false,
 } = Astro.props;
+
+const visibleChips = chips.slice(0, 2);
+const hiddenChipCount = Math.max(0, chips.length - visibleChips.length);
+const meta = `${type} · ${location} · ${size}`;
 ---
 
-<article class:list={["ui-kit-company-card", { "is-selected": selected }]}>
+<article
+  class:list={[
+    "ui-kit-company-card",
+    { "is-compare-selected": compareSelected, "is-disabled": disabled },
+  ]}
+  data-completeness={completeness}
+  data-trust={trust}
+  data-interaction={compareSelected ? "compare-selected" : "default"}
+  data-access={access}
+  data-ui-kit-company-card
+>
   <div class="ui-kit-company-card__scenario">{scenario}</div>
   <header class="ui-kit-company-card__identity">
-    <div class:list={["ui-kit-company-card__logo", { "is-fallback": !logo }]} aria-hidden="true">
-      {initials}
+    <div class:list={["ui-kit-company-card__logo", `ui-kit-company-card__logo--${logoVariant}`]} aria-hidden="true">
+      {logoVariant === "generic" ? (
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V7l8-4 8 4v14M8 10h2m4 0h2m-8 4h2m4 0h2M9 21v-3h6v3"></path></svg>
+      ) : logoVariant === "mark" ? (
+        <span class="ui-kit-company-card__brand-mark">N</span>
+      ) : initials.slice(0, 3)}
     </div>
-    <div>
+    <div class="ui-kit-company-card__identity-text">
       <h3>{name}</h3>
-      <p>{type} · {location}</p>
+      <p>{meta}</p>
     </div>
-    <button class="ui-kit-icon-button" type="button" aria-label={`Добавить ${name} в избранное`} title="В избранное">
+    <button
+      class:list={["ui-kit-icon-button", "ui-kit-company-card__favorite", { "is-pressed": favoriteSelected }]}
+      type="button"
+      aria-label={`Добавить ${name} в избранное`}
+      aria-pressed={favoriteSelected}
+      title="Добавить в избранное"
+      data-ui-kit-favorite
+      disabled={disabled}
+    >
       <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"></path></svg>
     </button>
   </header>
 
-  <dl class="ui-kit-company-card__facts">
-    {facts.slice(0, 3).map((fact) => <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}
+  <dl class="ui-kit-company-card__decision-summary">
+    {facts.slice(0, 2).map((fact) => <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}
   </dl>
 
-  <div class="ui-kit-chip-row" aria-label="Ключевые признаки">
-    {chips.slice(0, 3).map((chip) => <span class="ui-kit-chip ui-kit-chip--category">{chip}</span>)}
+  {trustMessage && (
+    <div class:list={["ui-kit-company-card__trust-message", `is-${trustTone}`]}>
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 9v4m0 4h.01M10.3 3.8 2 18a2 2 0 0 0 1.7 3h16.6a2 2 0 0 0 1.7-3L13.7 3.8a2 2 0 0 0-3.4 0Z"></path></svg>
+      <span>{trustMessage}</span>
+      <a href="#trust">Источники</a>
+    </div>
+  )}
+
+  <div class="ui-kit-chip-row ui-kit-company-card__tags" aria-label="Ключевые признаки">
+    {visibleChips.map((chip, index) => (
+      <span class:list={["ui-kit-chip", `ui-kit-chip--${chipTones[index] || "neutral"}`]}>{chip}</span>
+    ))}
+    {hiddenChipCount > 0 && <span class="ui-kit-chip ui-kit-chip--overflow" aria-label={`Ещё признаков: ${hiddenChipCount}`}>+{hiddenChipCount}</span>}
   </div>
 
-  <div class="ui-kit-company-card__signals">
-    <div><strong>{rating}</strong><span>{ratingNote}</span></div>
+  <div class="ui-kit-company-card__evidence-summary">
+    <div class="ui-kit-company-card__rating">
+      <strong>{rating}</strong>
+      <span>{ratingNote}</span>
+      {ratingQuality && <em>{ratingQuality}</em>}
+    </div>
     <span class:list={["ui-kit-data-state", `ui-kit-data-state--${trustTone}`]}>{freshness}</span>
   </div>
 
   <footer class="ui-kit-company-card__actions">
-    {openQuickView ? (
-      <button class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" type="button" data-ui-kit-quick-view-open>Быстрый просмотр</button>
-    ) : (
-      <a class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" href="#company-page">Открыть пример</a>
-    )}
-    <button class="ui-kit-button ui-kit-button--tertiary ui-kit-button--compact" type="button">Сравнить</button>
+    <button
+      class="ui-kit-button ui-kit-button--primary ui-kit-button--compact"
+      type="button"
+      data-ui-kit-quick-view-open
+      data-company-name={name}
+      data-company-meta={meta}
+      data-company-initials={initials.slice(0, 3)}
+      data-company-hiring={facts[0]?.value || "Не указано"}
+      data-company-format={facts[1]?.value || "Не указано"}
+      data-company-rating={rating}
+      data-company-rating-note={ratingNote}
+      data-company-freshness={freshness}
+      disabled={disabled}
+    >Быстрый просмотр</button>
+    <button
+      class:list={["ui-kit-button", "ui-kit-button--tertiary", "ui-kit-button--compact", { "is-active": compareSelected }]}
+      type="button"
+      aria-pressed={compareSelected}
+      data-ui-kit-compare
+      disabled={disabled}
+    >{compareSelected ? "В сравнении" : "Сравнить"}</button>
   </footer>
 </article>
-
