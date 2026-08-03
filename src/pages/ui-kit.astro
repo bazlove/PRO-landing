@@ -26,7 +26,7 @@ const paletteGroups = [
       ["neutral.0", "#FFFFFF", "Белая поверхность"], ["neutral.25", "#FCFCFA", "Фон страницы"],
       ["neutral.50", "#F7F7F3", "Вторичный фон"], ["neutral.100", "#EFEFEA", "Недоступная поверхность"],
       ["neutral.200", "#DEDED7", "Граница"], ["neutral.300", "#C6C6BE", "Усиленная граница"],
-      ["neutral.500", "#7A7D82", "Приглушённый текст"], ["neutral.700", "#3B414A", "Вспомогательный текст"],
+      ["neutral.500", "#7A7D82", "Текст заполнителя"], ["neutral.600", "#626A75", "Приглушённый текст"], ["neutral.700", "#3B414A", "Вспомогательный текст"],
       ["neutral.900", "#121A26", "Основной текст"], ["neutral.950", "#0B111B", "Самая тёмная поверхность"],
     ],
   },
@@ -304,7 +304,7 @@ const semanticVariantLabels: Record<string, string> = {
               <UiKitTrustState tone="critical" label="Есть расхождения" detail="Карьерная страница указывает удалённую работу, вакансия — только офис." source="2 публичных источника" date="30 июля 2026" confidence="Низкий" />
               <UiKitTrustState tone="insight" label="Аналитика платформы" detail="Несколько сигналов могут указывать на точечный найм." source="3 наблюдаемых сигнала" confidence="Средний" />
               <UiKitTrustState tone="claim" label="По данным компании" detail="Работодатель заявляет о проектах в трёх странах." source="Описание работодателя" date="12 июля 2026" />
-              <UiKitTrustState tone="fresh" label="Внешний сигнал" detail="Рейтинг 4,7 сформирован по 186 отзывам." source="Внешний рейтинг" date="20 июля 2026" />
+              <UiKitTrustState tone="external" label="Внешний сигнал" detail="Рейтинг 4,7 сформирован по 186 отзывам." source="Внешний рейтинг" date="20 июля 2026" />
               <UiKitTrustState tone="ugc" label="Пользовательский контент" detail="Отзыв прошёл автоматическую и ручную модерацию." source="Анонимный сотрудник" date="июль 2026" />
             </div>
           </UiKitSection>
@@ -419,17 +419,17 @@ const semanticVariantLabels: Record<string, string> = {
             <div class="ui-kit-a11y-grid">{["Семантическая иерархия заголовков","Ссылка перехода к содержанию","Видимое кольцо фокуса","Якоря доступны с клавиатуры","Видимые подписи полей","Статус передаётся текстом и значком","Области нажатия 40–52 px","Семантика диалога","Клавиша Escape и возврат фокуса","Блокировка фоновой прокрутки","Запасной вариант с уменьшенным движением","Адаптивный порядок источника","Значение не передаётся только цветом","Проверка переполнения при 320 px"].map((item) => <div><ProductIcon name="confirm" size={20} /><span>{item}</span></div>)}</div>
           </UiKitSection>
           </div>
-          <aside class="ui-kit-section-rail" aria-label="Навигация по разделам" data-ui-kit-section-nav>
-            <nav>
-              <ol>
-                {sections.map(({ id, label }, index) => <li><a href={`#${id}`} data-ui-kit-section-link data-section-index={index}><span class="ui-kit-section-rail__marker" aria-hidden="true"></span><span class="ui-kit-section-rail__number">{String(index).padStart(2, "0")}</span><span class="ui-kit-section-rail__label">{label}</span></a></li>)}
-              </ol>
-            </nav>
-          </aside>
         </div>
+        <aside class="ui-kit-section-rail" aria-label="Навигация по разделам" data-ui-kit-section-nav>
+          <nav>
+            <ol>
+              {sections.map(({ id, label }, index) => <li><a href={`#${id}`} data-ui-kit-section-link data-section-index={index}><span class="ui-kit-section-rail__marker" aria-hidden="true"></span><span class="ui-kit-section-rail__number">{String(index).padStart(2, "0")}</span><span class="ui-kit-section-rail__label">{label}</span></a></li>)}
+            </ol>
+          </nav>
+        </aside>
       </main>
 
-      <footer class="ui-kit-footer"><div class="ui-kit-container"><strong>Verified UI Kit · v{uiKitMeta.version}</strong><p>Прототип дизайн-системы. Только вымышленные данные. Разработал и собрал - Андрей Базлов.</p><a href="#overview">К началу</a></div></footer>
+      <footer class="ui-kit-footer"><div class="ui-kit-container"><strong>Verified UI Kit · v{uiKitMeta.version}</strong><p>Прототип дизайн-системы. Только вымышленные данные. Разработал и собрал - Андрей.</p><a href="#overview">К началу</a></div></footer>
 
       <div class="ui-kit-toast" role="status" aria-live="polite" aria-atomic="true" hidden data-ui-kit-toast>Добавлено в сравнение</div>
       <UiKitCompanyQuickView />
@@ -632,11 +632,12 @@ const semanticVariantLabels: Record<string, string> = {
             const pressed = button.getAttribute("aria-pressed") !== "true";
             button.setAttribute("aria-pressed", String(pressed));
             button.classList.toggle("is-pressed", pressed);
-            button.title = pressed ? "Удалить из избранного" : "Добавить в избранное";
-            const currentLabel = button.getAttribute("aria-label") || "";
-            button.setAttribute("aria-label", pressed
-              ? currentLabel.replace(/^Добавить (.+) в избранное$/, "Удалить $1 из избранного").replace("Добавить в избранное", "Удалить из избранного")
-              : currentLabel.replace(/^Удалить (.+) из избранного$/, "Добавить $1 в избранное").replace("Удалить из избранного", "Добавить в избранное"));
+            const subject = button.dataset.favoriteLabel;
+            const label = pressed
+              ? (subject ? `Удалить ${subject} из избранного` : "Удалить из избранного")
+              : (subject ? `Добавить ${subject} в избранное` : "Добавить в избранное");
+            button.title = label;
+            button.setAttribute("aria-label", label);
             const card = button.closest("[data-ui-kit-company-card]");
             if (card instanceof HTMLElement) { card.classList.toggle("is-favorite-selected", pressed); updateCardInteraction(card); }
           }));
