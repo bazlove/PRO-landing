@@ -53,6 +53,8 @@
   --ui-color-text-primary: #121a26;
   --ui-color-text-secondary: #3b414a;
   --ui-color-text-muted: #7a7d82;
+  --ui-color-text-tertiary: #626a75;
+  --ui-color-text-disabled: #92969c;
   --ui-color-text-inverse: #ffffff;
   --ui-color-border-default: #deded7;
   --ui-color-border-strong: #c6c6be;
@@ -168,6 +170,9 @@
   --ui-card-meta-font-weight: var(--ui-font-weight-regular);
   --ui-card-tag-font-weight: var(--ui-font-weight-regular);
   --ui-card-status-font-weight: var(--ui-font-weight-medium);
+  --ui-card-text-meta: var(--ui-color-text-secondary);
+  --ui-card-text-helper: var(--ui-color-text-tertiary);
+  --ui-quick-view-text-meta: var(--ui-color-text-secondary);
   --ui-container: 1280px;
   --ui-outer: 32px;
   --ui-gutter: 24px;
@@ -183,6 +188,8 @@
   --ui-color-text-primary: #f4f6fa;
   --ui-color-text-secondary: #cad0da;
   --ui-color-text-muted: #939caa;
+  --ui-color-text-tertiary: #aeb6c2;
+  --ui-color-text-disabled: #697383;
   --ui-color-text-inverse: #0b111b;
   --ui-color-border-default: #2a394b;
   --ui-color-border-strong: #3a4b5f;
