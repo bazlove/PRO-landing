@@ -112,6 +112,14 @@
   --ui-label-premium-bg: var(--ui-color-status-premium-bg);
   --ui-label-premium-text: var(--ui-color-status-premium);
 
+  /* Product icon sizes */
+  --ui-icon-xs: 12px;
+  --ui-icon-s: 16px;
+  --ui-icon-m: 20px;
+  --ui-icon-l: 24px;
+  --ui-icon-xl: 32px;
+  --ui-icon-2xl: 48px;
+
   /* Local document navigation and horizontal scroll */
   --ui-kit-document-container: 1440px;
   --ui-kit-section-heading-width: 220px;
