@@ -6,6 +6,7 @@ import UiKitCompanyCard from "../components/ui-kit/UiKitCompanyCard.astro";
 import UiKitCompanyQuickView from "../components/ui-kit/UiKitCompanyQuickView.astro";
 import UiKitCompanyPagePreview from "../components/ui-kit/UiKitCompanyPagePreview.astro";
 import UiKitSemanticLabel from "../components/ui-kit/UiKitSemanticLabel.astro";
+import SiteAnalytics from "../components/analytics/SiteAnalytics.astro";
 import { semanticLabels } from "../lib/ui-kit/semanticLabels";
 import "../styles/ui-kit/tokens.css";
 import "../styles/ui-kit/ui-kit.css";
@@ -65,6 +66,7 @@ const semanticVariantLabels: Record<string, string> = {
     <title>Verified UI Kit — дизайн-система</title>
     <meta name="description" content="Изолированная живая документация дизайн-системы Verified UI Kit." />
     <meta name="robots" content="noindex, nofollow" />
+    <SiteAnalytics />
   </head>
   <body class="ui-kit-page">
     <a class="ui-kit-skip-link" href="#ui-kit-main">Перейти к содержанию</a>
