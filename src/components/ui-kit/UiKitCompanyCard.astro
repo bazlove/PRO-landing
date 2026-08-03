@@ -18,6 +18,7 @@ interface Props {
   ratingNote: string;
   ratingQuality?: string;
   freshness: string;
+  freshnessTone?: "verified" | "warning" | "neutral";
   trustTone: "verified" | "warning" | "neutral" | "critical";
   trustMessage?: string;
   completeness?: "enriched" | "complete" | "incomplete" | "minimal";
@@ -43,6 +44,7 @@ const {
   ratingNote,
   ratingQuality,
   freshness,
+  freshnessTone = "neutral",
   trustTone,
   trustMessage,
   completeness = "complete",
@@ -108,7 +110,7 @@ const meta = `${type} · ${location} · ${size}`;
     </div>
   )}
 
-  <div class="ui-kit-label-row ui-kit-company-card__tags" aria-label="Ключевые признаки">
+  <div class="ui-kit-label-row ui-kit-company-card__tags" aria-label="Характеристики компании">
     {visibleChips.map((chip, index) => (
       <span class:list={["ui-kit-tag", "ui-kit-label--m", `ui-kit-tag--${chipTones[index] || "neutral"}`]}>{chip}</span>
     ))}
@@ -121,7 +123,7 @@ const meta = `${type} · ${location} · ${size}`;
       <span>{ratingNote}</span>
       {ratingQuality && <em>{ratingQuality}</em>}
     </div>
-    <span class:list={["ui-kit-data-state", `ui-kit-data-state--${trustTone}`]}>{freshness}</span>
+    <span class:list={["ui-kit-data-state", `ui-kit-data-state--${freshnessTone}`]} data-field-state="freshness">{freshness}</span>
   </div>
 
   <footer class="ui-kit-company-card__actions">
