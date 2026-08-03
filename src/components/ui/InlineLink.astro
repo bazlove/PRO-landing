@@ -1,0 +1,79 @@
+---
+import ProductIcon from "./ProductIcon.astro";
+
+interface Props {
+  href: string;
+  external?: boolean;
+  download?: boolean | string;
+  class?: string;
+  ariaLabel?: string;
+}
+
+const {
+  href,
+  external = false,
+  download,
+  class: className,
+  ariaLabel,
+} = Astro.props;
+---
+
+<a
+  class:list={["inline-link", className]}
+  href={href}
+  target={external ? "_blank" : undefined}
+  rel={external ? "noopener noreferrer" : undefined}
+  download={download}
+  aria-label={ariaLabel}
+>
+  <span class="inline-link__text"><slot /></span>{external && <span class="inline-link__external-icon" aria-hidden="true"><ProductIcon name="external-link" size={12} /></span>}
+</a>
+
+<style is:global>
+  .inline-link,
+  .inline-link:visited {
+    color: var(--ui-link-color);
+    text-decoration: none;
+  }
+
+  .inline-link__text {
+    padding-bottom: var(--ui-link-underline-offset);
+    background-image:
+      repeating-linear-gradient(to right, var(--ui-link-underline-color) 0 3px, transparent 3px 6px),
+      linear-gradient(var(--ui-link-underline-color), var(--ui-link-underline-color));
+    background-repeat: repeat-x, no-repeat;
+    background-position: left calc(100% - 1px), left calc(100% - 1px);
+    background-size: 6px 1px, 0 1px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    transition: background-size var(--ui-link-motion-duration) var(--ui-ease-standard), color var(--ui-link-motion-duration) var(--ui-ease-standard);
+  }
+
+  .inline-link__external-icon {
+    display: inline-flex;
+    align-items: baseline;
+    margin-left: 4px;
+    white-space: nowrap;
+  }
+
+  .inline-link__external-icon .product-icon { transform: translateY(1px); }
+
+  .inline-link:hover,
+  .inline-link:focus-visible { color: var(--ui-link-hover-color); }
+
+  .inline-link:hover .inline-link__text,
+  .inline-link:focus-visible .inline-link__text,
+  .inline-link:active .inline-link__text { background-size: 0 1px, 100% 1px; }
+
+  .inline-link:active { color: var(--ui-link-active-color); }
+
+  .inline-link:focus-visible {
+    border-radius: 2px;
+    outline: 2px solid var(--ui-color-brand-primary);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .inline-link__text { transition: none; }
+  }
+</style>
