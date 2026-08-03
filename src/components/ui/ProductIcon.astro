@@ -1,0 +1,75 @@
+---
+import { productIconAssets } from "../../lib/icons/assets";
+import { productIcons, type ProductIconId } from "../../lib/icons/registry";
+import type { ProductIconSize, ProductIconState } from "../../lib/icons/types";
+
+interface Props {
+  name: ProductIconId;
+  size?: ProductIconSize;
+  state?: ProductIconState;
+  label?: string;
+  class?: string;
+}
+
+const {
+  name,
+  size = 20,
+  state = "default",
+  label,
+  class: className,
+} = Astro.props;
+const definition = productIcons[name];
+const assets = productIconAssets[name];
+const fillAsset = "fill" in assets ? assets.fill : undefined;
+const usesFill = Boolean(fillAsset && "selectedWeight" in definition && definition.selectedWeight === "fill");
+const effectiveState = state === "selected" && usesFill ? "selected" : state === "auto" && usesFill ? "auto" : "default";
+
+// These strings come only from committed, trusted Phosphor SVG files.
+const svgBody = (asset: string) => asset.match(/<svg[^>]*>([\s\S]*?)<\/svg>/)?.[1] || "";
+const regularBody = svgBody(assets.regular);
+const fillBody = fillAsset ? svgBody(fillAsset) : "";
+---
+
+<svg
+  class:list={["product-icon", `product-icon--${effectiveState}`, className]}
+  style={`--product-icon-size: ${size}px`}
+  viewBox="0 0 256 256"
+  fill="currentColor"
+  width={size}
+  height={size}
+  role={label ? "img" : undefined}
+  aria-label={label}
+  aria-hidden={label ? undefined : "true"}
+  focusable="false"
+>
+  {effectiveState === "auto" ? (
+    <>
+      <g class="product-icon__regular" set:html={regularBody} />
+      <g class="product-icon__fill" set:html={fillBody} />
+    </>
+  ) : (
+    <g set:html={effectiveState === "selected" ? fillBody : regularBody} />
+  )}
+</svg>
+
+<style is:global>
+  .product-icon {
+    width: var(--product-icon-size);
+    height: var(--product-icon-size);
+    display: inline-block;
+    flex: 0 0 auto;
+    overflow: visible;
+    color: currentColor;
+    vertical-align: middle;
+  }
+
+  .product-icon__fill { display: none; }
+
+  :is(button, [role="button"], [role="option"], [role="tab"]):is([aria-pressed="true"], [aria-selected="true"], .is-selected, .is-pressed) > .product-icon--auto > .product-icon__regular {
+    display: none;
+  }
+
+  :is(button, [role="button"], [role="option"], [role="tab"]):is([aria-pressed="true"], [aria-selected="true"], .is-selected, .is-pressed) > .product-icon--auto > .product-icon__fill {
+    display: inline;
+  }
+</style>
