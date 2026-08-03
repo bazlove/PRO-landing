@@ -8,6 +8,7 @@ import UiKitCompanyPagePreview from "../components/ui-kit/UiKitCompanyPagePrevie
 import UiKitSemanticLabel from "../components/ui-kit/UiKitSemanticLabel.astro";
 import UiKitIconography from "../components/ui-kit/UiKitIconography.astro";
 import ProductIcon from "../components/ui/ProductIcon.astro";
+import InlineLink from "../components/ui/InlineLink.astro";
 import SiteAnalytics from "../components/analytics/SiteAnalytics.astro";
 import { semanticLabels } from "../lib/ui-kit/semanticLabels";
 import "../styles/ui-kit/tokens.css";
@@ -164,6 +165,16 @@ const semanticVariantLabels: Record<string, string> = {
             <div class="ui-kit-demo-band"><h3>Варианты</h3><div class="ui-kit-button-row"><button class="ui-kit-button ui-kit-button--primary" type="button">Основная</button><button class="ui-kit-button ui-kit-button--secondary" type="button">Вторичная</button><button class="ui-kit-button ui-kit-button--tertiary" type="button">Текстовая</button><button class="ui-kit-button ui-kit-button--destructive" type="button">Опасное действие</button><button class="ui-kit-button ui-kit-button--premium" type="button">Расширенный доступ</button><button class="ui-kit-icon-button" type="button" aria-label="Поиск" title="Поиск"><ProductIcon name="search" size={20} /></button></div></div>
             <div class="ui-kit-demo-band"><h3>Состояния</h3><div class="ui-kit-button-row"><button class="ui-kit-button ui-kit-button--primary is-active" type="button" aria-pressed="true">Нажатое состояние <code>pressed</code></button><button class="ui-kit-button ui-kit-button--primary is-loading" type="button" aria-busy="true"><span>Загрузка</span></button><button class="ui-kit-button ui-kit-button--primary" type="button" disabled>Недоступно</button><button class="ui-kit-button ui-kit-button--success" type="button">Сохранено</button><button class="ui-kit-button ui-kit-button--secondary ui-kit-focus-demo" type="button">Видимый фокус <code>focus-visible</code></button></div></div>
             <div class="ui-kit-demo-band"><h3>Размеры</h3><div class="ui-kit-button-row ui-kit-button-row--end"><button class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" type="button">Компактная 36</button><button class="ui-kit-button ui-kit-button--secondary" type="button">Обычная 44</button><button class="ui-kit-button ui-kit-button--primary ui-kit-button--large" type="button">Выделенная 52</button></div></div>
+            <section class="ui-kit-inline-link-demo" aria-labelledby="inline-link-title">
+              <header><p class="ui-kit-eyebrow">Общий паттерн</p><h3 id="inline-link-title">Текстовые ссылки</h3><p>Пунктир обозначает ссылку в тексте. При наведении и фокусе появляется сплошное подчёркивание.</p></header>
+              <div class="ui-kit-inline-link-examples">
+                <p><span>Внутренняя</span><InlineLink href="#trust">Методология данных</InlineLink></p>
+                <p><span>Внешняя</span><InlineLink href="https://phosphoricons.com/" external>Официальный сайт Phosphor</InlineLink></p>
+                <p class="is-prose">Подтверждение факта можно открыть через <InlineLink href="#trust">источники и методологию проверки данных компании</InlineLink>, не превращая ссылку в отдельное действие.</p>
+                <p class="is-wrapped"><InlineLink href="#accessibility">Длинная текстовая ссылка проверяет перенос на несколько строк, положение пунктирного подчёркивания и видимый фокус при навигации с клавиатуры</InlineLink></p>
+              </div>
+              <p class="ui-kit-inline-link-note">Используется внутри текста и evidence-блоков. Не заменяет кнопку, таб или навигационный пункт.</p>
+            </section>
           </UiKitSection>
 
           <UiKitSection id="forms" eyebrow="07 · Элементы форм" title="Подписи остаются видимыми" description="Заполнитель показывает пример, но не заменяет подпись. Ошибка, подсказка и состояние проверки располагаются рядом с полем.">
@@ -544,6 +555,7 @@ const semanticVariantLabels: Record<string, string> = {
             const selected = button.getAttribute("aria-pressed") !== "true";
             button.setAttribute("aria-pressed", String(selected));
             button.classList.toggle("is-selected", selected);
+            button.setAttribute("aria-label", selected ? "Удалить из избранного" : "Добавить в избранное");
             const label = button.querySelector("[data-ui-kit-icon-toggle-label]");
             if (label) label.textContent = selected ? "В избранном" : "Добавить в избранное";
           }));
