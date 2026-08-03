@@ -8,7 +8,6 @@ interface Props {
   selected?: boolean;
   disabled?: boolean;
   removable?: boolean;
-  demoState?: "hover" | "focus" | "pressed";
 }
 
 const {
@@ -18,7 +17,6 @@ const {
   selected = false,
   disabled = false,
   removable = false,
-  demoState,
 } = Astro.props;
 const definition = semanticLabels[id];
 const label = labelOverride || definition.label;
@@ -36,8 +34,8 @@ const classes = [
   `ui-kit-${definition.family}--${definition.variant}`,
   `ui-kit-label--${size}`,
   selected && "is-selected",
-  demoState && `is-${demoState}-demo`,
 ];
+const title = definition.family === "chip" && label.length > 24 ? label : undefined;
 ---
 
 {definition.family === "chip" ? (
@@ -46,6 +44,7 @@ const classes = [
     type="button"
     aria-pressed={isRemovable ? undefined : (selected ? "true" : "false")}
     aria-label={isRemovable ? `Снять фильтр ${label}` : undefined}
+    title={title}
     disabled={disabled}
     data-ui-kit-chip-toggle={!isRemovable ? "" : undefined}
     data-ui-kit-chip-remove={isRemovable ? "" : undefined}
