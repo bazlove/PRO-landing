@@ -10,6 +10,11 @@ import { semanticLabels } from "../lib/ui-kit/semanticLabels";
 import "../styles/ui-kit/tokens.css";
 import "../styles/ui-kit/ui-kit.css";
 
+const uiKitMeta = {
+  version: "0.3",
+  date: "03.08.2026",
+} as const;
+
 const paletteGroups = [
   {
     name: "Нейтральные",
@@ -57,8 +62,8 @@ const semanticVariantLabels: Record<string, string> = {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>UI Kit — Verified Editorial UI</title>
-    <meta name="description" content="Изолированная живая документация дизайн-системы Verified Editorial UI." />
+    <title>Verified UI Kit — дизайн-система</title>
+    <meta name="description" content="Изолированная живая документация дизайн-системы Verified UI Kit." />
     <meta name="robots" content="noindex, nofollow" />
   </head>
   <body class="ui-kit-page">
@@ -79,8 +84,8 @@ const semanticVariantLabels: Record<string, string> = {
 
       <header class="ui-kit-header">
         <div class="ui-kit-container ui-kit-header__inner">
-          <a class="ui-kit-brand" href="#overview" aria-label="Verified Editorial UI, начало страницы">
-            <span aria-hidden="true">VE</span><strong>Verified Editorial UI</strong>
+          <a class="ui-kit-brand" href="#overview" aria-label="Verified UI Kit, начало страницы">
+            <span aria-hidden="true">VU</span><strong>Verified UI Kit</strong>
           </a>
           <div class="ui-kit-theme-switcher" role="group" aria-label="Тема UI Kit">
             <button type="button" data-ui-kit-theme="light" aria-pressed="false">Светлая</button>
@@ -100,16 +105,16 @@ const semanticVariantLabels: Record<string, string> = {
         <section id="overview" class="ui-kit-hero" aria-labelledby="ui-kit-title">
           <div class="ui-kit-container ui-kit-hero__layout">
             <div>
-              <p class="ui-kit-eyebrow">Дизайн-система · v0.2 · живая документация</p>
-              <h1 id="ui-kit-title">Verified<br />Editorial UI</h1>
+              <p class="ui-kit-eyebrow">Дизайн-система · Документация для команды</p>
+              <h1 id="ui-kit-title">Verified<br />UI Kit</h1>
               <p class="ui-kit-hero__lead">Интерфейс, ориентированный на данные, с редакционной подачей и прозрачным слоем доверия для осознанного выбора работодателя.</p>
               <div class="ui-kit-hero__principles"><span>Факты прежде оформления</span><span>Видимое доверие</span><span>Постепенное раскрытие</span><span>Устойчивость к реальным данным</span></div>
             </div>
             <aside class="ui-kit-hero__status">
               <span class="ui-kit-badge ui-kit-badge--beta">Прототип</span>
-              <strong>Документация для проверки</strong>
-              <p>Не производственные компоненты. Все компании, метрики и доказательства на странице вымышлены.</p>
-              <dl><div><dt>Версия</dt><dd>0.2</dd></div><div><dt>Дата</dt><dd>31.07.2026</dd></div><div><dt>Темы</dt><dd>Светлая / Тёмная / Системная</dd></div></dl>
+              <strong>Рабочая документация</strong>
+              <p>Непроизводственные компоненты. Все компании, метрики и источники на странице вымышлены.</p>
+              <dl><div><dt>Версия</dt><dd>{uiKitMeta.version}</dd></div><div><dt>Дата</dt><dd>{uiKitMeta.date}</dd></div><div><dt>Темы</dt><dd>Светлая / Тёмная / Системная</dd></div></dl>
             </aside>
           </div>
         </section>
@@ -392,7 +397,7 @@ const semanticVariantLabels: Record<string, string> = {
           </UiKitSection>
 
           <UiKitSection id="accessibility" eyebrow="16 · Проверка доступности" title="Реализованные меры, а не заявление о соответствии" description="Формальная WCAG-проверка не заявляется; ниже перечислены реализованные меры и дальнейшие ручные проверки.">
-            <div class="ui-kit-a11y-grid">{["Семантическая иерархия заголовков","Ссылка перехода к содержанию","Видимое кольцо фокуса","Якоря доступны с клавиатуры","Видимые подписи полей","Статус передаётся текстом и значком","Области нажатия 40–52 px","Семантика диалога","Escape и возврат фокуса","Блокировка фоновой прокрутки","Запасной вариант с уменьшенным движением","Адаптивный порядок источника","Значение не передаётся только цветом","Проверка переполнения при 320 px"].map((item) => <div><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4 10-10"></path></svg><span>{item}</span></div>)}</div>
+            <div class="ui-kit-a11y-grid">{["Семантическая иерархия заголовков","Ссылка перехода к содержанию","Видимое кольцо фокуса","Якоря доступны с клавиатуры","Видимые подписи полей","Статус передаётся текстом и значком","Области нажатия 40–52 px","Семантика диалога","Клавиша Escape и возврат фокуса","Блокировка фоновой прокрутки","Запасной вариант с уменьшенным движением","Адаптивный порядок источника","Значение не передаётся только цветом","Проверка переполнения при 320 px"].map((item) => <div><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4 10-10"></path></svg><span>{item}</span></div>)}</div>
           </UiKitSection>
           </div>
           <aside class="ui-kit-section-rail" aria-label="Навигация по разделам" data-ui-kit-section-nav>
@@ -405,7 +410,7 @@ const semanticVariantLabels: Record<string, string> = {
         </div>
       </main>
 
-      <footer class="ui-kit-footer"><div class="ui-kit-container"><strong>Verified Editorial UI · v0.2</strong><p>Живой прототип. Только вымышленные данные. Не связан с производственной навигацией.</p><a href="#overview">К началу</a></div></footer>
+      <footer class="ui-kit-footer"><div class="ui-kit-container"><strong>Verified UI Kit · v{uiKitMeta.version}</strong><p>Живой прототип. Только вымышленные данные. Не связан с производственной навигацией.</p><a href="#overview">К началу</a></div></footer>
 
       <div class="ui-kit-toast" role="status" aria-live="polite" aria-atomic="true" hidden data-ui-kit-toast>Добавлено в сравнение</div>
       <UiKitCompanyQuickView />
@@ -435,20 +440,22 @@ const semanticVariantLabels: Record<string, string> = {
           const sectionIds = Array.from(new Set(sectionLinks.map((link) => link.getAttribute("href")?.slice(1)).filter(Boolean)));
           const documentSections = sectionIds.map((id) => document.getElementById(id)).filter((section) => section instanceof HTMLElement);
           const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+          const desktopNavigation = window.matchMedia("(min-width: 1280px)");
           let activeSectionIndex = -1;
-          const updateSectionNavigation = (index, reveal = true) => {
-            if (index < 0 || index >= sectionIds.length || index === activeSectionIndex) return;
+          const updateSectionNavigation = (index, reveal = true, force = false) => {
+            if (index < 0 || index >= sectionIds.length || (!force && index === activeSectionIndex)) return;
             activeSectionIndex = index;
             sectionLinks.forEach((link) => {
               const linkIndex = Number(link.getAttribute("data-section-index"));
               const isActive = linkIndex === index;
+              const isCurrentNavigation = desktopNavigation.matches ? Boolean(link.closest(".ui-kit-section-rail")) : Boolean(link.closest(".ui-kit-local-nav"));
               const isPrevious = linkIndex === index - 1;
               const isNext = linkIndex === index + 1;
               link.classList.toggle("is-active", isActive);
               link.classList.toggle("is-adjacent", isPrevious || isNext);
               link.classList.toggle("is-previous", isPrevious);
               link.classList.toggle("is-next", isNext);
-              if (isActive) link.setAttribute("aria-current", "location");
+              if (isActive && isCurrentNavigation) link.setAttribute("aria-current", "location");
               else link.removeAttribute("aria-current");
             });
             if (!reveal || !window.matchMedia("(max-width: 1279px)").matches) return;
@@ -459,6 +466,7 @@ const semanticVariantLabels: Record<string, string> = {
               mobileTrack.scrollTo({ left: targetLeft, behavior: reducedMotion.matches ? "auto" : "smooth" });
             }
           };
+          desktopNavigation.addEventListener("change", () => updateSectionNavigation(activeSectionIndex, false, true));
           const resolveActiveSection = () => {
             const readingBand = window.innerHeight * 0.28;
             let nextIndex = 0;
@@ -471,21 +479,33 @@ const semanticVariantLabels: Record<string, string> = {
           const initialHashIndex = sectionIds.indexOf(decodeURIComponent(window.location.hash.slice(1)));
           updateSectionNavigation(initialHashIndex >= 0 ? initialHashIndex : 0);
           if (initialHashIndex >= 0) {
-            window.requestAnimationFrame(() => documentSections[initialHashIndex]?.scrollIntoView({ behavior: "auto", block: "start" }));
+            const restoreInitialHash = () => {
+              if (sectionIds.indexOf(decodeURIComponent(window.location.hash.slice(1))) !== initialHashIndex) return;
+              const previousScrollBehavior = document.documentElement.style.scrollBehavior;
+              document.documentElement.style.scrollBehavior = "auto";
+              documentSections[initialHashIndex]?.scrollIntoView({ behavior: "auto", block: "start" });
+              document.documentElement.style.scrollBehavior = previousScrollBehavior;
+              updateSectionNavigation(initialHashIndex, false, true);
+            };
+            window.requestAnimationFrame(restoreInitialHash);
+            window.addEventListener("load", () => window.requestAnimationFrame(restoreInitialHash), { once: true });
           }
           sectionLinks.forEach((link) => link.addEventListener("click", () => {
             const index = Number(link.getAttribute("data-section-index"));
             if (Number.isInteger(index)) updateSectionNavigation(index);
           }));
+          let sectionScrollFrame = 0;
+          const scheduleSectionResolve = () => {
+            if (sectionScrollFrame) return;
+            sectionScrollFrame = window.requestAnimationFrame(() => {
+              sectionScrollFrame = 0;
+              resolveActiveSection();
+            });
+          };
+          window.addEventListener("scroll", scheduleSectionResolve, { passive: true });
           if ("IntersectionObserver" in window) {
             const sectionObserver = new IntersectionObserver(resolveActiveSection, { rootMargin: "-20% 0px -65% 0px", threshold: [0, 0.01, 0.2] });
             documentSections.forEach((section) => sectionObserver.observe(section));
-          } else {
-            let sectionScrollFrame = 0;
-            window.addEventListener("scroll", () => {
-              if (sectionScrollFrame) return;
-              sectionScrollFrame = window.requestAnimationFrame(() => { sectionScrollFrame = 0; resolveActiveSection(); });
-            }, { passive: true });
           }
 
           root.querySelectorAll(".ui-kit-select").forEach((wrapper) => {
