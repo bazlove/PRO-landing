@@ -42,11 +42,40 @@ html { scroll-behavior: smooth; }
 .ui-kit-theme-switcher { display: inline-grid; grid-template-columns: repeat(3, 1fr); padding: 3px; border: 1px solid var(--ui-color-border-default); border-radius: var(--ui-radius-m); background: var(--ui-color-surface-secondary); }
 .ui-kit-theme-switcher button { min-width: 74px; min-height: 38px; padding: 8px 12px; border: 0; border-radius: 9px; background: transparent; color: var(--ui-color-text-secondary); cursor: pointer; transition: background var(--ui-motion-fast), color var(--ui-motion-fast); }
 .ui-kit-theme-switcher button[aria-pressed="true"] { background: var(--ui-color-surface-primary); color: var(--ui-color-text-primary); box-shadow: 0 1px 5px rgb(18 26 38 / 10%); font-weight: 700; }
-.ui-kit-toc { position: sticky; z-index: 25; top: 0; border-bottom: 1px solid var(--ui-color-border-default); background: color-mix(in srgb, var(--ui-color-bg-page) 94%, transparent); backdrop-filter: blur(14px); }
-.ui-kit-toc__track { display: flex; gap: 3px; overflow-x: auto; scrollbar-width: thin; padding-block: 8px; }
-.ui-kit-toc__track a { flex: 0 0 auto; min-height: 40px; display: inline-flex; align-items: center; gap: 7px; padding: 8px 10px; border-radius: var(--ui-radius-s); color: var(--ui-color-text-secondary); font-size: 13px; text-decoration: none; }
-.ui-kit-toc__track a:hover { background: var(--ui-color-surface-secondary); color: var(--ui-color-text-primary); }
-.ui-kit-toc__track span { color: var(--ui-color-text-muted); font-variant-numeric: tabular-nums; }
+.ui-kit-local-nav { position: sticky; z-index: 25; top: 0; border-bottom: 1px solid var(--ui-color-border-default); background: color-mix(in srgb, var(--ui-color-bg-page) 94%, transparent); backdrop-filter: blur(14px); }
+.ui-kit-local-nav__track { display: flex; gap: 3px; overflow-x: auto; padding-block: 7px; scroll-padding-inline: var(--ui-outer); }
+.ui-kit-local-nav__track a { flex: 0 0 auto; min-height: 44px; display: inline-flex; align-items: center; gap: 7px; padding: 8px 10px; border-radius: var(--ui-radius-s); color: var(--ui-section-label-muted); font-size: 11px; text-decoration: none; white-space: nowrap; transition: background var(--ui-motion-fast), color var(--ui-motion-fast); }
+.ui-kit-local-nav__track a:hover { background: var(--ui-color-surface-secondary); color: var(--ui-color-text-primary); }
+.ui-kit-local-nav__number { color: inherit; font-variant-numeric: tabular-nums; }
+.ui-kit-local-nav__marker { width: 12px; height: 2px; border-radius: var(--ui-radius-round); background: var(--ui-section-marker-default); transition: width var(--ui-motion-default) var(--ui-ease-standard), background var(--ui-motion-fast); }
+.ui-kit-local-nav__track a.is-adjacent { color: var(--ui-section-label-adjacent); font-size: 12px; }
+.ui-kit-local-nav__track a.is-adjacent .ui-kit-local-nav__marker { width: 20px; background: var(--ui-section-marker-adjacent); }
+.ui-kit-local-nav__track a[aria-current="location"] { background: var(--ui-color-brand-soft); color: var(--ui-section-label-active); font-size: 13px; font-weight: var(--ui-font-weight-semibold); }
+.ui-kit-local-nav__track a[aria-current="location"] .ui-kit-local-nav__marker { width: 30px; background: var(--ui-section-marker-active); }
+
+.ui-kit-scroll-x,
+.ui-kit-company-page__nav,
+.ui-kit-responsive-table,
+.ui-kit-policy-table { scrollbar-width: thin; scrollbar-color: var(--ui-scrollbar-thumb) var(--ui-scrollbar-track); overscroll-behavior-inline: contain; }
+.ui-kit-scroll-x::-webkit-scrollbar,
+.ui-kit-company-page__nav::-webkit-scrollbar,
+.ui-kit-responsive-table::-webkit-scrollbar,
+.ui-kit-policy-table::-webkit-scrollbar { height: 8px; }
+.ui-kit-scroll-x::-webkit-scrollbar-track,
+.ui-kit-company-page__nav::-webkit-scrollbar-track,
+.ui-kit-responsive-table::-webkit-scrollbar-track,
+.ui-kit-policy-table::-webkit-scrollbar-track { background: var(--ui-scrollbar-track); }
+.ui-kit-scroll-x::-webkit-scrollbar-thumb,
+.ui-kit-company-page__nav::-webkit-scrollbar-thumb,
+.ui-kit-responsive-table::-webkit-scrollbar-thumb,
+.ui-kit-policy-table::-webkit-scrollbar-thumb { border: 2px solid var(--ui-scrollbar-track); border-radius: var(--ui-radius-round); background: var(--ui-scrollbar-thumb); }
+.ui-kit-scroll-x::-webkit-scrollbar-thumb:hover,
+.ui-kit-company-page__nav::-webkit-scrollbar-thumb:hover,
+.ui-kit-responsive-table::-webkit-scrollbar-thumb:hover,
+.ui-kit-policy-table::-webkit-scrollbar-thumb:hover { background: var(--ui-scrollbar-thumb-hover); }
+
+.ui-kit-document-layout { min-width: 0; }
+.ui-kit-section-rail { display: none; }
 
 /* Hero and sections */
 .ui-kit-hero { position: relative; isolation: isolate; overflow: hidden; border-bottom: 1px solid var(--ui-color-border-default); background: var(--ui-color-bg-subtle); }
@@ -583,6 +612,31 @@ button.ui-kit-chip { position: relative; max-width: min(240px, 100%); overflow: 
 @keyframes ui-kit-spin { to { transform: rotate(360deg); } }
 @keyframes ui-kit-shimmer { to { background-position: -200% 0; } }
 @keyframes ui-kit-fade-content { from { opacity: 0; transform: translateY(var(--ui-motion-distance-sm)); } to { opacity: 1; transform: translateY(0); } }
+
+@media (min-width: 1280px) {
+  .ui-kit-local-nav { display: none; }
+  .ui-kit-hero__layout { width: min(calc(var(--ui-container) - var(--ui-section-rail-width) - 32px), calc(100% - (var(--ui-outer) * 2) - var(--ui-section-rail-width) - 32px)); margin-left: max(var(--ui-outer), calc((100% - var(--ui-container)) / 2)); margin-right: auto; }
+  .ui-kit-document-layout { display: grid; grid-template-columns: minmax(0, 1fr) var(--ui-section-rail-width); align-items: start; gap: 32px; }
+  .ui-kit-content { min-width: 0; }
+  .ui-kit-section { grid-template-columns: 220px minmax(0, 1fr); gap: 32px; }
+  .ui-kit-section-rail { position: sticky; top: 24px; display: block; max-height: calc(100vh - 48px); overflow-y: auto; margin-top: -596px; padding: 10px 0; }
+  .ui-kit-section-rail ol { display: grid; gap: 1px; margin: 0; padding: 0; list-style: none; }
+  .ui-kit-section-rail a { --marker-width: 18px; min-height: 34px; display: grid; grid-template-columns: 48px 24px minmax(0, 1fr); align-items: center; gap: 7px; padding: 4px 0; border-radius: var(--ui-radius-s); color: var(--ui-section-label-muted); text-decoration: none; }
+  .ui-kit-section-rail a:hover,
+  .ui-kit-section-rail a:focus-visible { background: var(--ui-color-surface-secondary); color: var(--ui-section-label-active); }
+  .ui-kit-section-rail__marker { width: var(--marker-width); height: 2px; justify-self: end; border-radius: var(--ui-radius-round); background: var(--ui-section-marker-default); transition: width var(--ui-motion-default) var(--ui-ease-standard), background var(--ui-motion-fast); }
+  .ui-kit-section-rail__number { color: inherit; font-size: 10px; font-variant-numeric: tabular-nums; }
+  .ui-kit-section-rail__label { min-width: 0; overflow: hidden; color: inherit; font-size: 10px; line-height: 1.2; opacity: 0; white-space: nowrap; text-overflow: ellipsis; transition: opacity var(--ui-motion-fast), color var(--ui-motion-fast), font-size var(--ui-motion-fast); }
+  .ui-kit-section-rail a:hover .ui-kit-section-rail__label,
+  .ui-kit-section-rail a:focus-visible .ui-kit-section-rail__label { opacity: 1; }
+  .ui-kit-section-rail a.is-adjacent { --marker-width: 28px; color: var(--ui-section-label-adjacent); }
+  .ui-kit-section-rail a.is-adjacent .ui-kit-section-rail__marker { background: var(--ui-section-marker-adjacent); }
+  .ui-kit-section-rail a.is-adjacent .ui-kit-section-rail__label { font-size: 11px; opacity: 1; }
+  .ui-kit-section-rail a[aria-current="location"] { --marker-width: 48px; color: var(--ui-section-label-active); font-weight: var(--ui-font-weight-semibold); }
+  .ui-kit-section-rail a[aria-current="location"] .ui-kit-section-rail__marker { height: 3px; background: var(--ui-section-marker-active); }
+  .ui-kit-section-rail a[aria-current="location"] .ui-kit-section-rail__number { color: var(--ui-color-brand-primary); font-size: 11px; }
+  .ui-kit-section-rail a[aria-current="location"] .ui-kit-section-rail__label { font-size: 13px; opacity: 1; }
+}
 
 @media (min-width: 1200px) {
   .ui-kit-quick-view__snapshot { grid-template-columns: repeat(4, minmax(0, 1fr)); }
