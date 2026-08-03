@@ -1,3 +1,7 @@
+---
+import ProductIcon from "../ui/ProductIcon.astro";
+---
+
 <article class="ui-kit-company-page" aria-label="Прототип страницы компании на вымышленных данных">
   <header class="ui-kit-company-page__hero">
     <div class="ui-kit-company-card__logo ui-kit-company-page__logo" aria-hidden="true">NW</div>
@@ -11,8 +15,8 @@
         <span class="ui-kit-badge ui-kit-badge--verified ui-kit-label--m">Проверено</span>
       </div>
     </div>
-    <button class="ui-kit-icon-button" type="button" aria-label="Добавить Northstar Digital Lab в избранное" title="В избранное">
-      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"></path></svg>
+      <button class="ui-kit-icon-button" type="button" aria-label="Добавить Northstar Digital Lab в избранное" aria-pressed="false" title="Добавить Northstar Digital Lab в избранное" data-ui-kit-favorite data-favorite-label="Northstar Digital Lab">
+      <ProductIcon name="favorite" size={24} state="auto" />
     </button>
   </header>
 
