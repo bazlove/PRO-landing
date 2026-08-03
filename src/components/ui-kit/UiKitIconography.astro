@@ -1,5 +1,6 @@
 ---
 import ProductIcon from "../ui/ProductIcon.astro";
+import InlineLink from "../ui/InlineLink.astro";
 import UiKitIconTile from "./UiKitIconTile.astro";
 import { productIcons, type ProductIconId } from "../../lib/icons/registry";
 import type { ProductIconSize } from "../../lib/icons/types";
@@ -27,13 +28,13 @@ const colorRoles = [
   <section class="ui-kit-icon-policy" aria-labelledby="icon-policy-title">
     <div>
       <p class="ui-kit-eyebrow">Источник и политика</p>
-      <h3 id="icon-policy-title">Страница передаёт semantic ID</h3>
-      <p>Registry выбирает glyph и допустимое состояние. Имена Phosphor остаются внутри системы иконок.</p>
+      <h3 id="icon-policy-title">Страница передаёт <code class="ui-kit-tech-term">semantic ID</code></h3>
+      <p>Реестр выбирает иконку и допустимое состояние. Имена Phosphor остаются внутри системы иконок.</p>
     </div>
     <dl>
-      <div><dt>Набор</dt><dd>Phosphor Icons</dd></div>
-      <div><dt>Основной</dt><dd>Regular</dd></div>
-      <div><dt>Выбранное</dt><dd>Fill</dd></div>
+      <div><dt>Набор</dt><dd><code class="ui-kit-tech-term">Phosphor Icons</code></dd></div>
+      <div><dt>Основной</dt><dd><code class="ui-kit-tech-term">Regular</code></dd></div>
+      <div><dt>Выбранное</dt><dd><code class="ui-kit-tech-term">Fill</code></dd></div>
       <div><dt>Размер</dt><dd>20 px</dd></div>
       <div><dt>Цвет</dt><dd><code>currentColor</code></dd></div>
     </dl>
@@ -47,18 +48,18 @@ const colorRoles = [
   </section>
 
   <section class="ui-kit-icon-block" aria-labelledby="icon-fill-title">
-    <div class="ui-kit-icon-block__heading"><div><p class="ui-kit-eyebrow">Regular и Fill</p><h3 id="icon-fill-title">Fill означает выбор</h3></div><p>Fill обозначает выбранное состояние, а не уровень важности.</p></div>
+    <div class="ui-kit-icon-block__heading"><div><p class="ui-kit-eyebrow"><code class="ui-kit-tech-term">Regular</code> и <code class="ui-kit-tech-term">Fill</code></p><h3 id="icon-fill-title"><code class="ui-kit-tech-term">Fill</code> означает выбор</h3></div><p><code class="ui-kit-tech-term">Fill</code> обозначает выбранное состояние, а не уровень важности.</p></div>
     <div class="ui-kit-icon-weight-grid">
-      {fillIcons.map((id) => <article><code>{id}</code><div><span><ProductIcon name={id} size={24} /><small>Regular · default</small></span><span><ProductIcon name={id} size={24} state="selected" /><small>Fill · selected</small></span></div></article>)}
+      {fillIcons.map((id) => <article><code class="ui-kit-tech-term">{id}</code><div><span><ProductIcon name={id} size={24} /><small><code>Regular</code> · по умолчанию</small></span><span><ProductIcon name={id} size={24} state="selected" /><small><code>Fill</code> · выбрано</small></span></div></article>)}
     </div>
-    <button class="ui-kit-button ui-kit-button--secondary ui-kit-icon-live-toggle" type="button" aria-pressed="false" data-ui-kit-icon-toggle>
+    <button class="ui-kit-button ui-kit-button--secondary ui-kit-icon-live-toggle" type="button" aria-pressed="false" aria-label="Добавить в избранное" data-ui-kit-icon-toggle>
       <ProductIcon name="favorite" size={20} state="auto" />
       <span data-ui-kit-icon-toggle-label>Добавить в избранное</span>
     </button>
   </section>
 
   <section class="ui-kit-icon-block" aria-labelledby="icon-categories-title">
-    <div class="ui-kit-icon-block__heading"><div><p class="ui-kit-eyebrow">Semantic registry</p><h3 id="icon-categories-title">Утверждённые категории</h3></div><p>Компоненты выбирают смысл, не начертание.</p></div>
+    <div class="ui-kit-icon-block__heading"><div><p class="ui-kit-eyebrow">Семантический реестр</p><h3 id="icon-categories-title">Утверждённые категории</h3></div><p>Компоненты выбирают смысл, не начертание.</p></div>
     {iconGroups.map((group) => <div class="ui-kit-icon-group"><h4>{group.title}</h4><div class="ui-kit-icon-grid">{group.ids.map((id) => <UiKitIconTile id={id} />)}</div></div>)}
   </section>
 
@@ -68,44 +69,44 @@ const colorRoles = [
       <button class="ui-kit-button ui-kit-button--primary" type="button"><ProductIcon name="add" size={20} />Добавить</button>
       <button class="ui-kit-icon-button" type="button" aria-label="Настройки" title="Настройки"><ProductIcon name="settings" size={20} /></button>
       <label class="ui-kit-icon-search"><span>Поиск</span><div><ProductIcon name="search" size={20} /><input type="search" placeholder="Компания или навык" /></div></label>
-      <button class="ui-kit-chip ui-kit-chip--default ui-kit-label--m" type="button" aria-pressed="false" data-ui-kit-icon-toggle><ProductIcon name="filter" size={16} /><span>Фильтр</span></button>
+      <button class="ui-kit-chip ui-kit-chip--default ui-kit-label--m" type="button" aria-pressed="false" data-ui-kit-chip-toggle><ProductIcon name="filter" size={16} /><span>Фильтр</span></button>
       <span class="ui-kit-badge ui-kit-badge--verified ui-kit-label--m"><ProductIcon name="verified" size={16} /><span>Проверено</span></span>
-      <button class="ui-kit-icon-button" type="button" aria-label="Добавить компанию в избранное" aria-pressed="false" data-ui-kit-icon-toggle><ProductIcon name="favorite" size={20} state="auto" /></button>
+      <button class="ui-kit-icon-button" type="button" aria-label="Добавить компанию в избранное" aria-pressed="false" data-ui-kit-favorite><ProductIcon name="favorite" size={20} state="auto" /></button>
       <button class="ui-kit-icon-button" type="button" aria-label="Закрыть краткий профиль"><ProductIcon name="close" size={20} /></button>
-      <a class="ui-kit-icon-link" href="#trust"><ProductIcon name="methodology" size={20} />Методология<ProductIcon name="external-link" size={16} /></a>
+      <span class="ui-kit-icon-evidence-link"><ProductIcon name="methodology" size={20} /><InlineLink href="#trust">Методология</InlineLink></span>
     </div>
   </section>
 
   <section class="ui-kit-icon-block" aria-labelledby="icon-colors-title">
-    <div class="ui-kit-icon-block__heading"><div><p class="ui-kit-eyebrow">Семантические цвета</p><h3 id="icon-colors-title">Цвет задаёт контекст</h3></div><p>ProductIcon наследует <code>currentColor</code> и не принимает color prop.</p></div>
+    <div class="ui-kit-icon-block__heading"><div><p class="ui-kit-eyebrow">Семантические цвета</p><h3 id="icon-colors-title">Цвет задаёт контекст</h3></div><p><code class="ui-kit-tech-term">ProductIcon</code> наследует <code class="ui-kit-tech-term">currentColor</code> и не принимает отдельное свойство <code class="ui-kit-tech-term">color</code>.</p></div>
     <div class="ui-kit-icon-color-grid">{colorRoles.map(([role, label]) => <div class={`is-${role}`}><ProductIcon name="information" size={24} /><span>{label}</span></div>)}</div>
   </section>
 
   <section class="ui-kit-icon-block" aria-labelledby="icon-a11y-title">
     <div class="ui-kit-icon-block__heading"><div><p class="ui-kit-eyebrow">Доступность</p><h3 id="icon-a11y-title">Имя принадлежит источнику смысла</h3></div></div>
     <div class="ui-kit-icon-a11y-grid">
-      <article><ProductIcon name="search" size={24} /><strong>Декоративная</strong><p>Подписанная кнопка или поле уже передаёт смысл — SVG скрыт от screen reader.</p></article>
-      <article><ProductIcon name="verified" size={24} label="Проверено" /><strong>Самостоятельная</strong><p>Значимая иконка получает <code>role="img"</code> и собственную подпись.</p></article>
-      <article><button class="ui-kit-icon-button" type="button" aria-label="Закрыть"><ProductIcon name="close" size={20} /></button><strong>Icon-only control</strong><p>Доступное имя задаётся контролу, а не дублируется на SVG.</p></article>
+      <article><ProductIcon name="search" size={24} /><strong>Декоративная иконка</strong><p>Подписанная кнопка или поле уже передаёт смысл — SVG скрыт от программы экранного доступа.</p></article>
+      <article><ProductIcon name="verified" size={24} label="Проверено" /><strong>Самостоятельная иконка</strong><p>Значимая иконка получает <code class="ui-kit-tech-term">role="img"</code> и доступную подпись.</p></article>
+      <article><button class="ui-kit-icon-button" type="button" aria-label="Закрыть"><ProductIcon name="close" size={20} /></button><strong>Контрол только с иконкой</strong><p>Доступное имя задаётся контролу, а не дублируется на SVG.</p></article>
     </div>
   </section>
 
   <section class="ui-kit-icon-boundary" aria-labelledby="icon-boundary-title">
-    <h3 id="icon-boundary-title">Product Icons и source marks — разные системы</h3>
-    <div><article><strong>Product Icons</strong><p>Действия, навигация, статусы, интерфейс.</p></article><article><strong>Brand &amp; Source Marks</strong><p>HeadHunter, Habr Career, DreamJob, LinkedIn и логотипы компаний.</p></article></div>
-    <p>Логотипы источников не входят в Product Icon registry.</p>
+    <h3 id="icon-boundary-title">Системные иконки и знаки источников — разные системы</h3>
+    <div><article><strong><code class="ui-kit-tech-term">Product Icons</code></strong><p>Действия, навигация, статусы, интерфейс.</p></article><article><strong><code class="ui-kit-tech-term">Brand &amp; Source Marks</code></strong><p>HeadHunter, Habr Career, DreamJob, LinkedIn и логотипы компаний.</p></article></div>
+    <p>Логотипы источников не входят в реестр <code class="ui-kit-tech-term">Product Icons</code>.</p>
   </section>
 
   <section class="ui-kit-icon-block" aria-labelledby="icon-forbidden-title">
     <div class="ui-kit-icon-block__heading"><div><p class="ui-kit-eyebrow">Не использовать</p><h3 id="icon-forbidden-title">Запрещённые паттерны</h3></div></div>
-    <ul class="ui-kit-icon-forbidden"><li>Смешанные наборы иконок</li><li>Regular рядом с Bold</li><li>Декоративный Fill</li><li>Произвольный цвет</li><li>Несогласованные размеры</li><li>Icon-only без доступного имени</li><li>Логотип источника как системная иконка</li></ul>
+    <ul class="ui-kit-icon-forbidden"><li>Смешанные наборы иконок</li><li><code>Regular</code> рядом с <code>Bold</code></li><li>Декоративный <code>Fill</code></li><li>Произвольный цвет</li><li>Несогласованные размеры</li><li>Контрол только с иконкой без доступного имени</li><li>Логотип источника как системная иконка</li></ul>
   </section>
 
   <section class="ui-kit-icon-block" aria-labelledby="icon-registry-title">
-    <div class="ui-kit-icon-block__heading"><div><p class="ui-kit-eyebrow">Фрагмент registry</p><h3 id="icon-registry-title">Данные из реального реестра</h3></div></div>
+    <div class="ui-kit-icon-block__heading"><div><p class="ui-kit-eyebrow">Фрагмент реестра</p><h3 id="icon-registry-title">Данные из реального реестра</h3></div></div>
     <div class="ui-kit-icon-registry-wrap">
       <table class="ui-kit-icon-registry">
-        <thead><tr><th>ID</th><th>Категория</th><th>Phosphor source</th><th>Default</th><th>Selected</th><th>Status</th></tr></thead>
+        <thead><tr><th>ID</th><th>Категория</th><th>Источник Phosphor</th><th>По умолчанию</th><th>Выбранное</th><th>Статус</th></tr></thead>
         <tbody>{registryPreview.map((id) => { const icon = productIcons[id]; return <tr><td><code>{id}</code></td><td>{icon.category}</td><td>{icon.sourceName}</td><td>{icon.defaultWeight}</td><td>{"selectedWeight" in icon ? icon.selectedWeight : "—"}</td><td>{icon.status}</td></tr>; })}</tbody>
       </table>
     </div>
