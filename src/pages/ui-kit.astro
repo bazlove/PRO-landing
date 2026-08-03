@@ -39,6 +39,17 @@ const toc = [
 ] as const;
 
 const spacing = [["space.1", 4], ["space.2", 8], ["space.3", 12], ["space.4", 16], ["space.5", 20], ["space.6", 24], ["space.8", 32], ["space.10", 40], ["space.12", 48], ["space.16", 64], ["space.20", 80], ["space.24", 96]] as const;
+const semanticFamilyLabels = { chip: "чип", tag: "тег", badge: "бейдж" } as const;
+const semanticVariantLabels: Record<string, string> = {
+  default: "по умолчанию",
+  neutral: "нейтральный",
+  verified: "проверенный",
+  conflict: "конфликт",
+  "employer-claim": "данные компании",
+  "external-source": "внешний источник",
+  premium: "расширенный доступ",
+  beta: "бета",
+};
 ---
 
 <!doctype html>
@@ -191,69 +202,70 @@ const spacing = [["space.1", 4], ["space.2", 8], ["space.3", 12], ["space.4", 16
             </form>
           </UiKitSection>
 
-          <UiKitSection id="chips" eyebrow="08 · Chips, badges & tags" title="Семантика определяет компонент" description="Короткая подпись получает family и variant по смыслу, а не по желаемому цвету.">
+          <UiKitSection id="chips" eyebrow="08 · Чипы, бейджи и теги" title="Семантика определяет компонент" description="Короткая подпись получает семейство и вариант по смыслу, а не по желаемому цвету.">
             <dl class="ui-kit-label-rules" aria-label="Правила выбора компонента">
-              <div><dt>Chip</dt><dd>Пользователь может взаимодействовать со значением.</dd></div>
-              <div><dt>Tag</dt><dd>Описывает характеристику компании или сущности.</dd></div>
-              <div><dt>Badge</dt><dd>Передаёт статус, источник, доступ или lifecycle.</dd></div>
+              <div><dt>Чип</dt><dd>Пользователь управляет значением.</dd></div>
+              <div><dt>Тег</dt><dd>Описывает характеристику компании.</dd></div>
+              <div><dt>Бейдж</dt><dd>Передаёт статус, источник или доступ.</dd></div>
             </dl>
 
             <div class="ui-kit-label-family-grid">
               <article class="ui-kit-label-family">
-                <header><span>A</span><div><h3>Interactive Chips</h3><p>Фильтры, пользовательский выбор и удаляемые значения.</p></div></header>
-                <div class="ui-kit-label-example"><small>Default / selected</small><div class="ui-kit-label-row"><UiKitSemanticLabel id="active_hiring" /><UiKitSemanticLabel id="remote" selected /><UiKitSemanticLabel id="comparison" selected /></div></div>
-                <div class="ui-kit-label-example"><small>Hover / focus-visible / pressed</small><div class="ui-kit-label-row"><UiKitSemanticLabel id="active_hiring" label="Hover" demoState="hover" /><UiKitSemanticLabel id="active_hiring" label="Focus" demoState="focus" /><UiKitSemanticLabel id="active_hiring" label="Pressed" selected demoState="pressed" /></div></div>
-                <div class="ui-kit-label-example"><small>Removable / disabled</small><div class="ui-kit-label-row"><span class="ui-kit-removable-slot"><UiKitSemanticLabel id="moscow" removable /><span class="ui-kit-removal-status" role="status" aria-live="polite"></span></span><UiKitSemanticLabel id="remote" disabled /></div></div>
-                <div class="ui-kit-label-example"><small>Long label wraps safely</small><UiKitSemanticLabel id="active_hiring" label="Международная распределённая команда" /></div>
+                <header><span>A</span><div><h3>Интерактивные чипы</h3><p>Фильтры, выбор и удаляемые значения.</p></div></header>
+                <div class="ui-kit-label-example"><small>По умолчанию / выбрано</small><div class="ui-kit-label-row"><UiKitSemanticLabel id="active_hiring" /><UiKitSemanticLabel id="remote" selected /><UiKitSemanticLabel id="comparison" selected /></div></div>
+                <div class="ui-kit-label-example"><small>Удаляемый / недоступный</small><div class="ui-kit-label-row"><span class="ui-kit-removable-slot"><UiKitSemanticLabel id="moscow" removable /><span class="ui-kit-removal-status" role="status" aria-live="polite"></span></span><UiKitSemanticLabel id="remote" disabled /></div></div>
+                <div class="ui-kit-label-example"><small>Длинная подпись</small><UiKitSemanticLabel id="active_hiring" label="Международная распределённая команда" /></div>
+                <p class="ui-kit-label-note">Живой пример: используйте наведение, Tab и нажатие. Переключаемое состояние обновляет <code>aria-pressed</code>.</p>
               </article>
 
               <article class="ui-kit-label-family">
-                <header><span>B</span><div><h3>Static Tags</h3><p>Неинтерактивная taxonomy. На карточке показываются максимум два тега и <code>+N</code>.</p></div></header>
-                <div class="ui-kit-label-example"><small>Taxonomy</small><div class="ui-kit-label-row"><UiKitSemanticLabel id="product_studio" /><UiKitSemanticLabel id="b2b" /><UiKitSemanticLabel id="backend" /><UiKitSemanticLabel id="international" /><UiKitSemanticLabel id="tag_overflow" /></div></div>
-                <div class="ui-kit-label-example"><small>Feature / verified legal</small><div class="ui-kit-label-row"><UiKitSemanticLabel id="direct_application" /><UiKitSemanticLabel id="it_accredited" /></div></div>
-                <p class="ui-kit-label-note"><code>+N</code> остаётся статическим: критические trust-состояния никогда не скрываются в overflow.</p>
+                <header><span>B</span><div><h3>Статические теги</h3><p>Таксономия и характеристики компании.</p></div></header>
+                <div class="ui-kit-label-example"><small>Таксономия</small><div class="ui-kit-label-row"><UiKitSemanticLabel id="product_studio" /><UiKitSemanticLabel id="b2b" /><UiKitSemanticLabel id="backend" /><UiKitSemanticLabel id="international" /><UiKitSemanticLabel id="tag_overflow" /></div></div>
+                <div class="ui-kit-label-example"><small>Возможность / подтверждённый статус</small><div class="ui-kit-label-row"><UiKitSemanticLabel id="direct_application" /><UiKitSemanticLabel id="it_accredited" /></div></div>
+                <p class="ui-kit-label-note"><code>+N</code> показывает скрытые характеристики. Критические статусы в него не попадают.</p>
               </article>
 
               <article class="ui-kit-label-family">
-                <header><span>C</span><div><h3>Trust & Status Badges</h3><p>Качество, свежесть и согласованность данных. Warning всегда содержит icon и text.</p></div></header>
-                <div class="ui-kit-label-example"><small>Trust states</small><div class="ui-kit-label-row"><UiKitSemanticLabel id="verified" /><UiKitSemanticLabel id="stale" /><UiKitSemanticLabel id="conflicting" /><UiKitSemanticLabel id="insufficient_data" /><UiKitSemanticLabel id="unchecked" /></div></div>
+                <header><span>C</span><div><h3>Статусы и доверие</h3><p>Качество, свежесть и согласованность данных.</p></div></header>
+                <div class="ui-kit-label-example"><small>Состояния доверия</small><div class="ui-kit-label-row"><UiKitSemanticLabel id="verified" /><UiKitSemanticLabel id="stale" /><UiKitSemanticLabel id="conflicting" /><UiKitSemanticLabel id="insufficient_data" /><UiKitSemanticLabel id="unchecked" /></div></div>
               </article>
 
               <article class="ui-kit-label-family">
-                <header><span>D</span><div><h3>Provenance, Access & Lifecycle</h3><p>Происхождение не означает ошибку; доступ и lifecycle не смешиваются с trust.</p></div></header>
-                <div class="ui-kit-label-example"><small>Provenance</small><div class="ui-kit-label-row"><UiKitSemanticLabel id="employer_claim" /><UiKitSemanticLabel id="external_source" /><UiKitSemanticLabel id="platform_analysis" /><UiKitSemanticLabel id="user_generated" /></div></div>
-                <div class="ui-kit-label-example"><small>Access / lifecycle</small><div class="ui-kit-label-row"><UiKitSemanticLabel id="premium" /><UiKitSemanticLabel id="beta" /><UiKitSemanticLabel id="coming_soon" /><UiKitSemanticLabel id="unavailable" /></div></div>
+                <header><span>D</span><div><h3>Происхождение, доступ и жизненный цикл</h3><p>Источник данных не означает ошибку или уровень доверия.</p></div></header>
+                <div class="ui-kit-label-example"><small>Происхождение данных</small><div class="ui-kit-label-row"><UiKitSemanticLabel id="employer_claim" /><UiKitSemanticLabel id="external_source" /><UiKitSemanticLabel id="platform_analysis" /><UiKitSemanticLabel id="user_generated" /></div></div>
+                <div class="ui-kit-label-example"><small>Доступ / жизненный цикл</small><div class="ui-kit-label-row"><UiKitSemanticLabel id="premium" /><UiKitSemanticLabel id="beta" /><UiKitSemanticLabel id="coming_soon" /><UiKitSemanticLabel id="unavailable" /></div></div>
               </article>
             </div>
 
             <div class="ui-kit-label-system-grid">
               <article class="ui-kit-label-panel">
-                <h3>E · Size matrix</h3>
+                <h3>E · Матрица размеров</h3>
                 <div class="ui-kit-label-size-row"><b>S</b><UiKitSemanticLabel id="remote" size="s" /><UiKitSemanticLabel id="product_studio" size="s" /><UiKitSemanticLabel id="verified" size="s" /></div>
                 <div class="ui-kit-label-size-row"><b>M</b><UiKitSemanticLabel id="remote" size="m" /><UiKitSemanticLabel id="product_studio" size="m" /><UiKitSemanticLabel id="verified" size="m" /></div>
+                <p>S — карточки, таблицы и плотные интерфейсы. M — фильтры, краткий профиль и крупные интерактивные области.</p>
               </article>
               <article class="ui-kit-label-panel">
-                <h3>Count badges</h3>
-                <div class="ui-kit-label-row" aria-label="Numeric count badges"><span class="ui-kit-count-badge">3</span><span class="ui-kit-count-badge">+3</span><span class="ui-kit-count-badge">12</span><span class="ui-kit-count-badge">99+</span></div>
-                <p>Count badge — число действий или результатов. <code>+N</code> tag — скрытые характеристики.</p>
+                <h3>Счётчики</h3>
+                <div class="ui-kit-label-row" aria-label="Числовые счётчики"><span class="ui-kit-count-badge">3</span><span class="ui-kit-count-badge">12</span><span class="ui-kit-count-badge">99+</span></div>
+                <p><code>+N</code> показывает скрытые характеристики. Числовой счётчик показывает количество действий, фильтров или результатов.</p>
               </article>
               <article class="ui-kit-label-panel">
-                <h3>Loading geometry</h3>
-                <div class="ui-kit-label-row" aria-label="Загрузка labels" aria-busy="true"><span class="ui-kit-label-skeleton is-chip"></span><span class="ui-kit-label-skeleton is-tag"></span><span class="ui-kit-label-skeleton is-badge"></span></div>
-                <p>Skeleton сохраняет размеры family и не показывает фиктивные labels.</p>
+                <h3>Состояние загрузки</h3>
+                <div class="ui-kit-loading-family-grid" aria-label="Загрузка компонентов" aria-busy="true"><div><small>Чип</small><span class="ui-kit-label-skeleton is-chip is-s"></span><span class="ui-kit-label-skeleton is-chip is-m"></span></div><div><small>Тег</small><span class="ui-kit-label-skeleton is-tag is-s"></span><span class="ui-kit-label-skeleton is-tag is-m"></span></div><div><small>Бейдж</small><span class="ui-kit-label-skeleton is-badge is-s"></span><span class="ui-kit-label-skeleton is-badge is-m"></span></div></div>
+                <p>Скелетон сохраняет геометрию семейства и не показывает фиктивные подписи.</p>
               </article>
               <article class="ui-kit-label-panel">
-                <h3>Long text</h3>
-                <div class="ui-kit-label-long-list"><UiKitSemanticLabel id="international" label="Международная распределённая команда" /><UiKitSemanticLabel id="stale" label="Требует дополнительной ручной проверки" /><UiKitSemanticLabel id="employer_claim" label="По данным официальной страницы компании" /></div>
-                <p>Tags могут переноситься; badges ограничены по ширине, но critical text не скрывается только в tooltip.</p>
+                <h3>Длинный текст</h3>
+                <div class="ui-kit-label-long-list"><UiKitSemanticLabel id="active_hiring" label="Международная распределённая команда" /><UiKitSemanticLabel id="international" label="Международная распределённая команда" /><UiKitSemanticLabel id="stale" label="Требует дополнительной ручной проверки" /></div>
+                <p>Чип остаётся однострочным, тег переносится контролируемо, критический статус сохраняет полный текст.</p>
               </article>
             </div>
 
             <div class="ui-kit-label-registry" aria-labelledby="semantic-registry-title">
-              <div><p class="ui-kit-eyebrow">Local semantic registry</p><h3 id="semantic-registry-title">Page passes ID, registry selects family and variant</h3></div>
+              <div><p class="ui-kit-eyebrow">Локальный семантический реестр</p><h3 id="semantic-registry-title">Страница передаёт ID, реестр выбирает семейство и вариант</h3><p>Цвет не выбирается на уровне страницы.</p></div>
               <div role="table" aria-label="Примеры semantic registry">
-                <div role="row" class="is-head"><span role="columnheader">ID</span><span role="columnheader">Family</span><span role="columnheader">Variant</span></div>
-                {(["active_hiring","product_studio","verified","conflicting","employer_claim","external_source","premium","beta"] as const).map((id) => <div role="row"><code role="cell">{id}</code><span role="cell">{semanticLabels[id].family}</span><span role="cell">{semanticLabels[id].variant}</span></div>)}
+                <div role="row" class="is-head"><span role="columnheader">ID</span><span role="columnheader">Семейство</span><span role="columnheader">Вариант</span></div>
+                {(["active_hiring","product_studio","verified","conflicting","employer_claim","external_source","premium","beta"] as const).map((id) => <div role="row"><code role="cell">{id}</code><span role="cell">{semanticFamilyLabels[semanticLabels[id].family]}</span><span role="cell">{semanticVariantLabels[semanticLabels[id].variant] || semanticLabels[id].variant}</span></div>)}
               </div>
             </div>
           </UiKitSection>
