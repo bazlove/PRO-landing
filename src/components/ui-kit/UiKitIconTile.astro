@@ -1,0 +1,22 @@
+---
+import ProductIcon from "../ui/ProductIcon.astro";
+import { productIcons, type ProductIconId } from "../../lib/icons/registry";
+
+interface Props {
+  id: ProductIconId;
+}
+
+const { id } = Astro.props;
+const definition = productIcons[id];
+const supportsFill = "selectedWeight" in definition && definition.selectedWeight === "fill";
+---
+
+<article class="ui-kit-icon-tile">
+  <div class="ui-kit-icon-tile__glyph"><ProductIcon name={id} size={24} /></div>
+  <div>
+    <code>{id}</code>
+    <strong>{definition.description}</strong>
+    <span>{definition.sourceName}</span>
+  </div>
+  {supportsFill && <small>Fill</small>}
+</article>
