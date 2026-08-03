@@ -113,8 +113,12 @@
   --ui-label-premium-text: var(--ui-color-status-premium);
 
   /* Local document navigation and horizontal scroll */
-  --ui-section-rail-width: 216px;
-  --ui-section-marker-default: var(--ui-color-border-default);
+  --ui-kit-document-container: 1440px;
+  --ui-kit-section-heading-width: 220px;
+  --ui-kit-section-content-gap: 48px;
+  --ui-section-rail-width: 176px;
+  --ui-kit-section-rail-gap: 28px;
+  --ui-section-marker-default: color-mix(in srgb, var(--ui-color-text-muted) 52%, var(--ui-color-border-default));
   --ui-section-marker-adjacent: var(--ui-color-text-muted);
   --ui-section-marker-active: var(--ui-color-brand-primary);
   --ui-section-label-active: var(--ui-color-text-primary);
@@ -229,7 +233,7 @@
   --ui-color-status-external-bg: #172b45;
   --ui-color-status-ugc: #cab8df;
   --ui-color-status-ugc-bg: #2c2536;
-  --ui-section-marker-default: #2a394b;
+  --ui-section-marker-default: color-mix(in srgb, #939caa 52%, #2a394b);
   --ui-section-marker-adjacent: #697383;
   --ui-section-marker-active: #8997ff;
   --ui-section-label-active: #f4f6fa;
@@ -242,6 +246,20 @@
   --ui-shadow-dropdown: 0 18px 42px rgb(0 0 0 / 40%);
   --ui-shadow-overlay: -18px 0 48px rgb(0 0 0 / 48%);
   --ui-shadow-sticky: 0 8px 24px rgb(0 0 0 / 32%);
+}
+
+:root:has(> body.ui-kit-page),
+.ui-kit-page {
+  --ui-scrollbar-track: #f7f7f3;
+  --ui-scrollbar-thumb: #c6c6be;
+  --ui-scrollbar-thumb-hover: #7a7d82;
+}
+
+:root:has(> body.ui-kit-page .ui-kit-app[data-theme="dark"]),
+.ui-kit-page:has(.ui-kit-app[data-theme="dark"]) {
+  --ui-scrollbar-track: #101824;
+  --ui-scrollbar-thumb: #3a4b5f;
+  --ui-scrollbar-thumb-hover: #697383;
 }
 
 @media (max-width: 1023px) {
