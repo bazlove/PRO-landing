@@ -6,6 +6,8 @@ import UiKitCompanyCard from "../components/ui-kit/UiKitCompanyCard.astro";
 import UiKitCompanyQuickView from "../components/ui-kit/UiKitCompanyQuickView.astro";
 import UiKitCompanyPagePreview from "../components/ui-kit/UiKitCompanyPagePreview.astro";
 import UiKitSemanticLabel from "../components/ui-kit/UiKitSemanticLabel.astro";
+import UiKitIconography from "../components/ui-kit/UiKitIconography.astro";
+import ProductIcon from "../components/ui/ProductIcon.astro";
 import SiteAnalytics from "../components/analytics/SiteAnalytics.astro";
 import { semanticLabels } from "../lib/ui-kit/semanticLabels";
 import "../styles/ui-kit/tokens.css";
@@ -39,7 +41,7 @@ const sections = [
   { id: "overview", label: "Обзор" }, { id: "foundations", label: "Основы" }, { id: "colors", label: "Цвета" },
   { id: "typography", label: "Типографика" }, { id: "spacing-grid", label: "Отступы и сетка" }, { id: "shape", label: "Радиусы и уровни" },
   { id: "buttons", label: "Кнопки" }, { id: "forms", label: "Элементы форм" }, { id: "chips", label: "Чипы, теги и бейджи" },
-  { id: "trust", label: "Доверие и источники" }, { id: "feedback", label: "Состояния" }, { id: "company-card", label: "Карточка компании" },
+  { id: "iconography", label: "Иконки" }, { id: "trust", label: "Доверие и источники" }, { id: "feedback", label: "Состояния" }, { id: "company-card", label: "Карточка компании" },
   { id: "quick-view", label: "Краткий профиль" }, { id: "company-page", label: "Страница компании" }, { id: "responsive", label: "Адаптивность" },
   { id: "motion", label: "Политика анимации" }, { id: "accessibility", label: "Доступность" },
 ] as const;
@@ -159,7 +161,7 @@ const semanticVariantLabels: Record<string, string> = {
           </UiKitSection>
 
           <UiKitSection id="buttons" eyebrow="06 · Действия" title="Одно главное действие на блок" description="Все демонстрации используют реальные кнопки или ссылки, видимый фокус и стабильную ширину при загрузке.">
-            <div class="ui-kit-demo-band"><h3>Варианты</h3><div class="ui-kit-button-row"><button class="ui-kit-button ui-kit-button--primary" type="button">Основная</button><button class="ui-kit-button ui-kit-button--secondary" type="button">Вторичная</button><button class="ui-kit-button ui-kit-button--tertiary" type="button">Текстовая</button><button class="ui-kit-button ui-kit-button--destructive" type="button">Опасное действие</button><button class="ui-kit-button ui-kit-button--premium" type="button">Расширенный доступ</button><button class="ui-kit-icon-button" type="button" aria-label="Поиск" title="Поиск"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg></button></div></div>
+            <div class="ui-kit-demo-band"><h3>Варианты</h3><div class="ui-kit-button-row"><button class="ui-kit-button ui-kit-button--primary" type="button">Основная</button><button class="ui-kit-button ui-kit-button--secondary" type="button">Вторичная</button><button class="ui-kit-button ui-kit-button--tertiary" type="button">Текстовая</button><button class="ui-kit-button ui-kit-button--destructive" type="button">Опасное действие</button><button class="ui-kit-button ui-kit-button--premium" type="button">Расширенный доступ</button><button class="ui-kit-icon-button" type="button" aria-label="Поиск" title="Поиск"><ProductIcon name="search" size={20} /></button></div></div>
             <div class="ui-kit-demo-band"><h3>Состояния</h3><div class="ui-kit-button-row"><button class="ui-kit-button ui-kit-button--primary is-active" type="button" aria-pressed="true">Нажатое состояние <code>pressed</code></button><button class="ui-kit-button ui-kit-button--primary is-loading" type="button" aria-busy="true"><span>Загрузка</span></button><button class="ui-kit-button ui-kit-button--primary" type="button" disabled>Недоступно</button><button class="ui-kit-button ui-kit-button--success" type="button">Сохранено</button><button class="ui-kit-button ui-kit-button--secondary ui-kit-focus-demo" type="button">Видимый фокус <code>focus-visible</code></button></div></div>
             <div class="ui-kit-demo-band"><h3>Размеры</h3><div class="ui-kit-button-row ui-kit-button-row--end"><button class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" type="button">Компактная 36</button><button class="ui-kit-button ui-kit-button--secondary" type="button">Обычная 44</button><button class="ui-kit-button ui-kit-button--primary ui-kit-button--large" type="button">Выделенная 52</button></div></div>
           </UiKitSection>
@@ -167,14 +169,14 @@ const semanticVariantLabels: Record<string, string> = {
           <UiKitSection id="forms" eyebrow="07 · Элементы форм" title="Подписи остаются видимыми" description="Заполнитель показывает пример, но не заменяет подпись. Ошибка, подсказка и состояние проверки располагаются рядом с полем.">
             <form class="ui-kit-form-showcase" novalidate>
               <label class="ui-kit-field"><span>Название компании</span><input type="text" placeholder="Например, Signal Works" /><small>Введите название или домен</small></label>
-              <label class="ui-kit-field ui-kit-field--search"><span>Поиск по каталогу</span><div><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg><input type="search" value="Продуктовая студия" /></div></label>
+              <label class="ui-kit-field ui-kit-field--search"><span>Поиск по каталогу</span><div><ProductIcon name="search" size={20} /><input type="search" value="Продуктовая студия" /></div></label>
               <div class="ui-kit-field">
                 <label for="ui-kit-company-type">Тип компании</label>
                 <div class="ui-kit-select" data-state="closed">
                   <select id="ui-kit-company-type" class="ui-kit-select__control">
                     <option>Все типы</option><option selected>Продуктовая студия</option><option>Интегратор</option>
                   </select>
-                  <span class="ui-kit-select__icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"></path></svg></span>
+                  <span class="ui-kit-select__icon" aria-hidden="true"><ProductIcon name="chevron-down" size={16} /></span>
                 </div>
                 <small>Нативный список сохраняет системное меню и управление с клавиатуры</small>
               </div>
@@ -184,7 +186,7 @@ const semanticVariantLabels: Record<string, string> = {
                   <select id="ui-kit-company-type-error" class="ui-kit-select__control" aria-invalid="true" aria-describedby="ui-kit-company-type-error-message">
                     <option selected value="">Выберите тип</option><option>Продуктовая студия</option><option>Интегратор</option>
                   </select>
-                  <span class="ui-kit-select__icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"></path></svg></span>
+                  <span class="ui-kit-select__icon" aria-hidden="true"><ProductIcon name="chevron-down" size={16} /></span>
                 </div>
                 <small id="ui-kit-company-type-error-message">Выберите один вариант</small>
               </div>
@@ -194,7 +196,7 @@ const semanticVariantLabels: Record<string, string> = {
                   <select id="ui-kit-company-type-disabled" class="ui-kit-select__control" disabled>
                     <option selected>Источник недоступен</option>
                   </select>
-                  <span class="ui-kit-select__icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"></path></svg></span>
+                  <span class="ui-kit-select__icon" aria-hidden="true"><ProductIcon name="chevron-down" size={16} /></span>
                 </div>
                 <small>Выбор недоступен, пока источник не отвечает</small>
               </div>
@@ -206,7 +208,7 @@ const semanticVariantLabels: Record<string, string> = {
               <fieldset class="ui-kit-fieldset"><legend>Формат работы</legend><label><input type="checkbox" checked /> Удалённо</label><label><input type="checkbox" /> Гибрид</label></fieldset>
               <fieldset class="ui-kit-fieldset"><legend>Уровень данных</legend><label><input type="radio" name="data-level" checked /> Публичные</label><label><input type="radio" name="data-level" /> Обогащённые</label></fieldset>
               <label class="ui-kit-toggle"><input type="checkbox" checked /><span aria-hidden="true"></span><b>Только недавно обновлённые</b></label>
-              <div class="ui-kit-filter-control"><button class="ui-kit-button ui-kit-button--secondary" type="button"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"></path></svg>Фильтры <span>3</span></button></div>
+              <div class="ui-kit-filter-control"><button class="ui-kit-button ui-kit-button--secondary" type="button"><ProductIcon name="filter" size={20} />Фильтры <span>3</span></button></div>
             </form>
           </UiKitSection>
 
@@ -278,7 +280,11 @@ const semanticVariantLabels: Record<string, string> = {
             </div>
           </UiKitSection>
 
-          <UiKitSection id="trust" eyebrow="09 · Доверие и источники" title="Доказательства являются частью интерфейса" description="Каждое состояние сочетает значок, текст, источник или причину, дату и уровень уверенности там, где это уместно." wide>
+          <UiKitSection id="iconography" eyebrow="09 · Иконки" title="Одна система, семантические имена" description="Phosphor Regular используется по умолчанию. Fill обозначает только выбранное состояние." wide>
+            <UiKitIconography />
+          </UiKitSection>
+
+          <UiKitSection id="trust" eyebrow="10 · Доверие и источники" title="Доказательства являются частью интерфейса" description="Каждое состояние сочетает значок, текст, источник или причину, дату и уровень уверенности там, где это уместно." wide>
             <div class="ui-kit-trust-grid">
               <UiKitTrustState tone="verified" label="Проверено" detail="Размер компании подтверждён публичным реестром." source="Публичный реестр" date="18 июля 2026" confidence="Высокий" />
               <UiKitTrustState tone="fresh" label="Обновлено недавно" detail="Список вакансий наблюдался семь дней назад." source="Карьерная страница" date="24 июля 2026" />
@@ -292,7 +298,7 @@ const semanticVariantLabels: Record<string, string> = {
             </div>
           </UiKitSection>
 
-          <UiKitSection id="feedback" eyebrow="10 · Состояния" title="Состояние объясняет следующий шаг">
+          <UiKitSection id="feedback" eyebrow="11 · Состояния" title="Состояние объясняет следующий шаг">
             <div class="ui-kit-feedback-grid">
               <article class="ui-kit-feedback-card"><span class="ui-kit-badge">Загрузка</span><div class="ui-kit-skeleton" aria-label="Загрузка карточки"><i></i><b></b><b></b><b></b></div></article>
               <article class="ui-kit-feedback-card"><span class="ui-kit-badge">Пустое состояние</span><h3>Избранное пока пусто</h3><p>Сохраняйте компании, чтобы вернуться к ним позже.</p><button class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" type="button">Открыть каталог</button></article>
@@ -305,7 +311,7 @@ const semanticVariantLabels: Record<string, string> = {
             </div>
           </UiKitSection>
 
-          <UiKitSection id="company-card" eyebrow="11 · Продуктовый паттерн" title="Карточка компании" description="Четыре сценария на локальных вымышленных данных проверяют длинный текст, неполные, устаревшие и конфликтующие состояния." wide>
+          <UiKitSection id="company-card" eyebrow="12 · Продуктовый паттерн" title="Карточка компании" description="Четыре сценария на локальных вымышленных данных проверяют длинный текст, неполные, устаревшие и конфликтующие состояния." wide>
             <p class="ui-kit-mock-note">Все компании и метрики ниже — вымышленные примеры для проверки устойчивости интерфейса.</p>
             <div class="ui-kit-company-grid">
               <UiKitCompanyCard scenario="A · ОБОГАЩЁННЫЙ + ПРОВЕРЕННЫЙ" initials="NW" name="Northstar Digital Lab" type="Продуктовая студия" location="Санкт-Петербург" size="201–500" facts={[{label:"Найм",value:"Точечный · 5–10 вакансий"},{label:"Формат",value:"Удалённо · РФ"}]} chips={["IT-аккредитация","Прямой отклик","Международная"]} chipTones={["verified","employment","neutral"]} rating="4,7" ratingNote="186 внешних отзывов" freshness="Обновлено 7 дней назад" freshnessTone="verified" trustTone="verified" completeness="enriched" trust="verified" logoVariant="mark" />
@@ -340,7 +346,7 @@ const semanticVariantLabels: Record<string, string> = {
                 <span class="ui-kit-badge ui-kit-badge--premium">Предпросмотр расширенного профиля</span>
                 <h3>Динамика найма</h3>
                 <p>Публичные факты остаются видимыми. Расширенная аналитика не показана.</p>
-                <div class="ui-kit-premium-preview"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg><span>Доступно в расширенном профиле</span></div>
+                <div class="ui-kit-premium-preview"><ProductIcon name="locked" size={20} /><span>Доступно в расширенном профиле</span></div>
               </article>
               <article class="ui-kit-company-state" data-provenance="platform-analysis">
                 <span class="ui-kit-badge ui-kit-badge--beta">Персональный предпросмотр</span>
@@ -371,26 +377,26 @@ const semanticVariantLabels: Record<string, string> = {
                 <div class="ui-kit-logo-variants" aria-label="Варианты логотипа">
                   <div><span class="ui-kit-company-card__logo ui-kit-company-card__logo--mark" aria-hidden="true"><b class="ui-kit-company-card__brand-mark">N</b></span><small>Брендовый знак</small></div>
                   <div><span class="ui-kit-company-card__logo ui-kit-company-card__logo--initials" aria-hidden="true">LNG</span><small>Инициалы</small></div>
-                  <div><span class="ui-kit-company-card__logo ui-kit-company-card__logo--generic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V7l8-4 8 4v14M8 10h2m4 0h2m-8 4h2m4 0h2M9 21v-3h6v3"></path></svg></span><small>Безопасная заглушка</small></div>
+                  <div><span class="ui-kit-company-card__logo ui-kit-company-card__logo--generic" aria-hidden="true"><ProductIcon name="company" size={24} /></span><small>Безопасная заглушка</small></div>
                 </div>
               </article>
             </div>
           </UiKitSection>
 
-          <UiKitSection id="quick-view" eyebrow="12 · Оверлейный паттерн" title="Краткий профиль компании" description="На компьютере это боковая панель, на планшете — широкая выдвижная панель, на телефоне — полноэкранный диалог с единым DOM и сохранением контекста каталога.">
+          <UiKitSection id="quick-view" eyebrow="13 · Оверлейный паттерн" title="Краткий профиль компании" description="На компьютере это боковая панель, на планшете — широкая выдвижная панель, на телефоне — полноэкранный диалог с единым DOM и сохранением контекста каталога.">
             <div class="ui-kit-quick-view-launch"><div><strong>Northstar Digital Lab</strong><span>Краткий профиль без выхода из каталога</span></div><button class="ui-kit-button ui-kit-button--primary" type="button" data-ui-kit-quick-view-open>Быстрый просмотр</button></div>
           </UiKitSection>
 
-          <UiKitSection id="company-page" eyebrow="13 · Шаблон страницы" title="Сокращённая страница компании" description="Реалистичный шаблон второго уровня показывает факты, внешние сигналы, данные компании, отсутствующие данные и предпросмотр расширенной аналитики как разные типы данных." wide>
+          <UiKitSection id="company-page" eyebrow="14 · Шаблон страницы" title="Сокращённая страница компании" description="Реалистичный шаблон второго уровня показывает факты, внешние сигналы, данные компании, отсутствующие данные и предпросмотр расширенной аналитики как разные типы данных." wide>
             <UiKitCompanyPagePreview />
           </UiKitSection>
 
-          <UiKitSection id="responsive" eyebrow="14 · Адаптивность" title="Структура меняется, факты остаются" description="Витрина построена одним DOM-деревом и перестраивается на 12, 8 и 4 колонки без обязательной горизонтальной прокрутки.">
+          <UiKitSection id="responsive" eyebrow="15 · Адаптивность" title="Структура меняется, факты остаются" description="Витрина построена одним DOM-деревом и перестраивается на 12, 8 и 4 колонки без обязательной горизонтальной прокрутки.">
             <div class="ui-kit-responsive-table ui-kit-scroll-x" role="table" aria-label="Адаптивные преобразования"><div role="row" class="is-head"><span role="columnheader">Шаблон</span><span role="columnheader">Компьютер</span><span role="columnheader">Планшет</span><span role="columnheader">Телефон</span></div>{[["Сетка компаний","3 колонки","2 колонки","1 колонка"],["Краткий профиль","Правая боковая панель","Широкая выдвижная панель","Полноэкранный диалог"],["Страница компании","Сетка 8 + 4","Одна колонка","Одна колонка + закреплённое действие"],["Локальная навигация","Закреплённая строка","Прокручиваемая строка","Прокручиваемые якоря"],["Таблица данных","Полная таблица","Сокращённая","Карточки критериев"]].map((row) => <div role="row">{row.map((cell) => <span role="cell">{cell}</span>)}</div>)}</div>
             <div class="ui-kit-breakpoint-row"><span>320</span><span>390</span><span>768</span><span>1024</span><span>1280</span><span>1440</span></div>
           </UiKitSection>
 
-          <UiKitSection id="motion" eyebrow="15 · Политика анимации" title="Анимация объясняет изменение состояния" description="React Bits не установлен. Здесь показаны только CSS-токены, переход выдвижной панели и правила для отдельного будущего исследования.">
+          <UiKitSection id="motion" eyebrow="16 · Политика анимации" title="Анимация объясняет изменение состояния" description="React Bits не установлен. Здесь показаны только CSS-токены, переход выдвижной панели и правила для отдельного будущего исследования.">
             <div class="ui-kit-motion-tokens">{[["fast","120 ms","наведение / фокус"],["default","180 ms","чип / проверка"],["slow","240 ms","панель / модальное окно"],["page","300 ms","крупный переход"],["marketing","480 ms","однократное появление"]].map(([name,value,use]) => <div><code>motion.{name}</code><strong>{value}</strong><span>{use}</span></div>)}</div>
             <div class="ui-kit-motion-demo"><div class="ui-kit-fade-demo" data-ui-kit-fade-demo><span>Появление контента только на CSS</span><strong>Контент доступен до анимации</strong><p>Однократное смещение на 8 px, статичный запасной вариант при уменьшенном движении.</p></div><button class="ui-kit-button ui-kit-button--secondary" type="button" data-ui-kit-fade-replay>Повторить пример</button></div>
             <div class="ui-kit-policy-table ui-kit-scroll-x" role="table" aria-label="Политика React Bits"><div role="row" class="is-head"><span>Шаблон</span><span>Приоритет</span><span>Разрешённая поверхность</span><span>Статус</span></div>{[["Появление контента","P1","SEO / знакомство / витрина","Экспериментальный"],["Анимированный контент","P1","Маркетинг / расширенный доступ","Ограниченный"],["Анимация счётчика","P1","Метрики покрытия","Экспериментальный"],["Анимированный список","P2","ИИ / история изменений","Отложенный"],["Карточка с подсветкой","P2","Один предпросмотр расширенного доступа","Отложенный"],["Мягкое сияние / Aurora","Экспериментальный","Только один первый экран","Требует исследования"]].map((row) => <div role="row">{row.map((cell) => <span>{cell}</span>)}</div>)}</div>
@@ -398,8 +404,8 @@ const semanticVariantLabels: Record<string, string> = {
             <p class="ui-kit-callout">Компоненты React Bits, зависимости, лицензирование и производительность будут оценены в отдельном техническом исследовании.</p>
           </UiKitSection>
 
-          <UiKitSection id="accessibility" eyebrow="16 · Проверка доступности" title="Реализованные меры, а не заявление о соответствии" description="Формальная WCAG-проверка не заявляется; ниже перечислены реализованные меры и дальнейшие ручные проверки.">
-            <div class="ui-kit-a11y-grid">{["Семантическая иерархия заголовков","Ссылка перехода к содержанию","Видимое кольцо фокуса","Якоря доступны с клавиатуры","Видимые подписи полей","Статус передаётся текстом и значком","Области нажатия 40–52 px","Семантика диалога","Клавиша Escape и возврат фокуса","Блокировка фоновой прокрутки","Запасной вариант с уменьшенным движением","Адаптивный порядок источника","Значение не передаётся только цветом","Проверка переполнения при 320 px"].map((item) => <div><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4 10-10"></path></svg><span>{item}</span></div>)}</div>
+          <UiKitSection id="accessibility" eyebrow="17 · Проверка доступности" title="Реализованные меры, а не заявление о соответствии" description="Формальная WCAG-проверка не заявляется; ниже перечислены реализованные меры и дальнейшие ручные проверки.">
+            <div class="ui-kit-a11y-grid">{["Семантическая иерархия заголовков","Ссылка перехода к содержанию","Видимое кольцо фокуса","Якоря доступны с клавиатуры","Видимые подписи полей","Статус передаётся текстом и значком","Области нажатия 40–52 px","Семантика диалога","Клавиша Escape и возврат фокуса","Блокировка фоновой прокрутки","Запасной вариант с уменьшенным движением","Адаптивный порядок источника","Значение не передаётся только цветом","Проверка переполнения при 320 px"].map((item) => <div><ProductIcon name="confirm" size={20} /><span>{item}</span></div>)}</div>
           </UiKitSection>
           </div>
           <aside class="ui-kit-section-rail" aria-label="Навигация по разделам" data-ui-kit-section-nav>
@@ -533,6 +539,15 @@ const semanticVariantLabels: Record<string, string> = {
             chip.classList.toggle("is-selected", selected);
           }));
 
+          root.querySelectorAll("[data-ui-kit-icon-toggle]").forEach((button) => button.addEventListener("click", () => {
+            if (!(button instanceof HTMLButtonElement)) return;
+            const selected = button.getAttribute("aria-pressed") !== "true";
+            button.setAttribute("aria-pressed", String(selected));
+            button.classList.toggle("is-selected", selected);
+            const label = button.querySelector("[data-ui-kit-icon-toggle-label]");
+            if (label) label.textContent = selected ? "В избранном" : "Добавить в избранное";
+          }));
+
           root.querySelectorAll("[data-ui-kit-chip-remove]").forEach((chip) => chip.addEventListener("click", () => {
             if (!(chip instanceof HTMLButtonElement)) return;
             const slot = chip.closest(".ui-kit-removable-slot");
@@ -606,6 +621,10 @@ const semanticVariantLabels: Record<string, string> = {
             button.setAttribute("aria-pressed", String(pressed));
             button.classList.toggle("is-pressed", pressed);
             button.title = pressed ? "Удалить из избранного" : "Добавить в избранное";
+            const currentLabel = button.getAttribute("aria-label") || "";
+            button.setAttribute("aria-label", pressed
+              ? currentLabel.replace(/^Добавить (.+) в избранное$/, "Удалить $1 из избранного").replace("Добавить в избранное", "Удалить из избранного")
+              : currentLabel.replace(/^Удалить (.+) из избранного$/, "Добавить $1 в избранное").replace("Удалить из избранного", "Добавить в избранное"));
             const card = button.closest("[data-ui-kit-company-card]");
             if (card instanceof HTMLElement) { card.classList.toggle("is-favorite-selected", pressed); updateCardInteraction(card); }
           }));
