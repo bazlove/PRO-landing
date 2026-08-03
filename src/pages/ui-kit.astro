@@ -33,8 +33,8 @@ const toc = [
   ["overview", "Overview"], ["foundations", "Foundations"], ["colors", "Colors"],
   ["typography", "Typography"], ["spacing-grid", "Spacing & grid"], ["shape", "Radius & elevation"],
   ["buttons", "Buttons"], ["forms", "Form controls"], ["chips", "Chips & badges"],
-  ["trust", "Trust & evidence"], ["feedback", "Feedback"], ["company-card", "Company Card"],
-  ["quick-view", "Quick View"], ["company-page", "Company Page"], ["responsive", "Responsive"],
+  ["trust", "Trust & evidence"], ["feedback", "Feedback"], ["company-card", "Карточка компании"],
+  ["quick-view", "Краткий профиль"], ["company-page", "Страница компании"], ["responsive", "Responsive"],
   ["motion", "Motion policy"], ["accessibility", "Accessibility"],
 ] as const;
 
@@ -285,71 +285,79 @@ const spacing = [["space.1", 4], ["space.2", 8], ["space.3", 12], ["space.4", 16
             </div>
           </UiKitSection>
 
-          <UiKitSection id="company-card" eyebrow="11 · Product pattern" title="Company Card" description="Четыре сценария используют только локальные вымышленные данные и проверяют длинный текст, missing, stale и conflict states." wide>
-            <p class="ui-kit-mock-note">Все компании и метрики ниже — fictional samples для проверки устойчивости интерфейса.</p>
+          <UiKitSection id="company-card" eyebrow="11 · Продуктовый паттерн" title="Карточка компании" description="Четыре сценария на локальных вымышленных данных проверяют длинный текст, неполные, устаревшие и конфликтующие состояния." wide>
+            <p class="ui-kit-mock-note">Все компании и метрики ниже — вымышленные примеры для проверки устойчивости интерфейса.</p>
             <div class="ui-kit-company-grid">
-              <UiKitCompanyCard scenario="A · Enriched + verified" initials="NW" name="Northstar Digital Lab" type="Product studio" location="Санкт-Петербург" size="201–500" facts={[{label:"Найм",value:"Точечный · 5–10 вакансий"},{label:"Формат",value:"Удалённо · РФ"}]} chips={["IT-аккредитация","Прямой отклик","International"]} chipTones={["verified","employment","neutral"]} rating="4,7" ratingNote="186 внешних отзывов" freshness="Обновлено 7 дней назад" trustTone="verified" completeness="enriched" trust="verified" logoVariant="mark" />
-              <UiKitCompanyCard scenario="B · Incomplete + unknown" initials="SW" name="Signal Works" type="Data consulting" location="Казань" size="Размер не раскрыт" facts={[{label:"Найм",value:"Статус не проверен"},{label:"Формат",value:"Гибрид · Казань"}]} chips={["Data","B2B"]} rating="—" ratingNote="Рейтинг не найден" freshness="Дата обновления неизвестна" trustTone="neutral" completeness="incomplete" trust="unknown" logoVariant="generic" />
-              <UiKitCompanyCard scenario="C · Complete + stale" initials="LC" name="Long Company Name Used to Test Responsive Wrapping" type="Enterprise software" location="Новосибирск · РФ и страны СНГ" size="51–200" facts={[{label:"Найм",value:"Ограниченный активный найм · 1–4 вакансии"},{label:"Формат",value:"Удалённо · РФ и СНГ"}]} chips={["Backend","B2B","Distributed"]} rating="4,2" ratingNote="28 внешних отзывов" freshness="Профиль требует обновления" trustTone="warning" completeness="complete" trust="stale" logoVariant="initials" />
-              <UiKitCompanyCard scenario="D · Complete + conflicting" initials="EP" name="Example Product Studio" type="UX / Product" location="Москва" size="51–200" facts={[{label:"Найм",value:"Точечный · 3–6 вакансий"},{label:"Формат",value:"Remote / офис · РФ"}]} chips={["Design","Product","B2B"]} rating="4,5" ratingNote="12 внешних отзывов" ratingQuality="Малая выборка" freshness="Обновлено 18 дней назад" trustTone="critical" trustMessage="Источники расходятся по формату работы" completeness="complete" trust="conflicting" logoVariant="initials" />
+              <UiKitCompanyCard scenario="A · ОБОГАЩЁННЫЙ + ПРОВЕРЕННЫЙ" initials="NW" name="Northstar Digital Lab" type="Product studio" location="Санкт-Петербург" size="201–500" facts={[{label:"Найм",value:"Точечный · 5–10 вакансий"},{label:"Формат",value:"Удалённо · РФ"}]} chips={["IT-аккредитация","Прямой отклик","International"]} chipTones={["verified","employment","neutral"]} rating="4,7" ratingNote="186 внешних отзывов" freshness="Обновлено 7 дней назад" freshnessTone="verified" trustTone="verified" completeness="enriched" trust="verified" logoVariant="mark" />
+              <UiKitCompanyCard scenario="B · НЕПОЛНЫЙ + НЕИЗВЕСТНЫЙ" initials="SW" name="Signal Works" type="Data consulting" location="Казань" size="Размер не раскрыт" facts={[{label:"Найм",value:"Статус не проверен"},{label:"Формат",value:"Гибрид · Казань"}]} chips={["Data","B2B"]} rating="—" ratingNote="Рейтинг не найден" freshness="Дата обновления неизвестна" freshnessTone="neutral" trustTone="neutral" completeness="incomplete" trust="unknown" logoVariant="generic" />
+              <UiKitCompanyCard scenario="C · ПОЛНЫЙ + УСТАРЕВШИЙ" initials="LC" name="Long Company Name Used to Test Responsive Wrapping" type="Enterprise software" location="Новосибирск · РФ и страны СНГ" size="51–200" facts={[{label:"Найм",value:"Ограниченный активный найм · 1–4 вакансии"},{label:"Формат",value:"Удалённо · РФ и СНГ"}]} chips={["Backend","B2B","Distributed"]} rating="4,2" ratingNote="28 внешних отзывов" freshness="Профиль требует обновления" freshnessTone="warning" trustTone="warning" completeness="complete" trust="stale" logoVariant="initials" />
+              <UiKitCompanyCard scenario="D · ПОЛНЫЙ + КОНФЛИКТ ИСТОЧНИКОВ" initials="EP" name="Example Product Studio" type="UX / Product" location="Москва" size="51–200" facts={[{label:"Найм",value:"Точечный · 3–6 вакансий"},{label:"Формат",value:"Remote / офис · РФ"}]} chips={["Design","Product","B2B"]} rating="4,5" ratingNote="12 внешних отзывов" ratingQuality="Малая выборка" freshness="Обновлено 18 дней назад" freshnessTone="neutral" trustTone="critical" trustMessage="Источники расходятся по формату работы" completeness="complete" trust="conflicting" logoVariant="initials" />
             </div>
 
             <div class="ui-kit-card-state-doc" aria-labelledby="card-state-model-title">
               <div>
-                <p class="ui-kit-eyebrow">Independent state model</p>
-                <h3 id="card-state-model-title">Состояния не конкурируют за один border</h3>
+                <p class="ui-kit-eyebrow">Независимая модель состояний</p>
+                <h3 id="card-state-model-title">Состояния не конкурируют за одну рамку</h3>
               </div>
               <dl>
-                <div><dt>Completeness</dt><dd>enriched · complete · incomplete · minimal</dd></div>
-                <div><dt>Trust</dt><dd>verified · stale · conflicting · low-confidence · unknown</dd></div>
-                <div><dt>Interaction</dt><dd>default · quick-view-open · compare-selected · favorite-selected</dd></div>
-                <div><dt>Access</dt><dd>public · premium-preview · unavailable</dd></div>
+                <div><dt>Полнота</dt><dd>обогащённый · полный · неполный · минимальный</dd></div>
+                <div><dt>Доверие</dt><dd>проверенный · устаревший · конфликтующий · низкая уверенность · неизвестный</dd></div>
+                <div><dt>Взаимодействие</dt><dd>по умолчанию · краткий профиль открыт · в сравнении · в избранном</dd></div>
+                <div><dt>Доступ</dt><dd>публичный · предпросмотр расширенного профиля · недоступный</dd></div>
               </dl>
             </div>
 
-            <div class="ui-kit-company-state-grid" aria-label="Дополнительные состояния Company Card">
+            <ul class="ui-kit-card-polish-rules" aria-label="Правила паттерна карточки компании">
+              <li>Каждый тег — отдельный компонент. Группа использует равномерный отступ и перенос строк.</li>
+              <li>Состояния полноты, доверия, взаимодействия и доступа независимы. Статус одного поля не перекрашивает несвязанные показатели.</li>
+              <li>Быстрый просмотр — главное действие карточки, но не главный визуальный объект карточки.</li>
+              <li>Вторичный текст должен оставаться читаемым и не использовать цвет отключённого состояния.</li>
+              <li>Видимые системные подписи локализуются. Enum и идентификаторы компонентов остаются техническими.</li>
+            </ul>
+
+            <div class="ui-kit-company-state-grid" aria-label="Дополнительные состояния карточки компании">
               <article class="ui-kit-company-state ui-kit-company-state--premium" data-access="premium-preview">
-                <span class="ui-kit-badge ui-kit-badge--premium">Premium preview</span>
+                <span class="ui-kit-badge ui-kit-badge--premium">Предпросмотр расширенного профиля</span>
                 <h3>Динамика найма</h3>
                 <p>Публичные факты остаются видимыми. Расширенная аналитика не показана.</p>
                 <div class="ui-kit-premium-preview"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg><span>Доступно в расширенном профиле</span></div>
               </article>
               <article class="ui-kit-company-state" data-provenance="platform-analysis">
-                <span class="ui-kit-badge ui-kit-badge--beta">Персональный preview</span>
+                <span class="ui-kit-badge ui-kit-badge--beta">Персональный предпросмотр</span>
                 <h3>Подходит по 4 из 6 критериев</h3>
                 <p>Аналитика платформы · производный сигнал, не проверенный факт.</p>
               </article>
               <article class="ui-kit-company-state ui-kit-company-state--compare is-compare-selected" data-interaction="compare-selected" data-ui-kit-compare-demo>
-                <span class="ui-kit-badge ui-kit-badge--beta">Compare selected</span>
+                <span class="ui-kit-badge ui-kit-badge--beta">Добавлено в сравнение</span>
                 <h3>Northstar Digital Lab</h3>
-                <p>Interaction state не меняет trust или completeness компании.</p>
+                <p>Состояние взаимодействия не меняет доверие или полноту данных компании.</p>
                 <button class="ui-kit-button ui-kit-button--tertiary ui-kit-button--compact is-active" type="button" aria-pressed="true" data-ui-kit-compare>В сравнении</button>
               </article>
               <article class="ui-kit-company-state" data-access="unavailable">
-                <span class="ui-kit-badge">Unavailable</span>
+                <span class="ui-kit-badge">Недоступно</span>
                 <h3>Данные временно недоступны</h3>
-                <p>Источник не отвечает. Это состояние отличается от missing, loading и access restriction.</p>
+                <p>Источник не отвечает. Это состояние отличается от отсутствующих данных, загрузки и ограничения доступа.</p>
               </article>
               <article class="ui-kit-company-state" aria-busy="true" aria-label="Загрузка карточки компании">
-                <span class="ui-kit-badge">Card skeleton</span>
+                <span class="ui-kit-badge">Скелетон карточки</span>
                 <div class="ui-kit-company-card-skeleton" aria-hidden="true"><i></i><div><b></b><b></b></div><span></span><span></span><span></span></div>
               </article>
               <article class="ui-kit-company-state" aria-busy="true" aria-label="Загрузка быстрого просмотра">
-                <span class="ui-kit-badge">Quick View loading</span>
+                <span class="ui-kit-badge">Загрузка краткого профиля</span>
                 <div class="ui-kit-quick-view-skeleton" aria-hidden="true"><b></b><span></span><span></span><span></span></div>
               </article>
               <article class="ui-kit-company-state">
-                <span class="ui-kit-badge">Logo fallbacks</span>
+                <span class="ui-kit-badge">Варианты логотипа</span>
                 <div class="ui-kit-logo-variants" aria-label="Варианты логотипа">
-                  <div><span class="ui-kit-company-card__logo ui-kit-company-card__logo--mark" aria-hidden="true"><b class="ui-kit-company-card__brand-mark">N</b></span><small>Brand mark</small></div>
-                  <div><span class="ui-kit-company-card__logo ui-kit-company-card__logo--initials" aria-hidden="true">LNG</span><small>Initials</small></div>
-                  <div><span class="ui-kit-company-card__logo ui-kit-company-card__logo--generic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V7l8-4 8 4v14M8 10h2m4 0h2m-8 4h2m4 0h2M9 21v-3h6v3"></path></svg></span><small>Safe fallback</small></div>
+                  <div><span class="ui-kit-company-card__logo ui-kit-company-card__logo--mark" aria-hidden="true"><b class="ui-kit-company-card__brand-mark">N</b></span><small>Брендовый знак</small></div>
+                  <div><span class="ui-kit-company-card__logo ui-kit-company-card__logo--initials" aria-hidden="true">LNG</span><small>Инициалы</small></div>
+                  <div><span class="ui-kit-company-card__logo ui-kit-company-card__logo--generic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V7l8-4 8 4v14M8 10h2m4 0h2m-8 4h2m4 0h2M9 21v-3h6v3"></path></svg></span><small>Безопасная заглушка</small></div>
                 </div>
               </article>
             </div>
           </UiKitSection>
 
-          <UiKitSection id="quick-view" eyebrow="12 · Overlay pattern" title="Company Quick View" description="Desktop sidepage, tablet drawer и full-screen mobile dialog используют один DOM и сохраняют контекст каталога.">
+          <UiKitSection id="quick-view" eyebrow="12 · Оверлейный паттерн" title="Краткий профиль компании" description="На компьютере это боковая панель, на планшете — широкая выдвижная панель, на телефоне — полноэкранный диалог с единым DOM и сохранением контекста каталога.">
             <div class="ui-kit-quick-view-launch"><div><strong>Northstar Digital Lab</strong><span>Краткий профиль без выхода из каталога</span></div><button class="ui-kit-button ui-kit-button--primary" type="button" data-ui-kit-quick-view-open>Быстрый просмотр</button></div>
           </UiKitSection>
 
