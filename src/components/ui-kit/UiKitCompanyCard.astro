@@ -1,8 +1,14 @@
 ---
+import ProductIcon from "../ui/ProductIcon.astro";
+import InlineLink from "../ui/InlineLink.astro";
+import type { ProductIconId } from "../../lib/icons/registry";
+
 interface Fact {
   label: string;
   value: string;
 }
+
+type TrustTone = "verified" | "warning" | "neutral" | "critical";
 
 interface Props {
   scenario: string;
@@ -19,7 +25,7 @@ interface Props {
   ratingQuality?: string;
   freshness: string;
   freshnessTone?: "verified" | "warning" | "neutral";
-  trustTone: "verified" | "warning" | "neutral" | "critical";
+  trustTone: TrustTone;
   trustMessage?: string;
   completeness?: "enriched" | "complete" | "incomplete" | "minimal";
   trust?: "verified" | "stale" | "conflicting" | "low-confidence" | "unknown";
@@ -59,6 +65,16 @@ const {
 const visibleChips = chips.slice(0, 2);
 const hiddenChipCount = Math.max(0, chips.length - visibleChips.length);
 const meta = `${type} · ${location} · ${size}`;
+const trustIcons = {
+  verified: "verified",
+  warning: "stale",
+  neutral: "information",
+  critical: "conflict",
+} satisfies Record<TrustTone, ProductIconId>;
+const trustIcon = trustIcons[trustTone];
+const favoriteLabel = favoriteSelected
+  ? `Удалить ${name} из избранного`
+  : `Добавить ${name} в избранное`;
 ---
 
 <article
@@ -76,7 +92,7 @@ const meta = `${type} · ${location} · ${size}`;
   <header class="ui-kit-company-card__identity">
     <div class:list={["ui-kit-company-card__logo", `ui-kit-company-card__logo--${logoVariant}`]} aria-hidden="true">
       {logoVariant === "generic" ? (
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V7l8-4 8 4v14M8 10h2m4 0h2m-8 4h2m4 0h2M9 21v-3h6v3"></path></svg>
+        <ProductIcon name="company" size={24} />
       ) : logoVariant === "mark" ? (
         <span class="ui-kit-company-card__brand-mark">N</span>
       ) : initials.slice(0, 3)}
@@ -88,13 +104,14 @@ const meta = `${type} · ${location} · ${size}`;
     <button
       class:list={["ui-kit-icon-button", "ui-kit-company-card__favorite", { "is-pressed": favoriteSelected }]}
       type="button"
-      aria-label={`Добавить ${name} в избранное`}
-      aria-pressed={favoriteSelected}
-      title="Добавить в избранное"
+      aria-label={favoriteLabel}
+      aria-pressed={favoriteSelected ? "true" : "false"}
+      title={favoriteLabel}
       data-ui-kit-favorite
+      data-favorite-label={name}
       disabled={disabled}
     >
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"></path></svg>
+      <ProductIcon name="favorite" size={20} state="auto" />
     </button>
   </header>
 
@@ -104,9 +121,9 @@ const meta = `${type} · ${location} · ${size}`;
 
   {trustMessage && (
     <div class:list={["ui-kit-company-card__trust-message", `is-${trustTone}`]}>
-      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 9v4m0 4h.01M10.3 3.8 2 18a2 2 0 0 0 1.7 3h16.6a2 2 0 0 0 1.7-3L13.7 3.8a2 2 0 0 0-3.4 0Z"></path></svg>
+      <ProductIcon name={trustIcon} size={16} />
       <span>{trustMessage}</span>
-      <a href="#trust">Источники</a>
+      <InlineLink href="#trust">Источники</InlineLink>
     </div>
   )}
 
