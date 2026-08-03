@@ -12,30 +12,30 @@ import "../styles/ui-kit/ui-kit.css";
 
 const paletteGroups = [
   {
-    name: "Neutral",
+    name: "Нейтральные",
     swatches: [
       ["neutral.0", "#FFFFFF", "Белая поверхность"], ["neutral.25", "#FCFCFA", "Фон страницы"],
-      ["neutral.50", "#F7F7F3", "Secondary background"], ["neutral.100", "#EFEFEA", "Disabled surface"],
-      ["neutral.200", "#DEDED7", "Border"], ["neutral.300", "#C6C6BE", "Strong border"],
-      ["neutral.500", "#7A7D82", "Muted text"], ["neutral.700", "#3B414A", "Supporting text"],
-      ["neutral.900", "#121A26", "Primary text"], ["neutral.950", "#0B111B", "Darkest surface"],
+      ["neutral.50", "#F7F7F3", "Вторичный фон"], ["neutral.100", "#EFEFEA", "Недоступная поверхность"],
+      ["neutral.200", "#DEDED7", "Граница"], ["neutral.300", "#C6C6BE", "Усиленная граница"],
+      ["neutral.500", "#7A7D82", "Приглушённый текст"], ["neutral.700", "#3B414A", "Вспомогательный текст"],
+      ["neutral.900", "#121A26", "Основной текст"], ["neutral.950", "#0B111B", "Самая тёмная поверхность"],
     ],
   },
-  { name: "Indigo", swatches: [["indigo.50", "#F1F3FF", "Brand soft"], ["indigo.100", "#E3E7FF", "Selected soft"], ["indigo.200", "#C7CFFF", "Brand border"], ["indigo.400", "#7484F4", "Accent"], ["indigo.500", "#596BE5", "Brand bright"], ["indigo.600", "#4254CC", "Primary CTA"], ["indigo.700", "#3443A8", "Primary hover"], ["indigo.800", "#293683", "Primary active"], ["indigo.900", "#202A64", "Deep brand"]] },
-  { name: "Coral", swatches: [["coral.50", "#FFF4F0", "Signature soft"], ["coral.100", "#FFE5DC", "Signature border"], ["coral.300", "#FFAB91", "Signature light"], ["coral.500", "#F56F4F", "Signature accent"], ["coral.600", "#DA5638", "Signature strong"], ["coral.700", "#B8432B", "Employer claim"]] },
-  { name: "Mint / verified", swatches: [["mint.50", "#EFFAF4", "Verified background"], ["mint.100", "#D8F2E4", "Verified border"], ["mint.500", "#2F9B65", "Fresh"], ["mint.700", "#1E7048", "Verified text"]] },
-  { name: "Amber / warning", swatches: [["amber.50", "#FFF8E8", "Warning background"], ["amber.100", "#FDECC4", "Warning border"], ["amber.500", "#C88519", "Warning icon"], ["amber.700", "#8B5B0E", "Warning text"]] },
-  { name: "Red / critical", swatches: [["red.50", "#FFF1F1", "Critical background"], ["red.100", "#FFDADA", "Critical border"], ["red.500", "#D94B4B", "Critical icon"], ["red.700", "#A52E2E", "Critical text"]] },
-  { name: "Violet / premium", swatches: [["violet.50", "#F7F2FF", "Premium background"], ["violet.100", "#EBDDFF", "Premium border"], ["violet.500", "#8358D9", "Premium accent"], ["violet.700", "#5E38A5", "Premium text"]] },
+  { name: "Индиго", swatches: [["indigo.50", "#F1F3FF", "Мягкий брендовый фон"], ["indigo.100", "#E3E7FF", "Мягкое выбранное состояние"], ["indigo.200", "#C7CFFF", "Брендовая граница"], ["indigo.400", "#7484F4", "Акцент"], ["indigo.500", "#596BE5", "Яркий брендовый цвет"], ["indigo.600", "#4254CC", "Основное действие"], ["indigo.700", "#3443A8", "Основное наведение"], ["indigo.800", "#293683", "Основное нажатие"], ["indigo.900", "#202A64", "Глубокий брендовый цвет"]] },
+  { name: "Коралловые", swatches: [["coral.50", "#FFF4F0", "Мягкий фирменный фон"], ["coral.100", "#FFE5DC", "Фирменная граница"], ["coral.300", "#FFAB91", "Светлый фирменный цвет"], ["coral.500", "#F56F4F", "Фирменный акцент"], ["coral.600", "#DA5638", "Усиленный фирменный цвет"], ["coral.700", "#B8432B", "Данные компании"]] },
+  { name: "Мятные / проверено", swatches: [["mint.50", "#EFFAF4", "Фон проверки"], ["mint.100", "#D8F2E4", "Граница проверки"], ["mint.500", "#2F9B65", "Свежие данные"], ["mint.700", "#1E7048", "Текст проверки"]] },
+  { name: "Янтарные / предупреждение", swatches: [["amber.50", "#FFF8E8", "Фон предупреждения"], ["amber.100", "#FDECC4", "Граница предупреждения"], ["amber.500", "#C88519", "Значок предупреждения"], ["amber.700", "#8B5B0E", "Текст предупреждения"]] },
+  { name: "Красные / критическое", swatches: [["red.50", "#FFF1F1", "Критический фон"], ["red.100", "#FFDADA", "Критическая граница"], ["red.500", "#D94B4B", "Критический значок"], ["red.700", "#A52E2E", "Критический текст"]] },
+  { name: "Фиолетовые / расширенный доступ", swatches: [["violet.50", "#F7F2FF", "Фон расширенного доступа"], ["violet.100", "#EBDDFF", "Граница расширенного доступа"], ["violet.500", "#8358D9", "Акцент расширенного доступа"], ["violet.700", "#5E38A5", "Текст расширенного доступа"]] },
 ] as const;
 
-const toc = [
-  ["overview", "Overview"], ["foundations", "Foundations"], ["colors", "Colors"],
-  ["typography", "Typography"], ["spacing-grid", "Spacing & grid"], ["shape", "Radius & elevation"],
-  ["buttons", "Buttons"], ["forms", "Form controls"], ["chips", "Chips & badges"],
-  ["trust", "Trust & evidence"], ["feedback", "Feedback"], ["company-card", "Карточка компании"],
-  ["quick-view", "Краткий профиль"], ["company-page", "Страница компании"], ["responsive", "Responsive"],
-  ["motion", "Motion policy"], ["accessibility", "Accessibility"],
+const sections = [
+  { id: "overview", label: "Обзор" }, { id: "foundations", label: "Основы" }, { id: "colors", label: "Цвета" },
+  { id: "typography", label: "Типографика" }, { id: "spacing-grid", label: "Отступы и сетка" }, { id: "shape", label: "Радиусы и уровни" },
+  { id: "buttons", label: "Кнопки" }, { id: "forms", label: "Элементы форм" }, { id: "chips", label: "Чипы, теги и бейджи" },
+  { id: "trust", label: "Доверие и источники" }, { id: "feedback", label: "Состояния" }, { id: "company-card", label: "Карточка компании" },
+  { id: "quick-view", label: "Краткий профиль" }, { id: "company-page", label: "Страница компании" }, { id: "responsive", label: "Адаптивность" },
+  { id: "motion", label: "Политика анимации" }, { id: "accessibility", label: "Доступность" },
 ] as const;
 
 const spacing = [["space.1", 4], ["space.2", 8], ["space.3", 12], ["space.4", 16], ["space.5", 20], ["space.6", 24], ["space.8", 32], ["space.10", 40], ["space.12", 48], ["space.16", 64], ["space.20", 80], ["space.24", 96]] as const;
@@ -58,7 +58,7 @@ const semanticVariantLabels: Record<string, string> = {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>UI Kit — Verified Editorial UI</title>
-    <meta name="description" content="Изолированная living documentation дизайн-системы Verified Editorial UI." />
+    <meta name="description" content="Изолированная живая документация дизайн-системы Verified Editorial UI." />
     <meta name="robots" content="noindex, nofollow" />
   </head>
   <body class="ui-kit-page">
@@ -83,16 +83,16 @@ const semanticVariantLabels: Record<string, string> = {
             <span aria-hidden="true">VE</span><strong>Verified Editorial UI</strong>
           </a>
           <div class="ui-kit-theme-switcher" role="group" aria-label="Тема UI Kit">
-            <button type="button" data-ui-kit-theme="light" aria-pressed="false">Light</button>
-            <button type="button" data-ui-kit-theme="dark" aria-pressed="false">Dark</button>
-            <button type="button" data-ui-kit-theme="system" aria-pressed="false">System</button>
+            <button type="button" data-ui-kit-theme="light" aria-pressed="false">Светлая</button>
+            <button type="button" data-ui-kit-theme="dark" aria-pressed="false">Тёмная</button>
+            <button type="button" data-ui-kit-theme="system" aria-pressed="false">Системная</button>
           </div>
         </div>
       </header>
 
-      <nav class="ui-kit-toc" aria-label="Содержание UI Kit">
-        <div class="ui-kit-container ui-kit-toc__track">
-          {toc.map(([id, label], index) => <a href={`#${id}`}><span>{String(index + 1).padStart(2, "0")}</span>{label}</a>)}
+      <nav class="ui-kit-local-nav" aria-label="Навигация по разделам" data-ui-kit-section-nav>
+        <div class="ui-kit-container ui-kit-local-nav__track ui-kit-scroll-x">
+          {sections.map(({ id, label }, index) => <a href={`#${id}`} data-ui-kit-section-link data-section-index={index}><span class="ui-kit-local-nav__marker" aria-hidden="true"></span><span class="ui-kit-local-nav__number">{String(index).padStart(2, "0")}</span><span>{label}</span></a>)}
         </div>
       </nav>
 
@@ -100,88 +100,89 @@ const semanticVariantLabels: Record<string, string> = {
         <section id="overview" class="ui-kit-hero" aria-labelledby="ui-kit-title">
           <div class="ui-kit-container ui-kit-hero__layout">
             <div>
-              <p class="ui-kit-eyebrow">Design system · v0.2 · Living prototype</p>
+              <p class="ui-kit-eyebrow">Дизайн-система · v0.2 · живая документация</p>
               <h1 id="ui-kit-title">Verified<br />Editorial UI</h1>
-              <p class="ui-kit-hero__lead">Data-first интерфейс с редакционной подачей и прозрачным trust layer для осознанного выбора работодателя.</p>
-              <div class="ui-kit-hero__principles"><span>Facts first</span><span>Visible trust</span><span>Progressive disclosure</span><span>Real-data resilience</span></div>
+              <p class="ui-kit-hero__lead">Интерфейс, ориентированный на данные, с редакционной подачей и прозрачным слоем доверия для осознанного выбора работодателя.</p>
+              <div class="ui-kit-hero__principles"><span>Факты прежде оформления</span><span>Видимое доверие</span><span>Постепенное раскрытие</span><span>Устойчивость к реальным данным</span></div>
             </div>
             <aside class="ui-kit-hero__status">
-              <span class="ui-kit-badge ui-kit-badge--beta">Prototype</span>
-              <strong>Документация для review</strong>
-              <p>Не production-компоненты. Все компании, метрики и доказательства на странице вымышлены.</p>
-              <dl><div><dt>Версия</dt><dd>0.2</dd></div><div><dt>Дата</dt><dd>31.07.2026</dd></div><div><dt>Темы</dt><dd>Light / Dark / System</dd></div></dl>
+              <span class="ui-kit-badge ui-kit-badge--beta">Прототип</span>
+              <strong>Документация для проверки</strong>
+              <p>Не производственные компоненты. Все компании, метрики и доказательства на странице вымышлены.</p>
+              <dl><div><dt>Версия</dt><dd>0.2</dd></div><div><dt>Дата</dt><dd>31.07.2026</dd></div><div><dt>Темы</dt><dd>Светлая / Тёмная / Системная</dd></div></dl>
             </aside>
           </div>
         </section>
 
-        <div class="ui-kit-container ui-kit-content">
-          <UiKitSection id="foundations" eyebrow="01 · Foundations" title="Семантика прежде значений" description="Компоненты обращаются к назначению токена, а не к конкретному оттенку. Тема меняет mapping, но не контракт.">
-            <div class="ui-kit-token-flow" aria-label="Уровни дизайн-токенов"><div><span>Primitive</span><code>indigo.600</code></div><b aria-hidden="true">→</b><div><span>Semantic</span><code>color.brand.primary</code></div><b aria-hidden="true">→</b><div><span>Component</span><code>button.primary.bg</code></div></div>
+        <div class="ui-kit-container ui-kit-document-layout">
+          <div class="ui-kit-content">
+          <UiKitSection id="foundations" eyebrow="01 · Основы" title="Семантика прежде значений" description="Компоненты обращаются к назначению токена, а не к конкретному оттенку. Тема меняет соответствие, но не контракт.">
+            <div class="ui-kit-token-flow" aria-label="Уровни дизайн-токенов"><div><span>Базовый</span><code>indigo.600</code></div><b aria-hidden="true">→</b><div><span>Семантический</span><code>color.brand.primary</code></div><b aria-hidden="true">→</b><div><span>Компонентный</span><code>button.primary.bg</code></div></div>
             <div class="ui-kit-surface-demo">
-              <div class="ui-kit-surface-demo__page"><span>Page</span><div class="ui-kit-surface-demo__primary"><span>Primary surface</span><div class="ui-kit-surface-demo__elevated">Elevated surface</div></div></div>
-              <div class="ui-kit-text-roles"><p class="is-primary">Primary text — ключевой факт</p><p class="is-secondary">Secondary text — пояснение</p><p class="is-muted">Muted text — служебная метаинформация</p><p class="is-inverse">Inverse text — контрастная поверхность</p></div>
+              <div class="ui-kit-surface-demo__page"><span>Страница</span><div class="ui-kit-surface-demo__primary"><span>Основная поверхность</span><div class="ui-kit-surface-demo__elevated">Приподнятая поверхность</div></div></div>
+              <div class="ui-kit-text-roles"><p class="is-primary">Основной текст — ключевой факт</p><p class="is-secondary">Вторичный текст — пояснение</p><p class="is-muted">Приглушённый текст — служебная метаинформация</p><p class="is-inverse">Инверсный текст — контрастная поверхность</p></div>
             </div>
-            <div class="ui-kit-semantic-roles"><span class="is-brand">Brand</span><span class="is-signature">Signature</span><span class="is-verified">Verified</span><span class="is-warning">Warning</span><span class="is-critical">Critical</span><span class="is-premium">Premium</span><span class="is-neutral">Neutral</span></div>
+            <div class="ui-kit-semantic-roles"><span class="is-brand">Бренд</span><span class="is-signature">Фирменный акцент</span><span class="is-verified">Проверено</span><span class="is-warning">Предупреждение</span><span class="is-critical">Критическое</span><span class="is-premium">Расширенный доступ</span><span class="is-neutral">Нейтральное</span></div>
           </UiKitSection>
 
-          <UiKitSection id="colors" eyebrow="02 · Colors" title="Тёплая база, глубокий indigo" description="Coral применяется редко; semantic colors зарезервированы для статусов и никогда не работают без текста.">
+          <UiKitSection id="colors" eyebrow="02 · Цвета" title="Тёплая база, глубокий индиго" description="Коралловый применяется редко; семантические цвета зарезервированы для статусов и никогда не работают без текста.">
             {paletteGroups.map((group) => <div class="ui-kit-palette-group"><h3>{group.name}</h3><div class="ui-kit-swatch-grid">{group.swatches.map(([token, value, role]) => <UiKitSwatch token={token} value={value} role={role} color={value} />)}</div></div>)}
           </UiKitSection>
 
-          <UiKitSection id="typography" eyebrow="03 · Typography" title="Одна семья, ясная иерархия" description="Onest в репозитории не подключён, поэтому showcase честно использует утверждённый fallback stack: Inter / system UI.">
+          <UiKitSection id="typography" eyebrow="03 · Типографика" title="Одна семья, ясная иерархия" description="Onest в репозитории не подключён, поэтому витрина использует утверждённый запасной набор: Inter / системный интерфейс.">
             <div class="ui-kit-type-specimens">
               <div class="ui-kit-type-row"><code>display.l · 64/42</code><p class="ui-kit-type-display-l">Работа, которой можно доверять</p></div>
               <div class="ui-kit-type-row"><code>display.m · 52/38</code><p class="ui-kit-type-display-m">Проверенные сигналы</p></div>
               <div class="ui-kit-type-row"><code>heading.h1 · 44/32</code><p class="ui-kit-type-h1">Northstar Digital Lab</p></div>
               <div class="ui-kit-type-heading-grid"><div><code>H2 · 34/28</code><h2>Решение до отклика</h2></div><div><code>H3 · 24/22</code><h3>Найм и карьера</h3></div><div><code>H4 · 20/18</code><h4>Свежесть данных</h4></div></div>
-              <div class="ui-kit-type-body-grid"><p class="ui-kit-body-l"><code>body.l</code> Длинное русское описание проверяет комфорт чтения и естественные переносы на узком экране.</p><p><code>body.m</code> Facts remain readable in English and Russian without a decorative typeface.</p><p class="ui-kit-body-s"><code>body.s</code> Источник, методология и дополнительный контекст.</p><p class="ui-kit-caption"><code>caption</code> Проверено 31.07.2026</p><p class="ui-kit-label"><code>label</code> АКТИВНЫЙ НАЙМ</p></div>
-              <div class="ui-kit-tabular"><span>Tabular numerals</span><strong>4,7</strong><strong>1 284</strong><strong>31.07.2026</strong></div>
+              <div class="ui-kit-type-body-grid"><p class="ui-kit-body-l"><code>body.l</code> Длинное русское описание проверяет комфорт чтения и естественные переносы на узком экране.</p><p><code>body.m</code> Факты остаются читаемыми на русском и английском без декоративного шрифта.</p><p class="ui-kit-body-s"><code>body.s</code> Источник, методология и дополнительный контекст.</p><p class="ui-kit-caption"><code>caption</code> Проверено 31.07.2026</p><p class="ui-kit-label"><code>label</code> АКТИВНЫЙ НАЙМ</p></div>
+              <div class="ui-kit-tabular"><span>Табличные цифры</span><strong>4,7</strong><strong>1 284</strong><strong>31.07.2026</strong></div>
             </div>
           </UiKitSection>
 
-          <UiKitSection id="spacing-grid" eyebrow="04 · Spacing & grid" title="Ритм 8 px, детализация 4 px" description="Outer padding меняется по поведению: 32 px desktop, 24 px tablet, 16 px smartphone.">
+          <UiKitSection id="spacing-grid" eyebrow="04 · Отступы и сетка" title="Ритм 8 px, детализация 4 px" description="Внешний отступ меняется по контексту: 32 px на компьютере, 24 px на планшете, 16 px на телефоне.">
             <div class="ui-kit-spacing-scale">{spacing.map(([token, value]) => <div><code>{token}</code><span style={`--space-demo: ${value}px`}></span><b>{value}px</b></div>)}</div>
-            <div class="ui-kit-grid-demo"><div><h3>Desktop · 12 columns</h3><div class="ui-kit-grid ui-kit-grid--12">{Array.from({ length: 12 }, (_, i) => <span>{i + 1}</span>)}</div><p>Gutter 24–32 · outer 32 · max 1280</p></div><div><h3>Tablet · 8 columns</h3><div class="ui-kit-grid ui-kit-grid--8">{Array.from({ length: 8 }, (_, i) => <span>{i + 1}</span>)}</div><p>Gutter 20 · outer 24</p></div><div><h3>Smartphone · 4 columns</h3><div class="ui-kit-grid ui-kit-grid--4">{Array.from({ length: 4 }, (_, i) => <span>{i + 1}</span>)}</div><p>Gutter 16 · outer 16</p></div></div>
+            <div class="ui-kit-grid-demo"><div><h3>Компьютер · 12 колонок</h3><div class="ui-kit-grid ui-kit-grid--12">{Array.from({ length: 12 }, (_, i) => <span>{i + 1}</span>)}</div><p>Межколонник 24–32 · внешний отступ 32 · максимум 1280</p></div><div><h3>Планшет · 8 колонок</h3><div class="ui-kit-grid ui-kit-grid--8">{Array.from({ length: 8 }, (_, i) => <span>{i + 1}</span>)}</div><p>Межколонник 20 · внешний отступ 24</p></div><div><h3>Телефон · 4 колонки</h3><div class="ui-kit-grid ui-kit-grid--4">{Array.from({ length: 4 }, (_, i) => <span>{i + 1}</span>)}</div><p>Межколонник 16 · внешний отступ 16</p></div></div>
           </UiKitSection>
 
-          <UiKitSection id="shape" eyebrow="05 · Shape & elevation" title="Радиус описывает тип объекта" description="Статические поверхности полагаются на границы и пространство; тень появляется только у реального верхнего слоя.">
+          <UiKitSection id="shape" eyebrow="05 · Радиусы и уровни" title="Радиус описывает тип объекта" description="Статические поверхности полагаются на границы и пространство; тень появляется только у реального верхнего слоя.">
             <div class="ui-kit-radius-grid">{[["xs",4],["s",8],["m",12],["l",16],["xl",20],["2xl",24],["round",999]].map(([name, value]) => <div style={`--radius-demo: ${value}px`}><span></span><code>radius.{name}</code><b>{value}px</b></div>)}</div>
-            <div class="ui-kit-border-grid"><div class="is-subtle">Subtle · 1 px</div><div>Default · 1 px</div><div class="is-strong">Strong · 2 px</div><button type="button">Focus ring · 2 + 2</button></div>
-            <div class="ui-kit-elevation-grid"><div>Static surface<small>shadow.none</small></div><div class="is-hover">Hover surface<small>shadow.hover</small></div><div class="is-dropdown">Dropdown<small>shadow.dropdown</small></div><div class="is-sticky">Sticky<small>shadow.sticky</small></div><div class="is-overlay">Overlay / sidepage<small>shadow.overlay</small></div></div>
+            <div class="ui-kit-border-grid"><div class="is-subtle">Тонкая · 1 px</div><div>Обычная · 1 px</div><div class="is-strong">Усиленная · 2 px</div><button type="button">Кольцо фокуса · 2 + 2</button></div>
+            <div class="ui-kit-elevation-grid"><div>Статическая поверхность<small>shadow.none</small></div><div class="is-hover">Поверхность при наведении<small>shadow.hover</small></div><div class="is-dropdown">Выпадающий слой<small>shadow.dropdown</small></div><div class="is-sticky">Закреплённый слой<small>shadow.sticky</small></div><div class="is-overlay">Оверлей / боковая панель<small>shadow.overlay</small></div></div>
           </UiKitSection>
 
-          <UiKitSection id="buttons" eyebrow="06 · Actions" title="Один главный CTA на блок" description="Все демонстрации используют реальные button или link элементы, видимый focus и стабильную ширину в loading state.">
-            <div class="ui-kit-demo-band"><h3>Variants</h3><div class="ui-kit-button-row"><button class="ui-kit-button ui-kit-button--primary" type="button">Primary</button><button class="ui-kit-button ui-kit-button--secondary" type="button">Secondary</button><button class="ui-kit-button ui-kit-button--tertiary" type="button">Tertiary</button><button class="ui-kit-button ui-kit-button--destructive" type="button">Destructive</button><button class="ui-kit-button ui-kit-button--premium" type="button">Premium</button><button class="ui-kit-icon-button" type="button" aria-label="Поиск" title="Поиск"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg></button></div></div>
-            <div class="ui-kit-demo-band"><h3>States</h3><div class="ui-kit-button-row"><button class="ui-kit-button ui-kit-button--primary is-active" type="button" aria-pressed="true">Pressed</button><button class="ui-kit-button ui-kit-button--primary is-loading" type="button" aria-busy="true"><span>Loading</span></button><button class="ui-kit-button ui-kit-button--primary" type="button" disabled>Disabled</button><button class="ui-kit-button ui-kit-button--success" type="button">Сохранено</button><button class="ui-kit-button ui-kit-button--secondary ui-kit-focus-demo" type="button">Focus-visible</button></div></div>
-            <div class="ui-kit-demo-band"><h3>Sizes</h3><div class="ui-kit-button-row ui-kit-button-row--end"><button class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" type="button">Compact 36</button><button class="ui-kit-button ui-kit-button--secondary" type="button">Default 44</button><button class="ui-kit-button ui-kit-button--primary ui-kit-button--large" type="button">Prominent 52</button></div></div>
+          <UiKitSection id="buttons" eyebrow="06 · Действия" title="Одно главное действие на блок" description="Все демонстрации используют реальные кнопки или ссылки, видимый фокус и стабильную ширину при загрузке.">
+            <div class="ui-kit-demo-band"><h3>Варианты</h3><div class="ui-kit-button-row"><button class="ui-kit-button ui-kit-button--primary" type="button">Основная</button><button class="ui-kit-button ui-kit-button--secondary" type="button">Вторичная</button><button class="ui-kit-button ui-kit-button--tertiary" type="button">Текстовая</button><button class="ui-kit-button ui-kit-button--destructive" type="button">Опасное действие</button><button class="ui-kit-button ui-kit-button--premium" type="button">Расширенный доступ</button><button class="ui-kit-icon-button" type="button" aria-label="Поиск" title="Поиск"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg></button></div></div>
+            <div class="ui-kit-demo-band"><h3>Состояния</h3><div class="ui-kit-button-row"><button class="ui-kit-button ui-kit-button--primary is-active" type="button" aria-pressed="true">Нажатое состояние <code>pressed</code></button><button class="ui-kit-button ui-kit-button--primary is-loading" type="button" aria-busy="true"><span>Загрузка</span></button><button class="ui-kit-button ui-kit-button--primary" type="button" disabled>Недоступно</button><button class="ui-kit-button ui-kit-button--success" type="button">Сохранено</button><button class="ui-kit-button ui-kit-button--secondary ui-kit-focus-demo" type="button">Видимый фокус <code>focus-visible</code></button></div></div>
+            <div class="ui-kit-demo-band"><h3>Размеры</h3><div class="ui-kit-button-row ui-kit-button-row--end"><button class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" type="button">Компактная 36</button><button class="ui-kit-button ui-kit-button--secondary" type="button">Обычная 44</button><button class="ui-kit-button ui-kit-button--primary ui-kit-button--large" type="button">Выделенная 52</button></div></div>
           </UiKitSection>
 
-          <UiKitSection id="forms" eyebrow="07 · Form controls" title="Labels остаются видимыми" description="Placeholder показывает пример, но не заменяет label. Error, hint и pending состояния стоят рядом с полем.">
+          <UiKitSection id="forms" eyebrow="07 · Элементы форм" title="Подписи остаются видимыми" description="Заполнитель показывает пример, но не заменяет подпись. Ошибка, подсказка и состояние проверки располагаются рядом с полем.">
             <form class="ui-kit-form-showcase" novalidate>
               <label class="ui-kit-field"><span>Название компании</span><input type="text" placeholder="Например, Signal Works" /><small>Введите название или домен</small></label>
-              <label class="ui-kit-field ui-kit-field--search"><span>Поиск по каталогу</span><div><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg><input type="search" value="Product studio" /></div></label>
+              <label class="ui-kit-field ui-kit-field--search"><span>Поиск по каталогу</span><div><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg><input type="search" value="Продуктовая студия" /></div></label>
               <div class="ui-kit-field">
                 <label for="ui-kit-company-type">Тип компании</label>
                 <div class="ui-kit-select" data-state="closed">
                   <select id="ui-kit-company-type" class="ui-kit-select__control">
-                    <option>Все типы</option><option selected>Product studio</option><option>Интегратор</option>
+                    <option>Все типы</option><option selected>Продуктовая студия</option><option>Интегратор</option>
                   </select>
                   <span class="ui-kit-select__icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"></path></svg></span>
                 </div>
-                <small>Нативный select сохраняет системное меню и keyboard navigation</small>
+                <small>Нативный список сохраняет системное меню и управление с клавиатуры</small>
               </div>
               <div class="ui-kit-field ui-kit-field--select-error">
-                <label for="ui-kit-company-type-error">Тип компании · error</label>
+                <label for="ui-kit-company-type-error">Тип компании · ошибка</label>
                 <div class="ui-kit-select ui-kit-select--error" data-state="closed">
                   <select id="ui-kit-company-type-error" class="ui-kit-select__control" aria-invalid="true" aria-describedby="ui-kit-company-type-error-message">
-                    <option selected value="">Выберите тип</option><option>Product studio</option><option>Интегратор</option>
+                    <option selected value="">Выберите тип</option><option>Продуктовая студия</option><option>Интегратор</option>
                   </select>
                   <span class="ui-kit-select__icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"></path></svg></span>
                 </div>
                 <small id="ui-kit-company-type-error-message">Выберите один вариант</small>
               </div>
               <div class="ui-kit-field">
-                <label for="ui-kit-company-type-disabled">Тип компании · disabled</label>
+                <label for="ui-kit-company-type-disabled">Тип компании · недоступно</label>
                 <div class="ui-kit-select" data-state="closed">
                   <select id="ui-kit-company-type-disabled" class="ui-kit-select__control" disabled>
                     <option selected>Источник недоступен</option>
@@ -192,11 +193,11 @@ const semanticVariantLabels: Record<string, string> = {
               </div>
               <label class="ui-kit-field ui-kit-field--error"><span>Рабочий email</span><input type="email" value="name@" aria-invalid="true" aria-describedby="email-error" /><small id="email-error">Укажите полный адрес, например name@company.ru</small></label>
               <label class="ui-kit-field"><span>Комментарий</span><textarea rows="4">Нужна компания с прозрачным форматом удалённой работы.</textarea></label>
-              <label class="ui-kit-field"><span>Read-only evidence</span><input type="text" value="Проверено 31.07.2026" readonly /></label>
-              <label class="ui-kit-field"><span>Disabled source</span><input type="text" value="Источник недоступен" disabled /></label>
-              <label class="ui-kit-field ui-kit-field--pending"><span>Pending verification</span><input type="text" value="Проверяем источник" readonly aria-busy="true" /><small>Обычно занимает несколько секунд</small></label>
+              <label class="ui-kit-field"><span>Данные только для чтения</span><input type="text" value="Проверено 31.07.2026" readonly /></label>
+              <label class="ui-kit-field"><span>Недоступный источник</span><input type="text" value="Источник недоступен" disabled /></label>
+              <label class="ui-kit-field ui-kit-field--pending"><span>Проверка выполняется</span><input type="text" value="Проверяем источник" readonly aria-busy="true" /><small>Обычно занимает несколько секунд</small></label>
               <fieldset class="ui-kit-fieldset"><legend>Формат работы</legend><label><input type="checkbox" checked /> Удалённо</label><label><input type="checkbox" /> Гибрид</label></fieldset>
-              <fieldset class="ui-kit-fieldset"><legend>Уровень данных</legend><label><input type="radio" name="data-level" checked /> Public</label><label><input type="radio" name="data-level" /> Enriched</label></fieldset>
+              <fieldset class="ui-kit-fieldset"><legend>Уровень данных</legend><label><input type="radio" name="data-level" checked /> Публичные</label><label><input type="radio" name="data-level" /> Обогащённые</label></fieldset>
               <label class="ui-kit-toggle"><input type="checkbox" checked /><span aria-hidden="true"></span><b>Только недавно обновлённые</b></label>
               <div class="ui-kit-filter-control"><button class="ui-kit-button ui-kit-button--secondary" type="button"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"></path></svg>Фильтры <span>3</span></button></div>
             </form>
@@ -263,47 +264,47 @@ const semanticVariantLabels: Record<string, string> = {
 
             <div class="ui-kit-label-registry" aria-labelledby="semantic-registry-title">
               <div><p class="ui-kit-eyebrow">Локальный семантический реестр</p><h3 id="semantic-registry-title">Страница передаёт ID, реестр выбирает семейство и вариант</h3><p>Цвет не выбирается на уровне страницы.</p></div>
-              <div role="table" aria-label="Примеры semantic registry">
+              <div role="table" aria-label="Примеры семантического реестра">
                 <div role="row" class="is-head"><span role="columnheader">ID</span><span role="columnheader">Семейство</span><span role="columnheader">Вариант</span></div>
                 {(["active_hiring","product_studio","verified","conflicting","employer_claim","external_source","premium","beta"] as const).map((id) => <div role="row"><code role="cell">{id}</code><span role="cell">{semanticFamilyLabels[semanticLabels[id].family]}</span><span role="cell">{semanticVariantLabels[semanticLabels[id].variant] || semanticLabels[id].variant}</span></div>)}
               </div>
             </div>
           </UiKitSection>
 
-          <UiKitSection id="trust" eyebrow="09 · Trust layer" title="Evidence является частью интерфейса" description="Каждое состояние сочетает иконку, текст, источник или причину, дату и confidence там, где это уместно." wide>
+          <UiKitSection id="trust" eyebrow="09 · Доверие и источники" title="Доказательства являются частью интерфейса" description="Каждое состояние сочетает значок, текст, источник или причину, дату и уровень уверенности там, где это уместно." wide>
             <div class="ui-kit-trust-grid">
               <UiKitTrustState tone="verified" label="Проверено" detail="Размер компании подтверждён публичным реестром." source="Публичный реестр" date="18 июля 2026" confidence="Высокий" />
               <UiKitTrustState tone="fresh" label="Обновлено недавно" detail="Список вакансий наблюдался семь дней назад." source="Карьерная страница" date="24 июля 2026" />
-              <UiKitTrustState tone="warning" label="Требует перепроверки" detail="Статус найма старше установленного порога свежести." source="Career source" date="3 мая 2026" />
+              <UiKitTrustState tone="warning" label="Требует перепроверки" detail="Статус найма старше установленного порога свежести." source="Карьерный источник" date="3 мая 2026" />
               <UiKitTrustState tone="neutral" label="Данных недостаточно" detail="Размер компании нельзя показать как подтверждённый факт." reason="Источник не раскрывает размер" />
-              <UiKitTrustState tone="critical" label="Есть расхождения" detail="Карьерная страница указывает remote, вакансия — только офис." source="2 публичных источника" date="30 июля 2026" confidence="Низкий" />
+              <UiKitTrustState tone="critical" label="Есть расхождения" detail="Карьерная страница указывает удалённую работу, вакансия — только офис." source="2 публичных источника" date="30 июля 2026" confidence="Низкий" />
               <UiKitTrustState tone="insight" label="Аналитика платформы" detail="Несколько сигналов могут указывать на точечный найм." source="3 наблюдаемых сигнала" confidence="Средний" />
               <UiKitTrustState tone="claim" label="По данным компании" detail="Работодатель заявляет о проектах в трёх странах." source="Описание работодателя" date="12 июля 2026" />
-              <UiKitTrustState tone="fresh" label="Внешний сигнал" detail="Рейтинг 4,7 сформирован по 186 отзывам." source="External Review" date="20 июля 2026" />
+              <UiKitTrustState tone="fresh" label="Внешний сигнал" detail="Рейтинг 4,7 сформирован по 186 отзывам." source="Внешний рейтинг" date="20 июля 2026" />
               <UiKitTrustState tone="ugc" label="Пользовательский контент" detail="Отзыв прошёл автоматическую и ручную модерацию." source="Анонимный сотрудник" date="июль 2026" />
             </div>
           </UiKitSection>
 
-          <UiKitSection id="feedback" eyebrow="10 · Feedback states" title="Состояние объясняет следующий шаг">
+          <UiKitSection id="feedback" eyebrow="10 · Состояния" title="Состояние объясняет следующий шаг">
             <div class="ui-kit-feedback-grid">
-              <article class="ui-kit-feedback-card"><span class="ui-kit-badge">Loading</span><div class="ui-kit-skeleton" aria-label="Загрузка карточки"><i></i><b></b><b></b><b></b></div></article>
-              <article class="ui-kit-feedback-card"><span class="ui-kit-badge">Empty</span><h3>Избранное пока пусто</h3><p>Сохраняйте компании, чтобы вернуться к ним позже.</p><button class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" type="button">Открыть каталог</button></article>
-              <article class="ui-kit-feedback-card"><span class="ui-kit-badge">No results</span><h3>Ничего не найдено</h3><p>Уберите один из фильтров или измените запрос.</p><button class="ui-kit-button ui-kit-button--tertiary ui-kit-button--compact" type="button">Сбросить фильтры</button></article>
-              <article class="ui-kit-feedback-card ui-kit-feedback-card--error" role="alert"><span class="ui-kit-badge ui-kit-badge--critical">Error</span><h3>Источник временно недоступен</h3><p>Сохранённые данные не потеряны. Повторите позже.</p><button class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" type="button">Повторить</button></article>
-              <article class="ui-kit-feedback-card ui-kit-feedback-card--info"><span class="ui-kit-badge ui-kit-badge--beta">Info</span><h3>Как читается confidence</h3><p>Это оценка согласованности источников, а не рейтинг работодателя.</p></article>
-              <article class="ui-kit-feedback-card ui-kit-feedback-card--warning"><span class="ui-kit-badge ui-kit-badge--warning">Stale</span><h3>Данные старше 60 дней</h3><p>Это не негативный сигнал, а повод перепроверить текущий статус.</p></article>
-              <article class="ui-kit-feedback-card ui-kit-feedback-card--premium"><span class="ui-kit-badge ui-kit-badge--premium">Premium</span><h3>История изменения найма</h3><div class="ui-kit-locked-structure"><span></span><span></span><span></span></div><p>Сравните динамику по периодам после подключения аналитики.</p></article>
-              <article class="ui-kit-feedback-card"><span class="ui-kit-badge ui-kit-badge--verified">Toast demo</span><h3>Подтверждение действия</h3><p>Toast сообщает о кратком обратимом действии.</p><button class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" type="button" data-ui-kit-toast-trigger>Добавить в сравнение</button></article>
+              <article class="ui-kit-feedback-card"><span class="ui-kit-badge">Загрузка</span><div class="ui-kit-skeleton" aria-label="Загрузка карточки"><i></i><b></b><b></b><b></b></div></article>
+              <article class="ui-kit-feedback-card"><span class="ui-kit-badge">Пустое состояние</span><h3>Избранное пока пусто</h3><p>Сохраняйте компании, чтобы вернуться к ним позже.</p><button class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" type="button">Открыть каталог</button></article>
+              <article class="ui-kit-feedback-card"><span class="ui-kit-badge">Нет результатов</span><h3>Ничего не найдено</h3><p>Уберите один из фильтров или измените запрос.</p><button class="ui-kit-button ui-kit-button--tertiary ui-kit-button--compact" type="button">Сбросить фильтры</button></article>
+              <article class="ui-kit-feedback-card ui-kit-feedback-card--error" role="alert"><span class="ui-kit-badge ui-kit-badge--critical">Ошибка</span><h3>Источник временно недоступен</h3><p>Сохранённые данные не потеряны. Повторите позже.</p><button class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" type="button">Повторить</button></article>
+              <article class="ui-kit-feedback-card ui-kit-feedback-card--info"><span class="ui-kit-badge ui-kit-badge--beta">Справка</span><h3>Как читается уверенность</h3><p>Это оценка согласованности источников, а не рейтинг работодателя.</p></article>
+              <article class="ui-kit-feedback-card ui-kit-feedback-card--warning"><span class="ui-kit-badge ui-kit-badge--warning">Требует обновления</span><h3>Данные старше 60 дней</h3><p>Это не негативный сигнал, а повод перепроверить текущий статус.</p></article>
+              <article class="ui-kit-feedback-card ui-kit-feedback-card--premium"><span class="ui-kit-badge ui-kit-badge--premium">Расширенный доступ</span><h3>История изменения найма</h3><div class="ui-kit-locked-structure"><span></span><span></span><span></span></div><p>Сравните динамику по периодам после подключения аналитики.</p></article>
+              <article class="ui-kit-feedback-card"><span class="ui-kit-badge ui-kit-badge--verified">Пример уведомления</span><h3>Подтверждение действия</h3><p>Уведомление сообщает о кратком обратимом действии.</p><button class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" type="button" data-ui-kit-toast-trigger>Добавить в сравнение</button></article>
             </div>
           </UiKitSection>
 
           <UiKitSection id="company-card" eyebrow="11 · Продуктовый паттерн" title="Карточка компании" description="Четыре сценария на локальных вымышленных данных проверяют длинный текст, неполные, устаревшие и конфликтующие состояния." wide>
             <p class="ui-kit-mock-note">Все компании и метрики ниже — вымышленные примеры для проверки устойчивости интерфейса.</p>
             <div class="ui-kit-company-grid">
-              <UiKitCompanyCard scenario="A · ОБОГАЩЁННЫЙ + ПРОВЕРЕННЫЙ" initials="NW" name="Northstar Digital Lab" type="Product studio" location="Санкт-Петербург" size="201–500" facts={[{label:"Найм",value:"Точечный · 5–10 вакансий"},{label:"Формат",value:"Удалённо · РФ"}]} chips={["IT-аккредитация","Прямой отклик","International"]} chipTones={["verified","employment","neutral"]} rating="4,7" ratingNote="186 внешних отзывов" freshness="Обновлено 7 дней назад" freshnessTone="verified" trustTone="verified" completeness="enriched" trust="verified" logoVariant="mark" />
-              <UiKitCompanyCard scenario="B · НЕПОЛНЫЙ + НЕИЗВЕСТНЫЙ" initials="SW" name="Signal Works" type="Data consulting" location="Казань" size="Размер не раскрыт" facts={[{label:"Найм",value:"Статус не проверен"},{label:"Формат",value:"Гибрид · Казань"}]} chips={["Data","B2B"]} rating="—" ratingNote="Рейтинг не найден" freshness="Дата обновления неизвестна" freshnessTone="neutral" trustTone="neutral" completeness="incomplete" trust="unknown" logoVariant="generic" />
-              <UiKitCompanyCard scenario="C · ПОЛНЫЙ + УСТАРЕВШИЙ" initials="LC" name="Long Company Name Used to Test Responsive Wrapping" type="Enterprise software" location="Новосибирск · РФ и страны СНГ" size="51–200" facts={[{label:"Найм",value:"Ограниченный активный найм · 1–4 вакансии"},{label:"Формат",value:"Удалённо · РФ и СНГ"}]} chips={["Backend","B2B","Distributed"]} rating="4,2" ratingNote="28 внешних отзывов" freshness="Профиль требует обновления" freshnessTone="warning" trustTone="warning" completeness="complete" trust="stale" logoVariant="initials" />
-              <UiKitCompanyCard scenario="D · ПОЛНЫЙ + КОНФЛИКТ ИСТОЧНИКОВ" initials="EP" name="Example Product Studio" type="UX / Product" location="Москва" size="51–200" facts={[{label:"Найм",value:"Точечный · 3–6 вакансий"},{label:"Формат",value:"Remote / офис · РФ"}]} chips={["Design","Product","B2B"]} rating="4,5" ratingNote="12 внешних отзывов" ratingQuality="Малая выборка" freshness="Обновлено 18 дней назад" freshnessTone="neutral" trustTone="critical" trustMessage="Источники расходятся по формату работы" completeness="complete" trust="conflicting" logoVariant="initials" />
+              <UiKitCompanyCard scenario="A · ОБОГАЩЁННЫЙ + ПРОВЕРЕННЫЙ" initials="NW" name="Northstar Digital Lab" type="Продуктовая студия" location="Санкт-Петербург" size="201–500" facts={[{label:"Найм",value:"Точечный · 5–10 вакансий"},{label:"Формат",value:"Удалённо · РФ"}]} chips={["IT-аккредитация","Прямой отклик","Международная"]} chipTones={["verified","employment","neutral"]} rating="4,7" ratingNote="186 внешних отзывов" freshness="Обновлено 7 дней назад" freshnessTone="verified" trustTone="verified" completeness="enriched" trust="verified" logoVariant="mark" />
+              <UiKitCompanyCard scenario="B · НЕПОЛНЫЙ + НЕИЗВЕСТНЫЙ" initials="SW" name="Signal Works" type="Консалтинг по данным" location="Казань" size="Размер не раскрыт" facts={[{label:"Найм",value:"Статус не проверен"},{label:"Формат",value:"Гибрид · Казань"}]} chips={["Данные","B2B"]} rating="—" ratingNote="Рейтинг не найден" freshness="Дата обновления неизвестна" freshnessTone="neutral" trustTone="neutral" completeness="incomplete" trust="unknown" logoVariant="generic" />
+              <UiKitCompanyCard scenario="C · ПОЛНЫЙ + УСТАРЕВШИЙ" initials="LC" name="Длинное название компании для проверки адаптивных переносов" type="Корпоративное ПО" location="Новосибирск · РФ и страны СНГ" size="51–200" facts={[{label:"Найм",value:"Ограниченный активный найм · 1–4 вакансии"},{label:"Формат",value:"Удалённо · РФ и СНГ"}]} chips={["Backend","B2B","Распределённая команда"]} rating="4,2" ratingNote="28 внешних отзывов" freshness="Профиль требует обновления" freshnessTone="warning" trustTone="warning" completeness="complete" trust="stale" logoVariant="initials" />
+              <UiKitCompanyCard scenario="D · ПОЛНЫЙ + КОНФЛИКТ ИСТОЧНИКОВ" initials="EP" name="Example Product Studio" type="UX / продукт" location="Москва" size="51–200" facts={[{label:"Найм",value:"Точечный · 3–6 вакансий"},{label:"Формат",value:"Удалённо / офис · РФ"}]} chips={["Дизайн","Продукт","B2B"]} rating="4,5" ratingNote="12 внешних отзывов" ratingQuality="Малая выборка" freshness="Обновлено 18 дней назад" freshnessTone="neutral" trustTone="critical" trustMessage="Источники расходятся по формату работы" completeness="complete" trust="conflicting" logoVariant="initials" />
             </div>
 
             <div class="ui-kit-card-state-doc" aria-labelledby="card-state-model-title">
@@ -324,7 +325,7 @@ const semanticVariantLabels: Record<string, string> = {
               <li>Состояния полноты, доверия, взаимодействия и доступа независимы. Статус одного поля не перекрашивает несвязанные показатели.</li>
               <li>Быстрый просмотр — главное действие карточки, но не главный визуальный объект карточки.</li>
               <li>Вторичный текст должен оставаться читаемым и не использовать цвет отключённого состояния.</li>
-              <li>Видимые системные подписи локализуются. Enum и идентификаторы компонентов остаются техническими.</li>
+              <li>Видимые системные подписи локализуются. Перечисления и идентификаторы компонентов остаются техническими.</li>
             </ul>
 
             <div class="ui-kit-company-state-grid" aria-label="Дополнительные состояния карточки компании">
@@ -373,30 +374,38 @@ const semanticVariantLabels: Record<string, string> = {
             <div class="ui-kit-quick-view-launch"><div><strong>Northstar Digital Lab</strong><span>Краткий профиль без выхода из каталога</span></div><button class="ui-kit-button ui-kit-button--primary" type="button" data-ui-kit-quick-view-open>Быстрый просмотр</button></div>
           </UiKitSection>
 
-          <UiKitSection id="company-page" eyebrow="13 · Page pattern" title="Reduced Company Page" description="Реалистичный L2 template показывает факты, внешние сигналы, employer claim, missing data и premium teaser как разные типы данных." wide>
+          <UiKitSection id="company-page" eyebrow="13 · Шаблон страницы" title="Сокращённая страница компании" description="Реалистичный шаблон второго уровня показывает факты, внешние сигналы, данные компании, отсутствующие данные и предпросмотр расширенной аналитики как разные типы данных." wide>
             <UiKitCompanyPagePreview />
           </UiKitSection>
 
-          <UiKitSection id="responsive" eyebrow="14 · Responsive behaviour" title="Структура меняется, факты остаются" description="Showcase построен одним DOM-деревом и перестраивается на 12, 8 и 4 колонки без обязательного горизонтального scroll.">
-            <div class="ui-kit-responsive-table" role="table" aria-label="Адаптивные преобразования"><div role="row" class="is-head"><span role="columnheader">Pattern</span><span role="columnheader">Desktop</span><span role="columnheader">Tablet</span><span role="columnheader">Smartphone</span></div>{[["Company grid","3 columns","2 columns","1 column"],["Quick View","Right sidepage","Wide drawer","Full-screen dialog"],["Company Page","8 + 4 rail","Single column","Single + sticky CTA"],["Local nav","Sticky row","Scrollable row","Scrollable anchors"],["Data table","Full table","Reduced","Criterion cards"]].map((row) => <div role="row">{row.map((cell) => <span role="cell">{cell}</span>)}</div>)}</div>
+          <UiKitSection id="responsive" eyebrow="14 · Адаптивность" title="Структура меняется, факты остаются" description="Витрина построена одним DOM-деревом и перестраивается на 12, 8 и 4 колонки без обязательной горизонтальной прокрутки.">
+            <div class="ui-kit-responsive-table ui-kit-scroll-x" role="table" aria-label="Адаптивные преобразования"><div role="row" class="is-head"><span role="columnheader">Шаблон</span><span role="columnheader">Компьютер</span><span role="columnheader">Планшет</span><span role="columnheader">Телефон</span></div>{[["Сетка компаний","3 колонки","2 колонки","1 колонка"],["Краткий профиль","Правая боковая панель","Широкая выдвижная панель","Полноэкранный диалог"],["Страница компании","Сетка 8 + 4","Одна колонка","Одна колонка + закреплённое действие"],["Локальная навигация","Закреплённая строка","Прокручиваемая строка","Прокручиваемые якоря"],["Таблица данных","Полная таблица","Сокращённая","Карточки критериев"]].map((row) => <div role="row">{row.map((cell) => <span role="cell">{cell}</span>)}</div>)}</div>
             <div class="ui-kit-breakpoint-row"><span>320</span><span>390</span><span>768</span><span>1024</span><span>1280</span><span>1440</span></div>
           </UiKitSection>
 
-          <UiKitSection id="motion" eyebrow="15 · Motion policy" title="Motion объясняет изменение состояния" description="React Bits не установлен. Здесь показаны только CSS tokens, drawer transition и policy для будущего отдельного spike.">
-            <div class="ui-kit-motion-tokens">{[["fast","120 ms","hover / focus"],["default","180 ms","chip / validation"],["slow","240 ms","drawer / modal"],["page","300 ms","large transition"],["marketing","480 ms","single reveal"]].map(([name,value,use]) => <div><code>motion.{name}</code><strong>{value}</strong><span>{use}</span></div>)}</div>
-            <div class="ui-kit-motion-demo"><div class="ui-kit-fade-demo" data-ui-kit-fade-demo><span>CSS-only Fade Content</span><strong>Контент доступен до анимации</strong><p>Однократный вход на 8 px, static fallback при reduced motion.</p></div><button class="ui-kit-button ui-kit-button--secondary" type="button" data-ui-kit-fade-replay>Повторить пример</button></div>
-            <div class="ui-kit-policy-table" role="table" aria-label="Политика React Bits"><div role="row" class="is-head"><span>Pattern</span><span>Priority</span><span>Allowed surface</span><span>Status</span></div>{[["Fade Content","P1","SEO / onboarding / showcase","Experimental"],["Animated Content","P1","Marketing / premium","Restricted"],["Count Up","P1","Coverage metrics","Experimental"],["Animated List","P2","AI / change history","Deferred"],["Spotlight Card","P2","One premium teaser","Deferred"],["Soft Aurora / Aurora","Experimental","One hero only","Spike required"]].map((row) => <div role="row">{row.map((cell) => <span>{cell}</span>)}</div>)}</div>
-            <div class="ui-kit-motion-restrictions"><strong>Forbidden</strong><span>Particles</span><span>Cursor trails</span><span>3D tilt</span><span>Glitch</span><span>Continuous data-area backgrounds</span><span>Animation on every card</span></div>
-            <p class="ui-kit-callout">Actual React Bits components, dependencies, licensing and performance will be assessed in a separate technical spike.</p>
+          <UiKitSection id="motion" eyebrow="15 · Политика анимации" title="Анимация объясняет изменение состояния" description="React Bits не установлен. Здесь показаны только CSS-токены, переход выдвижной панели и правила для отдельного будущего исследования.">
+            <div class="ui-kit-motion-tokens">{[["fast","120 ms","наведение / фокус"],["default","180 ms","чип / проверка"],["slow","240 ms","панель / модальное окно"],["page","300 ms","крупный переход"],["marketing","480 ms","однократное появление"]].map(([name,value,use]) => <div><code>motion.{name}</code><strong>{value}</strong><span>{use}</span></div>)}</div>
+            <div class="ui-kit-motion-demo"><div class="ui-kit-fade-demo" data-ui-kit-fade-demo><span>Появление контента только на CSS</span><strong>Контент доступен до анимации</strong><p>Однократное смещение на 8 px, статичный запасной вариант при уменьшенном движении.</p></div><button class="ui-kit-button ui-kit-button--secondary" type="button" data-ui-kit-fade-replay>Повторить пример</button></div>
+            <div class="ui-kit-policy-table ui-kit-scroll-x" role="table" aria-label="Политика React Bits"><div role="row" class="is-head"><span>Шаблон</span><span>Приоритет</span><span>Разрешённая поверхность</span><span>Статус</span></div>{[["Появление контента","P1","SEO / знакомство / витрина","Экспериментальный"],["Анимированный контент","P1","Маркетинг / расширенный доступ","Ограниченный"],["Анимация счётчика","P1","Метрики покрытия","Экспериментальный"],["Анимированный список","P2","ИИ / история изменений","Отложенный"],["Карточка с подсветкой","P2","Один предпросмотр расширенного доступа","Отложенный"],["Мягкое сияние / Aurora","Экспериментальный","Только один первый экран","Требует исследования"]].map((row) => <div role="row">{row.map((cell) => <span>{cell}</span>)}</div>)}</div>
+            <div class="ui-kit-motion-restrictions"><strong>Запрещено</strong><span>Частицы</span><span>Следы курсора</span><span>Наклон в 3D</span><span>Глитч</span><span>Постоянный фон в областях данных</span><span>Анимация каждой карточки</span></div>
+            <p class="ui-kit-callout">Компоненты React Bits, зависимости, лицензирование и производительность будут оценены в отдельном техническом исследовании.</p>
           </UiKitSection>
 
-          <UiKitSection id="accessibility" eyebrow="16 · Accessibility checklist" title="Safeguards implemented, not a compliance claim" description="Формальная WCAG-проверка не заявляется; ниже перечислены реализованные меры и дальнейшие ручные проверки.">
-            <div class="ui-kit-a11y-grid">{["Semantic heading hierarchy","Skip link","Visible focus ring","Keyboard-operable anchors","Visible form labels","Text + icon status","40–52 px touch targets","Dialog semantics","Escape and focus return","Background scroll lock","Reduced-motion fallback","Responsive source order","No color-only meaning","320 px overflow stress test"].map((item) => <div><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4 10-10"></path></svg><span>{item}</span></div>)}</div>
+          <UiKitSection id="accessibility" eyebrow="16 · Проверка доступности" title="Реализованные меры, а не заявление о соответствии" description="Формальная WCAG-проверка не заявляется; ниже перечислены реализованные меры и дальнейшие ручные проверки.">
+            <div class="ui-kit-a11y-grid">{["Семантическая иерархия заголовков","Ссылка перехода к содержанию","Видимое кольцо фокуса","Якоря доступны с клавиатуры","Видимые подписи полей","Статус передаётся текстом и значком","Области нажатия 40–52 px","Семантика диалога","Escape и возврат фокуса","Блокировка фоновой прокрутки","Запасной вариант с уменьшенным движением","Адаптивный порядок источника","Значение не передаётся только цветом","Проверка переполнения при 320 px"].map((item) => <div><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4 10-10"></path></svg><span>{item}</span></div>)}</div>
           </UiKitSection>
+          </div>
+          <aside class="ui-kit-section-rail" aria-label="Навигация по разделам" data-ui-kit-section-nav>
+            <nav>
+              <ol>
+                {sections.map(({ id, label }, index) => <li><a href={`#${id}`} data-ui-kit-section-link data-section-index={index}><span class="ui-kit-section-rail__marker" aria-hidden="true"></span><span class="ui-kit-section-rail__number">{String(index).padStart(2, "0")}</span><span class="ui-kit-section-rail__label">{label}</span></a></li>)}
+              </ol>
+            </nav>
+          </aside>
         </div>
       </main>
 
-      <footer class="ui-kit-footer"><div class="ui-kit-container"><strong>Verified Editorial UI · v0.2</strong><p>Living prototype. Fictional data only. Not linked from production navigation.</p><a href="#overview">К началу</a></div></footer>
+      <footer class="ui-kit-footer"><div class="ui-kit-container"><strong>Verified Editorial UI · v0.2</strong><p>Живой прототип. Только вымышленные данные. Не связан с производственной навигацией.</p><a href="#overview">К началу</a></div></footer>
 
       <div class="ui-kit-toast" role="status" aria-live="polite" aria-atomic="true" hidden data-ui-kit-toast>Добавлено в сравнение</div>
       <UiKitCompanyQuickView />
@@ -421,6 +430,63 @@ const semanticVariantLabels: Record<string, string> = {
           const onSystemChange = () => { if (root.dataset.themePreference === "system") applyTheme("system"); };
           media.addEventListener("change", onSystemChange);
           applyTheme(root.dataset.themePreference || "system");
+
+          const sectionLinks = Array.from(root.querySelectorAll("[data-ui-kit-section-link]"));
+          const sectionIds = Array.from(new Set(sectionLinks.map((link) => link.getAttribute("href")?.slice(1)).filter(Boolean)));
+          const documentSections = sectionIds.map((id) => document.getElementById(id)).filter((section) => section instanceof HTMLElement);
+          const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+          let activeSectionIndex = -1;
+          const updateSectionNavigation = (index, reveal = true) => {
+            if (index < 0 || index >= sectionIds.length || index === activeSectionIndex) return;
+            activeSectionIndex = index;
+            sectionLinks.forEach((link) => {
+              const linkIndex = Number(link.getAttribute("data-section-index"));
+              const isActive = linkIndex === index;
+              const isPrevious = linkIndex === index - 1;
+              const isNext = linkIndex === index + 1;
+              link.classList.toggle("is-active", isActive);
+              link.classList.toggle("is-adjacent", isPrevious || isNext);
+              link.classList.toggle("is-previous", isPrevious);
+              link.classList.toggle("is-next", isNext);
+              if (isActive) link.setAttribute("aria-current", "location");
+              else link.removeAttribute("aria-current");
+            });
+            if (!reveal || !window.matchMedia("(max-width: 1279px)").matches) return;
+            const activeMobileLink = root.querySelector(`.ui-kit-local-nav [data-section-index="${index}"]`);
+            const mobileTrack = activeMobileLink?.closest(".ui-kit-local-nav__track");
+            if (activeMobileLink instanceof HTMLElement && mobileTrack instanceof HTMLElement) {
+              const targetLeft = activeMobileLink.offsetLeft - ((mobileTrack.clientWidth - activeMobileLink.offsetWidth) / 2);
+              mobileTrack.scrollTo({ left: targetLeft, behavior: reducedMotion.matches ? "auto" : "smooth" });
+            }
+          };
+          const resolveActiveSection = () => {
+            const readingBand = window.innerHeight * 0.28;
+            let nextIndex = 0;
+            documentSections.forEach((section, index) => {
+              if (section.getBoundingClientRect().top <= readingBand) nextIndex = index;
+            });
+            if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) nextIndex = documentSections.length - 1;
+            updateSectionNavigation(nextIndex);
+          };
+          const initialHashIndex = sectionIds.indexOf(decodeURIComponent(window.location.hash.slice(1)));
+          updateSectionNavigation(initialHashIndex >= 0 ? initialHashIndex : 0);
+          if (initialHashIndex >= 0) {
+            window.requestAnimationFrame(() => documentSections[initialHashIndex]?.scrollIntoView({ behavior: "auto", block: "start" }));
+          }
+          sectionLinks.forEach((link) => link.addEventListener("click", () => {
+            const index = Number(link.getAttribute("data-section-index"));
+            if (Number.isInteger(index)) updateSectionNavigation(index);
+          }));
+          if ("IntersectionObserver" in window) {
+            const sectionObserver = new IntersectionObserver(resolveActiveSection, { rootMargin: "-20% 0px -65% 0px", threshold: [0, 0.01, 0.2] });
+            documentSections.forEach((section) => sectionObserver.observe(section));
+          } else {
+            let sectionScrollFrame = 0;
+            window.addEventListener("scroll", () => {
+              if (sectionScrollFrame) return;
+              sectionScrollFrame = window.requestAnimationFrame(() => { sectionScrollFrame = 0; resolveActiveSection(); });
+            }, { passive: true });
+          }
 
           root.querySelectorAll(".ui-kit-select").forEach((wrapper) => {
             if (!(wrapper instanceof HTMLElement) || wrapper.dataset.enhanced === "true") return;
