@@ -112,6 +112,18 @@
   --ui-label-premium-bg: var(--ui-color-status-premium-bg);
   --ui-label-premium-text: var(--ui-color-status-premium);
 
+  /* Local document navigation and horizontal scroll */
+  --ui-section-rail-width: 216px;
+  --ui-section-marker-default: var(--ui-color-border-default);
+  --ui-section-marker-adjacent: var(--ui-color-text-muted);
+  --ui-section-marker-active: var(--ui-color-brand-primary);
+  --ui-section-label-active: var(--ui-color-text-primary);
+  --ui-section-label-adjacent: var(--ui-color-text-secondary);
+  --ui-section-label-muted: var(--ui-color-text-muted);
+  --ui-scrollbar-track: transparent;
+  --ui-scrollbar-thumb: #c6c6be;
+  --ui-scrollbar-thumb-hover: #7a7d82;
+
   /* Spacing, shape, grid and motion */
   --ui-space-0: 0;
   --ui-space-1: 4px;
@@ -217,6 +229,15 @@
   --ui-color-status-external-bg: #172b45;
   --ui-color-status-ugc: #cab8df;
   --ui-color-status-ugc-bg: #2c2536;
+  --ui-section-marker-default: #2a394b;
+  --ui-section-marker-adjacent: #697383;
+  --ui-section-marker-active: #8997ff;
+  --ui-section-label-active: #f4f6fa;
+  --ui-section-label-adjacent: #cad0da;
+  --ui-section-label-muted: #939caa;
+  --ui-scrollbar-track: transparent;
+  --ui-scrollbar-thumb: #3a4b5f;
+  --ui-scrollbar-thumb-hover: #697383;
   --ui-shadow-hover: 0 12px 28px rgb(0 0 0 / 28%);
   --ui-shadow-dropdown: 0 18px 42px rgb(0 0 0 / 40%);
   --ui-shadow-overlay: -18px 0 48px rgb(0 0 0 / 48%);
