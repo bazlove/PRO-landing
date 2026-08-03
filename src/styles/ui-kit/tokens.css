@@ -112,6 +112,14 @@
   --ui-label-premium-bg: var(--ui-color-status-premium-bg);
   --ui-label-premium-text: var(--ui-color-status-premium);
 
+  /* Inline text links */
+  --ui-link-color: var(--ui-color-brand-primary);
+  --ui-link-hover-color: var(--ui-color-brand-primary-hover);
+  --ui-link-active-color: var(--ui-color-brand-primary-active);
+  --ui-link-underline-color: currentColor;
+  --ui-link-underline-offset: 3px;
+  --ui-link-motion-duration: 180ms;
+
   /* Product icon sizes */
   --ui-icon-xs: 12px;
   --ui-icon-s: 16px;
@@ -220,6 +228,10 @@
   --ui-color-brand-primary: #8997ff;
   --ui-color-brand-primary-hover: #a6b0ff;
   --ui-color-brand-primary-active: #c3caff;
+  --ui-link-color: var(--ui-color-brand-primary);
+  --ui-link-hover-color: var(--ui-color-brand-primary-hover);
+  --ui-link-active-color: var(--ui-color-brand-primary-active);
+  --ui-link-underline-color: currentColor;
   --ui-color-brand-soft: #202a50;
   --ui-color-accent-signature: #ff8b70;
   --ui-color-accent-signature-soft: #3a221f;
