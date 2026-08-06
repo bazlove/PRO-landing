@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" role="img" aria-labelledby="title desc">
+  <title id="title">Вымышленная редакционная сцена офиса</title>
+  <desc id="desc">Геометрическая композиция с рабочими столами, окнами и зелёными растениями.</desc>
+  <rect width="960" height="640" fill="#e8ebf7"/>
+  <rect x="70" y="72" width="820" height="360" rx="24" fill="#cbd4f5"/>
+  <rect x="110" y="112" width="220" height="240" rx="12" fill="#f8f9ff"/>
+  <rect x="370" y="112" width="220" height="240" rx="12" fill="#f8f9ff"/>
+  <rect x="630" y="112" width="220" height="240" rx="12" fill="#f8f9ff"/>
+  <circle cx="480" cy="312" r="74" fill="#596be5"/>
+  <path d="M438 314h84M480 272v84" stroke="#fff" stroke-width="18" stroke-linecap="round"/>
+  <rect x="120" y="450" width="720" height="44" rx="12" fill="#3443a8"/>
+  <rect x="176" y="494" width="26" height="98" rx="8" fill="#293683"/>
+  <rect x="758" y="494" width="26" height="98" rx="8" fill="#293683"/>
+  <circle cx="132" cy="420" r="42" fill="#2f9b65"/>
+  <circle cx="828" cy="420" r="42" fill="#2f9b65"/>
+</svg>
