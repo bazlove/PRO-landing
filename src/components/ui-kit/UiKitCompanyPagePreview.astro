@@ -1,8 +1,28 @@
 ---
 import ProductIcon from "../ui/ProductIcon.astro";
+import UiKitEvidenceSummary from "./UiKitEvidenceSummary.astro";
+
+const sections = [
+  ["summary", "Сводка"],
+  ["hiring", "Найм"],
+  ["work-format", "Формат"],
+  ["ratings", "Рейтинги"],
+  ["overview", "О компании"],
+  ["products", "Продукты"],
+  ["finance", "Финансы"],
+  ["legal", "Юридические данные"],
+  ["culture", "Культура"],
+  ["sources", "Источники"],
+  ["premium-analysis", "Аналитика"],
+  ["similar", "Похожие"],
+] as const;
 ---
 
-<article class="ui-kit-company-page" aria-label="Прототип страницы компании на вымышленных данных">
+<article class="ui-kit-company-page" aria-label="Прототип стабильной страницы компании на вымышленных данных">
+  <nav class="ui-kit-company-page__breadcrumbs" aria-label="Хлебные крошки">
+    <a href="#company-card">Каталог</a><span aria-hidden="true">→</span><a href="#discovery">Продуктовые компании</a><span aria-hidden="true">→</span><span>Northstar Digital Lab</span>
+  </nav>
+
   <header class="ui-kit-company-page__hero">
     <div class="ui-kit-company-card__logo ui-kit-company-page__logo" aria-hidden="true">NW</div>
     <div class="ui-kit-company-page__hero-copy">
@@ -12,100 +32,130 @@ import ProductIcon from "../ui/ProductIcon.astro";
       <div class="ui-kit-label-row">
         <span class="ui-kit-tag ui-kit-tag--neutral ui-kit-label--m">Продуктовая студия</span>
         <span class="ui-kit-tag ui-kit-tag--neutral ui-kit-label--m">201–500</span>
-        <span class="ui-kit-badge ui-kit-badge--verified ui-kit-label--m">Проверено</span>
+        <span class="ui-kit-badge ui-kit-badge--verified ui-kit-label--m">Данные профиля проверены</span>
       </div>
     </div>
-      <button class="ui-kit-icon-button" type="button" aria-label="Добавить Northstar Digital Lab в избранное" aria-pressed="false" title="Добавить Northstar Digital Lab в избранное" data-ui-kit-favorite data-favorite-label="Northstar Digital Lab">
+    <button class="ui-kit-icon-button" type="button" aria-label="Добавить Northstar Digital Lab в избранное" aria-pressed="false" title="Добавить Northstar Digital Lab в избранное" data-ui-kit-favorite data-favorite-label="Northstar Digital Lab">
       <ProductIcon name="favorite" size={24} state="auto" />
     </button>
   </header>
 
-  <nav class="ui-kit-company-page__nav ui-kit-scroll-x" aria-label="Разделы примера страницы компании">
-    <a href="#mock-summary">Сводка</a><a href="#mock-hiring">Найм</a><a href="#mock-overview">О компании</a><a href="#mock-ratings">Рейтинги</a><a href="#mock-sources">Источники</a>
+  <nav class="ui-kit-company-page__nav ui-kit-scroll-x" aria-label="Стабильные разделы примера страницы компании">
+    {sections.map(([id, label]) => <a href={`#company-page-${id}`}><span>{label}</span><code>{id}</code></a>)}
   </nav>
 
   <div class="ui-kit-company-page__layout">
     <div class="ui-kit-company-page__main">
-      <section id="mock-summary" class="ui-kit-company-page__section">
-        <div class="ui-kit-company-page__section-head"><span>01</span><h4>Сводка для решения</h4></div>
+      <section id="company-page-summary" class="ui-kit-company-page__section" data-canonical-id="summary" data-render-state="available">
+        <div class="ui-kit-company-page__section-head"><span>01</span><div><h3>Сводка для решения</h3><code>summary · available</code></div></div>
         <div class="ui-kit-company-page__metrics">
           <div><span>Найм</span><strong>Точечный</strong><small>5–10 вакансий</small></div>
           <div><span>Формат</span><strong>Удалённо</strong><small>РФ + офис СПб</small></div>
           <div><span>Рейтинг</span><strong>4,7</strong><small>186 отзывов</small></div>
           <div><span>Свежесть</span><strong>7 дней</strong><small>5 источников</small></div>
         </div>
+            <UiKitEvidenceSummary variant="sufficient" compact idPrefix="company-page-evidence" />
       </section>
 
-      <section id="mock-hiring" class="ui-kit-company-page__section">
-        <div class="ui-kit-company-page__section-head"><span>02</span><h4>Найм и карьера</h4></div>
+      <section id="company-page-hiring" class="ui-kit-company-page__section" data-canonical-id="hiring" data-render-state="available">
+        <div class="ui-kit-company-page__section-head"><span>02</span><div><h3>Найм и карьера</h3><code>hiring · available / stale</code></div></div>
         <p>Открыты роли в продуктовой аналитике, QA и backend-разработке. Данные относятся к вымышленному примеру.</p>
         <dl class="ui-kit-criterion-list">
           <div><dt>Статус</dt><dd><span class="ui-kit-data-state ui-kit-data-state--verified">Проверенный факт</span> Точечный активный найм</dd></div>
           <div><dt>Интенсивность</dt><dd>5–10 вакансий · карьерная страница</dd></div>
-          <div><dt>Дата наблюдения</dt><dd>24 июля 2026</dd></div>
+          <div><dt>Дата наблюдения</dt><dd>24 июля 2026 <span class="ui-kit-data-state ui-kit-data-state--warning">Требует обновления</span></dd></div>
         </dl>
       </section>
 
-      <section class="ui-kit-company-page__section">
-        <div class="ui-kit-company-page__section-head"><span>03</span><h4>Формат и география</h4></div>
+      <section id="company-page-work-format" class="ui-kit-company-page__section" data-canonical-id="work-format" data-render-state="available">
+        <div class="ui-kit-company-page__section-head"><span>03</span><div><h3>Формат и география</h3><code>work-format · available</code></div></div>
         <p>Удалённая работа по РФ. Для части команд доступен офис в Санкт-Петербурге; ограничения зависят от роли.</p>
       </section>
 
-      <section id="mock-overview" class="ui-kit-company-page__section">
-        <div class="ui-kit-company-page__section-head"><span>04</span><h4>О компании</h4></div>
-        <p><span class="ui-kit-badge ui-kit-badge--claim">По данным компании</span> Студия заявляет о 12 продуктовых командах и проектах в трёх странах. Это предоставленные работодателем сведения, а не независимая оценка.</p>
+      <section id="company-page-ratings" class="ui-kit-company-page__section is-conflicting" data-canonical-id="ratings" data-render-state="conflicting">
+        <div class="ui-kit-company-page__section-head"><span>04</span><div><h3>Рейтинги и сигналы сотрудников</h3><code>ratings · conflicting</code></div></div>
+        <div class="ui-kit-rating-row"><strong>4,7</strong><span><span class="ui-kit-badge ui-kit-badge--external">Внешний сигнал</span> Внешний рейтинг · 186 отзывов</span></div>
+        <div class="ui-kit-rating-row"><strong>4,4</strong><span>Карьерный рейтинг · 42 оценки · малая выборка</span></div>
+        <p class="ui-kit-state-callout is-conflicting"><ProductIcon name="conflict" size={20} /> Источники используют разные периоды и выборки; значения нельзя объединять в среднее.</p>
       </section>
 
-      <section class="ui-kit-company-page__section">
-        <div class="ui-kit-company-page__section-head"><span>05</span><h4>Продукты и услуги</h4></div>
+      <section id="company-page-overview" class="ui-kit-company-page__section" data-canonical-id="overview" data-render-state="available">
+        <div class="ui-kit-company-page__section-head"><span>05</span><div><h3>О компании</h3><code>overview · available</code></div></div>
+        <p><span class="ui-kit-badge ui-kit-badge--claim">По данным компании</span> Студия заявляет о 12 продуктовых командах и проектах в трёх странах.</p>
+        <p><span class="ui-kit-badge ui-kit-badge--external">Независимый источник</span> Публичные материалы подтверждают наличие двух продуктов, но не количество команд.</p>
+      </section>
+
+      <section id="company-page-products" class="ui-kit-company-page__section" data-canonical-id="products" data-render-state="available">
+        <div class="ui-kit-company-page__section-head"><span>06</span><div><h3>Продукты и услуги</h3><code>products · available</code></div></div>
         <div class="ui-kit-product-list"><div><strong>Route Signal</strong><span>Платформа мониторинга доставки</span></div><div><strong>Urban Desk</strong><span>Инструменты городской аналитики</span></div></div>
       </section>
 
-      <section id="mock-ratings" class="ui-kit-company-page__section">
-        <div class="ui-kit-company-page__section-head"><span>06</span><h4>Рейтинги и сигналы сотрудников</h4></div>
-        <div class="ui-kit-rating-row"><strong>4,7</strong><span><span class="ui-kit-badge ui-kit-badge--external">Внешний сигнал</span> Внешний рейтинг · 186 отзывов</span></div>
-        <div class="ui-kit-rating-row"><strong>4,4</strong><span>Карьерный рейтинг · 42 оценки · малая выборка</span></div>
+      <section id="company-page-finance" class="ui-kit-company-page__section is-missing" data-canonical-id="finance" data-render-state="missing">
+        <div class="ui-kit-company-page__section-head"><span>07</span><div><h3>Финансы и устойчивость</h3><code>finance · missing</code></div></div>
+        <p class="ui-kit-state-callout"><ProductIcon name="unknown" size={20} /> Финансовый показатель не найден: публичный источник не раскрывает значение. Последняя проверка — 5 августа 2026.</p>
       </section>
 
-      <section class="ui-kit-company-page__section">
-        <div class="ui-kit-company-page__section-head"><span>07</span><h4>Публичный финансовый срез</h4></div>
-        <dl class="ui-kit-criterion-list">
-          <div><dt>Юрлицо</dt><dd>Пример ООО «Нортстар Лаб»</dd></div>
-          <div><dt>Выручка</dt><dd>Данные не найдены <small>Источник не раскрывает значение</small></dd></div>
-          <div><dt>Год отчётности</dt><dd>2025</dd></div>
-        </dl>
+      <section id="company-page-legal" class="ui-kit-company-page__section is-unavailable" data-canonical-id="legal" data-render-state="unavailable">
+        <div class="ui-kit-company-page__section-head"><span>08</span><div><h3>Управление и юридическая структура</h3><code>legal · unavailable</code></div></div>
+        <p class="ui-kit-state-callout is-unavailable"><ProductIcon name="information" size={20} /> Сервис публичного реестра временно недоступен. Последняя успешная проверка — 2 августа 2026.</p>
       </section>
 
-      <section id="mock-sources" class="ui-kit-company-page__section">
-        <div class="ui-kit-company-page__section-head"><span>08</span><h4>Источники и свежесть</h4></div>
-        <ul class="ui-kit-source-list"><li>Карьерная страница · проверено 24.07.2026</li><li>Публичный реестр · проверено 18.07.2026</li><li>Внешний рейтинг · наблюдение 20.07.2026</li></ul>
+      <section id="company-page-culture" class="ui-kit-company-page__section is-insufficient" data-canonical-id="culture" data-render-state="missing">
+        <div class="ui-kit-company-page__section-head"><span>09</span><div><h3>Культура и условия</h3><code>culture · insufficient evidence</code></div></div>
+        <p>Доступно только описание работодателя. Независимых источников недостаточно для сводного вывода.</p>
       </section>
 
-      <section class="ui-kit-company-page__section ui-kit-company-page__section--premium">
-        <div class="ui-kit-company-page__section-head"><span>09</span><h4>Предпросмотр расширенной аналитики</h4></div>
-        <p><span class="ui-kit-badge ui-kit-badge--premium">Расширенный доступ</span> История изменения найма и сравнение с похожими компаниями.</p>
-        <div class="ui-kit-locked-structure" aria-label="Заблокированный пример аналитики"><span></span><span></span><span></span></div>
+      <section id="company-page-sources" class="ui-kit-company-page__section" data-canonical-id="sources" data-render-state="available" data-company-sources>
+        <div class="ui-kit-company-page__section-head"><span>10</span><div><h3>Источники и обновления</h3><code>sources · available / controlled loading</code></div></div>
+        <button class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" type="button" data-company-sources-toggle>Показать section loading</button>
+        <ul class="ui-kit-source-list" data-company-sources-content><li>Карьерная страница · проверено 24.07.2026</li><li>Публичный реестр · проверено 18.07.2026</li><li>Внешний рейтинг · наблюдение 20.07.2026</li></ul>
+        <div class="ui-kit-section-skeleton" aria-hidden="true" hidden data-company-sources-skeleton><b></b><b></b><b></b></div>
+      </section>
+
+      <section id="company-page-premium-analysis" class="ui-kit-company-page__section ui-kit-company-page__section--premium" data-canonical-id="premium-analysis" data-render-state="restricted">
+        <div class="ui-kit-company-page__section-head"><span>11</span><div><h3>Предпросмотр расширенной аналитики</h3><code>premium-analysis · restricted</code></div></div>
+        <p><span class="ui-kit-badge ui-kit-badge--premium">Расширенный доступ</span> Раздел объясняет доступную категорию анализа без скрытых деталей или premium payload.</p>
+        <div class="ui-kit-premium-preview"><ProductIcon name="locked" size={20} /><span>История изменений доступна после подключения аналитики</span></div>
         <button class="ui-kit-button ui-kit-button--premium" type="button">Узнать о подписке</button>
       </section>
 
-      <section class="ui-kit-company-page__section">
-        <div class="ui-kit-company-page__section-head"><span>10</span><h4>Похожие компании</h4></div>
+      <section id="company-page-similar" class="ui-kit-company-page__section" data-canonical-id="similar" data-render-state="available">
+        <div class="ui-kit-company-page__section-head"><span>12</span><div><h3>Похожие компании</h3><code>similar · available</code></div></div>
         <div class="ui-kit-similar-placeholder"><span>Example Product Studio</span><span>Signal Works</span></div>
       </section>
+
+      <aside class="ui-kit-company-page__seo-note" aria-label="SEO-контракт страницы компании">
+        <strong>SEO demonstration</strong><p>Заголовки и публичный контент рендерятся сервером; deep links ведут к стабильным разделам. Structured data может включать только подтверждённые факты. Missing не создаёт ложных значений, premium/internal data исключены из публичной разметки.</p>
+      </aside>
     </div>
 
     <aside class="ui-kit-company-page__rail" aria-label="Сводка и действия">
       <p class="ui-kit-eyebrow">Боковая сводка</p>
-      <h4>Подходит для быстрого изучения</h4>
-      <p>Проверяйте формат конкретной роли: часть источников описывает гибрид.</p>
-      <div class="ui-kit-company-page__rail-fact"><span>Доверие</span><strong>4 из 5 источников свежие</strong></div>
+      <h3>Проверяйте формат конкретной роли</h3>
+      <p>Часть источников описывает гибрид. Сводка оценивает доказательства профиля, а не работодателя.</p>
+      <div class="ui-kit-company-page__rail-fact"><span>Состояние доказательств</span><strong>Достаточно для сравнения</strong></div>
       <div class="ui-kit-company-page__rail-fact"><span>Состояние данных</span><strong>Обогащённый профиль</strong></div>
-      <a class="ui-kit-button ui-kit-button--primary ui-kit-button--large" href="#mock-hiring">Открыть карьерную страницу</a>
+      <a class="ui-kit-button ui-kit-button--primary ui-kit-button--large" href="#company-page-hiring">Перейти к разделу найма</a>
       <button class="ui-kit-button ui-kit-button--secondary" type="button">Добавить в сравнение</button>
     </aside>
   </div>
 
   <div class="ui-kit-company-page__mobile-action">
-    <a class="ui-kit-button ui-kit-button--primary" href="#mock-hiring">Карьера</a>
+    <a class="ui-kit-button ui-kit-button--primary" href="#company-page-hiring">К разделу найма</a>
   </div>
 </article>
+
+<script>
+  document.querySelectorAll<HTMLElement>("[data-company-sources]").forEach((section) => {
+    const toggle = section.querySelector<HTMLButtonElement>("[data-company-sources-toggle]");
+    const content = section.querySelector<HTMLElement>("[data-company-sources-content]");
+    const skeleton = section.querySelector<HTMLElement>("[data-company-sources-skeleton]");
+    toggle?.addEventListener("click", () => {
+      const busy = section.getAttribute("aria-busy") === "true";
+      section.setAttribute("aria-busy", String(!busy));
+      if (content) content.hidden = !busy;
+      if (skeleton) skeleton.hidden = busy;
+      toggle.textContent = busy ? "Показать section loading" : "Вернуть источники";
+    });
+  });
+</script>
