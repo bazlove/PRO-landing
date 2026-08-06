@@ -9,6 +9,7 @@
   --ui-neutral-200: #deded7;
   --ui-neutral-300: #c6c6be;
   --ui-neutral-500: #7a7d82;
+  --ui-neutral-600: #626a75;
   --ui-neutral-700: #3b414a;
   --ui-neutral-900: #121a26;
   --ui-neutral-950: #0b111b;
@@ -52,9 +53,9 @@
   --ui-color-surface-elevated: #ffffff;
   --ui-color-text-primary: #121a26;
   --ui-color-text-secondary: #3b414a;
-  --ui-color-text-muted: #626a75;
+  --ui-color-text-muted: var(--ui-neutral-600);
   --ui-color-text-placeholder: #7a7d82;
-  --ui-color-text-tertiary: #626a75;
+  --ui-color-text-tertiary: var(--ui-neutral-600);
   --ui-color-text-disabled: #92969c;
   --ui-color-text-inverse: #ffffff;
   --ui-color-border-default: #deded7;
