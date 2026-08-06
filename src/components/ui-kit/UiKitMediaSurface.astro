@@ -1,0 +1,48 @@
+---
+import editorialScene from "../../assets/ui-kit/editorial-scene.svg";
+import fictionalLogo from "../../assets/ui-kit/fictional-logo.svg";
+import productScreen from "../../assets/ui-kit/product-screen.svg";
+import dataPreview from "../../assets/ui-kit/data-preview.svg";
+---
+
+<section id="media-surface" class="ui-kit-contract" aria-labelledby="media-surface-title">
+  <header class="ui-kit-contract__header">
+    <p class="ui-kit-eyebrow">Media Surface Contract</p>
+    <h3 id="media-surface-title">Геометрия зависит от роли изображения</h3>
+    <p><code>cover</code> допустим для редакционных сцен, а логотипы, интерфейсы и диаграммы сохраняют важные края через <code>contain</code>.</p>
+  </header>
+
+  <div class="ui-kit-media-grid">
+    <figure class="ui-kit-media-example ui-kit-media-example--hero">
+      <div class="ui-kit-media-frame is-editorial"><img src={editorialScene.src} alt="Вымышленная редакционная сцена офиса с рабочими столами и растениями" /></div>
+      <figcaption><strong>Редакционный hero</strong><span><code>16 / 9</code> · <code>radius.l</code> · <code>cover</code> · focal point 50% 42%</span></figcaption>
+    </figure>
+    <figure class="ui-kit-media-example">
+      <div class="ui-kit-media-frame is-card"><img src={editorialScene.src} alt="Фрагмент вымышленного рабочего пространства" /></div>
+      <figcaption><strong>Редакционная карточка</strong><span><code>4 / 3</code> · <code>radius.m</code> · <code>cover</code></span></figcaption>
+    </figure>
+    <figure class="ui-kit-media-example">
+      <div class="ui-kit-media-frame is-logo"><img src={fictionalLogo.src} alt="Знак вымышленной компании Northstar" /></div>
+      <figcaption><strong>Контейнер логотипа</strong><span><code>1 / 1</code> · <code>radius.m</code> · <code>contain</code></span></figcaption>
+    </figure>
+    <figure class="ui-kit-media-example">
+      <div class="ui-kit-media-frame is-avatar"><img src={editorialScene.src} alt="Вымышленный аватар участника команды" /></div>
+      <figcaption><strong>Аватар</strong><span><code>1 / 1</code> · <code>radius.round</code> · <code>cover</code></span></figcaption>
+    </figure>
+    <figure class="ui-kit-media-example ui-kit-media-example--wide">
+      <div class="ui-kit-media-frame is-screen"><img src={productScreen.src} alt="Вымышленный интерфейс продукта с навигацией, показателями и таблицей" /></div>
+      <figcaption><strong>Скриншот продукта</strong><span>Компонентная пропорция · <code>radius.m</code> · <code>contain</code></span></figcaption>
+    </figure>
+    <figure class="ui-kit-media-example ui-kit-media-example--wide">
+      <div class="ui-kit-media-frame is-data"><img src={dataPreview.src} alt="График вымышленной динамики найма: общий рост с двумя локальными снижениями" /></div>
+      <figcaption><strong>Предпросмотр данных</strong><span>Важные края сохранены. Значения доступны рядом: 4, 5, 5, 8, 7, 11 наблюдений.</span></figcaption>
+    </figure>
+  </div>
+
+  <figure class="ui-kit-media-full-bleed">
+    <img src={editorialScene.src} alt="" />
+    <figcaption><strong>Мобильный full-bleed</strong><span>Декоративное изображение имеет пустой <code>alt</code>; смысл находится в подписи, прямой край viewport разрешён.</span></figcaption>
+  </figure>
+
+  <p class="ui-kit-contract-note"><strong>Решение по alt:</strong> информативное изображение описывает цель и важный объект; декоративное получает пустой <code>alt</code>. Текст и данные не остаются только внутри media.</p>
+</section>

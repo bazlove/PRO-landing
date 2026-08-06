@@ -1,0 +1,85 @@
+---
+import ProductIcon from "../ui/ProductIcon.astro";
+---
+
+<section id="skeleton-contract" class="ui-kit-contract" aria-labelledby="skeleton-contract-title">
+  <header class="ui-kit-contract__header">
+    <p class="ui-kit-eyebrow">Skeleton Contract</p>
+    <h3 id="skeleton-contract-title">Загрузка сохраняет геометрию будущего содержимого</h3>
+    <p>Полный skeleton применяется только для начальной и секционной загрузки. Обновление, optimistic action, missing и unavailable сохраняют полезный контекст.</p>
+  </header>
+
+  <div class="ui-kit-skeleton-contract-grid">
+    <article class="ui-kit-loading-example" aria-busy="true" aria-label="Начальная загрузка карточки" data-skeleton-live>
+      <header><span class="ui-kit-badge">Initial loading</span><button class="ui-kit-button ui-kit-button--tertiary ui-kit-button--compact" type="button" data-skeleton-toggle>Показать результат</button></header>
+      <div class="ui-kit-company-card-skeleton" aria-hidden="true" data-skeleton-shapes><i></i><div><b></b><b></b></div><span></span><span></span><span></span></div>
+      <div class="ui-kit-skeleton-result" hidden data-skeleton-result><strong>Northstar Digital Lab</strong><span>Продуктовая студия · 201–500</span><span>Точечный найм · удалённо</span></div>
+      <span class="sr-only" role="status" aria-live="polite" data-skeleton-status>Карточка загружается</span>
+    </article>
+
+    <article class="ui-kit-loading-example" aria-busy="true" aria-label="Загрузка раздела источников">
+      <header><span class="ui-kit-badge">Section loading</span><strong>Источники и свежесть</strong></header>
+      <div class="ui-kit-section-skeleton" aria-hidden="true"><b></b><b></b><b></b></div>
+      <p>Остальная страница остаётся доступной.</p>
+    </article>
+
+    <article class="ui-kit-loading-example" data-skeleton-refresh>
+      <header><span class="ui-kit-badge ui-kit-badge--beta">Refresh</span><button class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" type="button" data-skeleton-refresh-toggle><ProductIcon name="refresh" size={16} />Обновить данные</button></header>
+      <strong>Точечный найм · 5–10 вакансий</strong><p>Предыдущее значение остаётся видимым.</p><span class="ui-kit-data-state" hidden data-skeleton-refresh-status>Обновляем данные</span>
+    </article>
+
+    <article class="ui-kit-loading-example" data-skeleton-optimistic>
+      <header><span class="ui-kit-badge ui-kit-badge--beta">Optimistic action</span></header>
+      <strong>Northstar Digital Lab</strong><p>Карточка сохраняет размер и содержимое.</p><button class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" type="button" data-skeleton-optimistic-toggle><span data-skeleton-optimistic-label>Добавить в сравнение</span></button>
+    </article>
+
+    <article class="ui-kit-loading-example is-unavailable">
+      <header><span class="ui-kit-badge ui-kit-badge--critical">Source unavailable</span></header>
+      <strong>Источник временно недоступен</strong><p>Последняя успешная проверка: 2 августа 2026. Это не loading и не отсутствие значения.</p>
+    </article>
+
+    <article class="ui-kit-loading-example is-missing">
+      <header><span class="ui-kit-badge">Missing data</span></header>
+      <strong>Финансовый показатель не найден</strong><p>Причина: публичный источник не раскрывает значение. Проверено 5 августа 2026.</p>
+    </article>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>("[data-skeleton-live]").forEach((root) => {
+    const toggle = root.querySelector<HTMLButtonElement>("[data-skeleton-toggle]");
+    const shapes = root.querySelector<HTMLElement>("[data-skeleton-shapes]");
+    const result = root.querySelector<HTMLElement>("[data-skeleton-result]");
+    const status = root.querySelector<HTMLElement>("[data-skeleton-status]");
+    toggle?.addEventListener("click", () => {
+      const loaded = root.getAttribute("aria-busy") === "false";
+      root.setAttribute("aria-busy", String(loaded));
+      if (shapes) shapes.hidden = !loaded;
+      if (result) result.hidden = loaded;
+      toggle.textContent = loaded ? "Показать результат" : "Вернуть загрузку";
+      if (status) status.textContent = loaded ? "Карточка загружается" : "Карточка загружена";
+    });
+  });
+
+  document.querySelectorAll<HTMLElement>("[data-skeleton-refresh]").forEach((root) => {
+    const toggle = root.querySelector<HTMLButtonElement>("[data-skeleton-refresh-toggle]");
+    const status = root.querySelector<HTMLElement>("[data-skeleton-refresh-status]");
+    toggle?.addEventListener("click", () => {
+      const busy = root.getAttribute("aria-busy") === "true";
+      root.setAttribute("aria-busy", String(!busy));
+      if (status) status.hidden = busy;
+      toggle.setAttribute("aria-pressed", String(!busy));
+    });
+  });
+
+  document.querySelectorAll<HTMLElement>("[data-skeleton-optimistic]").forEach((root) => {
+    const toggle = root.querySelector<HTMLButtonElement>("[data-skeleton-optimistic-toggle]");
+    const label = root.querySelector<HTMLElement>("[data-skeleton-optimistic-label]");
+    toggle?.addEventListener("click", () => {
+      const busy = toggle.getAttribute("aria-busy") === "true";
+      toggle.setAttribute("aria-busy", String(!busy));
+      toggle.classList.toggle("is-loading", !busy);
+      if (label) label.textContent = busy ? "Добавить в сравнение" : "Сохраняем";
+    });
+  });
+</script>

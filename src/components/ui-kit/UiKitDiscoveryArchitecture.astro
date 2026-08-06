@@ -1,0 +1,132 @@
+---
+type DemoCriterion = {
+  key: string;
+  value: string;
+  label: string;
+  status?: "approved" | "illustrative" | "tbd";
+};
+
+type DemoDiscoveryEntry = {
+  id: string;
+  type: "taxonomy" | "intent";
+  label: string;
+  mappedCriteria: DemoCriterion[];
+};
+
+const entries: DemoDiscoveryEntry[] = [
+  { id: "backend-teams", type: "taxonomy", label: "Backend-команды", mappedCriteria: [{ key: "role", value: "backend", label: "Роль: Backend" }] },
+  { id: "product-companies", type: "taxonomy", label: "Продуктовые компании", mappedCriteria: [{ key: "companyType", value: "product", label: "Тип: продуктовая компания" }] },
+  { id: "serbia-employers", type: "taxonomy", label: "Работодатели в Сербии", mappedCriteria: [{ key: "location", value: "RS", label: "География: Сербия" }] },
+  { id: "remote-hiring", type: "taxonomy", label: "Удалённый найм", mappedCriteria: [{ key: "workFormat", value: "remote", label: "Формат: удалённо" }, { key: "remoteEligibility", value: "verified", label: "Удалённость подтверждена" }] },
+  { id: "b2b-saas", type: "taxonomy", label: "B2B SaaS", mappedCriteria: [{ key: "businessModel", value: "b2b-saas", label: "Модель: B2B SaaS" }] },
+  { id: "first-product-role", type: "intent", label: "Первая продуктовая роль", mappedCriteria: [{ key: "careerIntent", value: "first-product-role", label: "Намерение: первая роль", status: "illustrative" }, { key: "experience", value: "TBD", label: "Опыт: TBD", status: "tbd" }] },
+  { id: "agency-to-product", type: "intent", label: "Из агентства в продукт", mappedCriteria: [{ key: "companyType", value: "product", label: "Тип: продуктовая компания", status: "illustrative" }, { key: "transitionProfile", value: "TBD", label: "Профиль перехода: TBD", status: "tbd" }] },
+  { id: "distributed-team", type: "intent", label: "Международная распределённая команда", mappedCriteria: [{ key: "teamDistribution", value: "international", label: "Команда: международная", status: "illustrative" }, { key: "workFormat", value: "remote", label: "Формат: удалённо", status: "illustrative" }] },
+  { id: "remote-from-serbia", type: "intent", label: "Работать удалённо из Сербии", mappedCriteria: [{ key: "location", value: "RS", label: "География: Сербия", status: "illustrative" }, { key: "workFormat", value: "remote", label: "Формат: удалённо", status: "illustrative" }, { key: "remoteEligibility", value: "verified", label: "Удалённость подтверждена", status: "illustrative" }] },
+  { id: "analytics-growth", type: "intent", label: "Расти в аналитике", mappedCriteria: [{ key: "role", value: "analytics", label: "Роль: аналитика", status: "illustrative" }, { key: "growthEvidence", value: "TBD", label: "Сигналы роста: TBD", status: "tbd" }] },
+  { id: "smaller-product-team", type: "intent", label: "Из enterprise в небольшую продуктовую команду", mappedCriteria: [{ key: "companyType", value: "product", label: "Тип: продуктовая компания", status: "illustrative" }, { key: "companySize", value: "small-medium", label: "Размер: малая или средняя", status: "illustrative" }] },
+];
+
+const initialEntry = entries[0];
+---
+
+<section id="dual-discovery" class="ui-kit-contract ui-kit-discovery" aria-labelledby="dual-discovery-title" data-discovery-root>
+  <header class="ui-kit-contract__header">
+    <p class="ui-kit-eyebrow">Dual Discovery Architecture</p>
+    <h3 id="dual-discovery-title">Два входа сходятся в одной сводке критериев</h3>
+    <p>Таксономия начинается с известного атрибута, intent — с карьерной задачи. Оба режима изменяют один локальный demo state.</p>
+  </header>
+
+  <div class="ui-kit-discovery-panels">
+    <fieldset>
+      <legend>Таксономия</legend>
+      <p>Явные атрибуты компании.</p>
+      <div class="ui-kit-discovery-options">
+        {entries.filter((entry) => entry.type === "taxonomy").map((entry, index) => <button type="button" aria-pressed={index === 0 ? "true" : "false"} data-discovery-entry={entry.id}>{entry.label}</button>)}
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Карьерная задача</legend>
+      <p>Понятный сценарий с раскрытым mapping.</p>
+      <div class="ui-kit-discovery-options">
+        {entries.filter((entry) => entry.type === "intent").map((entry) => <button type="button" aria-pressed="false" data-discovery-entry={entry.id}>{entry.label}</button>)}
+      </div>
+    </fieldset>
+  </div>
+
+  <details class="ui-kit-discovery-summary" open data-discovery-summary>
+    <summary>Общая сводка критериев</summary>
+    <div>
+      <p><strong>Entry:</strong> <span data-discovery-entry-label>Таксономия — {initialEntry.label}</span></p>
+      <div class="ui-kit-label-row" data-discovery-chips>
+        {initialEntry.mappedCriteria.map((criterion) => <button class="ui-kit-chip ui-kit-label--m" type="button" data-discovery-remove={criterion.key} aria-label={`Удалить критерий ${criterion.label}`}><span>{criterion.label}</span><span aria-hidden="true">×</span></button>)}
+      </div>
+      <dl data-discovery-criteria>{initialEntry.mappedCriteria.map((criterion) => <div><dt><code>{criterion.key}</code></dt><dd><code>{criterion.value}</code></dd></div>)}</dl>
+      <p><strong>Canonical state:</strong> <code data-discovery-query>?role=backend</code></p>
+      <p class="ui-kit-contract-note">Intent mapping is illustrative. Production filter schema remains pending approval.</p>
+      <button class="ui-kit-button ui-kit-button--tertiary ui-kit-button--compact" type="button" data-discovery-reset aria-label="Сбросить демонстрацию discovery">Сбросить демонстрацию</button>
+      <span class="sr-only" role="status" aria-live="polite" data-discovery-status></span>
+    </div>
+  </details>
+</section>
+
+<script is:inline define:vars={{ entries }}>
+  document.querySelectorAll("[data-discovery-root]").forEach((root) => {
+    const entryMap = new Map(entries.map((entry) => [entry.id, entry]));
+    const buttons = Array.from(root.querySelectorAll("[data-discovery-entry]"));
+    const label = root.querySelector("[data-discovery-entry-label]");
+    const chips = root.querySelector("[data-discovery-chips]");
+    const criteria = root.querySelector("[data-discovery-criteria]");
+    const query = root.querySelector("[data-discovery-query]");
+    const status = root.querySelector("[data-discovery-status]");
+    let selected = entries[0];
+    let activeCriteria = [...selected.mappedCriteria];
+
+    const render = (announce = true) => {
+      if (label) label.textContent = `${selected.type === "intent" ? "Intent" : "Таксономия"} — ${selected.label}`;
+      if (chips) {
+        chips.replaceChildren(...activeCriteria.map((criterion) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "ui-kit-chip ui-kit-label--m";
+          button.dataset.discoveryRemove = criterion.key;
+          button.setAttribute("aria-label", `Удалить критерий ${criterion.label}`);
+          const text = document.createElement("span"); text.textContent = criterion.label;
+          const close = document.createElement("span"); close.textContent = "×"; close.setAttribute("aria-hidden", "true");
+          button.append(text, close);
+          return button;
+        }));
+      }
+      if (criteria) {
+        criteria.replaceChildren(...activeCriteria.map((criterion) => {
+          const row = document.createElement("div");
+          const dt = document.createElement("dt"); const key = document.createElement("code"); key.textContent = criterion.key; dt.append(key);
+          const dd = document.createElement("dd"); const value = document.createElement("code"); value.textContent = criterion.value; dd.append(value);
+          if (criterion.status === "tbd") { const marker = document.createElement("span"); marker.className = "ui-kit-badge"; marker.textContent = "TBD"; dd.append(marker); }
+          row.append(dt, dd); return row;
+        }));
+      }
+      if (query) query.textContent = activeCriteria.length ? `?${activeCriteria.filter((item) => item.value !== "TBD").map((item) => `${item.key}=${item.value}`).join("&")}` : "?";
+      buttons.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.discoveryEntry === selected.id)));
+      if (announce && status) status.textContent = `Критерии обновлены: ${activeCriteria.length}`;
+    };
+
+    buttons.forEach((button) => button.addEventListener("click", () => {
+      const entry = entryMap.get(button.dataset.discoveryEntry);
+      if (!entry) return;
+      selected = entry;
+      activeCriteria = [...entry.mappedCriteria];
+      render();
+    }));
+    chips?.addEventListener("click", (event) => {
+      if (!(event.target instanceof Element)) return;
+      const button = event.target.closest("[data-discovery-remove]");
+      if (!(button instanceof HTMLButtonElement)) return;
+      activeCriteria = activeCriteria.filter((criterion) => criterion.key !== button.dataset.discoveryRemove);
+      render();
+    });
+    root.querySelector("[data-discovery-reset]")?.addEventListener("click", () => {
+      selected = entries[0]; activeCriteria = [...selected.mappedCriteria]; render();
+    });
+  });
+</script>

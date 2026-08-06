@@ -1,0 +1,63 @@
+---
+import ProductIcon from "../ui/ProductIcon.astro";
+import InlineLink from "../ui/InlineLink.astro";
+
+type Variant = "well-supported" | "sufficient" | "review" | "insufficient";
+
+interface Props {
+  variant: Variant;
+  compact?: boolean;
+  idPrefix?: string;
+}
+
+const { variant, compact = false, idPrefix = "evidence" } = Astro.props;
+const summaries = {
+  "well-supported": {
+    label: "Профиль хорошо подтверждён",
+    explanation: "Публичные источники покрывают пять ключевых разделов профиля.",
+    evidence: "Четыре источника проверены в течение последних 30 дней; два факта подтверждены независимо.",
+    limitation: "Финансовый показатель не найден.",
+    tone: "verified",
+    icon: "verified",
+  },
+  sufficient: {
+    label: "Достаточно данных для сравнения",
+    explanation: "Основные критерии решения имеют видимые источники и даты.",
+    evidence: "Доступны найм, формат работы, размер и два внешних сигнала.",
+    limitation: "Один рейтинг основан на малой выборке.",
+    tone: "insight",
+    icon: "information",
+  },
+  review: {
+    label: "Требуется дополнительная проверка",
+    explanation: "Доказательства профиля содержат заметное расхождение.",
+    evidence: "Карьерная страница и вакансия по-разному описывают формат работы.",
+    limitation: "До разрешения конфликта удалённый формат нельзя считать подтверждённым.",
+    tone: "warning",
+    icon: "conflict",
+  },
+  insufficient: {
+    label: "Недостаточно данных для сводного вывода",
+    explanation: "Доступная информация не позволяет кратко оценить подтверждённость профиля.",
+    evidence: "Есть только описание работодателя и один внешний источник без даты.",
+    limitation: "Employer claim не повышает независимую подтверждённость.",
+    tone: "neutral",
+    icon: "unknown",
+  },
+} as const;
+const summary = summaries[variant];
+const titleId = `${idPrefix}-${variant}-title`;
+---
+
+<article class:list={["ui-kit-evidence-summary", `is-${summary.tone}`, { "is-compact": compact }]} aria-labelledby={titleId}>
+  <ProductIcon name={summary.icon} size={compact ? 20 : 24} />
+  <div>
+    <h3 id={titleId}>{summary.label}</h3>
+    <p>{summary.explanation}</p>
+    <dl>
+      <div><dt>Подтверждение</dt><dd>{summary.evidence}</dd></div>
+      <div><dt>Ограничение</dt><dd>{summary.limitation}</dd></div>
+    </dl>
+    <InlineLink href="#evidence-summary">Методология оценки доказательств профиля</InlineLink>
+  </div>
+</article>

@@ -1,0 +1,39 @@
+---
+import ProductIcon from "../ui/ProductIcon.astro";
+---
+
+<section id="card-interactivity" class="ui-kit-contract" aria-labelledby="card-interactivity-title">
+  <header class="ui-kit-contract__header">
+    <p class="ui-kit-eyebrow">Card Interactivity Contract</p>
+    <h3 id="card-interactivity-title">Четыре типа карточек — четыре явных семантики</h3>
+  </header>
+  <div class="ui-kit-card-contract-grid">
+    <article class="ui-kit-contract-card is-static">
+      <span class="ui-kit-badge">static</span><h3>Сводка источника</h3><p>Информационная поверхность без click handler, pointer и hover elevation.</p>
+    </article>
+    <article class="ui-kit-contract-card is-actions">
+      <span class="ui-kit-badge ui-kit-badge--beta">interactive-actions</span><h3>Northstar Digital Lab</h3><p>Поверхность не кликабельна; действия имеют независимые tab stops.</p><div><button class="ui-kit-button ui-kit-button--primary ui-kit-button--compact" type="button">Быстрый просмотр</button><button class="ui-kit-icon-button" type="button" aria-label="Добавить Northstar Digital Lab в избранное"><ProductIcon name="favorite" size={20} /></button></div>
+    </article>
+    <a class="ui-kit-contract-card is-destination" href="#company-page" aria-label="Открыть профиль Example Product Studio">
+      <span class="ui-kit-badge ui-kit-badge--external">primary-destination</span><h3>Example Product Studio</h3><p>Один понятный native link, без вложенных действий и невидимого overlay.</p><span>Открыть профиль <ProductIcon name="forward" size={16} /></span>
+    </a>
+    <button class="ui-kit-contract-card is-selectable" type="button" aria-pressed="false" data-card-selectable>
+      <span class="ui-kit-badge">selectable</span><span class="ui-kit-contract-card__title">Распределённая команда</span><span>Выбор критерия, не навигация.</span><strong data-card-selectable-label>Выбрать</strong>
+    </button>
+  </div>
+  <div class="ui-kit-company-card-classification">
+    <strong>Текущая Company Card</strong><span><code>Type: interactive-actions</code></span><span>Whole-card click: disabled</span><span>Primary action: Quick View</span><span>Independent: Compare, Favorite, Evidence link</span>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>("[data-card-selectable]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const selected = button.getAttribute("aria-pressed") !== "true";
+      button.setAttribute("aria-pressed", String(selected));
+      button.classList.toggle("is-selected", selected);
+      const label = button.querySelector<HTMLElement>("[data-card-selectable-label]");
+      if (label) label.textContent = selected ? "Выбрано" : "Выбрать";
+    });
+  });
+</script>

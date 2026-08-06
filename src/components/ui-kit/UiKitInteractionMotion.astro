@@ -1,0 +1,24 @@
+---
+import ProductIcon from "../ui/ProductIcon.astro";
+import InlineLink from "../ui/InlineLink.astro";
+---
+
+<section id="interaction-motion" class="ui-kit-contract" aria-labelledby="interaction-motion-title">
+  <header class="ui-kit-contract__header">
+    <p class="ui-kit-eyebrow">Interaction Motion Matrix</p>
+    <h3 id="interaction-motion-title">Интерактивность видна, статические данные остаются спокойными</h3>
+    <p>Переходы занимают 120–180 ms, кнопка смещается не более чем на 1 px, destination-card — не более чем на 2 px. Scale для data cards запрещён.</p>
+  </header>
+  <div class="ui-kit-motion-matrix" role="list">
+    <div role="listitem"><span>Primary Button</span><button class="ui-kit-button ui-kit-button--primary" type="button">Открыть профиль</button><code>color · translateY(-1px) · ring</code></div>
+    <div role="listitem"><span>Secondary Button</span><button class="ui-kit-button ui-kit-button--secondary" type="button">Сравнить</button><code>border/background · ring</code></div>
+    <div role="listitem"><span>Tertiary Button</span><button class="ui-kit-button ui-kit-button--tertiary" type="button">Сбросить</button><code>background/color · ring</code></div>
+    <div role="listitem"><span>InlineLink</span><InlineLink href="#trust">Методология данных</InlineLink><code>solid underline · ring</code></div>
+    <div role="listitem"><span>Icon Button</span><button class="ui-kit-icon-button" type="button" aria-label="Добавить пример в избранное"><ProductIcon name="favorite" size={20} /></button><code>border/background · ring</code></div>
+    <div role="listitem"><span>Chip</span><button class="ui-kit-chip ui-kit-label--m" type="button" aria-pressed="false" data-ui-kit-chip-toggle><span>Удалённо</span></button><code>selected state · ring</code></div>
+    <div role="listitem"><span>Clickable Card</span><a class="ui-kit-motion-card is-clickable" href="#company-page"><strong>Northstar Digital Lab</strong><small>Один primary destination</small></a><code>border/shadow · translateY(-2px)</code></div>
+    <div role="listitem"><span>Static Card</span><article class="ui-kit-motion-card"><strong>Публичный факт</strong><small>Без hover и pointer</small></article><code>no interaction</code></div>
+    <div role="listitem"><span>Badge / Status</span><span class="ui-kit-badge ui-kit-badge--verified">Проверено</span><code>no hover</code></div>
+    <div role="listitem"><span>Form Control</span><label class="ui-kit-field"><span>Роль</span><input value="Backend" /></label><code>border/indicator · ring</code></div>
+  </div>
+</section>

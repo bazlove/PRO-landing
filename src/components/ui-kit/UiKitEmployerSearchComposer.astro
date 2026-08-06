@@ -1,0 +1,183 @@
+---
+import ProductIcon from "../ui/ProductIcon.astro";
+---
+
+<section id="employer-search-composer" class="ui-kit-contract ui-kit-composer" aria-labelledby="composer-title" data-ui-kit-composer>
+  <header class="ui-kit-contract__header">
+    <p class="ui-kit-eyebrow">Employer Search Composer</p>
+    <h3 id="composer-title">Основные критерии редактируются до полного фильтр-панеля</h3>
+    <p>Прототип использует отдельные <code>appliedState</code> и <code>draftState</code>. Это локальная UI Kit-модель, а не утверждённая production schema.</p>
+  </header>
+
+  <div class="ui-kit-composer-bar" aria-label="Основные критерии поиска работодателя">
+    <button type="button" aria-expanded="false" aria-controls="composer-editor" data-composer-trigger="role"><span>Роль</span><strong data-composer-trigger-value="role">Backend</strong></button>
+    <button type="button" aria-expanded="false" aria-controls="composer-editor" data-composer-trigger="geography" aria-describedby="composer-conflict-message"><span>География</span><strong data-composer-trigger-value="geography">Сербия</strong></button>
+    <button type="button" aria-expanded="false" aria-controls="composer-editor" data-composer-trigger="workFormat" aria-describedby="composer-conflict-message"><span>Формат</span><strong data-composer-trigger-value="workFormat">Удалённо</strong></button>
+    <button type="button" aria-expanded="false" aria-controls="composer-editor" data-composer-trigger="companyType"><span>Тип компании</span><strong data-composer-trigger-value="companyType">Продуктовая</strong></button>
+    <button type="button" aria-expanded="false" aria-controls="composer-editor" data-composer-trigger="intent" aria-describedby="composer-conflict-message"><span>Карьерная задача</span><strong data-composer-trigger-value="intent">Удалённо из Сербии</strong></button>
+    <button type="button" aria-expanded="false" aria-controls="composer-editor" data-composer-trigger="freshness"><span>Свежесть</span><strong data-composer-trigger-value="freshness">До 30 дней</strong></button>
+  </div>
+
+  <div class="ui-kit-composer-applied">
+    <div><strong>Применённые критерии</strong><button class="ui-kit-button ui-kit-button--tertiary ui-kit-button--compact" type="button" data-composer-reset aria-label="Очистить все критерии демонстрации">Очистить все</button></div>
+    <div class="ui-kit-label-row" data-composer-chips>
+      <button class="ui-kit-chip ui-kit-label--m" type="button" data-composer-remove="role" aria-label="Удалить критерий Роль: Backend"><span>Роль: Backend</span><span aria-hidden="true">×</span></button>
+      <button class="ui-kit-chip ui-kit-label--m" type="button" data-composer-remove="geography" aria-label="Удалить критерий География: Сербия"><span>География: Сербия</span><span aria-hidden="true">×</span></button>
+      <button class="ui-kit-chip ui-kit-label--m" type="button" data-composer-remove="workFormat" aria-label="Удалить критерий Формат: Удалённо"><span>Формат: Удалённо</span><span aria-hidden="true">×</span></button>
+    </div>
+    <p><strong>Demo query:</strong> <code data-composer-query>?demoRole=backend&amp;demoGeography=RS&amp;demoWorkFormat=remote</code></p>
+    <p class="ui-kit-contract-note">Generated query is illustrative. Production filter schema remains pending approval.</p>
+  </div>
+
+  <button class="ui-kit-button ui-kit-button--secondary" type="button" aria-expanded="false" aria-controls="composer-advanced" data-composer-advanced-trigger><ProductIcon name="filter" size={20} />Расширенные фильтры</button>
+  <div id="composer-advanced" class="ui-kit-composer-advanced" hidden data-composer-advanced>
+    <h3>Та же applied-модель</h3>
+    <dl>{["role","geography","workFormat","companyType","intent","freshness"].map((key) => <div><dt>{key}</dt><dd data-composer-mirror={key}>—</dd></div>)}</dl>
+  </div>
+
+  <div class="ui-kit-composer-backdrop" hidden data-composer-backdrop></div>
+  <div id="composer-editor" class="ui-kit-composer-editor" role="dialog" aria-modal="false" aria-labelledby="composer-editor-title" hidden data-composer-editor>
+    <header><div><p class="ui-kit-eyebrow">Редактирование draft state</p><h3 id="composer-editor-title" data-composer-editor-title>Роль</h3></div><button class="ui-kit-icon-button" type="button" aria-label="Закрыть без применения" data-composer-cancel><ProductIcon name="close" size={20} /></button></header>
+    <div class="ui-kit-composer-editor__body">
+      <fieldset data-composer-field="role"><legend>Роль</legend><label><input type="radio" name="composer-role" value="backend" data-option-label="Backend" checked /> Backend</label><label><input type="radio" name="composer-role" value="analytics" data-option-label="Аналитика" /> Аналитика</label><label><input type="radio" name="composer-role" value="any" data-option-label="Любая роль" /> Любая роль</label></fieldset>
+      <fieldset data-composer-field="geography"><legend>География</legend><label><input type="radio" name="composer-geography" value="RS" data-option-label="Сербия" checked /> Сербия</label><label><input type="radio" name="composer-geography" value="RU" data-option-label="Россия" /> Россия</label><label><input type="radio" name="composer-geography" value="any" data-option-label="Любая страна" /> Любая страна</label></fieldset>
+      <fieldset data-composer-field="workFormat"><legend>Формат работы</legend><label><input type="radio" name="composer-workFormat" value="remote" data-option-label="Удалённо" checked /> Удалённо</label><label><input type="radio" name="composer-workFormat" value="hybrid" data-option-label="Гибрид" /> Гибрид</label><label><input type="radio" name="composer-workFormat" value="office" data-option-label="Только офис" /> Только офис</label></fieldset>
+      <fieldset data-composer-field="companyType"><legend>Тип компании</legend><label><input type="radio" name="composer-companyType" value="product" data-option-label="Продуктовая" checked /> Продуктовая</label><label><input type="radio" name="composer-companyType" value="studio" data-option-label="Студия" /> Студия</label><label><input type="radio" name="composer-companyType" value="enterprise" data-option-label="Крупная компания" /> Крупная компания</label></fieldset>
+      <fieldset data-composer-field="intent"><legend>Карьерная задача</legend><label><input type="radio" name="composer-intent" value="remote-serbia" data-option-label="Удалённо из Сербии" checked /> Удалённо из Сербии</label><label><input type="radio" name="composer-intent" value="first-product" data-option-label="Первая продуктовая роль" /> Первая продуктовая роль</label><label><input type="radio" name="composer-intent" value="none" data-option-label="Не выбрана" /> Не выбрана</label></fieldset>
+      <fieldset data-composer-field="freshness"><legend>Требование к свежести</legend><label><input type="radio" name="composer-freshness" value="30d" data-option-label="До 30 дней" checked /> До 30 дней</label><label><input type="radio" name="composer-freshness" value="90d" data-option-label="До 90 дней" /> До 90 дней</label><label><input type="radio" name="composer-freshness" value="any" data-option-label="Любая дата" /> Любая дата</label></fieldset>
+    </div>
+    <footer><button class="ui-kit-button ui-kit-button--tertiary" type="button" data-composer-clear aria-label="Очистить текущий критерий">Очистить критерий</button><button class="ui-kit-button ui-kit-button--secondary" type="button" data-composer-cancel>Отмена</button><button class="ui-kit-button ui-kit-button--primary" type="button" data-composer-apply>Применить</button></footer>
+  </div>
+
+  <div class="ui-kit-composer-state" aria-live="polite" aria-atomic="true" data-composer-state>
+    <strong>Состояние: applied</strong><span>Найдено 12 вымышленных компаний.</span>
+  </div>
+  <div class="ui-kit-composer-demo-actions" aria-label="Управляемые состояния демонстрации">
+    <button type="button" data-composer-demo="no-results">Показать no-results</button><button type="button" data-composer-demo="invalid">Показать конфликт</button><button type="button" data-composer-demo="loading">Показать loading</button>
+  </div>
+  <div class="ui-kit-composer-message" id="composer-conflict-message" hidden data-composer-message></div>
+  <div class="ui-kit-composer-local-loading" hidden aria-hidden="true" data-composer-loading><span></span><span></span><span></span></div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>("[data-ui-kit-composer]").forEach((root) => {
+    const fields = Array.from(root.querySelectorAll<HTMLElement>("[data-composer-field]"));
+    const triggers = Array.from(root.querySelectorAll<HTMLButtonElement>("[data-composer-trigger]"));
+    const editor = root.querySelector<HTMLElement>("[data-composer-editor]");
+    const editorTitle = root.querySelector<HTMLElement>("[data-composer-editor-title]");
+    const backdrop = root.querySelector<HTMLElement>("[data-composer-backdrop]");
+    const chips = root.querySelector<HTMLElement>("[data-composer-chips]");
+    const query = root.querySelector<HTMLElement>("[data-composer-query]");
+    const stateRegion = root.querySelector<HTMLElement>("[data-composer-state]");
+    const message = root.querySelector<HTMLElement>("[data-composer-message]");
+    const loading = root.querySelector<HTMLElement>("[data-composer-loading]");
+    const mobile = window.matchMedia("(max-width: 767px)");
+    const focusableSelector = 'button:not([disabled]), input:not([disabled]), select:not([disabled]), [href], [tabindex]:not([tabindex="-1"])';
+    let activeDimension = "role";
+    let returnFocus: HTMLElement | null = null;
+    let appliedState: Record<string, string> = {};
+    let draftState: Record<string, string> = {};
+    let loadingState = false;
+
+    const fieldLabel = (key: string) => fields.find((field) => field.dataset.composerField === key)?.querySelector("legend")?.textContent?.trim() || key;
+    const optionLabel = (key: string, value: string) => {
+      const input = fields.find((field) => field.dataset.composerField === key)?.querySelector<HTMLInputElement>(`input[value="${value}"]`);
+      return input?.dataset.optionLabel || value;
+    };
+    fields.forEach((field) => {
+      const key = field.dataset.composerField || "";
+      const checked = field.querySelector<HTMLInputElement>("input:checked");
+      appliedState[key] = checked?.value || "";
+    });
+    const initialState = { ...appliedState };
+
+    const syncDraftControls = () => fields.forEach((field) => {
+      const key = field.dataset.composerField || "";
+      field.querySelectorAll<HTMLInputElement>("input").forEach((input) => { input.checked = input.value === draftState[key]; });
+    });
+    const deriveState = () => {
+      if (loadingState) return "loading";
+      if (appliedState.workFormat === "office" && appliedState.intent === "remote-serbia") return "invalid-combination";
+      if (appliedState.role === "analytics" && appliedState.geography === "RS" && appliedState.companyType === "enterprise") return "no-results";
+      const count = Object.values(appliedState).filter(Boolean).length;
+      return count === 0 ? "idle" : count < fields.length ? "partially-complete" : "applied";
+    };
+    const render = () => {
+      triggers.forEach((trigger) => {
+        const key = trigger.dataset.composerTrigger || "";
+        const value = root.querySelector<HTMLElement>(`[data-composer-trigger-value="${key}"]`);
+        if (value) value.textContent = appliedState[key] ? optionLabel(key, appliedState[key]) : "Не выбрано";
+      });
+      if (chips) {
+        chips.replaceChildren(...Object.entries(appliedState).filter(([, value]) => value).map(([key, value]) => {
+          const button = document.createElement("button"); button.type = "button"; button.className = "ui-kit-chip ui-kit-label--m"; button.dataset.composerRemove = key;
+          const text = `${fieldLabel(key)}: ${optionLabel(key, value)}`; button.setAttribute("aria-label", `Удалить критерий ${text}`);
+          const label = document.createElement("span"); label.textContent = text; const close = document.createElement("span"); close.textContent = "×"; close.setAttribute("aria-hidden", "true"); button.append(label, close); return button;
+        }));
+      }
+      root.querySelectorAll<HTMLElement>("[data-composer-mirror]").forEach((node) => { const key = node.dataset.composerMirror || ""; node.textContent = appliedState[key] ? optionLabel(key, appliedState[key]) : "Не выбрано"; });
+      if (query) query.textContent = `?${Object.entries(appliedState).filter(([, value]) => value).map(([key, value]) => `demo${key[0].toUpperCase()}${key.slice(1)}=${encodeURIComponent(value)}`).join("&")}`;
+      const state = deriveState();
+      if (stateRegion) {
+        const copy = state === "no-results" ? "Нет результатов. Ограничивающий критерий: Тип компании — Крупная компания. Удалите только этот критерий."
+          : state === "invalid-combination" ? "Конфликт: intent «Удалённо из Сербии» несовместим с форматом «Только офис»."
+          : state === "loading" ? "Обновляем вымышленные результаты; применённые критерии остаются видимыми."
+          : state === "idle" ? "Критерии не выбраны."
+          : state === "partially-complete" ? "Критерии применены частично."
+          : "Найдено 12 вымышленных компаний.";
+        stateRegion.replaceChildren(Object.assign(document.createElement("strong"), { textContent: `Состояние: ${state}` }), Object.assign(document.createElement("span"), { textContent: copy }));
+      }
+      if (message) { message.hidden = !["no-results", "invalid-combination"].includes(state); message.textContent = stateRegion?.querySelector("span")?.textContent || ""; }
+      if (loading) loading.hidden = !loadingState;
+      root.setAttribute("aria-busy", String(loadingState));
+    };
+
+    const closeEditor = (commit = false) => {
+      if (!editor || editor.hidden) return;
+      if (commit) appliedState = { ...draftState };
+      else draftState = { ...appliedState };
+      syncDraftControls();
+      editor.hidden = true; if (backdrop) backdrop.hidden = true;
+      editor.setAttribute("aria-modal", "false"); root.classList.remove("is-editor-open"); document.body.classList.remove("ui-kit-composer-open");
+      triggers.forEach((trigger) => trigger.setAttribute("aria-expanded", "false"));
+      render(); returnFocus?.focus(); returnFocus = null;
+    };
+    const openEditor = (trigger: HTMLButtonElement) => {
+      if (!editor) return;
+      returnFocus = trigger; activeDimension = trigger.dataset.composerTrigger || "role"; draftState = { ...appliedState }; syncDraftControls();
+      fields.forEach((field) => { field.hidden = field.dataset.composerField !== activeDimension; });
+      if (editorTitle) editorTitle.textContent = fieldLabel(activeDimension);
+      editor.hidden = false; if (backdrop) backdrop.hidden = false; root.classList.add("is-editor-open");
+      editor.setAttribute("aria-modal", String(mobile.matches)); document.body.classList.toggle("ui-kit-composer-open", mobile.matches);
+      triggers.forEach((button) => button.setAttribute("aria-expanded", String(button === trigger)));
+      requestAnimationFrame(() => editor.querySelector<HTMLElement>(focusableSelector)?.focus());
+    };
+
+    triggers.forEach((trigger) => trigger.addEventListener("click", () => openEditor(trigger)));
+    fields.forEach((field) => field.addEventListener("change", () => { const key = field.dataset.composerField || ""; draftState[key] = field.querySelector<HTMLInputElement>("input:checked")?.value || ""; }));
+    root.querySelectorAll("[data-composer-cancel]").forEach((button) => button.addEventListener("click", () => closeEditor(false)));
+    root.querySelector("[data-composer-apply]")?.addEventListener("click", () => closeEditor(true));
+    root.querySelector("[data-composer-clear]")?.addEventListener("click", () => { draftState[activeDimension] = ""; syncDraftControls(); });
+    chips?.addEventListener("click", (event) => { const button = (event.target as Element).closest("[data-composer-remove]"); if (!(button instanceof HTMLButtonElement)) return; appliedState[button.dataset.composerRemove || ""] = ""; render(); });
+    root.querySelector("[data-composer-reset]")?.addEventListener("click", () => { appliedState = {}; loadingState = false; render(); });
+    const advancedTrigger = root.querySelector<HTMLButtonElement>("[data-composer-advanced-trigger]"); const advanced = root.querySelector<HTMLElement>("[data-composer-advanced]");
+    advancedTrigger?.addEventListener("click", () => { if (!advanced) return; advanced.hidden = !advanced.hidden; advancedTrigger.setAttribute("aria-expanded", String(!advanced.hidden)); });
+    root.querySelectorAll<HTMLButtonElement>("[data-composer-demo]").forEach((button) => button.addEventListener("click", () => {
+      const demo = button.dataset.composerDemo;
+      if (demo === "loading") loadingState = !loadingState;
+      if (demo === "no-results") { loadingState = false; appliedState = { ...initialState, role: "analytics", geography: "RS", companyType: "enterprise" }; }
+      if (demo === "invalid") { loadingState = false; appliedState = { ...initialState, geography: "any", workFormat: "office", intent: "remote-serbia" }; }
+      render();
+    }));
+    document.addEventListener("keydown", (event) => {
+      if (!editor || editor.hidden) return;
+      if (event.key === "Escape") { event.preventDefault(); closeEditor(false); return; }
+      if (event.key !== "Tab" || !mobile.matches) return;
+      const focusable = Array.from(editor.querySelectorAll<HTMLElement>(focusableSelector)).filter((node) => !node.hidden);
+      const first = focusable[0]; const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+    });
+    render();
+  });
+</script>
