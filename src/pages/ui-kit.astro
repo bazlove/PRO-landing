@@ -7,6 +7,13 @@ import UiKitCompanyQuickView from "../components/ui-kit/UiKitCompanyQuickView.as
 import UiKitCompanyPagePreview from "../components/ui-kit/UiKitCompanyPagePreview.astro";
 import UiKitSemanticLabel from "../components/ui-kit/UiKitSemanticLabel.astro";
 import UiKitIconography from "../components/ui-kit/UiKitIconography.astro";
+import UiKitMediaSurface from "../components/ui-kit/UiKitMediaSurface.astro";
+import UiKitSkeletonContract from "../components/ui-kit/UiKitSkeletonContract.astro";
+import UiKitInteractionMotion from "../components/ui-kit/UiKitInteractionMotion.astro";
+import UiKitCardInteractivity from "../components/ui-kit/UiKitCardInteractivity.astro";
+import UiKitDiscoveryArchitecture from "../components/ui-kit/UiKitDiscoveryArchitecture.astro";
+import UiKitEmployerSearchComposer from "../components/ui-kit/UiKitEmployerSearchComposer.astro";
+import UiKitEvidenceSummary from "../components/ui-kit/UiKitEvidenceSummary.astro";
 import ProductIcon from "../components/ui/ProductIcon.astro";
 import InlineLink from "../components/ui/InlineLink.astro";
 import SiteAnalytics from "../components/analytics/SiteAnalytics.astro";
@@ -15,8 +22,8 @@ import "../styles/ui-kit/tokens.css";
 import "../styles/ui-kit/ui-kit.css";
 
 const uiKitMeta = {
-  version: "0.3",
-  date: "03.08.2026",
+  version: "0.6",
+  date: "06.08.2026",
 } as const;
 
 const paletteGroups = [
@@ -42,7 +49,7 @@ const sections = [
   { id: "overview", label: "Обзор" }, { id: "foundations", label: "Основы" }, { id: "colors", label: "Цвета" },
   { id: "typography", label: "Типографика" }, { id: "spacing-grid", label: "Отступы и сетка" }, { id: "shape", label: "Радиусы и уровни" },
   { id: "buttons", label: "Кнопки" }, { id: "forms", label: "Элементы форм" }, { id: "chips", label: "Чипы, теги и бейджи" },
-  { id: "iconography", label: "Иконки" }, { id: "trust", label: "Доверие и источники" }, { id: "feedback", label: "Состояния" }, { id: "company-card", label: "Карточка компании" },
+  { id: "iconography", label: "Иконки" }, { id: "trust", label: "Доверие и источники" }, { id: "feedback", label: "Состояния" }, { id: "discovery", label: "Поиск и discovery" }, { id: "company-card", label: "Карточка компании" },
   { id: "quick-view", label: "Краткий профиль" }, { id: "company-page", label: "Страница компании" }, { id: "responsive", label: "Адаптивность" },
   { id: "motion", label: "Политика анимации" }, { id: "accessibility", label: "Доступность" },
 ] as const;
@@ -159,6 +166,7 @@ const semanticVariantLabels: Record<string, string> = {
             <div class="ui-kit-radius-grid">{[["xs",4],["s",8],["m",12],["l",16],["xl",20],["2xl",24],["round",999]].map(([name, value]) => <div style={`--radius-demo: ${value}px`}><span></span><code>radius.{name}</code><b>{value}px</b></div>)}</div>
             <div class="ui-kit-border-grid"><div class="is-subtle">Тонкая · 1 px</div><div>Обычная · 1 px</div><div class="is-strong">Усиленная · 2 px</div><button type="button">Кольцо фокуса · 2 + 2</button></div>
             <div class="ui-kit-elevation-grid"><div>Статическая поверхность<small>shadow.none</small></div><div class="is-hover">Поверхность при наведении<small>shadow.hover</small></div><div class="is-dropdown">Выпадающий слой<small>shadow.dropdown</small></div><div class="is-sticky">Закреплённый слой<small>shadow.sticky</small></div><div class="is-overlay">Оверлей / боковая панель<small>shadow.overlay</small></div></div>
+            <UiKitMediaSurface />
           </UiKitSection>
 
           <UiKitSection id="buttons" eyebrow="06 · Действия" title="Одно главное действие на блок" description="Все демонстрации используют реальные кнопки или ссылки, видимый фокус и стабильную ширину при загрузке.">
@@ -307,6 +315,15 @@ const semanticVariantLabels: Record<string, string> = {
               <UiKitTrustState tone="external" label="Внешний сигнал" detail="Рейтинг 4,7 сформирован по 186 отзывам." source="Внешний рейтинг" date="20 июля 2026" />
               <UiKitTrustState tone="ugc" label="Пользовательский контент" detail="Отзыв прошёл автоматическую и ручную модерацию." source="Анонимный сотрудник" date="июль 2026" />
             </div>
+            <section id="evidence-summary" class="ui-kit-contract-block" aria-labelledby="evidence-summary-title">
+              <header><p class="ui-kit-eyebrow">Переиспользуемый контракт</p><h3 id="evidence-summary-title">Evidence Summary</h3><p>Краткая сводка показывает качество основания, ограничение и прямой путь к методологии без вычисления рейтинга работодателя.</p></header>
+              <div class="ui-kit-evidence-grid">
+                <UiKitEvidenceSummary variant="well-supported" />
+                <UiKitEvidenceSummary variant="sufficient" />
+                <UiKitEvidenceSummary variant="review" />
+                <UiKitEvidenceSummary variant="insufficient" />
+              </div>
+            </section>
           </UiKitSection>
 
           <UiKitSection id="feedback" eyebrow="11 · Состояния" title="Состояние объясняет следующий шаг">
@@ -320,9 +337,15 @@ const semanticVariantLabels: Record<string, string> = {
               <article class="ui-kit-feedback-card ui-kit-feedback-card--premium"><span class="ui-kit-badge ui-kit-badge--premium">Расширенный доступ</span><h3>История изменения найма</h3><div class="ui-kit-locked-structure"><span></span><span></span><span></span></div><p>Сравните динамику по периодам после подключения аналитики.</p></article>
               <article class="ui-kit-feedback-card"><span class="ui-kit-badge ui-kit-badge--verified">Пример уведомления</span><h3>Подтверждение действия</h3><p>Уведомление сообщает о кратком обратимом действии.</p><button class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" type="button" data-ui-kit-toast-trigger>Добавить в сравнение</button></article>
             </div>
+            <UiKitSkeletonContract />
           </UiKitSection>
 
-          <UiKitSection id="company-card" eyebrow="12 · Продуктовый паттерн" title="Карточка компании" description="Четыре сценария на локальных вымышленных данных проверяют длинный текст, неполные, устаревшие и конфликтующие состояния." wide>
+          <UiKitSection id="discovery" eyebrow="12 · Поиск и discovery" title="Два входа, одна модель результата" description="Таксономический и поисковый сценарии используют общий набор применённых условий и одинаково объясняют границы сопоставления." wide>
+            <UiKitDiscoveryArchitecture />
+            <UiKitEmployerSearchComposer />
+          </UiKitSection>
+
+          <UiKitSection id="company-card" eyebrow="13 · Продуктовый паттерн" title="Карточка компании" description="Четыре сценария на локальных вымышленных данных проверяют длинный текст, неполные, устаревшие и конфликтующие состояния." wide>
             <p class="ui-kit-mock-note">Все компании и метрики ниже — вымышленные примеры для проверки устойчивости интерфейса.</p>
             <div class="ui-kit-company-grid">
               <UiKitCompanyCard scenario="A · ОБОГАЩЁННЫЙ + ПРОВЕРЕННЫЙ" initials="NW" name="Northstar Digital Lab" type="Продуктовая студия" location="Санкт-Петербург" size="201–500" facts={[{label:"Найм",value:"Точечный · 5–10 вакансий"},{label:"Формат",value:"Удалённо · РФ"}]} chips={["IT-аккредитация","Прямой отклик","Международная"]} chipTones={["verified","employment","neutral"]} rating="4,7" ratingNote="186 внешних отзывов" freshness="Обновлено 7 дней назад" freshnessTone="verified" trustTone="verified" completeness="enriched" trust="verified" logoVariant="mark" />
@@ -392,30 +415,32 @@ const semanticVariantLabels: Record<string, string> = {
                 </div>
               </article>
             </div>
+            <UiKitCardInteractivity />
           </UiKitSection>
 
-          <UiKitSection id="quick-view" eyebrow="13 · Оверлейный паттерн" title="Краткий профиль компании" description="На компьютере это боковая панель, на планшете — широкая выдвижная панель, на телефоне — полноэкранный диалог с единым DOM и сохранением контекста каталога.">
+          <UiKitSection id="quick-view" eyebrow="14 · Оверлейный паттерн" title="Краткий профиль компании" description="На компьютере это боковая панель, на планшете — широкая выдвижная панель, на телефоне — полноэкранный диалог с единым DOM и сохранением контекста каталога.">
             <div class="ui-kit-quick-view-launch"><div><strong>Northstar Digital Lab</strong><span>Краткий профиль без выхода из каталога</span></div><button class="ui-kit-button ui-kit-button--primary" type="button" data-ui-kit-quick-view-open>Быстрый просмотр</button></div>
           </UiKitSection>
 
-          <UiKitSection id="company-page" eyebrow="14 · Шаблон страницы" title="Сокращённая страница компании" description="Реалистичный шаблон второго уровня показывает факты, внешние сигналы, данные компании, отсутствующие данные и предпросмотр расширенной аналитики как разные типы данных." wide>
+          <UiKitSection id="company-page" eyebrow="15 · Шаблон страницы" title="Стабильная страница компании" description="Канонический порядок из двенадцати разделов показывает доступные, устаревшие, конфликтующие, отсутствующие, недоступные и ограниченные данные без подмены их одним состоянием." wide>
             <UiKitCompanyPagePreview />
           </UiKitSection>
 
-          <UiKitSection id="responsive" eyebrow="15 · Адаптивность" title="Структура меняется, факты остаются" description="Витрина построена одним DOM-деревом и перестраивается на 12, 8 и 4 колонки без обязательной горизонтальной прокрутки.">
+          <UiKitSection id="responsive" eyebrow="16 · Адаптивность" title="Структура меняется, факты остаются" description="Витрина построена одним DOM-деревом и перестраивается на 12, 8 и 4 колонки без обязательной горизонтальной прокрутки.">
             <div class="ui-kit-responsive-table ui-kit-scroll-x" role="table" aria-label="Адаптивные преобразования"><div role="row" class="is-head"><span role="columnheader">Шаблон</span><span role="columnheader">Компьютер</span><span role="columnheader">Планшет</span><span role="columnheader">Телефон</span></div>{[["Сетка компаний","3 колонки","2 колонки","1 колонка"],["Краткий профиль","Правая боковая панель","Широкая выдвижная панель","Полноэкранный диалог"],["Страница компании","Сетка 8 + 4","Одна колонка","Одна колонка + закреплённое действие"],["Локальная навигация","Закреплённая строка","Прокручиваемая строка","Прокручиваемые якоря"],["Таблица данных","Полная таблица","Сокращённая","Карточки критериев"]].map((row) => <div role="row">{row.map((cell) => <span role="cell">{cell}</span>)}</div>)}</div>
             <div class="ui-kit-breakpoint-row"><span>320</span><span>390</span><span>768</span><span>1024</span><span>1280</span><span>1440</span></div>
           </UiKitSection>
 
-          <UiKitSection id="motion" eyebrow="16 · Политика анимации" title="Анимация объясняет изменение состояния" description="React Bits не установлен. Здесь показаны только CSS-токены, переход выдвижной панели и правила для отдельного будущего исследования.">
+          <UiKitSection id="motion" eyebrow="17 · Политика анимации" title="Анимация объясняет изменение состояния" description="React Bits не установлен. Здесь показаны CSS-токены, матрица интерактивности и правила для отдельного будущего исследования.">
             <div class="ui-kit-motion-tokens">{[["fast","120 ms","наведение / фокус"],["default","180 ms","чип / проверка"],["slow","240 ms","панель / модальное окно"],["page","300 ms","крупный переход"],["marketing","480 ms","однократное появление"]].map(([name,value,use]) => <div><code>motion.{name}</code><strong>{value}</strong><span>{use}</span></div>)}</div>
             <div class="ui-kit-motion-demo"><div class="ui-kit-fade-demo" data-ui-kit-fade-demo><span>Появление контента только на CSS</span><strong>Контент доступен до анимации</strong><p>Однократное смещение на 8 px, статичный запасной вариант при уменьшенном движении.</p></div><button class="ui-kit-button ui-kit-button--secondary" type="button" data-ui-kit-fade-replay>Повторить пример</button></div>
             <div class="ui-kit-policy-table ui-kit-scroll-x" role="table" aria-label="Политика React Bits"><div role="row" class="is-head"><span>Шаблон</span><span>Приоритет</span><span>Разрешённая поверхность</span><span>Статус</span></div>{[["Появление контента","P1","SEO / знакомство / витрина","Экспериментальный"],["Анимированный контент","P1","Маркетинг / расширенный доступ","Ограниченный"],["Анимация счётчика","P1","Метрики покрытия","Экспериментальный"],["Анимированный список","P2","ИИ / история изменений","Отложенный"],["Карточка с подсветкой","P2","Один предпросмотр расширенного доступа","Отложенный"],["Мягкое сияние / Aurora","Экспериментальный","Только один первый экран","Требует исследования"]].map((row) => <div role="row">{row.map((cell) => <span>{cell}</span>)}</div>)}</div>
             <div class="ui-kit-motion-restrictions"><strong>Запрещено</strong><span>Частицы</span><span>Следы курсора</span><span>Наклон в 3D</span><span>Глитч</span><span>Постоянный фон в областях данных</span><span>Анимация каждой карточки</span></div>
             <p class="ui-kit-callout">Компоненты React Bits, зависимости, лицензирование и производительность будут оценены в отдельном техническом исследовании.</p>
+            <UiKitInteractionMotion />
           </UiKitSection>
 
-          <UiKitSection id="accessibility" eyebrow="17 · Проверка доступности" title="Реализованные меры, а не заявление о соответствии" description="Формальная WCAG-проверка не заявляется; ниже перечислены реализованные меры и дальнейшие ручные проверки.">
+          <UiKitSection id="accessibility" eyebrow="18 · Проверка доступности" title="Реализованные меры, а не заявление о соответствии" description="Формальная WCAG-проверка не заявляется; ниже перечислены реализованные меры и дальнейшие ручные проверки.">
             <div class="ui-kit-a11y-grid">{["Семантическая иерархия заголовков","Ссылка перехода к содержанию","Видимое кольцо фокуса","Якоря доступны с клавиатуры","Видимые подписи полей","Статус передаётся текстом и значком","Области нажатия 40–52 px","Семантика диалога","Клавиша Escape и возврат фокуса","Блокировка фоновой прокрутки","Запасной вариант с уменьшенным движением","Адаптивный порядок источника","Значение не передаётся только цветом","Проверка переполнения при 320 px"].map((item) => <div><ProductIcon name="confirm" size={20} /><span>{item}</span></div>)}</div>
           </UiKitSection>
           </div>
@@ -429,7 +454,7 @@ const semanticVariantLabels: Record<string, string> = {
         </aside>
       </main>
 
-      <footer class="ui-kit-footer"><div class="ui-kit-container"><strong>Verified UI Kit · v{uiKitMeta.version}</strong><p>Прототип дизайн-системы. Только вымышленные данные. Разработал и собрал - Андрей Базлов.</p><a href="#overview">К началу</a></div></footer>
+      <footer class="ui-kit-footer"><div class="ui-kit-container"><strong>Verified UI Kit · v{uiKitMeta.version}</strong><p>Прототип дизайн-системы. Только вымышленные данные. Разработал и собрал - Андрей.</p><a href="#overview">К началу</a></div></footer>
 
       <div class="ui-kit-toast" role="status" aria-live="polite" aria-atomic="true" hidden data-ui-kit-toast>Добавлено в сравнение</div>
       <UiKitCompanyQuickView />
