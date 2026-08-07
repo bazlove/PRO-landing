@@ -5,8 +5,8 @@ import ProductIcon from "../ui/ProductIcon.astro";
 <section id="employer-search-composer" class="ui-kit-contract ui-kit-composer" aria-labelledby="composer-title" data-ui-kit-composer>
   <header class="ui-kit-contract__header">
     <p class="ui-kit-eyebrow">Employer Search Composer</p>
-    <h3 id="composer-title">Основные критерии редактируются до полного фильтр-панеля</h3>
-    <p>Прототип использует отдельные <code>appliedState</code> и <code>draftState</code>. Это локальная UI Kit-модель, а не утверждённая production schema.</p>
+    <h3 id="composer-title">Основные критерии задаются до открытия полной панели фильтров</h3>
+    <p>Прототип разделяет применённое состояние <code>appliedState</code> и черновик <code>draftState</code>. Это локальная модель UI Kit, а не утверждённая production-схема.</p>
   </header>
 
   <div class="ui-kit-composer-bar" aria-label="Основные критерии поиска работодателя">
@@ -25,19 +25,22 @@ import ProductIcon from "../ui/ProductIcon.astro";
       <button class="ui-kit-chip ui-kit-label--m" type="button" data-composer-remove="geography" aria-label="Удалить критерий География: Сербия"><span>География: Сербия</span><span aria-hidden="true">×</span></button>
       <button class="ui-kit-chip ui-kit-label--m" type="button" data-composer-remove="workFormat" aria-label="Удалить критерий Формат: Удалённо"><span>Формат: Удалённо</span><span aria-hidden="true">×</span></button>
     </div>
-    <p><strong>Demo query:</strong> <code data-composer-query>?demoRole=backend&amp;demoGeography=RS&amp;demoWorkFormat=remote</code></p>
-    <p class="ui-kit-contract-note">Generated query is illustrative. Production filter schema remains pending approval.</p>
+    <div class="ui-kit-composer-query-panel">
+      <span class="ui-kit-composer-query-panel__title"><strong>Демонстрационный запрос</strong><code>demo-query</code></span>
+      <code data-composer-query>?demoRole=backend&amp;demoGeography=RS&amp;demoWorkFormat=remote</code>
+      <p class="ui-kit-contract-note">Схема приведена только для демонстрации. <code>Production filter schema</code> ожидает отдельного согласования.</p>
+    </div>
   </div>
 
   <button class="ui-kit-button ui-kit-button--secondary" type="button" aria-expanded="false" aria-controls="composer-advanced" data-composer-advanced-trigger><ProductIcon name="filter" size={20} />Расширенные фильтры</button>
   <div id="composer-advanced" class="ui-kit-composer-advanced" hidden data-composer-advanced>
-    <h3>Та же applied-модель</h3>
-    <dl>{["role","geography","workFormat","companyType","intent","freshness"].map((key) => <div><dt>{key}</dt><dd data-composer-mirror={key}>—</dd></div>)}</dl>
+    <h3>Те же применённые значения <code>appliedState</code></h3>
+    <dl>{["role","geography","workFormat","companyType","intent","freshness"].map((key) => <div><dt><code>{key}</code></dt><dd data-composer-mirror={key}>—</dd></div>)}</dl>
   </div>
 
   <div class="ui-kit-composer-backdrop" hidden data-composer-backdrop></div>
   <div id="composer-editor" class="ui-kit-composer-editor" role="dialog" aria-modal="false" aria-labelledby="composer-editor-title" hidden data-composer-editor>
-    <header><div><p class="ui-kit-eyebrow">Редактирование draft state</p><h3 id="composer-editor-title" data-composer-editor-title>Роль</h3></div><button class="ui-kit-icon-button" type="button" aria-label="Закрыть без применения" data-composer-cancel><ProductIcon name="close" size={20} /></button></header>
+    <header><div><p class="ui-kit-eyebrow">Редактирование черновика <code>draftState</code></p><h3 id="composer-editor-title" data-composer-editor-title>Роль</h3></div><button class="ui-kit-icon-button" type="button" aria-label="Закрыть без применения" data-composer-cancel><ProductIcon name="close" size={20} /></button></header>
     <div class="ui-kit-composer-editor__body">
       <fieldset data-composer-field="role"><legend>Роль</legend><label><input type="radio" name="composer-role" value="backend" data-option-label="Backend" checked /> Backend</label><label><input type="radio" name="composer-role" value="analytics" data-option-label="Аналитика" /> Аналитика</label><label><input type="radio" name="composer-role" value="any" data-option-label="Любая роль" /> Любая роль</label></fieldset>
       <fieldset data-composer-field="geography"><legend>География</legend><label><input type="radio" name="composer-geography" value="RS" data-option-label="Сербия" checked /> Сербия</label><label><input type="radio" name="composer-geography" value="RU" data-option-label="Россия" /> Россия</label><label><input type="radio" name="composer-geography" value="any" data-option-label="Любая страна" /> Любая страна</label></fieldset>
@@ -50,10 +53,10 @@ import ProductIcon from "../ui/ProductIcon.astro";
   </div>
 
   <div class="ui-kit-composer-state" aria-live="polite" aria-atomic="true" data-composer-state>
-    <strong>Состояние: applied</strong><span>Найдено 12 вымышленных компаний.</span>
+    <strong>Состояние: <code>applied</code></strong><span>Найдено 12 вымышленных компаний.</span>
   </div>
   <div class="ui-kit-composer-demo-actions" aria-label="Управляемые состояния демонстрации">
-    <button type="button" data-composer-demo="no-results">Показать no-results</button><button type="button" data-composer-demo="invalid">Показать конфликт</button><button type="button" data-composer-demo="loading">Показать loading</button>
+    <button type="button" data-composer-demo="no-results">Показать состояние без результатов</button><button type="button" data-composer-demo="invalid">Показать конфликт</button><button type="button" data-composer-demo="loading">Показать загрузку</button>
   </div>
   <div class="ui-kit-composer-message" id="composer-conflict-message" hidden data-composer-message></div>
   <div class="ui-kit-composer-local-loading" hidden aria-hidden="true" data-composer-loading><span></span><span></span><span></span></div>
@@ -120,7 +123,7 @@ import ProductIcon from "../ui/ProductIcon.astro";
       const state = deriveState();
       if (stateRegion) {
         const copy = state === "no-results" ? "Нет результатов. Ограничивающий критерий: Тип компании — Крупная компания. Удалите только этот критерий."
-          : state === "invalid-combination" ? "Конфликт: intent «Удалённо из Сербии» несовместим с форматом «Только офис»."
+          : state === "invalid-combination" ? "Конфликт: карьерная задача «Удалённо из Сербии» несовместима с форматом «Только офис»."
           : state === "loading" ? "Обновляем вымышленные результаты; применённые критерии остаются видимыми."
           : state === "idle" ? "Критерии не выбраны."
           : state === "partially-complete" ? "Критерии применены частично."
@@ -173,7 +176,7 @@ import ProductIcon from "../ui/ProductIcon.astro";
       if (!editor || editor.hidden) return;
       if (event.key === "Escape") { event.preventDefault(); closeEditor(false); return; }
       if (event.key !== "Tab" || !mobile.matches) return;
-      const focusable = Array.from(editor.querySelectorAll<HTMLElement>(focusableSelector)).filter((node) => !node.hidden);
+      const focusable = Array.from(editor.querySelectorAll<HTMLElement>(focusableSelector)).filter((node) => !node.closest("[hidden]"));
       const first = focusable[0]; const last = focusable[focusable.length - 1];
       if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
       else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
