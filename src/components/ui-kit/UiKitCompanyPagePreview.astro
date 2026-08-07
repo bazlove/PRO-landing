@@ -13,8 +13,8 @@ const sections = [
   ["legal", "Юридические данные"],
   ["culture", "Культура"],
   ["sources", "Источники"],
-  ["premium-analysis", "Аналитика"],
-  ["similar", "Похожие"],
+  ["premium-analysis", "Расширенная аналитика"],
+  ["similar", "Похожие компании"],
 ] as const;
 ---
 
@@ -41,7 +41,7 @@ const sections = [
   </header>
 
   <nav class="ui-kit-company-page__nav ui-kit-scroll-x" aria-label="Стабильные разделы примера страницы компании">
-    {sections.map(([id, label]) => <a href={`#company-page-${id}`}><span>{label}</span><code>{id}</code></a>)}
+    {sections.map(([id, label]) => <a href={`#company-page-${id}`}>{label}</a>)}
   </nav>
 
   <div class="ui-kit-company-page__layout">
@@ -107,14 +107,14 @@ const sections = [
 
       <section id="company-page-sources" class="ui-kit-company-page__section" data-canonical-id="sources" data-render-state="available" data-company-sources>
         <div class="ui-kit-company-page__section-head"><span>10</span><div><h3>Источники и обновления</h3><code>sources · available / controlled loading</code></div></div>
-        <button class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" type="button" data-company-sources-toggle>Показать section loading</button>
+        <button class="ui-kit-button ui-kit-button--secondary ui-kit-button--compact" type="button" data-company-sources-toggle>Показать секционную загрузку</button>
         <ul class="ui-kit-source-list" data-company-sources-content><li>Карьерная страница · проверено 24.07.2026</li><li>Публичный реестр · проверено 18.07.2026</li><li>Внешний рейтинг · наблюдение 20.07.2026</li></ul>
         <div class="ui-kit-section-skeleton" aria-hidden="true" hidden data-company-sources-skeleton><b></b><b></b><b></b></div>
       </section>
 
       <section id="company-page-premium-analysis" class="ui-kit-company-page__section ui-kit-company-page__section--premium" data-canonical-id="premium-analysis" data-render-state="restricted">
         <div class="ui-kit-company-page__section-head"><span>11</span><div><h3>Предпросмотр расширенной аналитики</h3><code>premium-analysis · restricted</code></div></div>
-        <p><span class="ui-kit-badge ui-kit-badge--premium">Расширенный доступ</span> Раздел объясняет доступную категорию анализа без скрытых деталей или premium payload.</p>
+        <p><span class="ui-kit-badge ui-kit-badge--premium">Расширенный доступ</span> Раздел объясняет доступную категорию анализа без скрытых деталей или закрытых данных.</p>
         <div class="ui-kit-premium-preview"><ProductIcon name="locked" size={20} /><span>История изменений доступна после подключения аналитики</span></div>
         <button class="ui-kit-button ui-kit-button--premium" type="button">Узнать о подписке</button>
       </section>
@@ -125,7 +125,7 @@ const sections = [
       </section>
 
       <aside class="ui-kit-company-page__seo-note" aria-label="SEO-контракт страницы компании">
-        <strong>SEO demonstration</strong><p>Заголовки и публичный контент рендерятся сервером; deep links ведут к стабильным разделам. Structured data может включать только подтверждённые факты. Missing не создаёт ложных значений, premium/internal data исключены из публичной разметки.</p>
+        <strong>Демонстрация SEO-контракта</strong><p>Заголовки и публичный контент рендерятся сервером; прямые ссылки ведут к стабильным разделам. Структурированные данные могут включать только подтверждённые факты. Состояние <code>missing</code> не создаёт ложных значений, закрытые и внутренние данные исключены из публичной разметки.</p>
       </aside>
     </div>
 
@@ -155,7 +155,7 @@ const sections = [
       section.setAttribute("aria-busy", String(!busy));
       if (content) content.hidden = !busy;
       if (skeleton) skeleton.hidden = busy;
-      toggle.textContent = busy ? "Показать section loading" : "Вернуть источники";
+      toggle.textContent = busy ? "Показать секционную загрузку" : "Вернуть источники";
     });
   });
 </script>
