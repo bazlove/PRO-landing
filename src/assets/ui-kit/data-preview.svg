@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-labelledby="title desc">
+  <title id="title">Вымышленная визуализация динамики найма</title>
+  <desc id="desc">Линейный график с шестью точками; точные значения повторяются в подписи рядом.</desc>
+  <rect width="720" height="420" fill="#fcfcfa"/>
+  <rect x="80" y="72" width="580" height="280" rx="12" fill="#f7f7f3"/>
+  <g stroke="#deded7" stroke-width="2"><path d="M80 352h580"/><path d="M80 282h580M80 212h580M80 142h580"/></g>
+  <g fill="#e3e7ff"><rect x="80" y="306" width="24" height="46" rx="4"/><rect x="186" y="284" width="24" height="68" rx="4"/><rect x="292" y="296" width="24" height="56" rx="4"/><rect x="398" y="238" width="24" height="114" rx="4"/><rect x="504" y="252" width="24" height="100" rx="4"/><rect x="626" y="204" width="24" height="148" rx="4"/></g>
+  <path d="M92 296L198 260L304 276L410 190L516 214L638 118" fill="none" stroke="#4254cc" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#f56f4f"><circle cx="92" cy="296" r="11"/><circle cx="198" cy="260" r="11"/><circle cx="304" cy="276" r="11"/><circle cx="410" cy="190" r="11"/><circle cx="516" cy="214" r="11"/><circle cx="638" cy="118" r="11"/></g>
+</svg>
