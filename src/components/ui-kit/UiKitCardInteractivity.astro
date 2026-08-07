@@ -9,20 +9,20 @@ import ProductIcon from "../ui/ProductIcon.astro";
   </header>
   <div class="ui-kit-card-contract-grid">
     <article class="ui-kit-contract-card is-static">
-      <span class="ui-kit-badge">static</span><h3>Сводка источника</h3><p>Информационная поверхность без click handler, pointer и hover elevation.</p>
+      <span class="ui-kit-badge"><code>static</code></span><h3>Сводка источника</h3><p>Информационная поверхность без обработчика клика, указателя и подъёма при наведении.</p>
     </article>
     <article class="ui-kit-contract-card is-actions">
-      <span class="ui-kit-badge ui-kit-badge--beta">interactive-actions</span><h3>Northstar Digital Lab</h3><p>Поверхность не кликабельна; действия имеют независимые tab stops.</p><div><button class="ui-kit-button ui-kit-button--primary ui-kit-button--compact" type="button">Быстрый просмотр</button><button class="ui-kit-icon-button" type="button" aria-label="Добавить Northstar Digital Lab в избранное"><ProductIcon name="favorite" size={20} /></button></div>
+      <span class="ui-kit-badge ui-kit-badge--beta"><code>interactive-actions</code></span><h3>Northstar Digital Lab</h3><p>Поверхность не кликабельна; у действий отдельные позиции в порядке фокуса.</p><div><button class="ui-kit-button ui-kit-button--primary ui-kit-button--compact" type="button">Быстрый просмотр</button><button class="ui-kit-icon-button" type="button" aria-label="Добавить Northstar Digital Lab в избранное"><ProductIcon name="favorite" size={20} /></button></div>
     </article>
     <a class="ui-kit-contract-card is-destination" href="#company-page" aria-label="Открыть профиль Example Product Studio">
-      <span class="ui-kit-badge ui-kit-badge--external">primary-destination</span><h3>Example Product Studio</h3><p>Один понятный native link, без вложенных действий и невидимого overlay.</p><span>Открыть профиль <ProductIcon name="forward" size={16} /></span>
+      <span class="ui-kit-badge ui-kit-badge--external"><code>primary-destination</code></span><h3>Example Product Studio</h3><p>Одна понятная нативная ссылка, без вложенных действий и невидимой накладки.</p><span>Открыть профиль <ProductIcon name="forward" size={16} /></span>
     </a>
     <button class="ui-kit-contract-card is-selectable" type="button" aria-pressed="false" data-card-selectable>
-      <span class="ui-kit-badge">selectable</span><span class="ui-kit-contract-card__title">Распределённая команда</span><span>Выбор критерия, не навигация.</span><strong data-card-selectable-label>Выбрать</strong>
+      <span class="ui-kit-badge"><code>selectable</code></span><span class="ui-kit-selectable-title"><span class="ui-kit-selection-indicator" aria-hidden="true"><ProductIcon name="confirm" size={16} /></span><span class="ui-kit-contract-card__title">Распределённая команда</span></span><span>Выбор критерия, не навигация.</span><strong data-card-selectable-label>Не выбрано</strong>
     </button>
   </div>
   <div class="ui-kit-company-card-classification">
-    <strong>Текущая Company Card</strong><span><code>Type: interactive-actions</code></span><span>Whole-card click: disabled</span><span>Primary action: Quick View</span><span>Independent: Compare, Favorite, Evidence link</span>
+    <strong>Текущая карточка компании</strong><span>Тип: <code>interactive-actions</code></span><span>Клик по всей карточке: выключен</span><span>Основное действие: быстрый просмотр</span><span>Независимые действия: сравнение, избранное, ссылка на доказательства</span>
   </div>
 </section>
 
@@ -33,7 +33,7 @@ import ProductIcon from "../ui/ProductIcon.astro";
       button.setAttribute("aria-pressed", String(selected));
       button.classList.toggle("is-selected", selected);
       const label = button.querySelector<HTMLElement>("[data-card-selectable-label]");
-      if (label) label.textContent = selected ? "Выбрано" : "Выбрать";
+      if (label) label.textContent = selected ? "Выбрано" : "Не выбрано";
     });
   });
 </script>
