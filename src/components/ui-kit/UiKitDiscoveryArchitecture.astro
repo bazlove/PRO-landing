@@ -34,7 +34,7 @@ const initialEntry = entries[0];
   <header class="ui-kit-contract__header">
     <p class="ui-kit-eyebrow">Dual Discovery Architecture</p>
     <h3 id="dual-discovery-title">Два входа сходятся в одной сводке критериев</h3>
-    <p>Таксономия начинается с известного атрибута, intent — с карьерной задачи. Оба режима изменяют один локальный demo state.</p>
+    <p>Таксономия начинается с известного атрибута, карьерный сценарий — с задачи пользователя. Оба режима изменяют одно локальное демонстрационное состояние.</p>
   </header>
 
   <div class="ui-kit-discovery-panels">
@@ -47,23 +47,23 @@ const initialEntry = entries[0];
     </fieldset>
     <fieldset>
       <legend>Карьерная задача</legend>
-      <p>Понятный сценарий с раскрытым mapping.</p>
+      <p>Понятный сценарий с раскрытым сопоставлением критериев.</p>
       <div class="ui-kit-discovery-options">
         {entries.filter((entry) => entry.type === "intent").map((entry) => <button type="button" aria-pressed="false" data-discovery-entry={entry.id}>{entry.label}</button>)}
       </div>
     </fieldset>
   </div>
 
-  <details class="ui-kit-discovery-summary" open data-discovery-summary>
+  <details class="ui-kit-discovery-summary" open data-discovery-summary data-density="compact">
     <summary>Общая сводка критериев</summary>
     <div>
-      <p><strong>Entry:</strong> <span data-discovery-entry-label>Таксономия — {initialEntry.label}</span></p>
+      <p><strong>Точка входа:</strong> <span data-discovery-entry-label>Таксономия — {initialEntry.label}</span></p>
       <div class="ui-kit-label-row" data-discovery-chips>
         {initialEntry.mappedCriteria.map((criterion) => <button class="ui-kit-chip ui-kit-label--m" type="button" data-discovery-remove={criterion.key} aria-label={`Удалить критерий ${criterion.label}`}><span>{criterion.label}</span><span aria-hidden="true">×</span></button>)}
       </div>
       <dl data-discovery-criteria>{initialEntry.mappedCriteria.map((criterion) => <div><dt><code>{criterion.key}</code></dt><dd><code>{criterion.value}</code></dd></div>)}</dl>
-      <p><strong>Canonical state:</strong> <code data-discovery-query>?role=backend</code></p>
-      <p class="ui-kit-contract-note">Intent mapping is illustrative. Production filter schema remains pending approval.</p>
+      <p><strong>Каноническое состояние:</strong> <code data-discovery-query>?role=backend</code></p>
+      <p class="ui-kit-contract-note">Сопоставление карьерной задачи приведено для демонстрации. <code>Production filter schema</code> ожидает отдельного согласования.</p>
       <button class="ui-kit-button ui-kit-button--tertiary ui-kit-button--compact" type="button" data-discovery-reset aria-label="Сбросить демонстрацию discovery">Сбросить демонстрацию</button>
       <span class="sr-only" role="status" aria-live="polite" data-discovery-status></span>
     </div>
@@ -79,11 +79,13 @@ const initialEntry = entries[0];
     const criteria = root.querySelector("[data-discovery-criteria]");
     const query = root.querySelector("[data-discovery-query]");
     const status = root.querySelector("[data-discovery-status]");
+    const summary = root.querySelector("[data-discovery-summary]");
     let selected = entries[0];
     let activeCriteria = [...selected.mappedCriteria];
 
     const render = (announce = true) => {
-      if (label) label.textContent = `${selected.type === "intent" ? "Intent" : "Таксономия"} — ${selected.label}`;
+      if (label) label.textContent = `${selected.type === "intent" ? "Карьерная задача" : "Таксономия"} — ${selected.label}`;
+      if (summary) summary.dataset.density = activeCriteria.length <= 2 ? "compact" : "normal";
       if (chips) {
         chips.replaceChildren(...activeCriteria.map((criterion) => {
           const button = document.createElement("button");
