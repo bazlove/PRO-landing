@@ -624,13 +624,18 @@ button.ui-kit-chip { position: relative; max-width: min(240px, 100%); overflow: 
 
 /* Company page prototype */
 .ui-kit-company-page { overflow: clip; border: 1px solid var(--ui-color-border-default); border-radius: var(--ui-radius-xl); background: var(--ui-color-surface-primary); }
-.ui-kit-company-page__hero { display: grid; grid-template-columns: 72px minmax(0, 1fr) 44px; gap: 20px; align-items: start; padding: 34px; background: var(--ui-color-bg-subtle); }
+.ui-kit-company-page__hero { display: grid; grid-template-columns: 72px minmax(0, 1fr) 44px; gap: 20px; align-items: start; padding: 34px; border-bottom: 1px solid var(--ui-color-border-default); background: var(--ui-color-bg-subtle); }
 .ui-kit-company-page__logo { width: 72px; height: 72px; font-size: 18px; }
+.ui-kit-company-page__hero-copy > .ui-kit-eyebrow { color: var(--ui-color-accent-signature); font-weight: var(--ui-font-weight-semibold); }
 .ui-kit-company-page__hero-copy h3 { margin-bottom: 8px; font-size: 34px; line-height: 1.2; }
 .ui-kit-company-page__lead { max-width: 680px; color: var(--ui-color-text-secondary); font-size: 17px; }
 .ui-kit-company-page__nav { position: sticky; z-index: 4; top: 56px; display: flex; gap: 4px; overflow-x: auto; padding: 10px 22px; border-block: 1px solid var(--ui-color-border-default); background: color-mix(in srgb, var(--ui-color-surface-primary) 94%, transparent); backdrop-filter: blur(10px); }
 .ui-kit-company-page__nav a { flex: 0 0 auto; padding: 8px 10px; border-radius: var(--ui-radius-s); color: var(--ui-color-text-secondary); font-size: 12px; font-weight: 650; text-decoration: none; }
 .ui-kit-company-page__nav a:hover { background: var(--ui-color-surface-secondary); }
+@media (min-width: 1024px) {
+  .ui-kit-company-page__nav { scrollbar-width: none; }
+  .ui-kit-company-page__nav::-webkit-scrollbar { display: none; }
+}
 .ui-kit-company-page__layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(250px, 1fr); gap: 34px; padding: 34px; }
 .ui-kit-company-page__main { min-width: 0; }
 .ui-kit-company-page__section { scroll-margin-top: 124px; padding: 10px 0 34px; }
@@ -735,10 +740,15 @@ button.ui-kit-chip { position: relative; max-width: min(240px, 100%); overflow: 
 .ui-kit-media-frame.is-avatar { aspect-ratio: 1; border-radius: var(--ui-radius-round); }
 .ui-kit-media-frame.is-screen { aspect-ratio: 16 / 10; border-radius: var(--ui-radius-s); }
 .ui-kit-media-frame.is-data { aspect-ratio: 3 / 2; border-radius: var(--ui-radius-xs); }
+.ui-kit-media-frame.is-screen img,
+.ui-kit-media-frame.is-data img { object-fit: contain; }
 .ui-kit-media-full-bleed { display: none; }
 
 .ui-kit-skeleton-contract-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .ui-kit-loading-example { min-width: 0; min-height: 220px; padding: 18px; border: 1px solid var(--ui-color-border-default); border-radius: var(--ui-radius-m); background: var(--ui-color-surface-primary); }
+.ui-kit-loading-example > header { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; }
+.ui-kit-loading-example > header > .ui-kit-button { margin-left: auto; }
+.ui-kit-loading-example > header > code { color: var(--ui-color-text-muted); font-size: 10px; }
 .ui-kit-loading-example > h4 { margin: 16px 0 6px; font-size: 16px; }
 .ui-kit-loading-example > p { color: var(--ui-color-text-secondary); font-size: 13px; }
 .ui-kit-loading-example > .ui-kit-button { margin-top: 12px; }
@@ -778,7 +788,10 @@ button.ui-kit-chip { position: relative; max-width: min(240px, 100%); overflow: 
 .ui-kit-discovery-options button[aria-pressed="true"] { border-color: var(--ui-color-brand-primary); background: var(--ui-color-brand-soft); color: var(--ui-color-brand-primary); }
 .ui-kit-discovery-summary { margin-top: 16px; border: 1px solid var(--ui-color-border-default); border-radius: var(--ui-radius-m); background: var(--ui-color-surface-secondary); }
 .ui-kit-discovery-summary summary { padding: 14px 16px; font-weight: var(--ui-font-weight-semibold); cursor: pointer; }
-.ui-kit-discovery-summary > div { padding: 0 16px 16px; }
+.ui-kit-discovery-summary > div { display: grid; gap: 12px; padding: 0 16px 16px; }
+.ui-kit-discovery-summary > div > * { margin-block: 0; }
+.ui-kit-discovery-summary[data-density="compact"] > div { gap: 8px; padding-bottom: 14px; }
+.ui-kit-discovery-summary[data-density="compact"] dl { margin-block: 2px; }
 .ui-kit-discovery-summary dl,
 .ui-kit-composer-advanced dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
 .ui-kit-discovery-summary dl div,
@@ -797,10 +810,15 @@ button.ui-kit-chip { position: relative; max-width: min(240px, 100%); overflow: 
 .ui-kit-composer-applied { margin: 14px 0; padding: 16px; border-radius: var(--ui-radius-m); background: var(--ui-color-surface-secondary); }
 .ui-kit-composer-applied > div:first-child { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .ui-kit-composer-applied > p { margin: 10px 0 0; overflow-wrap: anywhere; font-size: 12px; }
+.ui-kit-composer-query-panel { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: baseline; gap: 6px 12px; margin-top: 12px; padding: 11px 12px; border: 1px solid var(--ui-color-border-default); border-radius: var(--ui-radius-s); background: var(--ui-color-surface-primary); font-size: 12px; }
+.ui-kit-composer-query-panel__title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; }
+.ui-kit-composer-query-panel__title code { color: var(--ui-color-text-muted); font-size: 10px; }
+.ui-kit-composer-query-panel > code { min-width: 0; overflow-wrap: anywhere; }
+.ui-kit-composer-query-panel .ui-kit-contract-note { grid-column: 1 / -1; margin: 0; }
 .ui-kit-composer-advanced { margin-top: 12px; padding: 16px; border: 1px solid var(--ui-color-border-default); border-radius: var(--ui-radius-m); }
 .ui-kit-composer-advanced h3 { font-size: 16px; }
 .ui-kit-composer-backdrop { position: fixed; z-index: 1190; inset: 0; background: rgb(11 17 27 / 58%); }
-.ui-kit-composer-editor { position: absolute; z-index: 20; top: 214px; right: 0; width: min(520px, 100%); overflow: hidden; border: 1px solid var(--ui-color-border-strong); border-radius: var(--ui-radius-l); background: var(--ui-color-surface-primary); box-shadow: var(--ui-shadow-dropdown); }
+.ui-kit-composer-editor { position: absolute; z-index: 1200; top: 214px; right: 0; width: min(520px, 100%); overflow: hidden; border: 1px solid var(--ui-color-border-strong); border-radius: var(--ui-radius-l); background: var(--ui-color-surface-primary); box-shadow: var(--ui-shadow-dropdown); }
 .ui-kit-composer-editor > header { display: flex; align-items: start; justify-content: space-between; gap: 16px; padding: 18px; border-bottom: 1px solid var(--ui-color-border-default); }
 .ui-kit-composer-editor > header h3 { margin: 3px 0 0; font-size: 18px; }
 .ui-kit-composer-editor__body { padding: 18px; }
@@ -831,6 +849,9 @@ button.ui-kit-chip { position: relative; max-width: min(240px, 100%); overflow: 
 .ui-kit-contract-card.is-selectable { width: 100%; font: inherit; text-align: left; }
 .ui-kit-contract-card.is-selectable[aria-pressed="true"] { border-color: var(--ui-color-brand-primary); background: var(--ui-color-brand-soft); }
 .ui-kit-contract-card__title { font-weight: var(--ui-font-weight-semibold); }
+.ui-kit-selectable-title { display: flex; align-items: center; gap: 8px; }
+.ui-kit-selection-indicator { width: 22px; height: 22px; display: grid; flex: 0 0 auto; place-items: center; border: 1px solid var(--ui-color-border-strong); border-radius: var(--ui-radius-round); background: var(--ui-color-surface-primary); color: transparent; transition: border-color var(--ui-motion-fast), background var(--ui-motion-fast), color var(--ui-motion-fast); }
+.ui-kit-contract-card.is-selectable[aria-pressed="true"] .ui-kit-selection-indicator { border-color: var(--ui-color-brand-primary); background: var(--ui-color-brand-primary); color: var(--ui-color-text-inverse); }
 .ui-kit-contract-card.is-actions > div { display: flex; align-items: center; gap: 8px; }
 .ui-kit-company-card-classification { margin-top: 16px; padding: 14px 16px; border-left: 3px solid var(--ui-color-brand-primary); background: var(--ui-color-brand-soft); }
 .ui-kit-company-card-classification { display: flex; flex-wrap: wrap; gap: 6px 14px; }
@@ -839,9 +860,9 @@ button.ui-kit-chip { position: relative; max-width: min(240px, 100%); overflow: 
 .ui-kit-company-page__breadcrumbs { padding: 14px 34px; border-bottom: 1px solid var(--ui-color-border-default); color: var(--ui-color-text-muted); font-size: 12px; }
 .ui-kit-company-page__breadcrumbs ol { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
 .ui-kit-company-page__breadcrumbs li + li::before { content: "/"; margin-right: 6px; }
-.ui-kit-company-page__nav a { display: grid; grid-template-columns: auto auto; align-items: center; gap: 5px; }
-.ui-kit-company-page__nav code { color: var(--ui-color-text-muted); font-size: 9px; }
+.ui-kit-company-page__nav a { display: block; padding-inline: 8px; }
 .ui-kit-company-page__section-head h3 { margin: 0; font-size: 22px; }
+.ui-kit-company-page__section-head code { color: var(--ui-color-text-muted); font-size: 12px; font-weight: var(--ui-font-weight-regular); }
 .ui-kit-state-callout { margin-top: 14px; padding: 12px 14px; border-radius: var(--ui-radius-s); background: var(--ui-color-surface-secondary); color: var(--ui-color-text-secondary); font-size: 12px; }
 .ui-kit-state-callout.is-conflicting { background: var(--ui-color-status-critical-bg); color: var(--ui-color-status-critical); }
 .ui-kit-state-callout.is-unavailable { background: var(--ui-color-status-warning-bg); color: var(--ui-color-status-warning); }
@@ -1095,6 +1116,8 @@ button.ui-kit-chip { position: relative; max-width: min(240px, 100%); overflow: 
   .ui-kit-card-contract-grid { grid-template-columns: 1fr; }
   .ui-kit-discovery-summary dl,
   .ui-kit-composer-advanced dl { grid-template-columns: 1fr; }
+  .ui-kit-composer-query-panel { grid-template-columns: 1fr; }
+  .ui-kit-composer-query-panel .ui-kit-contract-note { grid-column: auto; }
   .ui-kit-composer-editor > footer .ui-kit-button { flex: 1 1 100%; }
 }
 
