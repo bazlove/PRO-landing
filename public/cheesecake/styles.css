@@ -49,7 +49,7 @@ a { color: inherit; }
 .header-cta { padding: 9px 17px; border-radius: 999px; background: var(--ink); color: white; font-size: .9rem; font-weight: 730; text-decoration: none; }
 
 .hero { display: grid; grid-template-columns: minmax(0, .86fr) minmax(0, 1.3fr); gap: 36px; padding-block: 56px 38px; }
-.hero-copy { align-self: center; padding-block: 32px; }
+.hero-copy { position: relative; z-index: 2; align-self: center; padding-block: 32px; }
 .eyebrow { margin: 0 0 16px; color: var(--caramel-dark); font-size: .77rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 h1, h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-weight: 500; letter-spacing: -.045em; line-height: .98; }
 h3, h4, p { margin-top: 0; }
@@ -65,8 +65,8 @@ h1 em { color: var(--caramel); font-weight: 500; }
 .button-secondary { border: 1px solid var(--line); background: rgba(255, 255, 255, .6); }
 .hero-note { margin: 22px 0 0; color: var(--muted); font-size: .87rem; }
 .hero-note span { color: var(--caramel); font-size: .58rem; vertical-align: .18em; }
-.hero-visual { position: relative; min-height: 530px; margin: 0; overflow: hidden; border-radius: var(--radius-lg); background: #ddd7cf; box-shadow: var(--shadow); }
-.hero-visual img { width: 100%; height: 100%; object-fit: cover; object-position: 55% center; }
+.hero-visual { position: relative; z-index: 1; min-height: 530px; margin: 0; overflow: hidden; border-radius: var(--radius-lg); background: #ddd7cf; box-shadow: var(--shadow); }
+.hero-visual img { width: 100%; height: 100%; object-fit: cover; object-position: 65% center; }
 .hero-visual figcaption { position: absolute; right: 18px; bottom: 18px; max-width: 240px; padding: 10px 14px; border: 1px solid rgba(255,255,255,.45); border-radius: 999px; background: rgba(255,255,255,.78); backdrop-filter: blur(12px); color: #4b3b33; font-size: .78rem; font-weight: 700; }
 .recipe-facts { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-md); background: rgba(255,255,255,.52); }
 .recipe-facts div { padding: 20px 24px; }
@@ -274,7 +274,7 @@ td .check span { position: absolute; width: 1px; height: 1px; overflow: hidden; 
   h1 { font-size: clamp(2.85rem, 13vw, 4rem); overflow-wrap: anywhere; }
   .hero-actions { display: grid; grid-template-columns: 1fr; }
   .hero-visual { min-height: 360px; }
-  .hero-visual img { object-position: 61% center; }
+  .hero-visual img { object-position: 65% center; }
   .hero-visual figcaption { left: 12px; right: 12px; bottom: 12px; max-width: none; text-align: center; }
   .recipe-facts div { padding: 16px; }
   .section { padding-block: 68px; }
