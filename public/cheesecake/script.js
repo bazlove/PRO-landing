@@ -11,10 +11,9 @@ const variantButtons = [...document.querySelectorAll('[data-ingredient-variant]'
 
 const ingredientVariants = {
   base: {
-    cheeseShort: 'ABC Krem sir Classic',
-    creamTitle: 'Сливки 36%',
-    creamShort: 'Moja Kravica',
-    starchShort: 'Кукурузный · Čvrstin C',
+    cheeseShort: 'Сербия · ABC Krem sir Classic',
+    creamShort: 'Сербия · Moja Kravica 36%',
+    starchShort: 'Сербия · Čvrstin C',
     cheeseName: 'ABC Krem sir Classic',
     cheeseNote: '200 г + 100 г. Не заменять творогом, kajmak или sitan sir.',
     cheesePack: '300 г',
@@ -31,16 +30,15 @@ const ingredientVariants = {
     starchPrice: '≈ 120 RSD*',
     starchLink: 'https://cenoteka.rs/p/cvrstin-c-150g/',
     basketTitle: 'Базовая корзина',
-    basket: '≈ 800–970 RSD',
+    basket: '≈ 800–1000 RSD',
     basketNote: '* Для Čvrstin указана оценка: актуальная цена не подтверждена. Остатки яиц, сливок и крахмала можно использовать позже.',
     quick: '300 г ABC · 200 мл сливки 36% · 120 г варёная сгущёнка · 2 яйца M · 25 г крахмал',
     recipe: '300 г ABC Krem sir Classic, 200 мл молочных сливок 36%, 120 г варёной сгущёнки, 2 яйца M, 25 г кукурузного крахмала'
   },
   alternative: {
-    cheeseShort: 'Arla Natural',
-    creamTitle: 'Сливки 30%',
-    creamShort: 'Meggle Lactofree',
-    starchShort: 'Кукурузный · Gustin',
+    cheeseShort: 'Сербия · Arla Natural',
+    creamShort: 'Сербия · Meggle Lactofree 30%',
+    starchShort: 'Сербия · Dr. Oetker Gustin',
     cheeseName: 'Arla Natural',
     cheeseNote: 'Нужно 300 г: купить 2 упаковки по 200 г, 100 г останется.',
     cheesePack: '2 × 200 г',
@@ -155,7 +153,6 @@ function applyIngredientVariant(name, announce = false) {
   });
 
   setText('ingredientCheeseName', variant.cheeseShort);
-  setText('ingredientCreamTitle', variant.creamTitle);
   setText('ingredientCreamName', variant.creamShort);
   setText('ingredientStarchName', variant.starchShort);
   setText('shopCheeseName', variant.cheeseName);
@@ -212,11 +209,11 @@ function getRecipeText() {
 Ингредиенты: ${variant.recipe}.
 
 Базовый ориентир для электрической духовки:
-1. Верх + низ без вентилятора — 220 °C. Начать проверять с 18–20-й минуты.
+1. Верх + низ без вентилятора — 220 °C. Начать проверять с 15-й минуты.
 2. Когда края держатся, а центр дрожит единым блоком, при необходимости включить гриль на 1–4 минуты только для цвета.
 3. Охладить 1,5-2 часа на столе и минимум 6 часов в холодильнике.
 
-Мой режим для Candy FCT615XL/1: Conventional — 220 °C, 20–21 мин; затем Grill MAX — 3–4 мин при закрытой двери.
+Мой режим для Candy FCT615XL/1: Conventional — 220 °C, 20–21 минуты; затем Grill MAX — 3–4 минуты при закрытой двери.
 
 Главное: не взбивать массу и не ждать неподвижного центра. После охлаждения он должен быть кремовым, но не текучим.`;
 }
