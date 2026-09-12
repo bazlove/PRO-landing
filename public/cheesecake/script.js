@@ -11,9 +11,9 @@ const variantButtons = [...document.querySelectorAll('[data-ingredient-variant]'
 
 const ingredientVariants = {
   base: {
-    cheeseShort: 'Сербия · ABC Krem sir Classic',
-    creamShort: 'Сербия · Moja Kravica 36%',
-    starchShort: 'Сербия · Čvrstin C',
+    cheeseShort: 'ABC Krem sir Classic',
+    creamShort: 'Moja Kravica 36%',
+    starchShort: 'Čvrstin C',
     cheeseName: 'ABC Krem sir Classic',
     cheeseNote: '200 г + 100 г. Не заменять творогом, kajmak или sitan sir.',
     cheesePack: '300 г',
@@ -36,9 +36,9 @@ const ingredientVariants = {
     recipe: '300 г ABC Krem sir Classic, 200 мл молочных сливок 36%, 120 г варёной сгущёнки, 2 яйца M, 25 г кукурузного крахмала'
   },
   alternative: {
-    cheeseShort: 'Сербия · Arla Natural',
-    creamShort: 'Сербия · Meggle Lactofree 30%',
-    starchShort: 'Сербия · Dr. Oetker Gustin',
+    cheeseShort: 'Arla Natural',
+    creamShort: 'Meggle Lactofree 30%',
+    starchShort: 'Dr. Oetker Gustin',
     cheeseName: 'Arla Natural',
     cheeseNote: 'Нужно 300 г: купить 2 упаковки по 200 г, 100 г останется.',
     cheesePack: '2 × 200 г',
@@ -205,13 +205,13 @@ function getRecipeText() {
   const variant = ingredientVariants[state.ingredientVariant] || ingredientVariants.base;
   return `Карамельный San Sebastián Cheesecake
 
-Форма: 16-18 см
+Форма: 16–18 см
 Ингредиенты: ${variant.recipe}.
 
 Базовый ориентир для электрической духовки:
 1. Верх + низ без вентилятора — 220 °C. Начать проверять с 15-й минуты.
 2. Когда края держатся, а центр дрожит единым блоком, при необходимости включить гриль на 1–4 минуты только для цвета.
-3. Охладить 1,5-2 часа на столе и минимум 6 часов в холодильнике.
+3. Охладить 1,5–2 часа на столе и минимум 6 часов в холодильнике.
 
 Мой режим для Candy FCT615XL/1: Conventional — 220 °C, 20–21 минуты; затем Grill MAX — 3–4 минуты при закрытой двери.
 
