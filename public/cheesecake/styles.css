@@ -299,7 +299,7 @@ td .check span { position: absolute; width: 1px; height: 1px; overflow: hidden; 
   .hero-actions { display: grid; grid-template-columns: 1fr; }
   .hero-visual { min-height: 0; }
   .hero-visual img { object-position: 82% 50%; }
-  .hero-visual figcaption { left: 12px; right: 12px; bottom: 12px; max-width: none; text-align: center; white-space: normal; }
+  .hero-visual figcaption { left: 10px; right: 10px; bottom: 10px; max-width: none; padding: 9px 7px; font-size: clamp(.56rem, 2.5vw, .66rem); line-height: 1.2; letter-spacing: -.012em; text-align: center; white-space: nowrap; }
   .recipe-facts div { padding: 16px; }
   .section { padding-block: 68px; }
   .section-heading { margin-bottom: 34px; }
@@ -320,6 +320,7 @@ td .check span { position: absolute; width: 1px; height: 1px; overflow: hidden; 
   tbody tr.warning-row { background: #fff7ed; }
   td, th:first-child, td:first-child, th:last-child, td:last-child { display: grid; grid-template-columns: 92px 1fr; gap: 10px; padding: 8px 0; border-bottom: 0; }
   td::before { color: var(--muted); font-size: .68rem; font-weight: 820; letter-spacing: .05em; text-transform: uppercase; content: attr(data-label); }
+  td[data-label="Продукт"] small { grid-column: 1 / -1; max-width: none; margin-top: 2px; }
   td .check span { position: static; width: auto; height: auto; overflow: visible; clip-path: none; }
   .table-note { padding-inline: 20px; }
   .prep-grid { grid-template-columns: 1fr; }
